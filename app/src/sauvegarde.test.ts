@@ -2,7 +2,7 @@ import { beforeEach, describe, expect, it, vi } from 'vitest'
 import { exporter, lireSauvegarde, nomFichier } from './sauvegarde'
 import { ETAT_INITIAL, type Etat } from './schema'
 
-const etat: Etat = { prenom: 'Léa-Marie', publicId: 'BTS_NDRC', etape: 3, avertissementLu: true }
+const etat: Etat = { prenom: 'Léa-Marie', publicId: 'BTS_NDRC', etape: 3, avertissementLu: true, personnalite: { e1: 4, o9: 2 } }
 
 describe('export / import', () => {
   it('un export relu redonne exactement le même état', () => {
@@ -31,6 +31,18 @@ describe('export / import', () => {
     }
   })
 
+  it('migre une sauvegarde de la version 1 (avant le test de personnalité)', () => {
+    const { personnalite: _, ...v1 } = etat
+    const texte = JSON.stringify({ app: 'orientation', version: 1, exporteLe: '2026-11-02T10:00:00Z', etat: v1 })
+    expect(lireSauvegarde(texte)).toEqual({ ok: true, etat: { ...v1, personnalite: {} } })
+  })
+
+  it('refuse une réponse hors échelle ou une question inconnue', () => {
+    for (const personnalite of [{ e1: 6 }, { zz: 3 }] as Record<string, number>[]) {
+      expect(lireSauvegarde(exporter({ ...etat, personnalite })).ok).toBe(false)
+    }
+  })
+
   it('refuse un fichier trop gros', () => {
     expect(lireSauvegarde(' '.repeat(1_000_001)).ok).toBe(false)
   })
@@ -56,9 +68,16 @@ describe('stockage local', () => {
   })
 
   it('reprend l’état enregistré au rechargement', async () => {
-    localStorage.setItem('orientation-etat', JSON.stringify({ state: etat, version: 1 }))
+    localStorage.setItem('orientation-etat', JSON.stringify({ state: etat, version: 2 }))
     const { useEtat, etatSeul } = await import('./store')
     expect(etatSeul(useEtat.getState())).toEqual(etat)
+  })
+
+  it('migre un stockage de la version 1', async () => {
+    const { personnalite: _, ...v1 } = etat
+    localStorage.setItem('orientation-etat', JSON.stringify({ state: v1, version: 1 }))
+    const { useEtat, etatSeul } = await import('./store')
+    expect(etatSeul(useEtat.getState())).toEqual({ ...v1, personnalite: {} })
   })
 
   it('un stockage abîmé ne casse pas l’app', async () => {

@@ -1,0 +1,116 @@
+{
+  "_doc": "Profil de personnalité en 4 dimensions. Questions ORIGINALES, rédigées par Claude le 02/11/2026, À VALIDER PAR UN HUMAIN (psychologue de l’Éducation nationale si possible). Chaque question mesure une seule dimension ; ’pole’ = côté vers lequel pousse la réponse « Tout à fait d’accord ». Règles : phrases de 25 mots maximum, aucune négation (l’échelle contient déjà « Pas du tout »), 4 ou 5 questions par pôle. ’paires’ = questions quasi équivalentes servant à repérer des réponses contradictoires.",
+  "statut": "A_VALIDER",
+  "version": 1,
+  "echelle": ["Pas du tout d’accord", "Plutôt pas d’accord", "Entre les deux", "Plutôt d’accord", "Tout à fait d’accord"],
+  "dimensions": [
+    {
+      "id": "energie",
+      "nom": "Énergie",
+      "question": "Où recharges-tu tes batteries ?",
+      "A": {
+        "libelle": "Au calme, en petit comité",
+        "description": "Tu te ressources plutôt au calme, seul(e) ou avec peu de personnes.",
+        "forces": ["Tu sais te concentrer longtemps.", "Tu écoutes avant de parler."],
+        "vigilance": ["Ose prendre la parole quand ton idée est utile.", "Un métier très relationnel peut te fatiguer si tu n’as pas de pauses au calme."]
+      },
+      "B": {
+        "libelle": "Avec les autres, dans l’action",
+        "description": "Tu te ressources plutôt au contact des autres.",
+        "forces": ["Tu crées facilement le contact.", "Tu donnes de l’énergie à un groupe."],
+        "vigilance": ["Garde des moments pour travailler seul(e) au calme.", "Laisse aussi de la place aux autres pour s’exprimer."]
+      }
+    },
+    {
+      "id": "perception",
+      "nom": "Perception",
+      "question": "Sur quoi t’appuies-tu pour comprendre ?",
+      "A": {
+        "libelle": "Le concret, les faits",
+        "description": "Tu t’appuies plutôt sur le concret, les faits et l’expérience.",
+        "forces": ["Tu es précis(e) et attentif(ve) aux détails.", "Tu apprends bien par la pratique."],
+        "vigilance": ["Les sujets très ouverts peuvent te déstabiliser au début.", "Prends parfois du recul pour voir la situation d’ensemble."]
+      },
+      "B": {
+        "libelle": "Les idées, les possibilités",
+        "description": "Tu t’appuies plutôt sur les idées, l’imagination et les possibilités.",
+        "forces": ["Tu as de l’imagination et des idées neuves.", "Tu fais des liens entre des sujets différents."],
+        "vigilance": ["Pense à vérifier les détails et les chiffres.", "Transforme tes idées en étapes concrètes."]
+      }
+    },
+    {
+      "id": "decision",
+      "nom": "Décision",
+      "question": "Comment prends-tu tes décisions ?",
+      "A": {
+        "libelle": "Avec la logique",
+        "description": "Tu décides plutôt avec la logique et des critères objectifs.",
+        "forces": ["Tu analyses une situation de façon objective.", "Tu sais défendre un choix avec des arguments."],
+        "vigilance": ["Pense à l’effet de tes mots sur les autres.", "Les émotions font aussi partie d’une bonne décision."]
+      },
+      "B": {
+        "libelle": "Avec tes valeurs et les personnes",
+        "description": "Tu décides plutôt en pensant à tes valeurs et aux personnes concernées.",
+        "forces": ["Tu es attentif(ve) aux autres.", "Tu crées une bonne ambiance d’équipe."],
+        "vigilance": ["Ose dire ton désaccord, même si c’est inconfortable.", "Appuie aussi tes choix sur des faits."]
+      }
+    },
+    {
+      "id": "organisation",
+      "nom": "Organisation",
+      "question": "Comment t’organises-tu ?",
+      "A": {
+        "libelle": "Avec un plan",
+        "description": "Tu fonctionnes plutôt avec un plan et de l’anticipation.",
+        "forces": ["Tu es fiable et tu tiens les délais.", "Tu sais organiser ton travail."],
+        "vigilance": ["Les imprévus peuvent te stresser : garde une marge.", "Accepte qu’un plan change en cours de route."]
+      },
+      "B": {
+        "libelle": "Avec souplesse",
+        "description": "Tu fonctionnes plutôt avec souplesse et spontanéité.",
+        "forces": ["Tu t’adaptes vite aux changements.", "Tu restes ouvert(e) aux nouvelles options."],
+        "vigilance": ["Note tes échéances pour éviter le rush final.", "Termine une tâche avant d’en lancer trop d’autres."]
+      }
+    }
+  ],
+  "equilibre": "Tu es entre les deux : tu sais t’adapter selon la situation.",
+  "items": [
+    { "id": "e1", "dimension": "energie", "pole": "B", "texte": "Après une longue journée de cours, retrouver des amis me redonne de l’énergie." },
+    { "id": "p1", "dimension": "perception", "pole": "A", "texte": "Pour apprendre une notion de gestion, je préfère partir d’un exemple concret d’entreprise." },
+    { "id": "d1", "dimension": "decision", "pole": "A", "texte": "Pour choisir entre deux options, je compare surtout les avantages et les inconvénients de façon objective." },
+    { "id": "o1", "dimension": "organisation", "pole": "A", "texte": "Je note mes devoirs et mes échéances dans un agenda ou une application." },
+    { "id": "e2", "dimension": "energie", "pole": "A", "texte": "Pendant une pause, j’aime m’isoler quelques minutes avec mes écouteurs pour souffler." },
+    { "id": "p2", "dimension": "perception", "pole": "B", "texte": "J’aime imaginer comment une entreprise pourrait fonctionner autrement dans dix ans." },
+    { "id": "d2", "dimension": "decision", "pole": "B", "texte": "Avant de décider, je pense d’abord aux conséquences pour les personnes concernées." },
+    { "id": "o2", "dimension": "organisation", "pole": "B", "texte": "J’aime garder mon week-end libre pour décider au dernier moment de ce que je fais." },
+    { "id": "e3", "dimension": "energie", "pole": "B", "texte": "En travail de groupe, je prends facilement la parole pour lancer la discussion." },
+    { "id": "p3", "dimension": "perception", "pole": "A", "texte": "Dans un exercice, je suis très attentif(ve) aux détails et aux chiffres précis." },
+    { "id": "d3", "dimension": "decision", "pole": "A", "texte": "Quand un camarade fait une erreur dans un projet commun, je le lui dis franchement." },
+    { "id": "o3", "dimension": "organisation", "pole": "A", "texte": "Je commence mes dossiers longtemps avant la date de rendu." },
+    { "id": "e4", "dimension": "energie", "pole": "A", "texte": "Je préfère réfléchir seul(e) à une question avant d’en parler devant la classe." },
+    { "id": "p4", "dimension": "perception", "pole": "B", "texte": "En lisant un sujet, plusieurs idées originales pour y répondre me viennent vite." },
+    { "id": "d4", "dimension": "decision", "pole": "B", "texte": "Dans un groupe, je veille à ce que chacun se sente bien et écouté." },
+    { "id": "o4", "dimension": "organisation", "pole": "B", "texte": "Je travaille souvent mieux sous la pression d’une échéance proche." },
+    { "id": "e5", "dimension": "energie", "pole": "B", "texte": "Lors d’une journée portes ouvertes, aller parler à des inconnus me semble facile." },
+    { "id": "p5", "dimension": "perception", "pole": "A", "texte": "Je fais davantage confiance à ce que j’ai déjà testé qu’à une idée nouvelle." },
+    { "id": "d5", "dimension": "decision", "pole": "A", "texte": "Pour moi, une décision juste applique la même règle à tout le monde." },
+    { "id": "o5", "dimension": "organisation", "pole": "A", "texte": "Avant une période d’examens, je prépare un planning de révisions." },
+    { "id": "e6", "dimension": "energie", "pole": "A", "texte": "Un week-end calme à la maison me recharge mieux qu’une grosse soirée." },
+    { "id": "p6", "dimension": "perception", "pole": "B", "texte": "Les cours où l’on discute de tendances et d’innovations me passionnent." },
+    { "id": "d6", "dimension": "decision", "pole": "B", "texte": "Je peux changer d’avis si une décision risque de blesser quelqu’un." },
+    { "id": "o6", "dimension": "organisation", "pole": "B", "texte": "Un changement de programme imprévu me paraît plutôt stimulant." },
+    { "id": "e7", "dimension": "energie", "pole": "B", "texte": "En stage, j’aime les journées remplies de rencontres avec des clients ou des collègues." },
+    { "id": "p7", "dimension": "perception", "pole": "A", "texte": "Je préfère des consignes claires, étape par étape, à un sujet très ouvert." },
+    { "id": "d7", "dimension": "decision", "pole": "A", "texte": "Face à un désaccord, je cherche l’argument le plus logique, même s’il déplaît." },
+    { "id": "o7", "dimension": "organisation", "pole": "A", "texte": "J’aime terminer une tâche complètement avant d’en commencer une autre." },
+    { "id": "e8", "dimension": "energie", "pole": "A", "texte": "Je suis plus à l’aise pour échanger avec une ou deux personnes qu’avec un grand groupe." },
+    { "id": "p8", "dimension": "perception", "pole": "B", "texte": "J’aime relier des idées venant de matières différentes pour comprendre un sujet." },
+    { "id": "d8", "dimension": "decision", "pole": "B", "texte": "Quand je conseille un ami, ce qu’il ressent compte davantage pour moi que les faits." },
+    { "id": "o8", "dimension": "organisation", "pole": "B", "texte": "Je préfère explorer plusieurs pistes en même temps plutôt que suivre un plan fixe." },
+    { "id": "e9", "dimension": "energie", "pole": "B", "texte": "Quand je suis fatigué(e), passer du temps avec d’autres personnes me remet en forme." },
+    { "id": "p9", "dimension": "perception", "pole": "A", "texte": "Un cas pratique réel m’aide davantage à comprendre qu’une explication théorique." },
+    { "id": "d9", "dimension": "decision", "pole": "B", "texte": "Pour prendre une décision, l’effet sur les gens autour de moi passe en premier." },
+    { "id": "o9", "dimension": "organisation", "pole": "A", "texte": "J’organise mon travail à l’avance pour éviter de tout faire à la dernière minute." }
+  ],
+  "paires": [["e1", "e9"], ["p1", "p9"], ["d2", "d9"], ["o3", "o9"]]
+}

@@ -1,4 +1,4 @@
-import { FichierSchema, VERSION_ETAT, type Etat } from './schema'
+import { EtatSchema, FichierSchema, migrer, VERSION_ETAT, type Etat } from './schema'
 
 const TAILLE_MAX = 1_000_000 // octets : une sauvegarde normale fait moins de 50 Ko
 
@@ -16,12 +16,13 @@ export function lireSauvegarde(texte: string): Lecture {
   } catch {
     return { ok: false, erreur: 'Ce fichier n’est pas une sauvegarde lisible (format JSON attendu).' }
   }
-  const res = FichierSchema.safeParse(brut)
+  const fichier = FichierSchema.safeParse(brut)
+  const res = fichier.success ? EtatSchema.safeParse(migrer(fichier.data.etat, fichier.data.version)) : fichier
   if (!res.success) {
     const detail = res.error.issues[0]
     return { ok: false, erreur: `Ce fichier n’est pas une sauvegarde valide de l’app (${detail.path.join('.') || 'fichier'} : ${detail.message}).` }
   }
-  return { ok: true, etat: res.data.etat }
+  return { ok: true, etat: res.data as Etat }
 }
 
 export function nomFichier(maintenant = new Date()): string {

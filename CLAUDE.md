@@ -21,6 +21,7 @@ App d'aide à l'orientation pour Terminale STMG, BTS CG et BTS NDRC. Le plan et 
 ```bash
 python3 -I etl/rome_candidats.py     # docs/METIERS-A-VALIDER.md depuis le ROME
 python3 -I etl/poursuites_bt.py      # docs/POURSUITES-A-VALIDER.md depuis Parcoursup
+python3 -I etl/contenu_a_valider.py  # docs/CONTENU-A-VALIDER.md depuis contenu/*.json (à relancer après toute modif)
 ```
 ```bash
 git config core.hooksPath .githooks  # une fois après le clone : active le hook anti-secrets (gitleaks si installé)

@@ -1,13 +1,15 @@
 import { useEffect, useRef, useState } from 'react'
 import Accueil from './components/Accueil'
 import Sauvegarde from './components/Sauvegarde'
+import TestPersonnalite from './components/TestPersonnalite'
+import { complet } from './personnalite'
 import { Bouton } from './components/ui'
 import { ETAPES } from './etapes'
 import { parcoursDe } from './schema'
 import { useEtat } from './store'
 
 export default function App() {
-  const { prenom, publicId, etape, maj } = useEtat()
+  const { prenom, publicId, etape, personnalite, maj } = useEtat()
   const parcours = parcoursDe(publicId)
   const etapes = parcours ? ETAPES[parcours] : ETAPES.lycee
   const courante = parcours ? Math.min(etape, etapes.length - 1) : 0
@@ -62,22 +64,27 @@ export default function App() {
         )}
         {courante === 0 ? (
           <Accueil />
+        ) : e.id === 'personnalite' ? (
+          <TestPersonnalite key={courante} />
         ) : (
           <div className="space-y-6">
             <h1 tabIndex={-1} className="text-2xl font-extrabold text-violet-900 sm:text-3xl">{e.titre}</h1>
             <p className="rounded-2xl bg-violet-50 p-4 text-slate-700">
               <span aria-hidden="true">🚧</span> Cette étape arrive bientôt.
             </p>
-            <div className="flex flex-wrap justify-between gap-2">
-              <Bouton variante="secondaire" onClick={() => maj({ etape: courante - 1 })}>
-                <span aria-hidden="true">←</span> Précédent
+          </div>
+        )}
+        {/* Pendant le questionnaire, ses propres boutons Retour / Continuer suffisent. */}
+        {courante > 0 && (e.id !== 'personnalite' || complet(personnalite)) && (
+          <div className="mt-6 flex flex-wrap justify-between gap-2 border-t border-violet-100 pt-4">
+            <Bouton variante="secondaire" onClick={() => maj({ etape: courante - 1 })}>
+              <span aria-hidden="true">←</span> Étape précédente
+            </Bouton>
+            {courante < total && (
+              <Bouton onClick={() => maj({ etape: courante + 1 })}>
+                Étape suivante <span aria-hidden="true">→</span>
               </Bouton>
-              {courante < total && (
-                <Bouton onClick={() => maj({ etape: courante + 1 })}>
-                  Suivant <span aria-hidden="true">→</span>
-                </Bouton>
-              )}
-            </div>
+            )}
           </div>
         )}
       </main>
