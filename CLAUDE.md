@@ -5,7 +5,7 @@ App d'aide à l'orientation pour Terminale STMG, BTS CG et BTS NDRC. Le plan et 
 ## Règles non négociables
 - Aucun compte. L'état reste dans le navigateur. Le prénom est facultatif et n'est jamais envoyé sur le réseau.
 - Aucune donnée inventée : chaque chiffre affiché porte `{source, date}`, sinon « non disponible ».
-- Tout appel réseau passe par `app/src/net.ts`, qui n'autorise que les hôtes de `config/sources.yaml`. On ne fait jamais de fetch direct ailleurs.
+- Tout appel réseau passe par `app/src/net.ts`, qui n'autorise que les hôtes de `config/sources.json`. On ne fait jamais de fetch direct ailleurs.
 - La donnée handicap ne sort jamais du navigateur : pas de requête, pas de proxy, pas de log.
 - Secrets (`LBA_TOKEN`, identifiants France Travail) : uniquement en variables d'environnement du Worker. Ils ne vont jamais dans le code, les commits, les logs ou le chat.
 - Interdit de scraper. On n'utilise que les API et téléchargements officiels, en respectant leurs CGU.
@@ -22,7 +22,17 @@ App d'aide à l'orientation pour Terminale STMG, BTS CG et BTS NDRC. Le plan et 
 python3 -I etl/rome_candidats.py     # docs/METIERS-A-VALIDER.md depuis le ROME
 python3 -I etl/poursuites_bt.py      # docs/POURSUITES-A-VALIDER.md depuis Parcoursup
 ```
-Les commandes de l'app (`npm run dev|test|e2e|build`) et du proxy (`wrangler dev`) seront ajoutées en M0 et M6.
+```bash
+git config core.hooksPath .githooks  # une fois après le clone : active le hook anti-secrets (gitleaks si installé)
+cd app && npm install                # puis : npm run dev | npm test | npm run e2e | npm run build
+npx playwright install chromium      # une fois, pour npm run e2e (ou PW_CHANNEL=chrome npm run e2e avec le Chrome installé)
+```
+Les commandes du proxy (`wrangler dev`) arriveront en M6.
+
+## Structure (M0)
+- `config/publics.json` : les publics (et `actif`). Config en JSON plutôt qu'en YAML : lisible par l'app et par l'ETL Python sans dépendance.
+- `app/src/schema.ts` : schémas Zod (état, fichier de sauvegarde). `store.ts` : état Zustand persisté (`orientation-etat`, versionné ; migrations dans `migrate`). `sauvegarde.ts` : export, import, téléchargement. `etapes.ts` : étapes de chaque parcours.
+- Toute nouvelle donnée de l'élève : l'ajouter à `EtatSchema`, augmenter `VERSION_ETAT`, écrire la migration et le test.
 
 ## Code
 - TypeScript strict. Zod valide toute donnée qui entre (import JSON, réponses du proxy, JSON de l'ETL).

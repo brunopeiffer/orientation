@@ -1,0 +1,11 @@
+#!/bin/sh
+# Bloque un commit qui contiendrait un secret (jeton, clé, identifiant OAuth).
+if command -v gitleaks >/dev/null 2>&1; then
+  exec gitleaks git --staged --redact --no-banner
+fi
+# shortcut: filet minimal par motifs si gitleaks n'est pas installé ; installer gitleaks pour une vraie détection.
+if git diff --cached -U0 --diff-filter=ACM | grep -E '^\+' | grep -v '^+++' | grep -niE \
+  '(LBA_TOKEN|FT_CLIENT_SECRET|FT_CLIENT_ID|client_secret|api[_-]?key|token)[[:space:]]*[:=][[:space:]]*["'\'']?[A-Za-z0-9._~+/-]{12,}|-----BEGIN [A-Z ]*PRIVATE KEY|Bearer [A-Za-z0-9._~+/-]{20,}'; then
+  echo "pre-commit : secret probable détecté ci-dessus. Commit bloqué. Mets-le dans une variable d'environnement." >&2
+  exit 1
+fi

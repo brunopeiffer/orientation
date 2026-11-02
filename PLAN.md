@@ -21,7 +21,7 @@ Dernière mise à jour : 02/11/2026. Terrain de test : académie de Strasbourg (
 orientation/
   app/            Vite + React + TypeScript + Tailwind + Zustand(persist) + Zod
   app/public/data JSON statiques produits par l'ETL, chargés à la demande (découpés par région)
-  config/         publics.yaml, matieres.yaml, calendrier-parcoursup.yaml, sources.yaml (appels sortants autorisés)
+  config/         publics.json, matieres.json, calendrier-parcoursup.json, sources.json (appels sortants autorisés)
   contenu/        test-personnalite.yaml, interets.yaml, realite-metiers/*.yaml (À VALIDER)
   etl/            scripts Python 3 (bibliothèque standard seule), échouent proprement si un schéma change
   proxy/          Cloudflare Worker (LBA, France Travail, Recherche d'entreprises), secrets en variables d'env.
@@ -50,10 +50,10 @@ monprojetsup (MIT) sert de référence de modélisation (formations ↔ métiers
 
 ## 4. Parcours et règles transverses
 
-- Deux parcours dès l'accueil : A) lycée (STMG) ; B) fin de BTS (CG ou NDRC). Autres publics présents dans `config/publics.yaml`, `actif: false`.
+- Deux parcours dès l'accueil : A) lycée (STMG) ; B) fin de BTS (CG ou NDRC). Autres publics présents dans `config/publics.json`, `actif: false`.
 - Barre de progression, retour arrière, reprise automatique (état Zustand persisté en localStorage, versionné, migré).
 - Écran 1 : avertissement de stockage local (texte exact du cahier des charges), boutons Sauvegarder (export JSON), Reprendre (import validé par Zod), Tout effacer (avec confirmation).
-- Aucun analytics, cookie, police ou script tiers. Les appels sortants passent par **un seul module** `net.ts` qui refuse toute URL absente de `config/sources.yaml` ; la page Confidentialité est générée depuis ce fichier.
+- Aucun analytics, cookie, police ou script tiers. Les appels sortants passent par **un seul module** `net.ts` qui refuse toute URL absente de `config/sources.json` ; la page Confidentialité est générée depuis ce fichier.
 - Tout chiffre affiché porte sa source et sa date, sinon « non disponible ».
 - Tous les résultats sont formulés comme des pistes indicatives.
 
@@ -86,7 +86,7 @@ Fiches « réalité du métier » en YAML : au moins 3 contraintes et 3 avantage
 |---|---|---|
 | **M0** | Squelette Vite/React/TS/Tailwind, design system coloré, routing par étapes, store persistant versionné, avertissement, export/import/effacer, prénom facultatif, CI GitHub Pages, hook pré-commit de détection de secrets (gitleaks) | Vitest : export puis import donne un état identique ; JSON invalide refusé avec message clair ; effacer vide le stockage. Playwright mobile et desktop : avertissement visible, reprise après rechargement. axe : 0 violation. |
 | **M1** | Test de personnalité | Contrôles du §5 au vert ; résultats en curseurs + forces + vigilance + encadré « photo d'aujourd'hui ». |
-| **M2** | Intérêts, environnements, valeurs, refus, notes estimées (matières pilotées par `config/matieres.yaml`) | Pas de note exacte (tranches) ; changer de série change les matières sans code. |
+| **M2** | Intérêts, environnements, valeurs, refus, notes estimées (matières pilotées par `config/matieres.json`) | Pas de note exacte (tranches) ; changer de série change les matières sans code. |
 | **M3** | ETL ROME + matching + fiches réalité | ETL : échec propre sur un schéma modifié (test avec fixture). Matching : 8 à 12 pistes, chaque score décomposé ; jamais de métier CG pour un NDRC (test). |
 | **M4** | ETL Parcoursup + cartographie, mobilité, distances | Fourchette d'accès prudente, avec source et année ; distance à vol d'oiseau × coefficient de détour, libellée « approximative » ; seule la commune est géocodée. |
 | **M5** | Parcours BTS | Chaque poursuite indique son canal de candidature (lien officiel) ; « hors Parcoursup » affiché. |

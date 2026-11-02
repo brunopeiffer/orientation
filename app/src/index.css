@@ -1,0 +1,21 @@
+@import "tailwindcss";
+
+/* Polices système uniquement : aucune police externe (aucun appel réseau tiers). */
+@theme {
+  --font-sans: ui-rounded, "SF Pro Rounded", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+body {
+  @apply min-h-dvh bg-gradient-to-br from-violet-50 via-pink-50 to-amber-50 text-slate-900 antialiased;
+}
+
+/* Focus toujours visible (WCAG 2.4.7 / 2.4.11) */
+:focus-visible {
+  outline: 3px solid var(--color-violet-700);
+  outline-offset: 3px;
+  border-radius: 0.5rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition: none !important; animation: none !important; }
+}

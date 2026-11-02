@@ -1,0 +1,17 @@
+{
+  "_doc": "Publics de l'app. actif:false = prévu mais masqué. Parcours : lycee (Terminale) ou bts (fin de BTS).",
+  "publics": [
+    { "id": "STMG", "libelle": "Terminale STMG", "parcours": "lycee", "actif": true },
+    { "id": "STI2D", "libelle": "Terminale STI2D", "parcours": "lycee", "actif": false },
+    { "id": "ST2S", "libelle": "Terminale ST2S", "parcours": "lycee", "actif": false },
+    { "id": "STL", "libelle": "Terminale STL", "parcours": "lycee", "actif": false },
+    { "id": "STD2A", "libelle": "Terminale STD2A", "parcours": "lycee", "actif": false },
+    { "id": "STHR", "libelle": "Terminale STHR", "parcours": "lycee", "actif": false },
+    { "id": "GENERALE", "libelle": "Terminale générale", "parcours": "lycee", "actif": false },
+    { "id": "BTS_CG", "libelle": "BTS Comptabilité et gestion (CG)", "parcours": "bts", "actif": true },
+    { "id": "BTS_NDRC", "libelle": "BTS Négociation et digitalisation de la relation client (NDRC)", "parcours": "bts", "actif": true },
+    { "id": "BTS_MCO", "libelle": "BTS Management commercial opérationnel (MCO)", "parcours": "bts", "actif": false },
+    { "id": "BTS_GPME", "libelle": "BTS Gestion de la PME", "parcours": "bts", "actif": false },
+    { "id": "BTS_SAM", "libelle": "BTS Support à l'action managériale (SAM)", "parcours": "bts", "actif": false }
+  ]
+}
