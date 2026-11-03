@@ -1,5 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import Accueil from './components/Accueil'
+import Confidentialite from './components/Confidentialite'
+import Formations from './components/Formations'
 import Gouts from './components/Gouts'
 import Metiers from './components/Metiers'
 import ResultatsScolaires from './components/ResultatsScolaires'
@@ -75,6 +77,8 @@ export default function App() {
           <ResultatsScolaires />
         ) : e.id === 'metiers' ? (
           <Metiers />
+        ) : e.id === 'formations' && parcours === 'lycee' ? (
+          <Formations />
         ) : (
           <div className="space-y-6">
             <h1 tabIndex={-1} className="text-2xl font-extrabold text-violet-900 sm:text-3xl">{e.titre}</h1>
@@ -99,6 +103,7 @@ export default function App() {
       </main>
 
       <Sauvegarde />
+      <Confidentialite />
     </div>
   )
 }

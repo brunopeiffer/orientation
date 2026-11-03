@@ -424,5 +424,24 @@ Métiers où « plus de 3 ans d'études » est signalé comme frein : M1211, M12
 
 Grille : chaque contrainte et avantage est-il exact pour TOUS les métiers de la famille ? Rien d'invérifiable (salaire, taux d'emploi) n'est-il affirmé ?
 
-## 5. À venir
+## 5. Formations en lien avec les familles de métiers (`contenu/formations-familles.json`)
+
+Statut : **A_VALIDER** (2026-11-03). Une formation Parcoursup est « en lien » avec une famille si son intitulé ou un de ses parcours contient un des mots-clés (majuscules ignorées). Vérifié par `app/src/formations.test.ts` : chaque famille trouve au moins une formation réelle dans le Grand Est.
+
+- **Comptabilité, gestion, finance** : « BTS - Comptabilité et gestion » ; « DCG -  » ; « BUT - Gestion, entrepreneuriat et management » ; « BUT - Contrôle de gestion » ; « BTS - Gestion de la PME » ; « L1 - Economie et gestion » ; « L1 - Gestion » ; « Gestionnaire comptable » ; « Assistant de gestion et d'administration » ; « Assistant administratif commercial et comptable » ; « écoles de commerce » ; « CPGE - ECT » ; « CUPGE »
+- **Paie et ressources humaines** : « ressources humaines » ; « Gestionnaire de Paie » ; « Gestionnaire paie » ; « BTS - Support à l'action managériale » ; « BTS - Comptabilité et gestion » ; « BUT - Gestion, entrepreneuriat et management » ; « L1 - Administration économique et sociale » ; « L1 - Droit »
+- **Assistanat, administration, secteur public** : « BTS - Support à l'action managériale » ; « BTS - Gestion de la PME » ; « BTS - Collaborateur juriste notarial » ; « L1 - Administration » ; « L1 - Droit » ; « Assistant de direction » ; « Assistant juridique » ; « BUT - Management des fonctions supports » ; « BUT - Entreprise et Association » ; « Assistant de gestion et d'administration »
+- **Banque** : « BTS - Banque » ; « BTS - Négociation et digitalisation » ; « BUT - Business développement » ; « BUT - Gestion, entrepreneuriat et management » ; « L1 - Economie et gestion » ; « L1 - Economie » ; « écoles de commerce »
+- **Assurance et protection sociale** : « BTS - Assurance » ; « BTS - Négociation et digitalisation » ; « BUT - Business développement » ; « L1 - Droit » ; « L1 - Administration économique et sociale »
+- **Immobilier** : « BTS - Professions immobilières » ; « immobili » ; « BTS - Négociation et digitalisation » ; « L1 - Droit »
+- **Vente et relation client entre entreprises** : « BTS - Négociation et digitalisation » ; « BTS - Conseil et commercialisation de solutions techniques » ; « BTS - Commerce International » ; « BUT - Business » ; « Attaché commercial » ; « affaires commerciales » ; « développement commercial » ; « écoles de commerce » ; « L1 - Langues étrangères appliquées »
+- **Vente et relation client à distance** : « BTS - Négociation et digitalisation » ; « BTS - Management Commercial Opérationnel » ; « BUT - Business développement » ; « BUT - Marketing digital » ; « vente à distance » ; « Assistant commercial »
+- **Distribution et management de magasin** : « BTS - Management Commercial Opérationnel » ; « BUT - Marketing et management du point de vente » ; « BUT - Management commercial et marketing omnicanal » ; « Gestionnaire d'unité commerciale » ; « commercial retail » ; « BUT - Business développement »
+- **Marketing, achats, études** : « BUT - Business » ; « BUT - Marketing » ; « BUT - Stratégie de marque » ; « BTS - Commerce International » ; « marketing » ; « écoles de commerce » ; « L1 - Economie et gestion » ; « L1 - Langues étrangères appliquées » ; « CPGE - ECT » ; « CUPGE »
+- **Communication et digital** : « BTS - Communication » ; « BUT - Information communication » ; « BUT - Stratégie de marque et événementiel » ; « L1 - Information et communication » ; « Chargé de communication » ; « Responsable communication » ; « projet communication » ; « BUT - Création numérique » ; « BUT - Développement web et dispositifs interactifs »
+- **Logistique et transport** : « BTS - Gestion des transports et logistique associée » ; « BUT - Organisation et Supply Chain » ; « supply chain » ; « transport et de logistique » ; « BTS - Commerce International »
+
+Grille : manque-t-il une formation importante pour une famille ? Un mot-clé attrape-t-il des formations hors sujet ?
+
+## 6. À venir
 - Liens et dispositifs handicap (M6).

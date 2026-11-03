@@ -21,6 +21,7 @@ App d'aide à l'orientation pour Terminale STMG, BTS CG et BTS NDRC. Le plan et 
 ```bash
 python3 -I etl/rome_candidats.py     # data/metiers.json (lu par l'app) + docs/METIERS-A-VALIDER.md depuis le ROME
 python3 -I etl/poursuites_bt.py      # docs/POURSUITES-A-VALIDER.md depuis Parcoursup
+python3 -I etl/formations.py         # data/formations/<région>.json + index, depuis Parcoursup (offre + statistiques)
 python3 -I etl/contenu_a_valider.py  # docs/CONTENU-A-VALIDER.md depuis contenu/*.json (à relancer après toute modif)
 python3 -I -m unittest discover etl  # tests de l'ETL (échec propre si le ROME change de structure)
 ```
@@ -36,6 +37,7 @@ Les commandes du proxy (`wrangler dev`) arriveront en M6.
 - `app/src/schema.ts` : schémas Zod (état, fichier de sauvegarde). `store.ts` : état Zustand persisté (`orientation-etat`, versionné ; migrations dans `migrate`). `sauvegarde.ts` : export, import, téléchargement. `etapes.ts` : étapes de chaque parcours.
 - M2 : `contenu/gouts.json` (intérêts RIASEC, environnements, valeurs, refus) et `config/matieres.json` (matières par public, notes en tranches) ; logique dans `app/src/gouts.ts`.
 - M3 : `data/metiers.json` est GÉNÉRÉ par l'ETL (ne pas l'éditer à la main) ; profils de familles et fiches réalité dans `contenu/metiers-familles.json` ; matching dans `app/src/metiers.ts` (poids dans `POIDS`).
+- M4 : `data/formations/` GÉNÉRÉ par l'ETL (un fichier par région, chargé à la demande via `import.meta.glob`) ; liens formations ↔ familles dans `contenu/formations-familles.json` ; logique dans `app/src/formations.ts`. Réseau : `app/src/net.ts` + `config/sources.json` (géocodage IGN, commune seulement, `app/src/geocodage.ts`).
 - Toute nouvelle donnée de l'élève : l'ajouter à `EtatSchema`, augmenter `VERSION_ETAT`, écrire la migration et le test.
 
 ## Code

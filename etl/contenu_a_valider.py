@@ -11,6 +11,21 @@ TEST = json.loads((RACINE / "contenu/test-personnalite.json").read_text(encoding
 GOUTS = json.loads((RACINE / "contenu/gouts.json").read_text(encoding="utf-8"))
 MATIERES = json.loads((RACINE / "config/matieres.json").read_text(encoding="utf-8"))
 FAMILLES = json.loads((RACINE / "contenu/metiers-familles.json").read_text(encoding="utf-8"))
+LIENS = json.loads((RACINE / "contenu/formations-familles.json").read_text(encoding="utf-8"))
+
+
+def section_liens():
+    noms = {f["id"]: f["nom"] for f in FAMILLES["familles"]}
+    out = ["## 5. Formations en lien avec les familles de métiers (`contenu/formations-familles.json`)", "",
+           f"Statut : **{LIENS['statut']}** ({LIENS['date']}). Une formation Parcoursup est « en lien » avec une famille "
+           "si son intitulé ou un de ses parcours contient un des mots-clés (majuscules ignorées). "
+           "Vérifié par `app/src/formations.test.ts` : chaque famille trouve au moins une formation réelle dans le Grand Est.",
+           ""]
+    for fid, mots in LIENS["familles"].items():
+        out.append(f"- **{noms.get(fid, fid)}** : " + " ; ".join(f"« {m} »" for m in mots))
+    out += ["", "Grille : manque-t-il une formation importante pour une famille ? Un mot-clé attrape-t-il des formations "
+            "hors sujet ?", ""]
+    return out
 
 
 def section_familles():
@@ -138,7 +153,8 @@ def main():
             "",
             *section_gouts(),
             *section_familles(),
-            "## 5. À venir",
+            *section_liens(),
+            "## 6. À venir",
             "- Liens et dispositifs handicap (M6).", ""]
     (RACINE / "docs/CONTENU-A-VALIDER.md").write_text("\n".join(out), encoding="utf-8")
     print("docs/CONTENU-A-VALIDER.md généré")

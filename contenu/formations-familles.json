@@ -1,0 +1,19 @@
+{
+  "_doc": "Lien entre les familles de métiers (contenu/metiers-familles.json) et les formations Parcoursup. Une formation est « en lien » avec une famille si son intitulé contient un des mots-clés (sans tenir compte des majuscules). Mots-clés tirés des intitulés réels de la cartographie Parcoursup 2026. Rédigé par Claude le 03/11/2026, À VALIDER PAR UN HUMAIN. Une formation absente de ces listes reste visible en décochant « en lien avec mes pistes ».",
+  "statut": "A_VALIDER",
+  "date": "2026-11-03",
+  "familles": {
+    "compta": ["BTS - Comptabilité et gestion", "DCG - ", "BUT - Gestion, entrepreneuriat et management", "BUT - Contrôle de gestion", "BTS - Gestion de la PME", "L1 - Economie et gestion", "L1 - Gestion", "Gestionnaire comptable", "Assistant de gestion et d'administration", "Assistant administratif commercial et comptable", "écoles de commerce", "CPGE - ECT", "CUPGE"],
+    "paie_rh": ["ressources humaines", "Gestionnaire de Paie", "Gestionnaire paie", "BTS - Support à l'action managériale", "BTS - Comptabilité et gestion", "BUT - Gestion, entrepreneuriat et management", "L1 - Administration économique et sociale", "L1 - Droit"],
+    "admin": ["BTS - Support à l'action managériale", "BTS - Gestion de la PME", "BTS - Collaborateur juriste notarial", "L1 - Administration", "L1 - Droit", "Assistant de direction", "Assistant juridique", "BUT - Management des fonctions supports", "BUT - Entreprise et Association", "Assistant de gestion et d'administration"],
+    "banque": ["BTS - Banque", "BTS - Négociation et digitalisation", "BUT - Business développement", "BUT - Gestion, entrepreneuriat et management", "L1 - Economie et gestion", "L1 - Economie", "écoles de commerce"],
+    "assurance": ["BTS - Assurance", "BTS - Négociation et digitalisation", "BUT - Business développement", "L1 - Droit", "L1 - Administration économique et sociale"],
+    "immobilier": ["BTS - Professions immobilières", "immobili", "BTS - Négociation et digitalisation", "L1 - Droit"],
+    "vente_b2b": ["BTS - Négociation et digitalisation", "BTS - Conseil et commercialisation de solutions techniques", "BTS - Commerce International", "BUT - Business", "Attaché commercial", "affaires commerciales", "développement commercial", "écoles de commerce", "L1 - Langues étrangères appliquées"],
+    "vente_distance": ["BTS - Négociation et digitalisation", "BTS - Management Commercial Opérationnel", "BUT - Business développement", "BUT - Marketing digital", "vente à distance", "Assistant commercial"],
+    "magasin": ["BTS - Management Commercial Opérationnel", "BUT - Marketing et management du point de vente", "BUT - Management commercial et marketing omnicanal", "Gestionnaire d'unité commerciale", "commercial retail", "BUT - Business développement"],
+    "marketing": ["BUT - Business", "BUT - Marketing", "BUT - Stratégie de marque", "BTS - Commerce International", "marketing", "écoles de commerce", "L1 - Economie et gestion", "L1 - Langues étrangères appliquées", "CPGE - ECT", "CUPGE"],
+    "communication": ["BTS - Communication", "BUT - Information communication", "BUT - Stratégie de marque et événementiel", "L1 - Information et communication", "Chargé de communication", "Responsable communication", "projet communication", "BUT - Création numérique", "BUT - Développement web et dispositifs interactifs"],
+    "logistique": ["BTS - Gestion des transports et logistique associée", "BUT - Organisation et Supply Chain", "supply chain", "transport et de logistique", "BTS - Commerce International"]
+  }
+}

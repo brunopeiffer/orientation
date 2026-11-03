@@ -1,5 +1,6 @@
 import { z } from 'zod'
 import config from '../../config/publics.json'
+import { CommuneSchema } from './geocodage'
 import { GOUTS, GOUTS_VIDES, MATIERES, SCOLARITE_VIDE } from './gouts'
 import { TEST } from './personnalite'
 
@@ -48,6 +49,18 @@ export const PrenomSchema = z
   .max(PRENOM_MAX, `Ton prénom doit faire ${PRENOM_MAX} caractères au maximum.`)
   .regex(/^(\p{L}[\p{L}' -]*)?$/u, 'Utilise seulement des lettres, des espaces, des tirets ou des apostrophes.')
 
+/** Rayons proposés en km ; null = partout en France. */
+export const RAYONS = [10, 20, 50, 100, 200, null] as const
+
+// Seule la commune est gardée (jamais d'adresse) : nom, code INSEE, code postal et coordonnées de son centre.
+export const MobiliteSchema = z
+  .object({
+    commune: CommuneSchema.nullable(),
+    rayon: z.number().refine((r) => (RAYONS as readonly (number | null)[]).includes(r), 'Rayon inconnu.').nullable(),
+  })
+  .strict()
+export const MOBILITE_INITIALE = { commune: null, rayon: 50 }
+
 export const EtatSchema = z
   .object({
     prenom: PrenomSchema,
@@ -62,21 +75,23 @@ export const EtatSchema = z
       .refine((r) => Object.keys(r).every((id) => ID_QUESTIONS.has(id)), 'Question de personnalité inconnue.'),
     gouts: GoutsSchema,
     scolarite: ScolariteSchema,
+    mobilite: MobiliteSchema,
   })
   .strict()
 
 export type Etat = z.infer<typeof EtatSchema>
 
 export const ETAT_INITIAL: Etat = { prenom: '', publicId: null, etape: 0, avertissementLu: false, personnalite: {},
-  gouts: GOUTS_VIDES, scolarite: SCOLARITE_VIDE }
+  gouts: GOUTS_VIDES, scolarite: SCOLARITE_VIDE, mobilite: MOBILITE_INITIALE }
 
-export const VERSION_ETAT = 3
+export const VERSION_ETAT = 4
 
 /** Fait passer un état d'une ancienne version à la version actuelle (stockage local ou sauvegarde importée). */
 export function migrer(etat: unknown, version: number): unknown {
   let e = etat as Record<string, unknown>
   if (version < 2) e = { ...e, personnalite: {} }
   if (version < 3) e = { ...e, gouts: GOUTS_VIDES, scolarite: SCOLARITE_VIDE }
+  if (version < 4) e = { ...e, mobilite: MOBILITE_INITIALE }
   return e
 }
 

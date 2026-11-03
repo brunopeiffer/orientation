@@ -1,0 +1,13 @@
+{
+  "_doc": "SEULS appels réseau autorisés depuis l'app (app/src/net.ts refuse tout autre hôte). La section Confidentialité de l'app est générée depuis ce fichier. Ajouter une source ici = la documenter pour l'élève.",
+  "sources": [
+    {
+      "id": "geocodage",
+      "nom": "Géocodage de l’IGN (Géoplateforme)",
+      "hote": "data.geopf.fr",
+      "usage": "Trouver les coordonnées de ta commune pour calculer les distances aux formations.",
+      "envoye": "Uniquement ce que tu tapes dans la recherche de commune (nom ou code postal). Jamais ton prénom ni tes réponses.",
+      "licence": "Licence Ouverte Etalab 2.0"
+    }
+  ]
+}

@@ -1,0 +1,239 @@
+{
+ "source": "Parcoursup, ministère de l'Enseignement supérieur : cartographie des formations et statistiques d'admission",
+ "licence": "Licence Ouverte Etalab 2.0",
+ "annee": "2026",
+ "session": "2025",
+ "regions": [
+  {
+   "slug": "autre",
+   "nom": "Autre",
+   "n": 33,
+   "bbox": [
+    -22.2627,
+    -151.451,
+    53.3518,
+    166.4033
+   ]
+  },
+  {
+   "slug": "auvergne-rhone-alpes",
+   "nom": "Auvergne-Rhône-Alpes",
+   "n": 1658,
+   "bbox": [
+    44.3432,
+    2.3399,
+    46.5738,
+    6.7062
+   ]
+  },
+  {
+   "slug": "bourgogne-franche-comte",
+   "nom": "Bourgogne-Franche-Comté",
+   "n": 552,
+   "bbox": [
+    46.3067,
+    2.9264,
+    48.2089,
+    6.8665
+   ]
+  },
+  {
+   "slug": "bretagne",
+   "nom": "Bretagne",
+   "n": 735,
+   "bbox": [
+    47.6442,
+    -4.5666,
+    48.7853,
+    -1.1911
+   ]
+  },
+  {
+   "slug": "centre-val-de-loire",
+   "nom": "Centre-Val de Loire",
+   "n": 440,
+   "bbox": [
+    46.6268,
+    0.2352,
+    48.7358,
+    2.7681
+   ]
+  },
+  {
+   "slug": "corse",
+   "nom": "Corse",
+   "n": 72,
+   "bbox": [
+    41.6226,
+    8.7336,
+    42.7068,
+    9.4528
+   ]
+  },
+  {
+   "slug": "grand-est",
+   "nom": "Grand Est",
+   "n": 1092,
+   "bbox": [
+    47.578,
+    3.7165,
+    49.7896,
+    7.9606
+   ]
+  },
+  {
+   "slug": "guadeloupe",
+   "nom": "Guadeloupe",
+   "n": 124,
+   "bbox": [
+    15.9909,
+    -61.782,
+    16.4175,
+    -61.4507
+   ]
+  },
+  {
+   "slug": "guyane",
+   "nom": "Guyane",
+   "n": 63,
+   "bbox": [
+    3.742,
+    -54.0308,
+    5.6383,
+    -52.1324
+   ]
+  },
+  {
+   "slug": "hauts-de-france",
+   "nom": "Hauts-de-France",
+   "n": 1236,
+   "bbox": [
+    49.042,
+    1.5476,
+    51.0481,
+    4.0824
+   ]
+  },
+  {
+   "slug": "la-reunion",
+   "nom": "La Réunion",
+   "n": 211,
+   "bbox": [
+    -21.3818,
+    55.2653,
+    -20.8841,
+    55.7388
+   ]
+  },
+  {
+   "slug": "martinique",
+   "nom": "Martinique",
+   "n": 119,
+   "bbox": [
+    14.4906,
+    -61.1692,
+    14.8313,
+    -60.855
+   ]
+  },
+  {
+   "slug": "mayotte",
+   "nom": "Mayotte",
+   "n": 46,
+   "bbox": [
+    -12.934,
+    45.051,
+    -12.7034,
+    45.2862
+   ]
+  },
+  {
+   "slug": "normandie",
+   "nom": "Normandie",
+   "n": 617,
+   "bbox": [
+    48.4169,
+    -1.6483,
+    50.0526,
+    1.7802
+   ]
+  },
+  {
+   "slug": "nouvelle-aquitaine",
+   "nom": "Nouvelle-Aquitaine",
+   "n": 1116,
+   "bbox": [
+    43.1837,
+    -1.5552,
+    47.006,
+    2.5044
+   ]
+  },
+  {
+   "slug": "occitanie",
+   "nom": "Occitanie",
+   "n": 1172,
+   "bbox": [
+    42.4852,
+    -0.044,
+    44.8952,
+    4.6238
+   ]
+  },
+  {
+   "slug": "pays-de-la-loire",
+   "nom": "Pays de la Loire",
+   "n": 818,
+   "bbox": [
+    46.4148,
+    -2.3744,
+    48.3174,
+    0.647
+   ]
+  },
+  {
+   "slug": "polynesie-francaise",
+   "nom": "Polynésie française",
+   "n": 68,
+   "bbox": [
+    -17.7395,
+    -149.83,
+    -17.5082,
+    -149.3105
+   ]
+  },
+  {
+   "slug": "provence-alpes-cote-d-azur",
+   "nom": "Provence-Alpes-Côte d'Azur",
+   "n": 955,
+   "bbox": [
+    43.098,
+    4.6256,
+    44.9086,
+    7.5118
+   ]
+  },
+  {
+   "slug": "saint-martin",
+   "nom": "Saint-Martin",
+   "n": 3,
+   "bbox": [
+    18.0696,
+    -63.0776,
+    18.0953,
+    -63.0637
+   ]
+  },
+  {
+   "slug": "ile-de-france",
+   "nom": "Île-de-France",
+   "n": 2533,
+   "bbox": [
+    48.2607,
+    1.6773,
+    49.1423,
+    3.3722
+   ]
+  }
+ ]
+}
