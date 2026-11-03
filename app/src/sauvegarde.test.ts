@@ -1,8 +1,14 @@
 import { beforeEach, describe, expect, it, vi } from 'vitest'
 import { exporter, lireSauvegarde, nomFichier } from './sauvegarde'
+import { GOUTS_VIDES, SCOLARITE_VIDE } from './gouts'
 import { ETAT_INITIAL, type Etat } from './schema'
 
-const etat: Etat = { prenom: 'Léa-Marie', publicId: 'BTS_NDRC', etape: 3, avertissementLu: true, personnalite: { e1: 4, o9: 2 } }
+const etat: Etat = {
+  prenom: 'Léa-Marie', publicId: 'BTS_NDRC', etape: 3, avertissementLu: true, personnalite: { e1: 4, o9: 2 },
+  gouts: { activites: { r1: 0, e1: 2 }, environnements: ['bureau'], valeurs: ['salaire', 'equipe'], refus: ['debout'] },
+  scolarite: { option: null, notes: { ndrc_vente: '14a16', lva: '8a10' }, aimees: ['ndrc_digital'] },
+}
+const NOUVEAU_V3 = { gouts: GOUTS_VIDES, scolarite: SCOLARITE_VIDE }
 
 describe('export / import', () => {
   it('un export relu redonne exactement le même état', () => {
@@ -32,9 +38,31 @@ describe('export / import', () => {
   })
 
   it('migre une sauvegarde de la version 1 (avant le test de personnalité)', () => {
-    const { personnalite: _, ...v1 } = etat
+    const { personnalite: _, gouts: __, scolarite: ___, ...v1 } = etat
     const texte = JSON.stringify({ app: 'orientation', version: 1, exporteLe: '2026-11-02T10:00:00Z', etat: v1 })
-    expect(lireSauvegarde(texte)).toEqual({ ok: true, etat: { ...v1, personnalite: {} } })
+    expect(lireSauvegarde(texte)).toEqual({ ok: true, etat: { ...v1, personnalite: {}, ...NOUVEAU_V3 } })
+  })
+
+  it('migre une sauvegarde de la version 2 (avant les goûts et les notes)', () => {
+    const { gouts: _, scolarite: __, ...v2 } = etat
+    const texte = JSON.stringify({ app: 'orientation', version: 2, exporteLe: '2026-11-02T10:00:00Z', etat: v2 })
+    expect(lireSauvegarde(texte)).toEqual({ ok: true, etat: { ...v2, ...NOUVEAU_V3 } })
+  })
+
+  it('refuse une note exacte, une tranche ou une matière inconnue', () => {
+    for (const notes of [{ lva: '13.5' }, { lva: 'plus20' }, { physique: '12a14' }] as Record<string, string>[]) {
+      expect(lireSauvegarde(exporter({ ...etat, scolarite: { ...etat.scolarite, notes } })).ok).toBe(false)
+    }
+  })
+
+  it('refuse plus de 3 valeurs, un choix en double ou inconnu, un niveau d’intérêt hors échelle', () => {
+    const g = etat.gouts
+    for (const gouts of [
+      { ...g, valeurs: ['salaire', 'equipe', 'utilite', 'defi'] },
+      { ...g, refus: ['debout', 'debout'] },
+      { ...g, environnements: ['lune'] },
+      { ...g, activites: { r1: 3 } },
+    ]) expect(lireSauvegarde(exporter({ ...etat, gouts })).ok).toBe(false)
   })
 
   it('refuse une réponse hors échelle ou une question inconnue', () => {
@@ -68,16 +96,16 @@ describe('stockage local', () => {
   })
 
   it('reprend l’état enregistré au rechargement', async () => {
-    localStorage.setItem('orientation-etat', JSON.stringify({ state: etat, version: 2 }))
+    localStorage.setItem('orientation-etat', JSON.stringify({ state: etat, version: 3 }))
     const { useEtat, etatSeul } = await import('./store')
     expect(etatSeul(useEtat.getState())).toEqual(etat)
   })
 
   it('migre un stockage de la version 1', async () => {
-    const { personnalite: _, ...v1 } = etat
+    const { personnalite: _, gouts: __, scolarite: ___, ...v1 } = etat
     localStorage.setItem('orientation-etat', JSON.stringify({ state: v1, version: 1 }))
     const { useEtat, etatSeul } = await import('./store')
-    expect(etatSeul(useEtat.getState())).toEqual({ ...v1, personnalite: {} })
+    expect(etatSeul(useEtat.getState())).toEqual({ ...v1, personnalite: {}, ...NOUVEAU_V3 })
   })
 
   it('un stockage abîmé ne casse pas l’app', async () => {

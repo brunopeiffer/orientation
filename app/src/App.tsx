@@ -1,5 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import Accueil from './components/Accueil'
+import Gouts from './components/Gouts'
+import ResultatsScolaires from './components/ResultatsScolaires'
 import Sauvegarde from './components/Sauvegarde'
 import TestPersonnalite from './components/TestPersonnalite'
 import { complet } from './personnalite'
@@ -66,6 +68,10 @@ export default function App() {
           <Accueil />
         ) : e.id === 'personnalite' ? (
           <TestPersonnalite key={courante} />
+        ) : e.id === 'gouts' ? (
+          <Gouts />
+        ) : e.id === 'resultats' ? (
+          <ResultatsScolaires />
         ) : (
           <div className="space-y-6">
             <h1 tabIndex={-1} className="text-2xl font-extrabold text-violet-900 sm:text-3xl">{e.titre}</h1>

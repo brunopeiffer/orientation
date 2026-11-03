@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState, type RefObject } from 'react'
 import { acquiescement, complet, scorer, TEST, type ScoreDimension } from '../personnalite'
 import { useEtat } from '../store'
-import { Bouton } from './ui'
+import { Bouton, PUCE } from './ui'
 
 const PAR_PAGE = 6
 const NB_PAGES = Math.ceil(TEST.items.length / PAR_PAGE)
@@ -65,7 +65,7 @@ export default function TestPersonnalite() {
               {TEST.echelle.map((libelle, v) => (
                 <label
                   key={libelle}
-                  className="flex min-h-11 cursor-pointer items-center gap-2 rounded-2xl bg-violet-50 px-3 py-2 text-sm font-medium text-violet-950 ring-2 ring-violet-100 hover:ring-violet-300 has-[:checked]:bg-violet-700 has-[:checked]:text-white has-[:checked]:ring-violet-700 has-[:focus-visible]:outline has-[:focus-visible]:outline-3 has-[:focus-visible]:outline-violet-700 sm:flex-col sm:justify-center sm:text-center"
+                  className={`${PUCE} sm:flex-col sm:justify-center sm:text-center`}
                 >
                   <input
                     type="radio"

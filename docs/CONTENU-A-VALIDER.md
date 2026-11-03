@@ -100,5 +100,125 @@ Profil équilibré : Tu es entre les deux : tu sais t’adapter selon la situati
 - Une réponse est-elle socialement « mieux vue » qu'une autre (biais de désirabilité) ?
 - Les textes de résultats sont-ils bienveillants et sans jugement ?
 
-## 2. À venir
+## 2. Goûts, envies et refus (`contenu/gouts.json`)
+
+Statut : **A_VALIDER**. Échelle : Pas pour moi / Pourquoi pas / J’adore.
+
+### Méthode (vérifiée par `app/src/gouts.test.ts`)
+- 6 types d'intérêts inspirés du modèle RIASEC de Holland, 3 activités par type, présentées en alternant les types.
+- Score de 0 à 100 par type. Un type est « dominant » à partir de 50, 3 au maximum. Si aucun ne ressort, l'app le dit sans juger.
+- Valeurs : 3 au maximum, pour obliger à hiérarchiser. Refus : ne masquent aucune piste, ils produiront un avertissement « Ce qui pourrait te freiner » (M3).
+
+### Types d'intérêts
+
+| Type | Nom affiché | Description |
+|---|---|---|
+| R | Faire | Manipuler, fabriquer, utiliser des outils, être dans le concret et le mouvement. |
+| I | Comprendre | Analyser, chercher, résoudre des problèmes, comprendre comment ça marche. |
+| A | Créer | Imaginer, dessiner, écrire, concevoir des visuels ou des contenus. |
+| S | Aider | Accueillir, conseiller, expliquer, prendre soin des autres. |
+| E | Convaincre | Vendre, négocier, entreprendre, prendre des responsabilités. |
+| C | Organiser | Classer, compter, vérifier, suivre des procédures avec précision. |
+
+### Activités à relire
+
+| # | Type | Activité |
+|---|---|---|
+| r1 | Faire | Monter un meuble ou réparer un objet |
+| i1 | Comprendre | Analyser des chiffres pour comprendre pourquoi les ventes baissent |
+| a1 | Créer | Créer une affiche ou une vidéo pour un réseau social |
+| s1 | Aider | Accueillir des personnes et répondre à leurs questions |
+| e1 | Convaincre | Convaincre un client de choisir ton produit |
+| c1 | Organiser | Tenir un budget ou des comptes à jour |
+| r2 | Faire | Préparer et expédier des commandes dans un entrepôt |
+| i2 | Comprendre | Mener une enquête pour trouver la cause d’un problème |
+| a2 | Créer | Imaginer la décoration d’une vitrine ou d’un stand |
+| s2 | Aider | Aider quelqu’un à se sortir d’une difficulté |
+| e2 | Convaincre | Diriger une équipe sur un projet |
+| c2 | Organiser | Classer et vérifier des documents ou des données |
+| r3 | Faire | Utiliser des outils ou des machines |
+| i3 | Comprendre | Comprendre comment fonctionne une loi ou un marché |
+| a3 | Créer | Écrire des textes, des articles ou des scripts |
+| s3 | Aider | Expliquer une tâche à quelqu’un ou le former |
+| e3 | Convaincre | Lancer ta propre activité ou ton entreprise |
+| c3 | Organiser | Remplir un tableau de suivi avec précision |
+
+### Environnements
+
+- `bureau` : Dans un bureau
+- `boutique` : En magasin, en agence, face aux clients
+- `deplacements` : En déplacement, sur la route
+- `exterieur` : En extérieur
+- `teletravail` : Avec du télétravail possible
+- `grande_structure` : Dans une grande entreprise
+- `petite_structure` : Dans une petite structure
+- `service_public` : Dans le service public
+- `association` : Dans une association
+- `international` : Avec de l’international
+
+### Valeurs (3 au maximum)
+
+- `salaire` : Bien gagner ma vie
+- `stabilite` : Avoir un emploi stable
+- `utilite` : Être utile aux autres
+- `autonomie` : Être autonome
+- `creativite` : Être créatif(ve)
+- `equipe` : Travailler en équipe
+- `evolution` : Évoluer, prendre des responsabilités
+- `equilibre` : Avoir du temps pour ma vie perso
+- `defi` : Relever des défis, atteindre des objectifs
+- `contact` : Rencontrer beaucoup de monde
+
+### Refus
+
+- `horaires_decales` : Travailler le soir, le week-end ou en horaires décalés
+- `debout` : Rester debout toute la journée
+- `chiffres` : Manipuler des chiffres toute la journée
+- `objectifs_vente` : Avoir des objectifs de vente à atteindre
+- `telephone` : Passer la journée au téléphone
+- `deplacements` : Me déplacer souvent
+- `seul` : Travailler souvent seul(e)
+- `ecran` : Rester devant un écran toute la journée
+- `etudes_longues` : Faire plus de 3 ans d’études après le bac
+- `demenager` : Déménager loin de chez moi
+
+## 3. Matières par public (`config/matieres.json`)
+
+Statut : **A_VALIDER**. Tranches : Moins de 8 / 8 à 10 / 10 à 12 / 12 à 14 / 14 à 16 / 16 et plus. Une matière est un « point d'appui » à partir de 12 ou si l'élève l'aime.
+
+**STMG**
+- Ton enseignement spécifique de Terminale : Gestion et finance / Mercatique (marketing) / Ressources humaines et communication / Systèmes d’information de gestion
+- `mgn` : Management, sciences de gestion et numérique
+- `droit_eco` : Droit et économie
+- `maths` : Mathématiques
+- `philo` : Philosophie
+- `francais` : Français (épreuves de Première)
+- `histoire_geo` : Histoire-géographie
+- `lva` : Langue vivante A (souvent l’anglais)
+- `lvb` : Langue vivante B
+- `eps` : Éducation physique et sportive
+
+**BTS_CG**
+- `cg_compta` : Comptabilité : opérations courantes et inventaire
+- `cg_fiscal` : Fiscalité
+- `cg_social` : Gestion sociale et paie
+- `cg_prevision` : Analyse et prévision de l’activité (contrôle de gestion)
+- `cg_financier` : Analyse de la situation financière
+- `cg_si` : Systèmes d’information comptables (tableur, PGI)
+- `cejm` : Culture économique, juridique et managériale (CEJM)
+- `maths` : Mathématiques appliquées
+- `cge` : Culture générale et expression
+- `lva` : Langue vivante (anglais)
+
+**BTS_NDRC**
+- `ndrc_vente` : Relation client et négociation-vente
+- `ndrc_digital` : Relation client à distance et digitalisation
+- `ndrc_reseau` : Relation client et animation de réseaux
+- `cejm` : Culture économique, juridique et managériale (CEJM)
+- `cge` : Culture générale et expression
+- `lva` : Langue vivante (anglais)
+
+Grille : les libellés correspondent-ils au référentiel en vigueur et au vocabulaire des élèves ?
+
+## 4. À venir
 - Fiches « réalité du métier » (M3), liens et dispositifs handicap (M6).

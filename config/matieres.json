@@ -1,0 +1,60 @@
+{
+  "_doc": "Matières demandées à chaque public (clé = id de config/publics.json). Ajouter un public ici suffit : aucun code à changer. 'option' = choix facultatif posé avant les matières. Libellés À VALIDER par un enseignant de la filière. Les notes ne sont jamais exactes : l'élève choisit une tranche.",
+  "statut": "A_VALIDER",
+  "tranches": [
+    { "id": "moins8", "libelle": "Moins de 8", "forte": false },
+    { "id": "8a10", "libelle": "8 à 10", "forte": false },
+    { "id": "10a12", "libelle": "10 à 12", "forte": false },
+    { "id": "12a14", "libelle": "12 à 14", "forte": true },
+    { "id": "14a16", "libelle": "14 à 16", "forte": true },
+    { "id": "plus16", "libelle": "16 et plus", "forte": true }
+  ],
+  "publics": {
+    "STMG": {
+      "option": {
+        "question": "Ton enseignement spécifique de Terminale",
+        "choix": [
+          { "id": "GF", "libelle": "Gestion et finance" },
+          { "id": "MER", "libelle": "Mercatique (marketing)" },
+          { "id": "RHC", "libelle": "Ressources humaines et communication" },
+          { "id": "SIG", "libelle": "Systèmes d’information de gestion" }
+        ]
+      },
+      "matieres": [
+        { "id": "mgn", "libelle": "Management, sciences de gestion et numérique" },
+        { "id": "droit_eco", "libelle": "Droit et économie" },
+        { "id": "maths", "libelle": "Mathématiques" },
+        { "id": "philo", "libelle": "Philosophie" },
+        { "id": "francais", "libelle": "Français (épreuves de Première)" },
+        { "id": "histoire_geo", "libelle": "Histoire-géographie" },
+        { "id": "lva", "libelle": "Langue vivante A (souvent l’anglais)" },
+        { "id": "lvb", "libelle": "Langue vivante B" },
+        { "id": "eps", "libelle": "Éducation physique et sportive" }
+      ]
+    },
+    "BTS_CG": {
+      "matieres": [
+        { "id": "cg_compta", "libelle": "Comptabilité : opérations courantes et inventaire" },
+        { "id": "cg_fiscal", "libelle": "Fiscalité" },
+        { "id": "cg_social", "libelle": "Gestion sociale et paie" },
+        { "id": "cg_prevision", "libelle": "Analyse et prévision de l’activité (contrôle de gestion)" },
+        { "id": "cg_financier", "libelle": "Analyse de la situation financière" },
+        { "id": "cg_si", "libelle": "Systèmes d’information comptables (tableur, PGI)" },
+        { "id": "cejm", "libelle": "Culture économique, juridique et managériale (CEJM)" },
+        { "id": "maths", "libelle": "Mathématiques appliquées" },
+        { "id": "cge", "libelle": "Culture générale et expression" },
+        { "id": "lva", "libelle": "Langue vivante (anglais)" }
+      ]
+    },
+    "BTS_NDRC": {
+      "matieres": [
+        { "id": "ndrc_vente", "libelle": "Relation client et négociation-vente" },
+        { "id": "ndrc_digital", "libelle": "Relation client à distance et digitalisation" },
+        { "id": "ndrc_reseau", "libelle": "Relation client et animation de réseaux" },
+        { "id": "cejm", "libelle": "Culture économique, juridique et managériale (CEJM)" },
+        { "id": "cge", "libelle": "Culture générale et expression" },
+        { "id": "lva", "libelle": "Langue vivante (anglais)" }
+      ]
+    }
+  }
+}
