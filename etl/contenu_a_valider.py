@@ -13,6 +13,24 @@ MATIERES = json.loads((RACINE / "config/matieres.json").read_text(encoding="utf-
 FAMILLES = json.loads((RACINE / "contenu/metiers-familles.json").read_text(encoding="utf-8"))
 LIENS = json.loads((RACINE / "contenu/formations-familles.json").read_text(encoding="utf-8"))
 POURSUITES = json.loads((RACINE / "contenu/poursuites-bts.json").read_text(encoding="utf-8"))
+NAF = json.loads((RACINE / "contenu/entreprises-naf.json").read_text(encoding="utf-8"))
+HANDICAP = json.loads((RACINE / "contenu/handicap.json").read_text(encoding="utf-8"))
+
+
+def section_m6():
+    noms = {f["id"]: f["nom"] for f in FAMILLES["familles"]}
+    out = ["## 7. Entreprises : codes d'activité par famille (`contenu/entreprises-naf.json`)", "",
+           f"Statut : **{NAF['statut']}** ({NAF['date']}). Ces codes NAF servent à chercher des entreprises proches "
+           "(API Recherche d'entreprises). Beaucoup de métiers existent aussi dans d'autres secteurs : l'app le dit.", ""]
+    for fid, codes in NAF["familles"].items():
+        out.append(f"- **{noms.get(fid, fid)}** : " + " ; ".join(f"{c} {NAF['libelles'][c]}" for c in codes))
+    out += ["", "## 8. Module handicap (`contenu/handicap.json`)", "",
+            f"Statut : **{HANDICAP['statut']}** ({HANDICAP['date']}). Facultatif, gardé dans le navigateur, absent de "
+            "toute requête réseau (vérifié par `app/e2e/m6.spec.ts`). Relecture conseillée par un référent handicap.", ""]
+    for s in HANDICAP["sujets"]:
+        out += [f"### {s['titre']}", *[f"- {p}" for p in s["points"]],
+                "- Liens : " + " ; ".join(f"[{l['texte']}]({l['url']})" for l in s["liens"]), ""]
+    return out
 
 
 def section_poursuites():
@@ -175,8 +193,9 @@ def main():
             *section_familles(),
             *section_liens(),
             *section_poursuites(),
-            "## 7. À venir",
-            "- Liens et dispositifs handicap (M6).", ""]
+            *section_m6(),
+            "## 9. À venir",
+            "- Textes de la synthèse imprimable (M7).", ""]
     (RACINE / "docs/CONTENU-A-VALIDER.md").write_text("\n".join(out), encoding="utf-8")
     print("docs/CONTENU-A-VALIDER.md généré")
 

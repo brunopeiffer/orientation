@@ -8,6 +8,22 @@
       "usage": "Trouver les coordonnées de ta commune pour calculer les distances aux formations.",
       "envoye": "Uniquement ce que tu tapes dans la recherche de commune (nom ou code postal). Jamais ton prénom ni tes réponses.",
       "licence": "Licence Ouverte Etalab 2.0"
+    },
+    {
+      "id": "entreprises",
+      "nom": "Recherche d’entreprises (État, annuaire-entreprises.data.gouv.fr)",
+      "hote": "recherche-entreprises.api.gouv.fr",
+      "usage": "Trouver des entreprises proches de chez toi dans les secteurs de tes pistes métiers, quand tu cliques sur « Chercher ».",
+      "envoye": "Les coordonnées du centre de ta commune (arrondies à environ 1 km), la distance et des codes d’activité (ex. 69.20Z). Jamais ton prénom, tes réponses ni une éventuelle situation de handicap.",
+      "licence": "Licence Ouverte Etalab 2.0"
+    },
+    {
+      "id": "proxy",
+      "nom": "Relais de l’app pour La bonne alternance (Cloudflare)",
+      "hote": "",
+      "usage": "Chercher des offres en alternance sur La bonne alternance, quand tu cliques sur « Chercher ». Le relais garde secrète la clé de l’app et ne conserve aucun journal.",
+      "envoye": "Les coordonnées du centre de ta commune (arrondies à environ 1 km), la distance et les codes des métiers recherchés (ex. M1203). Jamais ton prénom, tes réponses ni une éventuelle situation de handicap.",
+      "licence": "Contenus de La bonne alternance : Licence Ouverte Etalab 2.0"
     }
   ]
 }

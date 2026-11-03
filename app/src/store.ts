@@ -36,7 +36,7 @@ export const useEtat = create<Etat & Actions>()(
   ),
 )
 
-const etatBrut = ({ prenom, publicId, etape, avertissementLu, personnalite, gouts, scolarite, mobilite }: Etat & Actions): Etat =>
-  ({ prenom, publicId, etape, avertissementLu, personnalite, gouts, scolarite, mobilite })
+const etatBrut = ({ prenom, publicId, etape, avertissementLu, personnalite, gouts, scolarite, mobilite, handicap }: Etat & Actions): Etat =>
+  ({ prenom, publicId, etape, avertissementLu, personnalite, gouts, scolarite, mobilite, handicap })
 
 export const etatSeul = (s: Etat & Actions): Etat => EtatSchema.parse(etatBrut(s))

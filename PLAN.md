@@ -42,9 +42,9 @@ monprojetsup (MIT) sert de référence de modélisation (formations ↔ métiers
 | Cartographie Parcoursup | idem | Etalab 2.0 | 2020→2026 ; `app` (apprentissage), `int` (internat), `code_formation`. DCG présent, licences pro quasi absentes (29). |
 | ROME (France Travail) | xlsx en téléchargement libre | Licence Ouverte | Octobre 2026 ; codes, fiches, appellations, arborescence par centres d'intérêt. |
 | Géocodage IGN `data.geopf.fr/geocodage` | public, sans clé | Etalab 2.0 | Remplace `api-adresse.data.gouv.fr` (dépréciée, fin 31/01/2026). Recherche `type=municipality` seulement. |
-| Recherche d'entreprises | public, sans clé | à confirmer (M6) | `near_point` + `activite_principale` (NAF) + rayon OK. Limites de débit à vérifier. |
-| La bonne alternance | clé API (compte développeur) | contenu Etalab 2.0 | CGU : jeton strictement secret → proxy. Routes à documenter une fois le compte créé. |
-| France Travail Offres d'emploi | OAuth2 via francetravail.io | — | Code du filtre alternance (`natureContrat`) à lire dans le référentiel de l'API, pas supposé. |
+| Recherche d'entreprises | public, sans clé, CORS ouvert | Licence Ouverte Etalab 2.0 | `near_point` : rayon ≤ 50 km, 25 résultats par page, plusieurs codes NAF séparés par des virgules (vérifié 03/11/2026). Appelée **directement par le navigateur** : la limite de débit est par IP, un proxy unique la saturerait. |
+| La bonne alternance | clé API (compte développeur) | contenu Etalab 2.0 | Route vérifiée dans le code source officiel : `GET /api/job/v1/search` (latitude, longitude, radius, romes), `Authorization: Bearer`, 60 appels/min. Centralise les offres France Travail, Indeed, Monster… → via le proxy (clé secrète, cache 1 h). |
+| France Travail Offres d'emploi | OAuth2 via francetravail.io | — | **Non branché en M6** : ses offres en alternance sont déjà dans La bonne alternance, et ses noms de paramètres ne sont pas vérifiables sans compte. À ajouter au proxy si besoin, après lecture du référentiel. |
 | Onisep (Idéo-*) | **indisponible** | ODbL | Fiches métiers, actions de formation du sup. Intégration différée. |
 | InserJeunes | à vérifier (M5) | — | Insertion BTS ; données parfois incomplètes, à signaler. |
 

@@ -97,7 +97,8 @@ describe('réseau', () => {
     await expect(obtenirJson('https://exemple.com/x')).rejects.toThrow(/refusé/)
     await expect(obtenirJson('http://data.geopf.fr/x')).rejects.toThrow(/refusé/)
     expect(fetch).not.toHaveBeenCalled()
-    expect(SOURCES.map((s) => s.hote)).toEqual(['data.geopf.fr'])
+    // Sans VITE_PROXY_URL (tests), le proxy n'est ni autorisé ni affiché.
+    expect(SOURCES.map((s) => s.hote)).toEqual(['data.geopf.fr', 'recherche-entreprises.api.gouv.fr'])
   })
 
   it('la recherche de commune n’envoie que le texte tapé, sans cookie ni référent', async () => {

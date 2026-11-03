@@ -34,11 +34,17 @@ jobs:
           cache-dependency-path: app/package-lock.json
       - run: python3 -I -m unittest discover etl
         working-directory: .
+      - run: npm ci && npm test && npm run check
+        working-directory: proxy
       - run: npm ci
       - run: npm test
       - run: npx playwright install --with-deps chromium
       - run: npm run e2e
+      # Adresse PUBLIQUE du proxy (Settings > Secrets and variables > Actions > Variables > PROXY_URL).
+      # Vide = l'app fonctionne en mode dégradé (liens préremplis vers La bonne alternance).
       - run: npm run build
+        env:
+          VITE_PROXY_URL: ${{ vars.PROXY_URL }}
       - uses: actions/upload-pages-artifact@v3
         if: github.ref == 'refs/heads/main'
         with: { path: app/dist }

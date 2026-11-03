@@ -1,0 +1,49 @@
+{
+  "_doc": "Module handicap (opt-in). Ces informations restent dans le navigateur : AUCUNE requête réseau ne dépend de ce module (test Playwright). Rédigé par Claude le 03/11/2026 à partir des sources officielles citées, À VALIDER PAR UN HUMAIN (référent handicap de l'établissement si possible).",
+  "statut": "A_VALIDER",
+  "date": "2026-11-03",
+  "sujets": [
+    {
+      "id": "etudes",
+      "titre": "Mes études et Parcoursup",
+      "points": [
+        "Chaque formation sur Parcoursup indique un référent handicap : tu peux le contacter avant de faire tes vœux pour parler accessibilité et aménagements.",
+        "Sur Parcoursup, une fiche de liaison handicap (facultative) te permet de décrire les aménagements dont tu as besoin. Déclarer ton handicap n’est pas obligatoire.",
+        "Aucun établissement ne peut refuser ton inscription en raison de ton handicap. Sans proposition d’admission, tu peux demander un réexamen à la commission d’accès à l’enseignement supérieur (CAES) de ton académie."
+      ],
+      "liens": [{ "texte": "S’inscrire sur Parcoursup avec un handicap (Mon Parcours Handicap)", "url": "https://www.monparcourshandicap.gouv.fr/etudes-superieures/comment-sinscrire-parcoursup-avec-un-handicap" }]
+    },
+    {
+      "id": "amenagements",
+      "titre": "Aménagements pendant les études et aux examens",
+      "points": [
+        "Dans l’enseignement supérieur, adresse-toi au service ou référent handicap de ton établissement pour les aménagements d’études et d’examens."
+      ],
+      "liens": [
+        { "texte": "Interlocuteurs et démarches pour les aménagements (Mon Parcours Handicap)", "url": "https://www.monparcourshandicap.gouv.fr/etudes-superieures/quels-interlocuteurs-et-procedures-pour-beneficier-damenagements-dans-0" },
+        { "texte": "Aménagements aux concours et examens (Mon Parcours Handicap)", "url": "https://www.monparcourshandicap.gouv.fr/etudes-superieures/quels-sont-les-amenagements-possibles-pour-les-concours-et-examens" }
+      ]
+    },
+    {
+      "id": "rqth",
+      "titre": "La RQTH (reconnaissance de la qualité de travailleur handicapé)",
+      "points": [
+        "La RQTH se demande à la MDPH de ton département, à partir de 16 ans (15 ans si tu commences un apprentissage). C’est une démarche personnelle : un employeur ne peut pas la faire à ta place.",
+        "Elle donne accès à des aménagements de poste et à des dispositifs d’insertion. Tu n’es pas obligé(e) d’en informer ton employeur."
+      ],
+      "liens": [{ "texte": "La RQTH (Service-Public)", "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F1650" }]
+    },
+    {
+      "id": "alternance",
+      "titre": "L’alternance",
+      "points": [
+        "L’Agefiph peut verser une aide à l’employeur qui t’embauche en contrat d’apprentissage (jusqu’à 3 000 € selon la durée du contrat) : c’est un argument à donner aux entreprises.",
+        "Pour les questions de poste et d’emploi, Mon Parcours Handicap regroupe les démarches et les contacts."
+      ],
+      "liens": [
+        { "texte": "Aide à l’embauche en contrat d’apprentissage (Agefiph)", "url": "https://www.agefiph.fr/aides-handicap/aide-lembauche-en-contrat-dapprentissage" },
+        { "texte": "Emploi et vie professionnelle (Mon Parcours Handicap)", "url": "https://www.monparcourshandicap.gouv.fr/emploi" }
+      ]
+    }
+  ]
+}

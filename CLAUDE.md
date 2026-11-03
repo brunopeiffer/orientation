@@ -31,7 +31,7 @@ git config core.hooksPath .githooks  # une fois après le clone : active le hook
 cd app && npm install                # puis : npm run dev | npm test | npm run e2e | npm run build
 npx playwright install chromium      # une fois, pour npm run e2e (ou PW_CHANNEL=chrome npm run e2e avec le Chrome installé)
 ```
-Les commandes du proxy (`wrangler dev`) arriveront en M6.
+Proxy : `cd proxy && npm install && npm test` (tests) ; déploiement et clé : voir README.md (`wrangler secret put LBA_TOKEN`, jamais de clé dans un fichier).
 
 ## Structure
 - `config/publics.json` : les publics (et `actif`). Config en JSON plutôt qu'en YAML : lisible par l'app et par l'ETL Python sans dépendance.
@@ -40,6 +40,7 @@ Les commandes du proxy (`wrangler dev`) arriveront en M6.
 - M3 : `data/metiers.json` est GÉNÉRÉ par l'ETL (ne pas l'éditer à la main) ; profils de familles et fiches réalité dans `contenu/metiers-familles.json` ; matching dans `app/src/metiers.ts` (poids dans `POIDS`).
 - M4 : `data/formations/` GÉNÉRÉ par l'ETL (un fichier par région, chargé à la demande via `import.meta.glob`) ; liens formations ↔ familles dans `contenu/formations-familles.json` ; logique dans `app/src/formations.ts`. Réseau : `app/src/net.ts` + `config/sources.json` (géocodage IGN, commune seulement, `app/src/geocodage.ts`).
 - M5 : parcours BTS. Voies et canaux de candidature dans `contenu/poursuites-bts.json` (À VALIDER chaque année) ; offres localisées `data/post-bts.json` GÉNÉRÉ par l'ETL ; logique `app/src/postbts.ts`, écran `components/PostBts.tsx`.
+- M6 : `proxy/` (Cloudflare Worker : CORS, limite de débit, cache 1 h, aucun journal ; seule source à clé : La bonne alternance, qui inclut les offres France Travail). Recherche d'entreprises appelée directement par le navigateur (API publique, limite par IP). `app/src/alternance.ts`, écrans `Alternance.tsx` et `Handicap.tsx`. La donnée handicap ne sort JAMAIS du navigateur (test `e2e/m6.spec.ts`).
 - Toute nouvelle donnée de l'élève : l'ajouter à `EtatSchema`, augmenter `VERSION_ETAT`, écrire la migration et le test.
 
 ## Code

@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import Accueil from './components/Accueil'
+import Alternance from './components/Alternance'
 import Confidentialite from './components/Confidentialite'
 import Formations from './components/Formations'
 import Gouts from './components/Gouts'
@@ -82,6 +83,8 @@ export default function App() {
           <Formations />
         ) : e.id === 'formations' && parcours === 'bts' ? (
           <PostBts />
+        ) : e.id === 'alternance' ? (
+          <Alternance />
         ) : (
           <div className="space-y-6">
             <h1 tabIndex={-1} className="text-2xl font-extrabold text-violet-900 sm:text-3xl">{e.titre}</h1>

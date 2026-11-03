@@ -10,5 +10,9 @@ export default defineConfig({
     { name: 'mobile', use: { ...devices['Pixel 7'], channel } },
     { name: 'ordinateur', use: { ...devices['Desktop Chrome'], channel } },
   ],
-  webServer: { command: 'npx vite --port 5180 --strictPort', url: 'http://localhost:5180', reuseExistingServer: true },
+  // Proxy fictif : les tests simulent ses réponses (page.route), aucun appel ne part vraiment.
+  webServer: {
+    command: 'npx vite --port 5180 --strictPort', url: 'http://localhost:5180', reuseExistingServer: false,
+    env: { VITE_PROXY_URL: 'https://proxy.test' },
+  },
 })

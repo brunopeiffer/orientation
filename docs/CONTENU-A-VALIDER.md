@@ -514,5 +514,46 @@ Statut : **A_VALIDER** (2026-11-03). Les canaux et calendriers changent chaque a
 
 Grille : chaque canal est-il exact cette année ? Manque-t-il une poursuite fréquente pour tes étudiants ?
 
-## 7. À venir
-- Liens et dispositifs handicap (M6).
+## 7. Entreprises : codes d'activité par famille (`contenu/entreprises-naf.json`)
+
+Statut : **A_VALIDER** (2026-11-03). Ces codes NAF servent à chercher des entreprises proches (API Recherche d'entreprises). Beaucoup de métiers existent aussi dans d'autres secteurs : l'app le dit.
+
+- **Comptabilité, gestion, finance** : 69.20Z Activités comptables ; 70.22Z Conseil pour les affaires et autres conseils de gestion
+- **Paie et ressources humaines** : 69.20Z Activités comptables ; 78.10Z Activités des agences de placement de main-d’œuvre ; 78.20Z Activités des agences de travail temporaire ; 70.22Z Conseil pour les affaires et autres conseils de gestion
+- **Assistanat, administration, secteur public** : 84.11Z Administration publique générale ; 82.11Z Services administratifs combinés de bureau ; 70.10Z Activités des sièges sociaux
+- **Banque** : 64.19Z Autres intermédiations monétaires (banques) ; 66.19B Autres activités auxiliaires de services financiers
+- **Assurance et protection sociale** : 65.11Z Assurance vie ; 65.12Z Autres assurances ; 66.21Z Évaluation des risques et dommages ; 66.22Z Activités des agents et courtiers d’assurances
+- **Immobilier** : 68.31Z Agences immobilières ; 68.32A Administration d’immeubles et autres biens immobiliers
+- **Vente et relation client entre entreprises** : 46.18Z Intermédiaires spécialisés du commerce de gros ; 46.19A Centrales d’achat alimentaires ; 46.19B Autres intermédiaires du commerce en produits divers ; 46.69B Commerce de gros de fournitures et équipements industriels divers ; 46.90Z Commerce de gros non spécialisé
+- **Vente et relation client à distance** : 47.91A Vente à distance sur catalogue général ; 47.91B Vente à distance sur catalogue spécialisé ; 82.20Z Activités de centres d’appels
+- **Distribution et management de magasin** : 47.11D Supermarchés ; 47.11F Hypermarchés ; 47.19B Autres commerces de détail en magasin non spécialisé ; 47.71Z Commerce de détail d’habillement en magasin spécialisé ; 47.54Z Commerce de détail d’appareils électroménagers en magasin spécialisé
+- **Marketing, achats, études** : 73.11Z Activités des agences de publicité ; 73.20Z Études de marché et sondages ; 70.21Z Conseil en relations publiques et communication
+- **Communication et digital** : 73.11Z Activités des agences de publicité ; 73.12Z Régie publicitaire de médias ; 70.21Z Conseil en relations publiques et communication
+- **Logistique et transport** : 52.10B Entreposage et stockage non frigorifique ; 52.29A Messagerie, fret express ; 52.29B Affrètement et organisation des transports ; 49.41A Transports routiers de fret interurbains
+
+## 8. Module handicap (`contenu/handicap.json`)
+
+Statut : **A_VALIDER** (2026-11-03). Facultatif, gardé dans le navigateur, absent de toute requête réseau (vérifié par `app/e2e/m6.spec.ts`). Relecture conseillée par un référent handicap.
+
+### Mes études et Parcoursup
+- Chaque formation sur Parcoursup indique un référent handicap : tu peux le contacter avant de faire tes vœux pour parler accessibilité et aménagements.
+- Sur Parcoursup, une fiche de liaison handicap (facultative) te permet de décrire les aménagements dont tu as besoin. Déclarer ton handicap n’est pas obligatoire.
+- Aucun établissement ne peut refuser ton inscription en raison de ton handicap. Sans proposition d’admission, tu peux demander un réexamen à la commission d’accès à l’enseignement supérieur (CAES) de ton académie.
+- Liens : [S’inscrire sur Parcoursup avec un handicap (Mon Parcours Handicap)](https://www.monparcourshandicap.gouv.fr/etudes-superieures/comment-sinscrire-parcoursup-avec-un-handicap)
+
+### Aménagements pendant les études et aux examens
+- Dans l’enseignement supérieur, adresse-toi au service ou référent handicap de ton établissement pour les aménagements d’études et d’examens.
+- Liens : [Interlocuteurs et démarches pour les aménagements (Mon Parcours Handicap)](https://www.monparcourshandicap.gouv.fr/etudes-superieures/quels-interlocuteurs-et-procedures-pour-beneficier-damenagements-dans-0) ; [Aménagements aux concours et examens (Mon Parcours Handicap)](https://www.monparcourshandicap.gouv.fr/etudes-superieures/quels-sont-les-amenagements-possibles-pour-les-concours-et-examens)
+
+### La RQTH (reconnaissance de la qualité de travailleur handicapé)
+- La RQTH se demande à la MDPH de ton département, à partir de 16 ans (15 ans si tu commences un apprentissage). C’est une démarche personnelle : un employeur ne peut pas la faire à ta place.
+- Elle donne accès à des aménagements de poste et à des dispositifs d’insertion. Tu n’es pas obligé(e) d’en informer ton employeur.
+- Liens : [La RQTH (Service-Public)](https://www.service-public.gouv.fr/particuliers/vosdroits/F1650)
+
+### L’alternance
+- L’Agefiph peut verser une aide à l’employeur qui t’embauche en contrat d’apprentissage (jusqu’à 3 000 € selon la durée du contrat) : c’est un argument à donner aux entreprises.
+- Pour les questions de poste et d’emploi, Mon Parcours Handicap regroupe les démarches et les contacts.
+- Liens : [Aide à l’embauche en contrat d’apprentissage (Agefiph)](https://www.agefiph.fr/aides-handicap/aide-lembauche-en-contrat-dapprentissage) ; [Emploi et vie professionnelle (Mon Parcours Handicap)](https://www.monparcourshandicap.gouv.fr/emploi)
+
+## 9. À venir
+- Textes de la synthèse imprimable (M7).

@@ -1,5 +1,6 @@
 import { z } from 'zod'
 import config from '../../config/publics.json'
+import handicap from '../../contenu/handicap.json'
 import { CommuneSchema } from './geocodage'
 import { GOUTS, GOUTS_VIDES, MATIERES, SCOLARITE_VIDE } from './gouts'
 import { TEST } from './personnalite'
@@ -61,6 +62,16 @@ export const MobiliteSchema = z
   .strict()
 export const MOBILITE_INITIALE = { commune: null, rayon: 50 }
 
+const ID_SUJETS_HANDICAP = new Set(handicap.sujets.map((s) => s.id))
+// Module handicap : facultatif, gardé dans ce navigateur seulement, jamais utilisé dans une requête réseau.
+export const HandicapSchema = z
+  .object({
+    actif: z.boolean(),
+    sujets: z.array(z.string()).refine((l) => new Set(l).size === l.length && l.every((x) => ID_SUJETS_HANDICAP.has(x)), 'Sujet inconnu ou en double.'),
+  })
+  .strict()
+export const HANDICAP_INITIAL = { actif: false, sujets: [] as string[] }
+
 export const EtatSchema = z
   .object({
     prenom: PrenomSchema,
@@ -76,15 +87,16 @@ export const EtatSchema = z
     gouts: GoutsSchema,
     scolarite: ScolariteSchema,
     mobilite: MobiliteSchema,
+    handicap: HandicapSchema,
   })
   .strict()
 
 export type Etat = z.infer<typeof EtatSchema>
 
 export const ETAT_INITIAL: Etat = { prenom: '', publicId: null, etape: 0, avertissementLu: false, personnalite: {},
-  gouts: GOUTS_VIDES, scolarite: SCOLARITE_VIDE, mobilite: MOBILITE_INITIALE }
+  gouts: GOUTS_VIDES, scolarite: SCOLARITE_VIDE, mobilite: MOBILITE_INITIALE, handicap: HANDICAP_INITIAL }
 
-export const VERSION_ETAT = 4
+export const VERSION_ETAT = 5
 
 /** Fait passer un état d'une ancienne version à la version actuelle (stockage local ou sauvegarde importée). */
 export function migrer(etat: unknown, version: number): unknown {
@@ -92,6 +104,7 @@ export function migrer(etat: unknown, version: number): unknown {
   if (version < 2) e = { ...e, personnalite: {} }
   if (version < 3) e = { ...e, gouts: GOUTS_VIDES, scolarite: SCOLARITE_VIDE }
   if (version < 4) e = { ...e, mobilite: MOBILITE_INITIALE }
+  if (version < 5) e = { ...e, handicap: HANDICAP_INITIAL }
   return e
 }
 

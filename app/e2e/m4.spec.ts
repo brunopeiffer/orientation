@@ -75,6 +75,7 @@ test('formations : commune, distances estimées, chances d’accès prudentes, f
 test('la page Confidentialité liste exactement les services contactés', async ({ page }) => {
   await demarrer(page)
   await page.getByText('Confidentialité : ce qui sort de ton appareil').click()
-  await expect(page.getByText('(data.geopf.fr)')).toBeVisible()
-  await expect(page.getByText(/Jamais ton prénom/)).toBeVisible()
+  // Liste générée depuis config/sources.json : chaque service indique ce qui lui est envoyé, jamais le prénom.
+  for (const hote of ['data.geopf.fr', 'recherche-entreprises.api.gouv.fr', 'proxy.test']) await expect(page.getByText(`(${hote})`)).toBeVisible()
+  await expect(page.getByText(/Jamais ton prénom/)).toHaveCount(3)
 })
