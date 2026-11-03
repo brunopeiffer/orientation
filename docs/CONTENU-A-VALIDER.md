@@ -220,5 +220,209 @@ Statut : **A_VALIDER**. Tranches : Moins de 8 / 8 à 10 / 10 à 12 / 12 à 14 / 
 
 Grille : les libellés correspondent-ils au référentiel en vigueur et au vocabulaire des élèves ?
 
-## 4. À venir
-- Fiches « réalité du métier » (M3), liens et dispositifs handicap (M6).
+## 4. Familles de métiers et fiches « réalité » (`contenu/metiers-familles.json`)
+
+Statut : **A_VALIDER** (2026-11-03). Source affichée : Rédaction à partir des fiches ROME de chaque famille (France Travail, octobre 2026). À relire par un professionnel de l’orientation.
+
+### Méthode du matching (vérifiée par `app/src/metiers.test.ts`)
+- Score sur 100 = intérêts 40 %, cadre de travail et valeurs 25 %, personnalité 15 %, matières fortes 20 %. Une partie sans réponse est marquée « pas assez d'infos » et son poids est réparti sur les autres.
+- Intérêts : centres d'intérêt OFFICIELS du ROME de chaque fiche, traduits en types ci-dessous.
+- Les refus ne changent pas le score : ils s'affichent en « Ce qui pourrait te freiner ».
+- 10 pistes, 3 au maximum par famille ; un étudiant de BTS ne voit que les fiches de son BTS.
+
+### Correspondance centres d'intérêt ROME → types
+
+- J'ai envie de créer, construire, rénover → R
+- J'ai l'âme d'un chef / d'une cheffe → E
+- J'ai le sens des affaires → E
+- J'ai le sens du contact → S
+- J'ai le sens du service public → S
+- J'ai le souci du détail → C
+- J'ai un bon coup de crayon → A
+- J'aime communiquer, convaincre → E
+- J'aime faire des découvertes → I
+- J'aime faire respecter la loi, les règles → C
+- J'aime jouer avec les mots → A
+- J'aime l'activité physique → R
+- J'aime le travail manuel → R
+- J'aime m'occuper des animaux → R
+- J'aime manier les chiffres → C
+- J'aime me déplacer et voyager → aucun type (non utilisé)
+- J'aime organiser, planifier → C
+- J'aime piloter, conduire → R
+- J'aime être au contact de la nature → R
+- Je souhaite contribuer à la protection de l'environnement → aucun type (non utilisé)
+- Je souhaite m'occuper d'enfants → S
+- Je souhaite prendre soin des autres → S
+- Je souhaite protéger et secourir → S
+- Je souhaite transmettre → S
+- Je suis amateur / amatrice de sensations fortes → R
+- Je suis attiré / attirée par l'envers du décor → I
+- Je suis passionné / passionnée par la cuisine → A
+- Je suis passionné / passionnée par les autres cultures → aucun type (non utilisé)
+- Je suis passionné / passionnée par les nouvelles technologies → I
+- Je suis un / une artiste → A
+
+Métiers où « plus de 3 ans d'études » est signalé comme frein : M1211, M1210, M1205, M1201, M1202, M1207, M1204, M1223, M1206, C1401, C1214, M1503, M1705, M1707.
+
+### Comptabilité, gestion, finance (`compta`)
+- Types par défaut : C, I · Personnalité : perception A, organisation A
+- Environnements : bureau, petite_structure, grande_structure, teletravail · Valeurs : stabilite, autonomie, salaire, evolution
+- Matières : mgn, maths, cg_compta, cg_fiscal, cg_prevision, cg_financier, cg_si · Freins : chiffres, ecran
+- Contraintes :
+  - Des périodes chargées (clôture des comptes, déclarations) avec des journées plus longues.
+  - Beaucoup de temps sur écran, avec des logiciels comptables et le tableur.
+  - Une grande rigueur : une erreur peut coûter cher à l’entreprise.
+  - Des règles fiscales et sociales qui changent : il faut se former souvent.
+- Avantages :
+  - Toutes les entreprises doivent tenir leurs comptes : ces métiers existent partout.
+  - Des horaires de bureau la plupart de l’année.
+  - Des évolutions possibles vers le contrôle de gestion, l’audit ou l’expertise comptable.
+
+### Paie et ressources humaines (`paie_rh`)
+- Types par défaut : S, C · Personnalité : decision B, organisation A
+- Environnements : bureau, grande_structure, petite_structure, service_public · Valeurs : stabilite, utilite, equipe, contact
+- Matières : mgn, droit_eco, cg_social, cejm · Freins : chiffres, ecran
+- Contraintes :
+  - La paie ne tolère pas d’erreur ni de retard : les échéances sont fixes chaque mois.
+  - Le droit du travail est complexe et évolue souvent.
+  - Il faut parfois annoncer des décisions difficiles aux salariés.
+- Avantages :
+  - Un métier utile, au service des salariés.
+  - Des postes dans tous les secteurs, privé comme public.
+  - Des évolutions vers le recrutement, la formation ou la gestion des carrières.
+
+### Assistanat, administration, secteur public (`admin`)
+- Types par défaut : C, S · Personnalité : organisation A
+- Environnements : bureau, service_public, petite_structure, association · Valeurs : stabilite, equipe, equilibre, utilite
+- Matières : mgn, francais, droit_eco, cejm, cge, cg_si · Freins : ecran, telephone
+- Contraintes :
+  - Beaucoup de tâches menées en parallèle, souvent avec des interruptions.
+  - Une grande partie du travail se fait sur écran et au téléphone.
+  - Dans le public, l’accès à de nombreux postes passe par un concours.
+- Avantages :
+  - Des horaires souvent réguliers.
+  - Des postes dans tous les types de structures.
+  - Une porte d’entrée vers la fonction publique et ses possibilités d’évolution par concours.
+
+### Banque (`banque`)
+- Types par défaut : E, C · Personnalité : energie B, decision A
+- Environnements : boutique, bureau, grande_structure · Valeurs : salaire, stabilite, defi, contact, evolution
+- Matières : mgn, droit_eco, maths, ndrc_vente, cejm, cg_financier · Freins : objectifs_vente, chiffres
+- Contraintes :
+  - Des objectifs commerciaux à atteindre sur les produits bancaires et d’assurance.
+  - Une réglementation stricte (conformité, lutte contre le blanchiment).
+  - En agence, l’ouverture le samedi est fréquente.
+- Avantages :
+  - Des parcours d’évolution balisés : conseiller particuliers, professionnels, patrimonial, banque privée.
+  - Beaucoup de recrutements en alternance après un bac+2.
+  - Un relationnel suivi dans la durée avec ses clients.
+
+### Assurance et protection sociale (`assurance`)
+- Types par défaut : E, S · Personnalité : energie B, organisation A
+- Environnements : bureau, boutique, deplacements, grande_structure, teletravail · Valeurs : stabilite, salaire, contact, utilite
+- Matières : droit_eco, cejm, ndrc_vente, ndrc_digital, mgn · Freins : objectifs_vente, telephone
+- Contraintes :
+  - Gérer des clients parfois inquiets ou mécontents après un sinistre.
+  - Des objectifs commerciaux dans les postes de vente.
+  - Des contrats et des garanties techniques à bien maîtriser.
+- Avantages :
+  - Un rôle utile : protéger les personnes et les entreprises.
+  - Des postes au siège, en agence ou à distance.
+  - Des évolutions vers l’expertise, la souscription ou le management.
+
+### Immobilier (`immobilier`)
+- Types par défaut : E, S · Personnalité : energie B, organisation B
+- Environnements : deplacements, boutique, petite_structure · Valeurs : salaire, autonomie, defi, contact
+- Matières : droit_eco, cejm, ndrc_vente, ndrc_reseau, cg_compta · Freins : horaires_decales, deplacements, objectifs_vente
+- Contraintes :
+  - Des visites le soir et le samedi, selon les disponibilités des clients.
+  - Une rémunération souvent liée aux ventes, donc variable.
+  - Beaucoup de déplacements en voiture.
+- Avantages :
+  - Une grande autonomie dans l’organisation de ses journées.
+  - Des rencontres variées et un métier de terrain.
+  - Des revenus qui peuvent progresser vite quand l’activité marche.
+
+### Vente et relation client entre entreprises (`vente_b2b`)
+- Types par défaut : E · Personnalité : energie B, decision A
+- Environnements : deplacements, petite_structure, grande_structure, international · Valeurs : salaire, autonomie, defi, contact, evolution
+- Matières : mgn, droit_eco, lva, ndrc_vente, ndrc_reseau, cejm · Freins : deplacements, objectifs_vente, telephone
+- Contraintes :
+  - Des objectifs chiffrés et une part de salaire variable.
+  - Beaucoup de route et parfois des nuits à l’hôtel.
+  - La prospection : savoir encaisser les refus.
+- Avantages :
+  - Une grande autonomie sur le terrain.
+  - Des revenus qui récompensent les résultats.
+  - Des évolutions vers la gestion de grands comptes ou le management d’équipe.
+
+### Vente et relation client à distance (`vente_distance`)
+- Types par défaut : E, S · Personnalité : energie B
+- Environnements : bureau, teletravail, grande_structure · Valeurs : contact, equipe, defi
+- Matières : ndrc_digital, ndrc_vente, lva, mgn · Freins : telephone, ecran, objectifs_vente, horaires_decales
+- Contraintes :
+  - Beaucoup de temps au téléphone ou sur écran.
+  - Des indicateurs suivis de près (nombre d’appels, satisfaction, ventes).
+  - Des horaires qui peuvent être décalés (soirée, samedi) selon le service.
+- Avantages :
+  - Du télétravail souvent possible.
+  - Un travail en équipe, avec des formations internes.
+  - Des évolutions vers le management d’équipe, la qualité ou le marketing digital.
+
+### Distribution et management de magasin (`magasin`)
+- Types par défaut : E, S · Personnalité : energie B, organisation A
+- Environnements : boutique, grande_structure, petite_structure · Valeurs : evolution, equipe, defi, contact
+- Matières : mgn, ndrc_reseau, ndrc_vente, cejm · Freins : horaires_decales, debout, objectifs_vente
+- Contraintes :
+  - Travail le samedi et pendant les périodes de fêtes et de soldes.
+  - Beaucoup de temps debout et en mouvement.
+  - Des objectifs de chiffre d’affaires pour le magasin.
+- Avantages :
+  - Des responsabilités rapides : on peut encadrer une équipe jeune.
+  - Un métier concret et vivant, au contact des clients.
+  - Des parcours internes dans les enseignes.
+
+### Marketing, achats, études (`marketing`)
+- Types par défaut : E, I, A · Personnalité : perception B
+- Environnements : bureau, teletravail, grande_structure, international · Valeurs : creativite, evolution, salaire, defi
+- Matières : mgn, lva, maths, ndrc_digital, cejm · Freins : ecran, chiffres
+- Contraintes :
+  - Beaucoup d’analyse de chiffres et de tableaux de bord.
+  - Des projets avec des délais serrés.
+  - Les postes de chef de produit ou d’acheteur sont souvent accessibles après un bac+5.
+- Avantages :
+  - Des missions variées et créatives.
+  - Un travail avec de nombreux services (vente, communication, production).
+  - Des ouvertures à l’international.
+
+### Communication et digital (`communication`)
+- Types par défaut : A, E · Personnalité : perception B, energie B
+- Environnements : bureau, teletravail, petite_structure, association · Valeurs : creativite, autonomie, equipe
+- Matières : francais, mgn, lva, ndrc_digital, cge · Freins : ecran, horaires_decales
+- Contraintes :
+  - Beaucoup de candidats pour peu de postes : un portfolio fait la différence.
+  - Des urgences et parfois des événements le soir ou le week-end.
+  - Des outils numériques qui changent vite.
+- Avantages :
+  - Un métier créatif, où l’on voit le résultat de son travail.
+  - Du télétravail souvent possible.
+  - Des structures variées : agences, entreprises, associations, collectivités.
+
+### Logistique et transport (`logistique`)
+- Types par défaut : C, R · Personnalité : organisation A, perception A
+- Environnements : bureau, deplacements, grande_structure, international · Valeurs : stabilite, equipe, defi
+- Matières : mgn, maths, lva · Freins : horaires_decales, debout, telephone
+- Contraintes :
+  - Des horaires décalés possibles dans les entrepôts (nuit, très tôt).
+  - La gestion des imprévus : retards, ruptures, pannes.
+  - Une partie du travail se fait sur le terrain, debout.
+- Avantages :
+  - Un secteur présent partout, avec de nombreux postes.
+  - Un travail concret et des résultats visibles.
+  - Des évolutions vers le pilotage de flux ou le management d’équipe.
+
+Grille : chaque contrainte et avantage est-il exact pour TOUS les métiers de la famille ? Rien d'invérifiable (salaire, taux d'emploi) n'est-il affirmé ?
+
+## 5. À venir
+- Liens et dispositifs handicap (M6).

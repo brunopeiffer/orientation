@@ -1,0 +1,185 @@
+{
+  "_doc": "Profil des familles de métiers pour le matching (M3). Rédigé par Claude le 03/11/2026, À VALIDER PAR UN HUMAIN. Les intérêts de chaque fiche viennent des centres d'intérêt OFFICIELS du ROME (fichier arbocentresdinteret) via 'centresVersTypes' ; 'types' de la famille ne sert que si une fiche n'a aucun centre d'intérêt. Environnements, valeurs, personnalité, matières, freins et réalité sont rédigés par famille : le ROME ouvert ne les fournit pas par fiche. Les ids reprennent ceux de contenu/gouts.json et config/matieres.json.",
+  "statut": "A_VALIDER",
+  "date": "2026-11-03",
+  "source": "Rédaction à partir des fiches ROME de chaque famille (France Travail, octobre 2026). À relire par un professionnel de l’orientation.",
+  "centresVersTypes": {
+    "J'ai envie de créer, construire, rénover": "R",
+    "J'ai l'âme d'un chef / d'une cheffe": "E",
+    "J'ai le sens des affaires": "E",
+    "J'ai le sens du contact": "S",
+    "J'ai le sens du service public": "S",
+    "J'ai le souci du détail": "C",
+    "J'ai un bon coup de crayon": "A",
+    "J'aime communiquer, convaincre": "E",
+    "J'aime faire des découvertes": "I",
+    "J'aime faire respecter la loi, les règles": "C",
+    "J'aime jouer avec les mots": "A",
+    "J'aime l'activité physique": "R",
+    "J'aime le travail manuel": "R",
+    "J'aime m'occuper des animaux": "R",
+    "J'aime manier les chiffres": "C",
+    "J'aime me déplacer et voyager": null,
+    "J'aime organiser, planifier": "C",
+    "J'aime piloter, conduire": "R",
+    "J'aime être au contact de la nature": "R",
+    "Je souhaite contribuer à la protection de l'environnement": null,
+    "Je souhaite m'occuper d'enfants": "S",
+    "Je souhaite prendre soin des autres": "S",
+    "Je souhaite protéger et secourir": "S",
+    "Je souhaite transmettre": "S",
+    "Je suis amateur / amatrice de sensations fortes": "R",
+    "Je suis attiré / attirée par l'envers du décor": "I",
+    "Je suis passionné / passionnée par la cuisine": "A",
+    "Je suis passionné / passionnée par les autres cultures": null,
+    "Je suis passionné / passionnée par les nouvelles technologies": "I",
+    "Je suis un / une artiste": "A"
+  },
+  "etudesLongues": ["M1211", "M1210", "M1205", "M1201", "M1202", "M1207", "M1204", "M1223", "M1206", "C1401", "C1214", "M1503", "M1705", "M1707"],
+  "familles": [
+    {
+      "id": "compta", "nom": "Comptabilité, gestion, finance", "types": ["C", "I"],
+      "environnements": ["bureau", "petite_structure", "grande_structure", "teletravail"],
+      "valeurs": ["stabilite", "autonomie", "salaire", "evolution"],
+      "personnalite": { "perception": "A", "organisation": "A" },
+      "matieres": ["mgn", "maths", "cg_compta", "cg_fiscal", "cg_prevision", "cg_financier", "cg_si"],
+      "freins": ["chiffres", "ecran"],
+      "realite": {
+        "contraintes": ["Des périodes chargées (clôture des comptes, déclarations) avec des journées plus longues.", "Beaucoup de temps sur écran, avec des logiciels comptables et le tableur.", "Une grande rigueur : une erreur peut coûter cher à l’entreprise.", "Des règles fiscales et sociales qui changent : il faut se former souvent."],
+        "avantages": ["Toutes les entreprises doivent tenir leurs comptes : ces métiers existent partout.", "Des horaires de bureau la plupart de l’année.", "Des évolutions possibles vers le contrôle de gestion, l’audit ou l’expertise comptable."]
+      }
+    },
+    {
+      "id": "paie_rh", "nom": "Paie et ressources humaines", "types": ["S", "C"],
+      "environnements": ["bureau", "grande_structure", "petite_structure", "service_public"],
+      "valeurs": ["stabilite", "utilite", "equipe", "contact"],
+      "personnalite": { "decision": "B", "organisation": "A" },
+      "matieres": ["mgn", "droit_eco", "cg_social", "cejm"],
+      "freins": ["chiffres", "ecran"],
+      "realite": {
+        "contraintes": ["La paie ne tolère pas d’erreur ni de retard : les échéances sont fixes chaque mois.", "Le droit du travail est complexe et évolue souvent.", "Il faut parfois annoncer des décisions difficiles aux salariés."],
+        "avantages": ["Un métier utile, au service des salariés.", "Des postes dans tous les secteurs, privé comme public.", "Des évolutions vers le recrutement, la formation ou la gestion des carrières."]
+      }
+    },
+    {
+      "id": "admin", "nom": "Assistanat, administration, secteur public", "types": ["C", "S"],
+      "environnements": ["bureau", "service_public", "petite_structure", "association"],
+      "valeurs": ["stabilite", "equipe", "equilibre", "utilite"],
+      "personnalite": { "organisation": "A" },
+      "matieres": ["mgn", "francais", "droit_eco", "cejm", "cge", "cg_si"],
+      "freins": ["ecran", "telephone"],
+      "realite": {
+        "contraintes": ["Beaucoup de tâches menées en parallèle, souvent avec des interruptions.", "Une grande partie du travail se fait sur écran et au téléphone.", "Dans le public, l’accès à de nombreux postes passe par un concours."],
+        "avantages": ["Des horaires souvent réguliers.", "Des postes dans tous les types de structures.", "Une porte d’entrée vers la fonction publique et ses possibilités d’évolution par concours."]
+      }
+    },
+    {
+      "id": "banque", "nom": "Banque", "types": ["E", "C"],
+      "environnements": ["boutique", "bureau", "grande_structure"],
+      "valeurs": ["salaire", "stabilite", "defi", "contact", "evolution"],
+      "personnalite": { "energie": "B", "decision": "A" },
+      "matieres": ["mgn", "droit_eco", "maths", "ndrc_vente", "cejm", "cg_financier"],
+      "freins": ["objectifs_vente", "chiffres"],
+      "realite": {
+        "contraintes": ["Des objectifs commerciaux à atteindre sur les produits bancaires et d’assurance.", "Une réglementation stricte (conformité, lutte contre le blanchiment).", "En agence, l’ouverture le samedi est fréquente."],
+        "avantages": ["Des parcours d’évolution balisés : conseiller particuliers, professionnels, patrimonial, banque privée.", "Beaucoup de recrutements en alternance après un bac+2.", "Un relationnel suivi dans la durée avec ses clients."]
+      }
+    },
+    {
+      "id": "assurance", "nom": "Assurance et protection sociale", "types": ["E", "S"],
+      "environnements": ["bureau", "boutique", "deplacements", "grande_structure", "teletravail"],
+      "valeurs": ["stabilite", "salaire", "contact", "utilite"],
+      "personnalite": { "energie": "B", "organisation": "A" },
+      "matieres": ["droit_eco", "cejm", "ndrc_vente", "ndrc_digital", "mgn"],
+      "freins": ["objectifs_vente", "telephone"],
+      "realite": {
+        "contraintes": ["Gérer des clients parfois inquiets ou mécontents après un sinistre.", "Des objectifs commerciaux dans les postes de vente.", "Des contrats et des garanties techniques à bien maîtriser."],
+        "avantages": ["Un rôle utile : protéger les personnes et les entreprises.", "Des postes au siège, en agence ou à distance.", "Des évolutions vers l’expertise, la souscription ou le management."]
+      }
+    },
+    {
+      "id": "immobilier", "nom": "Immobilier", "types": ["E", "S"],
+      "environnements": ["deplacements", "boutique", "petite_structure"],
+      "valeurs": ["salaire", "autonomie", "defi", "contact"],
+      "personnalite": { "energie": "B", "organisation": "B" },
+      "matieres": ["droit_eco", "cejm", "ndrc_vente", "ndrc_reseau", "cg_compta"],
+      "freins": ["horaires_decales", "deplacements", "objectifs_vente"],
+      "realite": {
+        "contraintes": ["Des visites le soir et le samedi, selon les disponibilités des clients.", "Une rémunération souvent liée aux ventes, donc variable.", "Beaucoup de déplacements en voiture."],
+        "avantages": ["Une grande autonomie dans l’organisation de ses journées.", "Des rencontres variées et un métier de terrain.", "Des revenus qui peuvent progresser vite quand l’activité marche."]
+      }
+    },
+    {
+      "id": "vente_b2b", "nom": "Vente et relation client entre entreprises", "types": ["E"],
+      "environnements": ["deplacements", "petite_structure", "grande_structure", "international"],
+      "valeurs": ["salaire", "autonomie", "defi", "contact", "evolution"],
+      "personnalite": { "energie": "B", "decision": "A" },
+      "matieres": ["mgn", "droit_eco", "lva", "ndrc_vente", "ndrc_reseau", "cejm"],
+      "freins": ["deplacements", "objectifs_vente", "telephone"],
+      "realite": {
+        "contraintes": ["Des objectifs chiffrés et une part de salaire variable.", "Beaucoup de route et parfois des nuits à l’hôtel.", "La prospection : savoir encaisser les refus."],
+        "avantages": ["Une grande autonomie sur le terrain.", "Des revenus qui récompensent les résultats.", "Des évolutions vers la gestion de grands comptes ou le management d’équipe."]
+      }
+    },
+    {
+      "id": "vente_distance", "nom": "Vente et relation client à distance", "types": ["E", "S"],
+      "environnements": ["bureau", "teletravail", "grande_structure"],
+      "valeurs": ["contact", "equipe", "defi"],
+      "personnalite": { "energie": "B" },
+      "matieres": ["ndrc_digital", "ndrc_vente", "lva", "mgn"],
+      "freins": ["telephone", "ecran", "objectifs_vente", "horaires_decales"],
+      "realite": {
+        "contraintes": ["Beaucoup de temps au téléphone ou sur écran.", "Des indicateurs suivis de près (nombre d’appels, satisfaction, ventes).", "Des horaires qui peuvent être décalés (soirée, samedi) selon le service."],
+        "avantages": ["Du télétravail souvent possible.", "Un travail en équipe, avec des formations internes.", "Des évolutions vers le management d’équipe, la qualité ou le marketing digital."]
+      }
+    },
+    {
+      "id": "magasin", "nom": "Distribution et management de magasin", "types": ["E", "S"],
+      "environnements": ["boutique", "grande_structure", "petite_structure"],
+      "valeurs": ["evolution", "equipe", "defi", "contact"],
+      "personnalite": { "energie": "B", "organisation": "A" },
+      "matieres": ["mgn", "ndrc_reseau", "ndrc_vente", "cejm"],
+      "freins": ["horaires_decales", "debout", "objectifs_vente"],
+      "realite": {
+        "contraintes": ["Travail le samedi et pendant les périodes de fêtes et de soldes.", "Beaucoup de temps debout et en mouvement.", "Des objectifs de chiffre d’affaires pour le magasin."],
+        "avantages": ["Des responsabilités rapides : on peut encadrer une équipe jeune.", "Un métier concret et vivant, au contact des clients.", "Des parcours internes dans les enseignes."]
+      }
+    },
+    {
+      "id": "marketing", "nom": "Marketing, achats, études", "types": ["E", "I", "A"],
+      "environnements": ["bureau", "teletravail", "grande_structure", "international"],
+      "valeurs": ["creativite", "evolution", "salaire", "defi"],
+      "personnalite": { "perception": "B" },
+      "matieres": ["mgn", "lva", "maths", "ndrc_digital", "cejm"],
+      "freins": ["ecran", "chiffres"],
+      "realite": {
+        "contraintes": ["Beaucoup d’analyse de chiffres et de tableaux de bord.", "Des projets avec des délais serrés.", "Les postes de chef de produit ou d’acheteur sont souvent accessibles après un bac+5."],
+        "avantages": ["Des missions variées et créatives.", "Un travail avec de nombreux services (vente, communication, production).", "Des ouvertures à l’international."]
+      }
+    },
+    {
+      "id": "communication", "nom": "Communication et digital", "types": ["A", "E"],
+      "environnements": ["bureau", "teletravail", "petite_structure", "association"],
+      "valeurs": ["creativite", "autonomie", "equipe"],
+      "personnalite": { "perception": "B", "energie": "B" },
+      "matieres": ["francais", "mgn", "lva", "ndrc_digital", "cge"],
+      "freins": ["ecran", "horaires_decales"],
+      "realite": {
+        "contraintes": ["Beaucoup de candidats pour peu de postes : un portfolio fait la différence.", "Des urgences et parfois des événements le soir ou le week-end.", "Des outils numériques qui changent vite."],
+        "avantages": ["Un métier créatif, où l’on voit le résultat de son travail.", "Du télétravail souvent possible.", "Des structures variées : agences, entreprises, associations, collectivités."]
+      }
+    },
+    {
+      "id": "logistique", "nom": "Logistique et transport", "types": ["C", "R"],
+      "environnements": ["bureau", "deplacements", "grande_structure", "international"],
+      "valeurs": ["stabilite", "equipe", "defi"],
+      "personnalite": { "organisation": "A", "perception": "A" },
+      "matieres": ["mgn", "maths", "lva"],
+      "freins": ["horaires_decales", "debout", "telephone"],
+      "realite": {
+        "contraintes": ["Des horaires décalés possibles dans les entrepôts (nuit, très tôt).", "La gestion des imprévus : retards, ruptures, pannes.", "Une partie du travail se fait sur le terrain, debout."],
+        "avantages": ["Un secteur présent partout, avec de nombreux postes.", "Un travail concret et des résultats visibles.", "Des évolutions vers le pilotage de flux ou le management d’équipe."]
+      }
+    }
+  ]
+}

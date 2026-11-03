@@ -10,6 +10,39 @@ RACINE = pathlib.Path(__file__).resolve().parent.parent
 TEST = json.loads((RACINE / "contenu/test-personnalite.json").read_text(encoding="utf-8"))
 GOUTS = json.loads((RACINE / "contenu/gouts.json").read_text(encoding="utf-8"))
 MATIERES = json.loads((RACINE / "config/matieres.json").read_text(encoding="utf-8"))
+FAMILLES = json.loads((RACINE / "contenu/metiers-familles.json").read_text(encoding="utf-8"))
+
+
+def section_familles():
+    out = [
+        "## 4. Familles de métiers et fiches « réalité » (`contenu/metiers-familles.json`)",
+        "",
+        f"Statut : **{FAMILLES['statut']}** ({FAMILLES['date']}). Source affichée : {FAMILLES['source']}",
+        "",
+        "### Méthode du matching (vérifiée par `app/src/metiers.test.ts`)",
+        "- Score sur 100 = intérêts 40 %, cadre de travail et valeurs 25 %, personnalité 15 %, matières fortes 20 %. "
+        "Une partie sans réponse est marquée « pas assez d'infos » et son poids est réparti sur les autres.",
+        "- Intérêts : centres d'intérêt OFFICIELS du ROME de chaque fiche, traduits en types ci-dessous.",
+        "- Les refus ne changent pas le score : ils s'affichent en « Ce qui pourrait te freiner ».",
+        "- 10 pistes, 3 au maximum par famille ; un étudiant de BTS ne voit que les fiches de son BTS.",
+        "",
+        "### Correspondance centres d'intérêt ROME → types",
+        "",
+    ]
+    out += [f"- {c} → {t or 'aucun type (non utilisé)'}" for c, t in FAMILLES["centresVersTypes"].items()]
+    out += ["", f"Métiers où « plus de 3 ans d'études » est signalé comme frein : {', '.join(FAMILLES['etudesLongues'])}.",
+            ""]
+    for f in FAMILLES["familles"]:
+        perso = ", ".join(f"{d} {p}" for d, p in f["personnalite"].items()) or "—"
+        out += [f"### {f['nom']} (`{f['id']}`)",
+                f"- Types par défaut : {', '.join(f['types'])} · Personnalité : {perso}",
+                f"- Environnements : {', '.join(f['environnements'])} · Valeurs : {', '.join(f['valeurs'])}",
+                f"- Matières : {', '.join(f['matieres'])} · Freins : {', '.join(f['freins'])}",
+                "- Contraintes :", *[f"  - {t}" for t in f["realite"]["contraintes"]],
+                "- Avantages :", *[f"  - {t}" for t in f["realite"]["avantages"]], ""]
+    out += ["Grille : chaque contrainte et avantage est-il exact pour TOUS les métiers de la famille ? "
+            "Rien d'invérifiable (salaire, taux d'emploi) n'est-il affirmé ?", ""]
+    return out
 
 
 def section_gouts():
@@ -104,8 +137,9 @@ def main():
             "- Les textes de résultats sont-ils bienveillants et sans jugement ?",
             "",
             *section_gouts(),
-            "## 4. À venir",
-            "- Fiches « réalité du métier » (M3), liens et dispositifs handicap (M6).", ""]
+            *section_familles(),
+            "## 5. À venir",
+            "- Liens et dispositifs handicap (M6).", ""]
     (RACINE / "docs/CONTENU-A-VALIDER.md").write_text("\n".join(out), encoding="utf-8")
     print("docs/CONTENU-A-VALIDER.md généré")
 

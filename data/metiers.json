@@ -1,0 +1,3356 @@
+{
+ "source": "ROME, France Travail : arborescence principale et arborescence des centres d'intérêt",
+ "version": "octobre 2026",
+ "licence": "Licence Ouverte Etalab 2.0",
+ "genere": "2026-11-03",
+ "metiers": [
+  {
+   "code": "M1203",
+   "libelle": "Comptable",
+   "famille": "compta",
+   "publics": [
+    "STMG",
+    "BTS_CG"
+   ],
+   "appellations": [
+    "Agent / Agente comptable d'établissement public à caractère scientifique, culturel et professionnel (EPSCP)",
+    "Collaborateur / Collaboratrice comptable",
+    "Comptable analytique",
+    "Comptable clientèle",
+    "Comptable d'entreprise",
+    "Comptable d'Organisme de Placement Collectif en Valeurs Mobilières (OPCVM)",
+    "Comptable de gestion locative",
+    "Comptable droits d'auteur",
+    "Comptable fournisseurs",
+    "Comptable général / Comptable générale",
+    "Comptable gérance immobilière",
+    "Comptable gestionnaire de stock",
+    "Comptable industriel / Comptable industrielle",
+    "Comptable principal / Comptable principale",
+    "Comptable service paie",
+    "Comptable spécialisé / Comptable spécialisée en comptabilité analytique",
+    "Comptable spécialisé / Comptable spécialisée en comptabilité générale",
+    "Comptable spécialisé / Comptable spécialisée export",
+    "Comptable spécialisé / Comptable spécialisée facturation",
+    "Comptable spécialisé / Comptable spécialisée paie",
+    "Comptable spécialisé / Comptable spécialisée recouvrement",
+    "Comptable syndic immobilier",
+    "Comptable taxateur / Comptable taxatrice d'étude notariale",
+    "Comptable territorial / Comptable territoriale",
+    "Comptable trésorerie",
+    "Comptable unique",
+    "Gestionnaire comptable",
+    "Gestionnaire comptable et fiscal",
+    "Responsable de gestion comptable"
+   ],
+   "centres": [
+    "J'ai le souci du détail",
+    "J'aime faire respecter la loi, les règles",
+    "J'aime manier les chiffres"
+   ]
+  },
+  {
+   "code": "M1213",
+   "libelle": "Assistant / Assistante comptable",
+   "famille": "compta",
+   "publics": [
+    "STMG",
+    "BTS_CG"
+   ],
+   "appellations": [
+    "Agent / Agente de gestion comptable",
+    "Assistant / Assistante comptable et budgétaire",
+    "Assistant / Assistante de cabinet comptable",
+    "Assistant / Assistante de gestion en comptabilité",
+    "Assistant administratif / Assistante administrative et comptable",
+    "Technicien / Technicienne comptable"
+   ],
+   "centres": [
+    "J'ai le souci du détail",
+    "J'aime manier les chiffres"
+   ]
+  },
+  {
+   "code": "M1225",
+   "libelle": "Aide-comptable",
+   "famille": "compta",
+   "publics": [
+    "STMG",
+    "BTS_CG"
+   ],
+   "appellations": [
+    "Aide-comptable facturier / Aide-comptable facturière"
+   ],
+   "centres": [
+    "J'ai le souci du détail",
+    "J'aime faire respecter la loi, les règles",
+    "J'aime manier les chiffres"
+   ]
+  },
+  {
+   "code": "M1206",
+   "libelle": "Responsable comptabilité",
+   "famille": "compta",
+   "publics": [
+    "STMG",
+    "BTS_CG"
+   ],
+   "appellations": [
+    "Adjoint / Adjointe au chef comptable",
+    "Agent / Agente comptable responsable de service",
+    "Chef / Cheffe comptable",
+    "Chef / Cheffe de groupe comptable",
+    "Chef / Cheffe de service comptabilité",
+    "Directeur / Directrice comptable",
+    "Directeur / Directrice des services comptables",
+    "Responsable comptabilité publique",
+    "Responsable consolidation comptable",
+    "Responsable reporting et consolidation comptable",
+    "Sous-directeur / Sous-directrice comptable"
+   ],
+   "centres": [
+    "J'ai l'âme d'un chef / d'une cheffe",
+    "J'aime faire respecter la loi, les règles",
+    "J'aime manier les chiffres"
+   ]
+  },
+  {
+   "code": "M1204",
+   "libelle": "Contrôleur / Contrôleuse de gestion",
+   "famille": "compta",
+   "publics": [
+    "STMG",
+    "BTS_CG"
+   ],
+   "appellations": [
+    "Chargé / Chargée du contrôle de gestion",
+    "Contrôleur / Contrôleuse budgétaire",
+    "Contrôleur / Contrôleuse de gestion budgétaire",
+    "Contrôleur / Contrôleuse de gestion centrale",
+    "Contrôleur / Contrôleuse de gestion chargé(e) du budget",
+    "Contrôleur / Contrôleuse de gestion commerciale",
+    "Contrôleur / Contrôleuse de gestion d'une unité de production",
+    "Contrôleur / Contrôleuse de gestion d'usine",
+    "Contrôleur / Contrôleuse de gestion de groupe",
+    "Contrôleur / Contrôleuse de gestion financière",
+    "Contrôleur / Contrôleuse de gestion industrielle",
+    "Contrôleur / Contrôleuse de gestion sociale",
+    "Contrôleur financier / Contrôleuse financière"
+   ],
+   "centres": [
+    "J'aime manier les chiffres",
+    "J'aime organiser, planifier"
+   ]
+  },
+  {
+   "code": "M1222",
+   "libelle": "Assistant / Assistante de contrôle budgétaire",
+   "famille": "compta",
+   "publics": [
+    "STMG",
+    "BTS_CG"
+   ],
+   "appellations": [
+    "Assistant / Assistante au contrôle de gestion"
+   ],
+   "centres": [
+    "J'ai le souci du détail",
+    "J'aime faire respecter la loi, les règles",
+    "J'aime manier les chiffres",
+    "J'aime organiser, planifier"
+   ]
+  },
+  {
+   "code": "M1207",
+   "libelle": "Trésorier / Trésorière",
+   "famille": "compta",
+   "publics": [
+    "STMG",
+    "BTS_CG"
+   ],
+   "appellations": [
+    "Cash manager",
+    "Chargé / Chargée de trésorerie et de financement",
+    "Directeur / Directrice de trésorerie",
+    "Responsable de la trésorerie",
+    "Responsable financement exportations",
+    "Responsable gestion trésorerie",
+    "Responsable relations bancaires",
+    "Trésorier / Trésorière crédit manager",
+    "Trésorier / Trésorière d'entreprise",
+    "Trésorier / Trésorière devises",
+    "Trésorier / Trésorière euros",
+    "Trésorier / Trésorière euros-devises",
+    "Trésorier / Trésorière marché monétaire",
+    "Trésorier adjoint / Trésorière adjointe"
+   ],
+   "centres": [
+    "J'ai l'âme d'un chef / d'une cheffe",
+    "J'ai le souci du détail",
+    "J'aime faire respecter la loi, les règles",
+    "J'aime manier les chiffres"
+   ]
+  },
+  {
+   "code": "M1215",
+   "libelle": "Contrôleur comptable et financier / Contrôleuse comptable et financière",
+   "famille": "compta",
+   "publics": [
+    "STMG",
+    "BTS_CG"
+   ],
+   "appellations": [
+    "Inspecteur comptable et financier / Inspectrice comptable et financière"
+   ],
+   "centres": [
+    "J'ai le souci du détail",
+    "J'aime faire respecter la loi, les règles",
+    "J'aime manier les chiffres"
+   ]
+  },
+  {
+   "code": "M1202",
+   "libelle": "Auditeur comptable et financier / Auditrice comptable et financière",
+   "famille": "compta",
+   "publics": [
+    "STMG",
+    "BTS_CG"
+   ],
+   "appellations": [
+    "Auditeur / Auditrice comptable",
+    "Auditeur / Auditrice interne",
+    "Consultant financier spécialisé / Consultante financière spécialisée",
+    "Expert financier / Experte financière",
+    "Réviseur / Réviseuse des comptes"
+   ],
+   "centres": [
+    "J'ai le souci du détail",
+    "J'aime faire respecter la loi, les règles",
+    "J'aime manier les chiffres"
+   ]
+  },
+  {
+   "code": "M1211",
+   "libelle": "Expert-comptable / Experte-comptable",
+   "famille": "compta",
+   "publics": [
+    "STMG",
+    "BTS_CG"
+   ],
+   "appellations": [
+    "Collaborateur / Collaboratrice d'expertise comptable"
+   ],
+   "centres": [
+    "J'ai l'âme d'un chef / d'une cheffe",
+    "J'ai le souci du détail",
+    "J'aime manier les chiffres"
+   ]
+  },
+  {
+   "code": "M1210",
+   "libelle": "Commissaire aux comptes",
+   "famille": "compta",
+   "publics": [
+    "STMG",
+    "BTS_CG"
+   ],
+   "appellations": [
+    "Auditeur légal / Auditrice légale",
+    "Commissaire aux comptes Associé / Associée"
+   ],
+   "centres": [
+    "J'ai le souci du détail",
+    "J'aime faire respecter la loi, les règles",
+    "J'aime manier les chiffres"
+   ]
+  },
+  {
+   "code": "M1220",
+   "libelle": "Credit manager",
+   "famille": "compta",
+   "publics": [
+    "STMG",
+    "BTS_CG"
+   ],
+   "appellations": [
+    "Credit controller"
+   ],
+   "centres": [
+    "J'ai le souci du détail",
+    "J'aime communiquer, convaincre",
+    "J'aime manier les chiffres"
+   ]
+  },
+  {
+   "code": "M1201",
+   "libelle": "Analyste financier / Analyste financière",
+   "famille": "compta",
+   "publics": [
+    "STMG",
+    "BTS_CG"
+   ],
+   "appellations": [
+    "Analyste de produits dérivés",
+    "Analyste quantitatif en finance",
+    "Chargé / Chargée d'analyse et d'ingénierie financière",
+    "Conseiller / Conseillère technique en finances",
+    "Ingénieur financier / Ingénieure financière"
+   ],
+   "centres": [
+    "J'ai le souci du détail",
+    "J'aime manier les chiffres"
+   ]
+  },
+  {
+   "code": "M1209",
+   "libelle": "Conseiller / Conseillère en gestion",
+   "famille": "compta",
+   "publics": [
+    "STMG",
+    "BTS_CG"
+   ],
+   "appellations": [
+    "Analyste budgétaire",
+    "Analyste de gestion d'entreprise",
+    "Auditeur / Auditrice de gestion d'entreprise",
+    "Consultant / Consultante interne en gestion"
+   ],
+   "centres": [
+    "J'aime manier les chiffres",
+    "J'aime organiser, planifier"
+   ]
+  },
+  {
+   "code": "M1223",
+   "libelle": "Chef / Cheffe des services administratifs et financiers",
+   "famille": "compta",
+   "publics": [
+    "STMG",
+    "BTS_CG"
+   ],
+   "appellations": [
+    "Adjoint / Adjointe à la direction administrative et financière",
+    "Chargé / Chargée du service administratif et financier",
+    "Chef / Cheffe de service de gestion des ressources financières",
+    "Responsable administratif, comptable et financier / Responsable administrative, comptable et financière",
+    "Responsable administratif et financier / Responsable administrative et financière"
+   ],
+   "centres": [
+    "J'ai l'âme d'un chef / d'une cheffe",
+    "J'aime communiquer, convaincre",
+    "J'aime manier les chiffres"
+   ]
+  },
+  {
+   "code": "M1205",
+   "libelle": "Directeur administratif et financier / Directrice administrative et financière (DAF)",
+   "famille": "compta",
+   "publics": [
+    "STMG",
+    "BTS_CG"
+   ],
+   "appellations": [
+    "Directeur / Directrice de l'administration comptable et de la gestion financière",
+    "Directeur / Directrice des affaires financières",
+    "Directeur / Directrice des services administratifs et financiers",
+    "Directeur administratif, financier / Directrice administrative, financière et du contrôle de gestion",
+    "Directeur administratif / Directrice administrative",
+    "Directeur financier / Directrice financière",
+    "Directeur financier / Directrice financière et comptable",
+    "Directeur financier d'une collectivité territoriale / Directrice financière d'une collectivité territoriale",
+    "Responsable administratif / Responsable administrative",
+    "Responsable administratif / Responsable administrative de gestion",
+    "Responsable financier / Responsable financière",
+    "Travel manager - Responsable déplacements professionnels"
+   ],
+   "centres": [
+    "J'ai l'âme d'un chef / d'une cheffe",
+    "J'aime faire respecter la loi, les règles",
+    "J'aime manier les chiffres"
+   ]
+  },
+  {
+   "code": "M1608",
+   "libelle": "Secrétaire comptable",
+   "famille": "compta",
+   "publics": [
+    "STMG",
+    "BTS_CG"
+   ],
+   "appellations": [],
+   "centres": [
+    "J'ai le souci du détail",
+    "J'aime manier les chiffres",
+    "J'aime organiser, planifier"
+   ]
+  },
+  {
+   "code": "M1611",
+   "libelle": "Secrétaire Facturier / Facturière",
+   "famille": "compta",
+   "publics": [
+    "STMG",
+    "BTS_CG"
+   ],
+   "appellations": [],
+   "centres": [
+    "J'aime manier les chiffres",
+    "J'aime organiser, planifier"
+   ]
+  },
+  {
+   "code": "M1507",
+   "libelle": "Gestionnaire paie",
+   "famille": "paie_rh",
+   "publics": [
+    "STMG",
+    "BTS_CG"
+   ],
+   "appellations": [
+    "Assistant / Assistante carrières et paie",
+    "Assistant / Assistante paie",
+    "Chargé / Chargée de la gestion administrative du personnel",
+    "Chargé / Chargée de mission paie",
+    "Chargé / Chargée de paie",
+    "Collaborateur / Collaboratrice paie",
+    "Gestionnaire paie et administration du personnel",
+    "Responsable paie",
+    "Technicien / Technicienne paie"
+   ],
+   "centres": [
+    "J'ai le sens du contact",
+    "J'ai le souci du détail",
+    "J'aime faire respecter la loi, les règles",
+    "J'aime manier les chiffres"
+   ]
+  },
+  {
+   "code": "M1509",
+   "libelle": "Responsable paie et administration du personnel",
+   "famille": "paie_rh",
+   "publics": [
+    "STMG",
+    "BTS_CG"
+   ],
+   "appellations": [
+    "Chargé / Chargée de gestion des expatriés",
+    "Gestionnaire administratif / Gestionnaire administrative ressources humaines",
+    "Gestionnaire de l'administration du personnel",
+    "Responsable administratif / Responsable administrative du personnel",
+    "Responsable administratif / Responsable administrative et de gestion du personnel",
+    "Responsable de l'administration du personnel",
+    "Responsable de la gestion administrative du personnel",
+    "Responsable de la gestion du personnel",
+    "Responsable rémunération"
+   ],
+   "centres": [
+    "J'ai l'âme d'un chef / d'une cheffe",
+    "J'aime faire respecter la loi, les règles",
+    "J'aime organiser, planifier"
+   ]
+  },
+  {
+   "code": "M1501",
+   "libelle": "Assistant / Assistante Ressources Humaines (RH)",
+   "famille": "paie_rh",
+   "publics": [
+    "STMG",
+    "BTS_CG"
+   ],
+   "appellations": [
+    "Assistant / Assistante de gestion administrative du personnel",
+    "Assistant / Assistante de gestion du personnel",
+    "Assistant / Assistante de gestion en ressources humaines",
+    "Assistant / Assistante de service formation",
+    "Assistant / Assistante du service personnel",
+    "Assistant / Assistante emploi formation",
+    "Secrétaire du service personnel"
+   ],
+   "centres": [
+    "J'ai le sens du contact",
+    "J'aime faire respecter la loi, les règles",
+    "J'aime organiser, planifier"
+   ]
+  },
+  {
+   "code": "M1502",
+   "libelle": "Chargé / Chargée de recrutement",
+   "famille": "paie_rh",
+   "publics": [
+    "STMG"
+   ],
+   "appellations": [
+    "Chargé / Chargée de recherche en recrutement",
+    "Chargé / Chargée de recrutement et mobilité professionnelle",
+    "Chargé / Chargée des compétences et de la mobilité professionnelle",
+    "Chargé / Chargée des relations écoles",
+    "Chasseur / Chasseuse de tête en recrutement",
+    "Conseiller / Conseillère en recrutement",
+    "Consultant / Consultante en recrutement",
+    "Responsable du recrutement et mobilité professionnelle",
+    "Responsable emploi et communication interne",
+    "Responsable recrutement"
+   ],
+   "centres": [
+    "J'ai le sens du contact",
+    "J'aime communiquer, convaincre",
+    "J'aime organiser, planifier"
+   ]
+  },
+  {
+   "code": "M1504",
+   "libelle": "Responsable formation professionnelle en entreprise",
+   "famille": "paie_rh",
+   "publics": [
+    "STMG"
+   ],
+   "appellations": [
+    "Adjoint / Adjointe au responsable du service formation en entreprise",
+    "Chef / Cheffe de service formation",
+    "Directeur / Directrice de la formation en entreprise",
+    "Directeur / Directrice de service formation en entreprise",
+    "Responsable du développement des compétences",
+    "Responsable emploi et formation",
+    "Responsable formation communication en entreprise",
+    "Responsable formation en entreprise",
+    "Responsable formation recrutement de l'entreprise"
+   ],
+   "centres": [
+    "J'ai le sens du contact",
+    "J'aime organiser, planifier"
+   ]
+  },
+  {
+   "code": "M1505",
+   "libelle": "Chargé / Chargée de formation en entreprise",
+   "famille": "paie_rh",
+   "publics": [
+    "STMG"
+   ],
+   "appellations": [
+    "Conseiller / Conseillère en formation en entreprise"
+   ],
+   "centres": [
+    "J'ai le sens du contact",
+    "J'aime organiser, planifier"
+   ]
+  },
+  {
+   "code": "M1508",
+   "libelle": "Conseiller / Conseillère en gestion de carrière",
+   "famille": "paie_rh",
+   "publics": [
+    "STMG"
+   ],
+   "appellations": [
+    "Chargé / Chargée de l'emploi et des compétences",
+    "Chargé / Chargée du développement des ressources humaines",
+    "Coach en développement des compétences",
+    "Conseiller / Conseillère en développement des carrières",
+    "Consultant / Consultante en gestion des carrières",
+    "Consultant / Consultante en gestion des ressources humaines",
+    "Gestionnaire des carrières",
+    "Responsable de la gestion de l'emploi et des carrières",
+    "Responsable de la gestion des cadres",
+    "Talent manager"
+   ],
+   "centres": [
+    "J'ai le sens du contact",
+    "J'aime communiquer, convaincre",
+    "J'aime organiser, planifier"
+   ]
+  },
+  {
+   "code": "M1510",
+   "libelle": "Chargé / Chargée de mission RH diversité handicap",
+   "famille": "paie_rh",
+   "publics": [
+    "STMG"
+   ],
+   "appellations": [
+    "Responsable diversité et égalité des chances"
+   ],
+   "centres": [
+    "J'aime communiquer, convaincre",
+    "J'aime organiser, planifier",
+    "Je souhaite prendre soin des autres"
+   ]
+  },
+  {
+   "code": "M1511",
+   "libelle": "Responsable Qualité de Vie au Travail",
+   "famille": "paie_rh",
+   "publics": [
+    "STMG"
+   ],
+   "appellations": [],
+   "centres": [
+    "J'ai le sens du contact",
+    "J'aime organiser, planifier",
+    "Je souhaite prendre soin des autres"
+   ]
+  },
+  {
+   "code": "M1503",
+   "libelle": "Directeur / Directrice des Ressources Humaines (DRH)",
+   "famille": "paie_rh",
+   "publics": [
+    "STMG"
+   ],
+   "appellations": [
+    "Adjoint / Adjointe à la direction des ressources humaines",
+    "Adjoint / Adjointe au responsable des ressources humaines",
+    "Adjoint / Adjointe au responsable du personnel",
+    "Attaché RH de l'Etat / Attachée RH de l'Etat",
+    "Chef / Cheffe du personnel",
+    "Chef / Cheffe du service du personnel",
+    "Coordinateur / Coordinatrice ressources humaines",
+    "Directeur / Directrice du personnel",
+    "Responsable de la gestion des carrières et des affaires sociales",
+    "Responsable de la gestion des effectifs, des emplois et des compétences",
+    "Responsable de la gestion des Ressources Humaines",
+    "Responsable de la gestion prévisionnelle des emplois et des compétences",
+    "Responsable des Ressources Humaines -RRH-",
+    "Responsable du développement des ressources humaines",
+    "Responsable du personnel"
+   ],
+   "centres": [
+    "J'ai l'âme d'un chef / d'une cheffe",
+    "J'ai le sens du contact",
+    "J'aime organiser, planifier"
+   ]
+  },
+  {
+   "code": "M1607",
+   "libelle": "Assistant administratif / Assistante administrative",
+   "famille": "admin",
+   "publics": [
+    "STMG",
+    "BTS_CG"
+   ],
+   "appellations": [
+    "Agent administratif / Agente administrative",
+    "Assistant / Assistante chef de projet",
+    "Assistant / Assistante de gestion administrative",
+    "Assistant / Assistante de gestion d'entreprise",
+    "Assistant / Assistante qualité services",
+    "Assistant administratif / Assistante administrative de projet",
+    "Auxiliaire de bureau",
+    "Chargé / Chargée de voyages en entreprise",
+    "Employé / Employée aux archives",
+    "Employé / Employée de bureau",
+    "Employé administratif / Employée administrative",
+    "Gestionnaire administratif / Gestionnaire administrative",
+    "Secrétaire",
+    "Secrétaire administratif / Secrétaire administrative",
+    "Secrétaire bureautique",
+    "Secrétaire d'affaires",
+    "Secrétaire généraliste",
+    "Secrétaire polyvalent / Secrétaire polyvalente",
+    "Secrétaire sténo-dactylo",
+    "Technicien / Technicienne de gestion administrative"
+   ],
+   "centres": [
+    "J'ai le sens du contact",
+    "J'aime organiser, planifier"
+   ]
+  },
+  {
+   "code": "M1604",
+   "libelle": "Assistant / Assistante de direction",
+   "famille": "admin",
+   "publics": [
+    "STMG",
+    "BTS_CG"
+   ],
+   "appellations": [
+    "Assistant / Assistante de direction bilingue",
+    "Assistant / Assistante de direction trilingue",
+    "Assistant / Assistante de manager",
+    "Attaché / Attachée de direction",
+    "Secrétaire de direction",
+    "Secrétaire de direction bilingue",
+    "Secrétaire de direction trilingue"
+   ],
+   "centres": [
+    "J'ai le sens du contact",
+    "J'ai le souci du détail",
+    "J'aime organiser, planifier"
+   ]
+  },
+  {
+   "code": "M1432",
+   "libelle": "Office manager",
+   "famille": "admin",
+   "publics": [
+    "STMG",
+    "BTS_CG"
+   ],
+   "appellations": [],
+   "centres": [
+    "J'ai le sens du contact",
+    "J'ai le souci du détail",
+    "J'aime organiser, planifier"
+   ]
+  },
+  {
+   "code": "M1621",
+   "libelle": "Assistant administratif / Assistante administrative multilingue",
+   "famille": "admin",
+   "publics": [
+    "STMG",
+    "BTS_CG"
+   ],
+   "appellations": [
+    "Secrétaire bilingue",
+    "Secrétaire trilingue"
+   ],
+   "centres": [
+    "J'ai le sens du contact",
+    "J'ai le souci du détail",
+    "J'aime organiser, planifier",
+    "Je suis passionné / passionnée par les autres cultures"
+   ]
+  },
+  {
+   "code": "M1612",
+   "libelle": "Assistant / Assistante de service juridique",
+   "famille": "admin",
+   "publics": [
+    "STMG",
+    "BTS_CG"
+   ],
+   "appellations": [
+    "Assistant / Assistante de cabinet juridique",
+    "Assistant / Assistante de justice",
+    "Auxiliaire juridique",
+    "Clerc d'avocat",
+    "Premier clerc d'avocat",
+    "Principal clerc d'avocat",
+    "Secrétaire d'avocat",
+    "Secrétaire juridique",
+    "Sous-principal clerc d'avocat"
+   ],
+   "centres": [
+    "J'ai le sens du contact",
+    "J'ai le souci du détail",
+    "J'aime faire respecter la loi, les règles",
+    "J'aime organiser, planifier"
+   ]
+  },
+  {
+   "code": "K1406",
+   "libelle": "Secrétaire de mairie",
+   "famille": "admin",
+   "publics": [
+    "STMG",
+    "BTS_CG"
+   ],
+   "appellations": [
+    "Employé / Employée de l'état civil",
+    "Secrétaire général / Secrétaire générale de mairie"
+   ],
+   "centres": [
+    "J'ai l'âme d'un chef / d'une cheffe",
+    "J'ai le sens du service public",
+    "J'aime faire respecter la loi, les règles",
+    "J'aime manier les chiffres",
+    "J'aime organiser, planifier"
+   ]
+  },
+  {
+   "code": "M1602",
+   "libelle": "Secrétaire administratif / Secrétaire administrative de collectivité territoriale",
+   "famille": "admin",
+   "publics": [
+    "STMG",
+    "BTS_CG"
+   ],
+   "appellations": [
+    "Adjoint administratif / Adjointe administrative (guichet)",
+    "Agent administratif / Agente administrative de l'Etat",
+    "Assistant administratif / Assistante administrative des collectivités territoriales",
+    "Employé administratif / Employée administrative (accueil)",
+    "Employé administratif / Employée administrative (guichet)",
+    "Secrétaire d'administration ou d'intendance universitaire",
+    "Secrétaire d'administration scolaire et universitaire -SASU-"
+   ],
+   "centres": [
+    "J'ai le souci du détail",
+    "J'aime organiser, planifier"
+   ]
+  },
+  {
+   "code": "M1601",
+   "libelle": "Chargé / Chargée d'accueil",
+   "famille": "admin",
+   "publics": [
+    "STMG"
+   ],
+   "appellations": [
+    "Agent / Agente d'accueil",
+    "Agent / Agente d'accueil d'établissement d'enseignement",
+    "Agent / Agente d'accueil du transport",
+    "Agent / Agente d'information",
+    "Chargé / Chargée d'accueil et d'information",
+    "Chef hôte / Cheffe hôtesse d'accueil",
+    "Employé / Employée d'accueil",
+    "Hôte / Hôtesse",
+    "Hôte / Hôtesse d'accueil",
+    "Hôte / Hôtesse d'accueil bilingue",
+    "Hôte / Hôtesse d'accueil standardiste",
+    "Hôte / Hôtesse d'accueil standardiste bilingue"
+   ],
+   "centres": [
+    "J'ai le sens du contact",
+    "J'aime communiquer, convaincre"
+   ]
+  },
+  {
+   "code": "C1201",
+   "libelle": "Chargé / Chargée d'accueil et de services clientèle bancaire",
+   "famille": "banque",
+   "publics": [
+    "STMG",
+    "BTS_NDRC"
+   ],
+   "appellations": [
+    "Assistant / Assistante de clientèle de banque",
+    "Assistant / Assistante service clientèle bancaire",
+    "Assistant / Assistante service clientèle de banque",
+    "Chargé / Chargée d'accueil en banque",
+    "Conseiller / Conseillère accueil en agence bancaire"
+   ],
+   "centres": [
+    "J'ai le sens du contact",
+    "J'aime communiquer, convaincre"
+   ]
+  },
+  {
+   "code": "C1203",
+   "libelle": "Chargé / Chargée d'affaires bancaires",
+   "famille": "banque",
+   "publics": [
+    "STMG",
+    "BTS_NDRC"
+   ],
+   "appellations": [
+    "Attaché commercial / Attachée commerciale bancaire",
+    "Responsable clientèle bancaire"
+   ],
+   "centres": [
+    "J'ai le sens des affaires",
+    "J'aime communiquer, convaincre",
+    "J'aime manier les chiffres"
+   ]
+  },
+  {
+   "code": "C1205",
+   "libelle": "Conseiller / Conseillère en gestion de patrimoine",
+   "famille": "banque",
+   "publics": [
+    "STMG",
+    "BTS_NDRC"
+   ],
+   "appellations": [
+    "Conseiller / Conseillère en développement de patrimoine",
+    "Conseiller / Conseillère en gestion d'actifs",
+    "Conseiller / Conseillère en gestion de capitaux",
+    "Conseiller / Conseillère en gestion de fortune",
+    "Conseiller / Conseillère en gestion de patrimoine financier",
+    "Conseiller / Conseillère en gestion de patrimoine immobilier",
+    "Conseiller / Conseillère en investissements financiers",
+    "Conseiller / Conseillère en investissements privés",
+    "Conseiller / Conseillère en patrimoine financier",
+    "Conseiller / Conseillère gestion banque privée",
+    "Conseiller patrimonial / Conseillère patrimoniale",
+    "Family office",
+    "Gestionnaire clientèle patrimoniale",
+    "Gestionnaire de fortune",
+    "Gestionnaire de patrimoine financier",
+    "Ingénieur / Ingénieure en gestion patrimoniale"
+   ],
+   "centres": [
+    "J'ai le sens des affaires",
+    "J'aime communiquer, convaincre",
+    "J'aime manier les chiffres"
+   ]
+  },
+  {
+   "code": "C1206",
+   "libelle": "Conseiller / Conseillère de clientèle bancaire",
+   "famille": "banque",
+   "publics": [
+    "STMG",
+    "BTS_NDRC"
+   ],
+   "appellations": [
+    "Agent administratif / Agente administrative des opérations bancaires",
+    "Chargé / Chargée de clientèle bancaire",
+    "Chargé / Chargée de clientèle de banque",
+    "Chargé / Chargée de clientèle professionnelle de banque",
+    "Chargé / Chargée de gestion bancaire",
+    "Chargé / Chargée de relations clientèle bancaire",
+    "Conseiller financier / Conseillère financière banque postale",
+    "Gestionnaire de clientèle bancaire"
+   ],
+   "centres": [
+    "J'ai le sens du contact"
+   ]
+  },
+  {
+   "code": "C1212",
+   "libelle": "Conseiller / Conseillère à distance de banque",
+   "famille": "banque",
+   "publics": [
+    "STMG",
+    "BTS_NDRC"
+   ],
+   "appellations": [
+    "Téléconseiller / Téléconseillère en banque"
+   ],
+   "centres": [
+    "J'ai le sens des affaires",
+    "J'ai le sens du contact",
+    "J'ai le souci du détail",
+    "J'aime faire respecter la loi, les règles"
+   ]
+  },
+  {
+   "code": "C1217",
+   "libelle": "Conseiller commercial / Conseillère commerciale de banque",
+   "famille": "banque",
+   "publics": [
+    "STMG",
+    "BTS_NDRC"
+   ],
+   "appellations": [
+    "Attaché / Attachée de clientèle de banque",
+    "Chargé / Chargée de clientèle commerciale de banque",
+    "Chargé / Chargée de clientèle entreprises de banque",
+    "Chargé / Chargée de clientèle particuliers de banque",
+    "Chargé / Chargée de clientèle rachat de crédits",
+    "Conseiller / Conseillère en crédit immobilier",
+    "Conseiller / Conseillère en produit épargne",
+    "Conseiller commercial professionnel / Conseillère commerciale professionnelle secteur bancaire",
+    "Conseiller financier / Conseillère financière clientèle professionnelle"
+   ],
+   "centres": [
+    "J'ai le sens des affaires",
+    "J'ai le sens du contact",
+    "J'ai le souci du détail",
+    "J'aime communiquer, convaincre",
+    "J'aime faire respecter la loi, les règles"
+   ]
+  },
+  {
+   "code": "C1211",
+   "libelle": "Guichetier vendeur / Guichetière vendeuse",
+   "famille": "banque",
+   "publics": [
+    "STMG",
+    "BTS_NDRC"
+   ],
+   "appellations": [
+    "Conseiller / Conseillère d'accueil en banque",
+    "Guichetier / Guichetière accueil banque",
+    "Guichetier / Guichetière de banque",
+    "Guichetier / Guichetière de la banque postale",
+    "Guichetier / Guichetière de la Poste",
+    "Guichetier payeur / Guichetière payeuse"
+   ],
+   "centres": [
+    "J'ai le sens du contact",
+    "J'ai le sens du service public",
+    "J'aime faire respecter la loi, les règles"
+   ]
+  },
+  {
+   "code": "C1207",
+   "libelle": "Directeur / Directrice d'agence bancaire",
+   "famille": "banque",
+   "publics": [
+    "STMG",
+    "BTS_NDRC"
+   ],
+   "appellations": [
+    "Adjoint / Adjointe de direction bancaire",
+    "Chef / Cheffe d'agence bancaire",
+    "Directeur / Directrice de caisse bancaire locale",
+    "Directeur / Directrice de centre d'affaires bancaires"
+   ],
+   "centres": [
+    "J'ai l'âme d'un chef / d'une cheffe",
+    "J'ai le sens des affaires",
+    "J'ai le sens du contact"
+   ]
+  },
+  {
+   "code": "C1202",
+   "libelle": "Analyste de crédits et risques bancaires",
+   "famille": "banque",
+   "publics": [
+    "STMG",
+    "BTS_CG"
+   ],
+   "appellations": [
+    "Analyste engagements bancaires",
+    "Analyste prêt bancaire"
+   ],
+   "centres": [
+    "J'ai le souci du détail",
+    "J'aime manier les chiffres"
+   ]
+  },
+  {
+   "code": "C1214",
+   "libelle": "Chargé / Chargée d'études crédits bancaires",
+   "famille": "banque",
+   "publics": [
+    "STMG",
+    "BTS_CG"
+   ],
+   "appellations": [
+    "Ingénieur financier / Ingénieure financière en crédit bancaire",
+    "Responsable marché bancaire particuliers",
+    "Responsable marché bancaire professionnels"
+   ],
+   "centres": [
+    "J'ai le sens des affaires",
+    "J'aime communiquer, convaincre",
+    "J'aime manier les chiffres",
+    "J'aime organiser, planifier"
+   ]
+  },
+  {
+   "code": "C1215",
+   "libelle": "Contrôleur / Contrôleuse de banque",
+   "famille": "banque",
+   "publics": [
+    "STMG",
+    "BTS_CG"
+   ],
+   "appellations": [
+    "Gestionnaire risques bancaires"
+   ],
+   "centres": [
+    "J'ai le sens des affaires",
+    "J'ai le souci du détail",
+    "J'aime communiquer, convaincre",
+    "J'aime faire respecter la loi, les règles"
+   ]
+  },
+  {
+   "code": "C1401",
+   "libelle": "Agent administratif / Agente administrative banque ou assurance",
+   "famille": "banque",
+   "publics": [
+    "STMG",
+    "BTS_CG"
+   ],
+   "appellations": [
+    "Agent administratif / Agente administrative d'assurances",
+    "Agent administratif / Agente administrative de banque",
+    "Assistant administratif / Assistante administrative d'assurances",
+    "Employé central / Employée centrale chèque",
+    "Technicien / Technicienne de gestion électronique de documents (GED)",
+    "Technicien administratif / Technicienne administrative de banque"
+   ],
+   "centres": [
+    "J'ai le sens du contact",
+    "J'ai le souci du détail",
+    "J'aime organiser, planifier"
+   ]
+  },
+  {
+   "code": "C1102",
+   "libelle": "Conseiller commercial / Conseillère commerciale et relation client en assurances",
+   "famille": "assurance",
+   "publics": [
+    "STMG",
+    "BTS_NDRC"
+   ],
+   "appellations": [
+    "Agent commercial / Agente commerciale en assurances",
+    "Collaborateur commercial / Collaboratrice commerciale en assurances",
+    "Conseiller / Conseillère clientèle en assurances",
+    "Conseiller / Conseillère en assurances",
+    "Conseiller / Conseillère en assurance vie",
+    "Conseiller / Conseillère gestion sinistres",
+    "Conseiller / Conseillère Incendie, Accidents, Risques Divers (IARD)",
+    "Conseiller / Conseillère mutualiste",
+    "Conseiller / Conseillère mutualiste Incendie, Accidents, Risques Divers (IARD)",
+    "Conseiller commercial / Conseillère commerciale en assurances",
+    "Producteur / Productrice en assurances",
+    "Technico-commercial / Technico-commerciale en assurances"
+   ],
+   "centres": [
+    "J'ai le sens des affaires",
+    "J'aime communiquer, convaincre",
+    "J'aime manier les chiffres"
+   ]
+  },
+  {
+   "code": "C1103",
+   "libelle": "Courtier / Courtière en assurance",
+   "famille": "assurance",
+   "publics": [
+    "STMG",
+    "BTS_NDRC"
+   ],
+   "appellations": [
+    "Courtier / Courtière d'assurance ou de réassurance"
+   ],
+   "centres": [
+    "J'ai l'âme d'un chef / d'une cheffe",
+    "J'aime communiquer, convaincre",
+    "Je souhaite protéger et secourir"
+   ]
+  },
+  {
+   "code": "C1104",
+   "libelle": "Responsable d'agence en assurances",
+   "famille": "assurance",
+   "publics": [
+    "STMG",
+    "BTS_NDRC"
+   ],
+   "appellations": [
+    "Chargé / Chargée d'agence en assurances",
+    "Responsable de bureau d'assurances"
+   ],
+   "centres": [
+    "J'ai l'âme d'un chef / d'une cheffe",
+    "J'ai le sens des affaires",
+    "J'aime communiquer, convaincre"
+   ]
+  },
+  {
+   "code": "C1111",
+   "libelle": "Mandataire en assurance",
+   "famille": "assurance",
+   "publics": [
+    "STMG",
+    "BTS_NDRC"
+   ],
+   "appellations": [
+    "Mandataire d'intermédiaire(s) en assurance"
+   ],
+   "centres": [
+    "J'ai le sens des affaires",
+    "J'aime communiquer, convaincre",
+    "J'aime manier les chiffres"
+   ]
+  },
+  {
+   "code": "C1112",
+   "libelle": "Agent général / Agente générale d'assurance",
+   "famille": "assurance",
+   "publics": [
+    "STMG",
+    "BTS_NDRC"
+   ],
+   "appellations": [],
+   "centres": [
+    "J'ai le sens des affaires",
+    "J'ai le sens du contact",
+    "J'aime manier les chiffres",
+    "J'aime organiser, planifier"
+   ]
+  },
+  {
+   "code": "C1116",
+   "libelle": "Chargé / Chargée de clientèle centre d'appels en assurances",
+   "famille": "assurance",
+   "publics": [
+    "STMG",
+    "BTS_NDRC"
+   ],
+   "appellations": [
+    "Chargé / Chargée de clientèle en assurances",
+    "Conseiller à distance en assurances / Conseillère à distance en assurances",
+    "Téléconseiller / Téléconseillère en assurances"
+   ],
+   "centres": [
+    "J'aime communiquer, convaincre",
+    "J'aime faire respecter la loi, les règles"
+   ]
+  },
+  {
+   "code": "C1119",
+   "libelle": "Chargé / Chargée d'affaires en assurances",
+   "famille": "assurance",
+   "publics": [
+    "STMG",
+    "BTS_NDRC"
+   ],
+   "appellations": [
+    "Attaché / Attachée clientèle assurances",
+    "Chef / Cheffe produit assurances"
+   ],
+   "centres": [
+    "J'ai le sens des affaires",
+    "J'aime communiquer, convaincre",
+    "J'aime faire respecter la loi, les règles"
+   ]
+  },
+  {
+   "code": "C1110",
+   "libelle": "Souscripteur / Souscriptrice en assurances",
+   "famille": "assurance",
+   "publics": [
+    "STMG",
+    "BTS_NDRC"
+   ],
+   "appellations": [
+    "Autorisateur / Autorisatrice en assurances",
+    "Chargé / Chargée de comptes Incendie, Accidents, Risques Divers (IARD)",
+    "Expert évaluateur / Experte évaluatrice en assurances",
+    "Responsable de souscription en assurances",
+    "Souscripteur / Souscriptrice assurance collective",
+    "Souscripteur / Souscriptrice Incendie, Accidents, Risques Divers (IARD)",
+    "Souscripteur / Souscriptrice responsabilité civile en assurances",
+    "Souscripteur / Souscriptrice vie collective en assurances",
+    "Souscripteur / Souscriptrice vie en assurances",
+    "Souscripteur-autorisateur / Souscriptrice-autorisatrice en assurances"
+   ],
+   "centres": [
+    "J'ai le sens des affaires",
+    "J'aime communiquer, convaincre"
+   ]
+  },
+  {
+   "code": "C1115",
+   "libelle": "Conseiller retraite / Conseillère retraite",
+   "famille": "assurance",
+   "publics": [
+    "STMG",
+    "BTS_NDRC"
+   ],
+   "appellations": [
+    "Gestionnaire de compte retraite en assurances",
+    "Gestionnaire liquidation retraite"
+   ],
+   "centres": [
+    "J'ai le sens du contact",
+    "J'aime faire respecter la loi, les règles",
+    "Je souhaite transmettre"
+   ]
+  },
+  {
+   "code": "C1109",
+   "libelle": "Gestionnaire en assurances",
+   "famille": "assurance",
+   "publics": [
+    "STMG",
+    "BTS_CG"
+   ],
+   "appellations": [
+    "Concepteur développeur / Conceptrice développeuse de produits d'assurances",
+    "Gestionnaire sinistre Incendie, Accidents, Risques Divers -IARD-",
+    "Rédacteur / Rédactrice d'assurances",
+    "Rédacteur / Rédactrice production auto",
+    "Rédacteur / Rédactrice production Incendie Risques Industriels (IRI)",
+    "Rédacteur / Rédactrice production risques complexes",
+    "Rédacteur / Rédactrice production risques de particuliers",
+    "Rédacteur / Rédactrice production Risques Divers (RD)",
+    "Rédacteur / Rédactrice production risques simples",
+    "Rédacteur / Rédactrice production vie",
+    "Rédacteur / Rédactrice sinistre auto",
+    "Rédacteur / Rédactrice sinistre incendie",
+    "Rédacteur / Rédactrice sinistres",
+    "Rédacteur / Rédactrice sinistres complexes",
+    "Rédacteur / Rédactrice sinistres contentieux",
+    "Rédacteur / Rédactrice sinistres risques divers",
+    "Rédacteur / Rédactrice sinistres simples",
+    "Rédacteur polyvalent / Rédactrice polyvalente production sinistres"
+   ],
+   "centres": [
+    "J'ai le souci du détail",
+    "J'aime manier les chiffres"
+   ]
+  },
+  {
+   "code": "C1107",
+   "libelle": "Chargé / Chargée d'indemnisations en assurances",
+   "famille": "assurance",
+   "publics": [
+    "STMG",
+    "BTS_CG"
+   ],
+   "appellations": [
+    "Conseiller / Conseillère en gestion des droits",
+    "Liquidateur / Liquidatrice de prestations"
+   ],
+   "centres": [
+    "J'ai le sens du contact",
+    "J'aime manier les chiffres"
+   ]
+  },
+  {
+   "code": "C1130",
+   "libelle": "Gestionnaire en protection sociale",
+   "famille": "assurance",
+   "publics": [
+    "STMG",
+    "BTS_CG"
+   ],
+   "appellations": [
+    "Agent / Agente d'accueil de prestations sociales",
+    "Conseiller / Conseillère en assurance produits d'épargne",
+    "Conseiller / Conseillère entreprise retraite",
+    "Conseiller / Conseillère prévoyance santé",
+    "Gestionnaire allocataires",
+    "Gestionnaire compte entreprise en assurances",
+    "Gestionnaire cotisations en assurances",
+    "Gestionnaire de carrières",
+    "Gestionnaire de comptes cotisants",
+    "Gestionnaire de contrats individuels",
+    "Gestionnaire de prestations assurance maladie",
+    "Gestionnaire de prestations sociales",
+    "Gestionnaire du recouvrement",
+    "Gestionnaire frais de santé",
+    "Gestionnaire prestations en assurances",
+    "Gestionnaire santé en assurances",
+    "Technicien / Technicienne du service médical"
+   ],
+   "centres": [
+    "J'ai le sens du contact",
+    "J'ai le sens du service public",
+    "J'aime faire respecter la loi, les règles",
+    "Je souhaite prendre soin des autres"
+   ]
+  },
+  {
+   "code": "C1126",
+   "libelle": "Contrôleur / Contrôleuse cotisations sociales",
+   "famille": "assurance",
+   "publics": [
+    "STMG",
+    "BTS_CG"
+   ],
+   "appellations": [
+    "Inspecteur / Inspectrice URSSAF"
+   ],
+   "centres": [
+    "J'ai l'âme d'un chef / d'une cheffe",
+    "J'ai le sens du service public",
+    "J'aime faire respecter la loi, les règles"
+   ]
+  },
+  {
+   "code": "C1124",
+   "libelle": "Technicien / Technicienne sécurité sociale",
+   "famille": "assurance",
+   "publics": [
+    "STMG",
+    "BTS_CG"
+   ],
+   "appellations": [
+    "Décompteur / Décompteuse"
+   ],
+   "centres": [
+    "J'ai le sens du contact",
+    "J'ai le souci du détail",
+    "J'aime faire respecter la loi, les règles"
+   ]
+  },
+  {
+   "code": "C1503",
+   "libelle": "Chargé / Chargée d'affaires immobilières",
+   "famille": "immobilier",
+   "publics": [
+    "STMG",
+    "BTS_NDRC"
+   ],
+   "appellations": [
+    "Assistant / Assistante de programmes immobiliers",
+    "Assistant / Assistante en montage d'opérations immobilières",
+    "Assistant / Assistante en promotion immobilière",
+    "Chargé / Chargée d'études immobilières",
+    "Chargé / Chargée d'opérations logement social",
+    "Chargé / Chargée de mission immobilière",
+    "Conducteur / Conductrice d'opérations immobilières",
+    "Constructeur / Constructrice de maisons individuelles",
+    "Directeur / Directrice de la promotion immobilière",
+    "Gestionnaire de programmes immobiliers",
+    "Lotisseur / Lotisseuse",
+    "Monteur / Monteuse d'opérations immobilières",
+    "Pilote d'opérations immobilières",
+    "Promoteur-constructeur / Promotrice-constructrice",
+    "Prospecteur monteur / Prospectrice monteuse en opérations immobilières",
+    "Responsable de projet de renouvellement urbain",
+    "Responsable foncier / Responsable foncière",
+    "Responsable habitat - logement",
+    "Responsable programme réhabilitation immobilière"
+   ],
+   "centres": [
+    "J'ai le sens des affaires",
+    "J'ai le sens du contact",
+    "J'aime communiquer, convaincre"
+   ]
+  },
+  {
+   "code": "C1504",
+   "libelle": "Conseiller / Conseillère immobilier",
+   "famille": "immobilier",
+   "publics": [
+    "STMG",
+    "BTS_NDRC"
+   ],
+   "appellations": [
+    "Agent / Agente de location immobilière",
+    "Agent / Agente immobilier",
+    "Agent commercial / Agente commerciale en immobilier",
+    "Assistant commercial / Assistante commerciale en immobilier",
+    "Attaché commercial / Attachée commerciale en immobilier",
+    "Chasseur / Chasseuse immobilier",
+    "Conseiller / Conseillère de location en immobilier",
+    "Conseiller / Conseillère de transaction en immobilier",
+    "Conseiller / Conseillère de vente en immobilier",
+    "Conseiller / Conseillère en immobilier d'entreprise",
+    "Mandataire en vente de fonds de commerce",
+    "Marchand / Marchande de biens immobiliers",
+    "Négociateur / Négociatrice en immobilier",
+    "Négociateur / Négociatrice en immobilier d'entreprise",
+    "Négociateur / Négociatrice en location immobilière",
+    "Négociateur / Négociatrice immobilier",
+    "Négociateur / Négociatrice immobilier en bureau de vente",
+    "Prospecteur négociateur / Prospectrice négociatrice en immobilier",
+    "Vendeur / Vendeuse en immobilier neuf",
+    "Vendeur / Vendeuse immobilier"
+   ],
+   "centres": [
+    "J'ai le sens des affaires",
+    "J'ai le sens du contact"
+   ]
+  },
+  {
+   "code": "C1505",
+   "libelle": "Responsable d'agence immobilière",
+   "famille": "immobilier",
+   "publics": [
+    "STMG",
+    "BTS_NDRC"
+   ],
+   "appellations": [
+    "Chef / Cheffe d'agence immobilière",
+    "Directeur / Directrice d'agence immobilière",
+    "Manager d'agence immobilière",
+    "Manager transaction service",
+    "Responsable d'agence en gestion locative",
+    "Responsable de clientèle en transaction immobilière",
+    "Responsable de location immobilière",
+    "Responsable de vente immobilière"
+   ],
+   "centres": [
+    "J'ai l'âme d'un chef / d'une cheffe",
+    "J'ai le sens des affaires",
+    "J'ai le sens du contact",
+    "J'aime organiser, planifier",
+    "Je souhaite transmettre"
+   ]
+  },
+  {
+   "code": "C1501",
+   "libelle": "Gestionnaire de copropriété",
+   "famille": "immobilier",
+   "publics": [
+    "STMG",
+    "BTS_CG"
+   ],
+   "appellations": [
+    "Cadre de la gestion en patrimoine immobilier",
+    "Chargé de clientèle principal / Chargée de clientèle principale en immobilier",
+    "Chef / Cheffe d'agence locatif immobilier",
+    "Chef / Cheffe d'unité de gestion immobilière",
+    "Conseiller / Conseillère technique en immobilier",
+    "Directeur / Directrice d'agence de gestion d'immeubles HLM",
+    "Directeur / Directrice de gérance locative en immobilier",
+    "Directeur / Directrice de la gestion immobilière",
+    "Directeur / Directrice de la gestion locative immobilière",
+    "Directeur / Directrice des services immobiliers",
+    "Directeur / Directrice du patrimoine immobilier",
+    "Directeur / Directrice immobilier",
+    "Gérant / Gérante de copropriété",
+    "Gérant / Gérante de groupe d'immeubles",
+    "Gérant / Gérante de portefeuille immobilier",
+    "Gestionnaire d'immeubles",
+    "Gestionnaire de portefeuille immobilier",
+    "Inspecteur / Inspectrice de gérance immobilière",
+    "Principal / Principale de copropriété",
+    "Principal / Principale de régie en immobilier",
+    "Responsable d'antenne HLM",
+    "Responsable d'antenne locative",
+    "Responsable d'unité de gestion d'immeubles",
+    "Responsable de copropriété",
+    "Responsable de groupes d'immeubles",
+    "Responsable de patrimoine immobilier",
+    "Responsable de site immobilier",
+    "Syndic d'immeuble",
+    "Syndic de copropriété",
+    "Syndic social"
+   ],
+   "centres": [
+    "J'ai le sens des affaires",
+    "J'ai le sens du contact",
+    "J'aime organiser, planifier"
+   ]
+  },
+  {
+   "code": "C1502",
+   "libelle": "Chargé / Chargée de gestion locative en immobilier",
+   "famille": "immobilier",
+   "publics": [
+    "STMG",
+    "BTS_CG"
+   ],
+   "appellations": [
+    "Agent / Agente d'état des lieux",
+    "Agent / Agente de gestion APL",
+    "Agent / Agente de gestion locative en immobilier",
+    "Agent / Agente de peuplement",
+    "Assistant / Assistante de gestion locative en immobilier",
+    "Assistant / Assistante gestionnaire en immobilier",
+    "Chargé / Chargée d'attribution en immobilier",
+    "Chargé / Chargée de clientèle en immobilier locatif",
+    "Chargé / Chargée du quittancement",
+    "Employé / Employée de gestion immobilière",
+    "Gestionnaire administratif / Gestionnaire administrative immobilier",
+    "Gestionnaire de galerie marchande",
+    "Régisseur / Régisseuse d'immeubles",
+    "Responsable de clientèle immobilier locatif",
+    "Responsable de gestion immobilière locative",
+    "Responsable de secteur immobilier locatif",
+    "Responsable locatif immobilier"
+   ],
+   "centres": [
+    "J'ai le sens des affaires",
+    "J'ai le sens du contact",
+    "J'aime communiquer, convaincre",
+    "J'aime organiser, planifier"
+   ]
+  },
+  {
+   "code": "C1508",
+   "libelle": "Assistant / Assistante de gestion syndic immobilier",
+   "famille": "immobilier",
+   "publics": [
+    "STMG",
+    "BTS_CG"
+   ],
+   "appellations": [
+    "Employé / Employée de gestion de copropriété",
+    "Secrétaire de groupe d'immeubles",
+    "Secrétaire de syndic immobilier"
+   ],
+   "centres": [
+    "J'ai le sens des affaires",
+    "J'ai le souci du détail",
+    "J'aime organiser, planifier"
+   ]
+  },
+  {
+   "code": "C1507",
+   "libelle": "Chargé / Chargée de recouvrement immobilier",
+   "famille": "immobilier",
+   "publics": [
+    "STMG",
+    "BTS_CG"
+   ],
+   "appellations": [
+    "Administrateur / Administratrice de biens immobiliers",
+    "Chargé / Chargée d'unité de gestion immobilière",
+    "Chargé / Chargée du précontentieux immobilier",
+    "Gestionnaire de patrimoine immobilier",
+    "Inspecteur / Inspectrice de gestion immobilière",
+    "Responsable d'unité de gestion locatif immobilier"
+   ],
+   "centres": [
+    "J'ai le sens des affaires",
+    "J'ai le sens du contact",
+    "J'aime faire respecter la loi, les règles"
+   ]
+  },
+  {
+   "code": "D1402",
+   "libelle": "Commercial / Commerciale grands comptes et entreprises",
+   "famille": "vente_b2b",
+   "publics": [
+    "STMG",
+    "BTS_NDRC"
+   ],
+   "appellations": [
+    "Agent commercial / Agente commerciale et de contrôle de transport en commun routier",
+    "Agent commercial en produits électriques / Agente commerciale en produits électriques",
+    "Attaché commercial / Attachée commerciale en biens d'équipement professionnels",
+    "Attaché commercial / Attachée commerciale en biens de consommation auprès des entreprises",
+    "Attaché commercial / Attachée commerciale en biens intermédiaires et matières premières auprès des entreprises",
+    "Attaché commercial / Attachée commerciale en énergies renouvelables",
+    "Attaché commercial / Attachée commerciale en fournitures industrielles auprès des entreprises",
+    "Attaché commercial / Attachée commerciale en matériaux industriels auprès des entreprises",
+    "Attaché commercial / Attachée commerciale en matériel agricole auprès des entreprises",
+    "Attaché commercial / Attachée commerciale en matériel de bureau auprès des entreprises",
+    "Attaché commercial / Attachée commerciale en transport-logistique",
+    "Attaché commercial / Attachée commerciale grandes et moyennes surfaces de vente (GMS)",
+    "Attaché commercial / Attachée commerciale tourisme",
+    "Commercial / Commerciale en biens d'équipement auprès des entreprises",
+    "Commercial / Commerciale en biens de consommation auprès des entreprises",
+    "Commercial / Commerciale en biens intermédiaires et matières premières auprès des entreprises",
+    "Commercial / Commerciale en publicité auprès des entreprises",
+    "Commercial / Commerciale machinisme agricole",
+    "Commercial en produits électriques / Commerciale en produits électriques",
+    "Commercial vendeur / Commerciale vendeuse d'espaces publicitaires",
+    "Commercial vendeur / Commerciale vendeuse d'espaces publicitaires web",
+    "Conseiller commercial / Conseillère commerciale en biens d'équipement auprès des entreprises",
+    "Conseiller commercial / Conseillère commerciale en biens de consommation auprès des entreprises",
+    "Conseiller commercial / Conseillère commerciale en biens intermédiaires et matières premières auprès des entreprises",
+    "Délégué commercial / Déléguée commerciale en biens d'équipement auprès des entreprises",
+    "Délégué commercial / Déléguée commerciale en biens de consommation auprès des entreprises",
+    "Délégué commercial / Déléguée commerciale en biens intermédiaires et matières premières auprès des entreprises",
+    "Délégué commercial / Déléguée commerciale en services auprès des entreprises",
+    "Négociateur / Négociatrice grands comptes du commerce",
+    "Représentant / Représentante en produits électriques",
+    "Représentant en matériaux (métaux, bois, verre, etc.) / Représentante en matériaux (métaux, bois, verre, etc.)"
+   ],
+   "centres": [
+    "J'ai le sens des affaires",
+    "J'ai le sens du contact",
+    "J'aime communiquer, convaincre"
+   ]
+  },
+  {
+   "code": "D1407",
+   "libelle": "Technico-commercial / Technico-commerciale",
+   "famille": "vente_b2b",
+   "publics": [
+    "STMG",
+    "BTS_NDRC"
+   ],
+   "appellations": [
+    "Agent commercial en produits métallurgiques / Agente commerciale en produits métallurgiques",
+    "Attaché technico-commercial / Attachée technico-commerciale",
+    "Chargé / Chargée de comptes",
+    "Chargé d'affaires technico-commercial / Chargée d'affaires technico-commerciale",
+    "Commercial / Commerciale technique",
+    "Négociant d'équipements industriels / Négociante d'équipements industriels",
+    "Représentant en machines-outils / Représentante en machines-outils",
+    "Technico-commercial / Technico-commerciale en matériels agricoles",
+    "Technico-commercial / Technico-commerciale en produits chimiques, plastiques",
+    "Technico-commercial / Technico-commerciale grands comptes",
+    "Technico-commercial deviseur / Technico-commerciale deviseuse",
+    "Technico-commercial en produits électriques / Technico-commerciale en produits électriques",
+    "Technico-commercial en textile et confection / Technico-commerciale en textile et confection"
+   ],
+   "centres": [
+    "J'ai le sens des affaires",
+    "J'aime communiquer, convaincre",
+    "J'aime manier les chiffres"
+   ]
+  },
+  {
+   "code": "D1410",
+   "libelle": "Attaché commercial / Attachée commerciale",
+   "famille": "vente_b2b",
+   "publics": [
+    "STMG",
+    "BTS_NDRC"
+   ],
+   "appellations": [
+    "Agent commercial en machines-outils / Agente commerciale en machines-outils",
+    "Attaché commercial / Attachée commerciale sédentaire",
+    "Commercial / Commerciale",
+    "Commercial / Commerciale sédentaire",
+    "Commercial en machines-outils / Commerciale en machines-outils",
+    "Conseiller commercial / Conseillère commerciale sédentaire",
+    "Délégué commercial / Déléguée commerciale",
+    "Délégué commercial / Déléguée commerciale sédentaire",
+    "Employé commercial / Employée commerciale sédentaire",
+    "Technico-commercial en machines-outils / Technico-commerciale en machines-outils",
+    "VRP"
+   ],
+   "centres": [
+    "J'ai le sens des affaires",
+    "J'ai le sens du contact",
+    "J'aime communiquer, convaincre"
+   ]
+  },
+  {
+   "code": "D1416",
+   "libelle": "Commercial / Commerciale auprès d'une clientèle d'entreprises",
+   "famille": "vente_b2b",
+   "publics": [
+    "STMG",
+    "BTS_NDRC"
+   ],
+   "appellations": [
+    "Attaché commercial / Attachée commerciale en clientèle d'entreprises",
+    "Attaché commercial / Attachée commerciale en services auprès des entreprises",
+    "Commercial / Commerciale en services auprès des entreprises",
+    "Conseiller commercial / Conseillère commerciale auprès d'une clientèle d'entreprises",
+    "Conseiller commercial / Conseillère commerciale en services auprès des entreprises"
+   ],
+   "centres": [
+    "J'ai le sens des affaires",
+    "J'ai le sens du contact",
+    "J'aime communiquer, convaincre"
+   ]
+  },
+  {
+   "code": "D1417",
+   "libelle": "Chef / Cheffe des ventes",
+   "famille": "vente_b2b",
+   "publics": [
+    "STMG",
+    "BTS_NDRC"
+   ],
+   "appellations": [
+    "Chef / Cheffe de secteur des ventes",
+    "Chef / Cheffe des ventes de véhicules",
+    "Chef / Cheffe des ventes pièces de rechanges et accessoires de véhicules"
+   ],
+   "centres": [
+    "J'ai l'âme d'un chef / d'une cheffe",
+    "J'ai le sens des affaires",
+    "J'aime manier les chiffres"
+   ]
+  },
+  {
+   "code": "D1406",
+   "libelle": "Directeur / Directrice des ventes",
+   "famille": "vente_b2b",
+   "publics": [
+    "STMG",
+    "BTS_NDRC"
+   ],
+   "appellations": [
+    "Chargé / Chargée d'expansion commerciale d'enseigne",
+    "Chargé de développement de réseau de franchises / Chargée de développement de réseau de franchises",
+    "Délégué régional / Déléguée régionale des ventes",
+    "Directeur / Directrice des ventes internationales",
+    "Directeur national / Directrice nationale des ventes",
+    "Directeur régional / Directrice régionale des ventes",
+    "Directeur régional / Directrice régionale des ventes export",
+    "Inspecteur / Inspectrice des ventes",
+    "Inspecteur / Inspectrice du cadre en assurances",
+    "Inspecteur commercial / Inspectrice commerciale",
+    "Manager commercial des forces de vente",
+    "Manager commercial junior des forces de vente",
+    "Responsable animateur / Responsable animatrice des forces de vente",
+    "Responsable animateur / Responsable animatrice des ventes",
+    "Responsable de la force de vente",
+    "Responsable des ventes",
+    "Responsable des ventes comptes-clés",
+    "Responsable des ventes et merchandising",
+    "Responsable des ventes zone export",
+    "Responsable régional / Responsable régionale des ventes",
+    "Responsable ventes indirectes"
+   ],
+   "centres": [
+    "J'ai l'âme d'un chef / d'une cheffe",
+    "J'ai le sens des affaires",
+    "J'aime manier les chiffres"
+   ]
+  },
+  {
+   "code": "D1429",
+   "libelle": "Assistant / Assistante import-export",
+   "famille": "vente_b2b",
+   "publics": [
+    "STMG",
+    "BTS_NDRC"
+   ],
+   "appellations": [
+    "Assistant / Assistante commerce international",
+    "Assistant / Assistante export",
+    "Assistant / Assistante import"
+   ],
+   "centres": [
+    "J'ai le sens du contact",
+    "J'aime communiquer, convaincre",
+    "J'aime organiser, planifier"
+   ]
+  },
+  {
+   "code": "D1433",
+   "libelle": "Commercial / Commerciale export",
+   "famille": "vente_b2b",
+   "publics": [
+    "STMG",
+    "BTS_NDRC"
+   ],
+   "appellations": [
+    "Attaché commercial / Attachée commerciale export"
+   ],
+   "centres": [
+    "J'ai le sens des affaires",
+    "J'aime communiquer, convaincre"
+   ]
+  },
+  {
+   "code": "D1439",
+   "libelle": "Représentant / Représentante en biens et en services auprès des entreprises",
+   "famille": "vente_b2b",
+   "publics": [
+    "STMG",
+    "BTS_NDRC"
+   ],
+   "appellations": [
+    "Représentant / Représentante en biens d'équipement auprès des entreprises",
+    "Représentant / Représentante en biens de consommation auprès des entreprises",
+    "Représentant / Représentante en biens intermédiaires et matières premières auprès des entreprises",
+    "Représentant / Représentante en services auprès des entreprises",
+    "Représentant commercial / Représentante commerciale"
+   ],
+   "centres": [
+    "J'ai le sens des affaires",
+    "J'ai le sens du contact",
+    "J'aime communiquer, convaincre"
+   ]
+  },
+  {
+   "code": "D1444",
+   "libelle": "Responsable grands comptes",
+   "famille": "vente_b2b",
+   "publics": [
+    "STMG",
+    "BTS_NDRC"
+   ],
+   "appellations": [
+    "Key Account Manager"
+   ],
+   "centres": [
+    "J'ai le sens des affaires",
+    "J'ai le sens du contact",
+    "J'aime communiquer, convaincre"
+   ]
+  },
+  {
+   "code": "D1401",
+   "libelle": "Assistant commercial / Assistante commerciale",
+   "famille": "vente_b2b",
+   "publics": [
+    "STMG",
+    "BTS_NDRC"
+   ],
+   "appellations": [
+    "Assistant / Assistante de direction commerciale",
+    "Assistant / Assistante de gestion commerciale",
+    "Assistant administratif et commercial / Assistante administrative et commerciale",
+    "Assistant commercial / Assistante commerciale et appels d'offres",
+    "Assistant commercial / Assistante commerciale sédentaire"
+   ],
+   "centres": [
+    "J'ai le sens du contact",
+    "J'aime communiquer, convaincre",
+    "J'aime organiser, planifier"
+   ]
+  },
+  {
+   "code": "D1409",
+   "libelle": "Assistant / Assistante administration des ventes",
+   "famille": "vente_b2b",
+   "publics": [
+    "STMG",
+    "BTS_NDRC"
+   ],
+   "appellations": [
+    "Assistant / Assistante administration des ventes export",
+    "Assistant / Assistante des ventes",
+    "Technicien / Technicienne administration des ventes"
+   ],
+   "centres": [
+    "J'ai le sens des affaires",
+    "J'ai le sens du contact",
+    "J'ai le souci du détail",
+    "J'aime communiquer, convaincre"
+   ]
+  },
+  {
+   "code": "D1431",
+   "libelle": "Assistant / Assistante achat",
+   "famille": "vente_b2b",
+   "publics": [
+    "STMG",
+    "BTS_NDRC"
+   ],
+   "appellations": [],
+   "centres": [
+    "J'ai le sens des affaires",
+    "J'ai le sens du contact",
+    "J'aime communiquer, convaincre",
+    "J'aime organiser, planifier"
+   ]
+  },
+  {
+   "code": "D1422",
+   "libelle": "Chargé / Chargée de recouvrement de créances",
+   "famille": "vente_b2b",
+   "publics": [
+    "STMG",
+    "BTS_CG",
+    "BTS_NDRC"
+   ],
+   "appellations": [
+    "Recouvreur / Recouvreuse de créances"
+   ],
+   "centres": [
+    "J'aime communiquer, convaincre",
+    "J'aime faire respecter la loi, les règles",
+    "J'aime manier les chiffres"
+   ]
+  },
+  {
+   "code": "D1403",
+   "libelle": "Conseiller commercial / Conseillère commerciale auprès des particuliers",
+   "famille": "vente_distance",
+   "publics": [
+    "STMG",
+    "BTS_NDRC"
+   ],
+   "appellations": [
+    "Attaché commercial / Attachée commerciale auprès des particuliers",
+    "Chef / Cheffe de groupe de vendeurs à domicile",
+    "Collaborateur commercial / Collaboratrice commerciale",
+    "Commercial / Commerciale auprès des particuliers",
+    "Conseiller commercial / Conseillère commerciale auprès d'une clientèle de particuliers",
+    "Conseiller commercial / Conseillère commerciale en aménagement de cuisines auprès des particuliers",
+    "Conseiller commercial / Conseillère commerciale en articles de décoration auprès des particuliers",
+    "Conseiller commercial / Conseillère commerciale en bien-être et diététique auprès des particuliers",
+    "Conseiller commercial / Conseillère commerciale en cheminées auprès des particuliers",
+    "Conseiller commercial / Conseillère commerciale en déménagement",
+    "Conseiller commercial / Conseillère commerciale en distribution d'énergie auprès des particuliers",
+    "Conseiller commercial / Conseillère commerciale en équipement de l'habitat auprès des particuliers",
+    "Conseiller commercial / Conseillère commerciale en fermetures auprès de particuliers",
+    "Conseiller commercial / Conseillère commerciale en gastronomie univers culinaire auprès des particuliers",
+    "Conseiller commercial / Conseillère commerciale en mobile homes auprès des particuliers",
+    "Conseiller commercial / Conseillère commerciale en piscines auprès des particuliers",
+    "Conseiller commercial / Conseillère commerciale en produits cosmétiques auprès des particuliers",
+    "Conseiller commercial / Conseillère commerciale en produits culturels auprès des particuliers",
+    "Conseiller commercial / Conseillère commerciale en produits d'entretien auprès des particuliers",
+    "Conseiller commercial / Conseillère commerciale en ravalement de façades auprès des particuliers",
+    "Conseiller commercial / Conseillère commerciale en salles de bains auprès des particuliers",
+    "Conseiller commercial / Conseillère commerciale en solutions de télécommunications auprès des particuliers",
+    "Conseiller commercial / Conseillère commerciale en stores auprès des particuliers",
+    "Conseiller commercial / Conseillère commerciale en textile et accessoires de mode auprès des particuliers",
+    "Conseiller commercial / Conseillère commerciale en vérandas auprès des particuliers",
+    "Délégué commercial / Déléguée commerciale auprès des particuliers",
+    "Secrétaire commercial / Secrétaire commerciale"
+   ],
+   "centres": [
+    "J'ai le sens des affaires",
+    "J'aime communiquer, convaincre"
+   ]
+  },
+  {
+   "code": "D1404",
+   "libelle": "Vendeur / Vendeuse automobile",
+   "famille": "vente_distance",
+   "publics": [
+    "STMG",
+    "BTS_NDRC"
+   ],
+   "appellations": [
+    "Assistant / Assistante de vente automobile",
+    "Attaché commercial / Attachée commerciale en automobiles",
+    "Chef / Cheffe de groupe véhicules d'occasion",
+    "Chef / Cheffe de groupe véhicules neufs",
+    "Commercial / Commerciale en automobiles",
+    "Concessionnaire automobile",
+    "Conseiller / Conseillère des ventes automobiles",
+    "Conseiller commercial / Conseillère commerciale en automobiles",
+    "Délégué commercial / Déléguée commerciale en automobiles",
+    "Technicien / Technicienne de la vente automobile",
+    "Vendeur / Vendeuse de véhicules neufs",
+    "Vendeur / Vendeuse en véhicules d'occasion",
+    "Vendeur / Vendeuse secteur véhicules d'occasion",
+    "Vendeur / Vendeuse secteur véhicules neufs"
+   ],
+   "centres": [
+    "J'ai le sens des affaires",
+    "J'aime communiquer, convaincre"
+   ]
+  },
+  {
+   "code": "D1408",
+   "libelle": "Conseiller / Conseillère clientèle à distance",
+   "famille": "vente_distance",
+   "publics": [
+    "STMG",
+    "BTS_NDRC"
+   ],
+   "appellations": [
+    "Technicien / Technicienne de la vente à distance",
+    "Technicien / Technicienne de la vente par correspondance",
+    "Téléacteur / Téléactrice",
+    "Téléconseiller / Téléconseillère",
+    "Téléopérateur / Téléopératrice",
+    "Téléprospecteur / Téléprospectrice",
+    "Télévendeur / Télévendeuse"
+   ],
+   "centres": [
+    "J'ai le sens du contact",
+    "J'aime communiquer, convaincre"
+   ]
+  },
+  {
+   "code": "D1415",
+   "libelle": "Chargé / Chargée de relation client",
+   "famille": "vente_distance",
+   "publics": [
+    "STMG",
+    "BTS_NDRC"
+   ],
+   "appellations": [
+    "Chargé / Chargée de relation visiteurs",
+    "Chargé / Chargée de service après-vente"
+   ],
+   "centres": [
+    "J'ai le sens du contact",
+    "J'aime communiquer, convaincre",
+    "J'aime organiser, planifier"
+   ]
+  },
+  {
+   "code": "D1432",
+   "libelle": "Assistant / Assistante service clients",
+   "famille": "vente_distance",
+   "publics": [
+    "STMG",
+    "BTS_NDRC"
+   ],
+   "appellations": [],
+   "centres": [
+    "J'ai le sens du contact",
+    "J'aime communiquer, convaincre",
+    "J'aime organiser, planifier"
+   ]
+  },
+  {
+   "code": "D1435",
+   "libelle": "Responsable de plateau de centre d'appels",
+   "famille": "vente_distance",
+   "publics": [
+    "STMG",
+    "BTS_NDRC"
+   ],
+   "appellations": [
+    "Responsable de centre d'appels",
+    "Superviseur / Superviseuse de centre d'appels"
+   ],
+   "centres": [
+    "J'ai l'âme d'un chef / d'une cheffe",
+    "J'ai le sens du contact",
+    "J'aime communiquer, convaincre"
+   ]
+  },
+  {
+   "code": "D1443",
+   "libelle": "Chargé / Chargée d'assistance",
+   "famille": "vente_distance",
+   "publics": [
+    "STMG",
+    "BTS_NDRC"
+   ],
+   "appellations": [],
+   "centres": [
+    "J'ai le sens du contact",
+    "J'aime communiquer, convaincre",
+    "Je souhaite transmettre"
+   ]
+  },
+  {
+   "code": "D1438",
+   "libelle": "Assistant / Assistante e-commerce",
+   "famille": "vente_distance",
+   "publics": [
+    "STMG",
+    "BTS_NDRC"
+   ],
+   "appellations": [],
+   "centres": [
+    "J'ai le sens des affaires",
+    "J'ai le sens du contact",
+    "J'aime communiquer, convaincre",
+    "J'aime organiser, planifier"
+   ]
+  },
+  {
+   "code": "D1501",
+   "libelle": "Animateur / Animatrice de vente",
+   "famille": "magasin",
+   "publics": [
+    "STMG",
+    "BTS_NDRC"
+   ],
+   "appellations": [
+    "Agent / Agente de promotion des ventes",
+    "Animateur / Animatrice de réseau",
+    "Animateur / Animatrice des ventes",
+    "Animateur commercial / Animatrice commerciale",
+    "Animateur-démonstrateur / Animatrice-démonstratrice",
+    "Démonstrateur / Démonstratrice"
+   ],
+   "centres": [
+    "J'ai le sens du contact",
+    "J'aime communiquer, convaincre"
+   ]
+  },
+  {
+   "code": "D1502",
+   "libelle": "Chef / Cheffe de rayon produits alimentaires",
+   "famille": "magasin",
+   "publics": [
+    "STMG",
+    "BTS_NDRC"
+   ],
+   "appellations": [
+    "Adjoint / Adjointe au chef de rayon produits alimentaires",
+    "Adjoint / Adjointe au responsable de rayon produits alimentaires",
+    "Chef / Cheffe de rayon alimentaire",
+    "Chef / Cheffe de rayon boucherie",
+    "Chef / Cheffe de rayon boucherie-charcuterie",
+    "Chef / Cheffe de rayon boulangerie",
+    "Chef / Cheffe de rayon boulangerie-pâtisserie",
+    "Chef / Cheffe de rayon charcuterie",
+    "Chef / Cheffe de rayon crèmerie fromagerie",
+    "Chef / Cheffe de rayon épicerie",
+    "Chef / Cheffe de rayon fruits et légumes",
+    "Chef / Cheffe de rayon liquides",
+    "Chef / Cheffe de rayon pâtisserie",
+    "Chef / Cheffe de rayon poissonnerie",
+    "Chef / Cheffe de rayon produits alimentaires hors produits frais",
+    "Manager de rayon alimentaire hors produits frais",
+    "Manager rayon alimentaire",
+    "Responsable de rayon alimentaire hors produits frais",
+    "Responsable de rayon produits alimentaires"
+   ],
+   "centres": [
+    "J'ai l'âme d'un chef / d'une cheffe",
+    "J'ai le souci du détail",
+    "J'aime organiser, planifier"
+   ]
+  },
+  {
+   "code": "D1503",
+   "libelle": "Chef / Cheffe de rayon de produits non alimentaires",
+   "famille": "magasin",
+   "publics": [
+    "STMG",
+    "BTS_NDRC"
+   ],
+   "appellations": [
+    "Adjoint / Adjointe au chef de rayon produits non alimentaires",
+    "Adjoint / Adjointe au responsable de rayon produits non alimentaires",
+    "Chef / Cheffe de rayon bazar",
+    "Chef / Cheffe de rayon bricolage",
+    "Chef / Cheffe de rayon électroménager",
+    "Chef / Cheffe de rayon équipement de la maison",
+    "Chef / Cheffe de rayon équipement de la personne",
+    "Chef / Cheffe de rayon hygiène et parfumerie",
+    "Chef / Cheffe de rayon informatique",
+    "Chef / Cheffe de rayon jardinerie et animalerie",
+    "Chef / Cheffe de rayon jouets",
+    "Chef / Cheffe de rayon librairie papeterie",
+    "Chef / Cheffe de rayon photo image et son",
+    "Chef / Cheffe de rayon produits culturels",
+    "Chef / Cheffe de rayon puériculture",
+    "Chef / Cheffe de rayon sport",
+    "Chef / Cheffe de rayon téléphonie",
+    "Chef / Cheffe de rayon textile",
+    "Manager de rayon produits non alimentaires",
+    "Responsable de rayon produits non alimentaires"
+   ],
+   "centres": [
+    "J'ai l'âme d'un chef / d'une cheffe",
+    "J'ai le sens des affaires",
+    "J'ai le souci du détail",
+    "J'aime organiser, planifier"
+   ]
+  },
+  {
+   "code": "D1504",
+   "libelle": "Directeur / Directrice de magasin de grande distribution",
+   "famille": "magasin",
+   "publics": [
+    "STMG",
+    "BTS_NDRC"
+   ],
+   "appellations": [
+    "Directeur / Directrice d'enseigne de la grande distribution",
+    "Directeur / Directrice d'hypermarché",
+    "Directeur / Directrice de grande surface",
+    "Directeur / Directrice de Grande Surface de Bricolage (GSB)",
+    "Directeur / Directrice de Grande Surface Spécialisée (GSS)",
+    "Directeur / Directrice de grand magasin",
+    "Directeur / Directrice de magasin",
+    "Directeur / Directrice de magasin à grande surface",
+    "Directeur / Directrice de réseau de la distribution",
+    "Directeur / Directrice de supermarché",
+    "Directeur / Directrice de zone de la distribution",
+    "Directeur adjoint / Directrice adjointe d'hypermarché",
+    "Directeur de zone / Directrice de zone",
+    "Responsable adjoint / Responsable adjointe de magasin de grande distribution",
+    "Responsable de réseau de la distribution",
+    "Responsable ventes de la distribution",
+    "Superviseur / Superviseuse d'hypermarché ou de supermarché"
+   ],
+   "centres": [
+    "J'ai l'âme d'un chef / d'une cheffe",
+    "J'ai le sens des affaires",
+    "J'aime organiser, planifier"
+   ]
+  },
+  {
+   "code": "D1506",
+   "libelle": "Chargé / Chargée de merchandising",
+   "famille": "magasin",
+   "publics": [
+    "STMG",
+    "BTS_NDRC"
+   ],
+   "appellations": [
+    "Agenceur / Agenceuse d'intérieur de magasin",
+    "E-merchandiser",
+    "Gondolier / Gondolière",
+    "Marchandiseur / Marchandiseuse",
+    "Marchandiseur visuel / Marchandiseuse visuel",
+    "Merchandiser",
+    "Optimisateur / Optimisatrice de linéaires",
+    "Promoteur / Promotrice de linéaires",
+    "Technicien / Technicienne en marchandisage",
+    "Technicien / Technicienne en merchandising",
+    "Visual merchandiser"
+   ],
+   "centres": [
+    "J'ai le sens des affaires",
+    "J'aime communiquer, convaincre",
+    "J'aime organiser, planifier"
+   ]
+  },
+  {
+   "code": "D1508",
+   "libelle": "Responsable de caisses",
+   "famille": "magasin",
+   "publics": [
+    "STMG",
+    "BTS_NDRC"
+   ],
+   "appellations": [
+    "Adjoint / Adjointe chef de caisses",
+    "Chef / Cheffe de caisses",
+    "Chef / Cheffe de département caisses",
+    "Chef / Cheffe de secteur caisses",
+    "Manager de caisses",
+    "Responsable de ligne de caisses"
+   ],
+   "centres": [
+    "J'ai l'âme d'un chef / d'une cheffe",
+    "J'ai le sens des affaires",
+    "J'ai le sens du contact"
+   ]
+  },
+  {
+   "code": "D1509",
+   "libelle": "Responsable de département en grande distribution",
+   "famille": "magasin",
+   "publics": [
+    "STMG",
+    "BTS_NDRC"
+   ],
+   "appellations": [
+    "Adjoint / Adjointe au responsable drive en grande distribution",
+    "Chef / Cheffe de département alimentaire",
+    "Chef / Cheffe de département bazar",
+    "Chef / Cheffe de département en grande distribution",
+    "Chef / Cheffe de département produits culturels",
+    "Chef / Cheffe de département Produits de Grande Consommation (PGC)",
+    "Chef / Cheffe de département produits frais",
+    "Chef / Cheffe de département produits non alimentaires",
+    "Chef / Cheffe de département textile",
+    "Responsable drive en grande distribution",
+    "Responsable univers"
+   ],
+   "centres": [
+    "J'ai l'âme d'un chef / d'une cheffe",
+    "J'ai le sens des affaires",
+    "J'aime organiser, planifier"
+   ]
+  },
+  {
+   "code": "D1510",
+   "libelle": "Chef / Cheffe de secteur magasin",
+   "famille": "magasin",
+   "publics": [
+    "STMG",
+    "BTS_NDRC"
+   ],
+   "appellations": [
+    "Chef / Cheffe de secteur commercial",
+    "Directeur / Directrice responsable de secteur commercial",
+    "Responsable univers dans la distribution",
+    "Segment manager"
+   ],
+   "centres": [
+    "J'ai l'âme d'un chef / d'une cheffe",
+    "J'ai le sens des affaires",
+    "J'aime organiser, planifier"
+   ]
+  },
+  {
+   "code": "D1516",
+   "libelle": "Responsable merchandising",
+   "famille": "magasin",
+   "publics": [
+    "STMG",
+    "BTS_NDRC"
+   ],
+   "appellations": [
+    "Responsable de service marchandisage",
+    "Responsable de service merchandising"
+   ],
+   "centres": [
+    "J'ai le sens des affaires",
+    "J'ai le souci du détail",
+    "J'aime organiser, planifier"
+   ]
+  },
+  {
+   "code": "D1517",
+   "libelle": "Chef / Cheffe de secteur distribution",
+   "famille": "magasin",
+   "publics": [
+    "STMG",
+    "BTS_NDRC"
+   ],
+   "appellations": [
+    "Chef / Cheffe de groupe en grande distribution",
+    "Chef / Cheffe de secteur bazar",
+    "Chef / Cheffe de secteur commerce",
+    "Chef / Cheffe de secteur en hypermarché",
+    "Chef / Cheffe de secteur non alimentaire",
+    "Chef / Cheffe de secteur produits alimentaires",
+    "Chef / Cheffe de secteur Produits de Grande Consommation (PGC)",
+    "Chef de secteur d'hyper ou de supermarché / Cheffe de secteur d'hyper ou de supermarché",
+    "Directeur / Directrice de divisions d'hypermarché",
+    "Responsable de branche d'hypermarché",
+    "Responsable espace culturel en grande distribution"
+   ],
+   "centres": [
+    "J'ai l'âme d'un chef / d'une cheffe",
+    "J'ai le sens des affaires",
+    "J'aime organiser, planifier"
+   ]
+  },
+  {
+   "code": "D1301",
+   "libelle": "Gérant / Gérante de magasin d'alimentation générale",
+   "famille": "magasin",
+   "publics": [
+    "STMG",
+    "BTS_NDRC"
+   ],
+   "appellations": [
+    "Gérant / Gérante de magasin d'alimentation",
+    "Gérant / Gérante de supérette",
+    "Gérant / Gérante mandataire de succursale de magasin d'alimentation",
+    "Responsable de supérette"
+   ],
+   "centres": [
+    "J'ai l'âme d'un chef / d'une cheffe",
+    "J'ai le sens des affaires",
+    "J'ai le sens du contact",
+    "J'aime organiser, planifier"
+   ]
+  },
+  {
+   "code": "D1302",
+   "libelle": "Responsable de boutique",
+   "famille": "magasin",
+   "publics": [
+    "STMG",
+    "BTS_NDRC"
+   ],
+   "appellations": [
+    "Adjoint / Adjointe responsable de magasin de détail",
+    "Directeur / Directrice de magasin de détail",
+    "Gérant / Gérante de commerce de détail",
+    "Gérant de commerce en ameublement, décoration / Gérante de commerce en ameublement, décoration",
+    "Responsable de boutique de prêt-à-porter",
+    "Responsable de magasin",
+    "Responsable de magasin d'accessoires de la personne",
+    "Responsable de magasin d'animalerie",
+    "Responsable de magasin d'articles de loisirs",
+    "Responsable de magasin d'équipement de la maison",
+    "Responsable de magasin d'équipement de sports",
+    "Responsable de magasin de détail",
+    "Responsable de magasin de proximité",
+    "Responsable de magasin de végétaux",
+    "Responsable de point de vente de détail",
+    "Store manager"
+   ],
+   "centres": [
+    "J'ai l'âme d'un chef / d'une cheffe",
+    "J'ai le sens des affaires",
+    "J'ai le sens du contact"
+   ]
+  },
+  {
+   "code": "M1620",
+   "libelle": "Assistant / Assistante marketing",
+   "famille": "marketing",
+   "publics": [
+    "STMG",
+    "BTS_NDRC"
+   ],
+   "appellations": [
+    "Adjoint / Adjointe à la direction marketing",
+    "Adjoint / Adjointe à la direction mercatique",
+    "Assistant / Assistante à la direction marketing",
+    "Assistant / Assistante à la direction mercatique",
+    "Assistant en télémarketing / Assistante en télémarketing",
+    "Gestionnaire de planning e-mailing"
+   ],
+   "centres": [
+    "J'ai le sens des affaires",
+    "J'ai le sens du contact",
+    "J'aime communiquer, convaincre",
+    "J'aime organiser, planifier"
+   ]
+  },
+  {
+   "code": "M1701",
+   "libelle": "Responsable de l'administration des ventes",
+   "famille": "marketing",
+   "publics": [
+    "STMG",
+    "BTS_NDRC"
+   ],
+   "appellations": [
+    "Adjoint / Adjointe au responsable de l'administration des ventes",
+    "Cadre administratif / Cadre administrative ventes",
+    "Chief Investment Officer",
+    "Gestionnaire de contrats de vente - Contract manager",
+    "Responsable administratif / Responsable administrative des ventes",
+    "Responsable de gestion administrative des ventes",
+    "Responsable de l'exploitation des ventes",
+    "Responsable de la gestion des commandes"
+   ],
+   "centres": [
+    "J'ai l'âme d'un chef / d'une cheffe",
+    "J'ai le sens des affaires",
+    "J'aime manier les chiffres",
+    "J'aime organiser, planifier"
+   ]
+  },
+  {
+   "code": "M1703",
+   "libelle": "Chef / Cheffe de produit",
+   "famille": "marketing",
+   "publics": [
+    "STMG",
+    "BTS_NDRC"
+   ],
+   "appellations": [
+    "Assistant / Assistante chef de marché",
+    "Assistant / Assistante chef de produit",
+    "Chef / Cheffe de groupe produits",
+    "Chef / Cheffe de marché",
+    "Chef / Cheffe de marque",
+    "Chef / Cheffe de produit à l'international",
+    "Chef / Cheffe de produit digital",
+    "Chef / Cheffe de produit Internet",
+    "Chef / Cheffe de produit multimédia",
+    "Chef / Cheffe de produit web",
+    "Chef / Cheffe de produit web mobile",
+    "Ingénieur / Ingénieure produit",
+    "Product manager",
+    "Responsable de gamme produits",
+    "Responsable de produit"
+   ],
+   "centres": [
+    "J'ai l'âme d'un chef / d'une cheffe",
+    "J'aime communiquer, convaincre",
+    "J'aime organiser, planifier"
+   ]
+  },
+  {
+   "code": "M1704",
+   "libelle": "Responsable service clients",
+   "famille": "marketing",
+   "publics": [
+    "STMG",
+    "BTS_NDRC"
+   ],
+   "appellations": [
+    "Adjoint / Adjointe service clients",
+    "Chargé / Chargée de clientèle e-commerce",
+    "Chargé / Chargée de clientèle en ligne",
+    "Chef / Cheffe du service clients",
+    "Customer Relationship Manager (CRM)",
+    "Directeur / Directrice clientèle",
+    "Directeur / Directrice de clientèle d'agence de publicité",
+    "Responsable administratif / Responsable administrative du service clients",
+    "Responsable de la gestion clientèle",
+    "Responsable de la relation clientèle",
+    "Responsable e-CRM electronic Customer Relationship Management",
+    "Responsable fidélisation clientèle",
+    "Responsable pôle clients",
+    "Responsable relation client (CRM)",
+    "Responsable service clients online",
+    "Responsable service consommateurs",
+    "Responsable service relation clientèle"
+   ],
+   "centres": [
+    "J'ai l'âme d'un chef / d'une cheffe",
+    "J'ai le sens du contact",
+    "J'aime communiquer, convaincre"
+   ]
+  },
+  {
+   "code": "M1705",
+   "libelle": "Responsable marketing",
+   "famille": "marketing",
+   "publics": [
+    "STMG",
+    "BTS_NDRC"
+   ],
+   "appellations": [
+    "Chargé / Chargée d'affaires marketing",
+    "Chargé / Chargée d'affiliation et de partenariats e-commerce",
+    "Chargé / Chargée d'affiliation et de partenariats web",
+    "Chargé / Chargée de la marque employeur",
+    "Chargé / Chargée de mission marketing",
+    "Chargé / Chargée de projet marketing",
+    "Consultant / Consultante marketing",
+    "Fundraiser - Collecteur / Collectrice de fonds",
+    "Responsable affiliation et partenariats e-commerce",
+    "Responsable affiliation et partenariats web"
+   ],
+   "centres": [
+    "J'ai le sens des affaires",
+    "J'aime communiquer, convaincre"
+   ]
+  },
+  {
+   "code": "M1706",
+   "libelle": "Chef / Cheffe de promotion des ventes",
+   "famille": "marketing",
+   "publics": [
+    "STMG",
+    "BTS_NDRC"
+   ],
+   "appellations": [
+    "Ingénieur / Ingénieure de promotion des ventes",
+    "Promoteur / Promotrice des ventes",
+    "Responsable de la promotion des ventes"
+   ],
+   "centres": [
+    "J'ai le sens des affaires",
+    "J'aime communiquer, convaincre"
+   ]
+  },
+  {
+   "code": "M1707",
+   "libelle": "Responsable du développement commercial",
+   "famille": "marketing",
+   "publics": [
+    "STMG",
+    "BTS_NDRC"
+   ],
+   "appellations": [
+    "Responsable Commercial / Commerciale",
+    "Responsable commercial international / Responsable commerciale internationale",
+    "Responsable de la stratégie commerciale",
+    "Responsable développement / Business Developer"
+   ],
+   "centres": [
+    "J'ai l'âme d'un chef / d'une cheffe",
+    "J'ai le sens des affaires",
+    "J'aime communiquer, convaincre"
+   ]
+  },
+  {
+   "code": "M1715",
+   "libelle": "Directeur commercial / Directrice commerciale",
+   "famille": "marketing",
+   "publics": [
+    "STMG",
+    "BTS_NDRC"
+   ],
+   "appellations": [
+    "Directeur commercial / Directrice commerciale export",
+    "Directeur commercial international / Directrice commerciale internationale"
+   ],
+   "centres": [
+    "J'ai l'âme d'un chef / d'une cheffe",
+    "J'ai le sens des affaires",
+    "J'aime communiquer, convaincre"
+   ]
+  },
+  {
+   "code": "M1718",
+   "libelle": "Chargé / Chargée de marketing digital",
+   "famille": "marketing",
+   "publics": [
+    "STMG",
+    "BTS_NDRC"
+   ],
+   "appellations": [
+    "Chargé / Chargée d'acquisition online",
+    "Chargé / Chargée marketing digital",
+    "Chef / Cheffe de projet marketing digital",
+    "Consultant / Consultante marketing digital",
+    "Mobile marketer",
+    "Web marketer"
+   ],
+   "centres": [
+    "J'ai le sens des affaires",
+    "J'aime communiquer, convaincre",
+    "Je suis passionné / passionnée par les nouvelles technologies"
+   ]
+  },
+  {
+   "code": "M1719",
+   "libelle": "Chargé / Chargée des relations avec les influenceurs",
+   "famille": "marketing",
+   "publics": [
+    "STMG",
+    "BTS_NDRC"
+   ],
+   "appellations": [],
+   "centres": [
+    "J'ai le sens des affaires",
+    "J'ai le sens du contact",
+    "J'aime organiser, planifier"
+   ]
+  },
+  {
+   "code": "M1720",
+   "libelle": "Category Manager Responsable (CATMAN)",
+   "famille": "marketing",
+   "publics": [
+    "STMG",
+    "BTS_NDRC"
+   ],
+   "appellations": [],
+   "centres": [
+    "J'ai l'âme d'un chef / d'une cheffe",
+    "J'ai le sens des affaires",
+    "J'ai le sens du contact",
+    "Je souhaite contribuer à la protection de l'environnement"
+   ]
+  },
+  {
+   "code": "M1430",
+   "libelle": "Chargé / Chargée d'études commerciales",
+   "famille": "marketing",
+   "publics": [
+    "STMG",
+    "BTS_NDRC"
+   ],
+   "appellations": [
+    "Analyste prix / Analyste pricing",
+    "Assistant d'études commerciales / Assistante d'études commerciales",
+    "Chargé / Chargée d'études de marché",
+    "Chargé / Chargée d'études en marketing",
+    "Chargé / Chargée d'études prospectives",
+    "Chargé / Chargée d'études satisfaction",
+    "Responsable prévision des ventes"
+   ],
+   "centres": [
+    "J'ai le sens des affaires",
+    "J'aime faire des découvertes",
+    "J'aime manier les chiffres"
+   ]
+  },
+  {
+   "code": "M1101",
+   "libelle": "Acheteur / Acheteuse",
+   "famille": "marketing",
+   "publics": [
+    "STMG",
+    "BTS_NDRC"
+   ],
+   "appellations": [
+    "Acheteur / Acheteuse bois",
+    "Acheteur / Acheteuse de centrale d'achats",
+    "Acheteur / Acheteuse de commerce",
+    "Acheteur / Acheteuse de produits de distribution",
+    "Acheteur / Acheteuse e-commerce",
+    "Acheteur / Acheteuse import",
+    "Acheteur / Acheteuse junior",
+    "Acheteur / Acheteuse public",
+    "Acheteur / Acheteuse sourcing",
+    "Acheteur approvisionneur / Acheteuse approvisionneuse",
+    "Acheteur approvisionneur / Acheteuse approvisionneuse de l'industrie",
+    "Acheteur approvisionneur / Acheteuse approvisionneuse du BTP",
+    "Acheteur industriel / Acheteuse industrielle",
+    "Acheteur international / Acheteuse internationale",
+    "Chargé / Chargée des achats des collectivités territoriales",
+    "Sourceur acheteur / Sourceuse acheteuse de l'industrie",
+    "Sourceur acheteur / Sourceuse acheteuse du BTP",
+    "Sourceur acheteur / Sourceuse acheteuse du commerce"
+   ],
+   "centres": [
+    "J'ai le souci du détail",
+    "J'aime manier les chiffres"
+   ]
+  },
+  {
+   "code": "M1419",
+   "libelle": "Data analyst",
+   "famille": "marketing",
+   "publics": [
+    "STMG",
+    "BTS_CG"
+   ],
+   "appellations": [],
+   "centres": [
+    "J'aime faire des découvertes",
+    "J'aime manier les chiffres",
+    "Je suis passionné / passionnée par les nouvelles technologies"
+   ]
+  },
+  {
+   "code": "M1102",
+   "libelle": "Directeur / Directrice des achats",
+   "famille": "marketing",
+   "publics": [
+    "STMG"
+   ],
+   "appellations": [
+    "Chef / Cheffe de département achats",
+    "Chef / Cheffe de service achats",
+    "Coordonnateur / Coordonnatrice des achats",
+    "Directeur / Directrice des achats groupe",
+    "Directeur / Directrice des achats internationaux",
+    "Directeur / Directrice des approvisionnements industriels",
+    "Ingénieur / Ingénieure achats",
+    "Procurement manager",
+    "Responsable achats et approvisionnement",
+    "Responsable achats et logistique",
+    "Responsable achats et logistique de l'industrie",
+    "Responsable achats et logistique du commerce",
+    "Responsable achats industriels",
+    "Responsable des achats",
+    "Responsable des achats groupe",
+    "Responsable sourcing achats"
+   ],
+   "centres": [
+    "J'ai le souci du détail",
+    "J'aime manier les chiffres"
+   ]
+  },
+  {
+   "code": "M1406",
+   "libelle": "Responsable RSE (Responsabilité Sociétale de l'Entreprise)",
+   "famille": "marketing",
+   "publics": [
+    "STMG"
+   ],
+   "appellations": [
+    "Directeur / Directrice RSE (Responsabilité Sociétale de l'Entreprise)",
+    "Responsable de département RSE - Responsabilité Sociétale de l'Entreprise",
+    "Responsable développement durable",
+    "Responsable développement durable et RSE (Responsabilité Sociétale de l'Entreprise)"
+   ],
+   "centres": [
+    "J'ai le sens du contact",
+    "J'aime organiser, planifier",
+    "Je souhaite contribuer à la protection de l'environnement"
+   ]
+  },
+  {
+   "code": "M1413",
+   "libelle": "Chargé / Chargée de mission RSE - Responsabilité Sociétale de l'Entreprise",
+   "famille": "marketing",
+   "publics": [
+    "STMG"
+   ],
+   "appellations": [
+    "Chargé / Chargée de mission développement durable",
+    "Chargé / Chargée de mission développement durable et RSE - responsabilité sociétale de l'entreprise",
+    "Chargé / Chargée de projet développement durable",
+    "Chargé / Chargée de projet RSE",
+    "Chef / Cheffe de projet RSE"
+   ],
+   "centres": [
+    "J'ai le sens du contact",
+    "Je souhaite contribuer à la protection de l'environnement",
+    "Je souhaite transmettre"
+   ]
+  },
+  {
+   "code": "M1429",
+   "libelle": "Consultant / Consultante en management",
+   "famille": "marketing",
+   "publics": [
+    "STMG"
+   ],
+   "appellations": [
+    "Consultant / Consultante pilotage de la performance",
+    "Consultant senior en management / Consultante senior en management",
+    "Ingénieur / Ingénieure conseil en management"
+   ],
+   "centres": [
+    "J'ai le sens du contact",
+    "J'aime communiquer, convaincre",
+    "J'aime organiser, planifier"
+   ]
+  },
+  {
+   "code": "E1101",
+   "libelle": "Community manager",
+   "famille": "communication",
+   "publics": [
+    "STMG",
+    "BTS_NDRC"
+   ],
+   "appellations": [
+    "Animateur / Animatrice de communauté virtuelle",
+    "Animateur / Animatrice de forum sur internet",
+    "Animateur / Animatrice web",
+    "Assistant / Assistante community manager",
+    "Chargé / Chargée des relations avec les internautes",
+    "Consultant / Consultante en e-réputation",
+    "Gestionnaire de communauté en ligne",
+    "Modérateur / Modératrice web",
+    "Responsable de la communauté en ligne",
+    "Veilleur / Veilleuse e-réputation",
+    "Webmaster animateur / Webmaster animatrice"
+   ],
+   "centres": [
+    "J'aime communiquer, convaincre"
+   ]
+  },
+  {
+   "code": "E1124",
+   "libelle": "Social media manager - Responsable des médias sociaux",
+   "famille": "communication",
+   "publics": [
+    "STMG",
+    "BTS_NDRC"
+   ],
+   "appellations": [
+    "Chef / Cheffe de projet social media optimization (SMO)",
+    "Expert / Experte SMO",
+    "Responsable de réseaux sociaux",
+    "Social media manager"
+   ],
+   "centres": [
+    "J'aime communiquer, convaincre",
+    "J'aime organiser, planifier",
+    "Je suis passionné / passionnée par les nouvelles technologies"
+   ]
+  },
+  {
+   "code": "E1112",
+   "libelle": "Chargé / Chargée de communication",
+   "famille": "communication",
+   "publics": [
+    "STMG",
+    "BTS_NDRC"
+   ],
+   "appellations": [
+    "Chargé / Chargée de communication digitale",
+    "Chargé / Chargée de communication externe",
+    "Chargé / Chargée de communication interne",
+    "Chargé / Chargée de communication on line",
+    "Chargé / Chargée de communication scientifique",
+    "Chargé / Chargée de communication sociale",
+    "Chargé / Chargée de communication web"
+   ],
+   "centres": [
+    "J'aime communiquer, convaincre",
+    "J'aime organiser, planifier",
+    "Je suis passionné / passionnée par les nouvelles technologies"
+   ]
+  },
+  {
+   "code": "E1113",
+   "libelle": "Responsable e-commerce",
+   "famille": "communication",
+   "publics": [
+    "STMG",
+    "BTS_NDRC"
+   ],
+   "appellations": [
+    "Chargé / Chargée e-commerce",
+    "E-commercial / E-commerciale",
+    "Web commercial / Web commerciale",
+    "Web vendeur / Web vendeuse"
+   ],
+   "centres": [
+    "J'ai le sens des affaires",
+    "J'aime communiquer, convaincre",
+    "Je suis passionné / passionnée par les nouvelles technologies"
+   ]
+  },
+  {
+   "code": "E1405",
+   "libelle": "Référenceur / Référenceuse web",
+   "famille": "communication",
+   "publics": [
+    "STMG",
+    "BTS_NDRC"
+   ],
+   "appellations": [
+    "Chargé / Chargée de référencement web",
+    "Chef / Cheffe de projet référencement",
+    "Consultant / Consultante en référencement social (SMO)",
+    "Expert / Experte en référencement",
+    "Expert / Experte SEA",
+    "Expert / Experte SEO",
+    "Référenceur / Référenceuse SEA",
+    "Référenceur / Référenceuse sem",
+    "Référenceur / Référenceuse SEO",
+    "Référenceur / Référenceuse SMO"
+   ],
+   "centres": [
+    "J'aime manier les chiffres",
+    "J'aime organiser, planifier",
+    "Je suis passionné / passionnée par les nouvelles technologies"
+   ]
+  },
+  {
+   "code": "E1407",
+   "libelle": "Traffic manager",
+   "famille": "communication",
+   "publics": [
+    "STMG",
+    "BTS_NDRC"
+   ],
+   "appellations": [
+    "Analyste de trafic",
+    "Trafficking manager",
+    "Traffic web manager"
+   ],
+   "centres": [
+    "J'aime manier les chiffres",
+    "J'aime organiser, planifier",
+    "Je suis passionné / passionnée par les nouvelles technologies"
+   ]
+  },
+  {
+   "code": "E1127",
+   "libelle": "Brand content manager",
+   "famille": "communication",
+   "publics": [
+    "STMG",
+    "BTS_NDRC"
+   ],
+   "appellations": [
+    "Content manager"
+   ],
+   "centres": [
+    "J'ai envie de créer, construire, rénover",
+    "J'aime organiser, planifier",
+    "Je suis passionné / passionnée par les nouvelles technologies"
+   ]
+  },
+  {
+   "code": "E1401",
+   "libelle": "Chef / Cheffe de publicité",
+   "famille": "communication",
+   "publics": [
+    "STMG",
+    "BTS_NDRC"
+   ],
+   "appellations": [
+    "Annonceur / Annonceuse publicitaire",
+    "Chef / Cheffe de groupe en agence de publicité",
+    "Chef / Cheffe de groupe publicité",
+    "Chef / Cheffe de publicité d'agence",
+    "Chef / Cheffe de publicité junior",
+    "Chef / Cheffe de publicité online",
+    "Chef / Cheffe de publicité senior",
+    "Chef / Cheffe de studio publicitaire",
+    "Directeur / Directrice d'agence de publicité",
+    "Directeur / Directrice de la publicité",
+    "Publicitaire",
+    "Responsable de projet publicitaire"
+   ],
+   "centres": [
+    "J'ai l'âme d'un chef / d'une cheffe",
+    "J'ai le sens des affaires",
+    "J'aime communiquer, convaincre"
+   ]
+  },
+  {
+   "code": "E1404",
+   "libelle": "Assistant / Assistante en publicité",
+   "famille": "communication",
+   "publics": [
+    "STMG",
+    "BTS_NDRC"
+   ],
+   "appellations": [
+    "Assistant / Assistante chef de publicité",
+    "Assistant / Assistante de publicité d'agence"
+   ],
+   "centres": [
+    "J'aime organiser, planifier",
+    "Je suis passionné / passionnée par les nouvelles technologies"
+   ]
+  },
+  {
+   "code": "E1103",
+   "libelle": "Chargé / Chargée des relations publiques",
+   "famille": "communication",
+   "publics": [
+    "STMG"
+   ],
+   "appellations": [
+    "Assistant / Assistante de communication",
+    "Assistant / Assistante relations presse",
+    "Assistant / Assistante relations publiques",
+    "Attaché / Attachée de presse",
+    "Chargé / Chargée de presse",
+    "Chargé / Chargée des relations extérieures",
+    "Chargé / Chargée des relations presse",
+    "Chargé / Chargée des relations publiques digitales",
+    "Conseiller / Conseillère en communication",
+    "Conseiller / Conseillère technique en communication",
+    "Consultant / Consultante en communication",
+    "Consultant / Consultante en relations publiques",
+    "Coordonnateur / Coordonnatrice des relations internationales",
+    "Lobbyiste",
+    "Rédacteur / Rédactrice des débats",
+    "Responsable communication institutionnelle",
+    "Responsable des relations extérieures",
+    "Responsable des relations presse",
+    "Responsable des relations publiques digitales",
+    "Responsable du service de presse"
+   ],
+   "centres": [
+    "J'ai le sens du contact",
+    "J'aime communiquer, convaincre",
+    "J'aime organiser, planifier"
+   ]
+  },
+  {
+   "code": "E1107",
+   "libelle": "Chef / Cheffe de projet événementiel",
+   "famille": "communication",
+   "publics": [
+    "STMG"
+   ],
+   "appellations": [
+    "Chargé / Chargée de communication événementielle",
+    "Chargé / Chargée de mission événementiel",
+    "Chargé / Chargée responsable de projet événementiel",
+    "Event manager",
+    "Responsable évènement",
+    "Responsable événementiel et communication événementielle"
+   ],
+   "centres": [
+    "J'ai le sens des affaires",
+    "J'ai le sens du contact",
+    "J'aime communiquer, convaincre",
+    "J'aime organiser, planifier"
+   ]
+  },
+  {
+   "code": "N1201",
+   "libelle": "Affréteur / Affréteuse",
+   "famille": "logistique",
+   "publics": [
+    "STMG"
+   ],
+   "appellations": [
+    "Affréteur / Affréteuse terrestre international",
+    "Affréteur / Affréteuse transport aérien",
+    "Affréteur / Affréteuse transport fluvial",
+    "Affréteur / Affréteuse transport international",
+    "Affréteur / Affréteuse transport maritime",
+    "Affréteur / Affréteuse transport routier",
+    "Affréteur / Affréteuse transport terrestre",
+    "Agent / Agente d'affrètement",
+    "Employé / Employée du service affrètement",
+    "Négociateur / Négociatrice transport"
+   ],
+   "centres": [
+    "J'ai l'âme d'un chef / d'une cheffe",
+    "J'aime organiser, planifier"
+   ]
+  },
+  {
+   "code": "N1202",
+   "libelle": "Agent / Agente de transit",
+   "famille": "logistique",
+   "publics": [
+    "STMG"
+   ],
+   "appellations": [
+    "Agent / Agente consignataire de navire",
+    "Agent / Agente de fret aérien",
+    "Agent / Agente de sûreté fret",
+    "Agent / Agente de transit aérien",
+    "Agent / Agente de transit export",
+    "Agent / Agente de transit import",
+    "Agent / Agente de transit maritime",
+    "Consignataire maritime",
+    "Employé / Employée d'exploitation de transit aérien",
+    "Employé / Employée de consignation maritime",
+    "Employé / Employée de cotation maritime",
+    "Employé / Employée de courtage maritime",
+    "Employé / Employée de réservation fret maritime (booking)",
+    "Employé / Employée de transit",
+    "Employé / Employée de transit international",
+    "Employé / Employée de transit maritime",
+    "Technicien / Technicienne d'opérations multi modales de transport international de marchandises",
+    "Technicien / Technicienne gestionnaire de transit"
+   ],
+   "centres": [
+    "J'ai le souci du détail",
+    "J'aime organiser, planifier"
+   ]
+  },
+  {
+   "code": "N1203",
+   "libelle": "Déclarant / Déclarante en douane",
+   "famille": "logistique",
+   "publics": [
+    "STMG"
+   ],
+   "appellations": [
+    "Agent déclarant / Agente déclarante en douane",
+    "Aide déclarant / Aide déclarante en douane",
+    "Assistant / Assistante déclarante en douane",
+    "Commis coursier / Commise coursière en douane",
+    "Commissionnaire en douane",
+    "Gestionnaire administratif / Gestionnaire administrative douane",
+    "Taxateur / Taxatrice",
+    "Technicien / Technicienne gestion douanière"
+   ],
+   "centres": [
+    "J'ai le souci du détail",
+    "J'aime organiser, planifier"
+   ]
+  },
+  {
+   "code": "N1204",
+   "libelle": "Coordinateur / Coordinatrice transit en import - export",
+   "famille": "logistique",
+   "publics": [
+    "STMG"
+   ],
+   "appellations": [],
+   "centres": [
+    "J'ai le souci du détail",
+    "J'aime organiser, planifier"
+   ]
+  },
+  {
+   "code": "N1209",
+   "libelle": "Technicien / Technicienne logistique",
+   "famille": "logistique",
+   "publics": [
+    "STMG"
+   ],
+   "appellations": [
+    "Agent de facturation de la logistique / Agente de facturation de la logistique",
+    "Assistant / Assistante d'exploitation logistique",
+    "Assistant / Assistante logistique",
+    "Assistant administratif de la logistique / Assistante administrative de la logistique",
+    "Technicien / Technicienne de dépôt garde-meubles",
+    "Technicien / Technicienne en méthodes et exploitation logistique",
+    "Technicien / Technicienne logistique avitaillement",
+    "Technicien / Technicienne logistique entrepôt",
+    "Technicien / Technicienne logistique humanitaire",
+    "Technicien / Technicienne logistique responsable stocks",
+    "Technicien / Technicienne logistique service expédition",
+    "Technicien / Technicienne logistique service réception",
+    "Technicien / Technicienne logistique transport"
+   ],
+   "centres": [
+    "J'ai le souci du détail",
+    "J'aime faire respecter la loi, les règles",
+    "J'aime organiser, planifier"
+   ]
+  },
+  {
+   "code": "N1210",
+   "libelle": "Logisticien / Logisticienne",
+   "famille": "logistique",
+   "publics": [
+    "STMG"
+   ],
+   "appellations": [
+    "Agréeur / Agréeuse commerce de gros",
+    "Animateur / Animatrice logistique",
+    "Chef / Cheffe de service logistique",
+    "Conseiller / Conseillère logistique entrepôt",
+    "Répartiteur / Répartitrice de dépôt logistique",
+    "Technicien / Technicienne responsable magasinage"
+   ],
+   "centres": [
+    "J'ai le souci du détail",
+    "J'aime organiser, planifier"
+   ]
+  },
+  {
+   "code": "N1301",
+   "libelle": "Responsable logistique",
+   "famille": "logistique",
+   "publics": [
+    "STMG"
+   ],
+   "appellations": [
+    "Analyste logistique",
+    "Chargé / Chargée d'organisation logistique",
+    "Chargé / Chargée de gestion logistique",
+    "Chef / Cheffe de projet logistique",
+    "Consultant / Consultante logistique",
+    "Coordinateur / Coordinatrice de site logistique",
+    "Responsable de l'organisation de la chaîne logistique",
+    "Responsable de la logistique approvisionnement",
+    "Responsable de la logistique distribution",
+    "Responsable de la logistique transport",
+    "Responsable méthodes logistique",
+    "Responsable univers logistique distribution",
+    "Supply chain manager"
+   ],
+   "centres": [
+    "J'ai l'âme d'un chef / d'une cheffe",
+    "J'ai le sens du contact",
+    "J'ai le sens du service public",
+    "J'ai le souci du détail",
+    "J'aime organiser, planifier"
+   ]
+  },
+  {
+   "code": "N1302",
+   "libelle": "Responsable entrepôt logistique",
+   "famille": "logistique",
+   "publics": [
+    "STMG"
+   ],
+   "appellations": [
+    "Chef / Cheffe de dépôt",
+    "Chef d'entrepôt (logistique) / Cheffe d'entrepôt (logistique)",
+    "Chef d'entrepôt (transport) / Cheffe d'entrepôt (transport)",
+    "Directeur / Directrice d'entrepôt",
+    "Responsable d'entrepôt",
+    "Responsable d'entrepôt, de dépôt",
+    "Responsable d'exploitation d'entrepôt",
+    "Responsable d'exploitation de site d'entreposage",
+    "Responsable d'exploitation de site logistique",
+    "Responsable de dépôt",
+    "Responsable de magasin de pièces de rechange",
+    "Responsable de plateforme",
+    "Responsable de plate forme",
+    "Responsable de plate-forme logistique",
+    "Responsable de site d'entreposage",
+    "Responsable plate-forme expédition / Livraison",
+    "Responsable plate forme livraisons"
+   ],
+   "centres": [
+    "J'ai l'âme d'un chef / d'une cheffe",
+    "J'aime faire respecter la loi, les règles",
+    "J'aime organiser, planifier"
+   ]
+  },
+  {
+   "code": "N1303",
+   "libelle": "Approvisionneur / Approvisionneuse logistique",
+   "famille": "logistique",
+   "publics": [
+    "STMG"
+   ],
+   "appellations": [
+    "Agent d'approvisionnement logistique / Agente d'approvisionnement logistique",
+    "Agent de maîtrise approvisionnements matériel (AMAM) / Agente de maîtrise approvisionnements matériel (AMAM)",
+    "Responsable gestionnaire des stocks",
+    "Supply planner",
+    "Technicien / Technicienne logistique approvisionnements"
+   ],
+   "centres": [
+    "J'aime organiser, planifier"
+   ]
+  },
+  {
+   "code": "N1308",
+   "libelle": "Responsable expédition - distribution",
+   "famille": "logistique",
+   "publics": [
+    "STMG"
+   ],
+   "appellations": [
+    "Responsable conditionnement expéditions",
+    "Responsable d'activité colis",
+    "Responsable expédition",
+    "Responsable expédition et transports"
+   ],
+   "centres": [
+    "J'ai l'âme d'un chef / d'une cheffe",
+    "J'aime organiser, planifier"
+   ]
+  },
+  {
+   "code": "N4201",
+   "libelle": "Responsable d'agence transport routier de marchandises",
+   "famille": "logistique",
+   "publics": [
+    "STMG"
+   ],
+   "appellations": [
+    "Chef / Cheffe d'agence transport routier de marchandises",
+    "Chef / Cheffe de service déménagement",
+    "Directeur / Directrice d'exploitation transport routier de marchandises",
+    "Responsable d'exploitation de transports multimodaux",
+    "Responsable gestionnaire d'unités de transport routier de marchandises"
+   ],
+   "centres": [
+    "J'ai l'âme d'un chef / d'une cheffe",
+    "J'ai le sens des affaires",
+    "J'ai le sens du contact",
+    "J'aime communiquer, convaincre",
+    "J'aime organiser, planifier"
+   ]
+  },
+  {
+   "code": "N4203",
+   "libelle": "Agent / Agente d'exploitation en transport routier de marchandises",
+   "famille": "logistique",
+   "publics": [
+    "STMG"
+   ],
+   "appellations": [
+    "Agent / Agente d'intervention technique d'exploitation des transports routiers de marchandises",
+    "Agent / Agente litiges transport de marchandises",
+    "Assistant / Assistante service d'exploitation transport de marchandises",
+    "Chef / Cheffe de camionnage",
+    "Chef / Cheffe de trafic transport routier de marchandises",
+    "Dispatcheur répartiteur / Dispatcheuse répartitrice transport routier de marchandises",
+    "Employé / Employée du Service Après-Vente (SAV) transport routier de marchandises",
+    "Employé / Employée litiges transport routier de marchandises",
+    "Exploitant / Exploitante jour transport routier de marchandises",
+    "Exploitant / Exploitante nuit transport routier de marchandises",
+    "Exploitant / Exploitante transport routier de marchandises",
+    "Litigeur / Litigeuse transport",
+    "Responsable de quai transport messagerie",
+    "Technicien / Technicienne d'exploitation transport routier de marchandises",
+    "Technicien / Technicienne de planning transport routier de marchandises"
+   ],
+   "centres": [
+    "J'ai le souci du détail",
+    "J'aime organiser, planifier"
+   ]
+  },
+  {
+   "code": "N4205",
+   "libelle": "Responsable d'exploitation transport routier de marchandises",
+   "famille": "logistique",
+   "publics": [
+    "STMG"
+   ],
+   "appellations": [],
+   "centres": [
+    "J'ai l'âme d'un chef / d'une cheffe",
+    "J'aime organiser, planifier"
+   ]
+  }
+ ]
+}

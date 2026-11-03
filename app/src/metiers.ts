@@ -1,0 +1,117 @@
+import { z } from 'zod'
+import brutMetiers from '../../data/metiers.json'
+import brutFamilles from '../../contenu/metiers-familles.json'
+import { interets, matieresDe, matieresFortes, type Gouts, type Scolarite } from './gouts'
+import { complet, scorer, type Reponses } from './personnalite'
+
+const MetiersSchema = z.object({
+  source: z.string(),
+  version: z.string(),
+  licence: z.string(),
+  genere: z.string(),
+  metiers: z.array(z.object({
+    code: z.string().regex(/^[A-N]\d{4}$/),
+    libelle: z.string(),
+    famille: z.string(),
+    publics: z.array(z.string()).min(1),
+    appellations: z.array(z.string()),
+    centres: z.array(z.string()),
+  })),
+})
+
+const FamillesSchema = z.object({
+  statut: z.string(),
+  date: z.string(),
+  source: z.string(),
+  centresVersTypes: z.record(z.string(), z.string().nullable()),
+  etudesLongues: z.array(z.string()),
+  familles: z.array(z.object({
+    id: z.string(),
+    nom: z.string(),
+    types: z.array(z.string()).min(1),
+    environnements: z.array(z.string()),
+    valeurs: z.array(z.string()),
+    personnalite: z.record(z.string(), z.enum(['A', 'B'])),
+    matieres: z.array(z.string()),
+    freins: z.array(z.string()),
+    realite: z.object({ contraintes: z.array(z.string()).min(3), avantages: z.array(z.string()).min(3) }),
+  })),
+})
+
+export const ROME = MetiersSchema.parse(brutMetiers)
+export const FAMILLES = FamillesSchema.parse(brutFamilles)
+export type Metier = (typeof ROME.metiers)[number]
+export type Famille = (typeof FAMILLES.familles)[number]
+
+/** Poids affichés à l'élève (PLAN.md §6). */
+export const POIDS = { interets: 40, cadre: 25, personnalite: 15, matieres: 20 } as const
+export type IdComposante = keyof typeof POIDS
+export type Composante = { id: IdComposante; poids: number; score: number | null } // null = pas assez d'infos
+export type Piste = { metier: Metier; famille: Famille; score: number; composantes: Composante[]; freins: string[] }
+
+export const NB_PISTES = 10
+export const MAX_PAR_FAMILLE = 3
+
+export type Profil = { publicId: string | null; personnalite: Reponses; gouts: Gouts; scolarite: Scolarite }
+
+export const familleDe = (m: Metier) => FAMILLES.familles.find((f) => f.id === m.famille)!
+
+/** Types d'intérêts du métier d'après ses centres d'intérêt ROME ; ceux de la famille à défaut. */
+export function typesDe(m: Metier): string[] {
+  const t = [...new Set(m.centres.map((c) => FAMILLES.centresVersTypes[c]).filter((x): x is string => !!x))]
+  return t.length ? t : familleDe(m).types
+}
+
+const moyenne = (l: number[]) => (l.length ? l.reduce((s, x) => s + x, 0) / l.length : null)
+const part = (choix: string[], attendus: string[]) =>
+  choix.length ? (100 * choix.filter((x) => attendus.includes(x)).length) / choix.length : null
+
+export function evaluer(m: Metier, p: Profil): Piste {
+  const f = familleDe(m)
+  const sInt = new Map(interets(p.gouts.activites).map((s) => [s.id, s.score]))
+  const aRepondu = Object.keys(p.gouts.activites).length > 0
+  const env = part(p.gouts.environnements, f.environnements)
+  const val = part(p.gouts.valeurs, f.valeurs)
+  const dims = Object.entries(f.personnalite)
+  const perso = complet(p.personnalite) ? scorer(p.personnalite) : []
+  const leurs = new Set(matieresDe(p.publicId)?.matieres.map((x) => x.id) ?? [])
+  const utiles = f.matieres.filter((x) => leurs.has(x))
+  const renseignees = Object.keys(p.scolarite.notes).some((x) => leurs.has(x)) || p.scolarite.aimees.some((x) => leurs.has(x))
+  const fortes = matieresFortes(p.scolarite, p.publicId)
+
+  const brut: Record<IdComposante, number | null> = {
+    interets: aRepondu ? moyenne(typesDe(m).map((t) => sInt.get(t) ?? 0)) : null,
+    cadre: moyenne([env, val].filter((x): x is number => x !== null)),
+    // 100 = préférence au maximum du pôle attendu, 50 = profil équilibré, 0 = pôle opposé.
+    personnalite: perso.length ? moyenne(dims.map(([d, pole]) =>
+      50 + ((pole === 'B' ? 1 : -1) * (perso.find((s) => s.id === d)?.score ?? 0)) / 2)) : null,
+    matieres: utiles.length && renseignees ? (100 * utiles.filter((x) => fortes.includes(x)).length) / utiles.length : null,
+  }
+  const composantes = (Object.keys(POIDS) as IdComposante[]).map((id) => ({
+    id, poids: POIDS[id], score: brut[id] === null ? null : Math.round(brut[id]!),
+  }))
+  // Une composante sans réponse ne pénalise pas : on répartit son poids sur les autres.
+  const connues = composantes.filter((c) => c.score !== null)
+  const poids = connues.reduce((s, c) => s + c.poids, 0)
+  const score = poids ? Math.round(connues.reduce((s, c) => s + c.poids * c.score!, 0) / poids) : 0
+
+  const freins = p.gouts.refus.filter((r) => f.freins.includes(r) || (r === 'etudes_longues' && FAMILLES.etudesLongues.includes(m.code)))
+  return { metier: m, famille: f, score, composantes, freins }
+}
+
+/** Les pistes du public, des mieux classées aux moins bien, avec au plus 3 métiers par famille pour garder de la variété. */
+export function pistes(p: Profil, n = NB_PISTES): Piste[] {
+  const parFamille = new Map<string, number>()
+  return ROME.metiers
+    .filter((m) => p.publicId !== null && m.publics.includes(p.publicId))
+    .map((m) => evaluer(m, p))
+    .sort((a, b) => b.score - a.score || a.metier.code.localeCompare(b.metier.code))
+    .filter((x) => {
+      const k = parFamille.get(x.famille.id) ?? 0
+      parFamille.set(x.famille.id, k + 1)
+      return k < MAX_PAR_FAMILLE
+    })
+    .slice(0, n)
+}
+
+export const lienFicheMetier = (code: string) => `https://candidat.francetravail.fr/metierscope/fiche-metier/${code}`
