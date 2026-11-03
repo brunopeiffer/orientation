@@ -4,6 +4,7 @@ import Confidentialite from './components/Confidentialite'
 import Formations from './components/Formations'
 import Gouts from './components/Gouts'
 import Metiers from './components/Metiers'
+import PostBts from './components/PostBts'
 import ResultatsScolaires from './components/ResultatsScolaires'
 import Sauvegarde from './components/Sauvegarde'
 import TestPersonnalite from './components/TestPersonnalite'
@@ -79,6 +80,8 @@ export default function App() {
           <Metiers />
         ) : e.id === 'formations' && parcours === 'lycee' ? (
           <Formations />
+        ) : e.id === 'formations' && parcours === 'bts' ? (
+          <PostBts />
         ) : (
           <div className="space-y-6">
             <h1 tabIndex={-1} className="text-2xl font-extrabold text-violet-900 sm:text-3xl">{e.titre}</h1>

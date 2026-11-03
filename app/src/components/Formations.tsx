@@ -57,20 +57,7 @@ export default function Formations() {
 
       {commune && (
         <>
-          <Carte titre="Jusqu’où es-tu prêt(e) à aller ?" emoji="🚆">
-            <fieldset className="mt-3">
-              <legend className="sr-only">Distance maximale</legend>
-              <div className="grid grid-cols-3 gap-2 sm:grid-cols-6">
-                {RAYONS.map((r) => (
-                  <label key={String(r)} className={`${PUCE} justify-center text-center`}>
-                    <input type="radio" name={`${id}-rayon`} checked={rayon === r} className="sr-only"
-                      onChange={() => { maj({ mobilite: { ...mobilite, rayon: r } }); setNb(PAR_PAGE) }} />
-                    {r === null ? 'Partout en France' : `${r} km`}
-                  </label>
-                ))}
-              </div>
-            </fieldset>
-          </Carte>
+          <ChoixRayon rayon={rayon} onChoix={(r) => { maj({ mobilite: { ...mobilite, rayon: r } }); setNb(PAR_PAGE) }} />
 
           <Carte titre="Affiner" emoji="🎛️">
             <fieldset className="mt-3">
@@ -129,7 +116,26 @@ export default function Formations() {
   )
 }
 
-function ChoixCommune({ commune, onChoix }: { commune: Commune | null; onChoix: (c: Commune) => void }) {
+export function ChoixRayon({ rayon, onChoix }: { rayon: number | null; onChoix: (r: number | null) => void }) {
+  const id = useId()
+  return (
+    <Carte titre="Jusqu’où es-tu prêt(e) à aller ?" emoji="🚆">
+      <fieldset className="mt-3">
+        <legend className="sr-only">Distance maximale</legend>
+        <div className="grid grid-cols-3 gap-2 sm:grid-cols-6">
+          {RAYONS.map((r) => (
+            <label key={String(r)} className={`${PUCE} justify-center text-center`}>
+              <input type="radio" name={`${id}-rayon`} checked={rayon === r} className="sr-only" onChange={() => onChoix(r)} />
+              {r === null ? 'Partout en France' : `${r} km`}
+            </label>
+          ))}
+        </div>
+      </fieldset>
+    </Carte>
+  )
+}
+
+export function ChoixCommune({ commune, onChoix }: { commune: Commune | null; onChoix: (c: Commune) => void }) {
   const id = useId()
   const [saisie, setSaisie] = useState('')
   const [choix, setChoix] = useState<(Commune & { contexte: string })[] | null>(null)

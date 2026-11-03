@@ -1,0 +1,111 @@
+{
+  "_doc": "Poursuites d'études après un BTS CG ou NDRC. Rédigé par Claude le 03/11/2026 à partir des sources citées, À VALIDER PAR UN HUMAIN (notamment les canaux et dates, qui changent chaque année). 'local' : mots-clés (minuscules, sans accents) pour retrouver les offres de data/post-bts.json en lien avec chaque BTS.",
+  "statut": "A_VALIDER",
+  "date": "2026-11-03",
+  "voies": [
+    {
+      "id": "licence_pro",
+      "titre": "Licence professionnelle",
+      "publics": ["BTS_CG", "BTS_NDRC"],
+      "niveau": "Bac+3", "duree": "1 an",
+      "description": "Une année pour te spécialiser dans un métier précis, avec un stage long ou en alternance. Conçue pour entrer ensuite dans la vie active.",
+      "parcoursup": false,
+      "canal": "Candidature directement auprès de l’université ou de l’IUT, souvent sur sa plateforme eCandidat, au printemps. Une candidature par licence.",
+      "lien": { "texte": "Voir les licences pro près de chez toi (lien vers chaque établissement)", "url": "#offres-LP" },
+      "alternance": "Souvent possible.",
+      "offres": "LP",
+      "sources": [{ "nom": "Académie de Nancy-Metz, information orientation", "url": "https://sites.ac-nancy-metz.fr/lio/qr_est_republicain/qr_181214.html" }]
+    },
+    {
+      "id": "dcg",
+      "titre": "Diplôme de comptabilité et de gestion (DCG)",
+      "publics": ["BTS_CG"],
+      "niveau": "Bac+3", "duree": "3 ans, souvent moins avec ton BTS",
+      "description": "Première marche vers l’expertise comptable. Avec un BTS CG obtenu depuis 2017, tu peux être dispensé(e) des épreuves 1, 5, 8, 9, 12 et 13 du DCG, ce qui permet souvent d’entrer en 2e année.",
+      "parcoursup": true,
+      "canal": "La 1re année se demande sur Parcoursup. Pour une entrée directe en 2e année grâce aux dispenses, contacte l’établissement qui prépare le DCG.",
+      "lien": { "texte": "Parcoursup", "url": "https://www.parcoursup.gouv.fr/" },
+      "alternance": "Possible dans de nombreux établissements.",
+      "offres": "DCG",
+      "sources": [{ "nom": "Arrêté du 22 mai 2020 sur les dispenses du DCG, Bulletin officiel de l’enseignement supérieur n° 24", "url": "https://www.enseignementsup-recherche.gouv.fr/fr/bo/20/Hebdo24/ESRS2012706A.htm" }]
+    },
+    {
+      "id": "but",
+      "titre": "BUT en admission parallèle (2e année, parfois 3e)",
+      "publics": ["BTS_CG", "BTS_NDRC"],
+      "niveau": "Bac+3", "duree": "1 à 2 ans",
+      "description": "Rejoindre un BUT de gestion ou de commerce en cours de cursus, selon ton dossier et les places disponibles.",
+      "parcoursup": false,
+      "canal": "Hors Parcoursup : candidature directement auprès de l’IUT (souvent sur eCandidat). La fiche Parcoursup de chaque BUT donne les contacts de l’IUT.",
+      "lien": { "texte": "Voir les BUT près de chez toi", "url": "#offres-BUT" },
+      "alternance": "Possible, surtout en 3e année.",
+      "offres": "BUT",
+      "sources": [{ "nom": "Onisep, « Que faire après un BTS »", "url": "https://www.onisep.fr/formation/apres-le-bac-les-etudes-superieures/les-principales-filieres-d-etudes-superieures/les-bts-brevet-de-technicien-superieur/que-faire-apres-un-bts" }]
+    },
+    {
+      "id": "licence_generale",
+      "titre": "Licence générale (L2 ou L3) : gestion, économie, AES, droit",
+      "publics": ["BTS_CG", "BTS_NDRC"],
+      "niveau": "Bac+3, puis master possible", "duree": "1 à 2 ans",
+      "description": "Pour viser un master ensuite. L’université décide du niveau d’entrée (L2 ou L3) selon ton dossier.",
+      "parcoursup": false,
+      "canal": "Hors Parcoursup : candidature directement auprès de l’université (souvent eCandidat), au printemps.",
+      "lien": { "texte": "Trouver l’université et son site (Paysage, ministère)", "url": "https://paysage.enseignementsup-recherche.gouv.fr/" },
+      "alternance": "Rare en licence générale.",
+      "offres": null,
+      "sources": [{ "nom": "Onisep, « Que faire après un BTS »", "url": "https://www.onisep.fr/formation/apres-le-bac-les-etudes-superieures/les-principales-filieres-d-etudes-superieures/les-bts-brevet-de-technicien-superieur/que-faire-apres-un-bts" }]
+    },
+    {
+      "id": "ats",
+      "titre": "Prépa ATS économie-gestion",
+      "publics": ["BTS_CG", "BTS_NDRC"],
+      "niveau": "Bac+3 (prépare aux concours)", "duree": "1 an",
+      "description": "Une année de prépa réservée aux bac+2 pour réussir les concours d’admission parallèle des écoles de commerce.",
+      "parcoursup": true,
+      "canal": "Candidature sur Parcoursup, comme les autres classes prépas.",
+      "lien": { "texte": "Parcoursup", "url": "https://www.parcoursup.gouv.fr/" },
+      "alternance": "Non.",
+      "offres": null,
+      "sources": [{ "nom": "Onisep, « La prépa ATS économie-gestion »", "url": "https://www.onisep.fr/formation/apres-le-bac-les-etudes-superieures/les-principales-filieres-d-etudes-superieures/les-classes-preparatoires-aux-grandes-ecoles-cpge/les-prepas-economiques-et-commerciales/la-prepa-ats-economie-gestion" }]
+    },
+    {
+      "id": "ecoles",
+      "titre": "École de commerce en admission parallèle",
+      "publics": ["BTS_CG", "BTS_NDRC"],
+      "niveau": "Bac+5 (programme grande école)", "duree": "3 ans",
+      "description": "Entrer en 1re année du programme grande école d’une école de commerce après un bac+2. Les frais de scolarité sont souvent élevés : l’alternance peut les prendre en charge.",
+      "parcoursup": false,
+      "canal": "Hors Parcoursup : par concours communs (Passerelle, Ecricome Tremplin) ou directement auprès de l’école.",
+      "lien": { "texte": "Concours Passerelle", "url": "https://grande-ecole.passerelle-esc.com/" },
+      "lien2": { "texte": "Concours Ecricome", "url": "https://www.ecricome.org/" },
+      "alternance": "Souvent possible après la 1re année.",
+      "offres": null,
+      "sources": [{ "nom": "Sites officiels des concours Passerelle et Ecricome", "url": "https://www.ecricome.org/" }]
+    },
+    {
+      "id": "bachelor",
+      "titre": "Bachelor ou titre professionnel bac+3 (souvent en alternance)",
+      "publics": ["BTS_CG", "BTS_NDRC"],
+      "niveau": "Bac+3", "duree": "1 an",
+      "description": "Proposés par des écoles, des CCI ou des CFA. Avant de t’inscrire, vérifie que le titre est enregistré au RNCP (niveau 6) : c’est ce qui garantit sa reconnaissance par l’État.",
+      "parcoursup": false,
+      "canal": "Hors Parcoursup : candidature directement auprès de l’école ou du CFA.",
+      "lien": { "texte": "Vérifier un titre sur France compétences (RNCP)", "url": "https://www.francecompetences.fr/recherche-resultats/?types=certification&search=bachelor" },
+      "alternance": "Très souvent.",
+      "offres": null,
+      "sources": [{ "nom": "France compétences, répertoire national des certifications professionnelles", "url": "https://www.francecompetences.fr/" }]
+    }
+  ],
+  "local": {
+    "BTS_CG": {
+      "LP": ["metiers de la gestion et de la comptabilite", "metiers de la grh", "management et gestion des organisations", "metiers de l'entrepreneuriat", "assurance, banque, finance", "gestion des organisations de l'economie sociale", "metiers des administrations et collectivites territoriales", "activites juridiques", "metiers du notariat", "metiers de l'immobilier : gestion", "gestion des achats", "metiers du decisionnel"],
+      "BUT": ["gestion des entreprises et des administrations", "gestion, entrepreneuriat et management", "controle de gestion", "gestion et pilotage des ressources humaines"],
+      "DCG": ["dcg", "comptabilite et de gestion"]
+    },
+    "BTS_NDRC": {
+      "LP": ["commerce et distribution", "technico-commercial", "e-commerce et marketing numerique", "commercialisation de produits et services", "management des activites commerciales", "metiers du marketing operationnel", "metiers du commerce international", "assurance, banque, finance : charge de clientele", "metiers de l'immobilier : transaction", "metiers de l'entrepreneuriat", "management et gestion des organisations", "commercialisation des produits alimentaires", "metiers du tourisme : commercialisation", "gestion des achats"],
+      "BUT": ["techniques de commercialisation", "business", "marketing", "strategie de marque"],
+      "DCG": []
+    }
+  }
+}

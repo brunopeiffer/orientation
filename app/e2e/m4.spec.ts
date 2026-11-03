@@ -78,8 +78,3 @@ test('la page Confidentialité liste exactement les services contactés', async 
   await expect(page.getByText('(data.geopf.fr)')).toBeVisible()
   await expect(page.getByText(/Jamais ton prénom/)).toBeVisible()
 })
-
-test('en BTS, l’étape des poursuites d’études arrive en M5', async ({ page }) => {
-  await demarrer(page, 'BTS_NDRC')
-  await expect(page.getByRole('heading', { level: 1 })).toHaveText('Poursuites d’études après ton BTS')
-})

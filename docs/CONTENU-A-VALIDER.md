@@ -443,5 +443,76 @@ Statut : **A_VALIDER** (2026-11-03). Une formation Parcoursup est « en lien » 
 
 Grille : manque-t-il une formation importante pour une famille ? Un mot-clé attrape-t-il des formations hors sujet ?
 
-## 6. À venir
+## 6. Poursuites d'études après le BTS (`contenu/poursuites-bts.json`)
+
+Statut : **A_VALIDER** (2026-11-03). Les canaux et calendriers changent chaque année : à revérifier avant chaque rentrée. Vérifié par `app/src/postbts.test.ts` : chaque voie a un canal, un lien officiel et une source ; chaque mot-clé local trouve au moins une offre réelle.
+
+### Licence professionnelle (BTS_CG, BTS_NDRC)
+- HORS Parcoursup · Bac+3 · 1 an
+- Une année pour te spécialiser dans un métier précis, avec un stage long ou en alternance. Conçue pour entrer ensuite dans la vie active.
+- Canal : Candidature directement auprès de l’université ou de l’IUT, souvent sur sa plateforme eCandidat, au printemps. Une candidature par licence.
+- Alternance : Souvent possible.
+- Lien : Voir les licences pro près de chez toi (lien vers chaque établissement) (#offres-LP)
+- Sources : [Académie de Nancy-Metz, information orientation](https://sites.ac-nancy-metz.fr/lio/qr_est_republicain/qr_181214.html)
+
+### Diplôme de comptabilité et de gestion (DCG) (BTS_CG)
+- Sur Parcoursup · Bac+3 · 3 ans, souvent moins avec ton BTS
+- Première marche vers l’expertise comptable. Avec un BTS CG obtenu depuis 2017, tu peux être dispensé(e) des épreuves 1, 5, 8, 9, 12 et 13 du DCG, ce qui permet souvent d’entrer en 2e année.
+- Canal : La 1re année se demande sur Parcoursup. Pour une entrée directe en 2e année grâce aux dispenses, contacte l’établissement qui prépare le DCG.
+- Alternance : Possible dans de nombreux établissements.
+- Lien : Parcoursup (https://www.parcoursup.gouv.fr/)
+- Sources : [Arrêté du 22 mai 2020 sur les dispenses du DCG, Bulletin officiel de l’enseignement supérieur n° 24](https://www.enseignementsup-recherche.gouv.fr/fr/bo/20/Hebdo24/ESRS2012706A.htm)
+
+### BUT en admission parallèle (2e année, parfois 3e) (BTS_CG, BTS_NDRC)
+- HORS Parcoursup · Bac+3 · 1 à 2 ans
+- Rejoindre un BUT de gestion ou de commerce en cours de cursus, selon ton dossier et les places disponibles.
+- Canal : Hors Parcoursup : candidature directement auprès de l’IUT (souvent sur eCandidat). La fiche Parcoursup de chaque BUT donne les contacts de l’IUT.
+- Alternance : Possible, surtout en 3e année.
+- Lien : Voir les BUT près de chez toi (#offres-BUT)
+- Sources : [Onisep, « Que faire après un BTS »](https://www.onisep.fr/formation/apres-le-bac-les-etudes-superieures/les-principales-filieres-d-etudes-superieures/les-bts-brevet-de-technicien-superieur/que-faire-apres-un-bts)
+
+### Licence générale (L2 ou L3) : gestion, économie, AES, droit (BTS_CG, BTS_NDRC)
+- HORS Parcoursup · Bac+3, puis master possible · 1 à 2 ans
+- Pour viser un master ensuite. L’université décide du niveau d’entrée (L2 ou L3) selon ton dossier.
+- Canal : Hors Parcoursup : candidature directement auprès de l’université (souvent eCandidat), au printemps.
+- Alternance : Rare en licence générale.
+- Lien : Trouver l’université et son site (Paysage, ministère) (https://paysage.enseignementsup-recherche.gouv.fr/)
+- Sources : [Onisep, « Que faire après un BTS »](https://www.onisep.fr/formation/apres-le-bac-les-etudes-superieures/les-principales-filieres-d-etudes-superieures/les-bts-brevet-de-technicien-superieur/que-faire-apres-un-bts)
+
+### Prépa ATS économie-gestion (BTS_CG, BTS_NDRC)
+- Sur Parcoursup · Bac+3 (prépare aux concours) · 1 an
+- Une année de prépa réservée aux bac+2 pour réussir les concours d’admission parallèle des écoles de commerce.
+- Canal : Candidature sur Parcoursup, comme les autres classes prépas.
+- Alternance : Non.
+- Lien : Parcoursup (https://www.parcoursup.gouv.fr/)
+- Sources : [Onisep, « La prépa ATS économie-gestion »](https://www.onisep.fr/formation/apres-le-bac-les-etudes-superieures/les-principales-filieres-d-etudes-superieures/les-classes-preparatoires-aux-grandes-ecoles-cpge/les-prepas-economiques-et-commerciales/la-prepa-ats-economie-gestion)
+
+### École de commerce en admission parallèle (BTS_CG, BTS_NDRC)
+- HORS Parcoursup · Bac+5 (programme grande école) · 3 ans
+- Entrer en 1re année du programme grande école d’une école de commerce après un bac+2. Les frais de scolarité sont souvent élevés : l’alternance peut les prendre en charge.
+- Canal : Hors Parcoursup : par concours communs (Passerelle, Ecricome Tremplin) ou directement auprès de l’école.
+- Alternance : Souvent possible après la 1re année.
+- Lien : Concours Passerelle (https://grande-ecole.passerelle-esc.com/)
+- Sources : [Sites officiels des concours Passerelle et Ecricome](https://www.ecricome.org/)
+
+### Bachelor ou titre professionnel bac+3 (souvent en alternance) (BTS_CG, BTS_NDRC)
+- HORS Parcoursup · Bac+3 · 1 an
+- Proposés par des écoles, des CCI ou des CFA. Avant de t’inscrire, vérifie que le titre est enregistré au RNCP (niveau 6) : c’est ce qui garantit sa reconnaissance par l’État.
+- Canal : Hors Parcoursup : candidature directement auprès de l’école ou du CFA.
+- Alternance : Très souvent.
+- Lien : Vérifier un titre sur France compétences (RNCP) (https://www.francecompetences.fr/recherche-resultats/?types=certification&search=bachelor)
+- Sources : [France compétences, répertoire national des certifications professionnelles](https://www.francecompetences.fr/)
+
+### Mots-clés des offres locales (licences pro, BUT, DCG)
+
+- **BTS_CG · LP** : « metiers de la gestion et de la comptabilite » ; « metiers de la grh » ; « management et gestion des organisations » ; « metiers de l'entrepreneuriat » ; « assurance, banque, finance » ; « gestion des organisations de l'economie sociale » ; « metiers des administrations et collectivites territoriales » ; « activites juridiques » ; « metiers du notariat » ; « metiers de l'immobilier : gestion » ; « gestion des achats » ; « metiers du decisionnel »
+- **BTS_CG · BUT** : « gestion des entreprises et des administrations » ; « gestion, entrepreneuriat et management » ; « controle de gestion » ; « gestion et pilotage des ressources humaines »
+- **BTS_CG · DCG** : « dcg » ; « comptabilite et de gestion »
+- **BTS_NDRC · LP** : « commerce et distribution » ; « technico-commercial » ; « e-commerce et marketing numerique » ; « commercialisation de produits et services » ; « management des activites commerciales » ; « metiers du marketing operationnel » ; « metiers du commerce international » ; « assurance, banque, finance : charge de clientele » ; « metiers de l'immobilier : transaction » ; « metiers de l'entrepreneuriat » ; « management et gestion des organisations » ; « commercialisation des produits alimentaires » ; « metiers du tourisme : commercialisation » ; « gestion des achats »
+- **BTS_NDRC · BUT** : « techniques de commercialisation » ; « business » ; « marketing » ; « strategie de marque »
+- **BTS_NDRC · DCG** : aucun (non proposé)
+
+Grille : chaque canal est-il exact cette année ? Manque-t-il une poursuite fréquente pour tes étudiants ?
+
+## 7. À venir
 - Liens et dispositifs handicap (M6).

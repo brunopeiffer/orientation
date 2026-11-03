@@ -12,6 +12,26 @@ GOUTS = json.loads((RACINE / "contenu/gouts.json").read_text(encoding="utf-8"))
 MATIERES = json.loads((RACINE / "config/matieres.json").read_text(encoding="utf-8"))
 FAMILLES = json.loads((RACINE / "contenu/metiers-familles.json").read_text(encoding="utf-8"))
 LIENS = json.loads((RACINE / "contenu/formations-familles.json").read_text(encoding="utf-8"))
+POURSUITES = json.loads((RACINE / "contenu/poursuites-bts.json").read_text(encoding="utf-8"))
+
+
+def section_poursuites():
+    out = ["## 6. Poursuites d'études après le BTS (`contenu/poursuites-bts.json`)", "",
+           f"Statut : **{POURSUITES['statut']}** ({POURSUITES['date']}). Les canaux et calendriers changent chaque année : "
+           "à revérifier avant chaque rentrée. Vérifié par `app/src/postbts.test.ts` : chaque voie a un canal, un lien "
+           "officiel et une source ; chaque mot-clé local trouve au moins une offre réelle.", ""]
+    for v in POURSUITES["voies"]:
+        out += [f"### {v['titre']} ({', '.join(v['publics'])})",
+                f"- {'Sur Parcoursup' if v['parcoursup'] else 'HORS Parcoursup'} · {v['niveau']} · {v['duree']}",
+                f"- {v['description']}", f"- Canal : {v['canal']}", f"- Alternance : {v['alternance']}",
+                f"- Lien : {v['lien']['texte']} ({v['lien']['url']})",
+                "- Sources : " + " ; ".join(f"[{x['nom']}]({x['url']})" for x in v["sources"]), ""]
+    out += ["### Mots-clés des offres locales (licences pro, BUT, DCG)", ""]
+    for bts, par_type in POURSUITES["local"].items():
+        for t, mots in par_type.items():
+            out.append(f"- **{bts} · {t}** : " + (" ; ".join(f"« {m} »" for m in mots) or "aucun (non proposé)"))
+    out += ["", "Grille : chaque canal est-il exact cette année ? Manque-t-il une poursuite fréquente pour tes étudiants ?", ""]
+    return out
 
 
 def section_liens():
@@ -154,7 +174,8 @@ def main():
             *section_gouts(),
             *section_familles(),
             *section_liens(),
-            "## 6. À venir",
+            *section_poursuites(),
+            "## 7. À venir",
             "- Liens et dispositifs handicap (M6).", ""]
     (RACINE / "docs/CONTENU-A-VALIDER.md").write_text("\n".join(out), encoding="utf-8")
     print("docs/CONTENU-A-VALIDER.md généré")
