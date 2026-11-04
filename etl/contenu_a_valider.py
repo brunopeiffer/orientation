@@ -15,6 +15,19 @@ LIENS = json.loads((RACINE / "contenu/formations-familles.json").read_text(encod
 POURSUITES = json.loads((RACINE / "contenu/poursuites-bts.json").read_text(encoding="utf-8"))
 NAF = json.loads((RACINE / "contenu/entreprises-naf.json").read_text(encoding="utf-8"))
 HANDICAP = json.loads((RACINE / "contenu/handicap.json").read_text(encoding="utf-8"))
+PLAN_ACTION = json.loads((RACINE / "contenu/plan-action.json").read_text(encoding="utf-8"))
+
+
+def section_plan():
+    out = ["## 9. Plan d'action de la synthèse imprimable (`contenu/plan-action.json`)", "",
+           f"Statut : **{PLAN_ACTION['statut']}** ({PLAN_ACTION['date']}). Aucune date précise : les calendriers changent "
+           "chaque année. La synthèse ne contient jamais la donnée handicap (testé).", ""]
+    for parcours, titre in [("lycee", "Lycée (STMG)"), ("bts", "Fin de BTS")]:
+        out.append(f"**{titre}**")
+        out += [f"{k}. {e['texte']}" + (f" ({e['lien']['url']})" if "lien" in e else "")
+                for k, e in enumerate(PLAN_ACTION[parcours], 1)]
+        out.append("")
+    return out
 
 
 def section_m6():
@@ -194,8 +207,7 @@ def main():
             *section_liens(),
             *section_poursuites(),
             *section_m6(),
-            "## 9. À venir",
-            "- Textes de la synthèse imprimable (M7).", ""]
+            *section_plan()]
     (RACINE / "docs/CONTENU-A-VALIDER.md").write_text("\n".join(out), encoding="utf-8")
     print("docs/CONTENU-A-VALIDER.md généré")
 

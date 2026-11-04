@@ -41,6 +41,7 @@ Proxy : `cd proxy && npm install && npm test` (tests) ; déploiement et clé : v
 - M4 : `data/formations/` GÉNÉRÉ par l'ETL (un fichier par région, chargé à la demande via `import.meta.glob`) ; liens formations ↔ familles dans `contenu/formations-familles.json` ; logique dans `app/src/formations.ts`. Réseau : `app/src/net.ts` + `config/sources.json` (géocodage IGN, commune seulement, `app/src/geocodage.ts`).
 - M5 : parcours BTS. Voies et canaux de candidature dans `contenu/poursuites-bts.json` (À VALIDER chaque année) ; offres localisées `data/post-bts.json` GÉNÉRÉ par l'ETL ; logique `app/src/postbts.ts`, écran `components/PostBts.tsx`.
 - M6 : `proxy/` (Cloudflare Worker : CORS, limite de débit, cache 1 h, aucun journal ; seule source à clé : La bonne alternance, qui inclut les offres France Travail). Recherche d'entreprises appelée directement par le navigateur (API publique, limite par IP). `app/src/alternance.ts`, écrans `Alternance.tsx` et `Handicap.tsx`. La donnée handicap ne sort JAMAIS du navigateur (test `e2e/m6.spec.ts`).
+- M7 : synthèse imprimable (`app/src/synthese.ts`, `components/Synthese.tsx`, plan d'action dans `contenu/plan-action.json`) ; impression A4 via les variantes Tailwind `print:` ; CSP injectée au build depuis `config/sources.json` (`app/src/csp.ts`, plugin dans `vite.config.ts`). Audits : `docs/AUDIT-ACCESSIBILITE.md`, `docs/CONFIDENTIALITE.md`, tests `e2e/m7.spec.ts`.
 - Toute nouvelle donnée de l'élève : l'ajouter à `EtatSchema`, augmenter `VERSION_ETAT`, écrire la migration et le test.
 
 ## Code

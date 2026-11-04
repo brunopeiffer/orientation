@@ -555,5 +555,22 @@ Statut : **A_VALIDER** (2026-11-03). Facultatif, gardé dans le navigateur, abse
 - Pour les questions de poste et d’emploi, Mon Parcours Handicap regroupe les démarches et les contacts.
 - Liens : [Aide à l’embauche en contrat d’apprentissage (Agefiph)](https://www.agefiph.fr/aides-handicap/aide-lembauche-en-contrat-dapprentissage) ; [Emploi et vie professionnelle (Mon Parcours Handicap)](https://www.monparcourshandicap.gouv.fr/emploi)
 
-## 9. À venir
-- Textes de la synthèse imprimable (M7).
+## 9. Plan d'action de la synthèse imprimable (`contenu/plan-action.json`)
+
+Statut : **A_VALIDER** (2026-11-04). Aucune date précise : les calendriers changent chaque année. La synthèse ne contient jamais la donnée handicap (testé).
+
+**Lycée (STMG)**
+1. Choisis 2 ou 3 pistes métiers et lis leur fiche complète sur France Travail.
+2. Rencontre des professionnels de ces métiers : stage, entretien, salon, journée portes ouvertes.
+3. Note les formations qui t’intéressent et lis leur fiche Parcoursup (attendus, critères d’examen des vœux).
+4. Vérifie le calendrier de Parcoursup de cette année sur le site officiel. (https://www.parcoursup.gouv.fr/)
+5. Rédige un projet de formation motivé pour chaque vœu, à partir de tes pistes et de ta synthèse.
+6. Si l’alternance t’intéresse, commence tôt à chercher une entreprise : la plupart des formations en apprentissage demandent un contrat.
+7. Parle de cette synthèse avec ton professeur principal et le psychologue de l’Éducation nationale de ton lycée.
+
+**Fin de BTS**
+1. Choisis les voies qui t’intéressent et note, pour chaque établissement, la date limite de candidature (souvent au printemps, hors Parcoursup).
+2. Prépare ton CV, une lettre de motivation par formation et tes relevés de notes de BTS.
+3. Pour une école de commerce, inscris-toi aux concours d’admission parallèle avant leur clôture. (https://grande-ecole.passerelle-esc.com/)
+4. Pour l’alternance, contacte dès maintenant les entreprises de ta liste : sans contrat, pas d’entrée en formation en apprentissage dans la plupart des cas.
+5. Demande conseil à tes enseignants de BTS et à ton tuteur de stage sur la poursuite la plus adaptée à ton projet.

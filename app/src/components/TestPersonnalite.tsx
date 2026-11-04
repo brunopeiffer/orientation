@@ -19,10 +19,11 @@ export default function TestPersonnalite() {
   })
   const [manquantes, setManquantes] = useState<number[]>([])
   const titre = useRef<HTMLHeadingElement>(null)
-  const premier = useRef(true)
+  const precedente = useRef(page) // comparaison robuste au double effet de StrictMode
 
   useEffect(() => {
-    if (premier.current) return void (premier.current = false)
+    if (precedente.current === page) return
+    precedente.current = page
     titre.current?.focus()
     window.scrollTo({ top: 0 })
   }, [page])

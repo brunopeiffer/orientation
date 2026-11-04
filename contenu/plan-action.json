@@ -1,0 +1,21 @@
+{
+  "_doc": "Plan d'action affiché dans la synthèse imprimable, selon le parcours. Rédigé par Claude le 04/11/2026, À VALIDER PAR UN HUMAIN. Aucune date précise : les calendriers changent chaque année, on renvoie vers les sites officiels.",
+  "statut": "A_VALIDER",
+  "date": "2026-11-04",
+  "lycee": [
+    { "texte": "Choisis 2 ou 3 pistes métiers et lis leur fiche complète sur France Travail." },
+    { "texte": "Rencontre des professionnels de ces métiers : stage, entretien, salon, journée portes ouvertes." },
+    { "texte": "Note les formations qui t’intéressent et lis leur fiche Parcoursup (attendus, critères d’examen des vœux)." },
+    { "texte": "Vérifie le calendrier de Parcoursup de cette année sur le site officiel.", "lien": { "texte": "Parcoursup", "url": "https://www.parcoursup.gouv.fr/" } },
+    { "texte": "Rédige un projet de formation motivé pour chaque vœu, à partir de tes pistes et de ta synthèse." },
+    { "texte": "Si l’alternance t’intéresse, commence tôt à chercher une entreprise : la plupart des formations en apprentissage demandent un contrat." },
+    { "texte": "Parle de cette synthèse avec ton professeur principal et le psychologue de l’Éducation nationale de ton lycée." }
+  ],
+  "bts": [
+    { "texte": "Choisis les voies qui t’intéressent et note, pour chaque établissement, la date limite de candidature (souvent au printemps, hors Parcoursup)." },
+    { "texte": "Prépare ton CV, une lettre de motivation par formation et tes relevés de notes de BTS." },
+    { "texte": "Pour une école de commerce, inscris-toi aux concours d’admission parallèle avant leur clôture.", "lien": { "texte": "Concours Passerelle", "url": "https://grande-ecole.passerelle-esc.com/" } },
+    { "texte": "Pour l’alternance, contacte dès maintenant les entreprises de ta liste : sans contrat, pas d’entrée en formation en apprentissage dans la plupart des cas." },
+    { "texte": "Demande conseil à tes enseignants de BTS et à ton tuteur de stage sur la poursuite la plus adaptée à ton projet." }
+  ]
+}

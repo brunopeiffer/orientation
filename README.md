@@ -2,6 +2,7 @@
 
 Application web d'aide à l'orientation, sans compte : toutes les réponses restent dans le navigateur.
 Plan et jalons : [PLAN.md](PLAN.md). Listes à valider : [métiers](docs/METIERS-A-VALIDER.md), [poursuites d'études](docs/POURSUITES-A-VALIDER.md).
+Contenus rédigés à relire : [CONTENU-A-VALIDER](docs/CONTENU-A-VALIDER.md). Audits : [accessibilité](docs/AUDIT-ACCESSIBILITE.md), [confidentialité](docs/CONFIDENTIALITE.md).
 
 ## Démarrer
 

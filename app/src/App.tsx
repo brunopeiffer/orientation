@@ -8,6 +8,7 @@ import Metiers from './components/Metiers'
 import PostBts from './components/PostBts'
 import ResultatsScolaires from './components/ResultatsScolaires'
 import Sauvegarde from './components/Sauvegarde'
+import Synthese from './components/Synthese'
 import TestPersonnalite from './components/TestPersonnalite'
 import { complet } from './personnalite'
 import { Bouton } from './components/ui'
@@ -24,9 +25,11 @@ export default function App() {
   const main = useRef<HTMLElement>(null)
 
   // Au changement d'étape, on place le focus sur le titre (lecteurs d'écran, clavier).
-  const premierRendu = useRef(true)
+  // On compare à l'étape précédente plutôt qu'à un « premier rendu » : robuste au double effet de StrictMode.
+  const precedente = useRef(courante)
   useEffect(() => {
-    if (premierRendu.current) return void (premierRendu.current = false)
+    if (precedente.current === courante) return
+    precedente.current = courante
     main.current?.querySelector<HTMLElement>('h1')?.focus()
     window.scrollTo({ top: 0 })
   }, [courante])
@@ -34,9 +37,17 @@ export default function App() {
   const total = etapes.length - 1
   const e = etapes[courante]
 
+  // Un titre de page par étape (RGAA 8.6) : utile aux lecteurs d'écran et dans les onglets.
+  useEffect(() => {
+    document.title = courante === 0 ? 'Mon orientation' : `${e.titre} – étape ${courante} sur ${total} – Mon orientation`
+  }, [courante, e.titre, total])
+
   return (
-    <div className="mx-auto flex min-h-dvh max-w-3xl flex-col gap-4 px-4 py-4 sm:py-8">
-      <header className="flex items-center justify-between gap-2">
+    <div className="mx-auto flex min-h-dvh max-w-3xl flex-col gap-4 px-4 py-4 sm:py-8 print:max-w-none print:p-0">
+      <a href="#contenu" className="sr-only rounded-full bg-violet-800 px-4 py-2 font-semibold text-white focus:not-sr-only focus:self-start">
+        Aller au contenu
+      </a>
+      <header className="flex items-center justify-between gap-2 print:hidden">
         <p className="text-lg font-extrabold text-violet-800">
           <span aria-hidden="true">🧭</span> Mon orientation
         </p>
@@ -44,7 +55,7 @@ export default function App() {
       </header>
 
       {courante > 0 && (
-        <nav aria-label="Progression">
+        <nav aria-label="Progression" className="print:hidden">
           <p className="mb-1 text-sm font-semibold text-slate-700">Étape {courante} sur {total}</p>
           <div
             role="progressbar"
@@ -63,9 +74,9 @@ export default function App() {
         </nav>
       )}
 
-      <main ref={main} className="flex-1 rounded-3xl bg-white/70 p-5 shadow-sm backdrop-blur sm:p-8">
+      <main id="contenu" tabIndex={-1} ref={main} className="flex-1 rounded-3xl bg-white/70 p-5 shadow-sm backdrop-blur sm:p-8 print:rounded-none print:bg-white print:p-0 print:shadow-none">
         {reprise && courante > 0 && (
-          <p role="status" className="mb-4 rounded-2xl bg-emerald-50 p-3 font-semibold text-emerald-900">
+          <p role="status" className="mb-4 rounded-2xl bg-emerald-50 p-3 font-semibold text-emerald-900 print:hidden">
             Content de te revoir{prenom ? `, ${prenom}` : ''} ! Tu reprends là où tu t’étais arrêté(e).
           </p>
         )}
@@ -86,16 +97,11 @@ export default function App() {
         ) : e.id === 'alternance' ? (
           <Alternance />
         ) : (
-          <div className="space-y-6">
-            <h1 tabIndex={-1} className="text-2xl font-extrabold text-violet-900 sm:text-3xl">{e.titre}</h1>
-            <p className="rounded-2xl bg-violet-50 p-4 text-slate-700">
-              <span aria-hidden="true">🚧</span> Cette étape arrive bientôt.
-            </p>
-          </div>
+          <Synthese />
         )}
         {/* Pendant le questionnaire, ses propres boutons Retour / Continuer suffisent. */}
         {courante > 0 && (e.id !== 'personnalite' || complet(personnalite)) && (
-          <div className="mt-6 flex flex-wrap justify-between gap-2 border-t border-violet-100 pt-4">
+          <div className="mt-6 flex flex-wrap justify-between gap-2 border-t border-violet-100 pt-4 print:hidden">
             <Bouton variante="secondaire" onClick={() => maj({ etape: courante - 1 })}>
               <span aria-hidden="true">←</span> Étape précédente
             </Bouton>
@@ -108,8 +114,10 @@ export default function App() {
         )}
       </main>
 
-      <Sauvegarde />
-      <Confidentialite />
+      <div className="space-y-4 print:hidden">
+        <Sauvegarde />
+        <Confidentialite />
+      </div>
     </div>
   )
 }

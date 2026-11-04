@@ -19,3 +19,10 @@ body {
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { transition: none !important; animation: none !important; }
 }
+
+/* Impression A4 de la synthèse : fond blanc, texte noir, marges lisibles, pas de bloc coupé en deux. */
+@media print {
+  @page { size: A4; margin: 14mm; }
+  body { background: white; font-size: 11pt; }
+  a { color: black; }
+}
