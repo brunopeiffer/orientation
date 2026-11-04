@@ -13,7 +13,7 @@ const IndexSchema = z.object({
 const FormationSchema = z.object({
   i: z.string(), n: z.string(), p: z.array(z.string()), t: z.string(), e: z.string(), v: z.string().nullable(), d: z.string().nullable(),
   la: z.number(), lo: z.number(), pu: z.boolean(), a: z.boolean(), h: z.boolean(), f: z.string().url().nullable(),
-  s: z.object({ tx: z.number().nullable(), bt: z.number().nullable(), pbt: z.number().nullable(), cap: z.number().nullable() }).optional(),
+  s: z.object({ tx: z.number().nullable(), bt: z.number().nullable(), pc: z.number().nullable(), pbt: z.number().nullable(), cap: z.number().nullable() }).optional(),
 })
 
 const LiensSchema = z.object({ statut: z.string(), date: z.string(), familles: z.record(z.string(), z.array(z.string()).min(1)) })
@@ -68,11 +68,13 @@ export function acces(f: Formation, session = INDEX.session): Acces {
   if (!s || s.bt === null || s.pbt === null) {
     return { niveau: null, texte: 'Chances d’accès : non disponible', detail: `Pas de statistiques Parcoursup ${session} pour cette formation (nouvelle formation ou données absentes).` }
   }
-  if (s.bt < 10) {
-    return { niveau: null, texte: 'Chances d’accès : non disponible', detail: `Trop peu de candidats bac techno en ${session} (${s.bt}) pour donner une tendance fiable.` }
+  // Les propositions (pbt) couvrent les phases principale et complémentaire : les candidats aussi, sinon on surestime l'accès.
+  const candidats = s.bt + (s.pc ?? 0)
+  if (candidats < 10) {
+    return { niveau: null, texte: 'Chances d’accès : non disponible', detail: `Trop peu de candidats bac techno en ${session} (${candidats}) pour donner une tendance fiable.` }
   }
-  const r = Math.min(1, s.pbt / s.bt)
-  const detail = `En ${session} : ${s.pbt} propositions pour ${s.bt} candidats bac techno (toutes séries techno confondues).`
+  const r = Math.min(1, s.pbt / candidats)
+  const detail = `En ${session} : ${s.pbt} propositions pour ${candidats} candidats bac techno, phases principale et complémentaire (toutes séries techno confondues).`
   if (r >= 0.8) return { niveau: 'large', texte: 'Accès large : 8 candidats bac techno sur 10 ou plus ont reçu une proposition', detail }
   if (r >= 0.5) return { niveau: 'assez_large', texte: 'Accès assez large : entre 5 et 8 candidats bac techno sur 10 ont reçu une proposition', detail }
   if (r >= 0.2) return { niveau: 'selective', texte: 'Formation sélective : entre 2 et 5 candidats bac techno sur 10 ont reçu une proposition', detail }

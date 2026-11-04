@@ -31,14 +31,21 @@ describe('distances', () => {
 describe('chances d’accès (fourchette prudente)', () => {
   it('non disponible sans statistiques ou avec trop peu de candidats techno : jamais de chiffre inventé', () => {
     expect(acces(f()).niveau).toBeNull()
-    expect(acces(f({ s: { tx: 80, bt: 6, pbt: 6, cap: 30 } })).detail).toMatch(/Trop peu/)
+    expect(acces(f({ s: { tx: 80, bt: 6, pc: 2, pbt: 6, cap: 30 } })).detail).toMatch(/Trop peu/)
   })
 
   it('fourchettes selon la part de candidats techno ayant reçu une proposition, avec la session', () => {
-    const niveau = (pbt: number) => acces(f({ s: { tx: 50, bt: 100, pbt, cap: 30 } })).niveau
+    const niveau = (pbt: number) => acces(f({ s: { tx: 50, bt: 100, pc: 0, pbt, cap: 30 } })).niveau
     expect([niveau(90), niveau(60), niveau(30), niveau(5)]).toEqual(['large', 'assez_large', 'selective', 'tres_selective'])
-    expect(acces(f({ s: { tx: 50, bt: 100, pbt: 120, cap: 30 } })).niveau).toBe('large') // plafonné à 100 %
-    expect(acces(f({ s: { tx: 50, bt: 100, pbt: 30, cap: 30 } })).detail).toContain(INDEX.session)
+    expect(acces(f({ s: { tx: 50, bt: 100, pc: 0, pbt: 120, cap: 30 } })).niveau).toBe('large') // plafonné à 100 %
+    expect(acces(f({ s: { tx: 50, bt: 100, pc: 0, pbt: 30, cap: 30 } })).detail).toContain(INDEX.session)
+  })
+
+  it('compte les candidats des deux phases : des propositions de phase complémentaire ne gonflent pas l’accès', () => {
+    // 20 candidats en phase principale, 20 en complémentaire, 20 propositions : 1 sur 2, pas « accès large ».
+    expect(acces(f({ s: { tx: 50, bt: 20, pc: 20, pbt: 20, cap: 30 } })).niveau).toBe('assez_large')
+    expect(acces(f({ s: { tx: 50, bt: 20, pc: 20, pbt: 20, cap: 30 } })).detail).toContain('20 propositions pour 40 candidats')
+    expect(acces(f({ s: { tx: 50, bt: 8, pc: 4, pbt: 6, cap: 30 } })).niveau).toBe('assez_large') // 12 candidats : assez pour une tendance
   })
 })
 
@@ -112,6 +119,13 @@ describe('réseau', () => {
     expect([...new URL(url).searchParams.keys()].sort()).toEqual(['limit', 'q', 'type'])
     expect(new URL(url).searchParams.get('q')).toBe('Illkirch')
     expect(init).toMatchObject({ credentials: 'omit', referrerPolicy: 'no-referrer' })
+  })
+
+  it('accepte l’apostrophe typographique des téléphones (« L’Isle-Adam ») et envoie une apostrophe simple', async () => {
+    const fetch = vi.fn().mockResolvedValue({ ok: true, json: async () => ({ features: [] }) })
+    vi.stubGlobal('fetch', fetch)
+    await chercherCommunes('L’Isle-Adam')
+    expect(new URL(fetch.mock.calls[0][0]).searchParams.get('q')).toBe("L'Isle-Adam")
   })
 
   it('refuse une recherche invalide sans rien envoyer', async () => {

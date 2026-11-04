@@ -1,7 +1,7 @@
 import { beforeEach, describe, expect, it, vi } from 'vitest'
 import { exporter, lireSauvegarde, nomFichier } from './sauvegarde'
 import { GOUTS_VIDES, SCOLARITE_VIDE } from './gouts'
-import { ETAT_INITIAL, HANDICAP_INITIAL, MOBILITE_INITIALE, type Etat } from './schema'
+import { ETAT_INITIAL, HANDICAP_INITIAL, MOBILITE_INITIALE, PrenomSchema, type Etat } from './schema'
 
 const etat: Etat = {
   prenom: 'Léa-Marie', publicId: 'BTS_NDRC', etape: 3, avertissementLu: true, personnalite: { e1: 4, o9: 2 },
@@ -31,6 +31,11 @@ describe('export / import', () => {
     const f = JSON.parse(exporter(etat))
     f.etat.nom = 'Dupont'
     expect(lireSauvegarde(JSON.stringify(f)).ok).toBe(false)
+  })
+
+  it('accepte l’apostrophe typographique des téléphones dans le prénom (« N’Golo »)', () => {
+    expect(PrenomSchema.parse('N’Golo')).toBe("N'Golo")
+    expect(lireSauvegarde(exporter({ ...etat, prenom: 'N’Golo' }))).toEqual({ ok: true, etat: { ...etat, prenom: "N'Golo" } })
   })
 
   it('refuse un public désactivé et un prénom invalide', () => {

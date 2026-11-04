@@ -15,7 +15,7 @@ def carte(gta, code, region="Grand Est", gps=(48.58, 7.75), app=None):
             "fiche": "https://dossier.parcoursup.fr/x"}
 
 
-STATS = [{"cod_aff_form": "1", "acc_bt": 3.0, "nb_voe_pp_bt": 40.0, "prop_tot_bt": 12.0, "taux_acces_ens": 55,
+STATS = [{"cod_aff_form": "1", "acc_bt": 3.0, "nb_voe_pp_bt": 40.0, "nb_voe_pc_bt": 5.0, "prop_tot_bt": 12.0, "taux_acces_ens": 55,
           "capa_fin": 24}]
 
 
@@ -26,7 +26,7 @@ class TestConstruire(unittest.TestCase):
                                         carte("3", "B")])
         f = {x["i"]: x for x in regions["Grand Est"]}
         self.assertEqual(set(f), {"1", "2"})
-        self.assertEqual(f["1"]["s"], {"tx": 55, "bt": 40, "pbt": 12, "cap": 24})
+        self.assertEqual(f["1"]["s"], {"tx": 55, "bt": 40, "pc": 5, "pbt": 12, "cap": 24})
         self.assertNotIn("s", f["2"])  # pas de statistiques : jamais de chiffre inventé
         self.assertTrue(f["2"]["a"])
         self.assertEqual((f["1"]["n"], f["1"]["p"]), ("BTS - Formation A", ["BTS - Parcours X"]))

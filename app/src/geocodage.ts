@@ -19,13 +19,16 @@ const ReponseSchema = z.object({
   })),
 })
 
+/** Les claviers de téléphone (iPhone notamment) tapent ’ au lieu de ' : on ramène toutes les apostrophes à '. */
+export const apostrophes = (v: unknown) => (typeof v === 'string' ? v.replace(/[’‘ʼ]/g, "'") : v)
+
 /** Ce que l'élève peut chercher : un nom de commune ou un code postal, rien d'autre. */
-export const RechercheSchema = z
+export const RechercheSchema = z.preprocess(apostrophes, z
   .string()
   .trim()
   .min(2, 'Tape au moins 2 caractères.')
   .max(60, '60 caractères au maximum.')
-  .regex(/^[\p{L}0-9' -]+$/u, 'Utilise seulement des lettres, des chiffres, des espaces, des tirets ou des apostrophes.')
+  .regex(/^[\p{L}0-9' -]+$/u, 'Utilise seulement des lettres, des chiffres, des espaces, des tirets ou des apostrophes.'))
 
 export async function chercherCommunes(recherche: string, signal?: AbortSignal): Promise<(Commune & { contexte: string })[]> {
   const q = RechercheSchema.parse(recherche)

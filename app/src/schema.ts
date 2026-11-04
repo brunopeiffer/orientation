@@ -1,7 +1,7 @@
 import { z } from 'zod'
 import config from '../../config/publics.json'
 import handicap from '../../contenu/handicap.json'
-import { CommuneSchema } from './geocodage'
+import { apostrophes, CommuneSchema } from './geocodage'
 import { GOUTS, GOUTS_VIDES, MATIERES, SCOLARITE_VIDE } from './gouts'
 import { TEST } from './personnalite'
 
@@ -44,11 +44,11 @@ export const PUBLICS_ACTIFS = PUBLICS.filter((p) => p.actif)
 export const PRENOM_MAX = 30
 
 // Prénom seulement (jamais de nom de famille) : lettres, espace, tiret, apostrophe.
-export const PrenomSchema = z
+export const PrenomSchema = z.preprocess(apostrophes, z
   .string()
   .trim()
   .max(PRENOM_MAX, `Ton prénom doit faire ${PRENOM_MAX} caractères au maximum.`)
-  .regex(/^(\p{L}[\p{L}' -]*)?$/u, 'Utilise seulement des lettres, des espaces, des tirets ou des apostrophes.')
+  .regex(/^(\p{L}[\p{L}' -]*)?$/u, 'Utilise seulement des lettres, des espaces, des tirets ou des apostrophes.'))
 
 /** Rayons proposés en km ; null = partout en France. */
 export const RAYONS = [10, 20, 50, 100, 200, null] as const

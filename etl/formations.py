@@ -18,7 +18,7 @@ import urllib.request
 RACINE = pathlib.Path(__file__).resolve().parent.parent
 BASE = "https://data.enseignementsup-recherche.gouv.fr/api/explore/v2.1/catalog/datasets/"
 STATS, CARTO = "fr-esr-parcoursup", "fr-esr-cartographie_formations_parcoursup"
-CHAMPS_STATS = ["session", "cod_aff_form", "acc_bt", "nb_voe_pp_bt", "prop_tot_bt", "taux_acces_ens", "capa_fin"]
+CHAMPS_STATS = ["session", "cod_aff_form", "acc_bt", "nb_voe_pp_bt", "nb_voe_pc_bt", "prop_tot_bt", "taux_acces_ens", "capa_fin"]
 CHAMPS_CARTO = ["annee", "gta", "etab_nom", "tc", "tf", "nm", "fl", "app", "int", "region", "departement", "commune",
                 "fiche", "etab_gps", "code_formation"]
 SORTIE = RACINE / "data/formations"
@@ -75,7 +75,8 @@ def construire(stats, carto):
         }
         s = par_code.get(c["gta"])
         if s:
-            f["s"] = {"tx": nombre(s["taux_acces_ens"]), "bt": nombre(s["nb_voe_pp_bt"]),
+            # prop_tot_bt compte les propositions des deux phases : on compte donc les candidats des deux phases.
+            f["s"] = {"tx": nombre(s["taux_acces_ens"]), "bt": nombre(s["nb_voe_pp_bt"]), "pc": nombre(s["nb_voe_pc_bt"]),
                       "pbt": nombre(s["prop_tot_bt"]), "cap": nombre(s["capa_fin"])}
         regions.setdefault(c["region"] or "Autre", []).append(f)
     return regions, sans_gps
