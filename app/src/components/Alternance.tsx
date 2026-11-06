@@ -124,7 +124,7 @@ function Offres({ r, depuis }: { r: ReponseOffres; depuis: { lat: number; lon: n
         {liste.slice(0, nb).map(({ o, km }) => (
           <li key={o.id} className="rounded-2xl bg-white p-3 shadow-sm ring-1 ring-violet-100">
             <div className="flex items-start justify-between gap-3">
-              <div>
+              <div className="min-w-0 [overflow-wrap:anywhere]">
                 <h3 className="font-bold text-violet-900">{o.titre}</h3>
                 <p className="text-slate-700">{o.entreprise}{o.adresse && ` · ${o.adresse}`}</p>
                 <p className="text-sm text-slate-600">
@@ -160,7 +160,7 @@ function Entreprises({ liste }: { liste: ReturnType<typeof fusionnerEntreprises>
         {liste.slice(0, nb).map(({ e, km }) => (
           <li key={e.siret} className="rounded-2xl bg-white p-3 shadow-sm ring-1 ring-violet-100">
             <div className="flex items-start justify-between gap-3">
-              <div>
+              <div className="min-w-0 [overflow-wrap:anywhere]">
                 <h3 className="font-bold text-violet-900">{e.nom}</h3>
                 {e.activite && <p className="text-sm text-slate-700">{e.activite}</p>}
                 {e.adresse && <p className="text-sm text-slate-600">{e.adresse}</p>}

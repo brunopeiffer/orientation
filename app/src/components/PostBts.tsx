@@ -99,7 +99,7 @@ function ListeOffres({ type, offres, source }: { type: TypeOffre; offres: OffreL
         {offres.slice(0, nb).map(({ o, km }) => (
           <li key={`${o.k}-${o.e}-${o.v}-${o.m}-${o.p}`} className="rounded-2xl bg-white p-3 ring-1 ring-violet-100">
             <div className="flex items-start justify-between gap-3">
-              <div>
+              <div className="min-w-0 [overflow-wrap:anywhere]">
                 <p className="font-bold text-violet-900">{o.m}</p>
                 {o.p && <p className="text-sm text-slate-700">{type === 'LP' ? 'Parcours : ' : ''}{o.p}</p>}
                 <p className="text-slate-700">{o.e}{o.v && ` · ${o.v}`}{o.d && ` (${o.d})`}</p>

@@ -17,9 +17,9 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with: { fetch-depth: 0 }
-      - uses: gitleaks/gitleaks-action@v2
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      # Tout l'historique à chaque push (l'action gitleaks échoue sur le premier push : pas de commit parent).
+      # --user : même propriétaire que le dépôt monté, sinon git refuse de le lire (« dubious ownership »).
+      - run: docker run --rm --user "$(id -u):$(id -g)" -v "$PWD:/repo" zricethezav/gitleaks:v8.24.3 git /repo --redact --verbose
 
   build:
     runs-on: ubuntu-latest

@@ -203,7 +203,7 @@ function CarteFormation({ r, mesFamilles }: { r: Resultat; mesFamilles: string[]
   return (
     <li aria-labelledby={id} className="rounded-3xl bg-white p-4 shadow-sm ring-1 ring-violet-100">
       <div className="flex items-start justify-between gap-3">
-        <div>
+        <div className="min-w-0 [overflow-wrap:anywhere]">
           <h3 id={id} className="font-extrabold text-violet-900">{f.n}</h3>
           <p className="text-slate-700">{f.e}{f.v && ` · ${f.v}`}{f.d && ` (${f.d})`}</p>
           {f.p.length > 0 && <p className="text-sm text-slate-600">Parcours : {f.p.map((x) => x.replace(/^[^-]+- /, '')).join(' ; ')}</p>}

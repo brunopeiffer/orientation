@@ -48,7 +48,7 @@ function Carte({ piste, rang }: { piste: Piste; rang: number }) {
   return (
     <li aria-labelledby={id} className="rounded-3xl bg-white p-4 shadow-sm ring-1 ring-violet-100 sm:p-5">
       <div className="flex items-start justify-between gap-3">
-        <div>
+        <div className="min-w-0 [overflow-wrap:anywhere]">
           <p className="text-sm font-semibold text-fuchsia-700">Piste {rang} · {famille.nom}</p>
           <h2 id={id} className="text-lg font-extrabold text-violet-900">{metier.libelle}</h2>
         </div>
