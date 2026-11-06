@@ -23,7 +23,7 @@ Le dossier `proxy/` est un Cloudflare Worker qui appelle La bonne alternance ave
 l'exposer au navigateur. Sans proxy, l'app fonctionne quand même : elle propose des liens préremplis.
 
 1. Créer la clé d'API sur https://api.apprentissage.beta.gouv.fr (compte, rubrique profil).
-2. Dans `proxy/wrangler.toml`, remplacer `https://VOTRE-COMPTE.github.io` par l'adresse GitHub Pages de l'app.
+2. Dans `proxy/wrangler.toml`, `ALLOWED_ORIGINS` contient l'adresse GitHub Pages de l'app (https://brunopeiffer.github.io) : à adapter si le dépôt change de compte.
 3. Déployer, puis saisir la clé (elle est demandée dans le terminal, jamais écrite dans un fichier) :
    ```bash
    cd proxy && npx wrangler@4 deploy
