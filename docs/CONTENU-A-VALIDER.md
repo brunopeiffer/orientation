@@ -667,3 +667,19 @@ Statut : **A_VALIDER** (2026-11-04). Aucune date précise : les calendriers chan
 3. Pour une école de commerce, inscris-toi aux concours d’admission parallèle avant leur clôture. (https://grande-ecole.passerelle-esc.com/)
 4. Pour l’alternance, contacte dès maintenant les entreprises de ta liste : sans contrat, pas d’entrée en formation en apprentissage dans la plupart des cas.
 5. Demande conseil à tes enseignants de BTS et à ton tuteur de stage sur la poursuite la plus adaptée à ton projet.
+
+## 10. Aides pratiques (`contenu/pratique.json`)
+
+Statut : **A_VALIDER** (2026-11-07). Aucun montant ni date : ils changent chaque année.
+
+**Financer tes études et te loger**
+- Bourse sur critères sociaux et logement en résidence Crous : une seule demande en ligne, le Dossier social étudiant (DSE), à faire chaque année dès le printemps, même avant d’avoir tes résultats Parcoursup. (https://messervices.etudiant.gouv.fr/)
+- Aide à la mobilité Parcoursup : une aide existe, sous conditions, si tu acceptes une formation hors de ton académie. La demande se fait sur le même site. (https://messervices.etudiant.gouv.fr/)
+- Logements étudiants du Crous près de ta future formation. (https://trouverunlogement.lescrous.fr/)
+- Toutes les aides de l’État pour les jeunes (logement, transport, santé…) : un simulateur te dit à quoi tu as droit. (https://www.1jeune1solution.gouv.fr/mes-aides)
+- En apprentissage, ta formation est prise en charge et tu es salarié(e) : une piste à regarder si le coût des études te freine.
+
+**Te faire accompagner**
+- Au lycée ou en BTS : ton professeur principal ou tes enseignants, et le psychologue de l’Éducation nationale de l’établissement.
+- Le CIO (centre d’information et d’orientation) de ton secteur : rendez-vous gratuit avec un psychologue de l’Éducation nationale. (https://eduscol.education.gouv.fr/5388/les-centres-d-information-et-d-orientation)
+- Journées portes ouvertes et salons : les dates sont sur le site de chaque établissement et sur sa fiche Parcoursup. Y aller est le meilleur moyen de vérifier qu’une formation te plaît.

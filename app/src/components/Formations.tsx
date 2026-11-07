@@ -7,6 +7,7 @@ import { FAMILLES, pistes } from '../metiers'
 import { RAYONS } from '../schema'
 import { useEtat } from '../store'
 import Favori from './Favori'
+import Pratique from './Pratique'
 import { Carte } from './Gouts'
 import { Bouton, PUCE } from './ui'
 
@@ -112,6 +113,8 @@ export default function Formations() {
           )}
         </>
       )}
+
+      <Pratique />
 
       <p className="text-sm text-slate-600">
         Source : {INDEX.source}, formations {INDEX.annee}, chances d’accès d’après la session {INDEX.session}, {INDEX.licence}.
@@ -224,6 +227,11 @@ function CarteFormation({ r, mesFamilles }: { r: Resultat; mesFamilles: string[]
       </ul>
       <p className="mt-2 font-semibold">{a.texte}</p>
       <p className="text-sm text-slate-600">{a.detail}</p>
+      {f.s && (f.s.tx !== null || f.s.cap !== null) && (
+        <p className="text-sm text-slate-600">
+          {[f.s.tx !== null && `Taux d’accès tous candidats : ${f.s.tx} %`, f.s.cap !== null && `${f.s.cap} places`].filter(Boolean).join(' · ')} (Parcoursup {INDEX.session})
+        </p>
+      )}
       {liees.length > 0 && (
         <p className="mt-1 text-sm"><span aria-hidden="true">🎯 </span>En lien avec tes pistes : {liees.map((x) => NOM_FAMILLE[x]).join(', ')}</p>
       )}

@@ -3,6 +3,7 @@ import { lienFicheMetier } from '../metiers'
 import { synthese } from '../synthese'
 import { etatSeul, useEtat } from '../store'
 import { telecharger } from '../sauvegarde'
+import Pratique from './Pratique'
 import { Bouton } from './ui'
 
 /** Synthèse imprimable (A4) : le profil d'orientation, les pistes et le plan d'action. Jamais la donnée handicap. */
@@ -96,6 +97,8 @@ export default function Synthese() {
           ))}
         </ol>
       </Bloc>
+
+      <Pratique />
 
       <p className="text-xs text-slate-600">
         Synthèse produite par l’application « Mon orientation » à partir de tes réponses, enregistrées uniquement sur ton appareil.

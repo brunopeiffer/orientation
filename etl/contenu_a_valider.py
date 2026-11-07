@@ -16,6 +16,17 @@ POURSUITES = json.loads((RACINE / "contenu/poursuites-bts.json").read_text(encod
 NAF = json.loads((RACINE / "contenu/entreprises-naf.json").read_text(encoding="utf-8"))
 HANDICAP = json.loads((RACINE / "contenu/handicap.json").read_text(encoding="utf-8"))
 PLAN_ACTION = json.loads((RACINE / "contenu/plan-action.json").read_text(encoding="utf-8"))
+PRATIQUE = json.loads((RACINE / "contenu/pratique.json").read_text(encoding="utf-8"))
+
+
+def section_pratique():
+    out = ["## 10. Aides pratiques (`contenu/pratique.json`)", "",
+           f"Statut : **{PRATIQUE['statut']}** ({PRATIQUE['date']}). Aucun montant ni date : ils changent chaque année.", ""]
+    for b in PRATIQUE["blocs"]:
+        out.append(f"**{b['titre']}**")
+        out += [f"- {p['texte']}" + (f" ({p['lien']['url']})" if "lien" in p else "") for p in b["points"]]
+        out.append("")
+    return out
 
 
 def section_plan():
@@ -207,7 +218,8 @@ def main():
             *section_liens(),
             *section_poursuites(),
             *section_m6(),
-            *section_plan()]
+            *section_plan(),
+            *section_pratique()]
     (RACINE / "docs/CONTENU-A-VALIDER.md").write_text("\n".join(out), encoding="utf-8")
     print("docs/CONTENU-A-VALIDER.md généré")
 

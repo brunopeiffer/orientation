@@ -81,6 +81,11 @@ export function acces(f: Formation, session = INDEX.session): Acces {
   return { niveau: 'tres_selective', texte: 'Formation très sélective : moins de 2 candidats bac techno sur 10 ont reçu une proposition', detail }
 }
 
+/** Formations qui mènent à la famille, d'après les intitulés Parcoursup de contenu/formations-familles.json (mots-clés lisibles seulement). */
+export const etudesPour = (famille: string) => (LIENS.familles[famille] ?? [])
+  .filter((m) => /^(BTS|BUT|DCG|L1|CPGE|D\.E) /.test(m))
+  .map((m) => m.replace(/^L1 - /, 'Licence ').replace(/ - $/, '').replace(' - ', ' '))
+
 export const CATEGORIES = ['BTS', 'BUT', 'Licence', 'Écoles', 'Autres'] as const
 export type Categorie = (typeof CATEGORIES)[number]
 

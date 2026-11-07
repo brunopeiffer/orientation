@@ -1,8 +1,12 @@
 import { useId } from 'react'
 import { GOUTS } from '../gouts'
+import { ETAPES } from '../etapes'
+import { etudesPour } from '../formations'
 import { FAMILLES, lienFicheMetier, pistes, ROME, type Composante, type IdComposante, type Piste } from '../metiers'
+import { parcoursDe } from '../schema'
 import { useEtat } from '../store'
 import Favori from './Favori'
+import { Bouton } from './ui'
 
 const LIBELLES: Record<IdComposante, string> = {
   interets: 'Tes intérêts',
@@ -89,6 +93,7 @@ function Carte({ piste, rang }: { piste: Piste; rang: number }) {
             <ul className="list-disc pl-5">{famille.realite.contraintes.map((t) => <li key={t}>{t}</li>)}</ul>
           </div>
         </div>
+        <EtudesPour famille={famille.id} code={metier.code} />
         {metier.appellations.length > 0 && (
           <p className="mt-3 text-sm"><strong>Autres intitulés de poste :</strong> {metier.appellations.slice(0, 6).join(' ; ')}{metier.appellations.length > 6 ? '…' : ''}</p>
         )}
@@ -115,5 +120,22 @@ function Barre({ c }: { c: Composante }) {
         <div className="h-full rounded-full bg-gradient-to-r from-violet-600 to-fuchsia-600" style={{ width: `${c.score ?? 0}%` }} />
       </div>
     </li>
+  )
+}
+
+function EtudesPour({ famille, code }: { famille: string; code: string }) {
+  const maj = useEtat((s) => s.maj)
+  const parcours = parcoursDe(useEtat((s) => s.publicId))
+  const etudes = etudesPour(famille)
+  const etapeFormations = parcours ? ETAPES[parcours].findIndex((e) => e.id === 'formations') : -1
+  return (
+    <div className="mt-3 rounded-2xl bg-white p-3 text-sm">
+      <p className="font-bold text-violet-900"><span aria-hidden="true">🎓 </span>Les études pour y arriver</p>
+      {etudes.length > 0 && <p className="mt-1">Par exemple : {etudes.join(' ; ')}.</p>}
+      {FAMILLES.etudesLongues.includes(code) && <p className="mt-1 font-semibold text-orange-900">Ce métier demande souvent un bac+5 ou plus.</p>}
+      {etapeFormations > 0 && (
+        <Bouton variante="secondaire" className="mt-2" onClick={() => maj({ etape: etapeFormations })}>Voir les formations près de chez toi</Bouton>
+      )}
+    </div>
   )
 }

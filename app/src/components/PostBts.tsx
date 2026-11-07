@@ -6,6 +6,7 @@ import {
 import { useEtat } from '../store'
 import { ChoixCommune, ChoixRayon } from './Formations'
 import Favori from './Favori'
+import Pratique from './Pratique'
 import { Bouton } from './ui'
 
 const TITRES: Record<TypeOffre, string> = {
@@ -83,6 +84,7 @@ export default function PostBts() {
           </>
         )}
       </section>
+      <Pratique />
       <p className="text-xs text-slate-600">Contenu rédigé le {new Date(POURSUITES.date).toLocaleDateString('fr-FR')} à partir des sources citées, en cours de validation.</p>
     </div>
   )

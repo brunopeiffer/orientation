@@ -1,0 +1,25 @@
+{
+  "_doc": "Aides pratiques (financer ses études, se loger, se faire accompagner), affichées dans la synthèse et aux étapes formations. Rédigé par Claude le 07/11/2026 à partir des sites officiels cités, À VALIDER PAR UN HUMAIN : montants, conditions et dates changent chaque année, d'où aucun chiffre ici.",
+  "statut": "A_VALIDER",
+  "date": "2026-11-07",
+  "blocs": [
+    {
+      "titre": "Financer tes études et te loger",
+      "points": [
+        { "texte": "Bourse sur critères sociaux et logement en résidence Crous : une seule demande en ligne, le Dossier social étudiant (DSE), à faire chaque année dès le printemps, même avant d’avoir tes résultats Parcoursup.", "lien": { "texte": "messervices.etudiant.gouv.fr", "url": "https://messervices.etudiant.gouv.fr/" } },
+        { "texte": "Aide à la mobilité Parcoursup : une aide existe, sous conditions, si tu acceptes une formation hors de ton académie. La demande se fait sur le même site.", "lien": { "texte": "messervices.etudiant.gouv.fr", "url": "https://messervices.etudiant.gouv.fr/" } },
+        { "texte": "Logements étudiants du Crous près de ta future formation.", "lien": { "texte": "trouverunlogement.lescrous.fr", "url": "https://trouverunlogement.lescrous.fr/" } },
+        { "texte": "Toutes les aides de l’État pour les jeunes (logement, transport, santé…) : un simulateur te dit à quoi tu as droit.", "lien": { "texte": "1jeune1solution.gouv.fr", "url": "https://www.1jeune1solution.gouv.fr/mes-aides" } },
+        { "texte": "En apprentissage, ta formation est prise en charge et tu es salarié(e) : une piste à regarder si le coût des études te freine." }
+      ]
+    },
+    {
+      "titre": "Te faire accompagner",
+      "points": [
+        { "texte": "Au lycée ou en BTS : ton professeur principal ou tes enseignants, et le psychologue de l’Éducation nationale de l’établissement." },
+        { "texte": "Le CIO (centre d’information et d’orientation) de ton secteur : rendez-vous gratuit avec un psychologue de l’Éducation nationale.", "lien": { "texte": "Les CIO (Éduscol, ministère)", "url": "https://eduscol.education.gouv.fr/5388/les-centres-d-information-et-d-orientation" } },
+        { "texte": "Journées portes ouvertes et salons : les dates sont sur le site de chaque établissement et sur sa fiche Parcoursup. Y aller est le meilleur moyen de vérifier qu’une formation te plaît." }
+      ]
+    }
+  ]
+}

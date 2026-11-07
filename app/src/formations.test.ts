@@ -1,6 +1,6 @@
 import { afterEach, describe, expect, it, vi } from 'vitest'
 import {
-  acces, categorie, chargerRegion, COEF_DETOUR, distanceRoute, familles, filtrer, INDEX, LIENS, regionsUtiles, volOiseau, type Formation,
+  acces, categorie, etudesPour, chargerRegion, COEF_DETOUR, distanceRoute, familles, filtrer, INDEX, LIENS, regionsUtiles, volOiseau, type Formation,
 } from './formations'
 import { chercherCommunes } from './geocodage'
 import { FAMILLES } from './metiers'
@@ -64,6 +64,12 @@ describe('catégories et liens avec les pistes', () => {
     expect(familles(f({ n: 'BTS - Electrotechnique' }))).toEqual([])
     // Un BUT à l'ancien nom est relié grâce à ses parcours (fl) : « BUT - Business développement… ».
     expect(familles(f({ n: 'BUT - Techniques de commercialisation', p: ['BUT - Business développement et management de la relation client'] }))).toContain('banque')
+  })
+
+  it('donne pour chaque famille des études lisibles (« BTS Banque », « Licence Droit »)', () => {
+    expect(etudesPour('banque')).toContain('BTS Banque')
+    expect(etudesPour('juridique')).toEqual(expect.arrayContaining(['BTS Collaborateur juriste notarial', 'Licence Droit']))
+    for (const f of FAMILLES.familles) expect(etudesPour(f.id).length, f.id).toBeGreaterThan(0)
   })
 
   it('chaque famille de métiers a des formations liées, et seulement des familles connues', () => {
