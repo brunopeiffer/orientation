@@ -53,7 +53,7 @@ test('questionnaire : réponse manquante signalée, reprise, résultats accessib
 
 test('le test de personnalité est facultatif : on peut le passer', async ({ page }) => {
   await demarrer(page)
-  await expect(page.getByText(/facultatif/).first()).toBeVisible()
+  await expect(page.getByText(/Ce test est/)).toBeVisible()
   await page.getByRole('button', { name: /Passer ce test/ }).click()
   await expect(page.getByRole('heading', { level: 1 })).toHaveText('Pistes métiers et test de réalité')
 })

@@ -54,6 +54,13 @@ export default function Alternance() {
       {commune && (
         <>
           <ChoixRayon rayon={mobilite.rayon} onChoix={(r) => maj({ mobilite: { ...mobilite, rayon: r } })} />
+          {/* Même règle que les formations et la synthèse : sans goûts, pas de pistes à chercher. */}
+          {!Object.keys(gouts.activites).length ? (
+            <p role="note" className="rounded-2xl bg-amber-50 p-4 text-amber-950">
+              Réponds d’abord à l’étape « Tes goûts » : les recherches d’offres et d’entreprises partent de tes pistes métiers.{' '}
+              <Bouton variante="secondaire" className="mt-2" onClick={() => maj({ etape: 1 })}>Aller à « Tes goûts »</Bouton>
+            </p>
+          ) : (
           <section aria-labelledby={`${id}-m`} className="rounded-3xl bg-white/80 p-4 shadow-sm sm:p-5">
             <h2 id={`${id}-m`} className="text-lg font-extrabold text-fuchsia-800"><span aria-hidden="true">🎯 </span>Métiers à chercher</h2>
             <p className="text-sm text-slate-600">Tes pistes métiers ; coche jusqu’à 5 métiers. Les entreprises sont cherchées dans un rayon de {RAYON_MAX_ENTREPRISES} km au plus.</p>
@@ -73,6 +80,7 @@ export default function Alternance() {
               {etat === 'recherche' ? 'Recherche en cours…' : 'Chercher'}
             </Bouton>
           </section>
+          )}
 
           <div aria-live="polite">
             {etat === 'fini' && (

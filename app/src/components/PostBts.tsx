@@ -99,8 +99,8 @@ function ListeOffres({ type, offres, source }: { type: TypeOffre; offres: OffreL
       <p className="text-sm"><strong>Canal :</strong> {CANAL[type]} <span className="text-slate-600">Source : {source}.</span></p>
       {offres.length === 0 && <p>Aucune dans ce rayon : élargis la distance.</p>}
       <ul className="space-y-2">
-        {offres.slice(0, nb).map(({ o, km }) => (
-          <li key={`${o.k}-${o.e}-${o.v}-${o.m}-${o.p}`} className="rounded-2xl bg-white p-3 ring-1 ring-violet-100">
+        {offres.slice(0, nb).map(({ o, km }, k) => (
+          <li key={`${o.k}-${o.e}-${o.v}-${o.m}-${o.p}-${k}`} className="rounded-2xl bg-white p-3 ring-1 ring-violet-100">
             <div className="flex items-start justify-between gap-3">
               <div className="min-w-0 [overflow-wrap:anywhere]">
                 <p className="font-bold text-violet-900">{o.m}</p>

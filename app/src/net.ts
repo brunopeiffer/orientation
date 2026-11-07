@@ -16,7 +16,8 @@ export async function obtenirJson(url: string, signal?: AbortSignal): Promise<un
   if (u.protocol !== 'https:' || !SOURCES.some((s) => s.hote === u.host)) {
     throw new Error(`Appel réseau refusé : ${u.host} n’est pas dans config/sources.json`)
   }
-  const r = await fetch(u, { credentials: 'omit', referrerPolicy: 'no-referrer', signal })
+  // 10 s au plus : sans réponse, l'élève voit un message d'erreur au lieu d'une recherche sans fin.
+  const r = await fetch(u, { credentials: 'omit', referrerPolicy: 'no-referrer', signal: signal ?? AbortSignal.timeout(10_000) })
   if (!r.ok) throw new Error(`Le service ${u.host} a répondu ${r.status}`)
   return r.json()
 }

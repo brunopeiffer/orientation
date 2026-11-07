@@ -46,7 +46,7 @@ test('BTS CG : chaque voie indique son canal (hors Parcoursup affiché) et les o
     await expect(page.getByRole('heading', { level: 3, name: titre })).toBeVisible()
   }
   await expect(page.getByRole('link', { name: /Fiche de l’établissement/ }).first()).toHaveAttribute('href', /^https:\/\/paysage\.enseignementsup-recherche\.gouv\.fr\/structures\//)
-  await expect(page.getByText(/estimation/).first()).toBeVisible()
+  await expect(page.getByText('estimation', { exact: true }).first()).toBeVisible()
   await sansViolation(page)
   expect(externes).toEqual([]) // données locales de l'app : rien ne sort
 })

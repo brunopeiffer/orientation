@@ -35,7 +35,7 @@ export default function Metiers() {
         </p>
       )}
 
-      <ol className="space-y-4">
+      <ol className="space-y-4 lg:grid lg:grid-cols-2 lg:items-start lg:gap-4 lg:space-y-0">
         {liste.map((p, k) => <Carte key={p.metier.code} piste={p} rang={k + 1} />)}
       </ol>
 

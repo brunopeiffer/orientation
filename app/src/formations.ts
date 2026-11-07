@@ -108,9 +108,16 @@ export type Resultat = { f: Formation; km: number; familles: string[] }
 
 /** Formations filtrées, de la plus proche à la plus lointaine. enLien = familles des pistes de l'élève (null = pas de filtre). */
 export function filtrer(formations: Formation[], depuis: Point, filtres: Filtres): Resultat[] {
+  return filtrerPrepares(preparer(formations, depuis), filtres)
+}
+
+/** Le calcul coûteux (distance, familles), à faire une seule fois par liste et par commune. */
+export const preparer = (formations: Formation[], depuis: Point): Resultat[] =>
+  formations.map((f) => ({ f, km: distanceRoute(depuis, { lat: f.la, lon: f.lo }), familles: familles(f) }))
+
+export function filtrerPrepares(prepares: Resultat[], filtres: Filtres): Resultat[] {
   const q = filtres.recherche.trim().toLowerCase()
-  return formations
-    .map((f) => ({ f, km: distanceRoute(depuis, { lat: f.la, lon: f.lo }), familles: familles(f) }))
+  return prepares
     .filter(({ f, km, familles }) =>
       (filtres.rayon === null || km <= filtres.rayon) &&
       filtres.categories.includes(categorie(f)) &&

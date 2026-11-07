@@ -1,6 +1,6 @@
-import { useEffect, useId, useState, type FormEvent } from 'react'
+import { useEffect, useId, useMemo, useState, type FormEvent } from 'react'
 import {
-  acces, CATEGORIES, chargerRegion, COEF_DETOUR, filtrer, INDEX, regionsUtiles, type Categorie, type Formation, type Resultat,
+  acces, CATEGORIES, chargerRegion, COEF_DETOUR, filtrerPrepares, INDEX, preparer, regionsUtiles, type Categorie, type Formation, type Resultat,
 } from '../formations'
 import { chercherCommunes, RechercheSchema, type Commune } from '../geocodage'
 import { FAMILLES, pistes } from '../metiers'
@@ -41,9 +41,9 @@ export default function Formations() {
     return () => { actif = false }
   }, [commune, rayon])
 
-  const resultats: Resultat[] = commune && formations
-    ? filtrer(formations, commune, { rayon, categories, enLien: enLien ? mesFamilles : null, alternance, recherche })
-    : []
+  // « Partout en France » = 13 000 formations : le calcul lourd n'est refait que si la liste ou la commune change.
+  const prepares = useMemo(() => (commune && formations ? preparer(formations, commune) : []), [formations, commune])
+  const resultats: Resultat[] = filtrerPrepares(prepares, { rayon, categories, enLien: enLien ? mesFamilles : null, alternance, recherche })
   const changer = <T,>(f: (v: T) => void) => (v: T) => { f(v); setNb(PAR_PAGE) }
 
   return (
@@ -103,7 +103,7 @@ export default function Formations() {
                 {resultats.length} formation{resultats.length > 1 ? 's' : ''} trouvée{resultats.length > 1 ? 's' : ''}
               </h2>
               {resultats.length === 0 && <p>Élargis la distance ou décoche des filtres pour voir plus de formations.</p>}
-              <ul className="space-y-3">
+              <ul className="space-y-3 lg:grid lg:grid-cols-2 lg:items-start lg:gap-3 lg:space-y-0">
                 {resultats.slice(0, nb).map((r) => <CarteFormation key={r.f.i} r={r} mesFamilles={mesFamilles} />)}
               </ul>
               {resultats.length > nb && (

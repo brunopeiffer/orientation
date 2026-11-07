@@ -21,7 +21,7 @@ export default function App() {
   const parcours = parcoursDe(publicId)
   const etapes = parcours ? ETAPES[parcours] : ETAPES.lycee
   const courante = parcours ? Math.min(etape, etapes.length - 1) : 0
-  const [reprise] = useState(() => useEtat.getState().etape > 0)
+  const [reprise, setReprise] = useState(() => useEtat.getState().etape > 0)
   const main = useRef<HTMLElement>(null)
 
   // Au changement d'étape, on place le focus sur le titre (lecteurs d'écran, clavier).
@@ -30,6 +30,7 @@ export default function App() {
   useEffect(() => {
     if (precedente.current === courante) return
     precedente.current = courante
+    setReprise(false) // le « Content de te revoir » ne s'affiche qu'une fois
     main.current?.querySelector<HTMLElement>('h1')?.focus()
     window.scrollTo({ top: 0 })
   }, [courante])
@@ -43,7 +44,7 @@ export default function App() {
   }, [courante, e.titre, total])
 
   return (
-    <div className="mx-auto flex min-h-dvh max-w-3xl flex-col gap-4 px-4 py-4 sm:py-8 print:max-w-none print:p-0">
+    <div className="mx-auto flex min-h-dvh max-w-3xl lg:max-w-5xl flex-col gap-4 px-4 py-4 sm:py-8 print:max-w-none print:p-0">
       <a href="#contenu" className="sr-only rounded-full bg-violet-800 px-4 py-2 font-semibold text-white focus:not-sr-only focus:self-start">
         Aller au contenu
       </a>
@@ -71,6 +72,20 @@ export default function App() {
               style={{ width: `${(courante / total) * 100}%` }}
             />
           </div>
+          {/* Aller directement à n'importe quelle étape, sans cliquer plusieurs fois sur « Étape précédente ». */}
+          <details className="mt-2 text-sm">
+            <summary className="min-h-6 cursor-pointer font-semibold text-violet-800">Toutes les étapes</summary>
+            <ol className="mt-2 grid gap-1 sm:grid-cols-2">
+              {etapes.map((x, k) => (
+                <li key={x.id}>
+                  <button type="button" onClick={() => maj({ etape: k })} aria-current={k === courante ? 'step' : undefined}
+                    className={`min-h-11 w-full rounded-xl px-3 text-left ${k === courante ? 'bg-violet-700 font-bold text-white' : 'bg-white text-violet-900 ring-1 ring-violet-200 hover:ring-violet-400'}`}>
+                    {k === 0 ? 'Accueil' : `${k}. ${x.titre}`}
+                  </button>
+                </li>
+              ))}
+            </ol>
+          </details>
         </nav>
       )}
 

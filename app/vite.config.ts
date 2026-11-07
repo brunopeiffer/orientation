@@ -8,8 +8,10 @@ import { politique } from './src/csp'
 const csp = (proxyUrl: string): Plugin => ({
   name: 'csp',
   apply: 'build',
-  transformIndexHtml: (html) =>
-    html.replace('<meta name="referrer"', `<meta http-equiv="Content-Security-Policy" content="${politique(proxyUrl)}" />\n    <meta name="referrer"`),
+  transformIndexHtml: (html) => {
+    if (!html.includes('<meta name="referrer"')) throw new Error('CSP : repère <meta name="referrer"> absent de index.html, la protection ne serait pas injectée')
+    return html.replace('<meta name="referrer"', `<meta http-equiv="Content-Security-Policy" content="${politique(proxyUrl)}" />\n    <meta name="referrer"`)
+  },
 })
 
 export default defineConfig(({ mode }) => ({

@@ -13,9 +13,10 @@ enabled = false
 # Origines autorisées (CORS), séparées par des virgules. Remplacer par l'adresse GitHub Pages de l'app.
 ALLOWED_ORIGINS = "https://brunopeiffer.github.io,http://localhost:5181"
 
-# Limite de débit par appareil : 30 recherches par minute (La bonne alternance autorise 60 appels/min au total ;
-# le cache d'une heure absorbe les recherches identiques).
+# Limite de débit par adresse IP : 300 recherches par minute. Un lycée sort souvent sur Internet avec une seule IP :
+# une classe entière doit pouvoir chercher en même temps. Au-delà de la limite de La bonne alternance (60 appels/min),
+# le proxy répond « indisponible » et l'app passe en mode dégradé (liens préremplis).
 [[ratelimits]]
 name = "LIMITEUR"
 namespace_id = "1001"
-simple = { limit = 30, period = 60 }
+simple = { limit = 300, period = 60 }
