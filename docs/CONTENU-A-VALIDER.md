@@ -263,7 +263,7 @@ Statut : **A_VALIDER** (2026-11-03). Source affichée : Rédaction à partir des
 - Je suis passionné / passionnée par les nouvelles technologies → I
 - Je suis un / une artiste → A
 
-Métiers où « plus de 3 ans d'études » est signalé comme frein : M1211, M1210, M1205, M1201, M1202, M1207, M1204, M1223, M1206, C1401, C1214, M1503, M1705, M1707.
+Métiers où « plus de 3 ans d'études » est signalé comme frein : M1211, M1210, M1205, M1201, M1202, M1207, M1204, M1223, M1206, C1401, C1214, M1503, M1705, M1707, K1901, K1904, K1403, K1703.
 
 ### Comptabilité, gestion, finance (`compta`)
 - Types par défaut : C, I · Personnalité : perception A, organisation A
@@ -422,6 +422,71 @@ Métiers où « plus de 3 ans d'études » est signalé comme frein : M1211, M12
   - Un travail concret et des résultats visibles.
   - Des évolutions vers le pilotage de flux ou le management d’équipe.
 
+### Social, insertion et éducation (`social`)
+- Types par défaut : S · Personnalité : decision B, energie B
+- Environnements : service_public, association, bureau, deplacements · Valeurs : utilite, contact, equipe, stabilite
+- Matières : mgn, droit_eco, francais, philo, histoire_geo, cejm, cge · Freins : horaires_decales, deplacements
+- Contraintes :
+  - Des situations humaines parfois difficiles, qu’il faut savoir mettre à distance.
+  - Une part importante de paperasse et de dossiers administratifs.
+  - La plupart de ces métiers demandent un diplôme d’État spécifique, souvent après une formation sélective.
+- Avantages :
+  - Un métier utile, au service des personnes et des familles.
+  - Des postes dans les collectivités, les associations et les établissements publics.
+  - Un travail en équipe avec d’autres professionnels (santé, éducation, justice).
+
+### Tourisme et hôtellerie (`tourisme`)
+- Types par défaut : S, E · Personnalité : energie B, organisation B
+- Environnements : boutique, exterieur, international, deplacements · Valeurs : contact, defi, equipe, creativite
+- Matières : lva, lvb, mgn, histoire_geo, ndrc_vente, ndrc_digital, cejm · Freins : horaires_decales, debout, demenager
+- Contraintes :
+  - Travail le week-end, les jours fériés et pendant les vacances scolaires.
+  - Une activité souvent saisonnière, avec des contrats parfois courts.
+  - Les langues étrangères sont très demandées, l’anglais au minimum.
+- Avantages :
+  - Des rencontres variées, en France et à l’étranger.
+  - Des métiers vivants, où l’on fait découvrir des lieux et des cultures.
+  - Des possibilités de travailler à l’étranger ou dans de grands groupes.
+
+### Droit et notariat (`juridique`)
+- Types par défaut : C, I · Personnalité : perception A, decision A
+- Environnements : bureau, petite_structure, service_public · Valeurs : stabilite, utilite, autonomie, evolution
+- Matières : droit_eco, francais, philo, mgn, cejm, cge, cg_social, cg_fiscal · Freins : ecran, etudes_longues
+- Contraintes :
+  - Beaucoup de lecture et de rédaction, avec une grande précision dans les mots.
+  - Des textes de loi qui changent souvent : il faut se tenir à jour.
+  - Les métiers de notaire, d’avocat ou de juge demandent de longues études (bac+5 et plus).
+- Avantages :
+  - Des postes accessibles dès bac+2 en office notarial (BTS Collaborateur juriste notarial).
+  - Un métier de conseil, utile aux familles et aux entreprises.
+  - Des évolutions possibles par la formation continue.
+
+### Informatique et numérique (`numerique`)
+- Types par défaut : I, C · Personnalité : perception A, decision A
+- Environnements : bureau, teletravail, grande_structure, petite_structure · Valeurs : evolution, salaire, autonomie, defi
+- Matières : mgn, maths, lva, cg_si, ndrc_digital · Freins : ecran, seul
+- Contraintes :
+  - Beaucoup de temps devant un écran.
+  - Des technologies qui changent très vite : il faut apprendre en permanence.
+  - Des pannes ou des urgences à gérer, parfois en dehors des horaires habituels.
+- Avantages :
+  - Des besoins dans tous les secteurs, publics comme privés.
+  - Du télétravail souvent possible.
+  - Après un bac STMG (spécialité SIG), des formations comme le BTS SIO sont accessibles.
+
+### Sécurité, défense et secours (`securite`)
+- Types par défaut : R, S · Personnalité : organisation A, energie B
+- Environnements : exterieur, service_public, deplacements · Valeurs : utilite, equipe, stabilite, defi
+- Matières : eps, droit_eco, francais, histoire_geo, cejm · Freins : horaires_decales, debout, demenager
+- Contraintes :
+  - Horaires de nuit, de week-end et astreintes.
+  - Des situations de tension ou de danger.
+  - Une condition physique exigée, et souvent un concours d’entrée.
+- Avantages :
+  - Un métier utile, au service de la population.
+  - Des recrutements réguliers par concours dans la fonction publique ou l’armée.
+  - Des possibilités de promotion interne tout au long de la carrière.
+
 Grille : chaque contrainte et avantage est-il exact pour TOUS les métiers de la famille ? Rien d'invérifiable (salaire, taux d'emploi) n'est-il affirmé ?
 
 ## 5. Formations en lien avec les familles de métiers (`contenu/formations-familles.json`)
@@ -440,6 +505,11 @@ Statut : **A_VALIDER** (2026-11-03). Une formation Parcoursup est « en lien » 
 - **Marketing, achats, études** : « BUT - Business » ; « BUT - Marketing » ; « BUT - Stratégie de marque » ; « BTS - Commerce International » ; « marketing » ; « écoles de commerce » ; « L1 - Economie et gestion » ; « L1 - Langues étrangères appliquées » ; « CPGE - ECT » ; « CUPGE »
 - **Communication et digital** : « BTS - Communication » ; « BUT - Information communication » ; « BUT - Stratégie de marque et événementiel » ; « L1 - Information et communication » ; « Chargé de communication » ; « Responsable communication » ; « projet communication » ; « BUT - Création numérique » ; « BUT - Développement web et dispositifs interactifs »
 - **Logistique et transport** : « BTS - Gestion des transports et logistique associée » ; « BUT - Organisation et Supply Chain » ; « supply chain » ; « transport et de logistique » ; « BTS - Commerce International »
+- **Social, insertion et éducation** : « BTS - Economie sociale familiale » ; « BTS - Services et prestations des secteurs sanitaire et social » ; « BUT - Carrières sociales » ; « D.E Assistant de Service Social » ; « D.E Educateur » ; « L1 - Administration économique et sociale »
+- **Tourisme et hôtellerie** : « BTS - Tourisme » ; « Management en hôtellerie restauration » ; « hôtellerie restauration » ; « L1 - Tourisme » ; « L1 - Langues étrangères appliquées »
+- **Droit et notariat** : « BTS - Collaborateur juriste notarial » ; « L1 - Droit » ; « Assistant juridique » ; « L1 - Administration publique »
+- **Informatique et numérique** : « BTS - Services informatiques aux organisations » ; « BTS - Cybersécurité, Informatique et réseaux » ; « BUT - Informatique » ; « BUT - Réalisation d'applications » ; « BUT - Réseaux » ; « Administrateur systèmes »
+- **Sécurité, défense et secours** : « BTS - Management opérationnel de la sécurité » ; « L1 - Droit » ; « Science du danger »
 
 Grille : manque-t-il une formation importante pour une famille ? Un mot-clé attrape-t-il des formations hors sujet ?
 
@@ -530,6 +600,11 @@ Statut : **A_VALIDER** (2026-11-03). Ces codes NAF servent à chercher des entre
 - **Marketing, achats, études** : 73.11Z Activités des agences de publicité ; 73.20Z Études de marché et sondages ; 70.21Z Conseil en relations publiques et communication
 - **Communication et digital** : 73.11Z Activités des agences de publicité ; 73.12Z Régie publicitaire de médias ; 70.21Z Conseil en relations publiques et communication
 - **Logistique et transport** : 52.10B Entreposage et stockage non frigorifique ; 52.29A Messagerie, fret express ; 52.29B Affrètement et organisation des transports ; 49.41A Transports routiers de fret interurbains
+- **Social, insertion et éducation** : 88.99B Action sociale sans hébergement ; 88.10C Aide par le travail ; 84.12Z Administration publique des secteurs sociaux et de la santé
+- **Tourisme et hôtellerie** : 79.11Z Activités des agences de voyage ; 79.12Z Activités des voyagistes ; 79.90Z Autres services de réservation et activités liées ; 55.10Z Hôtels et hébergement similaire
+- **Droit et notariat** : 69.10Z Activités juridiques
+- **Informatique et numérique** : 62.01Z Programmation informatique ; 62.02A Conseil en systèmes et logiciels informatiques ; 62.03Z Gestion d’installations informatiques ; 62.09Z Autres activités informatiques
+- **Sécurité, défense et secours** : 80.10Z Activités de sécurité privée ; 84.24Z Activités d’ordre public et de sécurité ; 84.25Z Services du feu et de secours
 
 ## 8. Module handicap (`contenu/handicap.json`)
 

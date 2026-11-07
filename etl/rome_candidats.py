@@ -76,6 +76,23 @@ SELECTION = {
     "logistique": {
         S: "N1201 N1202 N1203 N1204 N1209 N1210 N1301 N1302 N1303 N1308 N4201 N4203 N4205",
     },
+    "social": {
+        S: "K1201 K1205 K1207 K1801 K1202 K1403 K2111",
+    },
+    "tourisme": {
+        S + "|" + NDRC: "G1303 G1102 G1301",
+        S: "G1101 G1201 G1402 G1703",
+    },
+    "juridique": {
+        S + "|" + CG: "K1902",
+        S: "K1903 K1901 K1904",
+    },
+    "numerique": {
+        S: "M1810 I1401 M1805 M1801 M1806 M1802",
+    },
+    "securite": {
+        S: "K2503 K1706 K1707 K1705 K1702 K1703 K1701",
+    },
 }
 
 # Appellations rattachées par le ROME à une fiche retenue mais hors sujet pour ces publics. À VALIDER.

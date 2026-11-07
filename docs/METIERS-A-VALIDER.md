@@ -1,7 +1,7 @@
 # Métiers V1 — liste À VALIDER PAR UN HUMAIN
 
-Généré par `etl/rome_candidats.py` le 03/11/2026.
-**145 fiches ROME retenues.**
+Généré par `etl/rome_candidats.py` le 07/11/2026.
+**176 fiches ROME retenues.**
 Source : ROME, France Travail, arborescences d'octobre 2026, Licence Ouverte Etalab 2.0.
 Libellé = première appellation de la fiche ; les autres appellations (titres de poste réels) sont proposées dans l'app. Centres d'intérêt = rattachement officiel du ROME.
 
@@ -213,3 +213,59 @@ Appellations exclues (hors sujet) : Caissier / Caissière de casino de jeux, Com
 | N4201 | Responsable d'agence transport routier de marchandises | STMG | J'ai l'âme d'un chef / d'une cheffe ; J'ai le sens des affaires ; J'ai le sens du contact ; J'aime communiquer, convaincre ; J'aime organiser, planifier | 6 | Chef / Cheffe d'agence transport routier de marchandises ; Chef / Cheffe de service déménagement ; Directeur / Directrice d'exploitation transport routier de marchandises ; Responsable d'exploitation de transports multimodaux |
 | N4203 | Agent / Agente d'exploitation en transport routier de marchandises | STMG | J'ai le souci du détail ; J'aime organiser, planifier | 16 | Agent / Agente d'intervention technique d'exploitation des transports routiers de marchandises ; Agent / Agente litiges transport de marchandises ; Assistant / Assistante service d'exploitation transport de marchandises ; Chef / Cheffe de camionnage |
 | N4205 | Responsable d'exploitation transport routier de marchandises | STMG | J'ai l'âme d'un chef / d'une cheffe ; J'aime organiser, planifier | 1 | — |
+
+## Social, insertion et éducation
+
+| Code ROME | Métier | Publics | Centres d'intérêt (ROME) | Nb d'appellations | Exemples |
+|---|---|---|---|---|---|
+| K1201 | Assistant social / Assistante sociale | STMG | J'aime organiser, planifier ; Je souhaite prendre soin des autres ; Je souhaite protéger et secourir | 11 | Assistant / Assistante de service social ; Assistant social / Assistante sociale de secteur ; Assistant social / Assistante sociale du personnel ; Assistant social / Assistante sociale du travail |
+| K1205 | Agent / Agente d'accueil social | STMG | J'ai le sens du contact ; J'ai le sens du service public ; Je souhaite transmettre | 7 | Agent / Agente d'accueil et d'information sociale ; Chargé / Chargée d'information de planning familial ; Chargé / Chargée d'information des droits des femmes ; Chargé / Chargée d'information jeunesse |
+| K1207 | Educateur spécialisé / Educatrice spécialisée | STMG | J'ai le sens du contact ; J'aime communiquer, convaincre ; Je souhaite prendre soin des autres | 7 | Educateur / Educatrice en milieu ouvert ; Educateur socioéducatif / Educatrice socioéducative ; Educateur spécialisé / Educatrice spécialisée de prévention ; Educateur spécialisé / Educatrice spécialisée de rue |
+| K1801 | Conseiller / Conseillère en insertion professionnelle | STMG | J'ai le sens du contact ; J'aime communiquer, convaincre ; Je souhaite transmettre | 16 | Accompagnateur / Accompagnatrice reconversion professionnelle ; Conseiller / Conseillère à l'emploi ; Conseiller / Conseillère des métiers ; Conseiller / Conseillère du travail |
+| K1202 | Educateur / Educatrice de jeunes enfants | STMG | J'ai le sens du contact ; J'aime organiser, planifier ; Je souhaite m'occuper d'enfants | 5 | Educateur / Educatrice de jeunes enfants coordination petite enfance ; Educateur / Educatrice de jeunes enfants et animation de relais d'assistantes maternelles ; Educateur / Educatrice de jeunes enfants responsable adjoint de structure d'accueil petite enfance ; Educateur / Educatrice de jeunes enfants responsable de structure d'accueil petite enfance |
+| K1403 | Directeur / Directrice d'établissement pour personnes âgées | STMG | J'ai l'âme d'un chef / d'une cheffe ; J'ai le sens du contact ; J'aime organiser, planifier ; Je souhaite prendre soin des autres | 13 | Directeur / Directrice de maison de retraite ; Directeur / Directrice de résidence pour le troisième âge ; Directeur / Directrice de résidence pour personnes âgées ; Directeur / Directrice de structure de santé, sociale ou pénitentiaire |
+| K2111 | Formateur / Formatrice | STMG | J'ai le sens du contact ; J'aime communiquer, convaincre ; J'aime me déplacer et voyager ; Je souhaite transmettre | 41 | Animateur / Animatrice de formation ; E-formateur / E-formatrice ; Formateur / Formatrice action sociale ; Formateur / Formatrice bâtiment |
+
+## Tourisme et hôtellerie
+
+| Code ROME | Métier | Publics | Centres d'intérêt (ROME) | Nb d'appellations | Exemples |
+|---|---|---|---|---|---|
+| G1303 | Conseiller / Conseillère en voyages | STMG, BTS_NDRC | J'ai le sens du contact ; J'aime communiquer, convaincre ; J'aime me déplacer et voyager ; Je suis passionné / passionnée par les autres cultures | 11 | Agent / Agente de comptoir en vente de voyages ; Agent / Agente de vente voyages ; Agent / Agente de voyages ; Chargé / Chargée de clientèle en agence de voyage |
+| G1102 | Chargé / Chargée de promotion touristique | STMG, BTS_NDRC | J'ai le sens du service public ; J'aime me déplacer et voyager ; Je suis passionné / passionnée par les autres cultures | 11 | Agent / Agente de promotion touristique ; Chargé / Chargée de mission patrimoine culturel ; Chargé / Chargée de mission patrimoine naturel ; Chargé / Chargée de mission tourisme |
+| G1301 | Concepteur / Conceptrice de produits touristiques | STMG, BTS_NDRC | J'aime me déplacer et voyager ; J'aime organiser, planifier ; Je suis passionné / passionnée par les autres cultures | 10 | Concepteur / Conceptrice de prestations touristiques ; Concepteur / Conceptrice de produits d'écotourisme ; Concepteur / Conceptrice de produits en tourisme d'affaires ; Concepteur / Conceptrice forfaitiste tourisme |
+| G1101 | Agent / Agente d'accueil touristique | STMG | J'ai le sens du contact ; J'aime communiquer, convaincre ; Je suis passionné / passionnée par les autres cultures | 8 | Chargé / Chargée d'accueil en réceptif local ; Chargé / Chargée d'accueil touristique ; Conseiller / Conseillère en séjour touristique ; Hôte / Hôtesse d'accueil tourisme |
+| G1201 | Guide-accompagnateur / Guide-accompagnatrice | STMG | J'ai le sens du contact ; J'aime me déplacer et voyager ; Je souhaite transmettre | 13 | Accompagnateur / Accompagnatrice d'excursions ; Accompagnateur / Accompagnatrice de séjour linguistique ; Accompagnateur / Accompagnatrice de voyages ; Accompagnateur / Accompagnatrice de voyages ou d'activités culturelles, sportives et de plein air |
+| G1402 | Directeur / Directrice d'établissement en hôtellerie-restauration | STMG | J'ai l'âme d'un chef / d'une cheffe ; J'ai le sens des affaires ; J'aime organiser, planifier | 6 | Directeur / Directrice d'hôtel-restaurant ; Directeur / Directrice en hôtellerie-restauration ; Hôtelier-restaurateur / Hôtelière-restauratrice ; Responsable d'hébergement hôtelier |
+| G1703 | Réceptionniste | STMG | J'ai le sens du contact ; J'aime organiser, planifier | 15 | Agent / Agente d'accueil de l'hôtellerie ; Employé / Employée de réception en établissement hôtelier ; Hôte / Hôtesse d'accueil de l'hôtellerie ; Night audit |
+
+## Droit et notariat
+
+| Code ROME | Métier | Publics | Centres d'intérêt (ROME) | Nb d'appellations | Exemples |
+|---|---|---|---|---|---|
+| K1902 | Clerc de notaire | STMG, BTS_CG | J'ai le souci du détail ; J'aime faire respecter la loi, les règles ; J'aime organiser, planifier | 22 | Assistant / Assistante notaire redacteur ; Assistant notarial / Assistante notariale ; Clerc ; Clerc assermenté |
+| K1903 | Juriste | STMG | J'aime communiquer, convaincre ; J'aime faire respecter la loi, les règles ; J'aime jouer avec les mots | 27 | Avocat collaborateur / Avocate collaboratrice ; Avoué / Avouée de cour d'appel ; Conseiller / Conseillère en droit social ; Expert / Experte juridique |
+| K1901 | Notaire | STMG | J'ai le sens du service public ; J'aime faire respecter la loi, les règles ; J'aime organiser, planifier | 9 | Notaire actes courants ; Notaire associée ; Notaire droit de la famille ; Notaire en promotion immobilière |
+| K1904 | Juge | STMG | J'ai le sens du service public ; J'aime communiquer, convaincre ; J'aime faire respecter la loi, les règles | 24 | Avocat général / Avocate générale ; Conseiller / Conseillère à la Cour de cassation ; Conseiller / Conseillère au tribunal administratif ; Juge d'application des peines |
+
+## Informatique et numérique
+
+| Code ROME | Métier | Publics | Centres d'intérêt (ROME) | Nb d'appellations | Exemples |
+|---|---|---|---|---|---|
+| M1810 | Technicien / Technicienne d'exploitation informatique | STMG | J'ai le souci du détail ; J'aime organiser, planifier ; Je suis passionné / passionnée par les nouvelles technologies | 23 | Adjoint / Adjointe d'exploitation informatique ; Adjoint technicien / Adjointe technicienne d'exploitation informatique ; Agent / Agente d'exploitation informatique ; Agent / Agente de planning informatique |
+| I1401 | Technicien / Technicienne de maintenance en informatique | STMG | J'ai le sens du contact ; J'ai le souci du détail ; J'aime le travail manuel | 16 | Agent / Agente de maintenance en informatique ; Chef / Cheffe d'équipe de help desk en informatique ; Dépanneur / Dépanneuse en micro-informatique grand public ; Installateur dépanneur / Installatrice dépanneuse en informatique |
+| M1805 | Développeur / Développeuse informatique | STMG | J'ai le souci du détail ; J'aime faire des découvertes ; Je suis passionné / passionnée par les nouvelles technologies | 15 | Analyste développeur / Analyste développeuse ; Analyste-programmeur / Analyste-programmeuse gestion informatique ; Analyste-programmeur / Analyste-programmeuse informatique ; Analyste-programmeur / Analyste-programmeuse scientifique informatique |
+| M1801 | Administrateur / Administratrice de systèmes d'information (SI) | STMG | J'ai le souci du détail ; J'aime organiser, planifier ; Je suis passionné / passionnée par les nouvelles technologies | 11 | Administrateur / Administratrice d'infrastructure ; Administrateur / Administratrice de plateforme de service ; Administrateur / Administratrice de système d'information ; Administrateur / Administratrice informatique |
+| M1806 | Consultant fonctionnel / Consultante fonctionnelle des systèmes d'information | STMG | J'ai le sens du contact ; J'aime organiser, planifier ; Je suis passionné / passionnée par les nouvelles technologies | 14 | Architecte fonctionnel / Architecte fonctionnelle de système d'information ; Assistant fonctionnel / Assistante fonctionnelle des systèmes d'information ; Business analyst ; Consultant / Consultante en accessibilité numérique |
+| M1802 | Expert / Experte systèmes et réseaux informatiques | STMG | J'ai le souci du détail ; J'aime organiser, planifier ; Je suis passionné / passionnée par les nouvelles technologies | 19 | Analyste informatique ; Analyste réseau ; Consultant / Consultante informatique ; Consultant / Consultante réseaux informatiques |
+
+## Sécurité, défense et secours
+
+| Code ROME | Métier | Publics | Centres d'intérêt (ROME) | Nb d'appellations | Exemples |
+|---|---|---|---|---|---|
+| K2503 | Agent / Agente de prévention et de sécurité | STMG | J'ai le sens du contact ; J'aime faire respecter la loi, les règles ; J'aime l'activité physique ; Je souhaite protéger et secourir | 38 | Agent / Agente d'établissement de nuit ; Agent / Agente de démarque ; Agent / Agente de prévention et de sécurité privée ; Agent / Agente de sécurité |
+| K1706 | Gendarme | STMG | J'ai le sens du contact ; J'ai le sens du service public ; J'aime faire respecter la loi, les règles ; Je souhaite protéger et secourir | 13 | Agent / Agente de la force publique ; Auxiliaire de gendarmerie ; Brigadier / Brigadière ; Enquêteur de gendarmerie / Enquêtrice de gendarmerie |
+| K1707 | Policier municipal / Policière municipale | STMG | J'ai le sens du service public ; J'aime faire respecter la loi, les règles | 9 | Agent / Agente de police municipale ; Agent / Agente de surveillance des parcs et jardins ; Brigadier / Brigadière de police municipale ; Brigadier-chef / Brigadière-chef de police municipale |
+| K1705 | Secouriste | STMG | J'aime l'activité physique ; Je souhaite protéger et secourir ; Je souhaite transmettre | 14 | Artificier démineur / Artificière démineuse ; Chef / Cheffe d'agrées ; Chef / Cheffe d'équipe de secours ; Chef / Cheffe de garde |
+| K1702 | Responsable de sécurité civile et de secours | STMG | J'ai l'âme d'un chef / d'une cheffe ; J'ai le sens du service public ; J'aime organiser, planifier | 6 | Chef / Cheffe de cellule d'intervention NBC (Nucléaire, Bactériologique et Chimique) ; Chef / Cheffe de cellule d'intervention risques technologiques - naturels ; Chef / Cheffe de section d'intervention sécurité civile ; Chef / Cheffe du service de sécurité des pistes |
+| K1703 | Responsable de l'emploi des forces armées | STMG | J'ai l'âme d'un chef / d'une cheffe ; J'ai le sens du contact ; J'ai le sens du service public ; J'aime communiquer, convaincre ; J'aime faire respecter la loi, les règles | 26 | Chef / Cheffe de Bureau Opération - instruction ; Chef / Cheffe de corps ; Chef / Cheffe de peloton de combat ; Chef / Cheffe de section de combat |
+| K1701 | Combattant / Combattante en milieu terrestre | STMG | J'aime faire respecter la loi, les règles ; Je souhaite protéger et secourir | 66 | Aide-tireur / Aide-tireuse canon ; Cadre de la formation du combattant ; Cadre de la formation du combattant aux techniques commando ; Cadre de la formation et du combat en montagne |

@@ -76,6 +76,7 @@ export function evaluer(m: Metier, p: Profil): Piste {
   const perso = complet(p.personnalite) ? scorer(p.personnalite) : []
   const leurs = new Set(matieresDe(p.publicId)?.matieres.map((x) => x.id) ?? [])
   const utiles = f.matieres.filter((x) => leurs.has(x))
+  const specialite = matieresDe(p.publicId)?.option?.choix.find((c) => c.id === p.scolarite.option)
   const renseignees = Object.keys(p.scolarite.notes).some((x) => leurs.has(x)) || p.scolarite.aimees.some((x) => leurs.has(x))
   const fortes = matieresFortes(p.scolarite, p.publicId)
 
@@ -85,7 +86,11 @@ export function evaluer(m: Metier, p: Profil): Piste {
     // 100 = préférence au maximum du pôle attendu, 50 = profil équilibré, 0 = pôle opposé.
     personnalite: perso.length ? moyenne(dims.map(([d, pole]) =>
       50 + ((pole === 'B' ? 1 : -1) * (perso.find((s) => s.id === d)?.score ?? 0)) / 2)) : null,
-    matieres: utiles.length && renseignees ? (100 * utiles.filter((x) => fortes.includes(x)).length) / utiles.length : null,
+    // Matières fortes du public, et spécialité choisie (STMG) : 100 si elle prépare à cette famille, 0 sinon.
+    matieres: moyenne([
+      ...(utiles.length && renseignees ? [(100 * utiles.filter((x) => fortes.includes(x)).length) / utiles.length] : []),
+      ...(specialite ? [specialite.familles.includes(f.id) ? 100 : 0] : []),
+    ]),
   }
   const composantes = (Object.keys(POIDS) as IdComposante[]).map((id) => ({
     id, poids: POIDS[id], score: brut[id] === null ? null : Math.round(brut[id]!),
@@ -99,7 +104,10 @@ export function evaluer(m: Metier, p: Profil): Piste {
   return { metier: m, famille: f, score, composantes, freins }
 }
 
-/** Les pistes du public, des mieux classées aux moins bien, avec au plus 3 métiers par famille pour garder de la variété. */
+/**
+ * Les pistes du public : les n mieux classées (3 métiers au plus par famille, pour la variété).
+ * Les refus ne cachent rien (cahier des charges) : une piste qui touche un refus reste dans la liste, mais passe après les autres.
+ */
 export function pistes(p: Profil, n = NB_PISTES): Piste[] {
   const parFamille = new Map<string, number>()
   return ROME.metiers
@@ -112,6 +120,7 @@ export function pistes(p: Profil, n = NB_PISTES): Piste[] {
       return k < MAX_PAR_FAMILLE
     })
     .slice(0, n)
+    .sort((a, b) => Number(a.freins.length > 0) - Number(b.freins.length > 0)) // tri stable : l'ordre des scores est gardé
 }
 
 export const lienFicheMetier = (code: string) => `https://candidat.francetravail.fr/metierscope/fiche-metier/${code}`

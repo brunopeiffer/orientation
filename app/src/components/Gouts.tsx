@@ -86,7 +86,7 @@ export default function Gouts() {
         {cases('valeurs', GOUTS.valeurs, pleines)}
       </Carte>
 
-      <Carte titre="Ce que tu ne veux pas" emoji="🚫" aide="Ces refus ne cachent aucune piste : ils t’alerteront sur ce qui pourrait te freiner.">
+      <Carte titre="Ce que tu ne veux pas" emoji="🚫" aide="Ces refus ne cachent aucune piste : les métiers concernés passent en fin de liste, avec une alerte « Ce qui pourrait te freiner ».">
         {cases('refus', GOUTS.refus)}
       </Carte>
     </div>

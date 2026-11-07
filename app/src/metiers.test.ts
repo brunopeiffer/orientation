@@ -102,7 +102,13 @@ describe('matching', () => {
   it('les refus ne cachent rien et ne changent pas le score : ils deviennent des freins', () => {
     const sans = complet('BTS_NDRC')
     const avec = { ...sans, gouts: { ...sans.gouts, refus: ['objectifs_vente', 'etudes_longues'] } }
-    expect(pistes(avec).map((p) => [p.metier.code, p.score])).toEqual(pistes(sans).map((p) => [p.metier.code, p.score]))
+    // Mêmes pistes, mêmes scores (rien n'est caché)…
+    const tri = (l: ReturnType<typeof pistes>) => l.map((p) => `${p.metier.code}:${p.score}`).sort()
+    expect(tri(pistes(avec))).toEqual(tri(pistes(sans)))
+    // …mais celles qui touchent un refus passent après les autres.
+    const freins = pistes(avec).map((p) => p.freins.length > 0)
+    expect(freins.indexOf(true)).toBeGreaterThan(-1)
+    expect(freins.slice(freins.indexOf(true)).every(Boolean)).toBe(true)
     const vente = pistes(avec).find((p) => p.famille.freins.includes('objectifs_vente'))!
     expect(vente.freins).toContain('objectifs_vente')
   })
@@ -113,6 +119,22 @@ describe('matching', () => {
     const aide = ROME.metiers.find((m) => m.code === 'M1225')!
     expect(evaluer(expert, p).freins).toEqual(['etudes_longues'])
     expect(evaluer(aide, p).freins).toEqual([])
+  })
+
+  it('la spécialité STMG compte : Mercatique fait monter le marketing, Gestion et finance la comptabilité', () => {
+    const base = profil('STMG', { gouts: { ...GOUTS_VIDES, activites: activites(['E', 'C']) } })
+    const marketing = ROME.metiers.find((m) => m.famille === 'marketing')!
+    const compta = ROME.metiers.find((m) => m.famille === 'compta')!
+    const avec = (option: string) => ({ ...base, scolarite: { ...SCOLARITE_VIDE, option } })
+    expect(evaluer(marketing, avec('MER')).score).toBeGreaterThan(evaluer(marketing, avec('GF')).score)
+    expect(evaluer(compta, avec('GF')).score).toBeGreaterThan(evaluer(compta, avec('MER')).score)
+    expect(evaluer(compta, avec('GF')).composantes.find((c) => c.id === 'matieres')!.score).toBe(100)
+    expect(evaluer(compta, base).composantes.find((c) => c.id === 'matieres')!.score).toBeNull() // rien de renseigné
+  })
+
+  it('chaque spécialité STMG renvoie à des familles qui existent', () => {
+    const ids = new Set(FAMILLES.familles.map((f) => f.id))
+    for (const c of MATIERES.publics.STMG.option!.choix) for (const f of c.familles) expect(ids.has(f), `${c.id} ${f}`).toBe(true)
   })
 
   it('sans public, aucune piste', () => {

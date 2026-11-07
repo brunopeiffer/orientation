@@ -3,18 +3,95 @@
   "statut": "A_VALIDER",
   "date": "2026-11-03",
   "familles": {
-    "compta": ["69.20Z", "70.22Z"],
-    "paie_rh": ["69.20Z", "78.10Z", "78.20Z", "70.22Z"],
-    "admin": ["84.11Z", "82.11Z", "70.10Z"],
-    "banque": ["64.19Z", "66.19B"],
-    "assurance": ["65.11Z", "65.12Z", "66.21Z", "66.22Z"],
-    "immobilier": ["68.31Z", "68.32A"],
-    "vente_b2b": ["46.18Z", "46.19A", "46.19B", "46.69B", "46.90Z"],
-    "vente_distance": ["47.91A", "47.91B", "82.20Z"],
-    "magasin": ["47.11D", "47.11F", "47.19B", "47.71Z", "47.54Z"],
-    "marketing": ["73.11Z", "73.20Z", "70.21Z"],
-    "communication": ["73.11Z", "73.12Z", "70.21Z"],
-    "logistique": ["52.10B", "52.29A", "52.29B", "49.41A"]
+    "compta": [
+      "69.20Z",
+      "70.22Z"
+    ],
+    "paie_rh": [
+      "69.20Z",
+      "78.10Z",
+      "78.20Z",
+      "70.22Z"
+    ],
+    "admin": [
+      "84.11Z",
+      "82.11Z",
+      "70.10Z"
+    ],
+    "banque": [
+      "64.19Z",
+      "66.19B"
+    ],
+    "assurance": [
+      "65.11Z",
+      "65.12Z",
+      "66.21Z",
+      "66.22Z"
+    ],
+    "immobilier": [
+      "68.31Z",
+      "68.32A"
+    ],
+    "vente_b2b": [
+      "46.18Z",
+      "46.19A",
+      "46.19B",
+      "46.69B",
+      "46.90Z"
+    ],
+    "vente_distance": [
+      "47.91A",
+      "47.91B",
+      "82.20Z"
+    ],
+    "magasin": [
+      "47.11D",
+      "47.11F",
+      "47.19B",
+      "47.71Z",
+      "47.54Z"
+    ],
+    "marketing": [
+      "73.11Z",
+      "73.20Z",
+      "70.21Z"
+    ],
+    "communication": [
+      "73.11Z",
+      "73.12Z",
+      "70.21Z"
+    ],
+    "logistique": [
+      "52.10B",
+      "52.29A",
+      "52.29B",
+      "49.41A"
+    ],
+    "social": [
+      "88.99B",
+      "88.10C",
+      "84.12Z"
+    ],
+    "tourisme": [
+      "79.11Z",
+      "79.12Z",
+      "79.90Z",
+      "55.10Z"
+    ],
+    "juridique": [
+      "69.10Z"
+    ],
+    "numerique": [
+      "62.01Z",
+      "62.02A",
+      "62.03Z",
+      "62.09Z"
+    ],
+    "securite": [
+      "80.10Z",
+      "84.24Z",
+      "84.25Z"
+    ]
   },
   "libelles": {
     "69.20Z": "Activités comptables",
@@ -52,6 +129,21 @@
     "52.10B": "Entreposage et stockage non frigorifique",
     "52.29A": "Messagerie, fret express",
     "52.29B": "Affrètement et organisation des transports",
-    "49.41A": "Transports routiers de fret interurbains"
+    "49.41A": "Transports routiers de fret interurbains",
+    "88.99B": "Action sociale sans hébergement",
+    "88.10C": "Aide par le travail",
+    "84.12Z": "Administration publique des secteurs sociaux et de la santé",
+    "79.11Z": "Activités des agences de voyage",
+    "79.12Z": "Activités des voyagistes",
+    "79.90Z": "Autres services de réservation et activités liées",
+    "55.10Z": "Hôtels et hébergement similaire",
+    "69.10Z": "Activités juridiques",
+    "62.01Z": "Programmation informatique",
+    "62.02A": "Conseil en systèmes et logiciels informatiques",
+    "62.03Z": "Gestion d’installations informatiques",
+    "62.09Z": "Autres activités informatiques",
+    "80.10Z": "Activités de sécurité privée",
+    "84.24Z": "Activités d’ordre public et de sécurité",
+    "84.25Z": "Services du feu et de secours"
   }
 }

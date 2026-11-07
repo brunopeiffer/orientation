@@ -19,7 +19,11 @@ const MatieresSchema = z.object({
   statut: z.string(),
   tranches: z.array(z.object({ id: z.string(), libelle: z.string(), forte: z.boolean() })),
   publics: z.record(z.string(), z.object({
-    option: z.object({ question: z.string(), choix: Choix }).optional(),
+    option: z.object({
+      question: z.string(),
+      // familles = familles de métiers que l'enseignement prépare particulièrement (part « matières » du score)
+      choix: z.array(z.object({ id: z.string(), libelle: z.string(), familles: z.array(z.string()).default([]) })),
+    }).optional(),
     matieres: Choix,
   })),
 })

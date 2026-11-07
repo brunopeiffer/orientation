@@ -2,7 +2,7 @@
  "source": "ROME, France Travail : arborescence principale et arborescence des centres d'intérêt",
  "version": "octobre 2026",
  "licence": "Licence Ouverte Etalab 2.0",
- "genere": "2026-11-03",
+ "genere": "2026-11-07",
  "metiers": [
   {
    "code": "M1203",
@@ -3350,6 +3350,974 @@
    "centres": [
     "J'ai l'âme d'un chef / d'une cheffe",
     "J'aime organiser, planifier"
+   ]
+  },
+  {
+   "code": "K1201",
+   "libelle": "Assistant social / Assistante sociale",
+   "famille": "social",
+   "publics": [
+    "STMG"
+   ],
+   "appellations": [
+    "Assistant / Assistante de service social",
+    "Assistant social / Assistante sociale de secteur",
+    "Assistant social / Assistante sociale du personnel",
+    "Assistant social / Assistante sociale du travail",
+    "Chargé / Chargée d'intervention sociale",
+    "Conseiller / Conseillère technique de service social",
+    "Conseiller / Conseillère technique en action sociale",
+    "Délégué social / Déléguée sociale",
+    "Gestionnaire des aires d'accueil des gens du voyage",
+    "Intervenant / Intervenante d'action sociale"
+   ],
+   "centres": [
+    "J'aime organiser, planifier",
+    "Je souhaite prendre soin des autres",
+    "Je souhaite protéger et secourir"
+   ]
+  },
+  {
+   "code": "K1205",
+   "libelle": "Agent / Agente d'accueil social",
+   "famille": "social",
+   "publics": [
+    "STMG"
+   ],
+   "appellations": [
+    "Agent / Agente d'accueil et d'information sociale",
+    "Chargé / Chargée d'information de planning familial",
+    "Chargé / Chargée d'information des droits des femmes",
+    "Chargé / Chargée d'information jeunesse",
+    "Chargé / Chargée d'information juridique et sociale",
+    "Interface de communication"
+   ],
+   "centres": [
+    "J'ai le sens du contact",
+    "J'ai le sens du service public",
+    "Je souhaite transmettre"
+   ]
+  },
+  {
+   "code": "K1207",
+   "libelle": "Educateur spécialisé / Educatrice spécialisée",
+   "famille": "social",
+   "publics": [
+    "STMG"
+   ],
+   "appellations": [
+    "Educateur / Educatrice en milieu ouvert",
+    "Educateur socioéducatif / Educatrice socioéducative",
+    "Educateur spécialisé / Educatrice spécialisée de prévention",
+    "Educateur spécialisé / Educatrice spécialisée de rue",
+    "Educateur spécialisé / Educatrice spécialisée en milieu ouvert",
+    "Elève éducateur socio-éducatif / Elève éducatrice socio-éducative"
+   ],
+   "centres": [
+    "J'ai le sens du contact",
+    "J'aime communiquer, convaincre",
+    "Je souhaite prendre soin des autres"
+   ]
+  },
+  {
+   "code": "K1801",
+   "libelle": "Conseiller / Conseillère en insertion professionnelle",
+   "famille": "social",
+   "publics": [
+    "STMG"
+   ],
+   "appellations": [
+    "Accompagnateur / Accompagnatrice reconversion professionnelle",
+    "Conseiller / Conseillère à l'emploi",
+    "Conseiller / Conseillère des métiers",
+    "Conseiller / Conseillère du travail",
+    "Conseiller / Conseillère emploi formation",
+    "Conseiller / Conseillère en évolution professionnelle (CEP)",
+    "Conseiller / Conseillère en outplacement",
+    "Conseiller / Conseillère en recherche d'emploi",
+    "Conseiller / Conseillère en reclassement professionnel",
+    "Conseiller / Conseillère France Travail",
+    "Conseiller / Conseillère responsable point emploi",
+    "Conseiller chargé / Conseillère chargée de projet emploi",
+    "Conseiller professionnel / Conseillère professionnelle",
+    "Conseiller référent / Conseillère référente emploi",
+    "Consultant / Consultante emploi formation"
+   ],
+   "centres": [
+    "J'ai le sens du contact",
+    "J'aime communiquer, convaincre",
+    "Je souhaite transmettre"
+   ]
+  },
+  {
+   "code": "K1202",
+   "libelle": "Educateur / Educatrice de jeunes enfants",
+   "famille": "social",
+   "publics": [
+    "STMG"
+   ],
+   "appellations": [
+    "Educateur / Educatrice de jeunes enfants coordination petite enfance",
+    "Educateur / Educatrice de jeunes enfants et animation de relais d'assistantes maternelles",
+    "Educateur / Educatrice de jeunes enfants responsable adjoint de structure d'accueil petite enfance",
+    "Educateur / Educatrice de jeunes enfants responsable de structure d'accueil petite enfance"
+   ],
+   "centres": [
+    "J'ai le sens du contact",
+    "J'aime organiser, planifier",
+    "Je souhaite m'occuper d'enfants"
+   ]
+  },
+  {
+   "code": "K1403",
+   "libelle": "Directeur / Directrice d'établissement pour personnes âgées",
+   "famille": "social",
+   "publics": [
+    "STMG"
+   ],
+   "appellations": [
+    "Directeur / Directrice de maison de retraite",
+    "Directeur / Directrice de résidence pour le troisième âge",
+    "Directeur / Directrice de résidence pour personnes âgées",
+    "Directeur / Directrice de structure de santé, sociale ou pénitentiaire",
+    "Directeur adjoint / Directrice adjointe de maison de retraite",
+    "Directeur d'Ehpad / Directrice d'Ehpad",
+    "Gouvernant / Gouvernante en maison de retraite",
+    "Maître / Maîtresse de maison dans une unité de vie pour personnes âgées",
+    "Maître / Maîtresse de maison de retraite",
+    "Responsable de foyer logement pour personnes âgées",
+    "Responsable de résidence pour personnes âgées",
+    "Responsable de résidence pour séniors"
+   ],
+   "centres": [
+    "J'ai l'âme d'un chef / d'une cheffe",
+    "J'ai le sens du contact",
+    "J'aime organiser, planifier",
+    "Je souhaite prendre soin des autres"
+   ]
+  },
+  {
+   "code": "K2111",
+   "libelle": "Formateur / Formatrice",
+   "famille": "social",
+   "publics": [
+    "STMG"
+   ],
+   "appellations": [
+    "Animateur / Animatrice de formation",
+    "E-formateur / E-formatrice",
+    "Formateur / Formatrice action sociale",
+    "Formateur / Formatrice bâtiment",
+    "Formateur / Formatrice bureautique",
+    "Formateur / Formatrice commerce vente",
+    "Formateur / Formatrice comptabilité et gestion financière",
+    "Formateur / Formatrice d'adultes",
+    "Formateur / Formatrice d'allemand",
+    "Formateur / Formatrice d'anglais",
+    "Formateur / Formatrice d'arabe",
+    "Formateur / Formatrice d'espagnol",
+    "Formateur / Formatrice d'italien",
+    "Formateur / Formatrice de chinois",
+    "Formateur / Formatrice de formation paramédicale",
+    "Formateur / Formatrice de formation professionnelle",
+    "Formateur / Formatrice de Français Langue Etrangère - FLE -",
+    "Formateur / Formatrice de japonais",
+    "Formateur / Formatrice de la formation continue",
+    "Formateur / Formatrice de langue vivante",
+    "Formateur / Formatrice de néerlandais",
+    "Formateur / Formatrice de portugais",
+    "Formateur / Formatrice de russe",
+    "Formateur / Formatrice e-learning",
+    "Formateur / Formatrice enseignement à distance",
+    "Formateur / Formatrice entretien espaces verts",
+    "Formateur / Formatrice hôtellerie restauration",
+    "Formateur / Formatrice informatique",
+    "Formateur / Formatrice multimédia",
+    "Formateur / Formatrice propreté nettoyage de locaux",
+    "Formateur / Formatrice remise à niveau",
+    "Formateur / Formatrice ressources humaines",
+    "Formateur / Formatrice secourisme",
+    "Formateur / Formatrice secrétariat assistanat",
+    "Formateur / Formatrice technique",
+    "Formateur animateur / Formatrice animatrice de formation",
+    "Formateur-conseil / Formatrice-conseil",
+    "Formateur consultant / Formatrice consultante",
+    "Moniteur / Monitrice de formation professionnelle",
+    "Professeur / Professeure en centre de formation pour adultes"
+   ],
+   "centres": [
+    "J'ai le sens du contact",
+    "J'aime communiquer, convaincre",
+    "J'aime me déplacer et voyager",
+    "Je souhaite transmettre"
+   ]
+  },
+  {
+   "code": "G1303",
+   "libelle": "Conseiller / Conseillère en voyages",
+   "famille": "tourisme",
+   "publics": [
+    "STMG",
+    "BTS_NDRC"
+   ],
+   "appellations": [
+    "Agent / Agente de comptoir en vente de voyages",
+    "Agent / Agente de vente voyages",
+    "Agent / Agente de voyages",
+    "Chargé / Chargée de clientèle en agence de voyage",
+    "Conseiller / Conseillère voyages d'affaires",
+    "Conseiller / Conseillère voyages en ligne",
+    "Conseiller télévendeur / Conseillère télévendeuse de voyages",
+    "Conseiller vendeur / Conseillère vendeuse croisières",
+    "Téléconseiller / Téléconseillère voyages",
+    "Voyagiste"
+   ],
+   "centres": [
+    "J'ai le sens du contact",
+    "J'aime communiquer, convaincre",
+    "J'aime me déplacer et voyager",
+    "Je suis passionné / passionnée par les autres cultures"
+   ]
+  },
+  {
+   "code": "G1102",
+   "libelle": "Chargé / Chargée de promotion touristique",
+   "famille": "tourisme",
+   "publics": [
+    "STMG",
+    "BTS_NDRC"
+   ],
+   "appellations": [
+    "Agent / Agente de promotion touristique",
+    "Chargé / Chargée de mission patrimoine culturel",
+    "Chargé / Chargée de mission patrimoine naturel",
+    "Chargé / Chargée de mission tourisme",
+    "Chargé / Chargée de promotion des espaces naturels",
+    "Chargé / Chargée de promotion du patrimoine",
+    "Chargé / Chargée de promotion du tourisme local",
+    "Chargé / Chargée de valorisation de sites touristiques",
+    "Chef / Cheffe de projet de promotion touristique",
+    "Chef / Cheffe de projet tourisme"
+   ],
+   "centres": [
+    "J'ai le sens du service public",
+    "J'aime me déplacer et voyager",
+    "Je suis passionné / passionnée par les autres cultures"
+   ]
+  },
+  {
+   "code": "G1301",
+   "libelle": "Concepteur / Conceptrice de produits touristiques",
+   "famille": "tourisme",
+   "publics": [
+    "STMG",
+    "BTS_NDRC"
+   ],
+   "appellations": [
+    "Concepteur / Conceptrice de prestations touristiques",
+    "Concepteur / Conceptrice de produits d'écotourisme",
+    "Concepteur / Conceptrice de produits en tourisme d'affaires",
+    "Concepteur / Conceptrice forfaitiste tourisme",
+    "Forfaitiste",
+    "Forfaitiste groupe",
+    "Forfaitiste Groupement d'Individuels Regroupés -GIR-",
+    "Forfaitiste séjours linguistiques",
+    "Producteur / Productrice technique de prestations touristiques"
+   ],
+   "centres": [
+    "J'aime me déplacer et voyager",
+    "J'aime organiser, planifier",
+    "Je suis passionné / passionnée par les autres cultures"
+   ]
+  },
+  {
+   "code": "G1101",
+   "libelle": "Agent / Agente d'accueil touristique",
+   "famille": "tourisme",
+   "publics": [
+    "STMG"
+   ],
+   "appellations": [
+    "Chargé / Chargée d'accueil en réceptif local",
+    "Chargé / Chargée d'accueil touristique",
+    "Conseiller / Conseillère en séjour touristique",
+    "Hôte / Hôtesse d'accueil tourisme",
+    "Permanent local / Permanente locale d'agence réceptive",
+    "Représentant local / Représentante locale d'agence réceptive",
+    "Technicien / Technicienne d'accueil touristique"
+   ],
+   "centres": [
+    "J'ai le sens du contact",
+    "J'aime communiquer, convaincre",
+    "Je suis passionné / passionnée par les autres cultures"
+   ]
+  },
+  {
+   "code": "G1201",
+   "libelle": "Guide-accompagnateur / Guide-accompagnatrice",
+   "famille": "tourisme",
+   "publics": [
+    "STMG"
+   ],
+   "appellations": [
+    "Accompagnateur / Accompagnatrice d'excursions",
+    "Accompagnateur / Accompagnatrice de séjour linguistique",
+    "Accompagnateur / Accompagnatrice de voyages",
+    "Accompagnateur / Accompagnatrice de voyages ou d'activités culturelles, sportives et de plein air",
+    "Accompagnateur / Accompagnatrice tourisme",
+    "Accompagnateur / Accompagnatrice touristique",
+    "Agent / Agente d'accompagnement du tourisme",
+    "Coordinateur / Coordinatrice de séjour touristique",
+    "Guide de pays",
+    "Guide de tourisme d'aventure",
+    "Guide touristique",
+    "Guide tour leader"
+   ],
+   "centres": [
+    "J'ai le sens du contact",
+    "J'aime me déplacer et voyager",
+    "Je souhaite transmettre"
+   ]
+  },
+  {
+   "code": "G1402",
+   "libelle": "Directeur / Directrice d'établissement en hôtellerie-restauration",
+   "famille": "tourisme",
+   "publics": [
+    "STMG"
+   ],
+   "appellations": [
+    "Directeur / Directrice d'hôtel-restaurant",
+    "Directeur / Directrice en hôtellerie-restauration",
+    "Hôtelier-restaurateur / Hôtelière-restauratrice",
+    "Responsable d'hébergement hôtelier",
+    "Responsable d'hôtel-restaurant"
+   ],
+   "centres": [
+    "J'ai l'âme d'un chef / d'une cheffe",
+    "J'ai le sens des affaires",
+    "J'aime organiser, planifier"
+   ]
+  },
+  {
+   "code": "G1703",
+   "libelle": "Réceptionniste",
+   "famille": "tourisme",
+   "publics": [
+    "STMG"
+   ],
+   "appellations": [
+    "Agent / Agente d'accueil de l'hôtellerie",
+    "Employé / Employée de réception en établissement hôtelier",
+    "Hôte / Hôtesse d'accueil de l'hôtellerie",
+    "Night audit",
+    "Night auditor",
+    "Préposé / Préposée au camping",
+    "Réceptionniste d'hôtel",
+    "Réceptionniste de camping",
+    "Réceptionniste de nuit",
+    "Réceptionniste de village vacances",
+    "Réceptionniste en établissement touristique",
+    "Réceptionniste en hôtellerie",
+    "Réceptionniste tournant / Réceptionniste tournante en établissement hôtelier",
+    "Veilleur / Veilleuse de nuit en hôtellerie"
+   ],
+   "centres": [
+    "J'ai le sens du contact",
+    "J'aime organiser, planifier"
+   ]
+  },
+  {
+   "code": "K1902",
+   "libelle": "Clerc de notaire",
+   "famille": "juridique",
+   "publics": [
+    "STMG",
+    "BTS_CG"
+   ],
+   "appellations": [
+    "Assistant / Assistante notaire redacteur",
+    "Assistant notarial / Assistante notariale",
+    "Clerc",
+    "Clerc assermenté",
+    "Clerc gestionnaire",
+    "Clerc hors rang",
+    "Clerc hors rang de notaire",
+    "Clerc notarial",
+    "Clerc rédacteur",
+    "Clerc significateur",
+    "Collaborateur / Collaboratrice juridique",
+    "Collaborateur / Collaboratrice notaire",
+    "Notaire assistant / Notaire assistante",
+    "Notaire assistant droit immobilier",
+    "Premier clerc",
+    "Principal clerc",
+    "Principal clerc adjoint",
+    "Principal clerc adjoint de notaire",
+    "Principal clerc de notaire",
+    "Secrétaire notarial / Secrétaire notariale",
+    "Sous-principal clerc de notaire"
+   ],
+   "centres": [
+    "J'ai le souci du détail",
+    "J'aime faire respecter la loi, les règles",
+    "J'aime organiser, planifier"
+   ]
+  },
+  {
+   "code": "K1903",
+   "libelle": "Juriste",
+   "famille": "juridique",
+   "publics": [
+    "STMG"
+   ],
+   "appellations": [
+    "Avocat collaborateur / Avocate collaboratrice",
+    "Avoué / Avouée de cour d'appel",
+    "Conseiller / Conseillère en droit social",
+    "Expert / Experte juridique",
+    "Juriste civil",
+    "Juriste commercial / Juriste commerciale",
+    "Juriste consultant / Juriste consultante",
+    "Juriste d'affaires",
+    "Juriste d'assurances",
+    "Juriste d'entreprise",
+    "Juriste de banque",
+    "Juriste de contentieux",
+    "Juriste de l'environnement",
+    "Juriste droit public",
+    "Juriste en droit de l'environnement",
+    "Juriste en droit de la construction",
+    "Juriste financier / Juriste financière",
+    "Juriste immobilier",
+    "Juriste international / Juriste internationale",
+    "Juriste international / Juriste internationale d'entreprise",
+    "Juriste internet",
+    "Juriste linguiste",
+    "Juriste multimédia",
+    "Juriste notarial / Juriste notariale",
+    "Juriste PLA / Business Affair",
+    "Juriste social / Juriste sociale"
+   ],
+   "centres": [
+    "J'aime communiquer, convaincre",
+    "J'aime faire respecter la loi, les règles",
+    "J'aime jouer avec les mots"
+   ]
+  },
+  {
+   "code": "K1901",
+   "libelle": "Notaire",
+   "famille": "juridique",
+   "publics": [
+    "STMG"
+   ],
+   "appellations": [
+    "Notaire actes courants",
+    "Notaire associée",
+    "Notaire droit de la famille",
+    "Notaire en promotion immobilière",
+    "Notaire financement",
+    "Notaire immobilier institutionnel",
+    "Notaire salarié",
+    "Notaire titulaire d'office"
+   ],
+   "centres": [
+    "J'ai le sens du service public",
+    "J'aime faire respecter la loi, les règles",
+    "J'aime organiser, planifier"
+   ]
+  },
+  {
+   "code": "K1904",
+   "libelle": "Juge",
+   "famille": "juridique",
+   "publics": [
+    "STMG"
+   ],
+   "appellations": [
+    "Avocat général / Avocate générale",
+    "Conseiller / Conseillère à la Cour de cassation",
+    "Conseiller / Conseillère au tribunal administratif",
+    "Juge d'application des peines",
+    "Juge d'instance",
+    "Juge d'instruction",
+    "Juge de grande instance",
+    "Juge de police",
+    "Juge de proximité",
+    "Juge des affaires familiales",
+    "Juge des enfants",
+    "Juge des libertés et de la détention",
+    "Juge des référés",
+    "Magistrat / Magistrate",
+    "Magistrat / Magistrate de liaison",
+    "Président / Présidente du tribunal administratif",
+    "Président / Présidente du tribunal de commerce",
+    "Président / Présidente du tribunal de grande instance",
+    "Procureur / Procureure de la République",
+    "Procureur général / Procureure générale",
+    "Substitut / Substitute du Procureur de la République",
+    "Substitut général / Substitute générale",
+    "Vice procureur / Vice procureure de la République"
+   ],
+   "centres": [
+    "J'ai le sens du service public",
+    "J'aime communiquer, convaincre",
+    "J'aime faire respecter la loi, les règles"
+   ]
+  },
+  {
+   "code": "M1810",
+   "libelle": "Technicien / Technicienne d'exploitation informatique",
+   "famille": "numerique",
+   "publics": [
+    "STMG"
+   ],
+   "appellations": [
+    "Adjoint / Adjointe d'exploitation informatique",
+    "Adjoint technicien / Adjointe technicienne d'exploitation informatique",
+    "Agent / Agente d'exploitation informatique",
+    "Agent / Agente de planning informatique",
+    "Analyste d'exploitation",
+    "Assistant / Assistante d'exploitation informatique",
+    "Chef / Cheffe d'équipe de production informatique",
+    "Exploitant / Exploitante informatique",
+    "Gestionnaire du parc informatique",
+    "Informaticien automaticien / Informaticienne automaticienne",
+    "Intégrateur / Intégratrice d'exploitation informatique",
+    "Opérateur / Opératrice informatique",
+    "Opérateur pupitreur / Opératrice pupitreuse informatique",
+    "Pupitreur / Pupitreuse d'exploitation informatique",
+    "Pupitreur / Pupitreuse réseau informatique",
+    "Technicien / Technicienne de développement informatique",
+    "Technicien / Technicienne développement logiciel",
+    "Technicien / Technicienne en informatique industrielle",
+    "Technicien / Technicienne informatique",
+    "Technicien / Technicienne programmation",
+    "Technicien / Technicienne système informatique",
+    "Technicien supérieur / Technicienne supérieure en automatique"
+   ],
+   "centres": [
+    "J'ai le souci du détail",
+    "J'aime organiser, planifier",
+    "Je suis passionné / passionnée par les nouvelles technologies"
+   ]
+  },
+  {
+   "code": "I1401",
+   "libelle": "Technicien / Technicienne de maintenance en informatique",
+   "famille": "numerique",
+   "publics": [
+    "STMG"
+   ],
+   "appellations": [
+    "Agent / Agente de maintenance en informatique",
+    "Chef / Cheffe d'équipe de help desk en informatique",
+    "Dépanneur / Dépanneuse en micro-informatique grand public",
+    "Installateur dépanneur / Installatrice dépanneuse en informatique",
+    "Technicien / Technicienne de maintenance de réseaux informatiques",
+    "Technicien / Technicienne de maintenance de systèmes informatiques",
+    "Technicien / Technicienne de maintenance en matériels informatiques",
+    "Technicien / Technicienne de maintenance en micro-informatique",
+    "Technicien / Technicienne de maintenance en microsystèmes informatiques",
+    "Technicien / Technicienne de Service Après-Vente (SAV) en informatique",
+    "Technicien / Technicienne en micro-informatique et bureautique",
+    "Technicien / Technicienne en micro-informatique et réseaux",
+    "Technicien / Technicienne en réseau local informatique",
+    "Technicien / Technicienne support de proximité en informatique",
+    "Technicien / Technicienne support en systèmes téléinformatiques"
+   ],
+   "centres": [
+    "J'ai le sens du contact",
+    "J'ai le souci du détail",
+    "J'aime le travail manuel"
+   ]
+  },
+  {
+   "code": "M1805",
+   "libelle": "Développeur / Développeuse informatique",
+   "famille": "numerique",
+   "publics": [
+    "STMG"
+   ],
+   "appellations": [
+    "Analyste développeur / Analyste développeuse",
+    "Analyste-programmeur / Analyste-programmeuse gestion informatique",
+    "Analyste-programmeur / Analyste-programmeuse informatique",
+    "Analyste-programmeur / Analyste-programmeuse scientifique informatique",
+    "Développeur / Développeuse de sécurité des systèmes d'information",
+    "Développeur / Développeuse IOT",
+    "Développeur / Développeuse systèmes embarqués",
+    "Informaticien / Informaticienne",
+    "Informaticien / Informaticienne de développement",
+    "Programmeur / Programmeuse d'études",
+    "Programmeur / Programmeuse de maintenance informatique",
+    "Programmeur / Programmeuse informatique",
+    "Programmeur / Programmeuse logiciel de base informatique",
+    "Programmeur industriel / Programmeuse industrielle"
+   ],
+   "centres": [
+    "J'ai le souci du détail",
+    "J'aime faire des découvertes",
+    "Je suis passionné / passionnée par les nouvelles technologies"
+   ]
+  },
+  {
+   "code": "M1801",
+   "libelle": "Administrateur / Administratrice de systèmes d'information (SI)",
+   "famille": "numerique",
+   "publics": [
+    "STMG"
+   ],
+   "appellations": [
+    "Administrateur / Administratrice d'infrastructure",
+    "Administrateur / Administratrice de plateforme de service",
+    "Administrateur / Administratrice de système d'information",
+    "Administrateur / Administratrice informatique",
+    "Administrateur / Administratrice réseau informatique",
+    "Administrateur / Administratrice système et réseaux d'information et de communication",
+    "Administrateur / Administratrice système informatique",
+    "Administrateur / Administratrice systèmes et réseaux",
+    "Gestionnaire de système informatique",
+    "Responsable de gestion de configuration"
+   ],
+   "centres": [
+    "J'ai le souci du détail",
+    "J'aime organiser, planifier",
+    "Je suis passionné / passionnée par les nouvelles technologies"
+   ]
+  },
+  {
+   "code": "M1806",
+   "libelle": "Consultant fonctionnel / Consultante fonctionnelle des systèmes d'information",
+   "famille": "numerique",
+   "publics": [
+    "STMG"
+   ],
+   "appellations": [
+    "Architecte fonctionnel / Architecte fonctionnelle de système d'information",
+    "Assistant fonctionnel / Assistante fonctionnelle des systèmes d'information",
+    "Business analyst",
+    "Consultant / Consultante en accessibilité numérique",
+    "Consultant / Consultante ERP (Enterprise Resource Planning)",
+    "Consultant / Consultante IT",
+    "Consultant / Consultante SaaS - Software as a Service",
+    "Consultant / Consultante SI finance comptabilité",
+    "Consultant / Consultante SI Gestion de la Relation Client",
+    "Consultant / Consultante SIRH ressources humaines",
+    "Consultant fonctionnel / Consultante fonctionnelle de progiciel",
+    "Expert / Experte métier système d'information",
+    "Intégrateur / Intégratrice en informatique industrielle"
+   ],
+   "centres": [
+    "J'ai le sens du contact",
+    "J'aime organiser, planifier",
+    "Je suis passionné / passionnée par les nouvelles technologies"
+   ]
+  },
+  {
+   "code": "M1802",
+   "libelle": "Expert / Experte systèmes et réseaux informatiques",
+   "famille": "numerique",
+   "publics": [
+    "STMG"
+   ],
+   "appellations": [
+    "Analyste informatique",
+    "Analyste réseau",
+    "Consultant / Consultante informatique",
+    "Consultant / Consultante réseaux informatiques",
+    "Expert / Experte réseau informatique",
+    "Expert / Experte réseaux et télécoms",
+    "Expert / Experte sharepoint",
+    "Expert / Experte système d'exploitation",
+    "Expert / Experte système et réseaux",
+    "Expert infrastructure de données / Experte infrastructure de données",
+    "Ingénieur / Ingénieure des systèmes d'information et de communication",
+    "Ingénieur / Ingénieure intégration de système",
+    "Ingénieur / Ingénieure méthodes informatiques",
+    "Ingénieur / Ingénieure réseau informatique",
+    "Ingénieur / Ingénieure sécurité informatique",
+    "Ingénieur / Ingénieure système informatique",
+    "Ingénieur / Ingénieure système réseau informatique",
+    "Ingénieur / Ingénieure systèmes & réseaux Datacenter"
+   ],
+   "centres": [
+    "J'ai le souci du détail",
+    "J'aime organiser, planifier",
+    "Je suis passionné / passionnée par les nouvelles technologies"
+   ]
+  },
+  {
+   "code": "K2503",
+   "libelle": "Agent / Agente de prévention et de sécurité",
+   "famille": "securite",
+   "publics": [
+    "STMG"
+   ],
+   "appellations": [
+    "Agent / Agente d'établissement de nuit",
+    "Agent / Agente de démarque",
+    "Agent / Agente de prévention et de sécurité privée",
+    "Agent / Agente de sécurité",
+    "Agent / Agente de sécurité incendie",
+    "Agent / Agente de sécurité magasin",
+    "Agent / Agente de sécurité SSIAP 1",
+    "Agent / Agente de service de sécurité incendie",
+    "Agent / Agente de service sécurité",
+    "Agent / Agente de sûreté",
+    "Agent / Agente de sûreté de passage",
+    "Agent / Agente de surveillance",
+    "Agent / Agente de surveillance et d'intervention",
+    "Agent / Agente de surveillance et de protection",
+    "Agent / Agente de surveillance et de sécurité",
+    "Agent / Agente protection de site nucléaire",
+    "Chef / Cheffe de poste sécurité",
+    "Gardien / Gardienne de musée",
+    "Gardien veilleur / Gardienne veilleuse",
+    "Gardien veilleur de nuit / Gardienne veilleuse de nuit",
+    "Inspecteur / Inspectrice d'immeuble",
+    "Inspecteur / Inspectrice de magasin",
+    "Intervenant / Intervenante sur alarme",
+    "Physionomiste",
+    "Pilote d'équipe sécurité",
+    "Portier / Portière physionomiste",
+    "Rondier / Rondière en sécurité",
+    "Surveillant / Surveillante d'immeuble",
+    "Surveillant / Surveillante de magasin",
+    "Surveillant / Surveillante de musée",
+    "Surveillant / Surveillante de nuit",
+    "Surveillant / Surveillante de parking",
+    "Surveillant-chef / Surveillante-chef de musée",
+    "Surveillant-chef gardien / Surveillante-chef gardienne de musée",
+    "Technicien / Technicienne protection de site nucléaire",
+    "Veilleur / Veilleuse de nuit",
+    "Vigile"
+   ],
+   "centres": [
+    "J'ai le sens du contact",
+    "J'aime faire respecter la loi, les règles",
+    "J'aime l'activité physique",
+    "Je souhaite protéger et secourir"
+   ]
+  },
+  {
+   "code": "K1706",
+   "libelle": "Gendarme",
+   "famille": "securite",
+   "publics": [
+    "STMG"
+   ],
+   "appellations": [
+    "Agent / Agente de la force publique",
+    "Auxiliaire de gendarmerie",
+    "Brigadier / Brigadière",
+    "Enquêteur de gendarmerie / Enquêtrice de gendarmerie",
+    "Gendarme adjoint / Gendarme adjointe",
+    "Gendarme mobile",
+    "Maître-chien / Maîtresse-chien de la gendarmerie",
+    "Maréchal / Maréchale des logis chef de gendarmerie",
+    "Maréchal / Maréchale des logis de gendarmerie",
+    "Motocycliste de la gendarmerie",
+    "Officier / Officière de gendarmerie",
+    "Sous-officier / Sous-officière de gendarmerie"
+   ],
+   "centres": [
+    "J'ai le sens du contact",
+    "J'ai le sens du service public",
+    "J'aime faire respecter la loi, les règles",
+    "Je souhaite protéger et secourir"
+   ]
+  },
+  {
+   "code": "K1707",
+   "libelle": "Policier municipal / Policière municipale",
+   "famille": "securite",
+   "publics": [
+    "STMG"
+   ],
+   "appellations": [
+    "Agent / Agente de police municipale",
+    "Agent / Agente de surveillance des parcs et jardins",
+    "Brigadier / Brigadière de police municipale",
+    "Brigadier-chef / Brigadière-chef de police municipale",
+    "Garde champêtre",
+    "Gardien principal / Gardienne principale de police municipale",
+    "Inspecteur / Inspectrice de sécurité de la commune",
+    "Opérateur / Opératrice de vidéoprotection de police municipale"
+   ],
+   "centres": [
+    "J'ai le sens du service public",
+    "J'aime faire respecter la loi, les règles"
+   ]
+  },
+  {
+   "code": "K1705",
+   "libelle": "Secouriste",
+   "famille": "securite",
+   "publics": [
+    "STMG"
+   ],
+   "appellations": [
+    "Artificier démineur / Artificière démineuse",
+    "Chef / Cheffe d'agrées",
+    "Chef / Cheffe d'équipe de secours",
+    "Chef / Cheffe de garde",
+    "Démineur / Démineuse sécurité civile",
+    "Electromécanicien / Electromécanicienne de sécurité",
+    "Intervenant / Intervenante de sécurité civile et de secours",
+    "Maître-chien / Maîtresse-chien sécurité civile",
+    "Spécialiste sécurité civile",
+    "Spéléologue secouriste",
+    "Stationnaire",
+    "Technicien / Technicienne de la prévention et de lutte contre les sinistres",
+    "Technicien / Technicienne en sécurité incendie et secourisme"
+   ],
+   "centres": [
+    "J'aime l'activité physique",
+    "Je souhaite protéger et secourir",
+    "Je souhaite transmettre"
+   ]
+  },
+  {
+   "code": "K1702",
+   "libelle": "Responsable de sécurité civile et de secours",
+   "famille": "securite",
+   "publics": [
+    "STMG"
+   ],
+   "appellations": [
+    "Chef / Cheffe de cellule d'intervention NBC (Nucléaire, Bactériologique et Chimique)",
+    "Chef / Cheffe de cellule d'intervention risques technologiques - naturels",
+    "Chef / Cheffe de section d'intervention sécurité civile",
+    "Chef / Cheffe du service de sécurité des pistes",
+    "Officier / Officière spécialiste de sécurité civile"
+   ],
+   "centres": [
+    "J'ai l'âme d'un chef / d'une cheffe",
+    "J'ai le sens du service public",
+    "J'aime organiser, planifier"
+   ]
+  },
+  {
+   "code": "K1703",
+   "libelle": "Responsable de l'emploi des forces armées",
+   "famille": "securite",
+   "publics": [
+    "STMG"
+   ],
+   "appellations": [
+    "Chef / Cheffe de Bureau Opération - instruction",
+    "Chef / Cheffe de corps",
+    "Chef / Cheffe de peloton de combat",
+    "Chef / Cheffe de section de combat",
+    "Commandant / Commandante d'entités aéronautiques",
+    "Commandant / Commandante d'unité aérienne chasse",
+    "Commandant / Commandante d'unité aérienne drone",
+    "Commandant / Commandante d'unité aérienne hélicoptère",
+    "Commandant / Commandante d'unité aérienne ravitaillement en vol",
+    "Commandant / Commandante d'unité aérienne transport",
+    "Commandant / Commandante d'unité de combat",
+    "Commandant / Commandante de bataillon",
+    "Commandant / Commandante de compagnie de combat",
+    "Conseiller / Conseillère planification, préparation, conduite des opérations aériennes",
+    "Expert / Experte appui opérationnel spatial",
+    "Expert / Experte commandement et management d'unités spatiales",
+    "Expert / Experte dans le domaine des opérations spatiales",
+    "Expert / Experte maîtrise de l'environnement spatial",
+    "Officier / Officière reconnaissance",
+    "Responsable de l'appui artillerie",
+    "Responsable de la coordination des appuis feux",
+    "Responsable de la défense sol - air très courte portée",
+    "Responsable des appuis feux",
+    "Responsable Opérationnel / Opérationnelle de la défense",
+    "Spécialiste de la mise en œuvre des armes nucléaires aéroportées"
+   ],
+   "centres": [
+    "J'ai l'âme d'un chef / d'une cheffe",
+    "J'ai le sens du contact",
+    "J'ai le sens du service public",
+    "J'aime communiquer, convaincre",
+    "J'aime faire respecter la loi, les règles"
+   ]
+  },
+  {
+   "code": "K1701",
+   "libelle": "Combattant / Combattante en milieu terrestre",
+   "famille": "securite",
+   "publics": [
+    "STMG"
+   ],
+   "appellations": [
+    "Aide-tireur / Aide-tireuse canon",
+    "Cadre de la formation du combattant",
+    "Cadre de la formation du combattant aux techniques commando",
+    "Cadre de la formation et du combat en montagne",
+    "Cavalier porté / Cavalière portée",
+    "Chef / Cheffe d'équipe combat",
+    "Chef / Cheffe d'escouade d'ensemble porte blindés",
+    "Chef de groupe combattant / Cheffe de groupe combattante",
+    "Chef de patrouille combattant / Cheffe de patrouille combattante",
+    "Combattant / Combattante de l'appui artillerie",
+    "Combattant / Combattante de la conduite des opérations terrestres-emploi des forces et études opérationnelles",
+    "Combattant / Combattante de la coordination des appuis feux",
+    "Combattant / Combattante de la défense sol-air très courte portée",
+    "Combattant / Combattante de la protection des forces",
+    "Combattant / Combattante de la protection des forces et de la cynotechnie",
+    "Combattant / Combattante des appuis feux",
+    "Combattant / Combattante du combat blindé",
+    "Combattant / Combattante du combat de l'infanterie",
+    "Combattant / Combattante toutes armes (TTA)",
+    "Conducteur / Conductrice d'autorité de l'armée",
+    "Engagé / Engagée Volontaire de l'Armée de Terre (EVAT)",
+    "Engagé Volontaire (EV) combattant / Engagée Volontaire (EV) combattante",
+    "Equipier / Equipière commando",
+    "Expert / Experte des opérations d'influence au sein des opérations en milieu terrestre",
+    "Expert / Experte du concept commun de combat terrestre (c3t)",
+    "Fusilier / Fusilière commando",
+    "Grenadier voltigeur / Grenadière voltigeuse",
+    "Légionnaire",
+    "Maréchal / Maréchale des logis",
+    "Maréchal / Maréchale des logis chef",
+    "Militaire du rang Combattant / Combattante",
+    "Opérateur / Operatrice de conduite et de maintenance des armes navales",
+    "Opérateur / Opératrice de défense sol-air",
+    "Operateur / Operatrice de la formation du combattant aux techniques commando",
+    "Opérateur / Opératrice de la formation et du combat en montagne",
+    "Opérateur / Opératrice du concept commun de combat terrestre (c3t)",
+    "Opérateur / Opératrice peloton de reconnaissance et d'appui au déploiement",
+    "Parachutiste militaire",
+    "Pourvoyeur / Pourvoyeuse d'arme",
+    "Radio chargeur / Radio chargeuse",
+    "Responsable de la formation du combattant aux techniques commando",
+    "Responsable de la formation et du combat en montagne",
+    "Sapeur / Sapeuse de combat",
+    "Servant / Servante d'arme",
+    "Soldat / Soldate",
+    "Soldat / Soldate d'infanterie",
+    "Sous-officier combattant / Sous-officière combattante",
+    "Technicien / Technicienne cadre du concept commun de combat terrestre (c3t)",
+    "Technicien / Technicienne de conduite et de maintenance des armes navales",
+    "Technicien / Technicienne de l'appui artillerie",
+    "Technicien / Technicienne de la conduite des opérations terrestres-emploi des forces et études opérationnelles",
+    "Technicien / Technicienne de la coordination des appuis feux",
+    "Technicien / Technicienne de la défense sol-air très courte portée",
+    "Technicien / Technicienne de la formation du combattant",
+    "Technicien / Technicienne de la formation du combattant aux techniques commando",
+    "Technicien / Technicienne de la formation et du combat en montagne",
+    "Technicien / Technicienne de la protection des forces",
+    "Technicien / Technicienne de la protection des forces et de la cynotechnie",
+    "Technicien / Technicienne de la simulation au sein des opérations en milieu terrestre",
+    "Technicien / Technicienne des appuis feux",
+    "Technicien / Technicienne des opérations d'influence au sein des opérations en milieu terrestre",
+    "Technicien / Technicienne du combat blindé",
+    "Technicien / Technicienne du combat de l'infanterie",
+    "Tireur / Tireuse canon",
+    "Tireur / Tireuse d'engin blindé"
+   ],
+   "centres": [
+    "J'aime faire respecter la loi, les règles",
+    "Je souhaite protéger et secourir"
    ]
   }
  ]
