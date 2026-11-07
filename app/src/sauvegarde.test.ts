@@ -1,16 +1,17 @@
 import { beforeEach, describe, expect, it, vi } from 'vitest'
 import { exporter, lireSauvegarde, nomFichier } from './sauvegarde'
 import { GOUTS_VIDES, SCOLARITE_VIDE } from './gouts'
-import { ETAT_INITIAL, HANDICAP_INITIAL, MOBILITE_INITIALE, PrenomSchema, type Etat } from './schema'
+import { ETAT_INITIAL, FAVORIS_VIDES, HANDICAP_INITIAL, MOBILITE_INITIALE, PrenomSchema, type Etat } from './schema'
 
 const etat: Etat = {
-  prenom: 'Léa-Marie', publicId: 'BTS_NDRC', etape: 3, avertissementLu: true, personnalite: { e1: 4, o9: 2 },
+  prenom: 'Léa-Marie', publicId: 'BTS_NDRC', etape: 4, avertissementLu: true, personnalite: { e1: 4, o9: 2 },
   gouts: { activites: { r1: 0, e1: 2 }, environnements: ['bureau'], valeurs: ['salaire', 'equipe'], refus: ['debout'] },
   scolarite: { option: null, notes: { ndrc_vente: '14a16', lva: '8a10' }, aimees: ['ndrc_digital'] },
   mobilite: { commune: { nom: 'Illkirch-Graffenstaden', code: '67218', cp: '67400', lat: 48.5247, lon: 7.7224 }, rayon: 20 },
   handicap: { actif: true, sujets: ['etudes'] },
+  favoris: { metiers: ['D1402'], formations: [{ id: '7969', intitule: 'BUT - Techniques de commercialisation', etablissement: 'IUT', ville: 'Illkirch', lien: 'https://dossier.parcoursup.fr/x' }] },
 }
-const NOUVEAU_V3 = { gouts: GOUTS_VIDES, scolarite: SCOLARITE_VIDE, mobilite: MOBILITE_INITIALE, handicap: HANDICAP_INITIAL }
+const NOUVEAU_V3 = { gouts: GOUTS_VIDES, scolarite: SCOLARITE_VIDE, mobilite: MOBILITE_INITIALE, handicap: HANDICAP_INITIAL, favoris: FAVORIS_VIDES }
 
 describe('export / import', () => {
   it('un export relu redonne exactement le même état', () => {
@@ -45,27 +46,42 @@ describe('export / import', () => {
   })
 
   it('migre une sauvegarde de la version 1 (avant le test de personnalité)', () => {
-    const { personnalite: _, gouts: __, scolarite: ___, mobilite: ____, handicap: _____, ...v1 } = etat
+    const { personnalite: _, gouts: __, scolarite: ___, mobilite: ____, handicap: _____, favoris: ______, ...v1 } = etat
     const texte = JSON.stringify({ app: 'orientation', version: 1, exporteLe: '2026-11-02T10:00:00Z', etat: v1 })
     expect(lireSauvegarde(texte)).toEqual({ ok: true, etat: { ...v1, personnalite: {}, ...NOUVEAU_V3 } })
   })
 
   it('migre une sauvegarde de la version 2 (avant les goûts et les notes)', () => {
-    const { gouts: _, scolarite: __, mobilite: ___, handicap: ____, ...v2 } = etat
+    const { gouts: _, scolarite: __, mobilite: ___, handicap: ____, favoris: _____, ...v2 } = etat
     const texte = JSON.stringify({ app: 'orientation', version: 2, exporteLe: '2026-11-02T10:00:00Z', etat: v2 })
     expect(lireSauvegarde(texte)).toEqual({ ok: true, etat: { ...v2, ...NOUVEAU_V3 } })
   })
 
   it('migre une sauvegarde de la version 3 (avant la mobilité)', () => {
-    const { mobilite: _, handicap: __, ...v3 } = etat
+    const { mobilite: _, handicap: __, favoris: ___, ...v3 } = etat
     const texte = JSON.stringify({ app: 'orientation', version: 3, exporteLe: '2026-11-03T10:00:00Z', etat: v3 })
-    expect(lireSauvegarde(texte)).toEqual({ ok: true, etat: { ...v3, mobilite: MOBILITE_INITIALE, handicap: HANDICAP_INITIAL } })
+    expect(lireSauvegarde(texte)).toEqual({ ok: true, etat: { ...v3, mobilite: MOBILITE_INITIALE, handicap: HANDICAP_INITIAL, favoris: FAVORIS_VIDES } })
   })
 
   it('migre une sauvegarde de la version 4 (avant le module handicap, désactivé par défaut)', () => {
-    const { handicap: _, ...v4 } = etat
+    const { handicap: _, favoris: __, ...v4 } = etat
     const texte = JSON.stringify({ app: 'orientation', version: 4, exporteLe: '2026-11-03T10:00:00Z', etat: v4 })
-    expect(lireSauvegarde(texte)).toEqual({ ok: true, etat: { ...v4, handicap: { actif: false, sujets: [] } } })
+    expect(lireSauvegarde(texte)).toEqual({ ok: true, etat: { ...v4, handicap: { actif: false, sujets: [] }, favoris: FAVORIS_VIDES } })
+  })
+
+  it('migre la version 5 : goûts et résultats passent avant la personnalité, favoris vides', () => {
+    const { favoris: _, ...v5 } = etat
+    for (const [avant, apres] of [[0, 0], [1, 3], [2, 1], [3, 2], [7, 7]]) {
+      const texte = JSON.stringify({ app: 'orientation', version: 5, exporteLe: '2026-11-07T10:00:00Z', etat: { ...v5, etape: avant } })
+      expect(lireSauvegarde(texte), `étape ${avant}`).toEqual({ ok: true, etat: { ...v5, etape: apres, favoris: FAVORIS_VIDES } })
+    }
+  })
+
+  it('refuse des favoris invalides (code ROME faux, doublon, lien non https)', () => {
+    const f = etat.favoris.formations[0]
+    for (const favoris of [{ metiers: ['XX'], formations: [] }, { metiers: ['D1402', 'D1402'], formations: [] }, { metiers: [], formations: [{ ...f, lien: 'javascript:alert(1)' }] }]) {
+      expect(lireSauvegarde(exporter({ ...etat, favoris } as Etat)).ok).toBe(false)
+    }
   })
 
   it('refuse un sujet handicap inconnu ou un champ libre (aucune donnée de santé en texte libre)', () => {
@@ -129,13 +145,13 @@ describe('stockage local', () => {
   })
 
   it('reprend l’état enregistré au rechargement', async () => {
-    localStorage.setItem('orientation-etat', JSON.stringify({ state: etat, version: 5 }))
+    localStorage.setItem('orientation-etat', JSON.stringify({ state: etat, version: 6 }))
     const { useEtat, etatSeul } = await import('./store')
     expect(etatSeul(useEtat.getState())).toEqual(etat)
   })
 
   it('migre un stockage de la version 1', async () => {
-    const { personnalite: _, gouts: __, scolarite: ___, mobilite: ____, handicap: _____, ...v1 } = etat
+    const { personnalite: _, gouts: __, scolarite: ___, mobilite: ____, handicap: _____, favoris: ______, ...v1 } = etat
     localStorage.setItem('orientation-etat', JSON.stringify({ state: v1, version: 1 }))
     const { useEtat, etatSeul } = await import('./store')
     expect(etatSeul(useEtat.getState())).toEqual({ ...v1, personnalite: {}, ...NOUVEAU_V3 })

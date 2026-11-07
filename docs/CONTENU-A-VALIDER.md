@@ -142,6 +142,24 @@ Statut : **A_VALIDER**. Échelle : Pas pour moi / Pourquoi pas / J’adore.
 | s3 | Aider | Expliquer une tâche à quelqu’un ou le former |
 | e3 | Convaincre | Lancer ta propre activité ou ton entreprise |
 | c3 | Organiser | Remplir un tableau de suivi avec précision |
+| r4 | Faire | Installer ou dépanner du matériel informatique |
+| i4 | Comprendre | Comparer des offres pour trouver la meilleure solution |
+| a4 | Créer | Imaginer un nom ou un logo pour une marque |
+| s4 | Aider | Écouter quelqu’un qui a un problème et le conseiller |
+| e4 | Convaincre | Négocier un prix ou un accord |
+| c4 | Organiser | Préparer une facture ou un bulletin de paie |
+| r5 | Faire | Mettre en rayon et organiser l’espace d’un magasin |
+| i5 | Comprendre | Faire des recherches pour préparer un dossier complet |
+| a5 | Créer | Prendre et retoucher des photos ou des vidéos |
+| s5 | Aider | Accompagner des enfants ou des personnes âgées |
+| e5 | Convaincre | Organiser un événement et le faire connaître |
+| c5 | Organiser | Vérifier qu’une règle ou une procédure est bien respectée |
+| r6 | Faire | Travailler dehors, en mouvement |
+| i6 | Comprendre | Étudier les résultats d’un sondage ou d’un marché |
+| a6 | Créer | Animer un compte de réseau social avec tes idées |
+| s6 | Aider | Faire visiter un lieu à un groupe |
+| e6 | Convaincre | Prendre la parole devant un groupe pour défendre une idée |
+| c6 | Organiser | Mettre à jour un fichier clients ou un stock |
 
 ### Environnements
 

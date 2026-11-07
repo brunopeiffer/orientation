@@ -67,6 +67,25 @@ export default function Synthese() {
         ) : <Vide>Réponds à l’étape « Tes goûts » pour obtenir tes pistes.</Vide>}
       </Bloc>
 
+      <Bloc titre="Mes favoris">
+        {s.favoris.metiers.length + s.favoris.formations.length === 0 ? (
+          <Vide>Aucun favori pour l’instant : utilise le bouton « Garder » sur les métiers et les formations qui t’intéressent.</Vide>
+        ) : (
+          <>
+            {s.favoris.metiers.length > 0 && <p><strong>Métiers :</strong> {s.favoris.metiers.map((m) => m.metier).join(' ; ')}</p>}
+            {s.favoris.formations.length > 0 && (
+              <ul className="mt-1 list-disc space-y-1 pl-5">
+                {s.favoris.formations.map((f) => (
+                  <li key={f.id}><strong>{f.intitule}</strong> · {f.etablissement}{f.ville && ` (${f.ville})`}
+                    {f.lien && <span className="block text-xs text-slate-600">{f.lien}</span>}</li>
+                ))}
+              </ul>
+            )}
+            <p className="mt-2 text-sm text-slate-600">Appuie-toi sur ces favoris pour rédiger ton projet de formation motivé : pourquoi cette formation, ce qui t’y prépare, ce que tu veux en faire.</p>
+          </>
+        )}
+      </Bloc>
+
       <Bloc titre="Mon plan d’action">
         <ol className="space-y-2">
           {s.plan.map((e, k) => (

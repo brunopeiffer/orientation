@@ -13,7 +13,7 @@ async function demarrer(page: Page) {
   await page.getByLabel(/Ton prénom/).fill('Inès')
   await page.getByLabel('BTS Comptabilité et gestion (CG)').check()
   await page.getByRole('button', { name: /C’est parti/ }).click()
-  await expect(page.getByRole('heading', { level: 1 })).toHaveText('Ton profil de personnalité')
+  await expect(page.getByRole('heading', { level: 1 })).toHaveText('Tes goûts, envies et refus')
 }
 
 test('l’avertissement est visible au premier écran et la page est accessible', async ({ page }) => {
@@ -32,7 +32,7 @@ test('reprise là où on s’est arrêté après rechargement', async ({ page })
   await demarrer(page)
   await expect(page.getByRole('progressbar')).toHaveAttribute('aria-valuenow', '1')
   await page.reload()
-  await expect(page.getByRole('heading', { level: 1 })).toHaveText('Ton profil de personnalité')
+  await expect(page.getByRole('heading', { level: 1 })).toHaveText('Tes goûts, envies et refus')
   await expect(page.getByText(/Content de te revoir, Inès/)).toBeVisible()
   await sansViolation(page)
 })
@@ -51,7 +51,7 @@ test('sauvegarder puis reprendre une sauvegarde', async ({ page }) => {
 
   await page.getByLabel(/Reprendre une sauvegarde/).setInputFiles(fichier)
   await expect(page.getByText('Ta sauvegarde a bien été rechargée.')).toBeVisible()
-  await expect(page.getByRole('heading', { level: 1 })).toHaveText('Ton profil de personnalité')
+  await expect(page.getByRole('heading', { level: 1 })).toHaveText('Tes goûts, envies et refus')
 })
 
 test('un fichier invalide est refusé avec un message clair', async ({ page }) => {

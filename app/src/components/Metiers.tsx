@@ -2,6 +2,7 @@ import { useId } from 'react'
 import { GOUTS } from '../gouts'
 import { FAMILLES, lienFicheMetier, pistes, ROME, type Composante, type IdComposante, type Piste } from '../metiers'
 import { useEtat } from '../store'
+import Favori from './Favori'
 
 const LIBELLES: Record<IdComposante, string> = {
   interets: 'Tes intérêts',
@@ -52,11 +53,12 @@ function Carte({ piste, rang }: { piste: Piste; rang: number }) {
           <p className="text-sm font-semibold text-fuchsia-700">Piste {rang} · {famille.nom}</p>
           <h2 id={id} className="text-lg font-extrabold text-violet-900">{metier.libelle}</h2>
         </div>
-        <p className="shrink-0 rounded-2xl bg-gradient-to-br from-violet-700 to-fuchsia-700 px-3 py-2 text-center font-extrabold text-white">
-          {score}<span className="text-sm font-semibold"> / 100</span>
-          <span className="sr-only"> de correspondance</span>
+        {/* Un libellé plutôt qu'une « note » : le score reste visible, sans effet de bulletin. */}
+        <p className="shrink-0 rounded-2xl bg-gradient-to-br from-violet-700 to-fuchsia-700 px-3 py-2 text-center text-sm font-bold text-white">
+          {proximite(score)}<span className="block text-xs font-medium">correspondance {score}/100</span>
         </p>
       </div>
+      <div className="mt-2"><Favori metier={metier.code} nom={metier.libelle} /></div>
 
       {refus.length > 0 && (
         <div className="mt-3 rounded-2xl bg-orange-50 p-3 text-orange-950">
@@ -98,6 +100,9 @@ function Carte({ piste, rang }: { piste: Piste; rang: number }) {
     </li>
   )
 }
+
+export const proximite = (score: number) =>
+  score >= 75 ? 'Très proche de toi' : score >= 55 ? 'Proche de toi' : score >= 35 ? 'À explorer' : 'Plus éloigné'
 
 function Barre({ c }: { c: Composante }) {
   return (

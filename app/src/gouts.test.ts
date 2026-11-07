@@ -5,8 +5,8 @@ import { PUBLICS_ACTIFS } from './schema'
 const toutes = (f: (type: string) => number) => Object.fromEntries(GOUTS.activites.map((a) => [a.id, f(a.type)]))
 
 describe('contenu des goûts', () => {
-  it('3 activités par type d’intérêt, ids uniques, types alternés', () => {
-    for (const t of GOUTS.types) expect(GOUTS.activites.filter((a) => a.type === t.id)).toHaveLength(3)
+  it('6 activités par type d’intérêt (fiabilité), ids uniques, types alternés', () => {
+    for (const t of GOUTS.types) expect(GOUTS.activites.filter((a) => a.type === t.id)).toHaveLength(6)
     expect(new Set(GOUTS.activites.map((a) => a.id)).size).toBe(GOUTS.activites.length)
     GOUTS.activites.slice(1).forEach((a, k) => expect(a.type).not.toBe(GOUTS.activites[k].type))
   })

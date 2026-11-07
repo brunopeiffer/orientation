@@ -27,10 +27,9 @@ export default function Accueil() {
   }
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-5">
       <div className="text-center">
-        <p className="text-5xl" aria-hidden="true">🧭</p>
-        <h1 tabIndex={-1} className="mt-2 bg-gradient-to-r from-violet-700 via-fuchsia-700 to-orange-700 bg-clip-text text-3xl font-extrabold text-transparent sm:text-4xl">
+        <h1 tabIndex={-1} className="bg-gradient-to-r from-violet-700 via-fuchsia-700 to-orange-700 bg-clip-text text-2xl font-extrabold text-transparent sm:text-4xl">
           Trouve ta voie, à ton rythme
         </h1>
         <p className="mt-2 text-slate-700">
@@ -38,30 +37,12 @@ export default function Accueil() {
         </p>
       </div>
 
-      <div role="note" aria-labelledby={`${id}-av`} className="rounded-3xl border-2 border-amber-300 bg-amber-50 p-5">
+      <div role="note" aria-labelledby={`${id}-av`} className="rounded-2xl border-2 border-amber-300 bg-amber-50 p-3 text-sm sm:p-4">
         <h2 id={`${id}-av`} className="flex items-center gap-2 font-bold text-amber-900">
           <span aria-hidden="true">💾</span> Important : où sont gardées tes réponses ?
         </h2>
-        <p className="mt-2 text-amber-950" data-testid="avertissement">{AVERTISSEMENT}</p>
-        <p className="mt-2 text-sm text-amber-900">Aucun compte, aucun email : rien n’est envoyé sur Internet.</p>
-      </div>
-
-      <div className="rounded-3xl bg-white p-5 shadow-sm">
-        <label htmlFor={`${id}-prenom`} className="font-bold">
-          Ton prénom <span className="font-normal text-slate-600">(facultatif)</span>
-        </label>
-        <p id={`${id}-prenom-aide`} className="text-sm text-slate-600">Juste pour te saluer. Pas de nom de famille.</p>
-        <input
-          id={`${id}-prenom`}
-          value={saisie}
-          maxLength={PRENOM_MAX}
-          autoComplete="off"
-          onChange={(e) => setSaisie(e.target.value)}
-          aria-invalid={!!erreurPrenom}
-          aria-describedby={`${id}-prenom-aide${erreurPrenom ? ` ${id}-prenom-err` : ''}`}
-          className="mt-2 w-full rounded-2xl border-2 border-slate-300 px-4 py-3 text-lg focus:border-violet-600"
-        />
-        {erreurPrenom && <p id={`${id}-prenom-err`} className="mt-1 font-semibold text-rose-700">{erreurPrenom}</p>}
+        <p className="mt-1 text-amber-950" data-testid="avertissement">{AVERTISSEMENT}</p>
+        <p className="mt-1 text-amber-900">Aucun compte, aucun email. Rien ne part sur Internet sans ton action : seulement ta commune si tu la cherches (détails en bas de page, « Confidentialité »).</p>
       </div>
 
       <fieldset aria-describedby={erreurPublic ? `${id}-public-err` : undefined} className="space-y-4">
@@ -95,6 +76,24 @@ export default function Accueil() {
         </div>
         {erreurPublic && <p id={`${id}-public-err`} className="font-semibold text-rose-700">{erreurPublic}</p>}
       </fieldset>
+
+      <div className="rounded-3xl bg-white p-4 shadow-sm">
+        <label htmlFor={`${id}-prenom`} className="font-bold">
+          Ton prénom <span className="font-normal text-slate-600">(facultatif)</span>
+        </label>
+        <p id={`${id}-prenom-aide`} className="text-sm text-slate-600">Juste pour te saluer. Pas de nom de famille.</p>
+        <input
+          id={`${id}-prenom`}
+          value={saisie}
+          maxLength={PRENOM_MAX}
+          autoComplete="off"
+          onChange={(e) => setSaisie(e.target.value)}
+          aria-invalid={!!erreurPrenom}
+          aria-describedby={`${id}-prenom-aide${erreurPrenom ? ` ${id}-prenom-err` : ''}`}
+          className="mt-2 w-full rounded-2xl border-2 border-slate-300 px-4 py-3 text-lg focus:border-violet-600"
+        />
+        {erreurPrenom && <p id={`${id}-prenom-err`} className="mt-1 font-semibold text-rose-700">{erreurPrenom}</p>}
+      </div>
 
       <div className="text-center">
         <Bouton onClick={commencer} className="px-8 text-lg">C’est parti <span aria-hidden="true">→</span></Bouton>

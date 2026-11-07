@@ -60,6 +60,7 @@ test('formations : commune, distances estimées, chances d’accès prudentes, f
   await expect(page.getByText(/Licence Ouverte/).first()).toBeVisible()
   await sansViolation(page)
 
+  await page.getByText('Affiner la liste').click() // filtres repliés par défaut
   await page.getByLabel('En apprentissage (alternance) seulement').check()
   const toutesApprentissage = page.getByRole('listitem').filter({ has: page.getByRole('heading', { level: 3 }) })
   const k = await toutesApprentissage.count()

@@ -5,6 +5,7 @@ import {
 } from '../postbts'
 import { useEtat } from '../store'
 import { ChoixCommune, ChoixRayon } from './Formations'
+import Favori from './Favori'
 import { Bouton } from './ui'
 
 const TITRES: Record<TypeOffre, string> = {
@@ -108,8 +109,12 @@ function ListeOffres({ type, offres, source }: { type: TypeOffre; offres: OffreL
                 ≈ {km} km<span className="block text-xs font-medium">estimation</span>
               </p>
             </div>
-            {o.f ? <Lien texte="Fiche Parcoursup (contacts de l’établissement)" url={o.f} />
-              : o.w ? <Lien texte="Fiche de l’établissement (site, candidature)" url={lienEtablissement(o.w)} /> : null}
+            <div className="flex flex-wrap items-center gap-x-4">
+              <Favori nom={`${o.m}, ${o.e}`} formation={{ id: `${o.k}-${o.e}-${o.v}-${o.m}-${o.p}`.slice(0, 400), intitule: o.p && type === 'LP' ? `${o.m} (${o.p})` : o.m,
+                etablissement: o.e, ville: o.v ?? '', lien: o.f ?? (o.w ? lienEtablissement(o.w) : null) }} />
+              {o.f ? <Lien texte="Fiche Parcoursup (contacts de l’établissement)" url={o.f} />
+                : o.w ? <Lien texte="Fiche de l’établissement (site, candidature)" url={lienEtablissement(o.w)} /> : null}
+            </div>
           </li>
         ))}
       </ul>

@@ -41,6 +41,12 @@ describe('synthèse imprimable', () => {
     expect(synthese({ ...complet, publicId: 'BTS_NDRC' }).plan).toEqual(PLAN.bts)
   })
 
+  it('reprend les favoris (métiers avec leur libellé, formations telles que gardées)', () => {
+    const f = { id: '7969', intitule: 'BUT - Techniques de commercialisation', etablissement: 'IUT', ville: 'Illkirch', lien: 'https://dossier.parcoursup.fr/x' }
+    const s = synthese({ ...complet, favoris: { metiers: ['M1203'], formations: [f] } })
+    expect(s.favoris).toEqual({ metiers: [{ code: 'M1203', metier: 'Comptable' }], formations: [f] })
+  })
+
   it('profil incomplet : rien n’est inventé', () => {
     const s = synthese({ ...ETAT_INITIAL, publicId: 'BTS_CG' })
     expect(s.personnalite).toBeNull()

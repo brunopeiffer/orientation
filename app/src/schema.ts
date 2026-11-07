@@ -72,6 +72,17 @@ export const HandicapSchema = z
   .strict()
 export const HANDICAP_INITIAL = { actif: false, sujets: [] as string[] }
 
+// Favoris : métiers (codes ROME) et formations (copie des infos publiques affichées, pour la synthèse).
+const FormationFavorite = z.object({
+  id: z.string().max(400), intitule: z.string().max(300), etablissement: z.string().max(300),
+  ville: z.string().max(100), lien: z.string().url().startsWith('https://').nullable(),
+}).strict()
+export const FavorisSchema = z.object({
+  metiers: z.array(z.string().regex(/^[A-N]\d{4}$/)).max(30).refine((l) => new Set(l).size === l.length, 'Métier en double.'),
+  formations: z.array(FormationFavorite).max(30).refine((l) => new Set(l.map((f) => f.id)).size === l.length, 'Formation en double.'),
+}).strict()
+export const FAVORIS_VIDES = { metiers: [] as string[], formations: [] as z.infer<typeof FormationFavorite>[] }
+
 export const EtatSchema = z
   .object({
     prenom: PrenomSchema,
@@ -88,15 +99,17 @@ export const EtatSchema = z
     scolarite: ScolariteSchema,
     mobilite: MobiliteSchema,
     handicap: HandicapSchema,
+    favoris: FavorisSchema,
   })
   .strict()
 
 export type Etat = z.infer<typeof EtatSchema>
 
 export const ETAT_INITIAL: Etat = { prenom: '', publicId: null, etape: 0, avertissementLu: false, personnalite: {},
-  gouts: GOUTS_VIDES, scolarite: SCOLARITE_VIDE, mobilite: MOBILITE_INITIALE, handicap: HANDICAP_INITIAL }
+  gouts: GOUTS_VIDES, scolarite: SCOLARITE_VIDE, mobilite: MOBILITE_INITIALE, handicap: HANDICAP_INITIAL,
+  favoris: FAVORIS_VIDES }
 
-export const VERSION_ETAT = 5
+export const VERSION_ETAT = 6
 
 /** Fait passer un état d'une ancienne version à la version actuelle (stockage local ou sauvegarde importée). */
 export function migrer(etat: unknown, version: number): unknown {
@@ -105,6 +118,8 @@ export function migrer(etat: unknown, version: number): unknown {
   if (version < 3) e = { ...e, gouts: GOUTS_VIDES, scolarite: SCOLARITE_VIDE }
   if (version < 4) e = { ...e, mobilite: MOBILITE_INITIALE }
   if (version < 5) e = { ...e, handicap: HANDICAP_INITIAL }
+  // v6 : goûts et résultats passent avant la personnalité (anciennes étapes 1, 2, 3 → 3, 1, 2) ; favoris.
+  if (version < 6) e = { ...e, etape: ({ 1: 3, 2: 1, 3: 2 } as Record<number, number>)[e.etape as number] ?? e.etape, favoris: FAVORIS_VIDES }
   return e
 }
 

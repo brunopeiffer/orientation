@@ -27,20 +27,29 @@ test('goûts : intérêts dominants, 3 valeurs au maximum, reprise après rechar
   await expect(page.getByRole('heading', { level: 1 })).toHaveText('Tes goûts, envies et refus')
   await sansViolation(page)
 
-  const activites = page.locator('fieldset')
-  for (let k = 0; k < (await activites.count()); k++) {
-    const texte = await activites.nth(k).locator('legend').innerText()
-    await activites.nth(k).getByText(/convaincre|diriger|lancer/i.test(texte) ? 'J’adore' : 'Pas pour moi', { exact: true }).click()
+  // Les activités sont sur deux parties ; on adore les 6 activités « Convaincre ».
+  for (let partie = 0; partie < 2; partie++) {
+    const activites = page.locator('fieldset')
+    for (let k = 0; k < (await activites.count()); k++) {
+      const texte = await activites.nth(k).locator('legend').innerText()
+      await activites.nth(k).getByText(/convaincre|diriger|lancer|négocier|événement|la parole/i.test(texte) ? 'J’adore' : 'Pas pour moi', { exact: true }).click()
+    }
+    if (partie === 0) await page.getByRole('button', { name: /Partie suivante/ }).click()
   }
   await expect(page.getByText(/Convaincre \(100 \/ 100\)/)).toBeVisible()
 
+  await page.getByRole('button', { name: /Partie suivante/ }).click()
   for (const v of ['Bien gagner ma vie', 'Être autonome', 'Travailler en équipe']) await page.getByLabel(v).check()
   await expect(page.getByText('3 sur 3 choisies')).toBeVisible()
   await expect(page.getByLabel('Être utile aux autres')).toBeDisabled()
+  await page.getByRole('button', { name: /Partie suivante/ }).click()
+  await expect(page.getByText('Partie 4 sur 4')).toBeVisible()
   await page.getByLabel('Rester debout toute la journée').check()
 
   await page.reload()
+  for (let k = 0; k < 2; k++) await page.getByRole('button', { name: /Partie suivante/ }).click()
   await expect(page.getByLabel('Travailler en équipe')).toBeChecked()
+  await page.getByRole('button', { name: /Partie suivante/ }).click()
   await expect(page.getByLabel('Rester debout toute la journée')).toBeChecked()
   await sansViolation(page)
 })

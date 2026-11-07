@@ -10,6 +10,8 @@ async function demarrer(page: Page) {
   await page.goto('/')
   await page.getByLabel('Terminale STMG').check()
   await page.getByRole('button', { name: /C’est parti/ }).click()
+  // Le test de personnalité (facultatif) vient après les goûts et les résultats.
+  for (let k = 0; k < 2; k++) await page.getByRole('button', { name: /Étape suivante/ }).click()
 }
 
 /** Répond à toutes les questions de la page avec le libellé donné. */
@@ -46,5 +48,12 @@ test('questionnaire : réponse manquante signalée, reprise, résultats accessib
   await sansViolation(page)
 
   await page.getByRole('button', { name: /Étape suivante/ }).click()
-  await expect(page.getByRole('heading', { level: 1 })).toHaveText('Tes goûts, envies et refus')
+  await expect(page.getByRole('heading', { level: 1 })).toHaveText('Pistes métiers et test de réalité')
+})
+
+test('le test de personnalité est facultatif : on peut le passer', async ({ page }) => {
+  await demarrer(page)
+  await expect(page.getByText(/facultatif/).first()).toBeVisible()
+  await page.getByRole('button', { name: /Passer ce test/ }).click()
+  await expect(page.getByRole('heading', { level: 1 })).toHaveText('Pistes métiers et test de réalité')
 })

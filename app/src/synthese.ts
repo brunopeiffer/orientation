@@ -1,7 +1,7 @@
 import { z } from 'zod'
 import brutPlan from '../../contenu/plan-action.json'
 import { dominants, GOUTS, matieresDe, matieresFortes } from './gouts'
-import { pistes } from './metiers'
+import { pistes, ROME } from './metiers'
 import { complet, scorer, TEST } from './personnalite'
 import { parcoursDe, PUBLICS, type Etat } from './schema'
 
@@ -37,6 +37,10 @@ export function synthese(e: Omit<Etat, 'handicap'>, aujourdhui = new Date()) {
       ? pistes(e).slice(0, 5).map((p) => ({ code: p.metier.code, metier: p.metier.libelle, famille: p.famille.nom, score: p.score,
           freins: libelles(p.freins, GOUTS.refus) }))
       : [],
+    favoris: {
+      metiers: e.favoris.metiers.map((c) => ({ code: c, metier: ROME.metiers.find((m) => m.code === c)?.libelle ?? c })),
+      formations: e.favoris.formations,
+    },
     mobilite: e.mobilite.commune ? { commune: e.mobilite.commune.nom, rayon: e.mobilite.rayon } : null,
     plan: parcours ? PLAN[parcours] : [],
   }

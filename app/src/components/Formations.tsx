@@ -6,6 +6,7 @@ import { chercherCommunes, RechercheSchema, type Commune } from '../geocodage'
 import { FAMILLES, pistes } from '../metiers'
 import { RAYONS } from '../schema'
 import { useEtat } from '../store'
+import Favori from './Favori'
 import { Carte } from './Gouts'
 import { Bouton, PUCE } from './ui'
 
@@ -59,7 +60,10 @@ export default function Formations() {
         <>
           <ChoixRayon rayon={rayon} onChoix={(r) => { maj({ mobilite: { ...mobilite, rayon: r } }); setNb(PAR_PAGE) }} />
 
-          <Carte titre="Affiner" emoji="🎛️">
+          {/* Filtres repliés : sur téléphone, les résultats arrivent tout de suite. */}
+          <details className="rounded-3xl bg-white/80 p-4 shadow-sm">
+            <summary className="min-h-6 cursor-pointer font-semibold text-violet-900"><span aria-hidden="true">🎛️ </span>Affiner la liste (types, alternance, recherche)</summary>
+            <div>
             <fieldset className="mt-3">
               <legend className="font-semibold">Types de formation</legend>
               <div className="mt-2 flex flex-wrap gap-2">
@@ -87,7 +91,8 @@ export default function Formations() {
             <label htmlFor={`${id}-q`} className="mt-3 block font-semibold">Chercher une formation, un établissement ou une ville</label>
             <input id={`${id}-q`} type="search" value={recherche} onChange={(e) => changer(setRecherche)(e.target.value)} maxLength={60}
               className="mt-1 w-full rounded-2xl border-2 border-slate-300 px-4 py-3 focus:border-violet-600" />
-          </Carte>
+            </div>
+          </details>
 
           {erreur ? <p role="alert" className="font-semibold text-rose-700">{erreur}</p> : !formations ? (
             <p role="status" className="rounded-2xl bg-violet-50 p-4">Chargement des formations…</p>
@@ -206,7 +211,7 @@ function CarteFormation({ r, mesFamilles }: { r: Resultat; mesFamilles: string[]
         <div className="min-w-0 [overflow-wrap:anywhere]">
           <h3 id={id} className="font-extrabold text-violet-900">{f.n}</h3>
           <p className="text-slate-700">{f.e}{f.v && ` · ${f.v}`}{f.d && ` (${f.d})`}</p>
-          {f.p.length > 0 && <p className="text-sm text-slate-600">Parcours : {f.p.map((x) => x.replace(/^[^-]+- /, '')).join(' ; ')}</p>}
+          {f.p.length > 0 && <p className="text-sm text-slate-600">Parcours : {f.p.slice(0, 2).map((x) => x.replace(/^[^-]+- /, '')).join(' ; ')}{f.p.length > 2 && ` et ${f.p.length - 2} autre${f.p.length > 3 ? 's' : ''}`}</p>}
         </div>
         <p className="shrink-0 rounded-2xl bg-teal-50 px-3 py-1 text-center text-sm font-bold text-teal-900">
           ≈ {km} km<span className="block text-xs font-medium">estimation</span>
@@ -222,11 +227,14 @@ function CarteFormation({ r, mesFamilles }: { r: Resultat; mesFamilles: string[]
       {liees.length > 0 && (
         <p className="mt-1 text-sm"><span aria-hidden="true">🎯 </span>En lien avec tes pistes : {liees.map((x) => NOM_FAMILLE[x]).join(', ')}</p>
       )}
-      {f.f && (
-        <a href={f.f} target="_blank" rel="noopener noreferrer" className="mt-2 inline-flex min-h-11 items-center font-semibold text-violet-800 underline underline-offset-4">
-          Voir la fiche sur Parcoursup<span className="sr-only"> : {f.n}, {f.e} (s’ouvre dans un nouvel onglet)</span>
-        </a>
-      )}
+      <div className="mt-2 flex flex-wrap items-center gap-x-4 gap-y-1">
+        <Favori formation={{ id: f.i, intitule: f.n, etablissement: f.e, ville: f.v ?? '', lien: f.f?.startsWith('https://') ? f.f : null }} nom={`${f.n}, ${f.e}`} />
+        {f.f && (
+          <a href={f.f} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 items-center font-semibold text-violet-800 underline underline-offset-4">
+            Voir la fiche sur Parcoursup<span className="sr-only"> : {f.n}, {f.e} (s’ouvre dans un nouvel onglet)</span>
+          </a>
+        )}
+      </div>
     </li>
   )
 }

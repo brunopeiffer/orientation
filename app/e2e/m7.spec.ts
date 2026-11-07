@@ -69,11 +69,11 @@ test.describe('accessibilité (RGAA / WCAG 2.2 AA)', () => {
     await expect(page.locator('#contenu')).toBeFocused()
 
     await page.keyboard.press('Tab')
-    await expect(page.getByLabel(/Ton prénom/)).toBeFocused()
-    await page.keyboard.type('Léa')
-    await page.keyboard.press('Tab')
     await page.keyboard.press('Space') // premier choix du groupe : Terminale STMG
     await expect(page.getByLabel('Terminale STMG')).toBeChecked()
+    await page.keyboard.press('Tab')
+    await expect(page.getByLabel(/Ton prénom/)).toBeFocused()
+    await page.keyboard.type('Léa')
     for (let k = 0; k < 15 && !(await page.getByRole('button', { name: /C’est parti/ }).evaluate((b) => b === document.activeElement)); k++) {
       await page.keyboard.press('Tab')
     }
@@ -82,7 +82,7 @@ test.describe('accessibilité (RGAA / WCAG 2.2 AA)', () => {
     await page.keyboard.press('Enter')
 
     await expect(page.getByRole('heading', { level: 1 })).toBeFocused()
-    await expect(page).toHaveTitle(/Ton profil de personnalité – étape 1 sur 7 – Mon orientation/)
+    await expect(page).toHaveTitle(/Tes goûts, envies et refus – étape 1 sur 7 – Mon orientation/)
     await page.keyboard.press('Tab')
     await page.keyboard.press('Space') // répondre à la première question au clavier
     await expect(page.locator('fieldset').first().locator('input:checked')).toHaveCount(1)

@@ -1,71 +1,351 @@
 {
-  "_doc": "Goûts, envies et refus. Contenu ORIGINAL rédigé par Claude le 03/11/2026, À VALIDER PAR UN HUMAIN. 'activites' : 3 par type d'intérêt (modèle RIASEC de Holland), présentées en alternant les types. Les ids d'environnements, de valeurs et de refus serviront au matching des métiers (M3) : ne pas les renommer sans migrer l'état.",
+  "_doc": "Goûts, envies et refus. Contenu ORIGINAL rédigé par Claude le 03/11/2026, À VALIDER PAR UN HUMAIN. 'activites' : 6 par type d'intérêt (3 ajoutées le 07/11/2026 pour fiabiliser le score) (modèle RIASEC de Holland), présentées en alternant les types. Les ids d'environnements, de valeurs et de refus serviront au matching des métiers (M3) : ne pas les renommer sans migrer l'état.",
   "statut": "A_VALIDER",
-  "version": 1,
-  "niveaux": ["Pas pour moi", "Pourquoi pas", "J’adore"],
+  "version": 2,
+  "niveaux": [
+    "Pas pour moi",
+    "Pourquoi pas",
+    "J’adore"
+  ],
   "types": [
-    { "id": "R", "nom": "Faire", "description": "Manipuler, fabriquer, utiliser des outils, être dans le concret et le mouvement." },
-    { "id": "I", "nom": "Comprendre", "description": "Analyser, chercher, résoudre des problèmes, comprendre comment ça marche." },
-    { "id": "A", "nom": "Créer", "description": "Imaginer, dessiner, écrire, concevoir des visuels ou des contenus." },
-    { "id": "S", "nom": "Aider", "description": "Accueillir, conseiller, expliquer, prendre soin des autres." },
-    { "id": "E", "nom": "Convaincre", "description": "Vendre, négocier, entreprendre, prendre des responsabilités." },
-    { "id": "C", "nom": "Organiser", "description": "Classer, compter, vérifier, suivre des procédures avec précision." }
+    {
+      "id": "R",
+      "nom": "Faire",
+      "description": "Manipuler, fabriquer, utiliser des outils, être dans le concret et le mouvement."
+    },
+    {
+      "id": "I",
+      "nom": "Comprendre",
+      "description": "Analyser, chercher, résoudre des problèmes, comprendre comment ça marche."
+    },
+    {
+      "id": "A",
+      "nom": "Créer",
+      "description": "Imaginer, dessiner, écrire, concevoir des visuels ou des contenus."
+    },
+    {
+      "id": "S",
+      "nom": "Aider",
+      "description": "Accueillir, conseiller, expliquer, prendre soin des autres."
+    },
+    {
+      "id": "E",
+      "nom": "Convaincre",
+      "description": "Vendre, négocier, entreprendre, prendre des responsabilités."
+    },
+    {
+      "id": "C",
+      "nom": "Organiser",
+      "description": "Classer, compter, vérifier, suivre des procédures avec précision."
+    }
   ],
   "activites": [
-    { "id": "r1", "type": "R", "texte": "Monter un meuble ou réparer un objet" },
-    { "id": "i1", "type": "I", "texte": "Analyser des chiffres pour comprendre pourquoi les ventes baissent" },
-    { "id": "a1", "type": "A", "texte": "Créer une affiche ou une vidéo pour un réseau social" },
-    { "id": "s1", "type": "S", "texte": "Accueillir des personnes et répondre à leurs questions" },
-    { "id": "e1", "type": "E", "texte": "Convaincre un client de choisir ton produit" },
-    { "id": "c1", "type": "C", "texte": "Tenir un budget ou des comptes à jour" },
-    { "id": "r2", "type": "R", "texte": "Préparer et expédier des commandes dans un entrepôt" },
-    { "id": "i2", "type": "I", "texte": "Mener une enquête pour trouver la cause d’un problème" },
-    { "id": "a2", "type": "A", "texte": "Imaginer la décoration d’une vitrine ou d’un stand" },
-    { "id": "s2", "type": "S", "texte": "Aider quelqu’un à se sortir d’une difficulté" },
-    { "id": "e2", "type": "E", "texte": "Diriger une équipe sur un projet" },
-    { "id": "c2", "type": "C", "texte": "Classer et vérifier des documents ou des données" },
-    { "id": "r3", "type": "R", "texte": "Utiliser des outils ou des machines" },
-    { "id": "i3", "type": "I", "texte": "Comprendre comment fonctionne une loi ou un marché" },
-    { "id": "a3", "type": "A", "texte": "Écrire des textes, des articles ou des scripts" },
-    { "id": "s3", "type": "S", "texte": "Expliquer une tâche à quelqu’un ou le former" },
-    { "id": "e3", "type": "E", "texte": "Lancer ta propre activité ou ton entreprise" },
-    { "id": "c3", "type": "C", "texte": "Remplir un tableau de suivi avec précision" }
+    {
+      "id": "r1",
+      "type": "R",
+      "texte": "Monter un meuble ou réparer un objet"
+    },
+    {
+      "id": "i1",
+      "type": "I",
+      "texte": "Analyser des chiffres pour comprendre pourquoi les ventes baissent"
+    },
+    {
+      "id": "a1",
+      "type": "A",
+      "texte": "Créer une affiche ou une vidéo pour un réseau social"
+    },
+    {
+      "id": "s1",
+      "type": "S",
+      "texte": "Accueillir des personnes et répondre à leurs questions"
+    },
+    {
+      "id": "e1",
+      "type": "E",
+      "texte": "Convaincre un client de choisir ton produit"
+    },
+    {
+      "id": "c1",
+      "type": "C",
+      "texte": "Tenir un budget ou des comptes à jour"
+    },
+    {
+      "id": "r2",
+      "type": "R",
+      "texte": "Préparer et expédier des commandes dans un entrepôt"
+    },
+    {
+      "id": "i2",
+      "type": "I",
+      "texte": "Mener une enquête pour trouver la cause d’un problème"
+    },
+    {
+      "id": "a2",
+      "type": "A",
+      "texte": "Imaginer la décoration d’une vitrine ou d’un stand"
+    },
+    {
+      "id": "s2",
+      "type": "S",
+      "texte": "Aider quelqu’un à se sortir d’une difficulté"
+    },
+    {
+      "id": "e2",
+      "type": "E",
+      "texte": "Diriger une équipe sur un projet"
+    },
+    {
+      "id": "c2",
+      "type": "C",
+      "texte": "Classer et vérifier des documents ou des données"
+    },
+    {
+      "id": "r3",
+      "type": "R",
+      "texte": "Utiliser des outils ou des machines"
+    },
+    {
+      "id": "i3",
+      "type": "I",
+      "texte": "Comprendre comment fonctionne une loi ou un marché"
+    },
+    {
+      "id": "a3",
+      "type": "A",
+      "texte": "Écrire des textes, des articles ou des scripts"
+    },
+    {
+      "id": "s3",
+      "type": "S",
+      "texte": "Expliquer une tâche à quelqu’un ou le former"
+    },
+    {
+      "id": "e3",
+      "type": "E",
+      "texte": "Lancer ta propre activité ou ton entreprise"
+    },
+    {
+      "id": "c3",
+      "type": "C",
+      "texte": "Remplir un tableau de suivi avec précision"
+    },
+    {
+      "id": "r4",
+      "type": "R",
+      "texte": "Installer ou dépanner du matériel informatique"
+    },
+    {
+      "id": "i4",
+      "type": "I",
+      "texte": "Comparer des offres pour trouver la meilleure solution"
+    },
+    {
+      "id": "a4",
+      "type": "A",
+      "texte": "Imaginer un nom ou un logo pour une marque"
+    },
+    {
+      "id": "s4",
+      "type": "S",
+      "texte": "Écouter quelqu’un qui a un problème et le conseiller"
+    },
+    {
+      "id": "e4",
+      "type": "E",
+      "texte": "Négocier un prix ou un accord"
+    },
+    {
+      "id": "c4",
+      "type": "C",
+      "texte": "Préparer une facture ou un bulletin de paie"
+    },
+    {
+      "id": "r5",
+      "type": "R",
+      "texte": "Mettre en rayon et organiser l’espace d’un magasin"
+    },
+    {
+      "id": "i5",
+      "type": "I",
+      "texte": "Faire des recherches pour préparer un dossier complet"
+    },
+    {
+      "id": "a5",
+      "type": "A",
+      "texte": "Prendre et retoucher des photos ou des vidéos"
+    },
+    {
+      "id": "s5",
+      "type": "S",
+      "texte": "Accompagner des enfants ou des personnes âgées"
+    },
+    {
+      "id": "e5",
+      "type": "E",
+      "texte": "Organiser un événement et le faire connaître"
+    },
+    {
+      "id": "c5",
+      "type": "C",
+      "texte": "Vérifier qu’une règle ou une procédure est bien respectée"
+    },
+    {
+      "id": "r6",
+      "type": "R",
+      "texte": "Travailler dehors, en mouvement"
+    },
+    {
+      "id": "i6",
+      "type": "I",
+      "texte": "Étudier les résultats d’un sondage ou d’un marché"
+    },
+    {
+      "id": "a6",
+      "type": "A",
+      "texte": "Animer un compte de réseau social avec tes idées"
+    },
+    {
+      "id": "s6",
+      "type": "S",
+      "texte": "Faire visiter un lieu à un groupe"
+    },
+    {
+      "id": "e6",
+      "type": "E",
+      "texte": "Prendre la parole devant un groupe pour défendre une idée"
+    },
+    {
+      "id": "c6",
+      "type": "C",
+      "texte": "Mettre à jour un fichier clients ou un stock"
+    }
   ],
   "environnements": [
-    { "id": "bureau", "libelle": "Dans un bureau" },
-    { "id": "boutique", "libelle": "En magasin, en agence, face aux clients" },
-    { "id": "deplacements", "libelle": "En déplacement, sur la route" },
-    { "id": "exterieur", "libelle": "En extérieur" },
-    { "id": "teletravail", "libelle": "Avec du télétravail possible" },
-    { "id": "grande_structure", "libelle": "Dans une grande entreprise" },
-    { "id": "petite_structure", "libelle": "Dans une petite structure" },
-    { "id": "service_public", "libelle": "Dans le service public" },
-    { "id": "association", "libelle": "Dans une association" },
-    { "id": "international", "libelle": "Avec de l’international" }
+    {
+      "id": "bureau",
+      "libelle": "Dans un bureau"
+    },
+    {
+      "id": "boutique",
+      "libelle": "En magasin, en agence, face aux clients"
+    },
+    {
+      "id": "deplacements",
+      "libelle": "En déplacement, sur la route"
+    },
+    {
+      "id": "exterieur",
+      "libelle": "En extérieur"
+    },
+    {
+      "id": "teletravail",
+      "libelle": "Avec du télétravail possible"
+    },
+    {
+      "id": "grande_structure",
+      "libelle": "Dans une grande entreprise"
+    },
+    {
+      "id": "petite_structure",
+      "libelle": "Dans une petite structure"
+    },
+    {
+      "id": "service_public",
+      "libelle": "Dans le service public"
+    },
+    {
+      "id": "association",
+      "libelle": "Dans une association"
+    },
+    {
+      "id": "international",
+      "libelle": "Avec de l’international"
+    }
   ],
   "valeurs": [
-    { "id": "salaire", "libelle": "Bien gagner ma vie" },
-    { "id": "stabilite", "libelle": "Avoir un emploi stable" },
-    { "id": "utilite", "libelle": "Être utile aux autres" },
-    { "id": "autonomie", "libelle": "Être autonome" },
-    { "id": "creativite", "libelle": "Être créatif(ve)" },
-    { "id": "equipe", "libelle": "Travailler en équipe" },
-    { "id": "evolution", "libelle": "Évoluer, prendre des responsabilités" },
-    { "id": "equilibre", "libelle": "Avoir du temps pour ma vie perso" },
-    { "id": "defi", "libelle": "Relever des défis, atteindre des objectifs" },
-    { "id": "contact", "libelle": "Rencontrer beaucoup de monde" }
+    {
+      "id": "salaire",
+      "libelle": "Bien gagner ma vie"
+    },
+    {
+      "id": "stabilite",
+      "libelle": "Avoir un emploi stable"
+    },
+    {
+      "id": "utilite",
+      "libelle": "Être utile aux autres"
+    },
+    {
+      "id": "autonomie",
+      "libelle": "Être autonome"
+    },
+    {
+      "id": "creativite",
+      "libelle": "Être créatif(ve)"
+    },
+    {
+      "id": "equipe",
+      "libelle": "Travailler en équipe"
+    },
+    {
+      "id": "evolution",
+      "libelle": "Évoluer, prendre des responsabilités"
+    },
+    {
+      "id": "equilibre",
+      "libelle": "Avoir du temps pour ma vie perso"
+    },
+    {
+      "id": "defi",
+      "libelle": "Relever des défis, atteindre des objectifs"
+    },
+    {
+      "id": "contact",
+      "libelle": "Rencontrer beaucoup de monde"
+    }
   ],
   "maxValeurs": 3,
   "refus": [
-    { "id": "horaires_decales", "libelle": "Travailler le soir, le week-end ou en horaires décalés" },
-    { "id": "debout", "libelle": "Rester debout toute la journée" },
-    { "id": "chiffres", "libelle": "Manipuler des chiffres toute la journée" },
-    { "id": "objectifs_vente", "libelle": "Avoir des objectifs de vente à atteindre" },
-    { "id": "telephone", "libelle": "Passer la journée au téléphone" },
-    { "id": "deplacements", "libelle": "Me déplacer souvent" },
-    { "id": "seul", "libelle": "Travailler souvent seul(e)" },
-    { "id": "ecran", "libelle": "Rester devant un écran toute la journée" },
-    { "id": "etudes_longues", "libelle": "Faire plus de 3 ans d’études après le bac" },
-    { "id": "demenager", "libelle": "Déménager loin de chez moi" }
+    {
+      "id": "horaires_decales",
+      "libelle": "Travailler le soir, le week-end ou en horaires décalés"
+    },
+    {
+      "id": "debout",
+      "libelle": "Rester debout toute la journée"
+    },
+    {
+      "id": "chiffres",
+      "libelle": "Manipuler des chiffres toute la journée"
+    },
+    {
+      "id": "objectifs_vente",
+      "libelle": "Avoir des objectifs de vente à atteindre"
+    },
+    {
+      "id": "telephone",
+      "libelle": "Passer la journée au téléphone"
+    },
+    {
+      "id": "deplacements",
+      "libelle": "Me déplacer souvent"
+    },
+    {
+      "id": "seul",
+      "libelle": "Travailler souvent seul(e)"
+    },
+    {
+      "id": "ecran",
+      "libelle": "Rester devant un écran toute la journée"
+    },
+    {
+      "id": "etudes_longues",
+      "libelle": "Faire plus de 3 ans d’études après le bac"
+    },
+    {
+      "id": "demenager",
+      "libelle": "Déménager loin de chez moi"
+    }
   ]
 }

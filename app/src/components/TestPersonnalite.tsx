@@ -49,7 +49,7 @@ export default function TestPersonnalite() {
           Ton profil de personnalité
         </h1>
         <p className="mt-1 text-slate-700">
-          Réponds spontanément : il n’y a ni bonne ni mauvaise réponse. Page {page + 1} sur {NB_PAGES} · {nbRepondues} réponses sur {TEST.items.length}.
+          Ce test est <strong>facultatif</strong> : il affine un peu tes pistes, mais tu peux le passer. Réponds spontanément, il n’y a ni bonne ni mauvaise réponse. Page {page + 1} sur {NB_PAGES} · {nbRepondues} réponses sur {TEST.items.length}.
         </p>
       </div>
 
@@ -93,13 +93,18 @@ export default function TestPersonnalite() {
       )}
 
       <div className="flex flex-wrap justify-between gap-2">
-        <Bouton variante="secondaire" onClick={() => (page === 0 ? maj({ etape: 0 }) : setPage(page - 1))}>
+        <Bouton variante="secondaire" onClick={() => (page === 0 ? maj({ etape: useEtat.getState().etape - 1 }) : setPage(page - 1))}>
           <span aria-hidden="true">←</span> Retour
         </Bouton>
         <Bouton onClick={continuer}>
           {page === NB_PAGES - 1 ? 'Voir mon profil' : 'Continuer'} <span aria-hidden="true">→</span>
         </Bouton>
       </div>
+      <p className="text-center">
+        <Bouton variante="secondaire" onClick={() => maj({ etape: useEtat.getState().etape + 1 })}>
+          Passer ce test <span aria-hidden="true">→</span>
+        </Bouton>
+      </p>
     </div>
   )
 }
