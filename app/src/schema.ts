@@ -81,6 +81,11 @@ export const FavorisSchema = z.object({
   metiers: z.array(z.string().regex(/^[A-N]\d{4}$/)).max(30).refine((l) => new Set(l).size === l.length, 'Métier en double.'),
   formations: z.array(FormationFavorite).max(30).refine((l) => new Set(l.map((f) => f.id)).size === l.length, 'Formation en double.'),
 }).strict()
+/** Formation prête à être gardée : champs coupés aux limites du schéma, lien https seulement. */
+export const formationFavorite = (f: z.infer<typeof FormationFavorite>): z.infer<typeof FormationFavorite> => ({
+  id: f.id.slice(0, 400), intitule: f.intitule.slice(0, 300), etablissement: f.etablissement.slice(0, 300),
+  ville: f.ville.slice(0, 100), lien: f.lien?.startsWith('https://') ? f.lien : null,
+})
 export const FAVORIS_VIDES = { metiers: [] as string[], formations: [] as z.infer<typeof FormationFavorite>[] }
 
 export const EtatSchema = z

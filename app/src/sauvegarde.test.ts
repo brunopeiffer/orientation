@@ -1,7 +1,7 @@
 import { beforeEach, describe, expect, it, vi } from 'vitest'
 import { exporter, lireSauvegarde, nomFichier } from './sauvegarde'
 import { GOUTS_VIDES, SCOLARITE_VIDE } from './gouts'
-import { ETAT_INITIAL, FAVORIS_VIDES, HANDICAP_INITIAL, MOBILITE_INITIALE, PrenomSchema, type Etat } from './schema'
+import { ETAT_INITIAL, EtatSchema, FAVORIS_VIDES, formationFavorite, HANDICAP_INITIAL, MOBILITE_INITIALE, PrenomSchema, type Etat } from './schema'
 
 const etat: Etat = {
   prenom: 'Léa-Marie', publicId: 'BTS_NDRC', etape: 4, avertissementLu: true, personnalite: { e1: 4, o9: 2 },
@@ -75,6 +75,12 @@ describe('export / import', () => {
       const texte = JSON.stringify({ app: 'orientation', version: 5, exporteLe: '2026-11-07T10:00:00Z', etat: { ...v5, etape: avant } })
       expect(lireSauvegarde(texte), `étape ${avant}`).toEqual({ ok: true, etat: { ...v5, etape: apres, favoris: FAVORIS_VIDES } })
     }
+  })
+
+  it('une formation gardée avec un intitulé très long (421 caractères) reste valide', () => {
+    const longue = formationFavorite({ id: 'x'.repeat(500), intitule: 'L'.repeat(421), etablissement: 'U', ville: 'V'.repeat(150), lien: 'http://pas-https.fr' })
+    expect(EtatSchema.safeParse({ ...etat, favoris: { metiers: [], formations: [longue] } }).success).toBe(true)
+    expect([longue.intitule.length, longue.ville.length, longue.lien]).toEqual([300, 100, null])
   })
 
   it('refuse des favoris invalides (code ROME faux, doublon, lien non https)', () => {
@@ -155,6 +161,13 @@ describe('stockage local', () => {
     localStorage.setItem('orientation-etat', JSON.stringify({ state: v1, version: 1 }))
     const { useEtat, etatSeul } = await import('./store')
     expect(etatSeul(useEtat.getState())).toEqual({ ...v1, personnalite: {}, ...NOUVEAU_V3 })
+  })
+
+  it('un favori invalide ne fait perdre que les favoris, pas les autres réponses', async () => {
+    const abime = { ...etat, favoris: { metiers: ['XX'], formations: [] } }
+    localStorage.setItem('orientation-etat', JSON.stringify({ state: abime, version: 6 }))
+    const { useEtat, etatSeul } = await import('./store')
+    expect(etatSeul(useEtat.getState())).toEqual({ ...etat, favoris: FAVORIS_VIDES })
   })
 
   it('un stockage abîmé ne casse pas l’app', async () => {

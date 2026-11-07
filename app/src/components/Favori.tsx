@@ -1,4 +1,4 @@
-import type { Etat } from '../schema'
+import { formationFavorite, type Etat } from '../schema'
 import { useEtat } from '../store'
 
 type FormationFavorite = Etat['favoris']['formations'][number]
@@ -14,7 +14,7 @@ export default function Favori({ metier, formation, nom }: { metier?: string; fo
     maj({
       favoris: metier
         ? { ...f, metiers: actif ? f.metiers.filter((m) => m !== metier) : [...f.metiers, metier].slice(-30) }
-        : { ...f, formations: actif ? f.formations.filter((x) => x.id !== formation!.id) : [...f.formations, formation!].slice(-30) },
+        : { ...f, formations: actif ? f.formations.filter((x) => x.id !== formation!.id) : [...f.formations, formationFavorite(formation!)].slice(-30) },
     })
   }
 

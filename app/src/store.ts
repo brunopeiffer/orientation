@@ -28,9 +28,14 @@ export const useEtat = create<Etat & Actions>()(
       partialize: (s) => etatBrut(s),
       migrate: (ancien, version) => migrer(ancien, version) as Etat,
       // Un stockage abîmé ou modifié à la main ne doit pas casser l'app : on repart de zéro.
+      // Champ par champ : une donnée abîmée remet seulement ce champ à zéro, pas toutes les réponses.
       merge: (persiste, actuel) => {
-        const ok = EtatSchema.safeParse(persiste)
-        return ok.success ? { ...actuel, ...ok.data } : actuel
+        const p = (persiste ?? {}) as Record<string, unknown>
+        const sain = Object.fromEntries(Object.entries(EtatSchema.shape).map(([k, schema]) => {
+          const r = schema.safeParse(p[k])
+          return [k, r.success ? r.data : ETAT_INITIAL[k as keyof Etat]]
+        }))
+        return { ...actuel, ...sain }
       },
     },
   ),

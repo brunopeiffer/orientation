@@ -42,7 +42,7 @@ export default function Accueil() {
           <span aria-hidden="true">💾</span> Important : où sont gardées tes réponses ?
         </h2>
         <p className="mt-1 text-amber-950" data-testid="avertissement">{AVERTISSEMENT}</p>
-        <p className="mt-1 text-amber-900">Aucun compte, aucun email. Rien ne part sur Internet sans ton action : seulement ta commune si tu la cherches (détails en bas de page, « Confidentialité »).</p>
+        <p className="mt-1 text-amber-900">Aucun compte, aucun email. Rien ne part sur Internet sans ton action : seulement ta commune et les métiers que tu cherches, quand tu lances une recherche (détails en bas de page, « Confidentialité »).</p>
       </div>
 
       <fieldset aria-describedby={erreurPublic ? `${id}-public-err` : undefined} className="space-y-4">

@@ -89,7 +89,7 @@ export default function App() {
         </nav>
       )}
 
-      <main id="contenu" tabIndex={-1} ref={main} className="flex-1 rounded-3xl bg-white/70 p-5 shadow-sm backdrop-blur sm:p-8 print:rounded-none print:bg-white print:p-0 print:shadow-none">
+      <main id="contenu" tabIndex={-1} ref={main} className="flex-1 [overflow-wrap:anywhere] rounded-3xl bg-white/70 p-5 shadow-sm backdrop-blur sm:p-8 print:rounded-none print:bg-white print:p-0 print:shadow-none">
         {reprise && courante > 0 && (
           <p role="status" className="mb-4 rounded-2xl bg-emerald-50 p-3 font-semibold text-emerald-900 print:hidden">
             Content de te revoir{prenom ? `, ${prenom}` : ''} ! Tu reprends là où tu t’étais arrêté(e).
