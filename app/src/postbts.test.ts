@@ -16,7 +16,7 @@ describe('voies de poursuite après BTS (contenu)', () => {
   })
 
   it('le DCG est proposé au BTS CG, pas au NDRC ; les autres voies aux deux', () => {
-    expect(voiesDe('BTS_CG').map((v) => v.id)).toContain('dcg')
+    expect(voiesDe('BTS_CG').map((v) => v.id)).toEqual(expect.arrayContaining(['dcg', 'emploi', 'cca', 'cnam_intec', 'paie', 'fonction_publique']))
     expect(voiesDe('BTS_NDRC').map((v) => v.id)).not.toContain('dcg')
     expect(voiesDe('BTS_NDRC').length).toBeGreaterThanOrEqual(6)
     expect(voiesDe('STMG')).toEqual([])

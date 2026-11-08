@@ -533,7 +533,15 @@ Grille : manque-t-il une formation importante pour une famille ? Un mot-clé att
 
 ## 6. Poursuites d'études après le BTS (`contenu/poursuites-bts.json`)
 
-Statut : **A_VALIDER** (2026-11-03). Les canaux et calendriers changent chaque année : à revérifier avant chaque rentrée. Vérifié par `app/src/postbts.test.ts` : chaque voie a un canal, un lien officiel et une source ; chaque mot-clé local trouve au moins une offre réelle.
+Statut : **A_VALIDER** (2026-11-08). Les canaux et calendriers changent chaque année : à revérifier avant chaque rentrée. Vérifié par `app/src/postbts.test.ts` : chaque voie a un canal, un lien officiel et une source ; chaque mot-clé local trouve au moins une offre réelle.
+
+### Travailler tout de suite après le BTS (BTS_CG)
+- HORS Parcoursup · Bac+2 (ton BTS) · Dès l’obtention du BTS
+- Le BTS CG est d’abord fait pour travailler : assistant(e) comptable ou collaborateur, collaboratrice en cabinet d’expertise comptable, en entreprise ou en centre de gestion. Tu pourras évoluer plus tard (chef comptable, contrôle de gestion) et reprendre des études en formation continue.
+- Canal : Hors Parcoursup : candidature directement auprès des employeurs : offres d’emploi, cabinets comptables, entreprises où tu as fait tes stages.
+- Alternance : Non concerné : c’est un emploi salarié.
+- Lien : Les débouchés du BTS CG (Onisep) (https://www.onisep.fr/ressources/univers-formation/formations/post-bac/bts-comptabilite-et-gestion)
+- Sources : [Onisep, fiche « BTS Comptabilité et gestion » (débouchés et poursuites d’études)](https://www.onisep.fr/ressources/univers-formation/formations/post-bac/bts-comptabilite-et-gestion)
 
 ### Licence professionnelle (BTS_CG, BTS_NDRC)
 - HORS Parcoursup · Bac+3 · 1 an
@@ -550,6 +558,14 @@ Statut : **A_VALIDER** (2026-11-03). Les canaux et calendriers changent chaque a
 - Alternance : Possible dans de nombreux établissements.
 - Lien : Parcoursup (https://www.parcoursup.gouv.fr/)
 - Sources : [Arrêté du 22 mai 2020 sur les dispenses du DCG, Bulletin officiel de l’enseignement supérieur n° 24](https://www.enseignementsup-recherche.gouv.fr/fr/bo/20/Hebdo24/ESRS2012706A.htm)
+
+### Filière comptabilité-contrôle-audit (CCA) à l’université (BTS_CG)
+- HORS Parcoursup · Bac+3, puis Bac+5 · 1 an de L3, puis 2 ans de master
+- La L3 CCA, souvent dans un IAE, mène au master CCA : l’autre grande route vers l’expertise comptable, à côté du DCG. Un master CCA peut dispenser de toutes les épreuves du DCG et de 5 épreuves sur 7 du DSCG (exemple de l’IAE Lyon 3 : vérifie pour chaque master). L’entrée est sélective.
+- Canal : Hors Parcoursup : la L3 se demande directement à l’université (souvent eCandidat), au printemps. Le master se demande ensuite sur la plateforme Mon Master.
+- Alternance : Possible dans certaines universités, surtout en master.
+- Lien : Mon Master (plateforme des masters) (https://www.monmaster.gouv.fr/)
+- Sources : [iaelyon (Université Jean Moulin Lyon 3), « Master CCA »](https://iae.univ-lyon3.fr/master-cca-comptabilite-controle-audit-4)
 
 ### BUT en admission parallèle (2e année, parfois 3e) (BTS_CG, BTS_NDRC)
 - HORS Parcoursup · Bac+3 · 1 à 2 ans
@@ -585,11 +601,35 @@ Statut : **A_VALIDER** (2026-11-03). Les canaux et calendriers changent chaque a
 
 ### Bachelor ou titre professionnel bac+3 (souvent en alternance) (BTS_CG, BTS_NDRC)
 - HORS Parcoursup · Bac+3 · 1 an
-- Proposés par des écoles, des CCI ou des CFA. Avant de t’inscrire, vérifie que le titre est enregistré au RNCP (niveau 6) : c’est ce qui garantit sa reconnaissance par l’État.
+- Proposés par des écoles, des CCI ou des CFA. Avant de t’inscrire, vérifie 4 points : le titre est enregistré au RNCP (niveau 6) et tu sais qui le délivre ; l’établissement est certifié Qualiopi ; il publie ses taux de réussite et d’insertion (InserJeunes pour les CFA) ; en apprentissage, la formation est gratuite pour toi.
 - Canal : Hors Parcoursup : candidature directement auprès de l’école ou du CFA.
 - Alternance : Très souvent.
 - Lien : Vérifier un titre sur France compétences (RNCP) (https://www.francecompetences.fr/recherche-resultats/?types=certification&search=bachelor)
-- Sources : [France compétences, répertoire national des certifications professionnelles](https://www.francecompetences.fr/)
+- Sources : [France compétences, répertoire national des certifications professionnelles](https://www.francecompetences.fr/) ; [Ministère du Travail, « Qualiopi, marque de certification qualité des prestataires de formation »](https://travail-emploi.gouv.fr/qualiopi-marque-de-certification-qualite-des-prestataires-de-formation) ; [InserJeunes, taux d’insertion des formations](https://www.inserjeunes.education.gouv.fr/diffusion/accueil) ; [Code du travail, article L6211-1 (formation gratuite pour l’apprenti)](https://code.travail.gouv.fr/code-du-travail/l6211-1)
+
+### Étudier en travaillant : le Cnam et l’Intec (BTS_CG)
+- HORS Parcoursup · Bac+3 à Bac+5 · À ton rythme
+- Le Cnam et son institut Intec préparent les diplômes de la comptabilité : DCG et DSCG de l’État, leurs équivalents Intec (DGC, DSGC), licence et master comptabilité-contrôle-audit, licences pro (dont Comptabilité et paie). Les cours de l’Intec sont à distance : tu peux avoir un emploi et continuer à te former.
+- Canal : Selon la formation : certaines sont sur Parcoursup, les autres se demandent directement au Cnam ou à l’Intec. Regarde les dates sur leur site.
+- Alternance : Possible (formation initiale, alternance ou formation continue).
+- Lien : Site de l’Intec (https://intec.cnam.fr/)
+- Sources : [Cnam, « Intec : le premier institut de formation aux métiers du chiffre »](https://www.cnam.fr/actualites/intec-le-premier-institut-de-formation-aux-metiers-du-chiffre) ; [Cnam, fiche « Diplôme de gestion et de comptabilité (DGC) »](https://www.cnam.fr/formation/economie-droit-science-politique/droit/diplome-detablissement-diplome-de-gestion-et-de-comptabilite-dgc)
+
+### Spécialisation courte : gestionnaire de paie (BTS_CG)
+- HORS Parcoursup · Bac+2 (titre de niveau 5, comme ton BTS) · Quelques mois à 1 an
+- Le titre professionnel Gestionnaire de paie, du ministère du Travail, est enregistré au RNCP. Il te spécialise dans la paie, un métier des cabinets comptables et des services RH, sans changer de niveau d’études.
+- Canal : Hors Parcoursup : candidature auprès d’un organisme de formation (Greta, Afpa, CFA, écoles). Vérifie qu’il prépare bien au titre RNCP 37948.
+- Alternance : Souvent possible.
+- Lien : Fiche RNCP 37948 (France compétences) (https://www.francecompetences.fr/recherche/rncp/37948/)
+- Sources : [France compétences, fiche RNCP 37948 « TP Gestionnaire de paie »](https://www.francecompetences.fr/recherche/rncp/37948/)
+
+### Concours de la fonction publique (BTS_CG)
+- HORS Parcoursup · Catégorie B (concours ouverts avec le bac) · Selon le concours
+- Ton profil intéresse l’administration : par exemple contrôleur ou contrôleuse des finances publiques (impôts, comptabilité publique), ou les postes de gestion des collectivités et des hôpitaux. Ces concours de catégorie B demandent le bac ; ton BTS t’aide à les préparer.
+- Canal : Hors Parcoursup : inscription au concours directement sur le site de l’administration qui recrute, aux dates du calendrier officiel des concours.
+- Alternance : Non concerné : on entre par concours.
+- Lien : Calendrier du concours de contrôleur des finances publiques (https://www.fonction-publique.gouv.fr/devenir-agent-public/calendrier-general-concours/controleurs-des-finances-publiques)
+- Sources : [fonction-publique.gouv.fr, calendrier des concours (contrôleurs des finances publiques)](https://www.fonction-publique.gouv.fr/devenir-agent-public/calendrier-general-concours/controleurs-des-finances-publiques)
 
 ### Mots-clés des offres locales (licences pro, BUT, DCG)
 

@@ -106,6 +106,7 @@ function ListeOffres({ type, offres, source }: { type: TypeOffre; offres: OffreL
                 <p className="font-bold text-violet-900">{o.m}</p>
                 {o.p && <p className="text-sm text-slate-700">{type === 'LP' ? 'Parcours : ' : ''}{o.p}</p>}
                 <p className="text-slate-700">{o.e}{o.v && ` · ${o.v}`}{o.d && ` (${o.d})`}</p>
+                {/^DGC\b/.test(o.m) && <p className="text-sm font-semibold text-amber-900">Diplôme propre au Cnam-Intec : ce n’est pas le DCG de l’État. Demande à l’Intec ce qu’il te permet de valider.</p>}
               </div>
               <p className="shrink-0 rounded-2xl bg-teal-50 px-3 py-1 text-center text-sm font-bold text-teal-900">
                 ≈ {km} km<span className="block text-xs font-medium">estimation</span>

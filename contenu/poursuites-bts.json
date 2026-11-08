@@ -1,110 +1,377 @@
 {
-  "_doc": "Poursuites d'études après un BTS CG ou NDRC. Rédigé par Claude le 03/11/2026 à partir des sources citées, À VALIDER PAR UN HUMAIN (notamment les canaux et dates, qui changent chaque année). 'local' : mots-clés (minuscules, sans accents) pour retrouver les offres de data/post-bts.json en lien avec chaque BTS.",
+  "_doc": "Poursuites d'études après un BTS CG ou NDRC. Rédigé par Claude le 03/11/2026, complété le 08/11/2026 (emploi, CCA, Cnam-Intec, paie, concours, points de vigilance bachelor) à partir des sources citées, À VALIDER PAR UN HUMAIN (notamment les canaux et dates, qui changent chaque année). 'local' : mots-clés (minuscules, sans accents) pour retrouver les offres de data/post-bts.json en lien avec chaque BTS.",
   "statut": "A_VALIDER",
-  "date": "2026-11-03",
+  "date": "2026-11-08",
   "voies": [
+    {
+      "id": "emploi",
+      "titre": "Travailler tout de suite après le BTS",
+      "publics": [
+        "BTS_CG"
+      ],
+      "niveau": "Bac+2 (ton BTS)",
+      "duree": "Dès l’obtention du BTS",
+      "description": "Le BTS CG est d’abord fait pour travailler : assistant(e) comptable ou collaborateur, collaboratrice en cabinet d’expertise comptable, en entreprise ou en centre de gestion. Tu pourras évoluer plus tard (chef comptable, contrôle de gestion) et reprendre des études en formation continue.",
+      "parcoursup": false,
+      "canal": "Hors Parcoursup : candidature directement auprès des employeurs : offres d’emploi, cabinets comptables, entreprises où tu as fait tes stages.",
+      "lien": {
+        "texte": "Les débouchés du BTS CG (Onisep)",
+        "url": "https://www.onisep.fr/ressources/univers-formation/formations/post-bac/bts-comptabilite-et-gestion"
+      },
+      "alternance": "Non concerné : c’est un emploi salarié.",
+      "offres": null,
+      "sources": [
+        {
+          "nom": "Onisep, fiche « BTS Comptabilité et gestion » (débouchés et poursuites d’études)",
+          "url": "https://www.onisep.fr/ressources/univers-formation/formations/post-bac/bts-comptabilite-et-gestion"
+        }
+      ]
+    },
     {
       "id": "licence_pro",
       "titre": "Licence professionnelle",
-      "publics": ["BTS_CG", "BTS_NDRC"],
-      "niveau": "Bac+3", "duree": "1 an",
+      "publics": [
+        "BTS_CG",
+        "BTS_NDRC"
+      ],
+      "niveau": "Bac+3",
+      "duree": "1 an",
       "description": "Une année pour te spécialiser dans un métier précis, avec un stage long ou en alternance. Conçue pour entrer ensuite dans la vie active.",
       "parcoursup": false,
       "canal": "Candidature directement auprès de l’université ou de l’IUT, souvent sur sa plateforme eCandidat, au printemps. Une candidature par licence.",
-      "lien": { "texte": "Voir les licences pro près de chez toi (lien vers chaque établissement)", "url": "#offres-LP" },
+      "lien": {
+        "texte": "Voir les licences pro près de chez toi (lien vers chaque établissement)",
+        "url": "#offres-LP"
+      },
       "alternance": "Souvent possible.",
       "offres": "LP",
-      "sources": [{ "nom": "Académie de Nancy-Metz, information orientation", "url": "https://sites.ac-nancy-metz.fr/lio/qr_est_republicain/qr_181214.html" }]
+      "sources": [
+        {
+          "nom": "Académie de Nancy-Metz, information orientation",
+          "url": "https://sites.ac-nancy-metz.fr/lio/qr_est_republicain/qr_181214.html"
+        }
+      ]
     },
     {
       "id": "dcg",
       "titre": "Diplôme de comptabilité et de gestion (DCG)",
-      "publics": ["BTS_CG"],
-      "niveau": "Bac+3", "duree": "3 ans, souvent moins avec ton BTS",
+      "publics": [
+        "BTS_CG"
+      ],
+      "niveau": "Bac+3",
+      "duree": "3 ans, souvent moins avec ton BTS",
       "description": "Première marche vers l’expertise comptable. Avec un BTS CG obtenu depuis 2017, tu peux être dispensé(e) des épreuves 1, 5, 8, 9, 12 et 13 du DCG, ce qui permet souvent d’entrer en 2e année.",
       "parcoursup": true,
       "canal": "La 1re année se demande sur Parcoursup. Pour une entrée directe en 2e année grâce aux dispenses, contacte l’établissement qui prépare le DCG.",
-      "lien": { "texte": "Parcoursup", "url": "https://www.parcoursup.gouv.fr/" },
+      "lien": {
+        "texte": "Parcoursup",
+        "url": "https://www.parcoursup.gouv.fr/"
+      },
       "alternance": "Possible dans de nombreux établissements.",
       "offres": "DCG",
-      "sources": [{ "nom": "Arrêté du 22 mai 2020 sur les dispenses du DCG, Bulletin officiel de l’enseignement supérieur n° 24", "url": "https://www.enseignementsup-recherche.gouv.fr/fr/bo/20/Hebdo24/ESRS2012706A.htm" }]
+      "sources": [
+        {
+          "nom": "Arrêté du 22 mai 2020 sur les dispenses du DCG, Bulletin officiel de l’enseignement supérieur n° 24",
+          "url": "https://www.enseignementsup-recherche.gouv.fr/fr/bo/20/Hebdo24/ESRS2012706A.htm"
+        }
+      ]
+    },
+    {
+      "id": "cca",
+      "titre": "Filière comptabilité-contrôle-audit (CCA) à l’université",
+      "publics": [
+        "BTS_CG"
+      ],
+      "niveau": "Bac+3, puis Bac+5",
+      "duree": "1 an de L3, puis 2 ans de master",
+      "description": "La L3 CCA, souvent dans un IAE, mène au master CCA : l’autre grande route vers l’expertise comptable, à côté du DCG. Un master CCA peut dispenser de toutes les épreuves du DCG et de 5 épreuves sur 7 du DSCG (exemple de l’IAE Lyon 3 : vérifie pour chaque master). L’entrée est sélective.",
+      "parcoursup": false,
+      "canal": "Hors Parcoursup : la L3 se demande directement à l’université (souvent eCandidat), au printemps. Le master se demande ensuite sur la plateforme Mon Master.",
+      "lien": {
+        "texte": "Mon Master (plateforme des masters)",
+        "url": "https://www.monmaster.gouv.fr/"
+      },
+      "alternance": "Possible dans certaines universités, surtout en master.",
+      "offres": null,
+      "sources": [
+        {
+          "nom": "iaelyon (Université Jean Moulin Lyon 3), « Master CCA »",
+          "url": "https://iae.univ-lyon3.fr/master-cca-comptabilite-controle-audit-4"
+        }
+      ]
     },
     {
       "id": "but",
       "titre": "BUT en admission parallèle (2e année, parfois 3e)",
-      "publics": ["BTS_CG", "BTS_NDRC"],
-      "niveau": "Bac+3", "duree": "1 à 2 ans",
+      "publics": [
+        "BTS_CG",
+        "BTS_NDRC"
+      ],
+      "niveau": "Bac+3",
+      "duree": "1 à 2 ans",
       "description": "Rejoindre un BUT de gestion ou de commerce en cours de cursus, selon ton dossier et les places disponibles.",
       "parcoursup": false,
       "canal": "Hors Parcoursup : candidature directement auprès de l’IUT (souvent sur eCandidat). La fiche Parcoursup de chaque BUT donne les contacts de l’IUT.",
-      "lien": { "texte": "Voir les BUT près de chez toi", "url": "#offres-BUT" },
+      "lien": {
+        "texte": "Voir les BUT près de chez toi",
+        "url": "#offres-BUT"
+      },
       "alternance": "Possible, surtout en 3e année.",
       "offres": "BUT",
-      "sources": [{ "nom": "Onisep, « Que faire après un BTS »", "url": "https://www.onisep.fr/formation/apres-le-bac-les-etudes-superieures/les-principales-filieres-d-etudes-superieures/les-bts-brevet-de-technicien-superieur/que-faire-apres-un-bts" }]
+      "sources": [
+        {
+          "nom": "Onisep, « Que faire après un BTS »",
+          "url": "https://www.onisep.fr/formation/apres-le-bac-les-etudes-superieures/les-principales-filieres-d-etudes-superieures/les-bts-brevet-de-technicien-superieur/que-faire-apres-un-bts"
+        }
+      ]
     },
     {
       "id": "licence_generale",
       "titre": "Licence générale (L2 ou L3) : gestion, économie, AES, droit",
-      "publics": ["BTS_CG", "BTS_NDRC"],
-      "niveau": "Bac+3, puis master possible", "duree": "1 à 2 ans",
+      "publics": [
+        "BTS_CG",
+        "BTS_NDRC"
+      ],
+      "niveau": "Bac+3, puis master possible",
+      "duree": "1 à 2 ans",
       "description": "Pour viser un master ensuite. L’université décide du niveau d’entrée (L2 ou L3) selon ton dossier.",
       "parcoursup": false,
       "canal": "Hors Parcoursup : candidature directement auprès de l’université (souvent eCandidat), au printemps.",
-      "lien": { "texte": "Trouver l’université et son site (Paysage, ministère)", "url": "https://paysage.enseignementsup-recherche.gouv.fr/" },
+      "lien": {
+        "texte": "Trouver l’université et son site (Paysage, ministère)",
+        "url": "https://paysage.enseignementsup-recherche.gouv.fr/"
+      },
       "alternance": "Rare en licence générale.",
       "offres": null,
-      "sources": [{ "nom": "Onisep, « Que faire après un BTS »", "url": "https://www.onisep.fr/formation/apres-le-bac-les-etudes-superieures/les-principales-filieres-d-etudes-superieures/les-bts-brevet-de-technicien-superieur/que-faire-apres-un-bts" }]
+      "sources": [
+        {
+          "nom": "Onisep, « Que faire après un BTS »",
+          "url": "https://www.onisep.fr/formation/apres-le-bac-les-etudes-superieures/les-principales-filieres-d-etudes-superieures/les-bts-brevet-de-technicien-superieur/que-faire-apres-un-bts"
+        }
+      ]
     },
     {
       "id": "ats",
       "titre": "Prépa ATS économie-gestion",
-      "publics": ["BTS_CG", "BTS_NDRC"],
-      "niveau": "Bac+3 (prépare aux concours)", "duree": "1 an",
+      "publics": [
+        "BTS_CG",
+        "BTS_NDRC"
+      ],
+      "niveau": "Bac+3 (prépare aux concours)",
+      "duree": "1 an",
       "description": "Une année de prépa réservée aux bac+2 pour réussir les concours d’admission parallèle des écoles de commerce.",
       "parcoursup": true,
       "canal": "Candidature sur Parcoursup, comme les autres classes prépas.",
-      "lien": { "texte": "Parcoursup", "url": "https://www.parcoursup.gouv.fr/" },
+      "lien": {
+        "texte": "Parcoursup",
+        "url": "https://www.parcoursup.gouv.fr/"
+      },
       "alternance": "Non.",
       "offres": null,
-      "sources": [{ "nom": "Onisep, « La prépa ATS économie-gestion »", "url": "https://www.onisep.fr/formation/apres-le-bac-les-etudes-superieures/les-principales-filieres-d-etudes-superieures/les-classes-preparatoires-aux-grandes-ecoles-cpge/les-prepas-economiques-et-commerciales/la-prepa-ats-economie-gestion" }]
+      "sources": [
+        {
+          "nom": "Onisep, « La prépa ATS économie-gestion »",
+          "url": "https://www.onisep.fr/formation/apres-le-bac-les-etudes-superieures/les-principales-filieres-d-etudes-superieures/les-classes-preparatoires-aux-grandes-ecoles-cpge/les-prepas-economiques-et-commerciales/la-prepa-ats-economie-gestion"
+        }
+      ]
     },
     {
       "id": "ecoles",
       "titre": "École de commerce en admission parallèle",
-      "publics": ["BTS_CG", "BTS_NDRC"],
-      "niveau": "Bac+5 (programme grande école)", "duree": "3 ans",
+      "publics": [
+        "BTS_CG",
+        "BTS_NDRC"
+      ],
+      "niveau": "Bac+5 (programme grande école)",
+      "duree": "3 ans",
       "description": "Entrer en 1re année du programme grande école d’une école de commerce après un bac+2. Les frais de scolarité sont souvent élevés : l’alternance peut les prendre en charge.",
       "parcoursup": false,
       "canal": "Hors Parcoursup : par concours communs (Passerelle, Ecricome Tremplin) ou directement auprès de l’école.",
-      "lien": { "texte": "Concours Passerelle", "url": "https://grande-ecole.passerelle-esc.com/" },
-      "lien2": { "texte": "Concours Ecricome", "url": "https://www.ecricome.org/" },
+      "lien": {
+        "texte": "Concours Passerelle",
+        "url": "https://grande-ecole.passerelle-esc.com/"
+      },
+      "lien2": {
+        "texte": "Concours Ecricome",
+        "url": "https://www.ecricome.org/"
+      },
       "alternance": "Souvent possible après la 1re année.",
       "offres": null,
-      "sources": [{ "nom": "Sites officiels des concours Passerelle et Ecricome", "url": "https://www.ecricome.org/" }]
+      "sources": [
+        {
+          "nom": "Sites officiels des concours Passerelle et Ecricome",
+          "url": "https://www.ecricome.org/"
+        }
+      ]
     },
     {
       "id": "bachelor",
       "titre": "Bachelor ou titre professionnel bac+3 (souvent en alternance)",
-      "publics": ["BTS_CG", "BTS_NDRC"],
-      "niveau": "Bac+3", "duree": "1 an",
-      "description": "Proposés par des écoles, des CCI ou des CFA. Avant de t’inscrire, vérifie que le titre est enregistré au RNCP (niveau 6) : c’est ce qui garantit sa reconnaissance par l’État.",
+      "publics": [
+        "BTS_CG",
+        "BTS_NDRC"
+      ],
+      "niveau": "Bac+3",
+      "duree": "1 an",
+      "description": "Proposés par des écoles, des CCI ou des CFA. Avant de t’inscrire, vérifie 4 points : le titre est enregistré au RNCP (niveau 6) et tu sais qui le délivre ; l’établissement est certifié Qualiopi ; il publie ses taux de réussite et d’insertion (InserJeunes pour les CFA) ; en apprentissage, la formation est gratuite pour toi.",
       "parcoursup": false,
       "canal": "Hors Parcoursup : candidature directement auprès de l’école ou du CFA.",
-      "lien": { "texte": "Vérifier un titre sur France compétences (RNCP)", "url": "https://www.francecompetences.fr/recherche-resultats/?types=certification&search=bachelor" },
+      "lien": {
+        "texte": "Vérifier un titre sur France compétences (RNCP)",
+        "url": "https://www.francecompetences.fr/recherche-resultats/?types=certification&search=bachelor"
+      },
       "alternance": "Très souvent.",
       "offres": null,
-      "sources": [{ "nom": "France compétences, répertoire national des certifications professionnelles", "url": "https://www.francecompetences.fr/" }]
+      "sources": [
+        {
+          "nom": "France compétences, répertoire national des certifications professionnelles",
+          "url": "https://www.francecompetences.fr/"
+        },
+        {
+          "nom": "Ministère du Travail, « Qualiopi, marque de certification qualité des prestataires de formation »",
+          "url": "https://travail-emploi.gouv.fr/qualiopi-marque-de-certification-qualite-des-prestataires-de-formation"
+        },
+        {
+          "nom": "InserJeunes, taux d’insertion des formations",
+          "url": "https://www.inserjeunes.education.gouv.fr/diffusion/accueil"
+        },
+        {
+          "nom": "Code du travail, article L6211-1 (formation gratuite pour l’apprenti)",
+          "url": "https://code.travail.gouv.fr/code-du-travail/l6211-1"
+        }
+      ]
+    },
+    {
+      "id": "cnam_intec",
+      "titre": "Étudier en travaillant : le Cnam et l’Intec",
+      "publics": [
+        "BTS_CG"
+      ],
+      "niveau": "Bac+3 à Bac+5",
+      "duree": "À ton rythme",
+      "description": "Le Cnam et son institut Intec préparent les diplômes de la comptabilité : DCG et DSCG de l’État, leurs équivalents Intec (DGC, DSGC), licence et master comptabilité-contrôle-audit, licences pro (dont Comptabilité et paie). Les cours de l’Intec sont à distance : tu peux avoir un emploi et continuer à te former.",
+      "parcoursup": false,
+      "canal": "Selon la formation : certaines sont sur Parcoursup, les autres se demandent directement au Cnam ou à l’Intec. Regarde les dates sur leur site.",
+      "lien": {
+        "texte": "Site de l’Intec",
+        "url": "https://intec.cnam.fr/"
+      },
+      "alternance": "Possible (formation initiale, alternance ou formation continue).",
+      "offres": null,
+      "sources": [
+        {
+          "nom": "Cnam, « Intec : le premier institut de formation aux métiers du chiffre »",
+          "url": "https://www.cnam.fr/actualites/intec-le-premier-institut-de-formation-aux-metiers-du-chiffre"
+        },
+        {
+          "nom": "Cnam, fiche « Diplôme de gestion et de comptabilité (DGC) »",
+          "url": "https://www.cnam.fr/formation/economie-droit-science-politique/droit/diplome-detablissement-diplome-de-gestion-et-de-comptabilite-dgc"
+        }
+      ]
+    },
+    {
+      "id": "paie",
+      "titre": "Spécialisation courte : gestionnaire de paie",
+      "publics": [
+        "BTS_CG"
+      ],
+      "niveau": "Bac+2 (titre de niveau 5, comme ton BTS)",
+      "duree": "Quelques mois à 1 an",
+      "description": "Le titre professionnel Gestionnaire de paie, du ministère du Travail, est enregistré au RNCP. Il te spécialise dans la paie, un métier des cabinets comptables et des services RH, sans changer de niveau d’études.",
+      "parcoursup": false,
+      "canal": "Hors Parcoursup : candidature auprès d’un organisme de formation (Greta, Afpa, CFA, écoles). Vérifie qu’il prépare bien au titre RNCP 37948.",
+      "lien": {
+        "texte": "Fiche RNCP 37948 (France compétences)",
+        "url": "https://www.francecompetences.fr/recherche/rncp/37948/"
+      },
+      "alternance": "Souvent possible.",
+      "offres": null,
+      "sources": [
+        {
+          "nom": "France compétences, fiche RNCP 37948 « TP Gestionnaire de paie »",
+          "url": "https://www.francecompetences.fr/recherche/rncp/37948/"
+        }
+      ]
+    },
+    {
+      "id": "fonction_publique",
+      "titre": "Concours de la fonction publique",
+      "publics": [
+        "BTS_CG"
+      ],
+      "niveau": "Catégorie B (concours ouverts avec le bac)",
+      "duree": "Selon le concours",
+      "description": "Ton profil intéresse l’administration : par exemple contrôleur ou contrôleuse des finances publiques (impôts, comptabilité publique), ou les postes de gestion des collectivités et des hôpitaux. Ces concours de catégorie B demandent le bac ; ton BTS t’aide à les préparer.",
+      "parcoursup": false,
+      "canal": "Hors Parcoursup : inscription au concours directement sur le site de l’administration qui recrute, aux dates du calendrier officiel des concours.",
+      "lien": {
+        "texte": "Calendrier du concours de contrôleur des finances publiques",
+        "url": "https://www.fonction-publique.gouv.fr/devenir-agent-public/calendrier-general-concours/controleurs-des-finances-publiques"
+      },
+      "lien2": {
+        "texte": "Choisir le service public (offres et concours)",
+        "url": "https://choisirleservicepublic.gouv.fr/"
+      },
+      "alternance": "Non concerné : on entre par concours.",
+      "offres": null,
+      "sources": [
+        {
+          "nom": "fonction-publique.gouv.fr, calendrier des concours (contrôleurs des finances publiques)",
+          "url": "https://www.fonction-publique.gouv.fr/devenir-agent-public/calendrier-general-concours/controleurs-des-finances-publiques"
+        }
+      ]
     }
   ],
   "local": {
     "BTS_CG": {
-      "LP": ["metiers de la gestion et de la comptabilite", "metiers de la grh", "management et gestion des organisations", "metiers de l'entrepreneuriat", "assurance, banque, finance", "gestion des organisations de l'economie sociale", "metiers des administrations et collectivites territoriales", "activites juridiques", "metiers du notariat", "metiers de l'immobilier : gestion", "gestion des achats", "metiers du decisionnel"],
-      "BUT": ["gestion des entreprises et des administrations", "gestion, entrepreneuriat et management", "controle de gestion", "gestion et pilotage des ressources humaines"],
-      "DCG": ["dcg", "comptabilite et de gestion"]
+      "LP": [
+        "metiers de la gestion et de la comptabilite",
+        "metiers de la grh",
+        "management et gestion des organisations",
+        "metiers de l'entrepreneuriat",
+        "assurance, banque, finance",
+        "gestion des organisations de l'economie sociale",
+        "metiers des administrations et collectivites territoriales",
+        "activites juridiques",
+        "metiers du notariat",
+        "metiers de l'immobilier : gestion",
+        "gestion des achats",
+        "metiers du decisionnel"
+      ],
+      "BUT": [
+        "gestion des entreprises et des administrations",
+        "gestion, entrepreneuriat et management",
+        "controle de gestion",
+        "gestion et pilotage des ressources humaines"
+      ],
+      "DCG": [
+        "dcg",
+        "comptabilite et de gestion"
+      ]
     },
     "BTS_NDRC": {
-      "LP": ["commerce et distribution", "technico-commercial", "e-commerce et marketing numerique", "commercialisation de produits et services", "management des activites commerciales", "metiers du marketing operationnel", "metiers du commerce international", "assurance, banque, finance : charge de clientele", "metiers de l'immobilier : transaction", "metiers de l'entrepreneuriat", "management et gestion des organisations", "commercialisation des produits alimentaires", "metiers du tourisme : commercialisation", "gestion des achats"],
-      "BUT": ["techniques de commercialisation", "business", "marketing", "strategie de marque"],
+      "LP": [
+        "commerce et distribution",
+        "technico-commercial",
+        "e-commerce et marketing numerique",
+        "commercialisation de produits et services",
+        "management des activites commerciales",
+        "metiers du marketing operationnel",
+        "metiers du commerce international",
+        "assurance, banque, finance : charge de clientele",
+        "metiers de l'immobilier : transaction",
+        "metiers de l'entrepreneuriat",
+        "management et gestion des organisations",
+        "commercialisation des produits alimentaires",
+        "metiers du tourisme : commercialisation",
+        "gestion des achats"
+      ],
+      "BUT": [
+        "techniques de commercialisation",
+        "business",
+        "marketing",
+        "strategie de marque"
+      ],
       "DCG": []
     }
   }
