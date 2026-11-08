@@ -162,6 +162,9 @@ function Offres({ r, depuis }: { r: ReponseOffres; depuis: { lat: number; lon: n
   )
 }
 
+/** Le catalogue écrit souvent les intitulés en majuscules, difficiles à lire : on les remet en minuscules. */
+const casse = (t: string) => (t === t.toUpperCase() ? t.charAt(0) + t.slice(1).toLowerCase() : t)
+
 function FormationsApprentissage({ r, depuis, niveau }: { r: ReponseFormations; depuis: { lat: number; lon: number }; niveau: '5' | '6' }) {
   const id = useId()
   const [nb, setNb] = useState(PAR_PAGE)
@@ -180,7 +183,7 @@ function FormationsApprentissage({ r, depuis, niveau }: { r: ReponseFormations; 
           <li key={f.id} className="rounded-2xl bg-white p-3 shadow-sm ring-1 ring-violet-100">
             <div className="flex items-start justify-between gap-3">
               <div className="min-w-0 [overflow-wrap:anywhere]">
-                <h3 className="font-bold text-violet-900">{f.titre}</h3>
+                <h3 className="font-bold text-violet-900">{casse(f.titre)}</h3>
                 <p className="text-slate-700">{f.organisme}{f.ville && ` · ${f.ville}`}</p>
                 <p className="text-sm text-slate-600">
                   {[f.distanciel && 'Entièrement à distance', f.qualiopi === true && 'Organisme certifié Qualiopi', f.qualiopi === false && 'Pas de certification Qualiopi indiquée',
