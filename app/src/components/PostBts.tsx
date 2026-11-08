@@ -1,7 +1,7 @@
 import { useEffect, useId, useState } from 'react'
 import { COEF_DETOUR } from '../formations'
 import {
-  chargerOffres, lienEtablissement, offresLocales, POURSUITES, voiesDe, type Donnees, type OffreLocale, type TypeOffre,
+  chargerOffres, offresLocales, POURSUITES, voiesDe, type Donnees, type OffreLocale, type TypeOffre,
 } from '../postbts'
 import { useEtat } from '../store'
 import { ChoixCommune, ChoixRayon } from './Formations'
@@ -75,7 +75,7 @@ export default function PostBts() {
             {erreur ? <p role="alert" className="font-semibold text-rose-700">{erreur}</p> : !donnees ? (
               <p role="status" className="rounded-2xl bg-violet-50 p-4">Chargement des formations…</p>
             ) : types.map((t) => (
-              <ListeOffres key={t} type={t} source={donnees.sources[t] ?? 'non disponible'}
+              <ListeOffres key={t} type={t} source={donnees.sources[t] ?? 'non disponible'} sites={donnees.sites}
                 offres={offresLocales(donnees.offres, t, publicId, mobilite.commune!, mobilite.rayon)} />
             ))}
             <p className="text-sm text-slate-600">
@@ -90,7 +90,7 @@ export default function PostBts() {
   )
 }
 
-function ListeOffres({ type, offres, source }: { type: TypeOffre; offres: OffreLocale[]; source: string }) {
+function ListeOffres({ type, offres, source, sites }: { type: TypeOffre; offres: OffreLocale[]; source: string; sites: Donnees['sites'] }) {
   const id = useId()
   const [nb, setNb] = useState(PAR_PAGE)
   return (
@@ -99,7 +99,7 @@ function ListeOffres({ type, offres, source }: { type: TypeOffre; offres: OffreL
       <p className="text-sm"><strong>Canal :</strong> {CANAL[type]} <span className="text-slate-600">Source : {source}.</span></p>
       {offres.length === 0 && <p>Aucune dans ce rayon : élargis la distance.</p>}
       <ul className="space-y-2">
-        {offres.slice(0, nb).map(({ o, km }, k) => (
+        {offres.slice(0, nb).map(({ o, km }, k) => { const site = o.w ? sites[o.w] : undefined; return (
           <li key={`${o.k}-${o.e}-${o.v}-${o.m}-${o.p}-${k}`} className="rounded-2xl bg-white p-3 ring-1 ring-violet-100">
             <div className="flex items-start justify-between gap-3">
               <div className="min-w-0 [overflow-wrap:anywhere]">
@@ -114,12 +114,12 @@ function ListeOffres({ type, offres, source }: { type: TypeOffre; offres: OffreL
             </div>
             <div className="flex flex-wrap items-center gap-x-4">
               <Favori nom={`${o.m}, ${o.e}`} formation={{ id: `${o.k}-${o.e}-${o.v}-${o.m}-${o.p}`.slice(0, 400), intitule: o.p && type === 'LP' ? `${o.m} (${o.p})` : o.m,
-                etablissement: o.e, ville: o.v ?? '', lien: o.f ?? (o.w ? lienEtablissement(o.w) : null) }} />
+                etablissement: o.e, ville: o.v ?? '', lien: o.f ?? site ?? null }} />
               {o.f ? <Lien texte="Fiche Parcoursup (contacts de l’établissement)" url={o.f} />
-                : o.w ? <Lien texte="Fiche de l’établissement (site, candidature)" url={lienEtablissement(o.w)} /> : null}
+                : site ? <Lien texte="Site de l’établissement (formations, candidature)" url={site} /> : null}
             </div>
           </li>
-        ))}
+        )})}
       </ul>
       {offres.length > nb && <Bouton variante="secondaire" onClick={() => setNb(nb + PAR_PAGE)}>Voir {Math.min(PAR_PAGE, offres.length - nb)} de plus</Bouton>}
     </section>

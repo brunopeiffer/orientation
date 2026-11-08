@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { chargerOffres, lienEtablissement, offresLocales, POURSUITES, sansAccent, voiesDe, type Offre } from './postbts'
+import { chargerOffres, offresLocales, POURSUITES, sansAccent, voiesDe, type Offre } from './postbts'
 
 const ILLKIRCH = { lat: 48.5247, lon: 7.7224 }
 
@@ -70,7 +70,8 @@ describe('offres locales', () => {
     }
   })
 
-  it('le lien vers l’établissement pointe vers Paysage (ministère)', () => {
-    expect(lienEtablissement('hlX1r')).toBe('https://paysage.enseignementsup-recherche.gouv.fr/structures/hlX1r')
+  it('chaque licence pro a le site officiel de son établissement (le lien Paysage demande une connexion)', async () => {
+    const d = await chargerOffres()
+    expect(d.offres.filter((o) => o.k === 'LP').every((o) => o.w && d.sites[o.w]?.startsWith('https://'))).toBe(true)
   })
 })

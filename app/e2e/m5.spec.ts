@@ -45,7 +45,8 @@ test('BTS CG : chaque voie indique son canal (hors Parcoursup affiché) et les o
   for (const titre of [/Licences professionnelles en lien avec ton BTS \(\d+\)/, /^DCG/, /^BUT en lien avec ton BTS/]) {
     await expect(page.getByRole('heading', { level: 3, name: titre })).toBeVisible()
   }
-  await expect(page.getByRole('link', { name: /Fiche de l’établissement/ }).first()).toHaveAttribute('href', /^https:\/\/paysage\.enseignementsup-recherche\.gouv\.fr\/structures\//)
+  await expect(page.getByRole('link', { name: /Site de l’établissement/ }).first()).toHaveAttribute('href', /^https:\/\//)
+  await expect(page.locator('a[href*="paysage.enseignementsup-recherche.gouv.fr"]')).toHaveCount(0)
   await expect(page.getByText('estimation', { exact: true }).first()).toBeVisible()
   await sansViolation(page)
   expect(externes).toEqual([]) // données locales de l'app : rien ne sort

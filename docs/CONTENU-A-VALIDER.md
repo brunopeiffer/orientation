@@ -745,7 +745,7 @@ Statut : **A_VALIDER** (2026-11-08). Les canaux et calendriers changent chaque a
 - Pour viser un master ensuite. L’université décide du niveau d’entrée (L2 ou L3) selon ton dossier.
 - Canal : Hors Parcoursup : candidature directement auprès de l’université (souvent eCandidat), au printemps.
 - Alternance : Rare en licence générale.
-- Lien : Trouver l’université et son site (Paysage, ministère) (https://paysage.enseignementsup-recherche.gouv.fr/)
+- Lien : Que faire après un BTS (Onisep) (https://www.onisep.fr/formation/apres-le-bac-les-etudes-superieures/les-principales-filieres-d-etudes-superieures/les-bts-brevet-de-technicien-superieur/que-faire-apres-un-bts)
 - Sources : [Onisep, « Que faire après un BTS »](https://www.onisep.fr/formation/apres-le-bac-les-etudes-superieures/les-principales-filieres-d-etudes-superieures/les-bts-brevet-de-technicien-superieur/que-faire-apres-un-bts)
 
 ### Prépa ATS économie-gestion (BTS_CG, BTS_NDRC, BTS_SAM)

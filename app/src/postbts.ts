@@ -33,6 +33,7 @@ const OffresSchema = z.object({
     k: TypeOffre, m: z.string(), p: z.string(), e: z.string(), w: z.string().nullable().optional(),
     v: z.string().nullable(), d: z.string().nullable(), la: z.number(), lo: z.number(), f: z.string().url().nullable().optional(),
   })),
+  sites: z.record(z.string(), z.string().regex(/^https:\/\//)),
 })
 
 export const POURSUITES = ContenuSchema.parse(brut)
@@ -63,4 +64,3 @@ export function offresLocales(offres: Offre[], type: TypeOffre, publicId: string
     .sort((a, b) => a.km - b.km || a.o.m.localeCompare(b.o.m))
 }
 
-export const lienEtablissement = (w: string) => `https://paysage.enseignementsup-recherche.gouv.fr/structures/${encodeURIComponent(w)}`

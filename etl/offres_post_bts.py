@@ -8,6 +8,7 @@ Sources (Licence Ouverte Etalab 2.0) :
 Le tri « en lien avec ton BTS » se fait dans l'app, d'après contenu/poursuites-bts.json.
 Usage : python3 -I etl/offres_post_bts.py
 """
+import gzip
 import json
 import pathlib
 import sys
@@ -21,6 +22,8 @@ DIPLOMES, CARTO = "fr-esr-principaux-diplomes-et-formations-prepares-etablisseme
 CHAMPS_LP = ["annee_universitaire", "typ_diplome_lib", "libelle_intitule_1", "libelle_intitule_2", "etablissement_lib",
              "etablissement_id_paysage", "implantation_code_commune", "implantation_commune",
              "implantation_departement", "effectif"]
+# Site web officiel de chaque établissement (le lien Paysage demande désormais une connexion).
+ETABS, CHAMPS_ETABS = "fr-esr-principaux-etablissements-enseignement-superieur", ["etablissement_id_paysage", "url"]
 CHAMPS_CARTO = ["annee", "gta", "nm", "fl", "tf", "etab_nom", "commune", "departement", "etab_gps", "fiche"]
 COMMUNES = "https://geo.api.gouv.fr/communes?fields=code,centre&format=json&geometry=centre"
 # Paris, Lyon et Marseille : les inscriptions sont rattachées à l'arrondissement, absent de la liste des communes.
@@ -30,7 +33,9 @@ SORTIE = RACINE / "data/post-bts.json"
 
 def get_json(url):
     with urllib.request.urlopen(url, timeout=300) as r:
-        return json.load(r)
+        brut = r.read()
+    # Le serveur du ministère renvoie parfois du gzip sans qu'on l'ait demandé.
+    return json.loads(gzip.decompress(brut) if brut[:2] == b"\x1f\x8b" else brut)
 
 
 def mesr(jeu, chemin, params):
@@ -64,6 +69,12 @@ def licences_pro(lignes, centres):
     return sortie, sans_gps
 
 
+def sites(lignes):
+    """{identifiant Paysage: site web https} ; ignore les établissements sans site sûr."""
+    return {x["etablissement_id_paysage"]: x["url"] for x in lignes
+            if x.get("etablissement_id_paysage") and (x.get("url") or "").startswith("https://")}
+
+
 def parcoursup(lignes):
     """DCG et BUT de la carte Parcoursup (lieux réels, avec la fiche officielle)."""
     sortie, vus = [], set()
@@ -83,6 +94,7 @@ def parcoursup(lignes):
 def main():
     verifier(DIPLOMES, CHAMPS_LP, 'typ_diplome_lib="Licence professionnelle"')
     verifier(CARTO, CHAMPS_CARTO)
+    verifier(ETABS, CHAMPS_ETABS)
     annee_u = mesr(DIPLOMES, "records", {"select": "annee_universitaire", "where": 'typ_diplome_lib="Licence professionnelle"',
                                         "group_by": "annee_universitaire", "order_by": "annee_universitaire desc",
                                         "limit": 1})["results"][0]["annee_universitaire"]
@@ -92,6 +104,7 @@ def main():
                                           "where": f'typ_diplome_lib="Licence professionnelle" and annee_universitaire="{annee_u}"'})
     carto = mesr(CARTO, "exports/json", {"select": ",".join(CHAMPS_CARTO),
                                          "where": f'annee="{annee}" and (tf="DCG" or tf="BUT")'})
+    sites_web = sites(mesr(ETABS, "exports/json", {"select": ",".join(CHAMPS_ETABS)}))
     communes = get_json(COMMUNES) + get_json(ARRONDISSEMENTS)
     if not communes or "centre" not in communes[0]:
         raise SystemExit("ERREUR : réponse inattendue de geo.api.gouv.fr (champ centre absent)")
@@ -108,9 +121,11 @@ def main():
             "DCG": f"Parcoursup, cartographie des formations {annee}", "BUT": f"Parcoursup, cartographie des formations {annee}",
         },
         "licence": "Licence Ouverte Etalab 2.0", "offres": offres,
+        "sites": {w: sites_web[w] for w in sorted({o["w"] for o in offres_lp}) if w in sites_web},
     }, ensure_ascii=False, separators=(",", ":")) + "\n", encoding="utf-8")
     n = {k: sum(o["k"] == k for o in offres) for k in ("LP", "DCG", "BUT")}
-    print(f"{len(offres)} offres ({n}) ; licences pro {annee_u}, Parcoursup {annee} ; {sans_gps} licences pro sans commune géolocalisée")
+    print(f"{len(offres)} offres ({n}) ; licences pro {annee_u}, Parcoursup {annee} ; {sans_gps} licences pro sans commune géolocalisée ; "
+          f"{sum(o['w'] in sites_web for o in offres_lp)}/{len(offres_lp)} licences pro avec le site de l'établissement")
 
 
 if __name__ == "__main__":

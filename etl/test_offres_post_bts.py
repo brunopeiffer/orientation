@@ -4,7 +4,7 @@ import sys
 import unittest
 
 sys.path.insert(0, str(pathlib.Path(__file__).parent))
-from offres_post_bts import licences_pro, parcoursup  # noqa: E402
+from offres_post_bts import licences_pro, parcoursup, sites  # noqa: E402
 
 
 def lp(commune="67482", mention="Commerce et distribution", parcours="", etab="Université de Strasbourg"):
@@ -31,6 +31,11 @@ class TestLicencesPro(unittest.TestCase):
 
 
 class TestParcoursup(unittest.TestCase):
+    def test_sites_https_seulement(self):
+        self.assertEqual(sites([{"etablissement_id_paysage": "a", "url": "https://u.fr/"},
+                                {"etablissement_id_paysage": "b", "url": "http://x.fr"},
+                                {"etablissement_id_paysage": "c", "url": None}]), {"a": "https://u.fr/"})
+
     def test_garde_dcg_et_but_avec_leur_fiche(self):
         base = {"nm": ["DCG - Diplôme"], "fl": ["DCG - Diplôme"], "etab_nom": "Lycée", "commune": "Colmar",
                 "departement": "Haut-Rhin", "etab_gps": {"lat": 48.08, "lon": 7.36}, "fiche": "https://dossier.parcoursup.fr/x"}
