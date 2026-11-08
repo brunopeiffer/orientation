@@ -114,7 +114,11 @@ describe('appel à La bonne alternance', () => {
 
   it('source en panne ou réponse inattendue : erreur propre, rien en cache', async () => {
     expect((await traiter(req(OK), env(), deps(() => new Response('x', { status: 500 })))).status).toBe(503)
-    expect((await traiter(req(OK), env(), deps(() => new Response('x', { status: 429 })))).status).toBe(503)
+    const r429 = await traiter(req(OK), env(), deps(() => new Response('x', { status: 429 })))
+    expect(r429.status).toBe(503)
+    expect(await r429.json()).toEqual({ erreur: 'indisponible', statut: 429 })
+    const rx = await traiter(req(OK), env(), deps(() => { throw new TypeError('secret dans le message') }))
+    expect(await rx.json()).toEqual({ erreur: 'indisponible', statut: 'TypeError' })
     expect((await traiter(req(OK), env(), deps(() => new Response('x', { status: 401 })))).status).toBe(502)
     const d = deps(() => Response.json({ resultats: [] }))
     expect(await (await traiter(req(OK), env(), d)).json()).toEqual({ erreur: 'reponse_inattendue' })

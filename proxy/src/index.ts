@@ -143,12 +143,14 @@ export async function traiter(req: Request, env: Env, deps: Deps): Promise<Respo
   const q = new URLSearchParams({ latitude: String(p.lat), longitude: String(p.lon), radius: String(p.radius), romes: p.romes.join(',') })
   let reponse: Response
   try {
-    reponse = await deps.fetch(`${LBA}?${q}`, { headers: { Authorization: `Bearer ${env.LBA_TOKEN}`, Accept: 'application/json' }, signal: AbortSignal.timeout(8000) })
-  } catch {
-    return json({ erreur: 'indisponible' }, 503, origine)
+    reponse = await deps.fetch(`${LBA}?${q}`, { headers: { Authorization: `Bearer ${env.LBA_TOKEN.trim()}`, Accept: 'application/json' }, signal: AbortSignal.timeout(8000) })
+  } catch (e) {
+    // Seulement le type d'erreur (TimeoutError, TypeError…), jamais son message qui pourrait contenir la clé.
+    return json({ erreur: 'indisponible', statut: e instanceof Error ? e.name : 'inconnu' }, 503, origine)
   }
-  if (reponse.status === 429 || reponse.status >= 500) return json({ erreur: 'indisponible' }, 503, origine)
-  if (!reponse.ok) return json({ erreur: 'refus_source' }, 502, origine)
+  // Le code HTTP de la source (jamais la clé ni les paramètres) aide à diagnostiquer sans journal.
+  if (reponse.status === 429 || reponse.status >= 500) return json({ erreur: 'indisponible', statut: reponse.status }, 503, origine)
+  if (!reponse.ok) return json({ erreur: 'refus_source', statut: reponse.status }, 502, origine)
   const donnees = convertir(await reponse.json().catch(() => null))
   if (!donnees) return json({ erreur: 'reponse_inattendue' }, 502, origine)
 
@@ -161,6 +163,7 @@ export async function traiter(req: Request, env: Env, deps: Deps): Promise<Respo
 export default {
   fetch(req: Request, env: Env, ctx: { waitUntil(p: Promise<unknown>): void }): Promise<Response> {
     const cache = (caches as unknown as { default: Cache }).default
-    return traiter(req, env, { fetch, cache, attendre: (p) => ctx.waitUntil(p) })
+    // fetch doit garder son « this » global : appelé comme deps.fetch(), Workers lève « Illegal invocation ».
+    return traiter(req, env, { fetch: (u, i) => fetch(u, i), cache, attendre: (p) => ctx.waitUntil(p) })
   },
 }
