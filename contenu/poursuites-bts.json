@@ -275,7 +275,7 @@
         "url": "https://www.francecompetences.fr/recherche-resultats/?types=certification&search=bachelor"
       },
       "alternance": "Très souvent.",
-      "offres": null,
+      "offres": "ECOLE",
       "sources": [
         {
           "nom": "France compétences, répertoire national des certifications professionnelles",
@@ -293,7 +293,11 @@
           "nom": "Code du travail, article L6211-1 (formation gratuite pour l’apprenti)",
           "url": "https://code.travail.gouv.fr/code-du-travail/l6211-1"
         }
-      ]
+      ],
+      "lien2": {
+        "texte": "Voir les écoles près de chez toi",
+        "url": "#offres-ECOLE"
+      }
     },
     {
       "id": "cnam_intec",
@@ -435,6 +439,14 @@
       "DCG": [
         "dcg",
         "comptabilite et de gestion"
+      ],
+      "ECOLE": [
+        "gestion des entreprises, comptabilite/comptabilite",
+        "gestion des entreprises, comptabilite/administration de l'entreprise",
+        "banque, assurances, immobilier/finances",
+        "banque, assurances, immobilier/banque",
+        "banque, assurances, immobilier/assurances",
+        "gestion des entreprises, comptabilite/ressources humaines"
       ]
     },
     "BTS_NDRC": {
@@ -460,7 +472,16 @@
         "marketing",
         "strategie de marque"
       ],
-      "DCG": []
+      "DCG": [],
+      "ECOLE": [
+        "commerce, marketing, vente/marketing, vente",
+        "commerce, marketing, vente/commerce international",
+        "commerce, marketing, vente/grande distribution et petits commerces",
+        "commerce, marketing, vente/achat, approvisionnement",
+        "banque, assurances, immobilier/banque",
+        "banque, assurances, immobilier/assurances",
+        "banque, assurances, immobilier/immobilier"
+      ]
     },
     "BTS_SAM": {
       "LP": [
@@ -479,7 +500,12 @@
         "carrieres juridiques",
         "information communication parcours communication des organisations"
       ],
-      "DCG": []
+      "DCG": [],
+      "ECOLE": [
+        "gestion des entreprises, comptabilite/administration de l'entreprise",
+        "gestion des entreprises, comptabilite/ressources humaines",
+        "information-communication, audiovisuel/communication"
+      ]
     }
   }
 }

@@ -48,6 +48,10 @@ test('BTS CG : chaque voie indique son canal (hors Parcoursup affiché) et les o
   await expect(page.getByRole('link', { name: /Site de l’établissement/ }).first()).toHaveAttribute('href', /^https:\/\//)
   await expect(page.locator('a[href*="paysage.enseignementsup-recherche.gouv.fr"]')).toHaveCount(0)
   await expect(page.getByText('estimation', { exact: true }).first()).toBeVisible()
+  // Écoles privées : la reconnaissance par l'État est toujours écrite (reconnue, ou « Non reconnu »).
+  const ecoles = page.locator('#offres-ECOLE')
+  await expect(ecoles.getByRole('heading', { name: /Écoles privées : bachelors, mastères et titres/ })).toBeVisible()
+  await expect(ecoles.getByRole('listitem').first().getByText(/État|RNCP|Reconnaissance/).first()).toBeVisible()
   await sansViolation(page)
   expect(externes).toEqual([]) // données locales de l'app : rien ne sort
 })

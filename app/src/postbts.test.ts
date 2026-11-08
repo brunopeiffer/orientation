@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { chargerOffres, offresLocales, POURSUITES, sansAccent, voiesDe, type Offre } from './postbts'
+import { chargerOffres, offresLocales, POURSUITES, reconnaissance, sansAccent, voiesDe, type Offre } from './postbts'
 
 const ILLKIRCH = { lat: 48.5247, lon: 7.7224 }
 
@@ -57,6 +57,9 @@ describe('offres locales', () => {
       expect(offresLocales(d.offres, 'BUT', id, ILLKIRCH, 50).length, id).toBeGreaterThan(0)
     }
     expect(offresLocales(d.offres, 'DCG', 'BTS_CG', ILLKIRCH, 50).length).toBeGreaterThan(0)
+    for (const id of ['BTS_CG', 'BTS_NDRC', 'BTS_SAM']) expect(offresLocales(d.offres, 'ECOLE', id, ILLKIRCH, 50).length, id).toBeGreaterThan(0)
+    // Chaque licence pro a au moins un lien utile : fiche Onisep du diplôme ou site de l'établissement.
+    expect(d.offres.filter((o) => o.k === 'LP').every((o) => o.o || (o.w && d.sites[o.w]))).toBe(true)
   })
 
   it('chaque mot-clé local trouve au moins une offre réelle en France (pas de mot-clé mort)', async () => {
@@ -73,5 +76,20 @@ describe('offres locales', () => {
   it('chaque licence pro a le site officiel de son établissement (le lien Paysage demande une connexion)', async () => {
     const d = await chargerOffres()
     expect(d.offres.filter((o) => o.k === 'LP').every((o) => o.w && d.sites[o.w]?.startsWith('https://'))).toBe(true)
+  })
+})
+
+describe('reconnaissance des diplômes d’école', () => {
+  it('dit clairement quand une formation n’est pas reconnue par l’État', () => {
+    expect(reconnaissance("Certificat délivré par l'école")).toEqual({ texte: expect.stringMatching(/^Non reconnu par l’État/), reconnu: false })
+    expect(reconnaissance('Formation inscrite au RNCP').reconnu).toBe(true)
+    expect(reconnaissance("Diplôme d'école revêtu d'un visa officiel").texte).toMatch(/visé/)
+    expect(reconnaissance(null)).toEqual({ texte: 'Reconnaissance : non disponible', reconnu: null })
+  })
+
+  it('toutes les natures présentes dans les données ont un libellé connu', async () => {
+    const d = await chargerOffres()
+    const natures = new Set(d.offres.filter((o) => o.k === 'ECOLE').map((o) => o.r))
+    for (const n of natures) expect(reconnaissance(n).reconnu, String(n)).not.toBeNull()
   })
 })

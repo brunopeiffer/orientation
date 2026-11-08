@@ -3,7 +3,7 @@ import brut from '../../contenu/poursuites-bts.json'
 import { distanceRoute, type Point } from './formations'
 
 const Lien = z.object({ texte: z.string(), url: z.string().regex(/^(https:\/\/|#offres-)/) })
-const TypeOffre = z.enum(['LP', 'DCG', 'BUT'])
+const TypeOffre = z.enum(['LP', 'DCG', 'BUT', 'ECOLE'])
 
 const ContenuSchema = z.object({
   statut: z.string(),
@@ -32,6 +32,9 @@ const OffresSchema = z.object({
   offres: z.array(z.object({
     k: TypeOffre, m: z.string(), p: z.string(), e: z.string(), w: z.string().nullable().optional(),
     v: z.string().nullable(), d: z.string().nullable(), la: z.number(), lo: z.number(), f: z.string().url().nullable().optional(),
+    // Onisep : fiche du diplôme (o), page de la formation chez l'établissement (a) ; écoles : niveau, reconnaissance, durée, coût.
+    o: z.string().url().nullable().optional(), a: z.string().url().nullable().optional(),
+    n: z.string().optional(), r: z.string().nullable().optional(), du: z.string().nullable().optional(), c: z.string().nullable().optional(),
   })),
   sites: z.record(z.string(), z.string().regex(/^https:\/\//)),
 })
@@ -64,3 +67,17 @@ export function offresLocales(offres: Offre[], type: TypeOffre, publicId: string
     .sort((a, b) => a.km - b.km || a.o.m.localeCompare(b.o.m))
 }
 
+
+/** Ce que vaut le diplôme, en clair (« nature du certificat » de l'Onisep). reconnu = délivré ou reconnu par l'État. */
+export function reconnaissance(nature: string | null | undefined): { texte: string; reconnu: boolean | null } {
+  switch (nature) {
+    case "Diplôme national ou diplôme d'État": return { texte: 'Diplôme national, délivré par l’État', reconnu: true }
+    case 'Diplôme conférant le grade de licence': return { texte: 'Reconnu par l’État : grade de licence', reconnu: true }
+    case 'Diplôme conférant le grade de master': return { texte: 'Reconnu par l’État : grade de master', reconnu: true }
+    case "Diplôme d'école revêtu d'un visa officiel": return { texte: 'Diplôme visé par l’État', reconnu: true }
+    case 'Formation inscrite au RNCP': return { texte: 'Titre inscrit au RNCP : certification reconnue par l’État (ce n’est pas un diplôme national)', reconnu: true }
+    case 'Label de la Conférence des grandes écoles (CGE)': return { texte: 'Label d’une association d’écoles (CGE) : pas un diplôme reconnu par l’État', reconnu: false }
+    case "Certificat délivré par l'école": return { texte: 'Non reconnu par l’État : certificat délivré par l’école seule', reconnu: false }
+    default: return { texte: nature ? `Reconnaissance : ${nature}` : 'Reconnaissance : non disponible', reconnu: null }
+  }
+}

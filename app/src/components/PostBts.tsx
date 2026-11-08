@@ -1,7 +1,7 @@
 import { useEffect, useId, useState } from 'react'
 import { COEF_DETOUR } from '../formations'
 import {
-  chargerOffres, offresLocales, POURSUITES, voiesDe, type Donnees, type OffreLocale, type TypeOffre,
+  chargerOffres, offresLocales, POURSUITES, reconnaissance, voiesDe, type Donnees, type Offre, type OffreLocale, type TypeOffre,
 } from '../postbts'
 import { useEtat } from '../store'
 import { ChoixCommune, ChoixRayon } from './Formations'
@@ -13,11 +13,13 @@ const TITRES: Record<TypeOffre, string> = {
   LP: 'Licences professionnelles en lien avec ton BTS',
   DCG: 'DCG (diplôme de comptabilité et de gestion)',
   BUT: 'BUT en lien avec ton BTS (admission en 2e ou 3e année)',
+  ECOLE: 'Écoles privées : bachelors, mastères et titres (bac+3 à bac+5)',
 }
 const CANAL: Record<TypeOffre, string> = {
   LP: 'Hors Parcoursup : candidature directement auprès de l’établissement (souvent eCandidat).',
   DCG: '1re année sur Parcoursup ; entrée en 2e année avec dispenses : contacte l’établissement.',
   BUT: 'Hors Parcoursup pour la 2e ou 3e année : candidature directement auprès de l’IUT.',
+  ECOLE: 'Le plus souvent hors Parcoursup : candidature directement auprès de l’école. Avec un BTS, on entre souvent en 3e année d’un bachelor. Regarde d’abord la reconnaissance par l’État indiquée pour chaque formation.',
 }
 const PAR_PAGE = 10
 
@@ -104,8 +106,9 @@ function ListeOffres({ type, offres, source, sites }: { type: TypeOffre; offres:
             <div className="flex items-start justify-between gap-3">
               <div className="min-w-0 [overflow-wrap:anywhere]">
                 <p className="font-bold text-violet-900">{o.m}</p>
-                {o.p && <p className="text-sm text-slate-700">{type === 'LP' ? 'Parcours : ' : ''}{o.p}</p>}
+                {o.p && type !== 'ECOLE' && <p className="text-sm text-slate-700">{type === 'LP' ? 'Parcours : ' : ''}{o.p}</p>}
                 <p className="text-slate-700">{o.e}{o.v && ` · ${o.v}`}{o.d && ` (${o.d})`}</p>
+                {type === 'ECOLE' && <Ecole o={o} />}
                 {/^DGC\b/.test(o.m) && <p className="text-sm font-semibold text-amber-900">Diplôme propre au Cnam-Intec : ce n’est pas le DCG de l’État. Demande à l’Intec ce qu’il te permet de valider.</p>}
               </div>
               <p className="shrink-0 rounded-2xl bg-teal-50 px-3 py-1 text-center text-sm font-bold text-teal-900">
@@ -114,9 +117,11 @@ function ListeOffres({ type, offres, source, sites }: { type: TypeOffre; offres:
             </div>
             <div className="flex flex-wrap items-center gap-x-4">
               <Favori nom={`${o.m}, ${o.e}`} formation={{ id: `${o.k}-${o.e}-${o.v}-${o.m}-${o.p}`.slice(0, 400), intitule: o.p && type === 'LP' ? `${o.m} (${o.p})` : o.m,
-                etablissement: o.e, ville: o.v ?? '', lien: o.f ?? site ?? null }} />
+                etablissement: o.e, ville: o.v ?? '', lien: o.f ?? o.a ?? site ?? o.o ?? null }} />
               {o.f ? <Lien texte="Fiche Parcoursup (contacts de l’établissement)" url={o.f} />
-                : site ? <Lien texte="Site de l’établissement (formations, candidature)" url={site} /> : null}
+                : o.a ? <Lien texte="Page de la formation (programme, candidature)" url={o.a} />
+                : site ? <Lien texte="Site de l’établissement" url={site} /> : null}
+              {o.o && <Lien texte="Le diplôme expliqué (Onisep : contenu, admission)" url={o.o} />}
             </div>
           </li>
         )})}
@@ -133,5 +138,19 @@ function Lien({ texte, url }: { texte: string; url: string }) {
       className="inline-flex min-h-11 items-center font-semibold text-violet-800 underline underline-offset-4">
       {texte}{externe && <span className="sr-only"> (s’ouvre dans un nouvel onglet)</span>}
     </a>
+  )
+}
+
+/** École privée : niveau, durée, coût, et surtout ce que vaut le diplôme (jamais par la couleur seule : le texte le dit). */
+function Ecole({ o }: { o: Offre }) {
+  const r = reconnaissance(o.r)
+  return (
+    <>
+      <p className="text-sm text-slate-700">{[o.n && `Niveau ${o.n}`, o.du && `Durée : ${o.du}`].filter(Boolean).join(' · ')}</p>
+      <p className={`mt-1 inline-block rounded-full px-3 py-1 text-xs font-bold ${r.reconnu ? 'bg-emerald-100 text-emerald-900' : r.reconnu === false ? 'bg-rose-100 text-rose-900' : 'bg-slate-100 text-slate-800'}`}>
+        <span aria-hidden="true">{r.reconnu ? '✓ ' : r.reconnu === false ? '⚠ ' : ''}</span>{r.texte}
+      </p>
+      <p className="text-sm text-slate-700">Coût : {o.c ?? 'non disponible'}</p>
+    </>
   )
 }

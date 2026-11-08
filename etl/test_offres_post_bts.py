@@ -4,7 +4,7 @@ import sys
 import unittest
 
 sys.path.insert(0, str(pathlib.Path(__file__).parent))
-from offres_post_bts import licences_pro, parcoursup, sites  # noqa: E402
+from offres_post_bts import ecoles, licences_pro, liens_licences_pro, parcoursup, sites  # noqa: E402
 
 
 def lp(commune="67482", mention="Commerce et distribution", parcours="", etab="Université de Strasbourg"):
@@ -21,7 +21,8 @@ class TestLicencesPro(unittest.TestCase):
         offres, sans_gps = licences_pro([lp(), lp(), lp(parcours="Commerce et distribution")], CENTRES)
         self.assertEqual(len(offres), 2)  # le doublon exact est ignoré
         self.assertEqual(offres[0], {"k": "LP", "m": "Commerce et distribution", "p": "", "e": "Université de Strasbourg",
-                                     "w": "abc12", "v": "Strasbourg", "d": "Bas-Rhin", "la": 48.5734, "lo": 7.7521})
+                                     "w": "abc12", "v": "Strasbourg", "d": "Bas-Rhin", "la": 48.5734, "lo": 7.7521,
+                                     "o": None, "a": None})
         self.assertEqual(offres[1]["p"], "")  # parcours identique à la mention : non répété
         self.assertEqual(sans_gps, 0)
 
@@ -46,3 +47,29 @@ class TestParcoursup(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+def onisep(**p):
+    base = {"Formation (FOR) libellé": "licence pro mention commerce et distribution", "FOR URL et ID Onisep": "https://www.onisep.fr/f",
+            "FOR indexation domaine web Onisep": "commerce, marketing, vente/marketing, vente", "FOR type": "licence pro",
+            "FOR nature du certificat": "Diplôme national ou diplôme d'État", "FOR niveau de sortie": "bac + 3",
+            "Lieu d'enseignement (ENS) libellé": "IUT", "ENS statut": "public", "ENS commune": "Strasbourg",
+            "ENS département": "Bas-Rhin", "ENS latitude": "48.58", "ENS longitude": "7.75", "AF durée cycle standard": "1 an",
+            "AF coût scolarité": "", "AF page web": "https://iut.fr/lp-commerce"}
+    return {**base, **p}
+
+
+class TestOnisep(unittest.TestCase):
+    def test_licence_pro_reliee_a_sa_fiche_onisep_et_a_sa_page(self):
+        offres, _ = licences_pro([lp()], CENTRES, liens_licences_pro([onisep()]))
+        self.assertEqual((offres[0]["o"], offres[0]["a"]), ("https://www.onisep.fr/f", "https://iut.fr/lp-commerce"))
+
+    def test_ecoles_privees_seulement_avec_reconnaissance_et_cout(self):
+        prive = onisep(**{"Formation (FOR) libellé": "bachelor responsable commercial", "FOR type": "formation d'école spécialisée",
+                          "ENS statut": "privé hors contrat", "FOR nature du certificat": "Certificat délivré par l'école",
+                          "AF coût scolarité": "8000 euros par an", "AF page web": "http://pas-https.fr"})
+        e = ecoles([onisep(), prive, prive, onisep(**{**prive, "FOR niveau de sortie": "bac + 2"}),
+                    onisep(**{**prive, "FOR indexation domaine web Onisep": "arts, culture, artisanat/arts graphiques"})])
+        self.assertEqual(len(e), 1)  # public, doublon, bac+2 et domaine hors sujet écartés
+        self.assertEqual((e[0]["m"], e[0]["r"], e[0]["c"], e[0]["a"]),
+                         ("Bachelor responsable commercial", "Certificat délivré par l'école", "8000 euros par an", None))
