@@ -25,6 +25,11 @@ SORTIE = RACINE / "data/formations"
 INDEX = RACINE / "data/formations-index.json"
 
 
+# dossierappel.parcoursup.fr renvoie désormais 404 ; la même fiche est servie par dossier.parcoursup.fr.
+def fiche(url):
+    return url.replace("https://dossierappel.parcoursup.fr/", "https://dossier.parcoursup.fr/") if url else url
+
+
 def get(jeu, chemin, params):
     with urllib.request.urlopen(f"{BASE}{jeu}/{chemin}?{urllib.parse.urlencode(params)}", timeout=300) as r:
         return json.load(r)
@@ -71,7 +76,7 @@ def construire(stats, carto):
             "i": c["gta"], "n": nom, "p": [x for x in c["fl"] or [] if x != nom], "t": (c["tf"] or [""])[0],
             "e": c["etab_nom"], "v": c["commune"], "d": c["departement"],
             "la": round(gps["lat"], 4), "lo": round(gps["lon"], 4),
-            "pu": (c["tc"] or "").startswith("Public"), "a": bool(c["app"]), "h": bool(c["int"]), "f": c["fiche"],
+            "pu": (c["tc"] or "").startswith("Public"), "a": bool(c["app"]), "h": bool(c["int"]), "f": fiche(c["fiche"]),
         }
         s = par_code.get(c["gta"])
         if s:

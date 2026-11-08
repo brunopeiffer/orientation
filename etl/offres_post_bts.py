@@ -31,6 +31,11 @@ ARRONDISSEMENTS = COMMUNES + "&type=arrondissement-municipal"
 SORTIE = RACINE / "data/post-bts.json"
 
 
+# dossierappel.parcoursup.fr renvoie désormais 404 ; la même fiche est servie par dossier.parcoursup.fr.
+def fiche(url):
+    return url.replace("https://dossierappel.parcoursup.fr/", "https://dossier.parcoursup.fr/") if url else url
+
+
 def get_json(url):
     with urllib.request.urlopen(url, timeout=300) as r:
         brut = r.read()
@@ -87,7 +92,7 @@ def parcoursup(lignes):
         vus.add(c["gta"])
         sortie.append({"k": k, "m": (c["nm"] or c["fl"] or ["?"])[0], "p": " ; ".join(c["fl"] or []), "e": c["etab_nom"],
                        "v": c["commune"], "d": c["departement"], "la": round(gps["lat"], 4), "lo": round(gps["lon"], 4),
-                       "f": c["fiche"]})
+                       "f": fiche(c["fiche"])})
     return sortie
 
 
