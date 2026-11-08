@@ -21,8 +21,8 @@
       "id": "proxy",
       "nom": "Relais de l’app pour La bonne alternance (Cloudflare)",
       "hote": "",
-      "usage": "Chercher des offres en alternance sur La bonne alternance, quand tu cliques sur « Chercher ». Le relais garde secrète la clé de l’app et ne conserve aucun journal.",
-      "envoye": "Les coordonnées du centre de ta commune (arrondies à environ 1 km), la distance et les codes des métiers recherchés (ex. M1203). Jamais ton prénom, tes réponses ni une éventuelle situation de handicap.",
+      "usage": "Chercher des offres et des formations en alternance sur La bonne alternance, quand tu cliques sur « Chercher ». Le relais garde secrète la clé de l’app et ne conserve aucun journal.",
+      "envoye": "Les coordonnées du centre de ta commune (arrondies à environ 1 km), la distance, les codes des métiers recherchés (ex. M1203) et le niveau de formation visé (bac+2 ou bac+3). Jamais ton prénom, tes réponses ni une éventuelle situation de handicap.",
       "licence": "Contenus de La bonne alternance : Licence Ouverte Etalab 2.0"
     }
   ]

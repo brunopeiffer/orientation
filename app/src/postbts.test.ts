@@ -19,7 +19,7 @@ describe('voies de poursuite après BTS (contenu)', () => {
     expect(voiesDe('BTS_CG').map((v) => v.id)).toEqual(expect.arrayContaining(['dcg', 'emploi', 'cca', 'cnam_intec', 'paie', 'fonction_publique']))
     expect(voiesDe('BTS_NDRC').map((v) => v.id)).not.toContain('dcg')
     expect(voiesDe('BTS_NDRC').length).toBeGreaterThanOrEqual(6)
-    expect(voiesDe('BTS_SAM').map((v) => v.id)).toEqual(expect.arrayContaining(['emploi_sam', 'licence_pro', 'fonction_publique']))
+    expect(voiesDe('BTS_SAM').map((v) => v.id)).toEqual(expect.arrayContaining(['emploi_sam', 'licence_pro', 'fonction_publique', 'cnam']))
     expect(voiesDe('BTS_SAM').map((v) => v.id)).not.toContain('dcg')
     expect(voiesDe('STMG')).toEqual([])
   })

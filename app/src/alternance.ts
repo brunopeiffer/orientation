@@ -92,6 +92,26 @@ export async function chercherOffres(depuis: Point, rayon: number, romes: string
   return OffresSchema.parse(await obtenirJson(`${PROXY_URL}/alternance?${q}`, signal))
 }
 
+const FormationsSchema = z.object({
+  source: z.string(),
+  date: z.string(),
+  formations: z.array(z.object({
+    id: z.string(), titre: z.string(), organisme: z.string(), ville: z.string().nullable(), lat: z.number().nullable(), lon: z.number().nullable(),
+    distanciel: z.boolean(), qualiopi: z.boolean().nullable(), onisep: z.string().url().nullable(), debut: z.string().nullable(),
+  })),
+})
+export type ReponseFormations = z.infer<typeof FormationsSchema>
+
+/** Formations en apprentissage (catalogue des Carif-Oref via La bonne alternance) : niveau 5 = bac+2, 6 = bac+3. */
+export async function chercherFormationsApprentissage(depuis: Point, rayon: number, romes: string[], niveau: '5' | '6', signal?: AbortSignal): Promise<ReponseFormations> {
+  if (!proxyConfigure()) throw new Error('proxy non configuré')
+  const q = new URLSearchParams({
+    lat: String(arrondi(depuis.lat)), lon: String(arrondi(depuis.lon)),
+    radius: String(Math.min(rayon, RAYON_MAX_OFFRES)), romes: romes.slice(0, 10).join(','), niveau,
+  })
+  return FormationsSchema.parse(await obtenirJson(`${PROXY_URL}/formations?${q}`, signal))
+}
+
 /** Entreprises proches + recruteurs de La bonne alternance, sans doublon (même SIRET) ; les recruteurs passent devant. */
 export function fusionnerEntreprises(entreprises: Entreprise[], recruteurs: ReponseOffres['recruteurs'], depuis: Point) {
   const vus = new Set<string>()

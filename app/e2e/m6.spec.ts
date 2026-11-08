@@ -12,6 +12,11 @@ const OFFRES = {
     lat: 48.555, lon: 7.744, contrats: ['Apprentissage'], debut: '2027-09-01T00:00:00.000Z', niveau: 'Licence, BUT', url: 'https://labonnealternance.apprentissage.beta.gouv.fr/offre/o1', partenaire: 'France Travail' }],
   recruteurs: [{ siret: '222', nom: 'Fiducial Strasbourg', adresse: '2 rue X', lat: 48.57, lon: 7.75, activite: 'Activités comptables', url: null }],
 }
+const FORMATIONS = {
+  source: 'La bonne alternance (catalogue des formations en apprentissage du réseau des Carif-Oref)', date: '2026-11-08',
+  formations: [{ id: 'f1', titre: 'Licence professionnelle gestion de la paie', organisme: 'Cnam Grand Est', ville: 'Strasbourg', lat: 48.58, lon: 7.75,
+    distanciel: false, qualiopi: true, onisep: 'https://www.onisep.fr/x', debut: '2027-09-01' }],
+}
 const ENTREPRISES = { results: [
   { nom_complet: 'FIDUCIAL', matching_etablissements: [{ siret: '222', adresse: '2 RUE X 67000 STRASBOURG', latitude: '48.57', longitude: '7.75', activite_principale: '69.20Z', etat_administratif: 'A' }] },
   { nom_complet: 'CABINET DUPONT', matching_etablissements: [{ siret: '333', adresse: '3 RUE Y 67400 ILLKIRCH', latitude: '48.53', longitude: '7.72', activite_principale: '69.20Z', etat_administratif: 'A' }] },
@@ -23,7 +28,8 @@ type Capture = { url: string; corps: string | null; entetes: Record<string, stri
 async function demarrer(page: Page, { proxy = 200, handicap = { actif: false, sujets: [] as string[] } } = {}) {
   const sortantes: Capture[] = []
   page.on('request', (r: Request) => { if (!r.url().startsWith('http://localhost')) sortantes.push({ url: r.url(), corps: r.postData(), entetes: r.headers() }) })
-  await page.route('https://proxy.test/**', (route) => proxy === 200 ? route.fulfill({ json: OFFRES }) : route.fulfill({ status: proxy, json: { erreur: 'non_configure' } }))
+  await page.route('https://proxy.test/**', (route) => proxy !== 200 ? route.fulfill({ status: proxy, json: { erreur: 'non_configure' } })
+    : route.fulfill({ json: route.request().url().includes('/formations?') ? FORMATIONS : OFFRES }))
   await page.route('https://recherche-entreprises.api.gouv.fr/**', (route) => route.fulfill({ json: ENTREPRISES }))
   await page.goto('/')
   await page.evaluate((handicap) => {
@@ -57,10 +63,17 @@ test('alternance : offres via le proxy, entreprises sans doublon, paramètres mi
   await expect(page.getByRole('heading', { name: /2 entreprises proches/ })).toBeVisible()
   await expect(page.getByRole('heading', { level: 3, name: 'Fiducial Strasbourg' })).toHaveCount(1)
   await expect(page.getByText(/Susceptible de recruter en alternance/)).toHaveCount(1)
+  await expect(page.getByRole('heading', { name: /1 formation en apprentissage \(bac\+3, après ton BTS\)/ })).toBeVisible()
+  await expect(page.getByText(/Cnam Grand Est · Strasbourg/)).toBeVisible()
+  await expect(page.getByText(/Organisme certifié Qualiopi/)).toBeVisible()
   await expect(page.getByRole('link', { name: /Fiche officielle de l’entreprise : CABINET DUPONT/ })).toHaveAttribute('href', 'https://annuaire-entreprises.data.gouv.fr/etablissement/333')
   await sansViolation(page)
 
-  const proxy = sortantes.filter((s) => s.url.startsWith('https://proxy.test/'))
+  const proxy = sortantes.filter((s) => s.url.startsWith('https://proxy.test/alternance'))
+  const form = sortantes.filter((s) => s.url.startsWith('https://proxy.test/formations'))
+  expect(form).toHaveLength(1)
+  expect([...new URL(form[0].url).searchParams.keys()].sort()).toEqual(['lat', 'lon', 'niveau', 'radius', 'romes'])
+  expect(new URL(form[0].url).searchParams.get('niveau')).toBe('6')
   const ent = sortantes.filter((s) => s.url.startsWith('https://recherche-entreprises.api.gouv.fr/'))
   expect(proxy).toHaveLength(1)
   expect(ent).toHaveLength(1)

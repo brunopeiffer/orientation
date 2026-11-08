@@ -324,6 +324,35 @@
       ]
     },
     {
+      "id": "cnam",
+      "titre": "Étudier en travaillant : le Cnam",
+      "publics": [
+        "BTS_NDRC",
+        "BTS_SAM"
+      ],
+      "niveau": "Bac+3 à Bac+5",
+      "duree": "À ton rythme",
+      "description": "Le Cnam propose des formations en management, marketing et ressources humaines, du bac au doctorat. Elles existent en cours du soir, en journée, en alternance ou à distance, dans ses centres de chaque région : tu peux avoir un emploi et continuer à te former.",
+      "parcoursup": false,
+      "canal": "Selon la formation : certaines sont sur Parcoursup, les autres se demandent directement au Cnam ou dans son centre régional. Regarde les dates sur leur site.",
+      "lien": {
+        "texte": "Les formations du Cnam",
+        "url": "https://www.cnam.fr/formation"
+      },
+      "alternance": "Possible (le Cnam compte environ 18 000 élèves en alternance).",
+      "offres": null,
+      "sources": [
+        {
+          "nom": "Cnam, « Formations » (management, marketing, RH ; cours du soir, alternance, distance)",
+          "url": "https://www.cnam.fr/formation"
+        },
+        {
+          "nom": "Cnam, page d’accueil (centres en région, chiffres clés)",
+          "url": "https://www.cnam.fr/"
+        }
+      ]
+    },
+    {
       "id": "paie",
       "titre": "Spécialisation courte : gestionnaire de paie",
       "publics": [

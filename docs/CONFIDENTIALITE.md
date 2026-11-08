@@ -22,7 +22,7 @@ et politique de sécurité du contenu du navigateur).
 |---|---|---|
 | Géocodage de l'IGN (`data.geopf.fr`) | Quand tu cherches ta commune | Ce que tu tapes : nom de commune ou code postal |
 | Recherche d'entreprises de l'État (`recherche-entreprises.api.gouv.fr`) | Quand tu cliques sur « Chercher » à l'étape alternance | Coordonnées du centre de ta commune arrondies à environ 1 km, distance, codes d'activité |
-| Relais de l'app pour La bonne alternance (proxy Cloudflare, adresse fixée au déploiement) | Quand tu cliques sur « Chercher » à l'étape alternance | Coordonnées arrondies à environ 1 km, distance, codes ROME des métiers choisis |
+| Relais de l'app pour La bonne alternance (proxy Cloudflare, adresse fixée au déploiement) | Quand tu cliques sur « Chercher » à l'étape alternance | Coordonnées arrondies à environ 1 km, distance, codes ROME des métiers choisis, niveau de formation visé (bac+2 ou bac+3) |
 
 **Jamais envoyés** : ton prénom, tes réponses aux tests, tes notes, et les informations du module handicap.
 Les liens vers des sites officiels (Parcoursup, France Travail, etc.) ne sont suivis que si tu cliques dessus.

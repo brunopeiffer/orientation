@@ -1,10 +1,11 @@
 import { useId, useState } from 'react'
 import {
-  chercherEntreprises, chercherOffres, fusionnerEntreprises, lienAnnuaire, lienLBA, proxyConfigure, RAYON_MAX_ENTREPRISES, RAYON_MAX_OFFRES,
-  type Entreprise, type ReponseOffres,
+  chercherEntreprises, chercherFormationsApprentissage, chercherOffres, fusionnerEntreprises, lienAnnuaire, lienLBA, proxyConfigure, RAYON_MAX_ENTREPRISES, RAYON_MAX_OFFRES,
+  type Entreprise, type ReponseFormations, type ReponseOffres,
 } from '../alternance'
 import { distanceRoute } from '../formations'
 import { pistes } from '../metiers'
+import { parcoursDe } from '../schema'
 import { useEtat } from '../store'
 import { ChoixCommune, ChoixRayon } from './Formations'
 import Handicap from './Handicap'
@@ -22,6 +23,8 @@ export default function Alternance() {
   const [erreurOffres, setErreurOffres] = useState(false)
   const [entreprises, setEntreprises] = useState<Entreprise[] | null>(null)
   const [erreurEntreprises, setErreurEntreprises] = useState(false)
+  const [formations, setFormations] = useState<ReponseFormations | null>(null)
+  const niveau = parcoursDe(publicId) === 'bts' ? '6' : '5'
   const commune = mobilite.commune
   const rayon = mobilite.rayon ?? RAYON_MAX_OFFRES
   const selection = mesPistes.filter((p) => choisis.includes(p.metier.code))
@@ -30,10 +33,13 @@ export default function Alternance() {
     if (!commune || !selection.length) return
     setEtat('recherche')
     const familles = [...new Set(selection.map((p) => p.famille.id))]
-    const [o, e] = await Promise.allSettled([
-      proxyConfigure() ? chercherOffres(commune, rayon, selection.map((p) => p.metier.code)) : Promise.reject(new Error('non configuré')),
+    const romes = selection.map((p) => p.metier.code)
+    const [o, e, f] = await Promise.allSettled([
+      proxyConfigure() ? chercherOffres(commune, rayon, romes) : Promise.reject(new Error('non configuré')),
       chercherEntreprises(commune, rayon, familles),
+      proxyConfigure() ? chercherFormationsApprentissage(commune, rayon, romes, niveau) : Promise.reject(new Error('non configuré')),
     ])
+    setFormations(f.status === 'fulfilled' ? f.value : null)
     setOffres(o.status === 'fulfilled' ? o.value : null)
     setErreurOffres(o.status === 'rejected')
     setEntreprises(e.status === 'fulfilled' ? e.value : null)
@@ -104,6 +110,7 @@ export default function Alternance() {
                     </ul>
                   </section>
                 )}
+                {formations && <FormationsApprentissage r={formations} depuis={commune} niveau={niveau} />}
                 {erreurEntreprises ? (
                   <p role="alert" className="font-semibold text-rose-700">La recherche d’entreprises ne répond pas. Réessaie dans quelques instants.</p>
                 ) : entreprises && <Entreprises liste={fusionnerEntreprises(entreprises, offres?.recruteurs ?? [], commune)} />}
@@ -150,6 +157,47 @@ function Offres({ r, depuis }: { r: ReponseOffres; depuis: { lat: number; lon: n
         ))}
       </ul>
       {liste.length > nb && <Bouton variante="secondaire" onClick={() => setNb(nb + PAR_PAGE)}>Voir {Math.min(PAR_PAGE, liste.length - nb)} offres de plus</Bouton>}
+      <p className="text-sm text-slate-600">Source : {r.source}, consultée le {new Date(r.date).toLocaleDateString('fr-FR')}.</p>
+    </section>
+  )
+}
+
+function FormationsApprentissage({ r, depuis, niveau }: { r: ReponseFormations; depuis: { lat: number; lon: number }; niveau: '5' | '6' }) {
+  const id = useId()
+  const [nb, setNb] = useState(PAR_PAGE)
+  const liste = r.formations
+    .map((f) => ({ f, km: f.lat !== null && f.lon !== null ? distanceRoute(depuis, { lat: f.lat, lon: f.lon }) : null }))
+    .sort((a, b) => (a.km ?? 1e9) - (b.km ?? 1e9))
+  return (
+    <section aria-labelledby={id} className="space-y-2">
+      <h2 id={id} className="text-xl font-extrabold text-violet-900">
+        {liste.length} formation{liste.length > 1 ? 's' : ''} en apprentissage ({niveau === '6' ? 'bac+3, après ton BTS' : 'bac+2, après le bac'})
+      </h2>
+      <p className="text-sm text-slate-700">Écoles, CFA, universités, Cnam… Pour y entrer, il faut aussi trouver une entreprise : commence les deux démarches en même temps.</p>
+      {liste.length === 0 && <p>Aucune formation pour ces métiers dans ce rayon : élargis la distance ou essaie d’autres métiers.</p>}
+      <ul className="space-y-2">
+        {liste.slice(0, nb).map(({ f, km }) => (
+          <li key={f.id} className="rounded-2xl bg-white p-3 shadow-sm ring-1 ring-violet-100">
+            <div className="flex items-start justify-between gap-3">
+              <div className="min-w-0 [overflow-wrap:anywhere]">
+                <h3 className="font-bold text-violet-900">{f.titre}</h3>
+                <p className="text-slate-700">{f.organisme}{f.ville && ` · ${f.ville}`}</p>
+                <p className="text-sm text-slate-600">
+                  {[f.distanciel && 'Entièrement à distance', f.qualiopi === true && 'Organisme certifié Qualiopi', f.qualiopi === false && 'Pas de certification Qualiopi indiquée',
+                    f.debut && `Prochaine rentrée : ${new Date(f.debut).toLocaleDateString('fr-FR')}`].filter(Boolean).join(' · ')}
+                </p>
+              </div>
+              {km !== null && <p className="shrink-0 rounded-2xl bg-teal-50 px-3 py-1 text-center text-sm font-bold text-teal-900">≈ {km} km<span className="block text-xs font-medium">estimation</span></p>}
+            </div>
+            {f.onisep && (
+              <a href={f.onisep} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 items-center font-semibold text-violet-800 underline underline-offset-4">
+                Fiche de la formation (Onisep)<span className="sr-only"> : {f.titre} (s’ouvre dans un nouvel onglet)</span>
+              </a>
+            )}
+          </li>
+        ))}
+      </ul>
+      {liste.length > nb && <Bouton variante="secondaire" onClick={() => setNb(nb + PAR_PAGE)}>Voir {Math.min(PAR_PAGE, liste.length - nb)} formations de plus</Bouton>}
       <p className="text-sm text-slate-600">Source : {r.source}, consultée le {new Date(r.date).toLocaleDateString('fr-FR')}.</p>
     </section>
   )

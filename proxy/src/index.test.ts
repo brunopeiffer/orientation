@@ -1,6 +1,6 @@
 import { readFileSync } from 'node:fs'
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
-import { dedoublonner, LBA, normaliserTitre, traiter, type Deps, type Env, type Offre, type Recruteur } from './index'
+import { dedoublonner, LBA, LBA_FORMATIONS, normaliserTitre, traiter, type Deps, type Env, type Offre, type Recruteur } from './index'
 
 const ORIGINE = 'https://exemple.github.io'
 const JETON = 'jeton-de-test-pas-un-vrai'
@@ -158,6 +158,45 @@ describe('dédoublonnage', () => {
 
   it('normalise les titres', () => {
     expect(normaliserTitre('Assistant(e) Comptable H/F en Alternance')).toBe(normaliserTitre('assistant comptable (f/h)'))
+  })
+})
+
+describe('formations en apprentissage', () => {
+  const formation = (id: string, titre: string, enseigne: string) => ({
+    identifiant: { cle_ministere_educatif: id },
+    certification: { valeur: { intitule: { cfd: { court: 'X', long: titre }, rncp: null } } },
+    formateur: { organisme: { etablissement: { enseigne }, unite_legale: { raison_sociale: 'CNAM' }, renseignements_specifiques: { qualiopi: true } } },
+    lieu: { adresse: { commune: { nom: 'Strasbourg' } }, geolocalisation: { type: 'Point', coordinates: [7.75, 48.58] } },
+    modalite: { entierement_a_distance: false }, onisep: { url: 'https://www.onisep.fr/x', lien_site_onisepfr: null, intitule: null },
+    sessions: [{ debut: '2027-09-01', fin: '2028-07-01' }],
+  })
+  const REPONSE = { data: [formation('a', 'Licence pro commerce', 'Cnam Grand Est'), formation('b', 'Licence pro commerce', 'Cnam Grand Est'), { identifiant: {} }], pagination: {} }
+  const F = OK.replace('alternance?', 'formations?')
+
+  it('appelle la recherche de formations de niveau 6 avec la clé, garde l’utile, une fois par formation', async () => {
+    const d = deps(() => Response.json(REPONSE))
+    const r = await traiter(req(F), env(), d)
+    expect(r.status).toBe(200)
+    const u = new URL(d.appels[0])
+    expect(`${u.origin}${u.pathname}`).toBe(LBA_FORMATIONS)
+    expect(u.searchParams.get('target_diploma_level')).toBe('6')
+    expect(d.entetes[0].get('Authorization')).toBe(`Bearer ${JETON}`)
+    const corps = await r.json()
+    expect(corps.formations).toEqual([{ id: 'a', titre: 'Licence pro commerce', organisme: 'Cnam Grand Est', ville: 'Strasbourg', lat: 48.58, lon: 7.75,
+      distanciel: false, qualiopi: true, onisep: 'https://www.onisep.fr/x', debut: '2027-09-01' }])
+    expect(JSON.stringify(corps)).not.toContain(JETON)
+  })
+
+  it('cache distinct des offres d’emploi ; réponse inattendue : erreur propre', async () => {
+    const d = deps(() => Response.json(REPONSE))
+    await traiter(req(F), env(), d)
+    await traiter(req(OK), env(), deps())
+    expect((await traiter(req(F), env(), d)).headers.get('X-Cache')).toBe('HIT')
+    expect((await traiter(req(F), env(), deps(() => Response.json({ jobs: [] })))).status).toBe(502)
+    expect((await traiter(req(`${F}&niveau=9`), env(), deps())).status).toBe(400)
+    const d5 = deps(() => Response.json(REPONSE))
+    await traiter(req(`${F}&niveau=5`), env(), d5)
+    expect(new URL(d5.appels[0]).searchParams.get('target_diploma_level')).toBe('5')
   })
 })
 

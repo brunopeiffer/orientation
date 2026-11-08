@@ -6,6 +6,7 @@
  * AUCUN journal (ni commune, ni coordonnées, ni paramètres) : ce fichier n'écrit jamais dans les journaux (testé).
  * Route La bonne alternance vérifiée dans le code source officiel (mission-apprentissage/api-apprentissage) :
  * GET /api/job/v1/search?latitude&longitude&radius&romes, en-tête « Authorization: Bearer <clé> ».
+ * Formations : GET /api/formation/v1/search (mêmes paramètres + target_diploma_level), champs lus dans la spec OpenAPI officielle.
  */
 
 export interface Env {
@@ -18,8 +19,10 @@ type Cache = { match(r: Request): Promise<Response | undefined>; put(r: Request,
 export type Deps = { fetch: typeof fetch; cache: Cache | null; attendre?: (p: Promise<unknown>) => void }
 
 export const LBA = 'https://api.apprentissage.beta.gouv.fr/api/job/v1/search'
+export const LBA_FORMATIONS = 'https://api.apprentissage.beta.gouv.fr/api/formation/v1/search'
 export const TTL = 3600
 const SOURCE = 'La bonne alternance (offres de France Travail, Indeed, Monster et d’autres partenaires)'
+const SOURCE_FORMATIONS = 'La bonne alternance (catalogue des formations en apprentissage du réseau des Carif-Oref)'
 
 export type Params = { lat: number; lon: number; radius: number; romes: string[] }
 
@@ -80,6 +83,37 @@ export function convertir(json: unknown): { offres: Offre[]; recruteurs: Recrute
   return { offres, recruteurs }
 }
 
+export type Formation = {
+  id: string; titre: string; organisme: string; ville: string | null; lat: number | null; lon: number | null
+  distanciel: boolean; qualiopi: boolean | null; onisep: string | null; debut: string | null
+}
+
+/** Formations en apprentissage : ne garde que l'utile, une fois par (intitulé, organisme, ville). null si forme inattendue. */
+export function convertirFormations(json: unknown): Formation[] | null {
+  const j = obj(json)
+  if (!Array.isArray(j.data)) return null
+  const vus = new Set<string>()
+  return j.data.map((x): Formation | null => {
+    const f = obj(x), cert = obj(obj(obj(f.certification).valeur).intitule), org = obj(obj(f.formateur).organisme), lieu = obj(f.lieu)
+    const id = txt(obj(f.identifiant).cle_ministere_educatif)
+    const titre = txt(obj(cert.cfd).long) ?? txt(cert.rncp) ?? txt(obj(f.onisep).intitule)
+    if (!id || !titre) return null
+    const [lat, lon] = point(lieu.geolocalisation)
+    const sessions = Array.isArray(f.sessions) ? f.sessions : []
+    const qualiopi = obj(org.renseignements_specifiques).qualiopi
+    return {
+      id, titre, organisme: txt(obj(org.etablissement).enseigne) ?? txt(obj(org.unite_legale).raison_sociale) ?? 'Organisme non précisé',
+      ville: txt(obj(obj(lieu.adresse).commune).nom), lat, lon, distanciel: obj(f.modalite).entierement_a_distance === true,
+      qualiopi: typeof qualiopi === 'boolean' ? qualiopi : null, onisep: https(obj(f.onisep).url) ?? https(obj(f.onisep).lien_site_onisepfr),
+      debut: txt(obj(sessions[0]).debut),
+    }
+  }).filter((x): x is Formation => {
+    if (!x) return false
+    const cle = `${normaliserTitre(x.titre)}|${normaliserTitre(x.organisme)}|${x.ville}`
+    return !vus.has(cle) && !!vus.add(cle)
+  })
+}
+
 /** « Commercial(e) H/F en alternance » et « commercial en alternance (F/H) » : même offre. */
 export const normaliserTitre = (t: string) => t.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase()
   .replace(/\b[hf]\s*\/\s*[hf]\b|\(e\)|\be\b/g, ' ').replace(/en (alternance|apprentissage)/g, ' ').replace(/[^a-z0-9]+/g, ' ').trim()
@@ -126,12 +160,15 @@ export async function traiter(req: Request, env: Env, deps: Deps): Promise<Respo
     return new Response(null, { status: 204, headers: { 'Access-Control-Allow-Origin': origine, 'Access-Control-Allow-Methods': 'GET', 'Access-Control-Max-Age': '86400', Vary: 'Origin' } })
   }
   const url = new URL(req.url)
-  if (req.method !== 'GET' || url.pathname !== '/alternance') return json({ erreur: 'introuvable' }, 404, origine)
+  const route = url.pathname === '/alternance' ? 'alternance' : url.pathname === '/formations' ? 'formations' : null
+  if (req.method !== 'GET' || !route) return json({ erreur: 'introuvable' }, 404, origine)
   const p = lireParams(url)
   if (typeof p === 'string') return json({ erreur: 'parametres', detail: p }, 400, origine)
+  const niveau = url.searchParams.get('niveau') ?? '6'
+  if (route === 'formations' && niveau !== '5' && niveau !== '6') return json({ erreur: 'parametres', detail: 'niveau invalide (5 ou 6)' }, 400, origine)
   if (!env.LBA_TOKEN) return json({ erreur: 'non_configure' }, 503, origine)
 
-  const cle = new Request(`https://cache.orientation.invalid/alternance?lat=${p.lat}&lon=${p.lon}&radius=${p.radius}&romes=${p.romes.join(',')}`)
+  const cle = new Request(`https://cache.orientation.invalid/${route}?lat=${p.lat}&lon=${p.lon}&radius=${p.radius}&romes=${p.romes.join(',')}${route === 'formations' ? `&niveau=${niveau}` : ''}`)
   const enCache = await deps.cache?.match(cle)
   if (enCache) return json(await enCache.json(), 200, origine, { 'Cache-Control': 'private, max-age=600', 'X-Cache': 'HIT' })
 
@@ -141,9 +178,11 @@ export async function traiter(req: Request, env: Env, deps: Deps): Promise<Respo
   }
 
   const q = new URLSearchParams({ latitude: String(p.lat), longitude: String(p.lon), radius: String(p.radius), romes: p.romes.join(',') })
+  // Niveau visé : 5 (bac+2, après le bac) ou 6 (bac+3, après un BTS).
+  if (route === 'formations') q.set('target_diploma_level', niveau)
   let reponse: Response
   try {
-    reponse = await deps.fetch(`${LBA}?${q}`, { headers: { Authorization: `Bearer ${env.LBA_TOKEN.trim()}`, Accept: 'application/json' }, signal: AbortSignal.timeout(8000) })
+    reponse = await deps.fetch(`${route === 'formations' ? LBA_FORMATIONS : LBA}?${q}`, { headers: { Authorization: `Bearer ${env.LBA_TOKEN.trim()}`, Accept: 'application/json' }, signal: AbortSignal.timeout(8000) })
   } catch (e) {
     // Seulement le type d'erreur (TimeoutError, TypeError…), jamais son message qui pourrait contenir la clé.
     return json({ erreur: 'indisponible', statut: e instanceof Error ? e.name : 'inconnu' }, 503, origine)
@@ -151,10 +190,14 @@ export async function traiter(req: Request, env: Env, deps: Deps): Promise<Respo
   // Le code HTTP de la source (jamais la clé ni les paramètres) aide à diagnostiquer sans journal.
   if (reponse.status === 429 || reponse.status >= 500) return json({ erreur: 'indisponible', statut: reponse.status }, 503, origine)
   if (!reponse.ok) return json({ erreur: 'refus_source', statut: reponse.status }, 502, origine)
-  const donnees = convertir(await reponse.json().catch(() => null))
+  const brut = await reponse.json().catch(() => null)
+  const donnees = route === 'formations' ? convertirFormations(brut) : convertir(brut)
   if (!donnees) return json({ erreur: 'reponse_inattendue' }, 502, origine)
 
-  const corps = { source: SOURCE, date: new Date().toISOString().slice(0, 10), ...dedoublonner(donnees.offres, donnees.recruteurs) }
+  const date = new Date().toISOString().slice(0, 10)
+  const corps = Array.isArray(donnees)
+    ? { source: SOURCE_FORMATIONS, date, formations: donnees }
+    : { source: SOURCE, date, ...dedoublonner(donnees.offres, donnees.recruteurs) }
   const mise = deps.cache?.put(cle, new Response(JSON.stringify(corps), { headers: { 'Content-Type': 'application/json', 'Cache-Control': `s-maxage=${TTL}` } }))
   if (mise) deps.attendre ? deps.attendre(mise) : await mise
   return json(corps, 200, origine, { 'Cache-Control': 'private, max-age=600', 'X-Cache': 'MISS' })

@@ -780,6 +780,14 @@ Statut : **A_VALIDER** (2026-11-08). Les canaux et calendriers changent chaque a
 - Lien : Site de l’Intec (https://intec.cnam.fr/)
 - Sources : [Cnam, « Intec : le premier institut de formation aux métiers du chiffre »](https://www.cnam.fr/actualites/intec-le-premier-institut-de-formation-aux-metiers-du-chiffre) ; [Cnam, fiche « Diplôme de gestion et de comptabilité (DGC) »](https://www.cnam.fr/formation/economie-droit-science-politique/droit/diplome-detablissement-diplome-de-gestion-et-de-comptabilite-dgc)
 
+### Étudier en travaillant : le Cnam (BTS_NDRC, BTS_SAM)
+- HORS Parcoursup · Bac+3 à Bac+5 · À ton rythme
+- Le Cnam propose des formations en management, marketing et ressources humaines, du bac au doctorat. Elles existent en cours du soir, en journée, en alternance ou à distance, dans ses centres de chaque région : tu peux avoir un emploi et continuer à te former.
+- Canal : Selon la formation : certaines sont sur Parcoursup, les autres se demandent directement au Cnam ou dans son centre régional. Regarde les dates sur leur site.
+- Alternance : Possible (le Cnam compte environ 18 000 élèves en alternance).
+- Lien : Les formations du Cnam (https://www.cnam.fr/formation)
+- Sources : [Cnam, « Formations » (management, marketing, RH ; cours du soir, alternance, distance)](https://www.cnam.fr/formation) ; [Cnam, page d’accueil (centres en région, chiffres clés)](https://www.cnam.fr/)
+
 ### Spécialisation courte : gestionnaire de paie (BTS_CG)
 - HORS Parcoursup · Bac+2 (titre de niveau 5, comme ton BTS) · Quelques mois à 1 an
 - Le titre professionnel Gestionnaire de paie, du ministère du Travail, est enregistré au RNCP. Il te spécialise dans la paie, un métier des cabinets comptables et des services RH, sans changer de niveau d’études.
