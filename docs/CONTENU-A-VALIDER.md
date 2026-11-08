@@ -290,7 +290,7 @@ Statut : **A_VALIDER** (2026-11-03). Source affichée : Rédaction à partir des
 - Je suis passionné / passionnée par les nouvelles technologies → I
 - Je suis un / une artiste → A
 
-Métiers où « plus de 3 ans d'études » est signalé comme frein : M1211, M1210, M1205, M1201, M1202, M1207, M1204, M1223, M1206, C1401, C1214, M1503, M1705, M1707, K1901, K1904, K1403, K1703.
+Métiers où « plus de 3 ans d'études » est signalé comme frein : M1211, M1210, M1205, M1201, M1202, M1207, M1204, M1223, M1206, C1214, M1503, M1705, M1707, K1901, K1904, K1403, K1703.
 
 ### Comptabilité, gestion, finance (`compta`)
 - Types par défaut : C, I · Personnalité : perception A, organisation A
@@ -515,6 +515,146 @@ Métiers où « plus de 3 ans d'études » est signalé comme frein : M1211, M12
   - Des possibilités de promotion interne tout au long de la carrière.
 
 Grille : chaque contrainte et avantage est-il exact pour TOUS les métiers de la famille ? Rien d'invérifiable (salaire, taux d'emploi) n'est-il affirmé ?
+
+### Métiers proposés en BTS : accessibles en arrêtant ses études après le BTS ?
+
+Règle (`app/src/metiers.ts`, fonction `acces`) : niveau minimum de la fiche Onisep équivalente (`contenu/metiers-onisep.json`, faite à la main) ; bac+3 ou plus = études en plus. Sans fiche Onisep : liste `apresBts` de `contenu/metiers-familles.json`. En BTS, les métiers accessibles passent en premier.
+
+| Code | Métier | BTS | Fiche Onisep | Niveau Onisep | Classement |
+|---|---|---|---|---|---|
+| M1203 | Comptable | CG | comptable (MET.11) | bac + 2 | accessible |
+| M1213 | Assistant / Assistante comptable | CG | — (—) | — | accessible (sans fiche Onisep : à vérifier) |
+| M1225 | Aide-comptable | CG | — (—) | — | accessible (sans fiche Onisep : à vérifier) |
+| M1206 | Responsable comptabilité | CG | chef/fe comptable (MET.195) | bac + 5 | études (niveau Onisep) |
+| M1204 | Contrôleur / Contrôleuse de gestion | CG | contrôleur/euse de gestion (MET.410) | bac + 5 | études (niveau Onisep) |
+| M1222 | Assistant / Assistante de contrôle budgétaire | CG | — (—) | — | accessible (sans fiche Onisep : à vérifier) |
+| M1207 | Trésorier / Trésorière | CG | — (—) | — | études : souvent un bac+5 en finance |
+| M1215 | Contrôleur comptable et financier / Contrôleuse comptable et financière | CG | — (—) | — | études : souvent un bac+5 en comptabilité ou finance |
+| M1202 | Auditeur comptable et financier / Auditrice comptable et financière | CG | auditeur/trice externe (MET.591) | bac + 5 | études (niveau Onisep) |
+| M1211 | Expert-comptable / Experte-comptable | CG | expert/e-comptable (MET.149) | bac + 8 | études (niveau Onisep) |
+| M1210 | Commissaire aux comptes | CG | — (—) | — | études : après le diplôme d’expertise comptable (DEC), soit environ bac+8 |
+| M1220 | Credit manager | CG | credit manager (responsable du crédit) (MET.458) | bac + 5 | études (niveau Onisep) |
+| M1201 | Analyste financier / Analyste financière | CG | analyste financier/ère et ESG (MET.397) | bac + 5 | études (niveau Onisep) |
+| M1209 | Conseiller / Conseillère en gestion | CG | — (—) | — | études : souvent un bac+5 en gestion |
+| M1223 | Chef / Cheffe des services administratifs et financiers | CG | — (—) | — | après expérience |
+| M1205 | Directeur administratif et financier / Directrice administrative et financière (DAF) | CG | — (—) | — | études : en général un bac+5 (finance, gestion) et une longue expérience |
+| M1608 | Secrétaire comptable | CG | — (—) | — | accessible (sans fiche Onisep : à vérifier) |
+| M1611 | Secrétaire Facturier / Facturière | CG | — (—) | — | accessible (sans fiche Onisep : à vérifier) |
+| M1507 | Gestionnaire paie | CG | — (—) | — | accessible (sans fiche Onisep : à vérifier) |
+| M1509 | Responsable paie et administration du personnel | CG | responsable de la rémunération (payroll manager) (MET.196) | bac + 3 | études (niveau Onisep) |
+| M1501 | Assistant / Assistante Ressources Humaines (RH) | CG, SAM | assistant/e en ressources humaines (MET.798) | bac + 2 | accessible |
+| M1502 | Chargé / Chargée de recrutement | SAM | chargé/e de recrutement en agence d'emploi (MET.8006) | bac + 3 | études (niveau Onisep) |
+| M1505 | Chargé / Chargée de formation en entreprise | SAM | — (—) | — | études : souvent un bac+3 en ressources humaines ou formation |
+| M1607 | Assistant administratif / Assistante administrative | CG, SAM | secrétaire administratif/ve (MET.891) | bac ou équivalent | accessible |
+| M1604 | Assistant / Assistante de direction | CG, SAM | assistant/e de direction (MET.319) | bac + 2 | accessible |
+| M1432 | Office manager | CG, SAM | secrétaire (office-manager) (MET.670) | bac ou équivalent | accessible |
+| M1621 | Assistant administratif / Assistante administrative multilingue | CG, SAM | — (—) | — | accessible (sans fiche Onisep : à vérifier) |
+| M1612 | Assistant / Assistante de service juridique | CG, SAM | secrétaire juridique (MET.819) | bac + 2 | accessible |
+| K1406 | Secrétaire de mairie | CG, SAM | secrétaire de mairie (MET.523) | bac ou équivalent | accessible |
+| M1602 | Secrétaire administratif / Secrétaire administrative de collectivité territoriale | CG, SAM | secrétaire administratif/ve (MET.891) | bac ou équivalent | accessible |
+| M1601 | Chargé / Chargée d'accueil | SAM | hôte/esse d'accueil (MET.285) | bac ou équivalent | accessible |
+| C1201 | Chargé / Chargée d'accueil et de services clientèle bancaire | NDRC | guichetier/ère (MET.271) | bac + 2 | accessible |
+| C1203 | Chargé / Chargée d'affaires bancaires | NDRC | — (—) | — | études : souvent un bac+3 à bac+5 en banque |
+| C1205 | Conseiller / Conseillère en gestion de patrimoine | NDRC | gestionnaire de patrimoine (MET.213) | bac + 5 | études (niveau Onisep) |
+| C1206 | Conseiller / Conseillère de clientèle bancaire | NDRC | chargé/e de clientèle banque (MET.671) | bac + 2 | accessible |
+| C1212 | Conseiller / Conseillère à distance de banque | NDRC | conseiller/ère relation client à distance (MET.762) | CAP ou équivalent | accessible |
+| C1217 | Conseiller commercial / Conseillère commerciale de banque | NDRC | chargé/e de clientèle banque (MET.671) | bac + 2 | accessible |
+| C1211 | Guichetier vendeur / Guichetière vendeuse | NDRC | guichetier/ère (MET.271) | bac + 2 | accessible |
+| C1207 | Directeur / Directrice d'agence bancaire | NDRC | directeur/trice d'agence bancaire (MET.544) | bac + 5 | études (niveau Onisep) |
+| C1202 | Analyste de crédits et risques bancaires | CG | analyste de crédit (MET.661) | bac + 5 | études (niveau Onisep) |
+| C1214 | Chargé / Chargée d'études crédits bancaires | CG | — (—) | — | études : souvent un bac+5 en finance |
+| C1215 | Contrôleur / Contrôleuse de banque | CG | inspecteur/trice de banque (MET.222) | bac + 5 | études (niveau Onisep) |
+| C1401 | Agent administratif / Agente administrative banque ou assurance | CG | — (—) | — | accessible (sans fiche Onisep : à vérifier) |
+| C1102 | Conseiller commercial / Conseillère commerciale et relation client en assurances | NDRC | conseiller/ère en assurances (MET.909) | bac + 2 | accessible |
+| C1103 | Courtier / Courtière en assurance | NDRC | courtier/ère (MET.925) | bac + 2 | accessible |
+| C1104 | Responsable d'agence en assurances | NDRC | — (—) | — | après expérience |
+| C1111 | Mandataire en assurance | NDRC | — (—) | — | accessible (sans fiche Onisep : à vérifier) |
+| C1112 | Agent général / Agente générale d'assurance | NDRC | agent/e général/e d'assurances (MET.409) | bac + 2 | accessible |
+| C1116 | Chargé / Chargée de clientèle centre d'appels en assurances | NDRC | conseiller/ère relation client à distance (MET.762) | CAP ou équivalent | accessible |
+| C1119 | Chargé / Chargée d'affaires en assurances | NDRC | — (—) | — | accessible (sans fiche Onisep : à vérifier) |
+| C1110 | Souscripteur / Souscriptrice en assurances | NDRC | souscripteur/trice (MET.483) | bac + 5 | études (niveau Onisep) |
+| C1115 | Conseiller retraite / Conseillère retraite | NDRC | — (—) | — | accessible (sans fiche Onisep : à vérifier) |
+| C1109 | Gestionnaire en assurances | CG, NDRC | gestionnaire de contrats d'assurance (MET.867) | bac + 2 | accessible |
+| C1107 | Chargé / Chargée d'indemnisations en assurances | CG | — (—) | — | accessible (sans fiche Onisep : à vérifier) |
+| C1130 | Gestionnaire en protection sociale | CG | — (—) | — | accessible (sans fiche Onisep : à vérifier) |
+| C1126 | Contrôleur / Contrôleuse cotisations sociales | CG | — (—) | — | accessible (sans fiche Onisep : à vérifier) |
+| C1124 | Technicien / Technicienne sécurité sociale | CG | — (—) | — | accessible (sans fiche Onisep : à vérifier) |
+| C1503 | Chargé / Chargée d'affaires immobilières | NDRC | — (—) | — | études : souvent un bac+3 à bac+5 en immobilier |
+| C1504 | Conseiller / Conseillère immobilier | NDRC | agent/e immobilier/ère (MET.270) | bac + 2 | accessible |
+| C1505 | Responsable d'agence immobilière | NDRC | — (—) | — | après expérience |
+| C1501 | Gestionnaire de copropriété | CG | syndic de copropriété (MET.764) | bac + 2 | accessible |
+| C1502 | Chargé / Chargée de gestion locative en immobilier | CG | — (—) | — | accessible (sans fiche Onisep : à vérifier) |
+| C1508 | Assistant / Assistante de gestion syndic immobilier | CG | — (—) | — | accessible (sans fiche Onisep : à vérifier) |
+| C1507 | Chargé / Chargée de recouvrement immobilier | CG | — (—) | — | accessible (sans fiche Onisep : à vérifier) |
+| D1402 | Commercial / Commerciale grands comptes et entreprises | NDRC | — (—) | — | accessible (sans fiche Onisep : à vérifier) |
+| D1407 | Technico-commercial / Technico-commerciale | NDRC | — (—) | — | accessible (sans fiche Onisep : à vérifier) |
+| D1410 | Attaché commercial / Attachée commerciale | NDRC | commercial/e sédentaire (MET.8012) | bac ou équivalent | accessible |
+| D1416 | Commercial / Commerciale auprès d'une clientèle d'entreprises | NDRC | commercial/e itinérant/e (MET.8011) | bac ou équivalent | accessible |
+| D1417 | Chef / Cheffe des ventes | NDRC | chef/fe des ventes (MET.541) | bac + 2 | après expérience |
+| D1406 | Directeur / Directrice des ventes | NDRC | — (—) | — | après expérience |
+| D1429 | Assistant / Assistante import-export | NDRC | — (—) | — | accessible (sans fiche Onisep : à vérifier) |
+| D1433 | Commercial / Commerciale export | NDRC | commercial/e export (MET.453) | bac + 2 | accessible |
+| D1439 | Représentant / Représentante en biens et en services auprès des entreprises | NDRC | commercial/e itinérant/e (MET.8011) | bac ou équivalent | accessible |
+| D1444 | Responsable grands comptes | NDRC | — (—) | — | après expérience |
+| D1401 | Assistant commercial / Assistante commerciale | NDRC, SAM | assistant/e commercial/e (MET.28) | bac ou équivalent | accessible |
+| D1409 | Assistant / Assistante administration des ventes | NDRC | — (—) | — | accessible (sans fiche Onisep : à vérifier) |
+| D1431 | Assistant / Assistante achat | NDRC | — (—) | — | accessible (sans fiche Onisep : à vérifier) |
+| D1422 | Chargé / Chargée de recouvrement de créances | CG, NDRC | — (—) | — | accessible (sans fiche Onisep : à vérifier) |
+| D1403 | Conseiller commercial / Conseillère commerciale auprès des particuliers | NDRC | — (—) | — | accessible (sans fiche Onisep : à vérifier) |
+| D1404 | Vendeur / Vendeuse automobile | NDRC | — (—) | — | accessible (sans fiche Onisep : à vérifier) |
+| D1408 | Conseiller / Conseillère clientèle à distance | NDRC | conseiller/ère relation client à distance (MET.762) | CAP ou équivalent | accessible |
+| D1415 | Chargé / Chargée de relation client | NDRC | — (—) | — | accessible (sans fiche Onisep : à vérifier) |
+| D1432 | Assistant / Assistante service clients | NDRC | — (—) | — | accessible (sans fiche Onisep : à vérifier) |
+| D1435 | Responsable de plateau de centre d'appels | NDRC | — (—) | — | après expérience |
+| D1443 | Chargé / Chargée d'assistance | NDRC | — (—) | — | accessible (sans fiche Onisep : à vérifier) |
+| D1438 | Assistant / Assistante e-commerce | NDRC | — (—) | — | accessible (sans fiche Onisep : à vérifier) |
+| D1501 | Animateur / Animatrice de vente | NDRC | — (—) | — | accessible (sans fiche Onisep : à vérifier) |
+| D1502 | Chef / Cheffe de rayon produits alimentaires | NDRC | chef/fe de rayon (MET.299) | bac + 2 | accessible |
+| D1503 | Chef / Cheffe de rayon de produits non alimentaires | NDRC | chef/fe de rayon (MET.299) | bac + 2 | accessible |
+| D1504 | Directeur / Directrice de magasin de grande distribution | NDRC | directeur/trice de magasin à grande surface (MET.542) | bac + 2 | après expérience |
+| D1506 | Chargé / Chargée de merchandising | NDRC | marchandiseur/euse (MET.150) | bac + 2 | accessible |
+| D1508 | Responsable de caisses | NDRC | — (—) | — | après expérience |
+| D1509 | Responsable de département en grande distribution | NDRC | — (—) | — | après expérience |
+| D1510 | Chef / Cheffe de secteur magasin | NDRC | — (—) | — | après expérience |
+| D1516 | Responsable merchandising | NDRC | — (—) | — | après expérience |
+| D1517 | Chef / Cheffe de secteur distribution | NDRC | — (—) | — | après expérience |
+| D1301 | Gérant / Gérante de magasin d'alimentation générale | NDRC | — (—) | — | après expérience |
+| D1302 | Responsable de boutique | NDRC | — (—) | — | après expérience |
+| D1212 | Vendeur / Vendeuse en équipement de la maison | NDRC | vendeur/euse en micro-informatique et multimédia (MET.594) | bac ou équivalent | accessible |
+| D1214 | Vendeur / Vendeuse en prêt-à-porter | NDRC | vendeur/euse en magasin (MET.860) | CAP ou équivalent | accessible |
+| D1211 | Vendeur / Vendeuse d'articles de sport et loisirs | NDRC | vendeur/euse d'articles de sport (MET.135) | bac ou équivalent | accessible |
+| D1221 | Vendeur / Vendeuse de produits culturels et ludiques | NDRC | — (—) | — | accessible (sans fiche Onisep : à vérifier) |
+| D1245 | Vendeur / Vendeuse en parfumerie | NDRC | — (—) | — | accessible (sans fiche Onisep : à vérifier) |
+| M1620 | Assistant / Assistante marketing | NDRC | — (—) | — | accessible (sans fiche Onisep : à vérifier) |
+| M1701 | Responsable de l'administration des ventes | NDRC | — (—) | — | après expérience |
+| M1703 | Chef / Cheffe de produit | NDRC | chef/fe de produit marketing (mercatique) (MET.539) | bac + 5 | études (niveau Onisep) |
+| M1704 | Responsable service clients | NDRC | — (—) | — | après expérience |
+| M1705 | Responsable marketing | NDRC | — (—) | — | études : souvent un bac+5 en marketing |
+| M1706 | Chef / Cheffe de promotion des ventes | NDRC | responsable de la promotion des ventes (MET.659) | bac + 2 | accessible |
+| M1707 | Responsable du développement commercial | NDRC | — (—) | — | après expérience |
+| M1715 | Directeur commercial / Directrice commerciale | NDRC | — (—) | — | après expérience |
+| M1718 | Chargé / Chargée de marketing digital | NDRC | — (—) | — | études : souvent un bac+3 en marketing digital |
+| M1719 | Chargé / Chargée des relations avec les influenceurs | NDRC | — (—) | — | études : souvent un bac+3 en communication ou marketing |
+| M1720 | Category Manager Responsable (CATMAN) | NDRC | — (—) | — | études : souvent un bac+5 en commerce ou marketing |
+| M1430 | Chargé / Chargée d'études commerciales | NDRC | chargé/e d'études en marketing (mercatique) (MET.540) | bac + 5 | études (niveau Onisep) |
+| M1101 | Acheteur / Acheteuse | NDRC | acheteur/euse (MET.571) | bac + 3 | études (niveau Onisep) |
+| M1419 | Data analyst | CG | data analyst (analyste de données) (MET.7930) | bac + 3 | études (niveau Onisep) |
+| E1101 | Community manager | NDRC | community manager (animateur/trice de communauté en ligne) (MET.93) | bac + 3 | études (niveau Onisep) |
+| E1124 | Social media manager - Responsable des médias sociaux | NDRC | — (—) | — | études : souvent un bac+3 en communication ou marketing digital |
+| E1112 | Chargé / Chargée de communication | NDRC | — (—) | — | études : souvent un bac+3 en communication |
+| E1113 | Responsable e-commerce | NDRC | responsable e-commerce (MET.854) | bac + 5 | études (niveau Onisep) |
+| E1405 | Référenceur / Référenceuse web | NDRC | chargé/e de référencement Web (MET.501) | bac + 3 | études (niveau Onisep) |
+| E1407 | Traffic manager | NDRC | traffic manager (responsable de la promotion en ligne) (MET.489) | bac + 2 | accessible |
+| E1127 | Brand content manager | NDRC | — (—) | — | études : souvent un bac+3 à bac+5 en communication |
+| E1401 | Chef / Cheffe de publicité | NDRC | chef/fe de publicité (MET.8) | bac + 5 | études (niveau Onisep) |
+| E1404 | Assistant / Assistante en publicité | NDRC | — (—) | — | accessible (sans fiche Onisep : à vérifier) |
+| E1107 | Chef / Cheffe de projet événementiel | SAM | chargé/e de projet événementiel (MET.473) | bac + 3 | études (niveau Onisep) |
+| G1303 | Conseiller / Conseillère en voyages | NDRC | conseiller/ère en voyages (MET.604) | bac + 2 | accessible |
+| G1102 | Chargé / Chargée de promotion touristique | NDRC | agent/e de développement touristique (MET.919) | bac + 5 | études (niveau Onisep) |
+| G1301 | Concepteur / Conceptrice de produits touristiques | NDRC | chef/fe de produit touristique (MET.753) | bac + 5 | études (niveau Onisep) |
+| K1902 | Clerc de notaire | CG | collaborateur/trice de notaire (MET.168) | bac + 2 | accessible |
+
+Grille : le classement est-il juste pour un étudiant qui arrête après le BTS ? La fiche Onisep choisie est-elle le bon équivalent ?
 
 ## 5. Formations en lien avec les familles de métiers (`contenu/formations-familles.json`)
 

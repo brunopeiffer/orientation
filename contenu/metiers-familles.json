@@ -45,7 +45,6 @@
     "M1204",
     "M1223",
     "M1206",
-    "C1401",
     "C1214",
     "M1503",
     "M1705",
@@ -867,5 +866,47 @@
         ]
       }
     }
-  ]
+  ],
+  "apresBts": {
+    "_doc": "Pour un étudiant de BTS : métiers sans fiche Onisep équivalente (voir contenu/metiers-onisep.json) qui ne sont pas accessibles dès la sortie du BTS. 'experience' : poste d'encadrement, en général après quelques années d'expérience. 'etudes' : demande des études après le BTS (texte affiché). Les métiers avec une fiche Onisep sont classés par son niveau minimum d'accès (bac+3 ou plus = études). Rédigé par Claude le 08/11/2026, À VALIDER.",
+    "experience": [
+      "M1223",
+      "C1104",
+      "C1505",
+      "D1417",
+      "D1406",
+      "D1444",
+      "D1435",
+      "D1504",
+      "D1508",
+      "D1509",
+      "D1510",
+      "D1516",
+      "D1517",
+      "D1301",
+      "D1302",
+      "M1701",
+      "M1704",
+      "M1707",
+      "M1715"
+    ],
+    "etudes": {
+      "M1210": "après le diplôme d’expertise comptable (DEC), soit environ bac+8",
+      "M1205": "en général un bac+5 (finance, gestion) et une longue expérience",
+      "M1207": "souvent un bac+5 en finance",
+      "M1215": "souvent un bac+5 en comptabilité ou finance",
+      "M1209": "souvent un bac+5 en gestion",
+      "C1214": "souvent un bac+5 en finance",
+      "M1705": "souvent un bac+5 en marketing",
+      "M1720": "souvent un bac+5 en commerce ou marketing",
+      "C1203": "souvent un bac+3 à bac+5 en banque",
+      "C1503": "souvent un bac+3 à bac+5 en immobilier",
+      "M1505": "souvent un bac+3 en ressources humaines ou formation",
+      "E1112": "souvent un bac+3 en communication",
+      "M1718": "souvent un bac+3 en marketing digital",
+      "E1124": "souvent un bac+3 en communication ou marketing digital",
+      "E1127": "souvent un bac+3 à bac+5 en communication",
+      "M1719": "souvent un bac+3 en communication ou marketing"
+    }
+  }
 }

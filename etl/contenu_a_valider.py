@@ -119,7 +119,39 @@ def section_familles():
                 "- Avantages :", *[f"  - {t}" for t in f["realite"]["avantages"]], ""]
     out += ["Grille : chaque contrainte et avantage est-il exact pour TOUS les métiers de la famille ? "
             "Rien d'invérifiable (salaire, taux d'emploi) n'est-il affirmé ?", ""]
-    return out
+    return out + section_acces_bts()
+
+
+def section_acces_bts():
+    """Pour chaque métier proposé en BTS : accessible avec le BTS, après expérience, ou avec des études en plus."""
+    onisep = json.loads((RACINE / "contenu/metiers-onisep.json").read_text(encoding="utf-8"))["correspondances"]
+    niveaux = json.loads((RACINE / "data/niveaux-onisep.json").read_text(encoding="utf-8"))["niveaux"]
+    metiers = json.loads((RACINE / "data/metiers.json").read_text(encoding="utf-8"))["metiers"]
+    apres = FAMILLES["apresBts"]
+    out = ["### Métiers proposés en BTS : accessibles en arrêtant ses études après le BTS ?",
+           "",
+           "Règle (`app/src/metiers.ts`, fonction `acces`) : niveau minimum de la fiche Onisep équivalente "
+           "(`contenu/metiers-onisep.json`, faite à la main) ; bac+3 ou plus = études en plus. Sans fiche Onisep : "
+           "liste `apresBts` de `contenu/metiers-familles.json`. En BTS, les métiers accessibles passent en premier.",
+           "", "| Code | Métier | BTS | Fiche Onisep | Niveau Onisep | Classement |", "|---|---|---|---|---|---|"]
+    for m in metiers:
+        bts = [p.replace("BTS_", "") for p in m["publics"] if p.startswith("BTS_")]
+        if not bts:
+            continue
+        n = niveaux.get(m["code"])
+        plus = int(n["niveau"].split("+ ")[1].split()[0]) if n and n["niveau"].startswith("bac + ") else 0
+        if m["code"] in apres["etudes"]:
+            classe = f"études : {apres['etudes'][m['code']]}"
+        elif plus >= 3:
+            classe = "études (niveau Onisep)"
+        elif m["code"] in apres["experience"]:
+            classe = "après expérience"
+        else:
+            classe = "accessible" + ("" if n else " (sans fiche Onisep : à vérifier)")
+        out.append(f"| {m['code']} | {m['libelle']} | {', '.join(bts)} | {n['nom'] if n else '—'} "
+                   f"({onisep.get(m['code'], '—')}) | {n['niveau'] if n else '—'} | {classe} |")
+    return out + ["", "Grille : le classement est-il juste pour un étudiant qui arrête après le BTS ? "
+                  "La fiche Onisep choisie est-elle le bon équivalent ?", ""]
 
 
 def section_gouts():

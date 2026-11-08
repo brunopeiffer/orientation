@@ -48,7 +48,8 @@ SELECTION = {
     },
     "assurance": {
         S + "|" + NDRC: "C1102 C1103 C1104 C1111 C1112 C1116 C1119 C1110 C1115",
-        S + "|" + CG: "C1109 C1107 C1130 C1126 C1124",
+        S + "|" + CG + "|" + NDRC: "C1109",  # gestionnaire de contrats d'assurance (Onisep, BTS NDRC)
+        S + "|" + CG: "C1107 C1130 C1126 C1124",
     },
     "immobilier": {
         S + "|" + NDRC: "C1503 C1504 C1505",
@@ -62,7 +63,8 @@ SELECTION = {
         S + "|" + NDRC: "D1403 D1404 D1408 D1415 D1432 D1435 D1443 D1438",
     },
     "magasin": {
-        S + "|" + NDRC: "D1501 D1502 D1503 D1504 D1506 D1508 D1509 D1510 D1516 D1517 D1301 D1302",
+        S + "|" + NDRC: "D1501 D1502 D1503 D1504 D1506 D1508 D1509 D1510 D1516 D1517 D1301 D1302 "
+                        "D1212 D1214 D1211 D1221 D1245",  # vendeurs en magasin (Onisep, exemples de métiers du BTS NDRC)
     },
     "marketing": {
         S + "|" + NDRC: "M1620 M1701 M1703 M1704 M1705 M1706 M1707 M1715 M1718 M1719 M1720 M1430 M1101",

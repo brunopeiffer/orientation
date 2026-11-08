@@ -1254,7 +1254,8 @@
    "famille": "assurance",
    "publics": [
     "STMG",
-    "BTS_CG"
+    "BTS_CG",
+    "BTS_NDRC"
    ],
    "appellations": [
     "Concepteur développeur / Conceptrice développeuse de produits d'assurances",
@@ -2405,6 +2406,143 @@
     "J'ai l'âme d'un chef / d'une cheffe",
     "J'ai le sens des affaires",
     "J'ai le sens du contact"
+   ]
+  },
+  {
+   "code": "D1212",
+   "libelle": "Vendeur / Vendeuse en équipement de la maison",
+   "famille": "magasin",
+   "publics": [
+    "STMG",
+    "BTS_NDRC"
+   ],
+   "appellations": [
+    "Droguiste",
+    "Quincaillier / Quincaillière",
+    "Vendeur / Vendeuse de salles de bains",
+    "Vendeur / Vendeuse de verre à la coupe",
+    "Vendeur / Vendeuse en aménagement du foyer",
+    "Vendeur / Vendeuse en articles d'électricité",
+    "Vendeur / Vendeuse en articles de bazar",
+    "Vendeur / Vendeuse en articles de décoration",
+    "Vendeur / Vendeuse en arts de la table",
+    "Vendeur / Vendeuse en bricolage",
+    "Vendeur / Vendeuse en carrelage",
+    "Vendeur / Vendeuse en chauffage-ventilation-isolation",
+    "Vendeur / Vendeuse en droguerie",
+    "Vendeur / Vendeuse en électroménager",
+    "Vendeur / Vendeuse en équipement du foyer",
+    "Vendeur / Vendeuse en image et son",
+    "Vendeur / Vendeuse en informatique",
+    "Vendeur / Vendeuse en linge de maison",
+    "Vendeur / Vendeuse en literie",
+    "Vendeur / Vendeuse en luminaires",
+    "Vendeur / Vendeuse en matériaux de construction",
+    "Vendeur / Vendeuse en menuiserie",
+    "Vendeur / Vendeuse en meubles",
+    "Vendeur / Vendeuse en motoculture de plaisance",
+    "Vendeur / Vendeuse en outillage",
+    "Vendeur / Vendeuse en petit électroménager",
+    "Vendeur / Vendeuse en plomberie sanitaire",
+    "Vendeur / Vendeuse en produits blancs",
+    "Vendeur / Vendeuse en produits bruns",
+    "Vendeur / Vendeuse en produits multimédia",
+    "Vendeur / Vendeuse en quincaillerie",
+    "Vendeur / Vendeuse en revêtement de mur, sol",
+    "Vendeur / Vendeuse en téléphonie",
+    "Vendeur / Vendeuse en tissus"
+   ],
+   "centres": [
+    "J'ai le sens des affaires",
+    "J'ai le sens du contact",
+    "J'aime communiquer, convaincre"
+   ]
+  },
+  {
+   "code": "D1214",
+   "libelle": "Vendeur / Vendeuse en prêt-à-porter",
+   "famille": "magasin",
+   "publics": [
+    "STMG",
+    "BTS_NDRC"
+   ],
+   "appellations": [
+    "Vendeur / Vendeuse d'articles de seconde main",
+    "Vendeur / Vendeuse en lingerie",
+    "Vendeur / Vendeuse en prêt-à-porter de luxe",
+    "Vendeur / Vendeuse en prêt-à-porter enfant",
+    "Vendeur / Vendeuse en prêt-à-porter féminin",
+    "Vendeur / Vendeuse en prêt-à-porter masculin"
+   ],
+   "centres": [
+    "J'ai le sens des affaires",
+    "J'ai le sens du contact",
+    "J'aime communiquer, convaincre",
+    "Je souhaite prendre soin des autres"
+   ]
+  },
+  {
+   "code": "D1211",
+   "libelle": "Vendeur / Vendeuse d'articles de sport et loisirs",
+   "famille": "magasin",
+   "publics": [
+    "STMG",
+    "BTS_NDRC"
+   ],
+   "appellations": [
+    "Skiman / Skiwoman",
+    "Vendeur / Vendeuse en articles de sport",
+    "Vendeur / Vendeuse en cycles",
+    "Vendeur / Vendeuse en équipement de sport",
+    "Vendeur / Vendeuse en instruments et accessoires de musique",
+    "Vendeur / Vendeuse en jeux électroniques",
+    "Vendeur / Vendeuse en jeux vidéo",
+    "Vendeur / Vendeuse en ski",
+    "Vendeur armurier / Vendeuse armurière"
+   ],
+   "centres": [
+    "J'ai le sens des affaires",
+    "J'ai le sens du contact",
+    "J'aime communiquer, convaincre",
+    "J'aime l'activité physique"
+   ]
+  },
+  {
+   "code": "D1221",
+   "libelle": "Vendeur / Vendeuse de produits culturels et ludiques",
+   "famille": "magasin",
+   "publics": [
+    "STMG",
+    "BTS_NDRC"
+   ],
+   "appellations": [
+    "Vendeur / Vendeuse de cadeaux souvenirs",
+    "Vendeur / Vendeuse de jouets",
+    "Vendeur / Vendeuse de produits culturels",
+    "Vendeur / Vendeuse de produits ludiques"
+   ],
+   "centres": [
+    "J'ai le sens des affaires",
+    "J'ai le sens du contact",
+    "J'aime communiquer, convaincre"
+   ]
+  },
+  {
+   "code": "D1245",
+   "libelle": "Vendeur / Vendeuse en parfumerie",
+   "famille": "magasin",
+   "publics": [
+    "STMG",
+    "BTS_NDRC"
+   ],
+   "appellations": [
+    "Conseiller / Conseillère en parfumerie",
+    "Conseiller / Conseillère en parfumerie et cosmétique",
+    "Vendeur / Vendeuse en cosmétique"
+   ],
+   "centres": [
+    "J'ai le sens du contact",
+    "Je souhaite prendre soin des autres"
    ]
   },
   {

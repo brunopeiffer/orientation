@@ -2,7 +2,7 @@ import { useId } from 'react'
 import { GOUTS } from '../gouts'
 import { ETAPES } from '../etapes'
 import { etudesPour } from '../formations'
-import { FAMILLES, lienFicheMetier, pistes, ROME, type Composante, type IdComposante, type Piste } from '../metiers'
+import { FAMILLES, lienFicheMetier, NIVEAUX, pistes, ROME, type Acces, type Composante, type IdComposante, type Piste } from '../metiers'
 import { parcoursDe } from '../schema'
 import { useEtat } from '../store'
 import Favori from './Favori'
@@ -40,7 +40,7 @@ export default function Metiers() {
       </ol>
 
       <p className="text-sm text-slate-600">
-        Métiers : {ROME.source}, version {ROME.version}, {ROME.licence}. Fiches « réalité » : {FAMILLES.source} ({new Date(FAMILLES.date).toLocaleDateString('fr-FR')}), en cours de validation.
+        Métiers : {ROME.source}, version {ROME.version}, {ROME.licence}. Niveaux d’accès : {NIVEAUX.source}, {NIVEAUX.licence}, extrait le {new Date(NIVEAUX.genere).toLocaleDateString('fr-FR')}. Fiches « réalité » : {FAMILLES.source} ({new Date(FAMILLES.date).toLocaleDateString('fr-FR')}), en cours de validation.
       </p>
     </div>
   )
@@ -49,6 +49,7 @@ export default function Metiers() {
 function Carte({ piste, rang }: { piste: Piste; rang: number }) {
   const id = useId()
   const { metier, famille, score, composantes, freins } = piste
+  const bts = parcoursDe(useEtat((s) => s.publicId)) === 'bts'
   const refus = GOUTS.refus.filter((r) => freins.includes(r.id))
   return (
     <li aria-labelledby={id} className="rounded-3xl bg-white p-4 shadow-sm ring-1 ring-violet-100 sm:p-5">
@@ -63,6 +64,7 @@ function Carte({ piste, rang }: { piste: Piste; rang: number }) {
         </p>
       </div>
       <div className="mt-2"><Favori metier={metier.code} nom={metier.libelle} /></div>
+      {bts && <AccesBts acces={piste.acces} />}
 
       {refus.length > 0 && (
         <div className="mt-3 rounded-2xl bg-orange-50 p-3 text-orange-950">
@@ -127,15 +129,37 @@ function EtudesPour({ famille, code }: { famille: string; code: string }) {
   const maj = useEtat((s) => s.maj)
   const parcours = parcoursDe(useEtat((s) => s.publicId))
   const etudes = etudesPour(famille)
+  const onisep = NIVEAUX.niveaux[code]
   const etapeFormations = parcours ? ETAPES[parcours].findIndex((e) => e.id === 'formations') : -1
   return (
     <div className="mt-3 rounded-2xl bg-white p-3 text-sm">
       <p className="font-bold text-violet-900"><span aria-hidden="true">🎓 </span>Les études pour y arriver</p>
       {etudes.length > 0 && <p className="mt-1">Par exemple : {etudes.join(' ; ')}.</p>}
       {FAMILLES.etudesLongues.includes(code) && <p className="mt-1 font-semibold text-orange-900">Ce métier demande souvent un bac+5 ou plus.</p>}
+      {onisep && (
+        <p className="mt-1">
+          Niveau minimum d’accès selon l’Onisep : <strong>{onisep.niveau}</strong>{' '}
+          (<a href={onisep.lien} target="_blank" rel="noopener noreferrer" className="font-semibold text-violet-800 underline">fiche « {onisep.nom} »<span className="sr-only"> (nouvel onglet)</span></a>).
+        </p>
+      )}
       {etapeFormations > 0 && (
         <Bouton variante="secondaire" className="mt-2" onClick={() => maj({ etape: etapeFormations })}>Voir les formations près de chez toi</Bouton>
       )}
     </div>
+  )
+}
+
+/** Pour un étudiant de BTS : ce métier est-il accessible en arrêtant ses études après le BTS ? */
+function AccesBts({ acces }: { acces: Acces }) {
+  const [style, icone, texte] = {
+    direct: ['bg-emerald-50 text-emerald-950', '✅', 'Accessible avec ton BTS'],
+    experience: ['bg-amber-50 text-amber-950', '⏳', 'Poste à responsabilités : en général après quelques années d’expérience'],
+    etudes: ['bg-orange-50 text-orange-950', '🎓', `Pas accessible avec le BTS seul : ${acces.detail}`],
+  }[acces.type]
+  return (
+    <p className={`mt-3 rounded-2xl p-3 font-semibold ${style}`}>
+      <span aria-hidden="true">{icone} </span>{texte}
+      {acces.type === 'direct' && !acces.onisep && <span className="block text-sm font-normal">Pas de fiche Onisep équivalente : estimation à vérifier.</span>}
+    </p>
   )
 }

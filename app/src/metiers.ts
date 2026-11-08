@@ -1,8 +1,10 @@
 import { z } from 'zod'
 import brutMetiers from '../../data/metiers.json'
 import brutFamilles from '../../contenu/metiers-familles.json'
+import brutNiveaux from '../../data/niveaux-onisep.json'
 import { interets, matieresDe, matieresFortes, type Gouts, type Scolarite } from './gouts'
 import { complet, scorer, type Reponses } from './personnalite'
+import { parcoursDe } from './schema'
 
 const MetiersSchema = z.object({
   source: z.string(),
@@ -25,6 +27,7 @@ const FamillesSchema = z.object({
   source: z.string(),
   centresVersTypes: z.record(z.string(), z.string().nullable()),
   etudesLongues: z.array(z.string()),
+  apresBts: z.object({ experience: z.array(z.string()), etudes: z.record(z.string(), z.string().min(10)) }),
   familles: z.array(z.object({
     id: z.string(),
     nom: z.string(),
@@ -40,6 +43,23 @@ const FamillesSchema = z.object({
 
 export const ROME = MetiersSchema.parse(brutMetiers)
 export const FAMILLES = FamillesSchema.parse(brutFamilles)
+export const NIVEAUX = z.object({
+  source: z.string(), licence: z.string(), genere: z.string(),
+  niveaux: z.record(z.string(), z.object({ id: z.string(), nom: z.string(), niveau: z.string(), lien: z.string().url() })),
+}).parse(brutNiveaux)
+
+/** Après un BTS : accessible tout de suite, après de l'expérience (encadrement), ou avec des études en plus. */
+export type Acces = { type: 'direct' | 'experience' | 'etudes'; detail: string | null; onisep: (typeof NIVEAUX.niveaux)[string] | null }
+const BAC_PLUS = /^bac \+ (\d+)/
+export function acces(code: string): Acces {
+  const onisep = NIVEAUX.niveaux[code] ?? null
+  const plus = Number(onisep?.niveau.match(BAC_PLUS)?.[1] ?? 0)
+  const etudes = FAMILLES.apresBts.etudes[code]
+  if (etudes || plus >= 3) return { type: 'etudes', detail: etudes ?? `niveau minimum ${onisep!.niveau} selon l’Onisep`, onisep }
+  if (FAMILLES.apresBts.experience.includes(code)) return { type: 'experience', detail: null, onisep }
+  return { type: 'direct', detail: null, onisep }
+}
+const RANG_ACCES = { direct: 0, experience: 1, etudes: 2 }
 export type Metier = (typeof ROME.metiers)[number]
 export type Famille = (typeof FAMILLES.familles)[number]
 
@@ -47,7 +67,7 @@ export type Famille = (typeof FAMILLES.familles)[number]
 export const POIDS = { interets: 40, cadre: 25, personnalite: 15, matieres: 20 } as const
 export type IdComposante = keyof typeof POIDS
 export type Composante = { id: IdComposante; poids: number; score: number | null } // null = pas assez d'infos
-export type Piste = { metier: Metier; famille: Famille; score: number; composantes: Composante[]; freins: string[] }
+export type Piste = { metier: Metier; famille: Famille; score: number; composantes: Composante[]; freins: string[]; acces: Acces }
 
 export const NB_PISTES = 10
 export const MAX_PAR_FAMILLE = 3
@@ -101,7 +121,7 @@ export function evaluer(m: Metier, p: Profil): Piste {
   const score = poids ? Math.round(connues.reduce((s, c) => s + c.poids * c.score!, 0) / poids) : 0
 
   const freins = p.gouts.refus.filter((r) => f.freins.includes(r) || (r === 'etudes_longues' && FAMILLES.etudesLongues.includes(m.code)))
-  return { metier: m, famille: f, score, composantes, freins }
+  return { metier: m, famille: f, score, composantes, freins, acces: acces(m.code) }
 }
 
 /**
@@ -110,10 +130,12 @@ export function evaluer(m: Metier, p: Profil): Piste {
  */
 export function pistes(p: Profil, n = NB_PISTES): Piste[] {
   const parFamille = new Map<string, number>()
+  const bts = parcoursDe(p.publicId) === 'bts'
   return ROME.metiers
     .filter((m) => p.publicId !== null && m.publics.includes(p.publicId))
     .map((m) => evaluer(m, p))
-    .sort((a, b) => b.score - a.score || a.metier.code.localeCompare(b.metier.code))
+    // En BTS, on montre d'abord les métiers accessibles avec le diplôme, puis ceux qui demandent de l'expérience ou des études.
+    .sort((a, b) => (bts ? RANG_ACCES[a.acces.type] - RANG_ACCES[b.acces.type] : 0) || b.score - a.score || a.metier.code.localeCompare(b.metier.code))
     .filter((x) => {
       const k = parFamille.get(x.famille.id) ?? 0
       parFamille.set(x.famille.id, k + 1)

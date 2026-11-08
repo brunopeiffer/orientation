@@ -1,7 +1,7 @@
 # Métiers V1 — liste À VALIDER PAR UN HUMAIN
 
 Généré par `etl/rome_candidats.py` le 08/11/2026.
-**176 fiches ROME retenues.**
+**181 fiches ROME retenues.**
 Source : ROME, France Travail, arborescences d'octobre 2026, Licence Ouverte Etalab 2.0.
 Libellé = première appellation de la fiche ; les autres appellations (titres de poste réels) sont proposées dans l'app. Centres d'intérêt = rattachement officiel du ROME.
 
@@ -90,7 +90,7 @@ Appellations exclues (hors sujet) : Caissier / Caissière de casino de jeux, Com
 | C1119 | Chargé / Chargée d'affaires en assurances | STMG, BTS_NDRC | J'ai le sens des affaires ; J'aime communiquer, convaincre ; J'aime faire respecter la loi, les règles | 3 | Attaché / Attachée clientèle assurances ; Chef / Cheffe produit assurances |
 | C1110 | Souscripteur / Souscriptrice en assurances | STMG, BTS_NDRC | J'ai le sens des affaires ; J'aime communiquer, convaincre | 11 | Autorisateur / Autorisatrice en assurances ; Chargé / Chargée de comptes Incendie, Accidents, Risques Divers (IARD) ; Expert évaluateur / Experte évaluatrice en assurances ; Responsable de souscription en assurances |
 | C1115 | Conseiller retraite / Conseillère retraite | STMG, BTS_NDRC | J'ai le sens du contact ; J'aime faire respecter la loi, les règles ; Je souhaite transmettre | 3 | Gestionnaire de compte retraite en assurances ; Gestionnaire liquidation retraite |
-| C1109 | Gestionnaire en assurances | STMG, BTS_CG | J'ai le souci du détail ; J'aime manier les chiffres | 19 | Concepteur développeur / Conceptrice développeuse de produits d'assurances ; Gestionnaire sinistre Incendie, Accidents, Risques Divers -IARD- ; Rédacteur / Rédactrice d'assurances ; Rédacteur / Rédactrice production auto |
+| C1109 | Gestionnaire en assurances | STMG, BTS_CG, BTS_NDRC | J'ai le souci du détail ; J'aime manier les chiffres | 19 | Concepteur développeur / Conceptrice développeuse de produits d'assurances ; Gestionnaire sinistre Incendie, Accidents, Risques Divers -IARD- ; Rédacteur / Rédactrice d'assurances ; Rédacteur / Rédactrice production auto |
 | C1107 | Chargé / Chargée d'indemnisations en assurances | STMG, BTS_CG | J'ai le sens du contact ; J'aime manier les chiffres | 3 | Conseiller / Conseillère en gestion des droits ; Liquidateur / Liquidatrice de prestations |
 | C1130 | Gestionnaire en protection sociale | STMG, BTS_CG | J'ai le sens du contact ; J'ai le sens du service public ; J'aime faire respecter la loi, les règles ; Je souhaite prendre soin des autres | 18 | Agent / Agente d'accueil de prestations sociales ; Conseiller / Conseillère en assurance produits d'épargne ; Conseiller / Conseillère entreprise retraite ; Conseiller / Conseillère prévoyance santé |
 | C1126 | Contrôleur / Contrôleuse cotisations sociales | STMG, BTS_CG | J'ai l'âme d'un chef / d'une cheffe ; J'ai le sens du service public ; J'aime faire respecter la loi, les règles | 2 | Inspecteur / Inspectrice URSSAF |
@@ -156,6 +156,11 @@ Appellations exclues (hors sujet) : Caissier / Caissière de casino de jeux, Com
 | D1517 | Chef / Cheffe de secteur distribution | STMG, BTS_NDRC | J'ai l'âme d'un chef / d'une cheffe ; J'ai le sens des affaires ; J'aime organiser, planifier | 12 | Chef / Cheffe de groupe en grande distribution ; Chef / Cheffe de secteur bazar ; Chef / Cheffe de secteur commerce ; Chef / Cheffe de secteur en hypermarché |
 | D1301 | Gérant / Gérante de magasin d'alimentation générale | STMG, BTS_NDRC | J'ai l'âme d'un chef / d'une cheffe ; J'ai le sens des affaires ; J'ai le sens du contact ; J'aime organiser, planifier | 5 | Gérant / Gérante de magasin d'alimentation ; Gérant / Gérante de supérette ; Gérant / Gérante mandataire de succursale de magasin d'alimentation ; Responsable de supérette |
 | D1302 | Responsable de boutique | STMG, BTS_NDRC | J'ai l'âme d'un chef / d'une cheffe ; J'ai le sens des affaires ; J'ai le sens du contact | 17 | Adjoint / Adjointe responsable de magasin de détail ; Directeur / Directrice de magasin de détail ; Gérant / Gérante de commerce de détail ; Gérant de commerce en ameublement, décoration / Gérante de commerce en ameublement, décoration |
+| D1212 | Vendeur / Vendeuse en équipement de la maison | STMG, BTS_NDRC | J'ai le sens des affaires ; J'ai le sens du contact ; J'aime communiquer, convaincre | 35 | Droguiste ; Quincaillier / Quincaillière ; Vendeur / Vendeuse de salles de bains ; Vendeur / Vendeuse de verre à la coupe |
+| D1214 | Vendeur / Vendeuse en prêt-à-porter | STMG, BTS_NDRC | J'ai le sens des affaires ; J'ai le sens du contact ; J'aime communiquer, convaincre ; Je souhaite prendre soin des autres | 7 | Vendeur / Vendeuse d'articles de seconde main ; Vendeur / Vendeuse en lingerie ; Vendeur / Vendeuse en prêt-à-porter de luxe ; Vendeur / Vendeuse en prêt-à-porter enfant |
+| D1211 | Vendeur / Vendeuse d'articles de sport et loisirs | STMG, BTS_NDRC | J'ai le sens des affaires ; J'ai le sens du contact ; J'aime communiquer, convaincre ; J'aime l'activité physique | 10 | Skiman / Skiwoman ; Vendeur / Vendeuse en articles de sport ; Vendeur / Vendeuse en cycles ; Vendeur / Vendeuse en équipement de sport |
+| D1221 | Vendeur / Vendeuse de produits culturels et ludiques | STMG, BTS_NDRC | J'ai le sens des affaires ; J'ai le sens du contact ; J'aime communiquer, convaincre | 5 | Vendeur / Vendeuse de cadeaux souvenirs ; Vendeur / Vendeuse de jouets ; Vendeur / Vendeuse de produits culturels ; Vendeur / Vendeuse de produits ludiques |
+| D1245 | Vendeur / Vendeuse en parfumerie | STMG, BTS_NDRC | J'ai le sens du contact ; Je souhaite prendre soin des autres | 4 | Conseiller / Conseillère en parfumerie ; Conseiller / Conseillère en parfumerie et cosmétique ; Vendeur / Vendeuse en cosmétique |
 
 ## Marketing, achats, études
 

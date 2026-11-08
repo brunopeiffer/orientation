@@ -1,0 +1,385 @@
+{
+ "source": "Onisep, Idéo-Fiches métiers (niveau minimum d'accès)",
+ "licence": "ODbL",
+ "genere": "2026-11-08",
+ "niveaux": {
+  "C1102": {
+   "id": "MET.909",
+   "nom": "conseiller/ère en assurances",
+   "niveau": "bac + 2",
+   "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.909"
+  },
+  "C1103": {
+   "id": "MET.925",
+   "nom": "courtier/ère",
+   "niveau": "bac + 2",
+   "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.925"
+  },
+  "C1109": {
+   "id": "MET.867",
+   "nom": "gestionnaire de contrats d'assurance",
+   "niveau": "bac + 2",
+   "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.867"
+  },
+  "C1110": {
+   "id": "MET.483",
+   "nom": "souscripteur/trice",
+   "niveau": "bac + 5",
+   "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.483"
+  },
+  "C1112": {
+   "id": "MET.409",
+   "nom": "agent/e général/e d'assurances",
+   "niveau": "bac + 2",
+   "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.409"
+  },
+  "C1116": {
+   "id": "MET.762",
+   "nom": "conseiller/ère relation client à distance",
+   "niveau": "CAP ou équivalent",
+   "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.762"
+  },
+  "C1201": {
+   "id": "MET.271",
+   "nom": "guichetier/ère",
+   "niveau": "bac + 2",
+   "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.271"
+  },
+  "C1202": {
+   "id": "MET.661",
+   "nom": "analyste de crédit",
+   "niveau": "bac + 5",
+   "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.661"
+  },
+  "C1205": {
+   "id": "MET.213",
+   "nom": "gestionnaire de patrimoine",
+   "niveau": "bac + 5",
+   "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.213"
+  },
+  "C1206": {
+   "id": "MET.671",
+   "nom": "chargé/e de clientèle banque",
+   "niveau": "bac + 2",
+   "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.671"
+  },
+  "C1207": {
+   "id": "MET.544",
+   "nom": "directeur/trice d'agence bancaire",
+   "niveau": "bac + 5",
+   "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.544"
+  },
+  "C1211": {
+   "id": "MET.271",
+   "nom": "guichetier/ère",
+   "niveau": "bac + 2",
+   "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.271"
+  },
+  "C1212": {
+   "id": "MET.762",
+   "nom": "conseiller/ère relation client à distance",
+   "niveau": "CAP ou équivalent",
+   "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.762"
+  },
+  "C1215": {
+   "id": "MET.222",
+   "nom": "inspecteur/trice de banque",
+   "niveau": "bac + 5",
+   "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.222"
+  },
+  "C1217": {
+   "id": "MET.671",
+   "nom": "chargé/e de clientèle banque",
+   "niveau": "bac + 2",
+   "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.671"
+  },
+  "C1501": {
+   "id": "MET.764",
+   "nom": "syndic de copropriété",
+   "niveau": "bac + 2",
+   "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.764"
+  },
+  "C1504": {
+   "id": "MET.270",
+   "nom": "agent/e immobilier/ère",
+   "niveau": "bac + 2",
+   "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.270"
+  },
+  "D1211": {
+   "id": "MET.135",
+   "nom": "vendeur/euse d'articles de sport",
+   "niveau": "bac ou équivalent",
+   "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.135"
+  },
+  "D1212": {
+   "id": "MET.594",
+   "nom": "vendeur/euse en micro-informatique et multimédia",
+   "niveau": "bac ou équivalent",
+   "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.594"
+  },
+  "D1214": {
+   "id": "MET.860",
+   "nom": "vendeur/euse en magasin",
+   "niveau": "CAP ou équivalent",
+   "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.860"
+  },
+  "D1401": {
+   "id": "MET.28",
+   "nom": "assistant/e commercial/e",
+   "niveau": "bac ou équivalent",
+   "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.28"
+  },
+  "D1408": {
+   "id": "MET.762",
+   "nom": "conseiller/ère relation client à distance",
+   "niveau": "CAP ou équivalent",
+   "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.762"
+  },
+  "D1410": {
+   "id": "MET.8012",
+   "nom": "commercial/e sédentaire",
+   "niveau": "bac ou équivalent",
+   "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.8012"
+  },
+  "D1416": {
+   "id": "MET.8011",
+   "nom": "commercial/e itinérant/e",
+   "niveau": "bac ou équivalent",
+   "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.8011"
+  },
+  "D1417": {
+   "id": "MET.541",
+   "nom": "chef/fe des ventes",
+   "niveau": "bac + 2",
+   "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.541"
+  },
+  "D1433": {
+   "id": "MET.453",
+   "nom": "commercial/e export",
+   "niveau": "bac + 2",
+   "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.453"
+  },
+  "D1439": {
+   "id": "MET.8011",
+   "nom": "commercial/e itinérant/e",
+   "niveau": "bac ou équivalent",
+   "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.8011"
+  },
+  "D1502": {
+   "id": "MET.299",
+   "nom": "chef/fe de rayon",
+   "niveau": "bac + 2",
+   "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.299"
+  },
+  "D1503": {
+   "id": "MET.299",
+   "nom": "chef/fe de rayon",
+   "niveau": "bac + 2",
+   "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.299"
+  },
+  "D1504": {
+   "id": "MET.542",
+   "nom": "directeur/trice de magasin à grande surface",
+   "niveau": "bac + 2",
+   "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.542"
+  },
+  "D1506": {
+   "id": "MET.150",
+   "nom": "marchandiseur/euse",
+   "niveau": "bac + 2",
+   "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.150"
+  },
+  "E1101": {
+   "id": "MET.93",
+   "nom": "community manager (animateur/trice de communauté en ligne)",
+   "niveau": "bac + 3",
+   "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.93"
+  },
+  "E1107": {
+   "id": "MET.473",
+   "nom": "chargé/e de projet événementiel",
+   "niveau": "bac + 3",
+   "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.473"
+  },
+  "E1113": {
+   "id": "MET.854",
+   "nom": "responsable e-commerce",
+   "niveau": "bac + 5",
+   "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.854"
+  },
+  "E1401": {
+   "id": "MET.8",
+   "nom": "chef/fe de publicité",
+   "niveau": "bac + 5",
+   "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.8"
+  },
+  "E1405": {
+   "id": "MET.501",
+   "nom": "chargé/e de référencement Web",
+   "niveau": "bac + 3",
+   "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.501"
+  },
+  "E1407": {
+   "id": "MET.489",
+   "nom": "traffic manager (responsable de la promotion en ligne)",
+   "niveau": "bac + 2",
+   "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.489"
+  },
+  "G1102": {
+   "id": "MET.919",
+   "nom": "agent/e de développement touristique",
+   "niveau": "bac + 5",
+   "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.919"
+  },
+  "G1301": {
+   "id": "MET.753",
+   "nom": "chef/fe de produit touristique",
+   "niveau": "bac + 5",
+   "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.753"
+  },
+  "G1303": {
+   "id": "MET.604",
+   "nom": "conseiller/ère en voyages",
+   "niveau": "bac + 2",
+   "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.604"
+  },
+  "K1406": {
+   "id": "MET.523",
+   "nom": "secrétaire de mairie",
+   "niveau": "bac ou équivalent",
+   "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.523"
+  },
+  "K1902": {
+   "id": "MET.168",
+   "nom": "collaborateur/trice de notaire",
+   "niveau": "bac + 2",
+   "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.168"
+  },
+  "M1101": {
+   "id": "MET.571",
+   "nom": "acheteur/euse",
+   "niveau": "bac + 3",
+   "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.571"
+  },
+  "M1201": {
+   "id": "MET.397",
+   "nom": "analyste financier/ère et ESG",
+   "niveau": "bac + 5",
+   "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.397"
+  },
+  "M1202": {
+   "id": "MET.591",
+   "nom": "auditeur/trice externe",
+   "niveau": "bac + 5",
+   "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.591"
+  },
+  "M1203": {
+   "id": "MET.11",
+   "nom": "comptable",
+   "niveau": "bac + 2",
+   "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.11"
+  },
+  "M1204": {
+   "id": "MET.410",
+   "nom": "contrôleur/euse de gestion",
+   "niveau": "bac + 5",
+   "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.410"
+  },
+  "M1206": {
+   "id": "MET.195",
+   "nom": "chef/fe comptable",
+   "niveau": "bac + 5",
+   "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.195"
+  },
+  "M1211": {
+   "id": "MET.149",
+   "nom": "expert/e-comptable",
+   "niveau": "bac + 8",
+   "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.149"
+  },
+  "M1220": {
+   "id": "MET.458",
+   "nom": "credit manager (responsable du crédit)",
+   "niveau": "bac + 5",
+   "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.458"
+  },
+  "M1419": {
+   "id": "MET.7930",
+   "nom": "data analyst (analyste de données)",
+   "niveau": "bac + 3",
+   "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.7930"
+  },
+  "M1430": {
+   "id": "MET.540",
+   "nom": "chargé/e d'études en marketing (mercatique)",
+   "niveau": "bac + 5",
+   "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.540"
+  },
+  "M1432": {
+   "id": "MET.670",
+   "nom": "secrétaire (office-manager)",
+   "niveau": "bac ou équivalent",
+   "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.670"
+  },
+  "M1501": {
+   "id": "MET.798",
+   "nom": "assistant/e en ressources humaines",
+   "niveau": "bac + 2",
+   "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.798"
+  },
+  "M1502": {
+   "id": "MET.8006",
+   "nom": "chargé/e de recrutement en agence d'emploi",
+   "niveau": "bac + 3",
+   "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.8006"
+  },
+  "M1509": {
+   "id": "MET.196",
+   "nom": "responsable de la rémunération (payroll manager)",
+   "niveau": "bac + 3",
+   "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.196"
+  },
+  "M1601": {
+   "id": "MET.285",
+   "nom": "hôte/esse d'accueil",
+   "niveau": "bac ou équivalent",
+   "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.285"
+  },
+  "M1602": {
+   "id": "MET.891",
+   "nom": "secrétaire administratif/ve",
+   "niveau": "bac ou équivalent",
+   "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.891"
+  },
+  "M1604": {
+   "id": "MET.319",
+   "nom": "assistant/e de direction",
+   "niveau": "bac + 2",
+   "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.319"
+  },
+  "M1607": {
+   "id": "MET.891",
+   "nom": "secrétaire administratif/ve",
+   "niveau": "bac ou équivalent",
+   "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.891"
+  },
+  "M1612": {
+   "id": "MET.819",
+   "nom": "secrétaire juridique",
+   "niveau": "bac + 2",
+   "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.819"
+  },
+  "M1703": {
+   "id": "MET.539",
+   "nom": "chef/fe de produit marketing (mercatique)",
+   "niveau": "bac + 5",
+   "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.539"
+  },
+  "M1706": {
+   "id": "MET.659",
+   "nom": "responsable de la promotion des ventes",
+   "niveau": "bac + 2",
+   "lien": "https://www.onisep.fr/http/redirection/metier/slug/MET.659"
+  }
+ }
+}

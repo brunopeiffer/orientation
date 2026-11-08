@@ -20,6 +20,7 @@ App d'aide à l'orientation pour Terminale STMG, BTS CG, BTS NDRC et BTS SAM. Le
 ## Commandes
 ```bash
 python3 -I etl/rome_candidats.py     # data/metiers.json (lu par l'app) + docs/METIERS-A-VALIDER.md depuis le ROME
+python3 -I etl/niveaux_onisep.py     # data/niveaux-onisep.json : niveau minimum d'accès (Onisep, ODbL) via contenu/metiers-onisep.json
 python3 -I etl/poursuites_bt.py      # docs/POURSUITES-A-VALIDER.md depuis Parcoursup
 python3 -I etl/formations.py         # data/formations/<région>.json + index, depuis Parcoursup (offre + statistiques)
 python3 -I etl/offres_post_bts.py    # data/post-bts.json : licences pro (MESR), DCG et BUT (Parcoursup) localisés
@@ -43,6 +44,7 @@ Proxy : `cd proxy && npm install && npm test` (tests) ; déploiement et clé : v
 - M6 : `proxy/` (Cloudflare Worker : CORS, limite de débit, cache 1 h, aucun journal ; seule source à clé : La bonne alternance, qui inclut les offres France Travail). Recherche d'entreprises appelée directement par le navigateur (API publique, limite par IP). `app/src/alternance.ts`, écrans `Alternance.tsx` et `Handicap.tsx`. La donnée handicap ne sort JAMAIS du navigateur (test `e2e/m6.spec.ts`).
 - M7 : synthèse imprimable (`app/src/synthese.ts`, `components/Synthese.tsx`, plan d'action dans `contenu/plan-action.json`) ; impression A4 via les variantes Tailwind `print:` ; CSP injectée au build depuis `config/sources.json` (`app/src/csp.ts`, plugin dans `vite.config.ts`). Audits : `docs/AUDIT-ACCESSIBILITE.md`, `docs/CONFIDENTIALITE.md`, tests `e2e/m7.spec.ts`.
 - Après l'analyse orientation et design (07/11/2026) : ordre goûts → résultats → personnalité (facultative) ; état v6 (favoris, renumérotation des étapes) ; spécialité STMG dans le score (`familles` des choix de `config/matieres.json`) ; aides pratiques dans `contenu/pratique.json` ; favoris `components/Favori.tsx`.
+- Métiers en BTS (08/11/2026) : `acces()` dans `app/src/metiers.ts` classe chaque métier (accessible avec le BTS, après expérience, études en plus) d'après le niveau Onisep, sinon la liste `apresBts` de `contenu/metiers-familles.json` ; en BTS, les métiers accessibles passent en premier.
 - Toute nouvelle donnée de l'élève : l'ajouter à `EtatSchema`, augmenter `VERSION_ETAT`, écrire la migration et le test.
 
 ## Code

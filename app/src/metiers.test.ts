@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 import { GOUTS, GOUTS_VIDES, MATIERES, SCOLARITE_VIDE } from './gouts'
-import { evaluer, FAMILLES, pistes, POIDS, ROME, typesDe, type Profil } from './metiers'
+import { acces, evaluer, FAMILLES, pistes, POIDS, ROME, typesDe, type Profil } from './metiers'
 import { TEST } from './personnalite'
 import { PUBLICS_ACTIFS } from './schema'
 
@@ -65,6 +65,21 @@ describe('matching', () => {
     expect(sam.every((p) => p.metier.publics.includes('BTS_SAM'))).toBe(true)
     expect(sam.some((p) => p.famille.id === 'compta')).toBe(false)
     expect(ROME.metiers.every((m) => m.publics.includes('STMG'))).toBe(true)
+  })
+
+  it('BTS : expert-comptable n’est pas présenté comme accessible ; les métiers accessibles passent avant', () => {
+    expect(acces('M1211')).toMatchObject({ type: 'etudes', onisep: { niveau: 'bac + 8' } })
+    expect(acces('M1210').type).toBe('etudes')
+    expect(acces('M1203').type).toBe('direct')
+    expect(acces('D1417').type).toBe('experience')
+    for (const id of ['BTS_CG', 'BTS_NDRC', 'BTS_SAM']) {
+      const rangs = pistes(complet(id)).filter((p) => p.freins.length === 0).map((p) => ({ direct: 0, experience: 1, etudes: 2 })[p.acces.type])
+      expect(rangs, id).toEqual([...rangs].sort((a, b) => a - b))
+      expect(rangs[0], id).toBe(0)
+    }
+    for (const code of [...FAMILLES.apresBts.experience, ...Object.keys(FAMILLES.apresBts.etudes)]) {
+      expect(ROME.metiers.some((m) => m.code === code), code).toBe(true)
+    }
   })
 
   it('propose 8 à 12 pistes, 3 au maximum par famille, pour chaque public', () => {
