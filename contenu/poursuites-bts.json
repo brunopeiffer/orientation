@@ -1,5 +1,5 @@
 {
-  "_doc": "Poursuites d'études après un BTS CG ou NDRC. Rédigé par Claude le 03/11/2026, complété le 08/11/2026 (emploi, CCA, Cnam-Intec, paie, concours, points de vigilance bachelor) à partir des sources citées, À VALIDER PAR UN HUMAIN (notamment les canaux et dates, qui changent chaque année). 'local' : mots-clés (minuscules, sans accents) pour retrouver les offres de data/post-bts.json en lien avec chaque BTS.",
+  "_doc": "Poursuites d'études après un BTS CG, NDRC ou SAM. Rédigé par Claude le 03/11/2026, complété le 08/11/2026 (emploi, CCA, Cnam-Intec, paie, concours, points de vigilance bachelor), puis voies NDRC et SAM le même jour à partir des sources citées, À VALIDER PAR UN HUMAIN (notamment les canaux et dates, qui changent chaque année). 'local' : mots-clés (minuscules, sans accents) pour retrouver les offres de data/post-bts.json en lien avec chaque BTS.",
   "statut": "A_VALIDER",
   "date": "2026-11-08",
   "voies": [
@@ -11,7 +11,7 @@
       ],
       "niveau": "Bac+2 (ton BTS)",
       "duree": "Dès l’obtention du BTS",
-      "description": "Le BTS CG est d’abord fait pour travailler : assistant(e) comptable ou collaborateur, collaboratrice en cabinet d’expertise comptable, en entreprise ou en centre de gestion. Tu pourras évoluer plus tard (chef comptable, contrôle de gestion) et reprendre des études en formation continue.",
+      "description": "Le BTS CG est conçu pour travailler : assistant(e) comptable ou collaborateur, collaboratrice en cabinet d’expertise comptable, en entreprise ou en centre de gestion. Dans les faits, 6 mois après ce BTS (voie scolaire), 22 % des diplômés sont en emploi et 59 % poursuivent des études (InserJeunes 2024). Tu pourras évoluer plus tard (chef comptable, contrôle de gestion) et reprendre des études en formation continue.",
       "parcoursup": false,
       "canal": "Hors Parcoursup : candidature directement auprès des employeurs : offres d’emploi, cabinets comptables, entreprises où tu as fait tes stages.",
       "lien": {
@@ -22,8 +22,56 @@
       "offres": null,
       "sources": [
         {
-          "nom": "Onisep, fiche « BTS Comptabilité et gestion » (débouchés et poursuites d’études)",
+          "nom": "Onisep, fiche « BTS Comptabilité et gestion » (débouchés, poursuites, devenir des diplômés InserJeunes 2024)",
           "url": "https://www.onisep.fr/ressources/univers-formation/formations/post-bac/bts-comptabilite-et-gestion"
+        }
+      ]
+    },
+    {
+      "id": "emploi_ndrc",
+      "titre": "Travailler tout de suite après le BTS",
+      "publics": [
+        "BTS_NDRC"
+      ],
+      "niveau": "Bac+2 (ton BTS)",
+      "duree": "Dès l’obtention du BTS",
+      "description": "Le BTS NDRC forme des commerciaux qui gèrent la relation client, de la prospection à la fidélisation : commercial(e), chargé(e) de clientèle, conseiller ou conseillère de vente, téléconseiller… 6 mois après ce BTS (voie scolaire), 29 % des diplômés sont en emploi et 49 % poursuivent des études (InserJeunes 2024). Dans la vente, l’expérience et les résultats comptent beaucoup pour évoluer.",
+      "parcoursup": false,
+      "canal": "Hors Parcoursup : candidature directement auprès des employeurs : offres d’emploi, cabinets comptables, entreprises où tu as fait tes stages.",
+      "lien": {
+        "texte": "Les débouchés du BTS NDRC (Onisep)",
+        "url": "https://www.onisep.fr/ressources/univers-formation/formations/post-bac/bts-negociation-et-digitalisation-de-la-relation-client"
+      },
+      "alternance": "Non concerné : c’est un emploi salarié.",
+      "offres": null,
+      "sources": [
+        {
+          "nom": "Onisep, fiche « BTS Négociation et digitalisation de la relation client » (débouchés, poursuites, devenir des diplômés InserJeunes 2024)",
+          "url": "https://www.onisep.fr/ressources/univers-formation/formations/post-bac/bts-negociation-et-digitalisation-de-la-relation-client"
+        }
+      ]
+    },
+    {
+      "id": "emploi_sam",
+      "titre": "Travailler tout de suite après le BTS",
+      "publics": [
+        "BTS_SAM"
+      ],
+      "niveau": "Bac+2 (ton BTS)",
+      "duree": "Dès l’obtention du BTS",
+      "description": "Le BTS SAM mène à des postes d’assistant(e) : de manager, de gestion en PME, en ressources humaines, commercial(e), office manager, secrétaire juridique, dans des entreprises, des associations ou des administrations. 6 mois après ce BTS (voie scolaire), 30 % des diplômés sont en emploi et 45 % poursuivent des études (InserJeunes 2024).",
+      "parcoursup": false,
+      "canal": "Hors Parcoursup : candidature directement auprès des employeurs : offres d’emploi, cabinets comptables, entreprises où tu as fait tes stages.",
+      "lien": {
+        "texte": "Les débouchés du BTS SAM (Onisep)",
+        "url": "https://www.onisep.fr/ressources/univers-formation/formations/post-bac/bts-support-a-l-action-manageriale"
+      },
+      "alternance": "Non concerné : c’est un emploi salarié.",
+      "offres": null,
+      "sources": [
+        {
+          "nom": "Onisep, fiche « BTS Support à l’action managériale » (débouchés, poursuites, devenir des diplômés InserJeunes 2024)",
+          "url": "https://www.onisep.fr/ressources/univers-formation/formations/post-bac/bts-support-a-l-action-manageriale"
         }
       ]
     },
@@ -32,7 +80,8 @@
       "titre": "Licence professionnelle",
       "publics": [
         "BTS_CG",
-        "BTS_NDRC"
+        "BTS_NDRC",
+        "BTS_SAM"
       ],
       "niveau": "Bac+3",
       "duree": "1 an",
@@ -105,7 +154,8 @@
       "titre": "BUT en admission parallèle (2e année, parfois 3e)",
       "publics": [
         "BTS_CG",
-        "BTS_NDRC"
+        "BTS_NDRC",
+        "BTS_SAM"
       ],
       "niveau": "Bac+3",
       "duree": "1 à 2 ans",
@@ -130,7 +180,8 @@
       "titre": "Licence générale (L2 ou L3) : gestion, économie, AES, droit",
       "publics": [
         "BTS_CG",
-        "BTS_NDRC"
+        "BTS_NDRC",
+        "BTS_SAM"
       ],
       "niveau": "Bac+3, puis master possible",
       "duree": "1 à 2 ans",
@@ -155,7 +206,8 @@
       "titre": "Prépa ATS économie-gestion",
       "publics": [
         "BTS_CG",
-        "BTS_NDRC"
+        "BTS_NDRC",
+        "BTS_SAM"
       ],
       "niveau": "Bac+3 (prépare aux concours)",
       "duree": "1 an",
@@ -180,7 +232,8 @@
       "titre": "École de commerce en admission parallèle",
       "publics": [
         "BTS_CG",
-        "BTS_NDRC"
+        "BTS_NDRC",
+        "BTS_SAM"
       ],
       "niveau": "Bac+5 (programme grande école)",
       "duree": "3 ans",
@@ -209,7 +262,8 @@
       "titre": "Bachelor ou titre professionnel bac+3 (souvent en alternance)",
       "publics": [
         "BTS_CG",
-        "BTS_NDRC"
+        "BTS_NDRC",
+        "BTS_SAM"
       ],
       "niveau": "Bac+3",
       "duree": "1 an",
@@ -297,20 +351,21 @@
       "id": "fonction_publique",
       "titre": "Concours de la fonction publique",
       "publics": [
-        "BTS_CG"
+        "BTS_CG",
+        "BTS_SAM"
       ],
       "niveau": "Catégorie B (concours ouverts avec le bac)",
       "duree": "Selon le concours",
-      "description": "Ton profil intéresse l’administration : par exemple contrôleur ou contrôleuse des finances publiques (impôts, comptabilité publique), ou les postes de gestion des collectivités et des hôpitaux. Ces concours de catégorie B demandent le bac ; ton BTS t’aide à les préparer.",
+      "description": "Ton profil intéresse l’administration. Avec un BTS CG : par exemple contrôleur ou contrôleuse des finances publiques (impôts, comptabilité publique). Avec un BTS SAM : par exemple secrétaire administratif ou administrative dans un ministère, une collectivité ou un hôpital. Ces concours de catégorie B demandent le bac ; ton BTS t’aide à les préparer.",
       "parcoursup": false,
-      "canal": "Hors Parcoursup : inscription au concours directement sur le site de l’administration qui recrute, aux dates du calendrier officiel des concours.",
+      "canal": "Hors Parcoursup : inscription au concours directement sur le site de l’administration qui recrute, aux dates du calendrier officiel. Les offres et concours sont aussi sur choisirleservicepublic.gouv.fr.",
       "lien": {
         "texte": "Calendrier du concours de contrôleur des finances publiques",
         "url": "https://www.fonction-publique.gouv.fr/devenir-agent-public/calendrier-general-concours/controleurs-des-finances-publiques"
       },
       "lien2": {
-        "texte": "Choisir le service public (offres et concours)",
-        "url": "https://choisirleservicepublic.gouv.fr/"
+        "texte": "Secrétaire administratif : le concours externe (ministère de l’Économie)",
+        "url": "https://www.economie.gouv.fr/recrutement/secretaire-administratif-classe-normale-externe"
       },
       "alternance": "Non concerné : on entre par concours.",
       "offres": null,
@@ -318,6 +373,10 @@
         {
           "nom": "fonction-publique.gouv.fr, calendrier des concours (contrôleurs des finances publiques)",
           "url": "https://www.fonction-publique.gouv.fr/devenir-agent-public/calendrier-general-concours/controleurs-des-finances-publiques"
+        },
+        {
+          "nom": "economie.gouv.fr, « Secrétaire administratif de classe normale, concours externe »",
+          "url": "https://www.economie.gouv.fr/recrutement/secretaire-administratif-classe-normale-externe"
         }
       ]
     }
@@ -371,6 +430,25 @@
         "business",
         "marketing",
         "strategie de marque"
+      ],
+      "DCG": []
+    },
+    "BTS_SAM": {
+      "LP": [
+        "metiers de la grh",
+        "management et gestion des organisations",
+        "activites juridiques",
+        "metiers des administrations et collectivites territoriales",
+        "metiers de la communication : charge de communication",
+        "metiers de la communication : chef de projet communication",
+        "gestion des organisations de l'economie sociale",
+        "metiers de l'entrepreneuriat"
+      ],
+      "BUT": [
+        "gestion des entreprises et des administrations",
+        "gestion administrative et commerciale des organisations",
+        "carrieres juridiques",
+        "information communication parcours communication des organisations"
       ],
       "DCG": []
     }

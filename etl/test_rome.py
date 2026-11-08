@@ -4,7 +4,7 @@ import sys
 import unittest
 
 sys.path.insert(0, str(pathlib.Path(__file__).parent))
-from rome_candidats import construire, lire_arbo, lire_centres  # noqa: E402
+from rome_candidats import SELECTION, construire, lire_arbo, lire_centres  # noqa: E402
 
 ENTETE = ["", "", "", "Fiche ROME", "Code OGR"]
 ARBO = [ENTETE, ["M", "12", "03", "Comptable", ""], ["M", "12", "03", "Comptable unique", "123"],
@@ -47,6 +47,12 @@ class TestConstruire(unittest.TestCase):
         with self.assertRaises(SystemExit) as e:
             construire({"M1203": ["Comptable"]}, {})
         self.assertIn("absente du ROME", str(e.exception))
+
+    def test_bts_sam_ajoute_aux_fiches_d_assistanat_seulement(self):
+        fiches = {c: [c] for g in SELECTION.values() for codes in g.values() for c in codes.split()}
+        publics = {m["code"]: m["publics"] for m in construire(fiches, {})}
+        self.assertIn("BTS_SAM", publics["M1604"])
+        self.assertNotIn("BTS_SAM", publics["M1203"])
 
 
 if __name__ == "__main__":

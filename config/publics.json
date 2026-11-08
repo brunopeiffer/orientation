@@ -12,6 +12,6 @@
     { "id": "BTS_NDRC", "libelle": "BTS Négociation et digitalisation de la relation client (NDRC)", "parcours": "bts", "actif": true },
     { "id": "BTS_MCO", "libelle": "BTS Management commercial opérationnel (MCO)", "parcours": "bts", "actif": false },
     { "id": "BTS_GPME", "libelle": "BTS Gestion de la PME", "parcours": "bts", "actif": false },
-    { "id": "BTS_SAM", "libelle": "BTS Support à l'action managériale (SAM)", "parcours": "bts", "actif": false }
+    { "id": "BTS_SAM", "libelle": "BTS Support à l'action managériale (SAM)", "parcours": "bts", "actif": true }
   ]
 }

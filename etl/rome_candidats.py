@@ -27,7 +27,7 @@ FAMILLES = json.loads((RACINE / "contenu/metiers-familles.json").read_text(encod
 SORTIE_DOC = RACINE / "docs/METIERS-A-VALIDER.md"
 SORTIE_JSON = RACINE / "data/metiers.json"
 
-# Publics pour lesquels la fiche est proposée. STMG voit tout ; CG et NDRC selon la cohérence avec le BTS.
+# Publics pour lesquels la fiche est proposée. STMG voit tout ; CG et NDRC selon la cohérence avec le BTS (SAM : voir AUSSI).
 S, CG, NDRC = "STMG", "BTS_CG", "BTS_NDRC"
 SELECTION = {
     "compta": {
@@ -95,6 +95,12 @@ SELECTION = {
     },
 }
 
+# Publics ajoutés à des fiches déjà retenues ci-dessus (codes de SELECTION uniquement). BTS SAM : métiers cités
+# par l'Onisep (assistanat commercial, de gestion, RH, office manager, secrétariat juridique) et voisins. À VALIDER.
+AUSSI = {
+    "BTS_SAM": "M1607 M1604 M1432 M1621 M1612 K1406 M1602 M1601 M1501 M1502 M1505 D1401 E1107",
+}
+
 # Appellations rattachées par le ROME à une fiche retenue mais hors sujet pour ces publics. À VALIDER.
 EXCLUSIONS = {"Caissier / Caissière de casino de jeux", "Comptable des jeux"}
 
@@ -157,6 +163,12 @@ def construire(fiches, centres):
                 app = [a for a in fiches[code] if a not in EXCLUSIONS]
                 metiers.append({"code": code, "libelle": app[0], "famille": famille, "publics": publics.split("|"),
                                 "appellations": app[1:], "centres": centres.get(code, [])})
+    par_code = {m["code"]: m for m in metiers}
+    for public, codes in AUSSI.items():
+        for code in codes.split():
+            if code not in par_code:
+                raise SystemExit(f"ERREUR : {code} (AUSSI, {public}) n'est pas dans SELECTION")
+            par_code[code]["publics"].append(public)
     return metiers
 
 

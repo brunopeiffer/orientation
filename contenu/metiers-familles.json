@@ -133,7 +133,8 @@
         "mgn",
         "droit_eco",
         "cg_social",
-        "cejm"
+        "cejm",
+        "sam_rh"
       ],
       "freins": [
         "chiffres",
@@ -180,7 +181,9 @@
         "droit_eco",
         "cejm",
         "cge",
-        "cg_si"
+        "cg_si",
+        "sam_processus",
+        "sam_projet"
       ],
       "freins": [
         "ecran",
@@ -556,7 +559,8 @@
         "mgn",
         "lva",
         "ndrc_digital",
-        "cge"
+        "cge",
+        "sam_projet"
       ],
       "freins": [
         "ecran",
@@ -649,7 +653,8 @@
         "philo",
         "histoire_geo",
         "cejm",
-        "cge"
+        "cge",
+        "sam_rh"
       ],
       "freins": [
         "horaires_decales",
@@ -748,7 +753,8 @@
         "cejm",
         "cge",
         "cg_social",
-        "cg_fiscal"
+        "cg_fiscal",
+        "sam_processus"
       ],
       "freins": [
         "ecran",

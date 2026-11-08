@@ -2,7 +2,7 @@
  "source": "ROME, France Travail : arborescence principale et arborescence des centres d'intérêt",
  "version": "octobre 2026",
  "licence": "Licence Ouverte Etalab 2.0",
- "genere": "2026-11-07",
+ "genere": "2026-11-08",
  "metiers": [
   {
    "code": "M1203",
@@ -455,7 +455,8 @@
    "famille": "paie_rh",
    "publics": [
     "STMG",
-    "BTS_CG"
+    "BTS_CG",
+    "BTS_SAM"
    ],
    "appellations": [
     "Assistant / Assistante de gestion administrative du personnel",
@@ -477,7 +478,8 @@
    "libelle": "Chargé / Chargée de recrutement",
    "famille": "paie_rh",
    "publics": [
-    "STMG"
+    "STMG",
+    "BTS_SAM"
    ],
    "appellations": [
     "Chargé / Chargée de recherche en recrutement",
@@ -525,7 +527,8 @@
    "libelle": "Chargé / Chargée de formation en entreprise",
    "famille": "paie_rh",
    "publics": [
-    "STMG"
+    "STMG",
+    "BTS_SAM"
    ],
    "appellations": [
     "Conseiller / Conseillère en formation en entreprise"
@@ -626,7 +629,8 @@
    "famille": "admin",
    "publics": [
     "STMG",
-    "BTS_CG"
+    "BTS_CG",
+    "BTS_SAM"
    ],
    "appellations": [
     "Agent administratif / Agente administrative",
@@ -661,7 +665,8 @@
    "famille": "admin",
    "publics": [
     "STMG",
-    "BTS_CG"
+    "BTS_CG",
+    "BTS_SAM"
    ],
    "appellations": [
     "Assistant / Assistante de direction bilingue",
@@ -684,7 +689,8 @@
    "famille": "admin",
    "publics": [
     "STMG",
-    "BTS_CG"
+    "BTS_CG",
+    "BTS_SAM"
    ],
    "appellations": [],
    "centres": [
@@ -699,7 +705,8 @@
    "famille": "admin",
    "publics": [
     "STMG",
-    "BTS_CG"
+    "BTS_CG",
+    "BTS_SAM"
    ],
    "appellations": [
     "Secrétaire bilingue",
@@ -718,7 +725,8 @@
    "famille": "admin",
    "publics": [
     "STMG",
-    "BTS_CG"
+    "BTS_CG",
+    "BTS_SAM"
    ],
    "appellations": [
     "Assistant / Assistante de cabinet juridique",
@@ -744,7 +752,8 @@
    "famille": "admin",
    "publics": [
     "STMG",
-    "BTS_CG"
+    "BTS_CG",
+    "BTS_SAM"
    ],
    "appellations": [
     "Employé / Employée de l'état civil",
@@ -764,7 +773,8 @@
    "famille": "admin",
    "publics": [
     "STMG",
-    "BTS_CG"
+    "BTS_CG",
+    "BTS_SAM"
    ],
    "appellations": [
     "Adjoint administratif / Adjointe administrative (guichet)",
@@ -785,7 +795,8 @@
    "libelle": "Chargé / Chargée d'accueil",
    "famille": "admin",
    "publics": [
-    "STMG"
+    "STMG",
+    "BTS_SAM"
    ],
    "appellations": [
     "Agent / Agente d'accueil",
@@ -1831,7 +1842,8 @@
    "famille": "vente_b2b",
    "publics": [
     "STMG",
-    "BTS_NDRC"
+    "BTS_NDRC",
+    "BTS_SAM"
    ],
    "appellations": [
     "Assistant / Assistante de direction commerciale",
@@ -3034,7 +3046,8 @@
    "libelle": "Chef / Cheffe de projet événementiel",
    "famille": "communication",
    "publics": [
-    "STMG"
+    "STMG",
+    "BTS_SAM"
    ],
    "appellations": [
     "Chargé / Chargée de communication événementielle",

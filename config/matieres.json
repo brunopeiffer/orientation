@@ -194,6 +194,38 @@
           "libelle": "Langue vivante (anglais)"
         }
       ]
+    },
+    "BTS_SAM": {
+      "matieres": [
+        {
+          "id": "sam_processus",
+          "libelle": "Optimisation des processus administratifs"
+        },
+        {
+          "id": "sam_projet",
+          "libelle": "Gestion de projet"
+        },
+        {
+          "id": "sam_rh",
+          "libelle": "Contribution à la gestion des ressources humaines"
+        },
+        {
+          "id": "cejm",
+          "libelle": "Culture économique, juridique et managériale (CEJM)"
+        },
+        {
+          "id": "cge",
+          "libelle": "Culture générale et expression"
+        },
+        {
+          "id": "lva",
+          "libelle": "Langue vivante A (anglais)"
+        },
+        {
+          "id": "lvb",
+          "libelle": "Langue vivante B"
+        }
+      ]
     }
   }
 }

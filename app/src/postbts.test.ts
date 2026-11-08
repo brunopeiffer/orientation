@@ -19,6 +19,8 @@ describe('voies de poursuite après BTS (contenu)', () => {
     expect(voiesDe('BTS_CG').map((v) => v.id)).toEqual(expect.arrayContaining(['dcg', 'emploi', 'cca', 'cnam_intec', 'paie', 'fonction_publique']))
     expect(voiesDe('BTS_NDRC').map((v) => v.id)).not.toContain('dcg')
     expect(voiesDe('BTS_NDRC').length).toBeGreaterThanOrEqual(6)
+    expect(voiesDe('BTS_SAM').map((v) => v.id)).toEqual(expect.arrayContaining(['emploi_sam', 'licence_pro', 'fonction_publique']))
+    expect(voiesDe('BTS_SAM').map((v) => v.id)).not.toContain('dcg')
     expect(voiesDe('STMG')).toEqual([])
   })
 
@@ -50,7 +52,7 @@ describe('offres locales', () => {
     const d = await chargerOffres()
     expect(d.licence).toMatch(/Licence Ouverte/)
     expect(d.sources.LP).toMatch(/\d{4}-\d{2}/)
-    for (const id of ['BTS_CG', 'BTS_NDRC']) {
+    for (const id of ['BTS_CG', 'BTS_NDRC', 'BTS_SAM']) {
       expect(offresLocales(d.offres, 'LP', id, ILLKIRCH, 50).length, id).toBeGreaterThan(0)
       expect(offresLocales(d.offres, 'BUT', id, ILLKIRCH, 50).length, id).toBeGreaterThan(0)
     }

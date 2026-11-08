@@ -1,4 +1,4 @@
-# Orientation — pistes métiers et formations (STMG, BTS CG, BTS NDRC)
+# Orientation — pistes métiers et formations (STMG, BTS CG, BTS NDRC, BTS SAM)
 
 Application web d'aide à l'orientation, sans compte : toutes les réponses restent dans le navigateur.
 Plan et jalons : [PLAN.md](PLAN.md). Listes à valider : [métiers](docs/METIERS-A-VALIDER.md), [poursuites d'études](docs/POURSUITES-A-VALIDER.md).

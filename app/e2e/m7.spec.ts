@@ -88,7 +88,7 @@ test.describe('accessibilité (RGAA / WCAG 2.2 AA)', () => {
     await expect(page.locator('fieldset').first().locator('input:checked')).toHaveCount(1)
   })
 
-  for (const publicId of ['STMG', 'BTS_NDRC']) {
+  for (const publicId of ['STMG', 'BTS_NDRC', 'BTS_SAM']) {
     test(`${publicId} : toutes les étapes sans violation axe et sans défilement horizontal à 320 px`, async ({ page }) => {
       await page.setViewportSize({ width: 320, height: 800 }) // WCAG 1.4.10 : contenu lisible sans défilement horizontal
       await page.goto('/')

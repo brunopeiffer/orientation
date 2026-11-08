@@ -10,7 +10,7 @@ Document de référence (vérifié par les tests `app/src/csp.test.ts` et `app/e
 - Le bouton « Sauvegarder » crée un fichier sur ton appareil ; personne d'autre ne le reçoit.
 
 ## Ce qui est gardé dans ton navigateur
-Prénom (facultatif), parcours (STMG, BTS CG ou BTS NDRC), réponses au test de personnalité, goûts, valeurs et refus,
+Prénom (facultatif), parcours (STMG, BTS CG, BTS NDRC ou BTS SAM), réponses au test de personnalité, goûts, valeurs et refus,
 tranches de notes (jamais de note exacte), commune choisie et distance, et, seulement si tu l'actives, les sujets
 du module handicap.
 

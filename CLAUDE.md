@@ -1,6 +1,6 @@
 # CLAUDE.md — conventions du projet orientation
 
-App d'aide à l'orientation pour Terminale STMG, BTS CG et BTS NDRC. Le plan et les jalons sont dans `PLAN.md`.
+App d'aide à l'orientation pour Terminale STMG, BTS CG, BTS NDRC et BTS SAM. Le plan et les jalons sont dans `PLAN.md`.
 
 ## Règles non négociables
 - Aucun compte. L'état reste dans le navigateur. Le prénom est facultatif et n'est jamais envoyé sur le réseau.

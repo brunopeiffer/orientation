@@ -60,6 +60,10 @@ describe('matching', () => {
     expect(pistes(complet('BTS_NDRC'), 999).every((p) => p.metier.publics.includes('BTS_NDRC'))).toBe(true)
     expect(pistes(complet('BTS_NDRC'), 999).some((p) => p.famille.id === 'compta')).toBe(false)
     expect(pistes(complet('BTS_CG'), 999).every((p) => p.metier.publics.includes('BTS_CG'))).toBe(true)
+    const sam = pistes(complet('BTS_SAM'), 999)
+    expect(sam.length).toBeGreaterThan(0)
+    expect(sam.every((p) => p.metier.publics.includes('BTS_SAM'))).toBe(true)
+    expect(sam.some((p) => p.famille.id === 'compta')).toBe(false)
     expect(ROME.metiers.every((m) => m.publics.includes('STMG'))).toBe(true)
   })
 

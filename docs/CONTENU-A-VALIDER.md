@@ -236,6 +236,15 @@ Statut : **A_VALIDER**. Tranches : Moins de 8 / 8 à 10 / 10 à 12 / 12 à 14 / 
 - `cge` : Culture générale et expression
 - `lva` : Langue vivante (anglais)
 
+**BTS_SAM**
+- `sam_processus` : Optimisation des processus administratifs
+- `sam_projet` : Gestion de projet
+- `sam_rh` : Contribution à la gestion des ressources humaines
+- `cejm` : Culture économique, juridique et managériale (CEJM)
+- `cge` : Culture générale et expression
+- `lva` : Langue vivante A (anglais)
+- `lvb` : Langue vivante B
+
 Grille : les libellés correspondent-ils au référentiel en vigueur et au vocabulaire des élèves ?
 
 ## 4. Familles de métiers et fiches « réalité » (`contenu/metiers-familles.json`)
@@ -300,7 +309,7 @@ Métiers où « plus de 3 ans d'études » est signalé comme frein : M1211, M12
 ### Paie et ressources humaines (`paie_rh`)
 - Types par défaut : S, C · Personnalité : decision B, organisation A
 - Environnements : bureau, grande_structure, petite_structure, service_public · Valeurs : stabilite, utilite, equipe, contact
-- Matières : mgn, droit_eco, cg_social, cejm · Freins : chiffres, ecran
+- Matières : mgn, droit_eco, cg_social, cejm, sam_rh · Freins : chiffres, ecran
 - Contraintes :
   - La paie ne tolère pas d’erreur ni de retard : les échéances sont fixes chaque mois.
   - Le droit du travail est complexe et évolue souvent.
@@ -313,7 +322,7 @@ Métiers où « plus de 3 ans d'études » est signalé comme frein : M1211, M12
 ### Assistanat, administration, secteur public (`admin`)
 - Types par défaut : C, S · Personnalité : organisation A
 - Environnements : bureau, service_public, petite_structure, association · Valeurs : stabilite, equipe, equilibre, utilite
-- Matières : mgn, francais, droit_eco, cejm, cge, cg_si · Freins : ecran, telephone
+- Matières : mgn, francais, droit_eco, cejm, cge, cg_si, sam_processus, sam_projet · Freins : ecran, telephone
 - Contraintes :
   - Beaucoup de tâches menées en parallèle, souvent avec des interruptions.
   - Une grande partie du travail se fait sur écran et au téléphone.
@@ -417,7 +426,7 @@ Métiers où « plus de 3 ans d'études » est signalé comme frein : M1211, M12
 ### Communication et digital (`communication`)
 - Types par défaut : A, E · Personnalité : perception B, energie B
 - Environnements : bureau, teletravail, petite_structure, association · Valeurs : creativite, autonomie, equipe
-- Matières : francais, mgn, lva, ndrc_digital, cge · Freins : ecran, horaires_decales
+- Matières : francais, mgn, lva, ndrc_digital, cge, sam_projet · Freins : ecran, horaires_decales
 - Contraintes :
   - Beaucoup de candidats pour peu de postes : un portfolio fait la différence.
   - Des urgences et parfois des événements le soir ou le week-end.
@@ -443,7 +452,7 @@ Métiers où « plus de 3 ans d'études » est signalé comme frein : M1211, M12
 ### Social, insertion et éducation (`social`)
 - Types par défaut : S · Personnalité : decision B, energie B
 - Environnements : service_public, association, bureau, deplacements · Valeurs : utilite, contact, equipe, stabilite
-- Matières : mgn, droit_eco, francais, philo, histoire_geo, cejm, cge · Freins : horaires_decales, deplacements
+- Matières : mgn, droit_eco, francais, philo, histoire_geo, cejm, cge, sam_rh · Freins : horaires_decales, deplacements
 - Contraintes :
   - Des situations humaines parfois difficiles, qu’il faut savoir mettre à distance.
   - Une part importante de paperasse et de dossiers administratifs.
@@ -469,7 +478,7 @@ Métiers où « plus de 3 ans d'études » est signalé comme frein : M1211, M12
 ### Droit et notariat (`juridique`)
 - Types par défaut : C, I · Personnalité : perception A, decision A
 - Environnements : bureau, petite_structure, service_public · Valeurs : stabilite, utilite, autonomie, evolution
-- Matières : droit_eco, francais, philo, mgn, cejm, cge, cg_social, cg_fiscal · Freins : ecran, etudes_longues
+- Matières : droit_eco, francais, philo, mgn, cejm, cge, cg_social, cg_fiscal, sam_processus · Freins : ecran, etudes_longues
 - Contraintes :
   - Beaucoup de lecture et de rédaction, avec une grande précision dans les mots.
   - Des textes de loi qui changent souvent : il faut se tenir à jour.
@@ -537,13 +546,29 @@ Statut : **A_VALIDER** (2026-11-08). Les canaux et calendriers changent chaque a
 
 ### Travailler tout de suite après le BTS (BTS_CG)
 - HORS Parcoursup · Bac+2 (ton BTS) · Dès l’obtention du BTS
-- Le BTS CG est d’abord fait pour travailler : assistant(e) comptable ou collaborateur, collaboratrice en cabinet d’expertise comptable, en entreprise ou en centre de gestion. Tu pourras évoluer plus tard (chef comptable, contrôle de gestion) et reprendre des études en formation continue.
+- Le BTS CG est conçu pour travailler : assistant(e) comptable ou collaborateur, collaboratrice en cabinet d’expertise comptable, en entreprise ou en centre de gestion. Dans les faits, 6 mois après ce BTS (voie scolaire), 22 % des diplômés sont en emploi et 59 % poursuivent des études (InserJeunes 2024). Tu pourras évoluer plus tard (chef comptable, contrôle de gestion) et reprendre des études en formation continue.
 - Canal : Hors Parcoursup : candidature directement auprès des employeurs : offres d’emploi, cabinets comptables, entreprises où tu as fait tes stages.
 - Alternance : Non concerné : c’est un emploi salarié.
 - Lien : Les débouchés du BTS CG (Onisep) (https://www.onisep.fr/ressources/univers-formation/formations/post-bac/bts-comptabilite-et-gestion)
-- Sources : [Onisep, fiche « BTS Comptabilité et gestion » (débouchés et poursuites d’études)](https://www.onisep.fr/ressources/univers-formation/formations/post-bac/bts-comptabilite-et-gestion)
+- Sources : [Onisep, fiche « BTS Comptabilité et gestion » (débouchés, poursuites, devenir des diplômés InserJeunes 2024)](https://www.onisep.fr/ressources/univers-formation/formations/post-bac/bts-comptabilite-et-gestion)
 
-### Licence professionnelle (BTS_CG, BTS_NDRC)
+### Travailler tout de suite après le BTS (BTS_NDRC)
+- HORS Parcoursup · Bac+2 (ton BTS) · Dès l’obtention du BTS
+- Le BTS NDRC forme des commerciaux qui gèrent la relation client, de la prospection à la fidélisation : commercial(e), chargé(e) de clientèle, conseiller ou conseillère de vente, téléconseiller… 6 mois après ce BTS (voie scolaire), 29 % des diplômés sont en emploi et 49 % poursuivent des études (InserJeunes 2024). Dans la vente, l’expérience et les résultats comptent beaucoup pour évoluer.
+- Canal : Hors Parcoursup : candidature directement auprès des employeurs : offres d’emploi, cabinets comptables, entreprises où tu as fait tes stages.
+- Alternance : Non concerné : c’est un emploi salarié.
+- Lien : Les débouchés du BTS NDRC (Onisep) (https://www.onisep.fr/ressources/univers-formation/formations/post-bac/bts-negociation-et-digitalisation-de-la-relation-client)
+- Sources : [Onisep, fiche « BTS Négociation et digitalisation de la relation client » (débouchés, poursuites, devenir des diplômés InserJeunes 2024)](https://www.onisep.fr/ressources/univers-formation/formations/post-bac/bts-negociation-et-digitalisation-de-la-relation-client)
+
+### Travailler tout de suite après le BTS (BTS_SAM)
+- HORS Parcoursup · Bac+2 (ton BTS) · Dès l’obtention du BTS
+- Le BTS SAM mène à des postes d’assistant(e) : de manager, de gestion en PME, en ressources humaines, commercial(e), office manager, secrétaire juridique, dans des entreprises, des associations ou des administrations. 6 mois après ce BTS (voie scolaire), 30 % des diplômés sont en emploi et 45 % poursuivent des études (InserJeunes 2024).
+- Canal : Hors Parcoursup : candidature directement auprès des employeurs : offres d’emploi, cabinets comptables, entreprises où tu as fait tes stages.
+- Alternance : Non concerné : c’est un emploi salarié.
+- Lien : Les débouchés du BTS SAM (Onisep) (https://www.onisep.fr/ressources/univers-formation/formations/post-bac/bts-support-a-l-action-manageriale)
+- Sources : [Onisep, fiche « BTS Support à l’action managériale » (débouchés, poursuites, devenir des diplômés InserJeunes 2024)](https://www.onisep.fr/ressources/univers-formation/formations/post-bac/bts-support-a-l-action-manageriale)
+
+### Licence professionnelle (BTS_CG, BTS_NDRC, BTS_SAM)
 - HORS Parcoursup · Bac+3 · 1 an
 - Une année pour te spécialiser dans un métier précis, avec un stage long ou en alternance. Conçue pour entrer ensuite dans la vie active.
 - Canal : Candidature directement auprès de l’université ou de l’IUT, souvent sur sa plateforme eCandidat, au printemps. Une candidature par licence.
@@ -567,7 +592,7 @@ Statut : **A_VALIDER** (2026-11-08). Les canaux et calendriers changent chaque a
 - Lien : Mon Master (plateforme des masters) (https://www.monmaster.gouv.fr/)
 - Sources : [iaelyon (Université Jean Moulin Lyon 3), « Master CCA »](https://iae.univ-lyon3.fr/master-cca-comptabilite-controle-audit-4)
 
-### BUT en admission parallèle (2e année, parfois 3e) (BTS_CG, BTS_NDRC)
+### BUT en admission parallèle (2e année, parfois 3e) (BTS_CG, BTS_NDRC, BTS_SAM)
 - HORS Parcoursup · Bac+3 · 1 à 2 ans
 - Rejoindre un BUT de gestion ou de commerce en cours de cursus, selon ton dossier et les places disponibles.
 - Canal : Hors Parcoursup : candidature directement auprès de l’IUT (souvent sur eCandidat). La fiche Parcoursup de chaque BUT donne les contacts de l’IUT.
@@ -575,7 +600,7 @@ Statut : **A_VALIDER** (2026-11-08). Les canaux et calendriers changent chaque a
 - Lien : Voir les BUT près de chez toi (#offres-BUT)
 - Sources : [Onisep, « Que faire après un BTS »](https://www.onisep.fr/formation/apres-le-bac-les-etudes-superieures/les-principales-filieres-d-etudes-superieures/les-bts-brevet-de-technicien-superieur/que-faire-apres-un-bts)
 
-### Licence générale (L2 ou L3) : gestion, économie, AES, droit (BTS_CG, BTS_NDRC)
+### Licence générale (L2 ou L3) : gestion, économie, AES, droit (BTS_CG, BTS_NDRC, BTS_SAM)
 - HORS Parcoursup · Bac+3, puis master possible · 1 à 2 ans
 - Pour viser un master ensuite. L’université décide du niveau d’entrée (L2 ou L3) selon ton dossier.
 - Canal : Hors Parcoursup : candidature directement auprès de l’université (souvent eCandidat), au printemps.
@@ -583,7 +608,7 @@ Statut : **A_VALIDER** (2026-11-08). Les canaux et calendriers changent chaque a
 - Lien : Trouver l’université et son site (Paysage, ministère) (https://paysage.enseignementsup-recherche.gouv.fr/)
 - Sources : [Onisep, « Que faire après un BTS »](https://www.onisep.fr/formation/apres-le-bac-les-etudes-superieures/les-principales-filieres-d-etudes-superieures/les-bts-brevet-de-technicien-superieur/que-faire-apres-un-bts)
 
-### Prépa ATS économie-gestion (BTS_CG, BTS_NDRC)
+### Prépa ATS économie-gestion (BTS_CG, BTS_NDRC, BTS_SAM)
 - Sur Parcoursup · Bac+3 (prépare aux concours) · 1 an
 - Une année de prépa réservée aux bac+2 pour réussir les concours d’admission parallèle des écoles de commerce.
 - Canal : Candidature sur Parcoursup, comme les autres classes prépas.
@@ -591,7 +616,7 @@ Statut : **A_VALIDER** (2026-11-08). Les canaux et calendriers changent chaque a
 - Lien : Parcoursup (https://www.parcoursup.gouv.fr/)
 - Sources : [Onisep, « La prépa ATS économie-gestion »](https://www.onisep.fr/formation/apres-le-bac-les-etudes-superieures/les-principales-filieres-d-etudes-superieures/les-classes-preparatoires-aux-grandes-ecoles-cpge/les-prepas-economiques-et-commerciales/la-prepa-ats-economie-gestion)
 
-### École de commerce en admission parallèle (BTS_CG, BTS_NDRC)
+### École de commerce en admission parallèle (BTS_CG, BTS_NDRC, BTS_SAM)
 - HORS Parcoursup · Bac+5 (programme grande école) · 3 ans
 - Entrer en 1re année du programme grande école d’une école de commerce après un bac+2. Les frais de scolarité sont souvent élevés : l’alternance peut les prendre en charge.
 - Canal : Hors Parcoursup : par concours communs (Passerelle, Ecricome Tremplin) ou directement auprès de l’école.
@@ -599,7 +624,7 @@ Statut : **A_VALIDER** (2026-11-08). Les canaux et calendriers changent chaque a
 - Lien : Concours Passerelle (https://grande-ecole.passerelle-esc.com/)
 - Sources : [Sites officiels des concours Passerelle et Ecricome](https://www.ecricome.org/)
 
-### Bachelor ou titre professionnel bac+3 (souvent en alternance) (BTS_CG, BTS_NDRC)
+### Bachelor ou titre professionnel bac+3 (souvent en alternance) (BTS_CG, BTS_NDRC, BTS_SAM)
 - HORS Parcoursup · Bac+3 · 1 an
 - Proposés par des écoles, des CCI ou des CFA. Avant de t’inscrire, vérifie 4 points : le titre est enregistré au RNCP (niveau 6) et tu sais qui le délivre ; l’établissement est certifié Qualiopi ; il publie ses taux de réussite et d’insertion (InserJeunes pour les CFA) ; en apprentissage, la formation est gratuite pour toi.
 - Canal : Hors Parcoursup : candidature directement auprès de l’école ou du CFA.
@@ -623,13 +648,13 @@ Statut : **A_VALIDER** (2026-11-08). Les canaux et calendriers changent chaque a
 - Lien : Fiche RNCP 37948 (France compétences) (https://www.francecompetences.fr/recherche/rncp/37948/)
 - Sources : [France compétences, fiche RNCP 37948 « TP Gestionnaire de paie »](https://www.francecompetences.fr/recherche/rncp/37948/)
 
-### Concours de la fonction publique (BTS_CG)
+### Concours de la fonction publique (BTS_CG, BTS_SAM)
 - HORS Parcoursup · Catégorie B (concours ouverts avec le bac) · Selon le concours
-- Ton profil intéresse l’administration : par exemple contrôleur ou contrôleuse des finances publiques (impôts, comptabilité publique), ou les postes de gestion des collectivités et des hôpitaux. Ces concours de catégorie B demandent le bac ; ton BTS t’aide à les préparer.
-- Canal : Hors Parcoursup : inscription au concours directement sur le site de l’administration qui recrute, aux dates du calendrier officiel des concours.
+- Ton profil intéresse l’administration. Avec un BTS CG : par exemple contrôleur ou contrôleuse des finances publiques (impôts, comptabilité publique). Avec un BTS SAM : par exemple secrétaire administratif ou administrative dans un ministère, une collectivité ou un hôpital. Ces concours de catégorie B demandent le bac ; ton BTS t’aide à les préparer.
+- Canal : Hors Parcoursup : inscription au concours directement sur le site de l’administration qui recrute, aux dates du calendrier officiel. Les offres et concours sont aussi sur choisirleservicepublic.gouv.fr.
 - Alternance : Non concerné : on entre par concours.
 - Lien : Calendrier du concours de contrôleur des finances publiques (https://www.fonction-publique.gouv.fr/devenir-agent-public/calendrier-general-concours/controleurs-des-finances-publiques)
-- Sources : [fonction-publique.gouv.fr, calendrier des concours (contrôleurs des finances publiques)](https://www.fonction-publique.gouv.fr/devenir-agent-public/calendrier-general-concours/controleurs-des-finances-publiques)
+- Sources : [fonction-publique.gouv.fr, calendrier des concours (contrôleurs des finances publiques)](https://www.fonction-publique.gouv.fr/devenir-agent-public/calendrier-general-concours/controleurs-des-finances-publiques) ; [economie.gouv.fr, « Secrétaire administratif de classe normale, concours externe »](https://www.economie.gouv.fr/recrutement/secretaire-administratif-classe-normale-externe)
 
 ### Mots-clés des offres locales (licences pro, BUT, DCG)
 
@@ -639,6 +664,9 @@ Statut : **A_VALIDER** (2026-11-08). Les canaux et calendriers changent chaque a
 - **BTS_NDRC · LP** : « commerce et distribution » ; « technico-commercial » ; « e-commerce et marketing numerique » ; « commercialisation de produits et services » ; « management des activites commerciales » ; « metiers du marketing operationnel » ; « metiers du commerce international » ; « assurance, banque, finance : charge de clientele » ; « metiers de l'immobilier : transaction » ; « metiers de l'entrepreneuriat » ; « management et gestion des organisations » ; « commercialisation des produits alimentaires » ; « metiers du tourisme : commercialisation » ; « gestion des achats »
 - **BTS_NDRC · BUT** : « techniques de commercialisation » ; « business » ; « marketing » ; « strategie de marque »
 - **BTS_NDRC · DCG** : aucun (non proposé)
+- **BTS_SAM · LP** : « metiers de la grh » ; « management et gestion des organisations » ; « activites juridiques » ; « metiers des administrations et collectivites territoriales » ; « metiers de la communication : charge de communication » ; « metiers de la communication : chef de projet communication » ; « gestion des organisations de l'economie sociale » ; « metiers de l'entrepreneuriat »
+- **BTS_SAM · BUT** : « gestion des entreprises et des administrations » ; « gestion administrative et commerciale des organisations » ; « carrieres juridiques » ; « information communication parcours communication des organisations »
+- **BTS_SAM · DCG** : aucun (non proposé)
 
 Grille : chaque canal est-il exact cette année ? Manque-t-il une poursuite fréquente pour tes étudiants ?
 
