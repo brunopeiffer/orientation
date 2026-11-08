@@ -23,7 +23,7 @@ export default function Metiers() {
   return (
     <div className="space-y-5">
       <div>
-        <h1 tabIndex={-1} className="text-2xl font-extrabold text-violet-900 sm:text-3xl">Pistes métiers et test de réalité</h1>
+        <h1 tabIndex={-1} className="text-[length:var(--da-t-titre)] font-bold text-violet-900">Pistes métiers et test de réalité</h1>
         <p className="mt-1 text-slate-700">
           Voici {liste.length} pistes à explorer, pas un verdict. Le score montre à quel point chaque métier colle à tes réponses : ouvre le détail pour comprendre pourquoi.
         </p>
@@ -53,13 +53,13 @@ function Carte({ piste, rang }: { piste: Piste; rang: number }) {
   const refus = GOUTS.refus.filter((r) => freins.includes(r.id))
   return (
     <li aria-labelledby={id} className="rounded-3xl bg-white p-4 shadow-sm ring-1 ring-violet-100 sm:p-5">
-      <div className="flex items-start justify-between gap-3">
-        <div className="min-w-0 [overflow-wrap:anywhere]">
+      <div className="flex flex-wrap items-start justify-between gap-3">
+        <div className="min-w-0 flex-1 basis-56 [overflow-wrap:break-word]">
           <p className="text-sm font-semibold text-fuchsia-700">Piste {rang} · {famille.nom}</p>
-          <h2 id={id} className="text-lg font-extrabold text-violet-900">{metier.libelle}</h2>
+          <h2 id={id} className="text-xl font-bold text-violet-900">{metier.libelle}</h2>
         </div>
         {/* Un libellé plutôt qu'une « note » : le score reste visible, sans effet de bulletin. */}
-        <p className="shrink-0 rounded-2xl bg-gradient-to-br from-violet-700 to-fuchsia-700 px-3 py-2 text-center text-sm font-bold text-white">
+        <p className="shrink-0 rounded-2xl bg-violet-900 px-3 py-2 text-center text-sm font-semibold text-white">
           {proximite(score)}<span className="block text-xs font-medium">correspondance {score}/100</span>
         </p>
       </div>
@@ -119,7 +119,7 @@ function Barre({ c }: { c: Composante }) {
         <strong>{c.score === null ? 'pas assez d’infos' : `${c.score} / 100`}</strong>
       </div>
       <div aria-hidden="true" className="mt-1 h-2 rounded-full bg-white">
-        <div className="h-full rounded-full bg-gradient-to-r from-violet-600 to-fuchsia-600" style={{ width: `${c.score ?? 0}%` }} />
+        <div className="h-full rounded-full bg-violet-700" style={{ width: `${c.score ?? 0}%` }} />
       </div>
     </li>
   )

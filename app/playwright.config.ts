@@ -5,7 +5,8 @@ const channel = process.env.PW_CHANNEL
 
 export default defineConfig({
   testDir: 'e2e',
-  use: { baseURL: 'http://localhost:5180' },
+  // Animations coupées (préférence « moins d'animations ») : axe mesure les couleurs finales, pas un fondu en cours.
+  use: { baseURL: 'http://localhost:5180', contextOptions: { reducedMotion: 'reduce' } },
   projects: [
     { name: 'mobile', use: { ...devices['Pixel 7'], channel } },
     { name: 'ordinateur', use: { ...devices['Desktop Chrome'], channel } },

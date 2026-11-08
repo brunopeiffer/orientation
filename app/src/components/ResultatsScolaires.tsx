@@ -23,7 +23,7 @@ export default function ResultatsScolaires() {
   return (
     <div className="space-y-5">
       <div>
-        <h1 tabIndex={-1} className="text-2xl font-extrabold text-violet-900 sm:text-3xl">Tes résultats (estimations)</h1>
+        <h1 tabIndex={-1} className="text-[length:var(--da-t-titre)] font-bold text-violet-900">Tes résultats (estimations)</h1>
         <p className="mt-1 text-slate-700">
           Pas besoin de ta note exacte : choisis une tranche, ou laisse « Je ne sais pas ». Coche aussi les matières que tu aimes, même si tes notes sont moyennes.
         </p>
@@ -72,7 +72,7 @@ export default function ResultatsScolaires() {
             </ul>
           </Carte>
 
-          <section aria-labelledby={`${id}-fortes`} className="rounded-3xl bg-gradient-to-br from-teal-700 to-cyan-800 p-5 text-white shadow-lg">
+          <section aria-labelledby={`${id}-fortes`} className="rounded-3xl bg-[var(--da-nuit)] p-6 text-white">
             <h2 id={`${id}-fortes`} className="text-lg font-extrabold"><span aria-hidden="true">💪 </span>Tes points d’appui</h2>
             {fortes.length ? (
               <ul className="mt-2 list-disc space-y-1 pl-5">

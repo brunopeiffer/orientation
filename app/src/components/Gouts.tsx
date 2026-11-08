@@ -50,7 +50,7 @@ export default function Gouts() {
   return (
     <div className="space-y-5">
       <div>
-        <h1 ref={titre} tabIndex={-1} className="text-2xl font-extrabold text-violet-900 sm:text-3xl">Tes goûts, envies et refus</h1>
+        <h1 ref={titre} tabIndex={-1} className="text-[length:var(--da-t-titre)] font-bold text-violet-900">Tes goûts, envies et refus</h1>
         <p className="mt-1 text-slate-700">Pense à ce que tu as aimé en cours, en stage, dans tes loisirs. Tu peux changer tes réponses quand tu veux.</p>
         <p className="mt-1 text-sm font-semibold text-fuchsia-800">Partie {partie + 1} sur {PARTIES.length} : {PARTIES[partie]}</p>
       </div>
@@ -75,7 +75,7 @@ export default function Gouts() {
         </div>
       </Carte>}
 
-      {partie === 1 && <section aria-labelledby={`${id}-top`} className="rounded-3xl bg-gradient-to-br from-fuchsia-700 to-orange-700 p-5 text-white shadow-lg">
+      {partie === 1 && <section aria-labelledby={`${id}-top`} className="rounded-3xl bg-[var(--da-nuit)] p-6 text-white">
         <h2 id={`${id}-top`} className="text-lg font-extrabold"><span aria-hidden="true">🎯 </span>Tes intérêts qui ressortent</h2>
         {sansReponse > 0 ? (
           <p className="mt-2">Encore {sansReponse} activité{sansReponse > 1 ? 's' : ''} sans réponse (parties 1 et 2).</p>

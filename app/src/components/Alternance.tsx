@@ -50,7 +50,7 @@ export default function Alternance() {
   return (
     <div className="space-y-5">
       <div>
-        <h1 tabIndex={-1} className="text-2xl font-extrabold text-violet-900 sm:text-3xl">Entreprises et alternance</h1>
+        <h1 tabIndex={-1} className="text-[length:var(--da-t-titre)] font-bold text-violet-900">Entreprises et alternance</h1>
         <p className="mt-1 text-slate-700">
           Trouve des offres en alternance et des entreprises près de chez toi pour tes pistes métiers. Rien n’est envoyé sur Internet tant que tu n’as pas cliqué sur « Chercher ».
         </p>

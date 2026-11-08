@@ -45,7 +45,7 @@ export default function TestPersonnalite() {
   return (
     <div className="space-y-5">
       <div>
-        <h1 ref={titre} tabIndex={-1} className="text-2xl font-extrabold text-violet-900 sm:text-3xl">
+        <h1 ref={titre} tabIndex={-1} className="text-[length:var(--da-t-titre)] font-bold text-violet-900">
           Ton profil de personnalité
         </h1>
         <p className="mt-1 text-slate-700">
@@ -116,7 +116,7 @@ function Resultats({ titre, onRevoir }: { titre: RefObject<HTMLHeadingElement>; 
 
   return (
     <div className="space-y-5">
-      <h1 ref={titre} tabIndex={-1} className="text-2xl font-extrabold text-violet-900 sm:text-3xl">
+      <h1 ref={titre} tabIndex={-1} className="text-[length:var(--da-t-titre)] font-bold text-violet-900">
         Ton profil de personnalité en 4 dimensions
       </h1>
 

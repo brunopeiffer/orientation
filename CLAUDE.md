@@ -45,6 +45,7 @@ Proxy : `cd proxy && npm install && npm test` (tests) ; déploiement et clé : v
 - M7 : synthèse imprimable (`app/src/synthese.ts`, `components/Synthese.tsx`, plan d'action dans `contenu/plan-action.json`) ; impression A4 via les variantes Tailwind `print:` ; CSP injectée au build depuis `config/sources.json` (`app/src/csp.ts`, plugin dans `vite.config.ts`). Audits : `docs/AUDIT-ACCESSIBILITE.md`, `docs/CONFIDENTIALITE.md`, tests `e2e/m7.spec.ts`.
 - Après l'analyse orientation et design (07/11/2026) : ordre goûts → résultats → personnalité (facultative) ; état v6 (favoris, renumérotation des étapes) ; spécialité STMG dans le score (`familles` des choix de `config/matieres.json`) ; aides pratiques dans `contenu/pratique.json` ; favoris `components/Favori.tsx`.
 - Métiers en BTS (08/11/2026) : `acces()` dans `app/src/metiers.ts` classe chaque métier (accessible avec le BTS, après expérience, études en plus) d'après le niveau Onisep, sinon la liste `apresBts` de `contenu/metiers-familles.json` ; en BTS, les métiers accessibles passent en premier.
+- Direction artistique (08/11/2026) : règles et variables CSS dans `DESIGN.md`, appliquées dans `app/src/index.css` (les nuances Tailwind violet/fuchsia/slate y sont redéfinies vers la palette) ; police Inter servie localement (`@fontsource-variable/inter`). Les tests e2e tournent en « moins d'animations ».
 - Toute nouvelle donnée de l'élève : l'ajouter à `EtatSchema`, augmenter `VERSION_ETAT`, écrire la migration et le test.
 
 ## Code

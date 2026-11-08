@@ -36,7 +36,7 @@ export default function PostBts() {
   return (
     <div className="space-y-5">
       <div>
-        <h1 tabIndex={-1} className="text-2xl font-extrabold text-violet-900 sm:text-3xl">Poursuites d’études après ton BTS</h1>
+        <h1 tabIndex={-1} className="text-[length:var(--da-t-titre)] font-bold text-violet-900">Poursuites d’études après ton BTS</h1>
         <p className="mt-1 text-slate-700">
           Après un BTS, la plupart des poursuites se demandent <strong>hors Parcoursup</strong>, directement auprès des établissements, souvent dès le printemps. Note bien le canal de chaque voie.
         </p>

@@ -49,7 +49,7 @@ export default function Formations() {
   return (
     <div className="space-y-5">
       <div>
-        <h1 tabIndex={-1} className="text-2xl font-extrabold text-violet-900 sm:text-3xl">Formations près de chez toi</h1>
+        <h1 tabIndex={-1} className="text-[length:var(--da-t-titre)] font-bold text-violet-900">Formations près de chez toi</h1>
         <p className="mt-1 text-slate-700">
           Toutes les formations de Parcoursup ouvertes aux bacheliers technologiques, autour de chez toi. Les chances d’accès sont des tendances, pas des promesses.
         </p>

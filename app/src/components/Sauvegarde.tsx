@@ -28,7 +28,7 @@ export default function Sauvegarde() {
         <Bouton variante="secondaire" onClick={() => telecharger(etatSeul(useEtat.getState()))}>
           <span aria-hidden="true">💾</span> Sauvegarder
         </Bouton>
-        <label className="inline-flex min-h-11 cursor-pointer items-center gap-2 rounded-full bg-white px-5 py-2 font-semibold text-violet-800 ring-2 ring-violet-200 hover:ring-violet-400 has-[:focus-visible]:outline has-[:focus-visible]:outline-3 has-[:focus-visible]:outline-violet-700">
+        <label className="inline-flex min-h-11 cursor-pointer items-center gap-2 rounded-full bg-white px-5 py-2 font-medium text-violet-800 ring-1 ring-violet-800 transition-colors duration-300 hover:bg-violet-50 has-[:focus-visible]:outline has-[:focus-visible]:outline-3 has-[:focus-visible]:outline-violet-700">
           <span aria-hidden="true">📂</span> Reprendre une sauvegarde
           <input
             type="file"

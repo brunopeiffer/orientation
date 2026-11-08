@@ -14,7 +14,7 @@ export default function Synthese() {
   return (
     <div className="space-y-5 print:space-y-3">
       <div>
-        <h1 tabIndex={-1} className="text-2xl font-extrabold text-violet-900 sm:text-3xl print:text-xl">
+        <h1 tabIndex={-1} className="text-[length:var(--da-t-titre)] font-bold text-violet-900 print:text-xl">
           Ma synthèse d’orientation{s.prenom && ` – ${s.prenom}`}
         </h1>
         <p className="mt-1 text-slate-700">{s.public ?? 'Parcours non choisi'} · {s.date}</p>

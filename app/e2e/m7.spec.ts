@@ -55,6 +55,14 @@ test.describe('synthèse imprimable', () => {
 })
 
 test.describe('accessibilité (RGAA / WCAG 2.2 AA)', () => {
+  test('animations : présentes par défaut, coupées si l’utilisateur demande moins d’animations', async ({ page }) => {
+    await page.emulateMedia({ reducedMotion: 'no-preference' })
+    await page.goto('/')
+    expect(await page.locator('main').evaluate((m) => getComputedStyle(m).animationName)).toBe('da-apparition')
+    await page.emulateMedia({ reducedMotion: 'reduce' })
+    expect(await page.locator('main').evaluate((m) => getComputedStyle(m).animationName)).toBe('none')
+  })
+
   test('navigation au clavier : lien d’évitement, accueil complet, focus visible, titre de page', async ({ page }, info) => {
     test.skip(info.project.name === 'mobile', 'parcours clavier testé sur ordinateur')
     await page.goto('/')

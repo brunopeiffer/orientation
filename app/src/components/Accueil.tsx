@@ -7,8 +7,8 @@ export const AVERTISSEMENT =
   'Tes réponses sont enregistrées uniquement sur cet appareil et ce navigateur. Si tu vides l’historique, utilises la navigation privée ou changes d’appareil, tu les perds. Utilise le bouton Sauvegarder pour garder une copie.'
 
 const GROUPES: { parcours: Parcours; titre: string; emoji: string; couleur: string }[] = [
-  { parcours: 'lycee', titre: 'Je suis au lycée', emoji: '🎒', couleur: 'from-violet-700 to-fuchsia-700' },
-  { parcours: 'bts', titre: 'Je termine mon BTS', emoji: '🎓', couleur: 'from-teal-700 to-cyan-800' },
+  { parcours: 'lycee', titre: 'Je suis au lycée', emoji: '🎒', couleur: 'from-violet-900 to-[#3a3a3c]' },
+  { parcours: 'bts', titre: 'Je termine mon BTS', emoji: '🎓', couleur: 'from-violet-700 to-violet-800' },
 ]
 
 export default function Accueil() {
@@ -27,29 +27,30 @@ export default function Accueil() {
   }
 
   return (
-    <div className="space-y-5">
-      <div className="text-center">
-        <h1 tabIndex={-1} className="bg-gradient-to-r from-violet-700 via-fuchsia-700 to-orange-700 bg-clip-text text-2xl font-extrabold text-transparent sm:text-4xl">
-          Trouve ta voie, à ton rythme
+    <div className="space-y-8">
+      {/* Grande section sombre d'ouverture (DESIGN.md : temps fort sur fond nuit, titre très grand). */}
+      <div className="-mx-5 -mt-5 rounded-t-3xl bg-[var(--da-nuit)] px-6 py-16 text-center sm:-mx-10 sm:-mt-10 sm:py-24">
+        <h1 tabIndex={-1} className="da-hero text-[length:var(--da-t-titre-xl)] font-bold text-[var(--da-nuit-texte)]">
+          Trouve ta voie, <span className="bg-gradient-to-r from-[#5ac8fa] via-[#a3e3ff] to-[#ffd479] bg-clip-text text-transparent">à ton rythme</span>
         </h1>
-        <p className="mt-2 text-slate-700">
+        <p className="mx-auto mt-4 max-w-xl text-lg text-[#d2d2d7] sm:text-xl">
           Quelques étapes pour découvrir des pistes de métiers, de formations et d’alternance. Ce sont des idées à explorer, pas un verdict.
         </p>
       </div>
 
-      <div role="note" aria-labelledby={`${id}-av`} className="rounded-2xl border-2 border-amber-300 bg-amber-50 p-3 text-sm sm:p-4">
-        <h2 id={`${id}-av`} className="flex items-center gap-2 font-bold text-amber-900">
+      <div role="note" aria-labelledby={`${id}-av`} className="rounded-3xl bg-violet-50 p-5 text-base sm:p-6">
+        <h2 id={`${id}-av`} className="flex items-center gap-2 font-semibold">
           <span aria-hidden="true">💾</span> Important : où sont gardées tes réponses ?
         </h2>
-        <p className="mt-1 text-amber-950" data-testid="avertissement">{AVERTISSEMENT}</p>
-        <p className="mt-1 text-amber-900">Aucun compte, aucun email. Rien ne part sur Internet sans ton action : seulement ta commune et les métiers que tu cherches, quand tu lances une recherche (détails en bas de page, « Confidentialité »).</p>
+        <p className="mt-2 text-slate-700" data-testid="avertissement">{AVERTISSEMENT}</p>
+        <p className="mt-2 text-slate-700">Aucun compte, aucun email. Rien ne part sur Internet sans ton action : seulement ta commune et les métiers que tu cherches, quand tu lances une recherche (détails en bas de page, « Confidentialité »).</p>
       </div>
 
       <fieldset aria-describedby={erreurPublic ? `${id}-public-err` : undefined} className="space-y-4">
-        <legend className="mb-2 text-xl font-bold">Où en es-tu ?</legend>
+        <legend className="mb-2 text-[length:var(--da-t-sous-titre)] font-bold">Où en es-tu ?</legend>
         <div className="grid gap-4 md:grid-cols-2">
         {GROUPES.map((g) => (
-          <div key={g.parcours} className={`rounded-3xl bg-gradient-to-br ${g.couleur} p-4 text-white shadow-lg`}>
+          <div key={g.parcours} className={`rounded-3xl bg-gradient-to-br ${g.couleur} p-5 text-white transition-transform duration-300 hover:scale-[1.01] sm:p-6`}>
             <p className="flex items-center gap-2 text-lg font-bold">
               <span aria-hidden="true" className="text-2xl">{g.emoji}</span> {g.titre}
             </p>
@@ -77,7 +78,7 @@ export default function Accueil() {
         {erreurPublic && <p id={`${id}-public-err`} className="font-semibold text-rose-700">{erreurPublic}</p>}
       </fieldset>
 
-      <div className="rounded-3xl bg-white p-4 shadow-sm">
+      <div className="rounded-3xl bg-violet-50 p-5 sm:p-6">
         <label htmlFor={`${id}-prenom`} className="font-bold">
           Ton prénom <span className="font-normal text-slate-600">(facultatif)</span>
         </label>
@@ -90,7 +91,7 @@ export default function Accueil() {
           onChange={(e) => setSaisie(e.target.value)}
           aria-invalid={!!erreurPrenom}
           aria-describedby={`${id}-prenom-aide${erreurPrenom ? ` ${id}-prenom-err` : ''}`}
-          className="mt-2 w-full rounded-2xl border-2 border-slate-300 px-4 py-3 text-lg focus:border-violet-600"
+          className="mt-2 w-full rounded-2xl border border-violet-200 bg-white px-4 py-3 text-lg focus:border-violet-600"
         />
         {erreurPrenom && <p id={`${id}-prenom-err`} className="mt-1 font-semibold text-rose-700">{erreurPrenom}</p>}
       </div>

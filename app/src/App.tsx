@@ -44,12 +44,13 @@ export default function App() {
   }, [courante, e.titre, total])
 
   return (
-    <div className="mx-auto flex min-h-dvh max-w-3xl lg:max-w-5xl flex-col gap-4 px-4 py-4 sm:py-8 print:max-w-none print:p-0">
+    <div className="mx-auto flex min-h-dvh max-w-3xl lg:max-w-5xl flex-col gap-6 px-4 pb-8 sm:pb-12 print:max-w-none print:p-0">
       <a href="#contenu" className="sr-only rounded-full bg-violet-800 px-4 py-2 font-semibold text-white focus:not-sr-only focus:self-start">
         Aller au contenu
       </a>
-      <header className="flex items-center justify-between gap-2 print:hidden">
-        <p className="text-lg font-extrabold text-violet-800">
+      {/* Barre du haut fine et translucide, qui reste visible au défilement (DESIGN.md, « Menu »). */}
+      <header className="sticky top-0 z-10 -mx-4 flex min-h-12 items-center justify-between gap-2 border-b border-black/5 bg-[color-mix(in_srgb,var(--da-fond)_80%,transparent)] px-4 text-sm backdrop-blur-xl backdrop-saturate-150 print:hidden">
+        <p className="font-semibold text-violet-900">
           <span aria-hidden="true">🧭</span> Mon orientation
         </p>
         {prenom && <p className="text-slate-700">Salut {prenom} <span aria-hidden="true">👋</span></p>}
@@ -65,10 +66,10 @@ export default function App() {
             aria-valuemax={total}
             aria-valuenow={courante}
             aria-valuetext={`Étape ${courante} sur ${total} : ${e.titre}`}
-            className="h-3 overflow-hidden rounded-full bg-white shadow-inner"
+            className="h-1.5 overflow-hidden rounded-full bg-violet-100"
           >
             <div
-              className="h-full rounded-full bg-gradient-to-r from-violet-600 via-fuchsia-600 to-orange-500 transition-all"
+              className="h-full rounded-full bg-violet-700 transition-all duration-500"
               style={{ width: `${(courante / total) * 100}%` }}
             />
           </div>
@@ -79,7 +80,7 @@ export default function App() {
               {etapes.map((x, k) => (
                 <li key={x.id}>
                   <button type="button" onClick={() => maj({ etape: k })} aria-current={k === courante ? 'step' : undefined}
-                    className={`min-h-11 w-full rounded-xl px-3 text-left ${k === courante ? 'bg-violet-700 font-bold text-white' : 'bg-white text-violet-900 ring-1 ring-violet-200 hover:ring-violet-400'}`}>
+                    className={`min-h-11 w-full rounded-full px-4 text-left transition-colors ${k === courante ? 'bg-violet-900 font-semibold text-white' : 'bg-white text-violet-900 hover:bg-violet-100'}`}>
                     {k === 0 ? 'Accueil' : `${k}. ${x.titre}`}
                   </button>
                 </li>
@@ -89,7 +90,7 @@ export default function App() {
         </nav>
       )}
 
-      <main id="contenu" tabIndex={-1} ref={main} className="flex-1 [overflow-wrap:anywhere] rounded-3xl bg-white/70 p-5 shadow-sm backdrop-blur sm:p-8 print:rounded-none print:bg-white print:p-0 print:shadow-none">
+      <main id="contenu" tabIndex={-1} ref={main} key={courante} className="da-apparition flex-1 [overflow-wrap:anywhere] rounded-3xl bg-white p-5 sm:p-10 print:rounded-none print:p-0">
         {reprise && courante > 0 && (
           <p role="status" className="mb-4 rounded-2xl bg-emerald-50 p-3 font-semibold text-emerald-900 print:hidden">
             Content de te revoir{prenom ? `, ${prenom}` : ''} ! Tu reprends là où tu t’étais arrêté(e).
@@ -116,7 +117,7 @@ export default function App() {
         )}
         {/* Pendant le questionnaire, ses propres boutons Retour / Continuer suffisent. */}
         {courante > 0 && (e.id !== 'personnalite' || complet(personnalite)) && (
-          <div className="mt-6 flex flex-wrap justify-between gap-2 border-t border-violet-100 pt-4 print:hidden">
+          <div className="mt-10 flex flex-wrap justify-between gap-2 border-t border-violet-100 pt-6 print:hidden">
             <Bouton variante="secondaire" onClick={() => maj({ etape: courante - 1 })}>
               <span aria-hidden="true">←</span> Étape précédente
             </Bouton>

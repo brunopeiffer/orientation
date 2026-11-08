@@ -1,23 +1,95 @@
 @import "tailwindcss";
+/* Inter servie par le site lui-même (aucun appel à un service de polices) ; règles de DA : DESIGN.md */
+@import "@fontsource-variable/inter";
 
-/* Polices système uniquement : aucune police externe (aucun appel réseau tiers). */
+:root {
+  --da-fond: #f5f5f7;
+  --da-surface: #ffffff;
+  --da-encre: #1d1d1f;
+  --da-encre-2: #424245;
+  --da-encre-3: #5e5e63;
+  --da-trait: #d2d2d7;
+  --da-trait-doux: #e8e8ed;
+  --da-action: #0071e3;
+  --da-action-fonce: #0066cc;
+  --da-nuit: #000000;
+  --da-nuit-texte: #f5f5f7;
+
+  --da-police: "Inter Variable", Inter, system-ui, "Segoe UI", Roboto, Arial, sans-serif;
+  --da-t-titre-xl: clamp(2.5rem, 7vw, 4.5rem);
+  --da-t-titre: clamp(2rem, 4.5vw, 3rem);
+  --da-t-sous-titre: 1.5rem;
+  --da-t-corps: 1.0625rem;
+  --da-t-petit: 0.875rem;
+  --da-interligne-titre: 1.08;
+  --da-interligne: 1.47;
+  --da-resserre: -0.022em;
+
+  --da-e-1: 0.25rem; --da-e-2: 0.5rem; --da-e-3: 0.75rem; --da-e-4: 1rem;
+  --da-e-6: 1.5rem; --da-e-8: 2rem; --da-e-12: 3rem; --da-e-16: 4rem; --da-e-24: 6rem;
+
+  --da-r-carte: 28px;
+  --da-r-element: 16px;
+  --da-r-pilule: 980px;
+
+  --da-duree: 0.3s;
+  --da-courbe: cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+/*
+ * Les composants utilisent les nuances violet/fuchsia/slate de Tailwind : on les redéfinit vers la palette de la DA
+ * (gris clairs pour les fonds, bleu pour les actions, encre pour les titres). Une seule source : les variables ci-dessus.
+ */
 @theme {
-  --font-sans: ui-rounded, "SF Pro Rounded", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-sans: var(--da-police);
+  --color-violet-50: var(--da-fond);
+  --color-violet-100: var(--da-trait-doux);
+  --color-violet-200: var(--da-trait);
+  --color-violet-300: #aeaeb2;
+  --color-violet-400: #86868b;
+  --color-violet-500: #2b8cf0;
+  --color-violet-600: var(--da-action);
+  --color-violet-700: var(--da-action);
+  --color-violet-800: var(--da-action-fonce);
+  --color-violet-900: var(--da-encre);
+  --color-violet-950: var(--da-encre);
+  --color-fuchsia-600: var(--da-action);
+  --color-fuchsia-700: var(--da-encre-3);
+  --color-fuchsia-800: var(--da-encre);
+  --color-slate-600: var(--da-encre-3);
+  --color-slate-700: var(--da-encre-2);
+  --color-slate-900: var(--da-encre);
+  --radius-3xl: var(--da-r-carte);
+  --radius-2xl: var(--da-r-element);
 }
 
 body {
-  @apply min-h-dvh bg-gradient-to-br from-violet-50 via-pink-50 to-amber-50 text-slate-900 antialiased;
+  @apply min-h-dvh antialiased;
+  background: var(--da-fond);
+  color: var(--da-encre);
+  font-size: var(--da-t-corps);
+  line-height: var(--da-interligne);
 }
+
+/* Titres : grands, gras, lettres resserrées (DESIGN.md §3). */
+h1 { letter-spacing: var(--da-resserre); line-height: var(--da-interligne-titre); }
+h2, h3 { letter-spacing: -0.012em; }
+/* Chapeau sous le titre d'une étape : plus d'air et un peu plus grand. Hors @layer : prime sur les utilitaires « mt-1 ». */
+h1:not(.da-hero) + p { margin-top: var(--da-e-3); font-size: 1.1875rem; }
+
+/* Apparition douce du contenu à chaque étape. */
+@keyframes da-apparition { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
+.da-apparition { animation: da-apparition 0.5s var(--da-courbe) both; }
 
 /* Focus toujours visible (WCAG 2.4.7 / 2.4.11) */
 :focus-visible {
-  outline: 3px solid var(--color-violet-700);
+  outline: 3px solid var(--da-action);
   outline-offset: 3px;
   border-radius: 0.5rem;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after { transition: none !important; animation: none !important; }
+  *, *::before, *::after { transition: none !important; animation: none !important; scroll-behavior: auto !important; }
 }
 
 /* Impression A4 de la synthèse : fond blanc, texte noir, marges lisibles, pas de bloc coupé en deux. */
