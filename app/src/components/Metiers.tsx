@@ -1,8 +1,8 @@
-import { useId } from 'react'
+import { useEffect, useId, useState } from 'react'
 import { GOUTS } from '../gouts'
 import { ETAPES } from '../etapes'
 import { etudesPour } from '../formations'
-import { FAMILLES, lienFicheMetier, NIVEAUX, pistes, ROME, type Acces, type Composante, type IdComposante, type Piste } from '../metiers'
+import { chargerFiches, FAMILLES, lienFicheMetier, NIVEAUX, pistes, ROME, type Acces, type Fiches, type Composante, type IdComposante, type Piste } from '../metiers'
 import { parcoursDe } from '../schema'
 import { useEtat } from '../store'
 import Favori from './Favori'
@@ -18,6 +18,8 @@ const LIBELLES: Record<IdComposante, string> = {
 export default function Metiers() {
   const { publicId, personnalite, gouts, scolarite } = useEtat()
   const liste = pistes({ publicId, personnalite, gouts, scolarite })
+  const [fiches, setFiches] = useState<Fiches | null>(null)
+  useEffect(() => { chargerFiches().then(setFiches).catch(() => setFiches(null)) }, [])
   const manque = (Object.keys(LIBELLES) as IdComposante[]).filter((id) => liste.every((p) => p.composantes.find((c) => c.id === id)!.score === null))
 
   return (
@@ -36,7 +38,7 @@ export default function Metiers() {
       )}
 
       <ol className="space-y-4 lg:grid lg:grid-cols-2 lg:items-start lg:gap-4 lg:space-y-0">
-        {liste.map((p, k) => <Carte key={p.metier.code} piste={p} rang={k + 1} />)}
+        {liste.map((p, k) => <Carte key={p.metier.code} piste={p} rang={k + 1} fiches={fiches} />)}
       </ol>
 
       <p className="text-sm text-slate-600">
@@ -46,7 +48,7 @@ export default function Metiers() {
   )
 }
 
-function Carte({ piste, rang }: { piste: Piste; rang: number }) {
+function Carte({ piste, rang, fiches }: { piste: Piste; rang: number; fiches: Fiches | null }) {
   const id = useId()
   const { metier, famille, score, composantes, freins } = piste
   const bts = parcoursDe(useEtat((s) => s.publicId)) === 'bts'
@@ -85,6 +87,8 @@ function Carte({ piste, rang }: { piste: Piste; rang: number }) {
 
       <details className="mt-2 rounded-2xl bg-sky-50 p-3">
         <summary className="min-h-6 cursor-pointer font-semibold text-sky-900">Test de réalité : le métier au quotidien</summary>
+        {fiches?.fiches[metier.code] && <FicheRome f={fiches.fiches[metier.code]} source={`${fiches.source}, ${fiches.version}`} />}
+        <p className="mt-4 font-semibold text-sky-950">Points communs aux métiers « {famille.nom} »</p>
         <div className="mt-2 grid gap-3 md:grid-cols-2">
           <div>
             <p className="font-bold text-emerald-900"><span aria-hidden="true">👍 </span>Les avantages</p>
@@ -161,5 +165,31 @@ function AccesBts({ acces }: { acces: Acces }) {
       <span aria-hidden="true">{icone} </span>{texte}
       {acces.type === 'direct' && !acces.onisep && <span className="block text-sm font-normal">Pas de fiche Onisep équivalente : estimation à vérifier.</span>}
     </p>
+  )
+}
+
+/** Ce qui est propre à ce métier, d'après sa fiche ROME (France Travail) : pas de texte commun à toute la famille. */
+function FicheRome({ f, source }: { f: Fiches['fiches'][string]; source: string }) {
+  return (
+    <div className="mt-2 space-y-3">
+      <div>
+        <p className="font-bold text-sky-950"><span aria-hidden="true">🧰 </span>Ce que fait ce métier</p>
+        <p className="mt-1">{f.definition}</p>
+        {f.missions.length > 0 && <ul className="mt-1 list-disc pl-5">{f.missions.map((m) => <li key={m}>{m}</li>)}</ul>}
+      </div>
+      {Object.keys(f.contextes).length > 0 && (
+        <div>
+          <p className="font-bold text-sky-950"><span aria-hidden="true">🕒 </span>Conditions de travail</p>
+          <ul className="mt-1 space-y-1">
+            {Object.entries(f.contextes).map(([type, items]) => <li key={type}><strong>{type} :</strong> {items.join(' ; ')}</li>)}
+          </ul>
+        </div>
+      )}
+      <div>
+        <p className="font-bold text-sky-950"><span aria-hidden="true">🎓 </span>Pour y accéder</p>
+        <p className="mt-1">{f.acces}</p>
+      </div>
+      <p className="text-sm text-slate-600">Source : {source}.</p>
+    </div>
   )
 }

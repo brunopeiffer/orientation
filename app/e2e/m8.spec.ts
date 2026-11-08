@@ -66,4 +66,14 @@ test('pistes : chaque piste indique les études pour y arriver', async ({ page }
   await carte.getByText('Test de réalité : le métier au quotidien').click()
   await expect(carte.getByText('Les études pour y arriver')).toBeVisible()
   await expect(carte.getByText(/Par exemple : .*(BTS|BUT|Licence|DCG)/)).toBeVisible()
+  // Le quotidien est propre à chaque métier (fiche ROME), pas un texte commun à la famille.
+  const cartes = page.getByRole('listitem').filter({ has: page.getByRole('heading', { level: 2 }) })
+  const textes: string[] = []
+  for (const k of [0, 1]) {
+    const c = cartes.nth(k)
+    if (k > 0) await c.getByText('Test de réalité : le métier au quotidien').click() // la 1re est déjà ouverte
+    await expect(c.getByText('Ce que fait ce métier')).toBeVisible()
+    textes.push(await c.getByText('Ce que fait ce métier').locator('xpath=following-sibling::p[1]').innerText())
+  }
+  expect(textes[0]).not.toBe(textes[1])
 })

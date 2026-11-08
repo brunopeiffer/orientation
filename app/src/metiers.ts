@@ -145,4 +145,18 @@ export function pistes(p: Profil, n = NB_PISTES): Piste[] {
     .sort((a, b) => Number(a.freins.length > 0) - Number(b.freins.length > 0)) // tri stable : l'ordre des scores est gardé
 }
 
+const FichesSchema = z.object({
+  source: z.string(), version: z.string(), licence: z.string(), genere: z.string(),
+  fiches: z.record(z.string(), z.object({
+    definition: z.string(), missions: z.array(z.string()), acces: z.string(), contextes: z.record(z.string(), z.array(z.string())),
+  })),
+})
+export type Fiches = z.infer<typeof FichesSchema>
+let fiches: Promise<Fiches> | null = null
+/** Fiches ROME propres à chaque métier (définition, missions, accès, conditions), chargées à la demande. */
+export function chargerFiches(): Promise<Fiches> {
+  fiches ??= import('../../data/fiches-metiers.json').then((m) => FichesSchema.parse(m.default))
+  return fiches
+}
+
 export const lienFicheMetier = (code: string) => `https://candidat.francetravail.fr/metierscope/fiche-metier/${code}`
