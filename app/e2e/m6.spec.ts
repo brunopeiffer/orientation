@@ -125,3 +125,22 @@ test('handicap : opt-in, local, et absent de TOUTE requête réseau', async ({ p
   await expect(page2.getByLabel('Afficher les informations sur le handicap')).not.toBeChecked()
   expect(await page2.evaluate(() => JSON.parse(localStorage.getItem('orientation-etat')!).state.handicap)).toEqual({ actif: false, sujets: [] })
 })
+
+test('stage : entreprises en lien avec le BTS, modèle de demande à copier, rien d’autre n’est envoyé', async ({ page }) => {
+  const sortantes = await demarrer(page)
+  await page.getByLabel(/un stage/).check()
+  await expect(page.getByRole('heading', { name: /Métiers à chercher/ })).toHaveCount(0)
+  await page.getByRole('button', { name: 'Chercher des entreprises' }).click()
+  await expect(page.getByRole('heading', { name: /2 entreprises proches/ })).toBeVisible() // même réponse simulée pour chaque famille : pas de doublon
+  await expect(page.getByText(/Susceptible de recruter en alternance/)).toHaveCount(0)
+  const lettre = page.getByLabel('Texte de ta demande de stage')
+  await expect(lettre).toHaveValue(/Je suis en BTS Comptabilité et gestion \(CG\)/)
+  await expect(lettre).toHaveValue(/Léa$/)
+  await sansViolation(page)
+
+  expect(sortantes.filter((s) => s.url.startsWith('https://proxy.test/'))).toEqual([]) // pas d'offres en mode stage
+  const ent = sortantes.filter((s) => s.url.startsWith('https://recherche-entreprises.api.gouv.fr/'))
+  expect(ent.length).toBeGreaterThan(1) // une recherche par famille de métiers du BTS
+  expect(ent.some((e) => new URL(e.url).searchParams.get('activite_principale')?.includes('69.20Z'))).toBe(true) // cabinets comptables (BTS CG)
+  expect(JSON.stringify(sortantes)).not.toMatch(/Léa/) // le prénom de la lettre ne sort jamais
+})

@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 import { GOUTS, GOUTS_VIDES, MATIERES, SCOLARITE_VIDE } from './gouts'
-import { acces, chargerFiches, evaluer, FAMILLES, parcoursMetier, pistes, POIDS, ROME, typesDe, type Profil } from './metiers'
+import { acces, chargerFiches, evaluer, FAMILLES, famillesStage, parcoursMetier, pistes, POIDS, ROME, typesDe, type Profil } from './metiers'
 import { TEST } from './personnalite'
 import { PUBLICS_ACTIFS } from './schema'
 
@@ -170,5 +170,15 @@ describe('parcours d’un métier en BTS (mobilités ROME)', () => {
     expect(plusTard.length).toBeGreaterThan(0)
     expect(plusTard.every((p) => p.acces.type !== 'direct')).toBe(true)
     expect(plusTard.map((p) => p.metier.code)).toContain('D1508') // responsable de caisses : après expérience
+  })
+})
+
+describe('stage', () => {
+  it('en BTS, on cherche dans toutes les familles du BTS ; au lycée, dans celles des pistes', () => {
+    expect(famillesStage('BTS_CG', [])).toContain('compta')
+    expect(famillesStage('BTS_NDRC', [])).toEqual(expect.arrayContaining(['magasin', 'vente_b2b']))
+    expect(famillesStage('BTS_NDRC', [])).not.toContain('compta')
+    const p = pistes(complet('STMG'))
+    expect(famillesStage('STMG', p)).toEqual([...new Set(p.map((x) => x.famille.id))].sort())
   })
 })

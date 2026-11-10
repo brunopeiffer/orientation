@@ -173,3 +173,14 @@ export function parcoursMetier(mobilites: string[], publicId: string, code: stri
     plusTard: connus.filter((m) => acces(m.code).type !== 'direct').slice(0, 4).map((m) => ({ metier: m, acces: acces(m.code) })),
   }
 }
+
+/**
+ * Familles de métiers où chercher un stage : en BTS, toutes celles des métiers accessibles avec ce BTS (le stage suit
+ * le diplôme, pas seulement les pistes choisies) ; au lycée, celles des pistes de l'élève.
+ */
+export function famillesStage(publicId: string | null, lesPistes: Piste[]): string[] {
+  if (parcoursDe(publicId) === 'bts') {
+    return [...new Set(ROME.metiers.filter((m) => m.publics.includes(publicId!) && acces(m.code).type === 'direct').map((m) => m.famille))].sort()
+  }
+  return [...new Set(lesPistes.map((p) => p.famille.id))].sort()
+}

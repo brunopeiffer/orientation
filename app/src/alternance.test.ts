@@ -1,6 +1,6 @@
 import { afterEach, describe, expect, it, vi } from 'vitest'
 import {
-  chercherEntreprises, chercherOffres, codesNaf, fusionnerEntreprises, lienAnnuaire, lienLBA, NAF, proxyConfigure, type Entreprise, formationsPourPublic,
+  chercherEntreprises, chercherEntreprisesVariees, chercherOffres, codesNaf, fusionnerEntreprises, lienAnnuaire, lienLBA, NAF, proxyConfigure, type Entreprise, formationsPourPublic, lettreStage,
 } from './alternance'
 import { FAMILLES } from './metiers'
 
@@ -25,6 +25,7 @@ describe('Recherche d’entreprises', () => {
   const reponse = { results: [{ nom_complet: 'SADEC', tranche_effectif_salarie: '32', matching_etablissements: [
     { siret: '1', adresse: '1 RUE SAGLIO 67100 STRASBOURG', latitude: '48.5546', longitude: '7.7443', activite_principale: '69.20Z', etat_administratif: 'A', liste_enseignes: ['SADEC Strasbourg'] },
     { siret: '2', adresse: 'x', latitude: '48.5', longitude: '7.7', activite_principale: '69.20Z', etat_administratif: 'F' },
+    { siret: '3', adresse: 'usine', latitude: '48.5', longitude: '7.7', activite_principale: '28.12Z', etat_administratif: 'A' },
   ] }] }
 
   it('envoie seulement la commune arrondie (≈ 1 km), le rayon (50 km max) et les codes NAF', async () => {
@@ -35,8 +36,19 @@ describe('Recherche d’entreprises', () => {
     expect(u.host).toBe('recherche-entreprises.api.gouv.fr')
     expect(Object.fromEntries(u.searchParams)).toEqual({ lat: '48.52', long: '7.72', radius: '50', activite_principale: '69.20Z,70.22Z', per_page: '25' })
     expect(fetch.mock.calls[0][1]).toMatchObject({ credentials: 'omit', referrerPolicy: 'no-referrer' })
-    // Établissement fermé (F) écarté ; enseigne préférée au nom légal ; libellé NAF lisible.
+    // Établissement fermé (F) ou d'une autre activité (usine 28.12Z) écarté ; enseigne préférée au nom légal ; libellé NAF lisible.
     expect(l).toEqual([{ siret: '1', nom: 'SADEC Strasbourg', adresse: '1 RUE SAGLIO 67100 STRASBOURG', lat: 48.5546, lon: 7.7443, activite: 'Activités comptables', recrute: false, url: null }])
+  })
+
+  it('stage : une recherche par famille, résultats alternés et sans doublon', async () => {
+    const etab = (siret: string, naf: string) => ({ nom_complet: siret, matching_etablissements: [{ siret, activite_principale: naf, etat_administratif: 'A' }] })
+    const fetch = vi.fn()
+      .mockResolvedValueOnce({ ok: true, json: async () => ({ results: [etab('b1', '64.19Z'), etab('b2', '64.19Z'), etab('x', '64.19Z')] }) })
+      .mockResolvedValueOnce({ ok: true, json: async () => ({ results: [etab('a1', '82.11Z'), etab('x', '82.11Z')] }) })
+    vi.stubGlobal('fetch', fetch)
+    const l = await chercherEntreprisesVariees(ILLKIRCH, 20, ['banque', 'admin'])
+    expect(fetch).toHaveBeenCalledTimes(2)
+    expect(l.map((e) => e.siret)).toEqual(['b1', 'a1', 'b2', 'x'])
   })
 
   it('échoue proprement si la réponse change de forme', async () => {
@@ -86,5 +98,16 @@ describe('formations en apprentissage cohérentes avec le BTS', () => {
     for (const id of ['BTS_NDRC', 'BTS_SAM']) expect(formationsPourPublic(liste, id).map((x) => x.titre)).toEqual(['Licence pro commerce'])
     expect(formationsPourPublic(liste, 'BTS_CG')).toHaveLength(4)
     expect(formationsPourPublic(liste, 'STMG')).toHaveLength(4)
+  })
+})
+
+describe('modèle de demande de stage', () => {
+  it('reprend la formation, les métiers et le prénom ; sinon un repère à compléter', () => {
+    const t = lettreStage({ prenom: 'Léa', formation: 'BTS Support à l’action managériale (SAM)', metiers: ['Office manager', 'Assistant RH'] })
+    expect(t).toContain('Je suis en BTS Support à l’action managériale (SAM)')
+    expect(t).toContain('Office manager, Assistant RH')
+    expect(t.trim().endsWith('Léa')).toBe(true)
+    expect(lettreStage({ prenom: '', formation: 'X', metiers: [] })).toContain('[Ton prénom et ton nom]')
+    expect(lettreStage({ prenom: '', formation: 'X', metiers: [] })).not.toMatch(/\n\n\n/)
   })
 })

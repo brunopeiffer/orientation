@@ -53,7 +53,8 @@ export async function chercherEntreprises(depuis: Point, rayon: number, familles
   })
   const r = EntreprisesSchema.parse(await obtenirJson(`https://recherche-entreprises.api.gouv.fr/near_point?${q}`, signal))
   return r.results.flatMap((e) => e.matching_etablissements
-    .filter((x) => x.etat_administratif === 'A') // établissements ouverts seulement
+    // Établissements ouverts, et dont l'activité est bien celle cherchée (l'API compare aussi l'activité du siège).
+    .filter((x) => x.etat_administratif === 'A' && (!x.activite_principale || naf.includes(x.activite_principale)))
     .map((x) => ({
       siret: x.siret,
       nom: x.liste_enseignes?.[0] ?? x.nom_commercial ?? e.nom_complet,
@@ -142,3 +143,37 @@ export function lienLBA(metier: string, commune: { nom: string; cp: string } & P
 }
 
 export const lienAnnuaire = (siret: string) => `https://annuaire-entreprises.data.gouv.fr/etablissement/${encodeURIComponent(siret)}`
+
+/**
+ * Stage : une recherche par famille (l'API ne renvoie que 25 entreprises, les plus proches : une seule famille dense,
+ * comme les banques en centre-ville, prendrait toute la place), puis on alterne les familles. Requêtes l'une après l'autre
+ * pour rester sous la limite de débit de l'API.
+ */
+export async function chercherEntreprisesVariees(depuis: Point, rayon: number, familles: string[]): Promise<Entreprise[]> {
+  const listes: Entreprise[][] = []
+  for (const f of familles) listes.push(await chercherEntreprises(depuis, rayon, [f]))
+  const vus = new Set<string>()
+  const sortie: Entreprise[] = []
+  for (let k = 0; listes.some((l) => k < l.length); k++) {
+    for (const l of listes) if (l[k] && !vus.has(l[k].siret)) { vus.add(l[k].siret); sortie.push(l[k]) }
+  }
+  return sortie
+}
+
+/** Modèle de demande de stage, rempli dans le navigateur (rien n'est envoyé) ; l'élève le relit et l'adapte. */
+export function lettreStage({ prenom, formation, metiers }: { prenom: string; formation: string; metiers: string[] }) {
+  return [
+    'Madame, Monsieur,',
+    '',
+    `Je suis en ${formation} et je recherche un stage du [date de début] au [date de fin].`,
+    `Votre entreprise m’intéresse parce que [ce qui t’attire chez elle : son activité, ses clients, ses valeurs].`,
+    metiers.length ? `Je souhaite découvrir les métiers suivants : ${metiers.slice(0, 3).join(', ')}.` : '',
+    'Pendant ce stage, je pourrai [ce que tu sais déjà faire : accueil, tableur, relation client…] et je suis motivé(e) pour apprendre.',
+    '',
+    'Je vous joins mon CV et la convention de stage de mon établissement. Je me tiens à votre disposition pour un entretien.',
+    '',
+    'Veuillez agréer, Madame, Monsieur, mes salutations distinguées.',
+    '',
+    prenom || '[Ton prénom et ton nom]',
+  ].filter((l, k, t) => l !== '' || t[k - 1] !== '').join('\n')
+}

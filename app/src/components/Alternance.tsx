@@ -1,11 +1,11 @@
 import { useId, useState } from 'react'
 import {
-  chercherEntreprises, chercherFormationsApprentissage, formationsPourPublic, chercherOffres, fusionnerEntreprises, lienAnnuaire, lienLBA, proxyConfigure, RAYON_MAX_ENTREPRISES, RAYON_MAX_OFFRES,
+  chercherEntreprises, chercherEntreprisesVariees, chercherFormationsApprentissage, formationsPourPublic, lettreStage, chercherOffres, fusionnerEntreprises, lienAnnuaire, lienLBA, proxyConfigure, RAYON_MAX_ENTREPRISES, RAYON_MAX_OFFRES,
   type Entreprise, type ReponseFormations, type ReponseOffres,
 } from '../alternance'
 import { distanceRoute } from '../formations'
-import { pistes } from '../metiers'
-import { parcoursDe } from '../schema'
+import { famillesStage, pistes } from '../metiers'
+import { parcoursDe, PUBLICS } from '../schema'
 import { useEtat } from '../store'
 import { ChoixCommune, ChoixRayon } from './Formations'
 import Handicap from './Handicap'
@@ -14,7 +14,7 @@ import { Bouton, PUCE } from './ui'
 const PAR_PAGE = 10
 
 export default function Alternance() {
-  const { publicId, personnalite, gouts, scolarite, mobilite, maj } = useEtat()
+  const { prenom, publicId, personnalite, gouts, scolarite, mobilite, maj } = useEtat()
   const id = useId()
   const mesPistes = pistes({ publicId, personnalite, gouts, scolarite })
   const [choisis, setChoisis] = useState(() => mesPistes.slice(0, 5).map((p) => p.metier.code))
@@ -28,6 +28,29 @@ export default function Alternance() {
   const commune = mobilite.commune
   const rayon = mobilite.rayon ?? RAYON_MAX_OFFRES
   const selection = mesPistes.filter((p) => choisis.includes(p.metier.code))
+  // Alternance : offres, formations et entreprises pour les métiers cochés. Stage : entreprises en lien avec le BTS (ou les pistes).
+  const [mode, setMode] = useState<'alternance' | 'stage'>('alternance')
+
+  function changerMode(m: 'alternance' | 'stage') {
+    setMode(m)
+    setEtat('')
+  }
+
+  async function chercherStage() {
+    if (!commune) return
+    setEtat('recherche')
+    setOffres(null)
+    setFormations(null)
+    try {
+      // Ordre d'affichage = celui de la recherche (familles alternées), pas un tri par distance.
+      setEntreprises(await chercherEntreprisesVariees(commune, rayon, famillesStage(publicId, mesPistes)))
+      setErreurEntreprises(false)
+    } catch {
+      setEntreprises(null)
+      setErreurEntreprises(true)
+    }
+    setEtat('fini')
+  }
 
   async function chercher() {
     if (!commune || !selection.length) return
@@ -52,7 +75,7 @@ export default function Alternance() {
       <div>
         <h1 tabIndex={-1} className="text-[length:var(--da-t-titre)] font-bold text-violet-900">Entreprises et alternance</h1>
         <p className="mt-1 text-slate-700">
-          Trouve des offres en alternance et des entreprises près de chez toi pour tes pistes métiers. Rien n’est envoyé sur Internet tant que tu n’as pas cliqué sur « Chercher ».
+          Trouve des offres en alternance, ou des entreprises où demander un stage, près de chez toi. Rien n’est envoyé sur Internet tant que tu n’as pas cliqué sur « Chercher ».
         </p>
       </div>
 
@@ -60,8 +83,29 @@ export default function Alternance() {
       {commune && (
         <>
           <ChoixRayon rayon={mobilite.rayon} onChoix={(r) => maj({ mobilite: { ...mobilite, rayon: r } })} />
+          <fieldset className="rounded-3xl bg-white/80 p-4 shadow-sm sm:p-5">
+            <legend className="sr-only">Ce que tu cherches</legend>
+            <p aria-hidden="true" className="text-lg font-extrabold text-fuchsia-800"><span>🔎 </span>Je cherche…</p>
+            <div className="mt-3 grid gap-2 sm:grid-cols-2">
+              <label className={PUCE}><input type="radio" name={`${id}-mode`} checked={mode === 'alternance'} onChange={() => changerMode('alternance')} className="size-5 shrink-0 accent-white" />une alternance (contrat en entreprise + formation)</label>
+              <label className={PUCE}><input type="radio" name={`${id}-mode`} checked={mode === 'stage'} onChange={() => changerMode('stage')} className="size-5 shrink-0 accent-white" />un stage (des entreprises où envoyer ma demande)</label>
+            </div>
+          </fieldset>
           {/* Même règle que les formations et la synthèse : sans goûts, pas de pistes à chercher. */}
-          {!Object.keys(gouts.activites).length ? (
+          {mode === 'stage' ? (
+            <section aria-labelledby={`${id}-s`} className="rounded-3xl bg-white/80 p-4 shadow-sm sm:p-5">
+              <h2 id={`${id}-s`} className="text-lg font-extrabold text-fuchsia-800"><span aria-hidden="true">🏢 </span>Entreprises pour ton stage</h2>
+              <p className="text-sm text-slate-700">
+                {parcoursDe(publicId) === 'bts'
+                  ? 'On cherche les entreprises proches dont l’activité correspond aux métiers de ton BTS (rayon de 50 km au plus).'
+                  : 'On cherche les entreprises proches dont l’activité correspond à tes pistes métiers (rayon de 50 km au plus).'}
+                {' '}Elles n’ont pas forcément de stage à proposer : c’est une candidature spontanée.
+              </p>
+              <Bouton className="mt-3" onClick={chercherStage} disabled={etat === 'recherche' || (parcoursDe(publicId) !== 'bts' && !mesPistes.length)}>
+                {etat === 'recherche' ? 'Recherche en cours…' : 'Chercher des entreprises'}
+              </Bouton>
+            </section>
+          ) : !Object.keys(gouts.activites).length ? (
             <p role="note" className="rounded-2xl bg-amber-50 p-4 text-amber-950">
               Réponds d’abord à l’étape « Tes goûts » : les recherches d’offres et d’entreprises partent de tes pistes métiers.{' '}
               <Bouton variante="secondaire" className="mt-2" onClick={() => maj({ etape: 1 })}>Aller à « Tes goûts »</Bouton>
@@ -89,7 +133,15 @@ export default function Alternance() {
           )}
 
           <div aria-live="polite">
-            {etat === 'fini' && (
+            {etat === 'fini' && mode === 'stage' && (
+              <div className="space-y-5">
+                {erreurEntreprises ? (
+                  <p role="alert" className="font-semibold text-rose-700">La recherche d’entreprises ne répond pas. Réessaie dans quelques instants.</p>
+                ) : entreprises && <Entreprises liste={entreprises.map((e) => ({ e, km: e.lat !== null && e.lon !== null ? distanceRoute(commune, { lat: e.lat, lon: e.lon }) : null }))} />}
+                <Lettre texte={lettreStage({ prenom, formation: PUBLICS.find((p) => p.id === publicId)?.libelle ?? 'formation', metiers: mesPistes.map((p) => p.metier.libelle) })} />
+              </div>
+            )}
+            {etat === 'fini' && mode === 'alternance' && (
               <div className="space-y-5">
                 {offres ? <Offres r={offres} depuis={commune} /> : (
                   <section aria-labelledby={`${id}-deg`} className="rounded-3xl bg-amber-50 p-4 text-amber-950">
@@ -235,6 +287,28 @@ function Entreprises({ liste }: { liste: ReturnType<typeof fusionnerEntreprises>
       </ul>
       {liste.length > nb && <Bouton variante="secondaire" onClick={() => setNb(nb + PAR_PAGE)}>Voir {Math.min(PAR_PAGE, liste.length - nb)} entreprises de plus</Bouton>}
       <p className="text-sm text-slate-600">Source : Recherche d’entreprises (annuaire-entreprises.data.gouv.fr), Licence Ouverte Etalab 2.0 ; établissements ouverts uniquement.</p>
+    </section>
+  )
+}
+
+/** Modèle de demande de stage à copier : rien n'est envoyé, l'élève l'adapte et l'envoie lui-même. */
+function Lettre({ texte }: { texte: string }) {
+  const id = useId()
+  const [valeur, setValeur] = useState(texte)
+  const [copie, setCopie] = useState('')
+  return (
+    <section aria-labelledby={id} className="space-y-2 rounded-3xl bg-white/80 p-4 shadow-sm sm:p-5">
+      <h2 id={id} className="text-lg font-extrabold text-fuchsia-800"><span aria-hidden="true">✉️ </span>Ta demande de stage (modèle à adapter)</h2>
+      <p className="text-sm text-slate-700">Remplace les passages entre crochets, ajoute ton nom, puis copie le texte dans un mail ou une lettre. Joins ton CV. Rien n’est envoyé par l’app.</p>
+      <label htmlFor={`${id}-t`} className="sr-only">Texte de ta demande de stage</label>
+      <textarea id={`${id}-t`} value={valeur} onChange={(e) => setValeur(e.target.value)} rows={14}
+        className="w-full rounded-2xl border border-violet-200 bg-white p-3 text-base" />
+      <div className="flex flex-wrap items-center gap-3">
+        <Bouton variante="secondaire" onClick={() => navigator.clipboard.writeText(valeur).then(() => setCopie('Texte copié.'), () => setCopie('Copie impossible : sélectionne le texte et copie-le.'))}>
+          <span aria-hidden="true">📋</span> Copier le texte
+        </Bouton>
+        <p role="status" className="text-sm font-semibold text-emerald-800">{copie}</p>
+      </div>
     </section>
   )
 }
