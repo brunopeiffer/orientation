@@ -102,12 +102,19 @@ describe('formations en apprentissage cohérentes avec le BTS', () => {
 })
 
 describe('modèle de demande de stage', () => {
-  it('reprend la formation, les métiers et le prénom ; sinon un repère à compléter', () => {
-    const t = lettreStage({ prenom: 'Léa', formation: 'BTS Support à l’action managériale (SAM)', metiers: ['Office manager', 'Assistant RH'] })
-    expect(t).toContain('Je suis en BTS Support à l’action managériale (SAM)')
-    expect(t).toContain('Office manager, Assistant RH')
-    expect(t.trim().endsWith('Léa')).toBe(true)
-    expect(lettreStage({ prenom: '', formation: 'X', metiers: [] })).toContain('[Ton prénom et ton nom]')
-    expect(lettreStage({ prenom: '', formation: 'X', metiers: [] })).not.toMatch(/\n\n\n/)
+  it('objet précis, atouts de la formation, poste visé, proposition d’échange, signature', () => {
+    const t = lettreStage({ prenom: 'Léa', formation: 'BTS Support à l’action managériale (SAM)', publicId: 'BTS_SAM', metiers: ['Office manager', 'Assistant RH'] })
+    expect(t.split('\n')[0]).toBe('Objet : Demande de stage – BTS Support à l’action managériale (SAM) – du [date de début] au [date de fin]')
+    expect(t).toContain('Étudiant(e) en BTS Support à l’action managériale (SAM), j’apprends à organiser et suivre des dossiers')
+    expect(t).toContain('auprès de votre office manager')
+    expect(t).toContain('Je me permettrai de vous appeler')
+    expect(t).toContain('Léa [Nom]')
+  })
+
+  it('au lycée : « Élève de », atouts STMG ; sans prénom ni métier : repères à compléter', () => {
+    const t = lettreStage({ prenom: '', formation: 'Terminale STMG', publicId: 'STMG', metiers: [] })
+    expect(t).toContain('Élève de Terminale STMG, j’apprends en gestion')
+    expect(t).not.toContain('auprès de votre')
+    expect(t).toContain('[Prénom] [Nom]')
   })
 })

@@ -134,8 +134,8 @@ test('stage : entreprises en lien avec le BTS, modèle de demande à copier, rie
   await expect(page.getByRole('heading', { name: /2 entreprises proches/ })).toBeVisible() // même réponse simulée pour chaque famille : pas de doublon
   await expect(page.getByText(/Susceptible de recruter en alternance/)).toHaveCount(0)
   const lettre = page.getByLabel('Texte de ta demande de stage')
-  await expect(lettre).toHaveValue(/Je suis en BTS Comptabilité et gestion \(CG\)/)
-  await expect(lettre).toHaveValue(/Léa$/)
+  await expect(lettre).toHaveValue(/Étudiant\(e\) en BTS Comptabilité et gestion \(CG\), j’apprends à tenir la comptabilité/)
+  await expect(lettre).toHaveValue(/Léa \[Nom\]/)
   await sansViolation(page)
 
   expect(sortantes.filter((s) => s.url.startsWith('https://proxy.test/'))).toEqual([]) // pas d'offres en mode stage

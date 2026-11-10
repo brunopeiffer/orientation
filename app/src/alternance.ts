@@ -160,20 +160,39 @@ export async function chercherEntreprisesVariees(depuis: Point, rayon: number, f
   return sortie
 }
 
-/** Modèle de demande de stage, rempli dans le navigateur (rien n'est envoyé) ; l'élève le relit et l'adapte. */
-export function lettreStage({ prenom, formation, metiers }: { prenom: string; formation: string; metiers: string[] }) {
+// Atouts de chaque formation, d'après les contenus décrits par l'Onisep (blocs professionnels des BTS). À VALIDER.
+const ATOUTS: Record<string, string> = {
+  BTS_CG: 'à tenir la comptabilité courante (saisie, factures, rapprochements bancaires), à préparer les déclarations de TVA et les éléments de paie, et à travailler sur tableur et logiciel de gestion',
+  BTS_NDRC: 'à prospecter et à suivre une clientèle, de l’accueil jusqu’à la fidélisation, à vendre en face à face comme à distance, et à animer un site ou des réseaux sociaux',
+  BTS_SAM: 'à organiser et suivre des dossiers, à gérer agendas, réunions et déplacements, à appuyer la gestion du personnel (recrutement, intégration) et à conduire de petits projets',
+}
+const ATOUTS_LYCEE = 'en gestion, en marketing, en droit et sur les outils numériques, avec la rigueur que demande la série STMG'
+
+/**
+ * Demande de stage rédigée comme le conseillerait un recruteur : objet précis, accroche sur l'entreprise (« vous »),
+ * atouts concrets de la formation (« moi »), une réussite personnelle, puis une proposition d'échange (« nous »).
+ * Remplie dans le navigateur, jamais envoyée par l'app ; les crochets sont à remplacer par l'élève.
+ */
+export function lettreStage({ prenom, formation, publicId, metiers }: { prenom: string; formation: string; publicId: string | null; metiers: string[] }) {
+  const bts = !!publicId && publicId in ATOUTS
+  const poste = metiers[0]
   return [
+    `Objet : Demande de stage – ${formation} – du [date de début] au [date de fin]`,
+    '',
     'Madame, Monsieur,',
     '',
-    `Je suis en ${formation} et je recherche un stage du [date de début] au [date de fin].`,
-    `Votre entreprise m’intéresse parce que [ce qui t’attire chez elle : son activité, ses clients, ses valeurs].`,
-    metiers.length ? `Je souhaite découvrir les métiers suivants : ${metiers.slice(0, 3).join(', ')}.` : '',
-    'Pendant ce stage, je pourrai [ce que tu sais déjà faire : accueil, tableur, relation client…] et je suis motivé(e) pour apprendre.',
+    '[Nom de l’entreprise] retient mon attention pour [un fait précis : un produit, un service, une actualité, un avis client, une rencontre…]. C’est pourquoi je souhaite y effectuer mon stage de [durée] semaines, du [date de début] au [date de fin].',
     '',
-    'Je vous joins mon CV et la convention de stage de mon établissement. Je me tiens à votre disposition pour un entretien.',
+    `${bts ? 'Étudiant(e) en' : 'Élève de'} ${formation}, j’apprends ${bts ? ATOUTS[publicId!] : ATOUTS_LYCEE}.${poste ? ` Je serais heureux(se) de mettre ces compétences au service de votre équipe, notamment auprès de votre ${poste.split(' / ')[0].toLowerCase()}.` : ''}`,
+    'Lors de [mon dernier stage, un job d’été, un projet de classe], j’ai [une réussite concrète : un résultat, une responsabilité confiée, un retour positif reçu].',
     '',
-    'Veuillez agréer, Madame, Monsieur, mes salutations distinguées.',
+    '[Deux qualités qu’on t’a déjà reconnues, par exemple : sérieux(se) et souriant(e)], je m’adapte vite et j’apprends en observant.',
     '',
-    prenom || '[Ton prénom et ton nom]',
-  ].filter((l, k, t) => l !== '' || t[k - 1] !== '').join('\n')
+    'Je me permettrai de vous appeler la semaine prochaine pour convenir d’un court échange, à votre convenance. Mon établissement vous fournira la convention de stage ; vous trouverez mon CV ci-joint.',
+    '',
+    'Je vous prie d’agréer, Madame, Monsieur, l’expression de mes salutations distinguées.',
+    '',
+    `${prenom || '[Prénom]'} [Nom]`,
+    '[Téléphone] · [Adresse mail]',
+  ].join('\n')
 }

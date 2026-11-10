@@ -138,7 +138,7 @@ export default function Alternance() {
                 {erreurEntreprises ? (
                   <p role="alert" className="font-semibold text-rose-700">La recherche d’entreprises ne répond pas. Réessaie dans quelques instants.</p>
                 ) : entreprises && <Entreprises liste={entreprises.map((e) => ({ e, km: e.lat !== null && e.lon !== null ? distanceRoute(commune, { lat: e.lat, lon: e.lon }) : null }))} />}
-                <Lettre texte={lettreStage({ prenom, formation: PUBLICS.find((p) => p.id === publicId)?.libelle ?? 'formation', metiers: mesPistes.map((p) => p.metier.libelle) })} />
+                <Lettre texte={lettreStage({ prenom, publicId, formation: PUBLICS.find((p) => p.id === publicId)?.libelle ?? 'formation', metiers: mesPistes.map((p) => p.metier.libelle) })} />
               </div>
             )}
             {etat === 'fini' && mode === 'alternance' && (
@@ -299,7 +299,13 @@ function Lettre({ texte }: { texte: string }) {
   return (
     <section aria-labelledby={id} className="space-y-2 rounded-3xl bg-white/80 p-4 shadow-sm sm:p-5">
       <h2 id={id} className="text-lg font-extrabold text-fuchsia-800"><span aria-hidden="true">✉️ </span>Ta demande de stage (modèle à adapter)</h2>
-      <p className="text-sm text-slate-700">Remplace les passages entre crochets, ajoute ton nom, puis copie le texte dans un mail ou une lettre. Joins ton CV. Rien n’est envoyé par l’app.</p>
+      <p className="text-sm text-slate-700">Remplace tous les passages entre crochets, puis copie le texte dans un mail ou une lettre, avec ton CV. Rien n’est envoyé par l’app.</p>
+      <ul className="list-disc pl-5 text-sm text-slate-700">
+        <li><strong>Change la première phrase pour chaque entreprise</strong> : un fait précis montre que tu t’es renseigné(e). C’est ce qui fait la différence.</li>
+        <li>Une réussite concrète vaut mieux qu’une liste de qualités.</li>
+        <li>Si tu peux, envoie-la à une personne nommée (responsable, gérant(e)), et rappelle vraiment la semaine suivante.</li>
+        <li>Fais-la relire : zéro faute.</li>
+      </ul>
       <label htmlFor={`${id}-t`} className="sr-only">Texte de ta demande de stage</label>
       <textarea id={`${id}-t`} value={valeur} onChange={(e) => setValeur(e.target.value)} rows={14}
         className="w-full rounded-2xl border border-violet-200 bg-white p-3 text-base" />
