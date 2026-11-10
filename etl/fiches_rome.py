@@ -45,6 +45,7 @@ def construire(fiches, codes):
         try:
             code, definition, acces = f["rome"]["code_rome"], f["definition"], f["acces_metier"]
             contextes = f["contextes_travail"]
+            mobilites = sorted(f["mobilites"], key=lambda x: x["ordre_mobilite"])
         except (KeyError, TypeError) as e:
             raise SystemExit(f"ERREUR : fiche ROME sans le champ {e} (structure modifiée ?)")
         if code not in codes:
@@ -53,6 +54,8 @@ def construire(fiches, codes):
         sortie[code] = {
             "definition": intro, "missions": actions[:8], "acces": acces.strip(),
             "contextes": {c["libelle"]: [i["libelle"] for i in c["items"]] for c in contextes if c["libelle"] in CONTEXTES},
+            # Mobilités officielles (métiers vers lesquels on peut évoluer ou changer), codes ROME dans l'ordre du ROME.
+            "mobilites": [m["rome_cible"].split(" - ", 1)[0] for m in mobilites],
         }
     manquants = codes - sortie.keys()
     if manquants:
@@ -65,7 +68,7 @@ def main():
     fiches, version = telecharger()
     sortie = construire(fiches, codes)
     SORTIE.write_text(json.dumps({
-        "source": "France Travail, ROME (fiches métiers : définition, accès à l'emploi, contextes de travail)",
+        "source": "France Travail, ROME (fiches métiers : définition, accès à l'emploi, contextes de travail, mobilités)",
         "version": f"v{version}", "licence": "Licence Ouverte Etalab 2.0",
         "genere": f"{datetime.date.today():%Y-%m-%d}", "fiches": sortie,
     }, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")

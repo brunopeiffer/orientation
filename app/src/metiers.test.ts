@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 import { GOUTS, GOUTS_VIDES, MATIERES, SCOLARITE_VIDE } from './gouts'
-import { acces, evaluer, FAMILLES, pistes, POIDS, ROME, typesDe, type Profil } from './metiers'
+import { acces, chargerFiches, evaluer, FAMILLES, parcoursMetier, pistes, POIDS, ROME, typesDe, type Profil } from './metiers'
 import { TEST } from './personnalite'
 import { PUBLICS_ACTIFS } from './schema'
 
@@ -67,16 +67,16 @@ describe('matching', () => {
     expect(ROME.metiers.every((m) => m.publics.includes('STMG'))).toBe(true)
   })
 
-  it('BTS : expert-comptable n’est pas présenté comme accessible ; les métiers accessibles passent avant', () => {
+  it('BTS : seulement des métiers accessibles avec le BTS (ni expert-comptable, ni directeur commercial)', () => {
     expect(acces('M1211')).toMatchObject({ type: 'etudes', onisep: { niveau: 'bac + 8' } })
     expect(acces('M1210').type).toBe('etudes')
     expect(acces('M1203').type).toBe('direct')
     expect(acces('D1417').type).toBe('experience')
     for (const id of ['BTS_CG', 'BTS_NDRC', 'BTS_SAM']) {
-      const rangs = pistes(complet(id)).filter((p) => p.freins.length === 0).map((p) => ({ direct: 0, experience: 1, etudes: 2 })[p.acces.type])
-      expect(rangs, id).toEqual([...rangs].sort((a, b) => a - b))
-      expect(rangs[0], id).toBe(0)
+      expect(pistes(complet(id), 999).every((p) => p.acces.type === 'direct'), id).toBe(true)
     }
+    expect(pistes(complet('BTS_NDRC'), 999).map((p) => p.metier.code)).not.toContain('M1715') // directeur commercial
+    expect(pistes(complet('STMG'), 999).some((p) => p.acces.type !== 'direct')).toBe(true) // en STMG, tout reste ouvert
     for (const code of [...FAMILLES.apresBts.experience, ...Object.keys(FAMILLES.apresBts.etudes)]) {
       expect(ROME.metiers.some((m) => m.code === code), code).toBe(true)
     }
@@ -158,5 +158,17 @@ describe('matching', () => {
 
   it('sans public, aucune piste', () => {
     expect(pistes({ ...complet('STMG'), publicId: null })).toEqual([])
+  })
+})
+
+describe('parcours d’un métier en BTS (mobilités ROME)', () => {
+  it('vendeur en prêt-à-porter : métiers proches accessibles, et des évolutions « plus tard » (jamais présentées comme immédiates)', async () => {
+    const f = await chargerFiches()
+    const { proches, plusTard } = parcoursMetier(f.fiches.D1214.mobilites, 'BTS_NDRC', 'D1214')
+    expect(proches.map((m) => m.code)).toContain('D1212')
+    expect(proches.every((m) => acces(m.code).type === 'direct')).toBe(true)
+    expect(plusTard.length).toBeGreaterThan(0)
+    expect(plusTard.every((p) => p.acces.type !== 'direct')).toBe(true)
+    expect(plusTard.map((p) => p.metier.code)).toContain('D1508') // responsable de caisses : après expérience
   })
 })

@@ -564,14 +564,14 @@ Règle (`app/src/metiers.ts`, fonction `acces`) : niveau minimum de la fiche Oni
 | C1202 | Analyste de crédits et risques bancaires | CG | analyste de crédit (MET.661) | bac + 5 | études (niveau Onisep) |
 | C1214 | Chargé / Chargée d'études crédits bancaires | CG | — (—) | — | études : souvent un bac+5 en finance |
 | C1215 | Contrôleur / Contrôleuse de banque | CG | inspecteur/trice de banque (MET.222) | bac + 5 | études (niveau Onisep) |
-| C1401 | Agent administratif / Agente administrative banque ou assurance | CG | — (—) | — | accessible (sans fiche Onisep : à vérifier) |
+| C1401 | Agent administratif / Agente administrative banque ou assurance | CG, SAM | — (—) | — | accessible (sans fiche Onisep : à vérifier) |
 | C1102 | Conseiller commercial / Conseillère commerciale et relation client en assurances | NDRC | conseiller/ère en assurances (MET.909) | bac + 2 | accessible |
 | C1103 | Courtier / Courtière en assurance | NDRC | courtier/ère (MET.925) | bac + 2 | accessible |
 | C1104 | Responsable d'agence en assurances | NDRC | — (—) | — | après expérience |
 | C1111 | Mandataire en assurance | NDRC | — (—) | — | accessible (sans fiche Onisep : à vérifier) |
-| C1112 | Agent général / Agente générale d'assurance | NDRC | agent/e général/e d'assurances (MET.409) | bac + 2 | accessible |
+| C1112 | Agent général / Agente générale d'assurance | NDRC | agent/e général/e d'assurances (MET.409) | bac + 2 | après expérience |
 | C1116 | Chargé / Chargée de clientèle centre d'appels en assurances | NDRC | conseiller/ère relation client à distance (MET.762) | CAP ou équivalent | accessible |
-| C1119 | Chargé / Chargée d'affaires en assurances | NDRC | — (—) | — | accessible (sans fiche Onisep : à vérifier) |
+| C1119 | Chargé / Chargée d'affaires en assurances | NDRC | — (—) | — | après expérience |
 | C1110 | Souscripteur / Souscriptrice en assurances | NDRC | souscripteur/trice (MET.483) | bac + 5 | études (niveau Onisep) |
 | C1115 | Conseiller retraite / Conseillère retraite | NDRC | — (—) | — | accessible (sans fiche Onisep : à vérifier) |
 | C1109 | Gestionnaire en assurances | CG, NDRC | gestionnaire de contrats d'assurance (MET.867) | bac + 2 | accessible |
@@ -586,7 +586,7 @@ Règle (`app/src/metiers.ts`, fonction `acces`) : niveau minimum de la fiche Oni
 | C1502 | Chargé / Chargée de gestion locative en immobilier | CG | — (—) | — | accessible (sans fiche Onisep : à vérifier) |
 | C1508 | Assistant / Assistante de gestion syndic immobilier | CG | — (—) | — | accessible (sans fiche Onisep : à vérifier) |
 | C1507 | Chargé / Chargée de recouvrement immobilier | CG | — (—) | — | accessible (sans fiche Onisep : à vérifier) |
-| D1402 | Commercial / Commerciale grands comptes et entreprises | NDRC | — (—) | — | accessible (sans fiche Onisep : à vérifier) |
+| D1402 | Commercial / Commerciale grands comptes et entreprises | NDRC | — (—) | — | après expérience |
 | D1407 | Technico-commercial / Technico-commerciale | NDRC | — (—) | — | accessible (sans fiche Onisep : à vérifier) |
 | D1410 | Attaché commercial / Attachée commerciale | NDRC | commercial/e sédentaire (MET.8012) | bac ou équivalent | accessible |
 | D1416 | Commercial / Commerciale auprès d'une clientèle d'entreprises | NDRC | commercial/e itinérant/e (MET.8011) | bac ou équivalent | accessible |
@@ -597,8 +597,8 @@ Règle (`app/src/metiers.ts`, fonction `acces`) : niveau minimum de la fiche Oni
 | D1439 | Représentant / Représentante en biens et en services auprès des entreprises | NDRC | commercial/e itinérant/e (MET.8011) | bac ou équivalent | accessible |
 | D1444 | Responsable grands comptes | NDRC | — (—) | — | après expérience |
 | D1401 | Assistant commercial / Assistante commerciale | NDRC, SAM | assistant/e commercial/e (MET.28) | bac ou équivalent | accessible |
-| D1409 | Assistant / Assistante administration des ventes | NDRC | — (—) | — | accessible (sans fiche Onisep : à vérifier) |
-| D1431 | Assistant / Assistante achat | NDRC | — (—) | — | accessible (sans fiche Onisep : à vérifier) |
+| D1409 | Assistant / Assistante administration des ventes | NDRC, SAM | — (—) | — | accessible (sans fiche Onisep : à vérifier) |
+| D1431 | Assistant / Assistante achat | NDRC, SAM | — (—) | — | accessible (sans fiche Onisep : à vérifier) |
 | D1422 | Chargé / Chargée de recouvrement de créances | CG, NDRC | — (—) | — | accessible (sans fiche Onisep : à vérifier) |
 | D1403 | Conseiller commercial / Conseillère commerciale auprès des particuliers | NDRC | — (—) | — | accessible (sans fiche Onisep : à vérifier) |
 | D1404 | Vendeur / Vendeuse automobile | NDRC | — (—) | — | accessible (sans fiche Onisep : à vérifier) |
@@ -630,7 +630,7 @@ Règle (`app/src/metiers.ts`, fonction `acces`) : niveau minimum de la fiche Oni
 | M1703 | Chef / Cheffe de produit | NDRC | chef/fe de produit marketing (mercatique) (MET.539) | bac + 5 | études (niveau Onisep) |
 | M1704 | Responsable service clients | NDRC | — (—) | — | après expérience |
 | M1705 | Responsable marketing | NDRC | — (—) | — | études : souvent un bac+5 en marketing |
-| M1706 | Chef / Cheffe de promotion des ventes | NDRC | responsable de la promotion des ventes (MET.659) | bac + 2 | accessible |
+| M1706 | Chef / Cheffe de promotion des ventes | NDRC | responsable de la promotion des ventes (MET.659) | bac + 2 | après expérience |
 | M1707 | Responsable du développement commercial | NDRC | — (—) | — | après expérience |
 | M1715 | Directeur commercial / Directrice commerciale | NDRC | — (—) | — | après expérience |
 | M1718 | Chargé / Chargée de marketing digital | NDRC | — (—) | — | études : souvent un bac+3 en marketing digital |

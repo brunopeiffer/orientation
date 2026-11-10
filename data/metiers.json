@@ -2,7 +2,7 @@
  "source": "ROME, France Travail : arborescence principale et arborescence des centres d'intérêt",
  "version": "octobre 2026",
  "licence": "Licence Ouverte Etalab 2.0",
- "genere": "2026-11-08",
+ "genere": "2026-11-10",
  "metiers": [
   {
    "code": "M1203",
@@ -1057,7 +1057,8 @@
    "famille": "banque",
    "publics": [
     "STMG",
-    "BTS_CG"
+    "BTS_CG",
+    "BTS_SAM"
    ],
    "appellations": [
     "Agent administratif / Agente administrative d'assurances",
@@ -1865,7 +1866,8 @@
    "famille": "vente_b2b",
    "publics": [
     "STMG",
-    "BTS_NDRC"
+    "BTS_NDRC",
+    "BTS_SAM"
    ],
    "appellations": [
     "Assistant / Assistante administration des ventes export",
@@ -1885,7 +1887,8 @@
    "famille": "vente_b2b",
    "publics": [
     "STMG",
-    "BTS_NDRC"
+    "BTS_NDRC",
+    "BTS_SAM"
    ],
    "appellations": [],
    "centres": [

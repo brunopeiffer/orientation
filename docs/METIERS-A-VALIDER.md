@@ -1,6 +1,6 @@
 # Métiers V1 — liste À VALIDER PAR UN HUMAIN
 
-Généré par `etl/rome_candidats.py` le 08/11/2026.
+Généré par `etl/rome_candidats.py` le 10/11/2026.
 **181 fiches ROME retenues.**
 Source : ROME, France Travail, arborescences d'octobre 2026, Licence Ouverte Etalab 2.0.
 Libellé = première appellation de la fiche ; les autres appellations (titres de poste réels) sont proposées dans l'app. Centres d'intérêt = rattachement officiel du ROME.
@@ -75,7 +75,7 @@ Appellations exclues (hors sujet) : Caissier / Caissière de casino de jeux, Com
 | C1202 | Analyste de crédits et risques bancaires | STMG, BTS_CG | J'ai le souci du détail ; J'aime manier les chiffres | 3 | Analyste engagements bancaires ; Analyste prêt bancaire |
 | C1214 | Chargé / Chargée d'études crédits bancaires | STMG, BTS_CG | J'ai le sens des affaires ; J'aime communiquer, convaincre ; J'aime manier les chiffres ; J'aime organiser, planifier | 4 | Ingénieur financier / Ingénieure financière en crédit bancaire ; Responsable marché bancaire particuliers ; Responsable marché bancaire professionnels |
 | C1215 | Contrôleur / Contrôleuse de banque | STMG, BTS_CG | J'ai le sens des affaires ; J'ai le souci du détail ; J'aime communiquer, convaincre ; J'aime faire respecter la loi, les règles | 2 | Gestionnaire risques bancaires |
-| C1401 | Agent administratif / Agente administrative banque ou assurance | STMG, BTS_CG | J'ai le sens du contact ; J'ai le souci du détail ; J'aime organiser, planifier | 7 | Agent administratif / Agente administrative d'assurances ; Agent administratif / Agente administrative de banque ; Assistant administratif / Assistante administrative d'assurances ; Employé central / Employée centrale chèque |
+| C1401 | Agent administratif / Agente administrative banque ou assurance | STMG, BTS_CG, BTS_SAM | J'ai le sens du contact ; J'ai le souci du détail ; J'aime organiser, planifier | 7 | Agent administratif / Agente administrative d'assurances ; Agent administratif / Agente administrative de banque ; Assistant administratif / Assistante administrative d'assurances ; Employé central / Employée centrale chèque |
 
 ## Assurance et protection sociale
 
@@ -123,8 +123,8 @@ Appellations exclues (hors sujet) : Caissier / Caissière de casino de jeux, Com
 | D1439 | Représentant / Représentante en biens et en services auprès des entreprises | STMG, BTS_NDRC | J'ai le sens des affaires ; J'ai le sens du contact ; J'aime communiquer, convaincre | 6 | Représentant / Représentante en biens d'équipement auprès des entreprises ; Représentant / Représentante en biens de consommation auprès des entreprises ; Représentant / Représentante en biens intermédiaires et matières premières auprès des entreprises ; Représentant / Représentante en services auprès des entreprises |
 | D1444 | Responsable grands comptes | STMG, BTS_NDRC | J'ai le sens des affaires ; J'ai le sens du contact ; J'aime communiquer, convaincre | 2 | Key Account Manager |
 | D1401 | Assistant commercial / Assistante commerciale | STMG, BTS_NDRC, BTS_SAM | J'ai le sens du contact ; J'aime communiquer, convaincre ; J'aime organiser, planifier | 6 | Assistant / Assistante de direction commerciale ; Assistant / Assistante de gestion commerciale ; Assistant administratif et commercial / Assistante administrative et commerciale ; Assistant commercial / Assistante commerciale et appels d'offres |
-| D1409 | Assistant / Assistante administration des ventes | STMG, BTS_NDRC | J'ai le sens des affaires ; J'ai le sens du contact ; J'ai le souci du détail ; J'aime communiquer, convaincre | 4 | Assistant / Assistante administration des ventes export ; Assistant / Assistante des ventes ; Technicien / Technicienne administration des ventes |
-| D1431 | Assistant / Assistante achat | STMG, BTS_NDRC | J'ai le sens des affaires ; J'ai le sens du contact ; J'aime communiquer, convaincre ; J'aime organiser, planifier | 1 | — |
+| D1409 | Assistant / Assistante administration des ventes | STMG, BTS_NDRC, BTS_SAM | J'ai le sens des affaires ; J'ai le sens du contact ; J'ai le souci du détail ; J'aime communiquer, convaincre | 4 | Assistant / Assistante administration des ventes export ; Assistant / Assistante des ventes ; Technicien / Technicienne administration des ventes |
+| D1431 | Assistant / Assistante achat | STMG, BTS_NDRC, BTS_SAM | J'ai le sens des affaires ; J'ai le sens du contact ; J'aime communiquer, convaincre ; J'aime organiser, planifier | 1 | — |
 | D1422 | Chargé / Chargée de recouvrement de créances | STMG, BTS_CG, BTS_NDRC | J'aime communiquer, convaincre ; J'aime faire respecter la loi, les règles ; J'aime manier les chiffres | 2 | Recouvreur / Recouvreuse de créances |
 
 ## Vente et relation client à distance

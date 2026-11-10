@@ -100,7 +100,8 @@ SELECTION = {
 # Publics ajoutés à des fiches déjà retenues ci-dessus (codes de SELECTION uniquement). BTS SAM : métiers cités
 # par l'Onisep (assistanat commercial, de gestion, RH, office manager, secrétariat juridique) et voisins. À VALIDER.
 AUSSI = {
-    "BTS_SAM": "M1607 M1604 M1432 M1621 M1612 K1406 M1602 M1601 M1501 M1502 M1505 D1401 E1107",
+    "BTS_SAM": "M1607 M1604 M1432 M1621 M1612 K1406 M1602 M1601 M1501 M1502 M1505 D1401 E1107 "
+                "D1409 D1431 C1401",  # 10/11/2026 : assistant ADV, assistant achat, agent administratif banque-assurance
 }
 
 # Appellations rattachées par le ROME à une fiche retenue mais hors sujet pour ces publics. À VALIDER.

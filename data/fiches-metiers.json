@@ -1,8 +1,8 @@
 {
- "source": "France Travail, ROME (fiches métiers : définition, accès à l'emploi, contextes de travail)",
+ "source": "France Travail, ROME (fiches métiers : définition, accès à l'emploi, contextes de travail, mobilités)",
  "version": "v462",
  "licence": "Licence Ouverte Etalab 2.0",
- "genere": "2026-11-08",
+ "genere": "2026-11-10",
  "fiches": {
   "C1102": {
    "definition": "Le conseiller commercial et relation client évalue les besoins en assurance des clients et propose des solutions adaptées en assurant le conseil, la vente des produits en assurances.",
@@ -27,7 +27,19 @@
     "Types de structures": [
      "Centres d'appels"
     ]
-   }
+   },
+   "mobilites": [
+    "C1104",
+    "C1504",
+    "C1208",
+    "C1203",
+    "C1201",
+    "D1402",
+    "C1103",
+    "C1109",
+    "C1107",
+    "M1704"
+   ]
   },
   "C1103": {
    "definition": "Le Courtier en assurances assure l'intermédiation entre un client et la compagnie d'assurance qui répond à son besoin.",
@@ -46,7 +58,19 @@
      "Travail en horaires décalés",
      "Travail en journée"
     ]
-   }
+   },
+   "mobilites": [
+    "C1110",
+    "C1108",
+    "C1107",
+    "C1104",
+    "C1102",
+    "C1101",
+    "C1111",
+    "C1208",
+    "C1206",
+    "D1410"
+   ]
   },
   "C1104": {
    "definition": "Le Responsable d'agence en assurances dirige et coordonne la planification de l'activité.",
@@ -72,7 +96,19 @@
      "Cabinet libéral",
      "Entreprises et milieux professionnels"
     ]
-   }
+   },
+   "mobilites": [
+    "C1207",
+    "M1204",
+    "K2111",
+    "G1403",
+    "D1406",
+    "C1103",
+    "C1108",
+    "D1509",
+    "M1704",
+    "M1201"
+   ]
   },
   "C1107": {
    "definition": "Le Chargé d'indemnisations en assurances intervient dans la gestion des sinistres et le soutien aux clients.",
@@ -99,7 +135,19 @@
     "Types de structures": [
      "Entreprises et milieux professionnels"
     ]
-   }
+   },
+   "mobilites": [
+    "C1110",
+    "C1109",
+    "K1903",
+    "C1106",
+    "C1105",
+    "C1104",
+    "D1408",
+    "N4203",
+    "D1204",
+    "H1303"
+   ]
   },
   "C1109": {
    "definition": "Le gestionnaire en assurances intervient dans la gestion des contrats et des sinistres, assurant un service essentiel aux clients.",
@@ -122,7 +170,19 @@
      "Cabinet libéral",
      "Entreprises et milieux professionnels"
     ]
-   }
+   },
+   "mobilites": [
+    "C1107",
+    "C1110",
+    "K1501",
+    "C1401",
+    "C1102",
+    "C1201",
+    "G1303",
+    "D1204",
+    "K1503",
+    "D1409"
+   ]
   },
   "C1110": {
    "definition": "Le Souscripteur en assurances définit et met en place les règles de souscription et les niveaux de tarification de produits d'assurances.",
@@ -147,7 +207,19 @@
      "Cabinet libéral",
      "Entreprises et milieux professionnels"
     ]
-   }
+   },
+   "mobilites": [
+    "C1108",
+    "C1107",
+    "C1103",
+    "D1404",
+    "C1101",
+    "C1106",
+    "C1104",
+    "M1302",
+    "D1406",
+    "M1101"
+   ]
   },
   "C1111": {
    "definition": "Représente une ou plusieurs sociétés d'assurance en tant que commercial(e).",
@@ -163,7 +235,17 @@
     "Conditions de travail et risques professionnels": [
      "Déplacements professionnels"
     ]
-   }
+   },
+   "mobilites": [
+    "C1102",
+    "C1112",
+    "C1206",
+    "D1407",
+    "D1410",
+    "D1402",
+    "C1103",
+    "C1110"
+   ]
   },
   "C1112": {
    "definition": "L' Agent général d'assurance distribue à une clientèle de particuliers ou de professionnels les produits d'une compagnie d'assurances qu'il représente, en suivant sa règlementation et stratégie commerciale.",
@@ -179,7 +261,17 @@
     "Conditions de travail et risques professionnels": [
      "Déplacements professionnels"
     ]
-   }
+   },
+   "mobilites": [
+    "C1111",
+    "D1406",
+    "M1706",
+    "M1302",
+    "D1510",
+    "C1103",
+    "C1107",
+    "C1110"
+   ]
   },
   "C1115": {
    "definition": "Le Conseiller retraite accompagne les individus dans la planification de leur retraite.",
@@ -203,7 +295,19 @@
      "Cabinet libéral",
      "Organisme public"
     ]
-   }
+   },
+   "mobilites": [
+    "C1107",
+    "C1103",
+    "C1109",
+    "C1105",
+    "C1102",
+    "C1206",
+    "D1408",
+    "M1209",
+    "D1416",
+    "M1508"
+   ]
   },
   "C1116": {
    "definition": "Le Chargé de clientèle centre d'appels en assurances réceptionne des appels et gère des demandes clients en matière d'assurances.",
@@ -226,7 +330,19 @@
     "Types de structures": [
      "Centres d'appels"
     ]
-   }
+   },
+   "mobilites": [
+    "C1102",
+    "C1504",
+    "C1201",
+    "C1208",
+    "C1206",
+    "K2602",
+    "D1401",
+    "D1416",
+    "E1113",
+    "C1401"
+   ]
   },
   "C1119": {
    "definition": "Le Chargé d'affaires en assurances gère et développe des portefeuilles clients.",
@@ -250,7 +366,19 @@
      "Cabinet libéral",
      "Entreprises et milieux professionnels"
     ]
-   }
+   },
+   "mobilites": [
+    "C1118",
+    "C1116",
+    "C1106",
+    "C1105",
+    "C1102",
+    "C1503",
+    "H1102",
+    "D1407",
+    "F1133",
+    "H1507"
+   ]
   },
   "C1124": {
    "definition": "Le Technicien de la sécurité sociale veille à la gestion et l'application des droits sociaux auprès des assurés.",
@@ -271,7 +399,19 @@
     "Types de structures": [
      "Organisme public"
     ]
-   }
+   },
+   "mobilites": [
+    "C1105",
+    "C1106",
+    "C1102",
+    "C1101",
+    "H1303",
+    "D1409",
+    "K1305",
+    "H1404",
+    "C1110",
+    "C1401"
+   ]
   },
   "C1126": {
    "definition": "Le Contrôleur des cotisations sociales régule et supervise les cotisations et les contributions.",
@@ -298,7 +438,19 @@
     "Types de structures": [
      "Organisme public"
     ]
-   }
+   },
+   "mobilites": [
+    "C1121",
+    "C1106",
+    "K1514",
+    "K2315",
+    "C1109",
+    "C1108",
+    "C1107",
+    "K1502",
+    "M1215",
+    "K1506"
+   ]
   },
   "C1130": {
    "definition": "Au c½ur de la relation et du service à l'usager, le Gestionnaire protection sociale gère l'ensemble des événements liés à son dossier ou contrat dans le strict respect des différentes réglementations en vigueur.",
@@ -314,7 +466,19 @@
     "Horaires et durée du travail": [
      "Travail en journée"
     ]
-   }
+   },
+   "mobilites": [
+    "C1122",
+    "C1118",
+    "C1126",
+    "C1104",
+    "K2111",
+    "M1402",
+    "M1226",
+    "M1208",
+    "C1109",
+    "K1908"
+   ]
   },
   "C1201": {
    "definition": "Le chargé d'accueil et de services clientèle bancaire est le premier contact en agence, facilitant les interactions et garant d'une expérience client de qualité.",
@@ -339,7 +503,19 @@
     "Types de structures": [
      "Entreprises et milieux professionnels"
     ]
-   }
+   },
+   "mobilites": [
+    "C1208",
+    "C1203",
+    "C1206",
+    "C1502",
+    "D1401",
+    "D1408",
+    "G1303",
+    "M1609",
+    "C1401",
+    "M1704"
+   ]
   },
   "C1202": {
    "definition": "L' analyste de crédits et risques bancaires examine la demande de crédit du client avec le risque financier et émet une décision stratégique.",
@@ -365,7 +541,19 @@
     "Types de structures": [
      "Entreprises et milieux professionnels"
     ]
-   }
+   },
+   "mobilites": [
+    "C1209",
+    "C1208",
+    "C1203",
+    "C1301",
+    "C1303",
+    "M1883",
+    "M1204",
+    "M1811",
+    "K1504",
+    "M1201"
+   ]
   },
   "C1203": {
    "definition": "Un Chargé d'affaires bancaires entreprise accompagne les entreprises dans leurs projets en leur proposant des solutions financières adaptées selon la politique commerciale de la banque et la réglementation bancaire.",
@@ -391,7 +579,19 @@
     "Types de structures": [
      "Entreprises et milieux professionnels"
     ]
-   }
+   },
+   "mobilites": [
+    "C1208",
+    "C1202",
+    "C1207",
+    "C1205",
+    "C1303",
+    "F1133",
+    "F1135",
+    "H1102",
+    "H1507",
+    "M1704"
+   ]
   },
   "C1205": {
    "definition": "Le Conseiller en gestion de patrimoine accompagne les particuliers, les entreprises dans l'optimisation, la gestion et la sécurisation de leurs finances.",
@@ -414,7 +614,19 @@
     "Types de structures": [
      "Entreprises et milieux professionnels"
     ]
-   }
+   },
+   "mobilites": [
+    "C1203",
+    "C1208",
+    "C1303",
+    "C1301",
+    "K1802",
+    "M1209",
+    "N1301",
+    "H1405",
+    "C1103",
+    "M1704"
+   ]
   },
   "C1206": {
    "definition": "Le Conseiller de clientèle bancaire accompagne les clients dans la gestion de leurs comptes et projets financiers.",
@@ -441,7 +653,19 @@
     "Types de structures": [
      "Entreprises et milieux professionnels"
     ]
-   }
+   },
+   "mobilites": [
+    "C1202",
+    "C1203",
+    "C1205",
+    "C1102",
+    "C1502",
+    "G1303",
+    "K1801",
+    "D1410",
+    "C1103",
+    "M1704"
+   ]
   },
   "C1207": {
    "definition": "Le Directeur d'agence bancaire est en charge de l'organisation et de la supervision de toutes les opérations se déroulant au sein d'une agence bancaire.",
@@ -468,7 +692,19 @@
     "Types de structures": [
      "Entreprises et milieux professionnels"
     ]
-   }
+   },
+   "mobilites": [
+    "C1202",
+    "C1303",
+    "C1301",
+    "C1302",
+    "C1104",
+    "K2111",
+    "M1402",
+    "M1302",
+    "M1201",
+    "M1207"
+   ]
   },
   "C1211": {
    "definition": "Le Guichetier vendeur gère les opérations quotidiennes de vente et informe des nouveaux produits.",
@@ -495,7 +731,19 @@
     "Types de structures": [
      "Entreprises et milieux professionnels"
     ]
-   }
+   },
+   "mobilites": [
+    "C1203",
+    "C1201",
+    "C1102",
+    "D1401",
+    "G1703",
+    "D1416",
+    "C1210",
+    "M1601",
+    "K1206",
+    "C1401"
+   ]
   },
   "C1212": {
    "definition": "Le Conseiller à distance de banque gère des relations clientèles à distance, offrant un service personnalisé et efficace.",
@@ -519,7 +767,19 @@
     "Types de structures": [
      "Centres d'appels"
     ]
-   }
+   },
+   "mobilites": [
+    "M1219",
+    "C1201",
+    "C1205",
+    "C1206",
+    "C1102",
+    "D1416",
+    "K1801",
+    "D1410",
+    "D1408",
+    "K2101"
+   ]
   },
   "C1214": {
    "definition": "Le Chargé d'études crédits bancaires analyse et évalue la solvabilité des clients sollicitant des crédits.",
@@ -541,7 +801,19 @@
     "Types de structures": [
      "Entreprises et milieux professionnels"
     ]
-   }
+   },
+   "mobilites": [
+    "C1213",
+    "C1208",
+    "C1206",
+    "C1203",
+    "C1503",
+    "C1303",
+    "M1403",
+    "K1602",
+    "M1430",
+    "M1220"
+   ]
   },
   "C1215": {
    "definition": "Le contrôleur de banque surveille les opérations financières de la banque afin de garantir la conformité réglementaire et la gestion des risques.",
@@ -564,7 +836,19 @@
     "Types de structures": [
      "Entreprises et milieux professionnels"
     ]
-   }
+   },
+   "mobilites": [
+    "C1208",
+    "C1204",
+    "C1203",
+    "C1122",
+    "C1302",
+    "K1510",
+    "M1204",
+    "K1505",
+    "K1903",
+    "M1215"
+   ]
   },
   "C1217": {
    "definition": "Le Conseiller commercial de banque intervient auprès des clients en combinant expertise financière et compétences commerciales.",
@@ -586,7 +870,19 @@
     "Types de structures": [
      "Entreprises et milieux professionnels"
     ]
-   }
+   },
+   "mobilites": [
+    "C1202",
+    "C1203",
+    "C1204",
+    "C1206",
+    "C1504",
+    "C1102",
+    "D1402",
+    "D1407",
+    "D1403",
+    "K1802"
+   ]
   },
   "C1401": {
    "definition": "L'Agent administratif en banque ou assurance gère le suivi administratif des dossiers et des documents clients selon la réglementation de l'assurance ou de la banque.",
@@ -612,7 +908,19 @@
     "Types de structures": [
      "Entreprises et milieux professionnels"
     ]
-   }
+   },
+   "mobilites": [
+    "C1109",
+    "M1601",
+    "C1102",
+    "C1201",
+    "C1206",
+    "C1301",
+    "K1503",
+    "M1605",
+    "M1607",
+    "M1608"
+   ]
   },
   "C1501": {
    "definition": "Le Gestionnaire de copropriété administre un ou plusieurs site(s) immobilier(s) et met en ½uvre les moyens techniques, administratifs, financiers et comptables de conservation ou d'amélioration du patrimoine immobilier selon la réglementation en vigueur.",
@@ -639,7 +947,19 @@
     "Types de structures": [
      "Entreprises et milieux professionnels"
     ]
-   }
+   },
+   "mobilites": [
+    "C1507",
+    "C1505",
+    "C1504",
+    "C1503",
+    "C1502",
+    "M1102",
+    "K1404",
+    "M1101",
+    "I1101",
+    "D1504"
+   ]
   },
   "C1502": {
    "definition": "Le Chargé de gestion locative en immobilier assure la gestion, le suivi administratif, technique et financier des biens immobiliers loués.",
@@ -664,7 +984,19 @@
     "Types de structures": [
      "Entreprises et milieux professionnels"
     ]
-   }
+   },
+   "mobilites": [
+    "C1504",
+    "C1501",
+    "C1102",
+    "C1304",
+    "D1406",
+    "M1604",
+    "M1203",
+    "M1605",
+    "C1109",
+    "K1502"
+   ]
   },
   "C1503": {
    "definition": "Le Chargé d'affaires immobilières intervient dans la gestion, le développement de projets immobiliers, opérant de la négociation à la finalisation des transactions, ainsi que la relation avec les clients et les partenaires.",
@@ -693,7 +1025,19 @@
      "Cabinet libéral",
      "Entreprises et milieux professionnels"
     ]
-   }
+   },
+   "mobilites": [
+    "C1505",
+    "C1304",
+    "C1204",
+    "C1302",
+    "K1404",
+    "I1101",
+    "M1707",
+    "M1302",
+    "M1102",
+    "C1109"
+   ]
   },
   "C1504": {
    "definition": "Le Conseiller immobilier réalise des transactions immobilières et/ou foncières (location, vente) et conseille des clients sur les possibilités d'acquisition, de location, de vente selon la législation de l'immobilier.",
@@ -710,7 +1054,19 @@
      "Travail en horaires décalés",
      "Travail le samedi"
     ]
-   }
+   },
+   "mobilites": [
+    "C1505",
+    "C1502",
+    "C1503",
+    "C1501",
+    "C1206",
+    "M1607",
+    "D1403",
+    "E1401",
+    "D1402",
+    "M1706"
+   ]
   },
   "C1505": {
    "definition": "Est en charge du fonctionnement d'une agence immobilière au niveau commercial, administratif et financier.",
@@ -727,7 +1083,19 @@
     "Horaires et durée du travail": [
      "Travail le samedi"
     ]
-   }
+   },
+   "mobilites": [
+    "C1502",
+    "C1501",
+    "C1503",
+    "C1206",
+    "C1102",
+    "M1706",
+    "D1406",
+    "D1410",
+    "D1402",
+    "E1401"
+   ]
   },
   "C1507": {
    "definition": "Le Chargé de recouvrement immobilier intervient dans la récupération des créances impayées auprès des locataires, copropriétaires ou acquéreurs défaillants pour obtenir le paiement des sommes dues.",
@@ -754,7 +1122,19 @@
      "Entreprises et milieux professionnels",
      "Organisme public"
     ]
-   }
+   },
+   "mobilites": [
+    "C1502",
+    "C1505",
+    "C1506",
+    "C1503",
+    "C1501",
+    "M1302",
+    "M1402",
+    "M1206",
+    "J1509",
+    "M1704"
+   ]
   },
   "C1508": {
    "definition": "L'Assistant de gestion syndic immobilier assure l'administration et la gestion financière des biens immobiliers en copropriété.",
@@ -779,7 +1159,19 @@
     "Types de structures": [
      "Entreprises et milieux professionnels"
     ]
-   }
+   },
+   "mobilites": [
+    "C1503",
+    "C1502",
+    "C1204",
+    "C1304",
+    "M1607",
+    "D1409",
+    "D1401",
+    "M1213",
+    "C1109",
+    "M1612"
+   ]
   },
   "D1211": {
    "definition": "Le vendeur d'articles de sport et loisirs optimise l'expérience client en proposant des solutions sportives et de loisir adaptées, grâce à une expertise produit solide.",
@@ -803,7 +1195,19 @@
     "Types de structures": [
      "Commerce de proximité"
     ]
-   }
+   },
+   "mobilites": [
+    "D1212",
+    "D1214",
+    "D1301",
+    "D1302",
+    "D1416",
+    "D1438",
+    "D1501",
+    "D1508",
+    "N1103",
+    "K2111"
+   ]
   },
   "D1212": {
    "definition": "Le vendeur en équipement de la maison, expert en aménagement intérieur et confort domestique, guide et conseille sa clientèle pour optimiser leur espace de vie.",
@@ -827,7 +1231,19 @@
     "Types de structures": [
      "Commerce de proximité"
     ]
-   }
+   },
+   "mobilites": [
+    "D1214",
+    "D1201",
+    "D1508",
+    "D1302",
+    "N1103",
+    "C1201",
+    "M1607",
+    "D1213",
+    "D1211",
+    "D1509"
+   ]
   },
   "D1214": {
    "definition": "Le vendeur en prêt-à-porter, un professionnel de la mode et du conseil client.",
@@ -852,7 +1268,19 @@
     "Types de structures": [
      "Commerce de proximité"
     ]
-   }
+   },
+   "mobilites": [
+    "D1212",
+    "D1506",
+    "D1408",
+    "D1503",
+    "D1501",
+    "D1508",
+    "N1103",
+    "M1602",
+    "M1506",
+    "D1211"
+   ]
   },
   "D1221": {
    "definition": "Le Vendeur en produits culturels et ludiques jour un rôle clé dans la diffusion de la culture et du divertissement.",
@@ -882,7 +1310,19 @@
      "Association",
      "Structure de loisirs, culturelle ou touristique"
     ]
-   }
+   },
+   "mobilites": [
+    "D1211",
+    "B1301",
+    "G1209",
+    "G1202",
+    "D1212",
+    "D1503",
+    "D1508",
+    "D1401",
+    "G1101",
+    "G1223"
+   ]
   },
   "D1245": {
    "definition": "Le vendeur en parfumerie incarne l'élégance et le savoir-faire dans le domaine des fragrances et des cosmétiques.",
@@ -906,7 +1346,19 @@
     "Types de structures": [
      "Commerce de proximité"
     ]
-   }
+   },
+   "mobilites": [
+    "D1208",
+    "D1231",
+    "D1237",
+    "D1232",
+    "D1241",
+    "D1246",
+    "E1101",
+    "M1501",
+    "M1607",
+    "G1703"
+   ]
   },
   "D1301": {
    "definition": "Le gérant de magasin d'alimentation générale orchestre la gestion quotidienne et la performance globale du magasin Supervise l'organisation du magasin et l'agencement des produits Assure le respect des normes d'hygiène et de sécurité alimentaire Recrute et encadre une équipe de vente en planifiant les activités quotidiennes Développe des stratégies de vente pour atteindre les objectifs commerciaux et satisfaire la clientèle Gère les stocks et approvisionnements pour garantir la disponibilité des produits Maintient une relation de qualité avec les fournisseurs et négocie les achats.",
@@ -926,7 +1378,18 @@
      "Commerce de proximité",
      "Entreprises et milieux professionnels"
     ]
-   }
+   },
+   "mobilites": [
+    "D1516",
+    "D1504",
+    "D1406",
+    "G1303",
+    "N1301",
+    "M1715",
+    "G1807",
+    "G1805",
+    "D1509"
+   ]
   },
   "D1302": {
    "definition": "Le responsable de boutique gère le quotidien d'un espace de vente pour en maximiser l'attractivité et les performances.",
@@ -951,7 +1414,18 @@
     "Types de structures": [
      "Structure de loisirs, culturelle ou touristique"
     ]
-   }
+   },
+   "mobilites": [
+    "D1415",
+    "D1406",
+    "D1503",
+    "D1504",
+    "D1510",
+    "M1705",
+    "G1805",
+    "K2116",
+    "D1509"
+   ]
   },
   "D1401": {
    "definition": "L'assistant commercial gère l'activité commerciale intermédiaire entre les clients et les commerciaux de l'entreprise.",
@@ -979,7 +1453,19 @@
     "Types de structures": [
      "Entreprises et milieux professionnels"
     ]
-   }
+   },
+   "mobilites": [
+    "D1438",
+    "D1422",
+    "D1503",
+    "K1801",
+    "E1112",
+    "M1507",
+    "M1604",
+    "G1304",
+    "M1703",
+    "M1102"
+   ]
   },
   "D1402": {
    "definition": "Le Commercial grands comptes et entreprises est un professionnel chargé de la gestion et du développement des relations avec les clients importants, souvent appelés \"grands comptes\".",
@@ -1005,7 +1491,18 @@
      "Entreprises et milieux professionnels",
      "Industrie pharmaceutique"
     ]
-   }
+   },
+   "mobilites": [
+    "D1416",
+    "M1701",
+    "M1828",
+    "M1402",
+    "E1107",
+    "M1705",
+    "E1127",
+    "M1823",
+    "M1707"
+   ]
   },
   "D1403": {
    "definition": "Le conseiller commercial auprès des particuliers vend des produits et des services et adapte ses offres pour répondre au mieux aux besoins de sa clientèle.",
@@ -1037,7 +1534,19 @@
      "Entreprises et milieux professionnels",
      "Particuliers employeurs"
     ]
-   }
+   },
+   "mobilites": [
+    "D1409",
+    "D1415",
+    "D1501",
+    "K1224",
+    "M1703",
+    "M1505",
+    "M1718",
+    "G1303",
+    "K1802",
+    "M1701"
+   ]
   },
   "D1404": {
    "definition": "Le vendeur automobile, dans le cadre de directives fixées par la hiérarchie, réalise l'ensemble des activités contribuant à l'acte de vente de véhicules neufs et d'occasion.",
@@ -1064,7 +1573,16 @@
     "Types de structures": [
      "Commerce de proximité"
     ]
-   }
+   },
+   "mobilites": [
+    "D1420",
+    "D1406",
+    "D1510",
+    "D1230",
+    "D1238",
+    "M1707",
+    "M1823"
+   ]
   },
   "D1406": {
    "definition": "Le directeur des ventes déploie la stratégie commerciale de l'entreprise, visant à augmenter le chiffre d'affaire.",
@@ -1095,7 +1613,18 @@
     "Types de structures": [
      "Entreprises et milieux professionnels"
     ]
-   }
+   },
+   "mobilites": [
+    "D1504",
+    "D1512",
+    "M1872",
+    "M1205",
+    "M1715",
+    "M1503",
+    "M1711",
+    "K1422",
+    "M1303"
+   ]
   },
   "D1407": {
    "definition": "Le technico-commercial conseille et vend des produits ou services spécifiques à des clients.",
@@ -1121,7 +1650,19 @@
     "Horaires et durée du travail": [
      "Travail selon un rythme irrégulier et des pics d'activité"
     ]
-   }
+   },
+   "mobilites": [
+    "D1420",
+    "D1418",
+    "D1417",
+    "D1416",
+    "D1415",
+    "D1406",
+    "C1205",
+    "C1504",
+    "D1419",
+    "C1110"
+   ]
   },
   "D1408": {
    "definition": "Le conseiller clientèle à distance est un professionnel qui aide et renseigne les clients par des moyens de communication à distance, tels que le téléphone, les courriels, les chats en ligne, ou les réseaux sociaux.",
@@ -1148,7 +1689,18 @@
      "Centres d'appels",
      "Entreprises et milieux professionnels"
     ]
-   }
+   },
+   "mobilites": [
+    "D1401",
+    "M1621",
+    "K2111",
+    "C1102",
+    "C1504",
+    "M1213",
+    "I1404",
+    "E1110",
+    "M1502"
+   ]
   },
   "D1409": {
    "definition": "L'assistant administration des ventes, un élément indispensable qui veille avant tout à la satisfaction des clients.",
@@ -1172,7 +1724,18 @@
     "Types de structures": [
      "Entreprises et milieux professionnels"
     ]
-   }
+   },
+   "mobilites": [
+    "D1415",
+    "D1431",
+    "D1401",
+    "D1429",
+    "D1433",
+    "N1204",
+    "N1301",
+    "M1706",
+    "M1701"
+   ]
   },
   "D1410": {
    "definition": "L'Attaché commercial dynamise efficacement l'offre de l'entreprise auprès de clients fidélisés ou de prospects.",
@@ -1202,7 +1765,19 @@
     "Types de structures": [
      "Entreprises et milieux professionnels"
     ]
-   }
+   },
+   "mobilites": [
+    "D1444",
+    "D1506",
+    "C1111",
+    "C1503",
+    "C1504",
+    "K2111",
+    "E1112",
+    "M1705",
+    "M1707",
+    "C1109"
+   ]
   },
   "D1415": {
    "definition": "Le Chargé de relation client, un rôle clé pour maintenir une communication efficace et satisfaire les besoins des clients.",
@@ -1227,7 +1802,19 @@
      "Entreprises et milieux professionnels",
      "Structure de loisirs, culturelle ou touristique"
     ]
-   }
+   },
+   "mobilites": [
+    "D1402",
+    "D1501",
+    "M1707",
+    "M1102",
+    "M1604",
+    "K2602",
+    "C1102",
+    "C1206",
+    "C1504",
+    "M1612"
+   ]
   },
   "D1416": {
    "definition": "Un commercial auprès d'une clientèle d'entreprise (souvent appelé commercial B2B) est une personne qui vend des produits ou services à des entreprises plutôt qu'à des particuliers.",
@@ -1251,7 +1838,19 @@
     "Types de structures": [
      "Entreprises et milieux professionnels"
     ]
-   }
+   },
+   "mobilites": [
+    "D1403",
+    "D1402",
+    "D1407",
+    "D1406",
+    "D1510",
+    "C1112",
+    "M1705",
+    "M1501",
+    "C1504",
+    "K2111"
+   ]
   },
   "D1417": {
    "definition": "Le chef des ventes, un leader stratégique au c½ur du développement commercial.",
@@ -1278,7 +1877,17 @@
      "Travail en journée",
      "Travail les week-ends et jours fériés"
     ]
-   }
+   },
+   "mobilites": [
+    "D1402",
+    "M1702",
+    "M1402",
+    "M1715",
+    "M1851",
+    "M1705",
+    "D1509",
+    "M1704"
+   ]
   },
   "D1422": {
    "definition": "Le chargé de recouvrement de créances joue un rôle crucial dans la gestion financière en veillant à ce que les créances soient payées dans les délais impartis.",
@@ -1304,7 +1913,17 @@
      "Entreprises et milieux professionnels",
      "Organisme public"
     ]
-   }
+   },
+   "mobilites": [
+    "K2111",
+    "C1206",
+    "M1203",
+    "M1202",
+    "C1303",
+    "C1103",
+    "K1908",
+    "M1220"
+   ]
   },
   "D1429": {
    "definition": "L'Assistant import-export facilite les échanges internationaux et le développement international de l'entreprise Gère les opérations d'importation et d'exportation de marchandises en constituant les dossiers Assure le suivi des flux et la liaison entre les fournisseurs étrangers et les clients locaux Veille au respect des réglementations douanières et commerciales Optimise les coûts et les délais de livraison en liaison permanente avec les différents intervenants Négocie les contrats avec les partenaires internationaux Suit et analyse les tendances du marché international.",
@@ -1325,7 +1944,19 @@
     "Types de structures": [
      "Entreprises et milieux professionnels"
     ]
-   }
+   },
+   "mobilites": [
+    "D1431",
+    "D1401",
+    "M1501",
+    "M1621",
+    "E1112",
+    "M1604",
+    "C1504",
+    "N1301",
+    "N1303",
+    "N1202"
+   ]
   },
   "D1431": {
    "definition": "Assistant achat contribue à l'optimisation des coûts et à la gestion efficace des approvisionnements de différents services de l'entreprise.",
@@ -1352,7 +1983,19 @@
      "Entreprises et milieux professionnels",
      "Organisme public"
     ]
-   }
+   },
+   "mobilites": [
+    "D1420",
+    "D1401",
+    "D1503",
+    "M1823",
+    "F1135",
+    "M1102",
+    "M1604",
+    "N1301",
+    "M1101",
+    "M1619"
+   ]
   },
   "D1432": {
    "definition": "L'Assistant service clients, interlocuteur clé entre l'entreprise et les clients, veille à leur satisfaction et à leur fidélisation.",
@@ -1379,7 +2022,19 @@
      "Entreprises et milieux professionnels",
      "Organisme public"
     ]
-   }
+   },
+   "mobilites": [
+    "D1403",
+    "D1503",
+    "D1305",
+    "H1108",
+    "M1621",
+    "E1110",
+    "M1501",
+    "I1410",
+    "M1601",
+    "C1401"
+   ]
   },
   "D1433": {
    "definition": "Le commercial export développe les ventes et les partenariats à l'international pour une entreprise, en promouvant ses produits ou services sur les marchés étrangers.",
@@ -1408,7 +2063,19 @@
     "Types de structures": [
      "Entreprises et milieux professionnels"
     ]
-   }
+   },
+   "mobilites": [
+    "D1416",
+    "M1715",
+    "K1802",
+    "M1851",
+    "M1707",
+    "M1872",
+    "N1301",
+    "K1412",
+    "N1204",
+    "M1420"
+   ]
   },
   "D1435": {
    "definition": "Le Responsable de plateau de centre d'appels organise la gestion des appels pour assurer une communication fluide et efficace.",
@@ -1434,7 +2101,17 @@
      "Entreprises et milieux professionnels",
      "Organisme public"
     ]
-   }
+   },
+   "mobilites": [
+    "K2111",
+    "M1883",
+    "G1409",
+    "M1705",
+    "N1301",
+    "M1701",
+    "M1429",
+    "M1704"
+   ]
   },
   "D1438": {
    "definition": "L'Assistant e-commerce contribue stratégiquement à l'activité des plateformes en ligne en assurant la gestion et l'optimisation des ventes en ligne.",
@@ -1459,7 +2136,19 @@
     "Types de structures": [
      "Entreprises et milieux professionnels"
     ]
-   }
+   },
+   "mobilites": [
+    "D1408",
+    "D1401",
+    "K2111",
+    "M1855",
+    "E1206",
+    "M1621",
+    "E1112",
+    "M1825",
+    "E1113",
+    "M1718"
+   ]
   },
   "D1439": {
    "definition": "Le représentant en biens et en services auprès des entreprises assure la vente de machines, d'équipements ou de services auprès d'entreprises, tout en veillant au développement commercial de ces produits et à la satisfaction client.",
@@ -1484,7 +2173,19 @@
     "Types de structures": [
      "Entreprises et milieux professionnels"
     ]
-   }
+   },
+   "mobilites": [
+    "D1420",
+    "D1406",
+    "D1402",
+    "K2111",
+    "K1803",
+    "C1504",
+    "M1706",
+    "M1707",
+    "M1703",
+    "M1704"
+   ]
   },
   "D1443": {
    "definition": "Le chargé d'assistance est l'interface entre l'assuré et l'assureur, il identifie le problème du client (accident, maladie, décès, etc) et le guide vers une solution appropriée.",
@@ -1510,7 +2211,19 @@
      "Centres d'appels",
      "Entreprises et milieux professionnels"
     ]
-   }
+   },
+   "mobilites": [
+    "D1435",
+    "D1432",
+    "D1415",
+    "K1204",
+    "M1621",
+    "E1112",
+    "D1436",
+    "D1428",
+    "M1601",
+    "C1401"
+   ]
   },
   "D1444": {
    "definition": "Le responsable grand compte est chargé de développer, gérer et fidéliser un portefeuille de clients stratégiques à fort enjeu pour l'entreprise.",
@@ -1536,7 +2249,19 @@
     "Types de structures": [
      "Entreprises et milieux professionnels"
     ]
-   }
+   },
+   "mobilites": [
+    "D1406",
+    "M1302",
+    "M1702",
+    "M1711",
+    "M1707",
+    "M1715",
+    "M1704",
+    "M1301",
+    "M1216",
+    "K2108"
+   ]
   },
   "D1501": {
    "definition": "Un animateur de ventes est un professionnel chargé de dynamiser et de promouvoir les ventes d'un produit ou d'une gamme de produits.",
@@ -1561,7 +2286,19 @@
      "Travail les week-ends et jours fériés",
      "Travail selon un rythme irrégulier et des pics d'activité"
     ]
-   }
+   },
+   "mobilites": [
+    "D1516",
+    "D1415",
+    "D1417",
+    "D1416",
+    "E1127",
+    "M1427",
+    "M1701",
+    "M1705",
+    "M1707",
+    "D1509"
+   ]
   },
   "D1502": {
    "definition": "Le Chef de rayon produits alimentaires supervise les flux de vente des produits de son rayon pour satisfaire la clientèle.",
@@ -1587,7 +2324,19 @@
     "Types de structures": [
      "Commerce de proximité"
     ]
-   }
+   },
+   "mobilites": [
+    "D1510",
+    "D1305",
+    "H2506",
+    "K2114",
+    "C1201",
+    "H1502",
+    "M1427",
+    "H1403",
+    "N1301",
+    "M1101"
+   ]
   },
   "D1503": {
    "definition": "Le Chef de rayon de produits non alimentaires gère et optimise les ventes au sein d'un magasin.",
@@ -1615,7 +2364,18 @@
      "Commerce de proximité",
      "Entreprises et milieux professionnels"
     ]
-   }
+   },
+   "mobilites": [
+    "D1510",
+    "D1504",
+    "I1117",
+    "K2111",
+    "H1502",
+    "E1112",
+    "M1705",
+    "N1301",
+    "M1102"
+   ]
   },
   "D1504": {
    "definition": "Le directeur de magasin de grande distribution assure la gestion et le développement de son établissement.",
@@ -1641,7 +2401,18 @@
     "Types de structures": [
      "Commerce de proximité"
     ]
-   }
+   },
+   "mobilites": [
+    "D1516",
+    "D1301",
+    "K2111",
+    "G1402",
+    "H1502",
+    "E1113",
+    "M1102",
+    "J1509",
+    "H1307"
+   ]
   },
   "D1506": {
    "definition": "Le chargé de merchandising s'occupe de la mise en place des produits afin de les rendre visibles, attractifs et faciles à acheter.",
@@ -1672,7 +2443,18 @@
      "Entreprises et milieux professionnels",
      "Hôtellerie / Restauration"
     ]
-   }
+   },
+   "mobilites": [
+    "D1504",
+    "D1516",
+    "D1510",
+    "D1517",
+    "M1711",
+    "E1127",
+    "M1706",
+    "E1411",
+    "D1509"
+   ]
   },
   "D1508": {
    "definition": "Le Responsable de caisses est un professionnel chargé de superviser et de gérer les opérations liées à la caisse dans un commerce ou une enseigne.",
@@ -1697,7 +2479,18 @@
     "Types de structures": [
      "Commerce de proximité"
     ]
-   }
+   },
+   "mobilites": [
+    "D1510",
+    "D1513",
+    "D1502",
+    "D1302",
+    "D1415",
+    "G1401",
+    "K2111",
+    "G1404",
+    "H1403"
+   ]
   },
   "D1509": {
    "definition": "Le responsable de département en grande distribution orchestre la gestion et l'optimisation des activités de son secteur au sein d'un supermarché ou hypermarché.",
@@ -1727,7 +2520,18 @@
     "Types de structures": [
      "Entreprises et milieux professionnels"
     ]
-   }
+   },
+   "mobilites": [
+    "H1237",
+    "D1512",
+    "D1504",
+    "D1508",
+    "D1516",
+    "D1406",
+    "N1304",
+    "M1701",
+    "M1707"
+   ]
   },
   "D1510": {
    "definition": "Le Chef de secteur magasin gère et anime une équipe de vendeurs au sein d'un secteur spécifique d'un magasin.",
@@ -1754,7 +2558,19 @@
     "Types de structures": [
      "Entreprises et milieux professionnels"
     ]
-   }
+   },
+   "mobilites": [
+    "D1517",
+    "D1516",
+    "D1305",
+    "M1511",
+    "M1714",
+    "K2111",
+    "N1301",
+    "M1705",
+    "D1509",
+    "H1237"
+   ]
   },
   "D1516": {
    "definition": "Le responsable merchandising a pour mission d'optimiser la présentation des produits afin d'augmenter les ventes et d'améliorer l'expérience client.",
@@ -1778,7 +2594,19 @@
     "Types de structures": [
      "Commerce de proximité"
     ]
-   }
+   },
+   "mobilites": [
+    "D1510",
+    "D1504",
+    "D1503",
+    "M1406",
+    "M1705",
+    "E1113",
+    "H1405",
+    "M1102",
+    "M1703",
+    "D1509"
+   ]
   },
   "D1517": {
    "definition": "Un chef de secteur distribution est chargé de développer les ventes et la visibilité des produits d'une entreprise sur une zone géographique donnée, principalement en grande distribution.",
@@ -1807,7 +2635,19 @@
     "Types de structures": [
      "Commerce de proximité"
     ]
-   }
+   },
+   "mobilites": [
+    "D1504",
+    "M1402",
+    "N1301",
+    "M1427",
+    "M1705",
+    "E1110",
+    "D1509",
+    "M1429",
+    "M1704",
+    "K2108"
+   ]
   },
   "E1101": {
    "definition": "L'animateur de communauté virtuelle dynamise et modère les échanges entre utilisateurs sur les plateformes numériques.",
@@ -1831,7 +2671,18 @@
      "Entreprises de médias",
      "Entreprises et milieux professionnels"
     ]
-   }
+   },
+   "mobilites": [
+    "E1113",
+    "E1112",
+    "E1111",
+    "E1104",
+    "E1103",
+    "E1402",
+    "M1834",
+    "D1501",
+    "D1409"
+   ]
   },
   "E1103": {
    "definition": "Le Chargé des relations publiques contribue à valoriser l'image et les intérêts d'une organisation par la conception et la mise en ½uvre d'actions de communication et de diffusion de l'information.",
@@ -1860,7 +2711,19 @@
      "Industrie pharmaceutique",
      "Organisme public"
     ]
-   }
+   },
+   "mobilites": [
+    "E1124",
+    "E1116",
+    "E1107",
+    "E1128",
+    "E1109",
+    "K1220",
+    "M1716",
+    "K1732",
+    "M1406",
+    "M1717"
+   ]
   },
   "E1107": {
    "definition": "Imagine et organise tout ou une partie d'événements, afin de servir les besoins en communication de son entreprise ou de ses clients.",
@@ -1884,7 +2747,19 @@
      "Entreprises et milieux professionnels",
      "Structure de loisirs, culturelle ou touristique"
     ]
-   }
+   },
+   "mobilites": [
+    "E1109",
+    "E1401",
+    "E1402",
+    "D1406",
+    "M1703",
+    "M1707",
+    "K1802",
+    "L1303",
+    "G1301",
+    "M1704"
+   ]
   },
   "E1112": {
    "definition": "Le Chargé de communication est un acteur clé dans la stratégie de valorisation de l'image de marque d'une entreprise.",
@@ -1909,7 +2784,19 @@
     "Types de structures": [
      "Industrie pharmaceutique"
     ]
-   }
+   },
+   "mobilites": [
+    "E1101",
+    "E1107",
+    "E1109",
+    "E1401",
+    "E1402",
+    "K1404",
+    "M1705",
+    "M1716",
+    "D1407",
+    "G1102"
+   ]
   },
   "E1113": {
    "definition": "L'e-commercial est un acteur clé de la vente en ligne qui dynamise les échanges sur les plateformes digitales.",
@@ -1930,7 +2817,18 @@
     "Horaires et durée du travail": [
      "Travail en journée"
     ]
-   }
+   },
+   "mobilites": [
+    "E1111",
+    "E1110",
+    "E1104",
+    "E1101",
+    "E1402",
+    "M1716",
+    "C1203",
+    "D1403",
+    "D1402"
+   ]
   },
   "E1124": {
    "definition": "Le Social media manager élabore les stratégies d'influence et de présence d'une marque ou d'une entreprise, et gère les campagnes publicitaires sur les réseaux sociaux.",
@@ -1959,7 +2857,19 @@
      "Entreprises et milieux professionnels",
      "Organisme public"
     ]
-   }
+   },
+   "mobilites": [
+    "E1109",
+    "E1127",
+    "E1112",
+    "E1401",
+    "M1706",
+    "M1427",
+    "M1847",
+    "M1716",
+    "M1718",
+    "M1704"
+   ]
   },
   "E1127": {
    "definition": "Le Brand content manager est responsable de la stratégie globale de contenu pour une marque.",
@@ -1985,7 +2895,19 @@
      "Entreprises de médias",
      "Entreprises et milieux professionnels"
     ]
-   }
+   },
+   "mobilites": [
+    "E1124",
+    "E1129",
+    "E1109",
+    "E1401",
+    "E1412",
+    "M1847",
+    "M1702",
+    "M1711",
+    "M1886",
+    "M1716"
+   ]
   },
   "E1401": {
    "definition": "Le Chef de publicité participe à l'élaboration, à l'organisation, à la coordination des stratégies commerciales et de production des campagnes.",
@@ -2011,7 +2933,18 @@
      "Entreprises de médias",
      "Entreprises et milieux professionnels"
     ]
-   }
+   },
+   "mobilites": [
+    "E1403",
+    "E1128",
+    "E1109",
+    "E1107",
+    "M1702",
+    "M1716",
+    "M1715",
+    "K2111",
+    "M1717"
+   ]
   },
   "E1404": {
    "definition": "L'Assistant en publicité joue un rôle clé dans la coordination et la mise en ½uvre des campagnes publicitaires.",
@@ -2038,7 +2971,18 @@
      "Entreprises de médias",
      "Entreprises et milieux professionnels"
     ]
-   }
+   },
+   "mobilites": [
+    "E1402",
+    "E1401",
+    "E1119",
+    "E1113",
+    "E1107",
+    "D1401",
+    "D1402",
+    "K2111",
+    "M1716"
+   ]
   },
   "E1405": {
    "definition": "Le Référenceur Web optimise la visibilité en ligne des entreprises.",
@@ -2065,7 +3009,19 @@
      "Entreprises de médias",
      "Entreprises et milieux professionnels"
     ]
-   }
+   },
+   "mobilites": [
+    "E1402",
+    "E1403",
+    "E1206",
+    "E1127",
+    "E1113",
+    "M1855",
+    "M1834",
+    "M1426",
+    "M1716",
+    "M1886"
+   ]
   },
   "E1407": {
    "definition": "Le Traffic manager est en charge de la programmation et de la gestion technique des espaces et des campagnes publicitaires en ligne.",
@@ -2093,7 +3049,18 @@
      "Entreprises de médias",
      "Entreprises et milieux professionnels"
     ]
-   }
+   },
+   "mobilites": [
+    "E1403",
+    "E1128",
+    "E1210",
+    "E1206",
+    "E1113",
+    "M1716",
+    "M1707",
+    "K2111",
+    "M1886"
+   ]
   },
   "G1101": {
    "definition": "L'Agent d'accueil touristique, premier contact des visiteurs, joue un rôle clé dans l'expérience touristique.",
@@ -2120,7 +3087,18 @@
     "Types de structures": [
      "Structure de loisirs, culturelle ou touristique"
     ]
-   }
+   },
+   "mobilites": [
+    "G1502",
+    "G1703",
+    "G1303",
+    "G1201",
+    "G1704",
+    "N2201",
+    "C1201",
+    "D1211",
+    "M1601"
+   ]
   },
   "G1102": {
    "definition": "A travers la valorisation et la promotion des attraits touristiques d'une région, le chargé de promotion touristique stimule l'attractivité et le développement économique local.",
@@ -2148,7 +3126,19 @@
     "Types de structures": [
      "Collectivités territoriales"
     ]
-   }
+   },
+   "mobilites": [
+    "G1104",
+    "G1108",
+    "D1415",
+    "E1110",
+    "M1716",
+    "E1112",
+    "E1107",
+    "D1411",
+    "K1802",
+    "M1707"
+   ]
   },
   "G1201": {
    "definition": "En tant que professionnel du tourisme, le guide accompagnateur contribue à l'enrichissement de l'expérience de voyage et à la qualité de séjour.",
@@ -2176,7 +3166,19 @@
      "Travail les week-ends et jours fériés",
      "Travail saisonnier"
     ]
-   }
+   },
+   "mobilites": [
+    "G1222",
+    "G1231",
+    "G1227",
+    "G1106",
+    "G1104",
+    "G1704",
+    "G1303",
+    "G1102",
+    "N2201",
+    "G1209"
+   ]
   },
   "G1301": {
    "definition": "Le concepteur de produits touristiques élabore des voyages sur mesure ou à la carte en s'appuyant sur son réseau de correspondants locaux.",
@@ -2207,7 +3209,19 @@
      "Travail saisonnier",
      "Travail selon un rythme irrégulier et des pics d'activité"
     ]
-   }
+   },
+   "mobilites": [
+    "G1302",
+    "G1308",
+    "G1307",
+    "G1408",
+    "G1102",
+    "M1718",
+    "M1706",
+    "E1107",
+    "E1113",
+    "M1823"
+   ]
   },
   "G1303": {
    "definition": "Le conseiller en voyages est un professionnel expert qui répond au mieux aux besoins des clients en matière de voyages.",
@@ -2235,7 +3249,18 @@
      "Opérateurs de voyages et de séjours",
      "Structure de loisirs, culturelle ou touristique"
     ]
-   }
+   },
+   "mobilites": [
+    "G1308",
+    "G1301",
+    "G1304",
+    "G1102",
+    "G1104",
+    "C1504",
+    "M1706",
+    "E1117",
+    "D1430"
+   ]
   },
   "G1402": {
    "definition": "Le directeur d'établissement en hôtellerie-restauration assure la gestion quotidienne de son établissement et la relation client dans une perspective de développement qualitatif, commercial et financier.",
@@ -2264,7 +3289,19 @@
      "Etablissement de restauration traditionnelle",
      "Hôtellerie / Restauration"
     ]
-   }
+   },
+   "mobilites": [
+    "G1403",
+    "M1205",
+    "M1302",
+    "M1707",
+    "K1802",
+    "D1510",
+    "M1701",
+    "M1102",
+    "D1406",
+    "M1502"
+   ]
   },
   "G1703": {
    "definition": "Le Réceptionniste assure le premier contact avec les clients au sein de l'établissement et fournit un accueil chaleureux et professionnel.",
@@ -2290,7 +3327,19 @@
      "Hébergement et hôtellerie de plein air",
      "Hôtellerie"
     ]
-   }
+   },
+   "mobilites": [
+    "G1706",
+    "G1303",
+    "G1401",
+    "G1101",
+    "M1616",
+    "M1604",
+    "N4131",
+    "D1415",
+    "D1204",
+    "D1403"
+   ]
   },
   "I1401": {
    "definition": "Le Technicien de maintenance en informatique assure le bon fonctionnement des systèmes informatiques.",
@@ -2319,7 +3368,19 @@
     "Types de structures": [
      "Entreprises et milieux professionnels"
     ]
-   }
+   },
+   "mobilites": [
+    "I1404",
+    "I1304",
+    "M1801",
+    "M1869",
+    "M1863",
+    "M1852",
+    "M1816",
+    "M1817",
+    "M1810",
+    "M1830"
+   ]
   },
   "K1201": {
    "definition": "L'assistant social intervient auprès de personnes confrontées à diverses difficultés : économiques, d'insertion, familiales, de santé et de logement.",
@@ -2345,7 +3406,19 @@
      "Structure médico-sociale",
      "Structures de l'Economie Sociale et Solidaire"
     ]
-   }
+   },
+   "mobilites": [
+    "K1211",
+    "K1217",
+    "K1213",
+    "K1204",
+    "K1230",
+    "K1805",
+    "K2111",
+    "K1101",
+    "K1801",
+    "M1415"
+   ]
   },
   "K1202": {
    "definition": "L'éducateur de jeunes enfants veille au maintien de la continuité éducative dans le respect du milieu familial, social et culturel.",
@@ -2372,7 +3445,19 @@
      "Association",
      "Crèche, halte-garderie"
     ]
-   }
+   },
+   "mobilites": [
+    "K1225",
+    "K1201",
+    "K1203",
+    "K1216",
+    "K1210",
+    "K2115",
+    "K2106",
+    "G1215",
+    "K1314",
+    "K1408"
+   ]
   },
   "K1205": {
    "definition": "L'agent d'accueil social facilite l'accès aux droits et services pour les personnes en difficulté ou en situation de précarité, au sein des structures d'aide sociale.",
@@ -2399,7 +3484,18 @@
      "Organisme public",
      "Structures de l'Economie Sociale et Solidaire"
     ]
-   }
+   },
+   "mobilites": [
+    "M1601",
+    "K1217",
+    "K1204",
+    "K1221",
+    "K1229",
+    "K1801",
+    "M1602",
+    "G1101",
+    "G1238"
+   ]
   },
   "K1207": {
    "definition": "L'Educateur spécialisé est un travailleur social qui conçoit, conduit et coordonne des démarches de soutien et d'accompagnement des personnes ou groupes de personnes en situation de vulnérabilité, en créant les conditions de leur protection et du respect de leurs droits (ou de leur considération dans leurs droits).",
@@ -2427,7 +3523,18 @@
      "Etablissement social ou médico-social (EHPAD, résidence senior, ...)",
      "Structures de l'Economie Sociale et Solidaire"
     ]
-   }
+   },
+   "mobilites": [
+    "K1201",
+    "K1203",
+    "K1202",
+    "G1215",
+    "K2111",
+    "K1409",
+    "K1407",
+    "K1102",
+    "K1301"
+   ]
   },
   "K1403": {
    "definition": "Le directeur d'établissement pour personnes âgées incarne chaque jour le lien essentiel entre bien-être, humanité et excellence organisationnelle, en garantissant un cadre de vie sécurisant, une qualité de service optimale et une gestion rigoureuse au service des résidents et de leurs familles.",
@@ -2452,7 +3559,19 @@
     "Types de structures": [
      "Structure médico-sociale"
     ]
-   }
+   },
+   "mobilites": [
+    "K1409",
+    "K1408",
+    "K1414",
+    "K1407",
+    "K2111",
+    "M1415",
+    "M1402",
+    "M1406",
+    "M1503",
+    "M1510"
+   ]
   },
   "K1406": {
    "definition": "Le secrétaire de mairie met en ½uvre, sous les directives des élues et élus, les politiques déclinées par l'équipe municipale.",
@@ -2473,7 +3592,18 @@
      "Travail en journée",
      "Travail le samedi"
     ]
-   }
+   },
+   "mobilites": [
+    "K1404",
+    "K1401",
+    "K2103",
+    "M1302",
+    "M1608",
+    "M1205",
+    "M1402",
+    "M1102",
+    "M1301"
+   ]
   },
   "K1701": {
    "definition": "Le combattant en milieu terrestre est un militaire qui participe à des opérations militaires pour défendre les intérêts nationaux et qui peut être déployé à l'étranger pour certaines missions.",
@@ -2503,7 +3633,17 @@
     "Types de structures": [
      "Organisme militaire"
     ]
-   }
+   },
+   "mobilites": [
+    "K1714",
+    "K1705",
+    "K2111",
+    "G1106",
+    "I1205",
+    "G1104",
+    "E1123",
+    "E1108"
+   ]
   },
   "K1702": {
    "definition": "Le responsable de sécurité civile et de secours supervise, coordonne et dirige les opérations de secours et d'assistance à personnes, de lutte contre les périls, sinistres, risques technologiques et naturels menaçant la sécurité publique, les biens et les patrimoines, ainsi que les opérations de gestion et prévention des risques, tant en France qu'à l'étranger.",
@@ -2531,7 +3671,19 @@
      "Travail les week-ends et jours fériés",
      "Travail selon un rythme irrégulier et des pics d'activité"
     ]
-   }
+   },
+   "mobilites": [
+    "K1704",
+    "K1706",
+    "K1705",
+    "K1703",
+    "K2502",
+    "N2202",
+    "M1302",
+    "M1402",
+    "H1301",
+    "K1707"
+   ]
   },
   "K1703": {
    "definition": "Le responsable de l'emploi des forces armées contribue à la conception, à la planification, à la préparation et à la conduite des opérations militaires et des actions civiles et militaires, en état-major ou en unité de combat.",
@@ -2563,7 +3715,19 @@
     "Types de structures": [
      "Secteur de la Défense"
     ]
-   }
+   },
+   "mobilites": [
+    "K1701",
+    "K1705",
+    "K1704",
+    "K1702",
+    "K1404",
+    "K1405",
+    "K1403",
+    "K1401",
+    "K1707",
+    "M1429"
+   ]
   },
   "K1705": {
    "definition": "Le secouriste réalise les interventions de secours, d'assistance à personnes et la lutte contre les périls, sinistres, risques naturels, technologiques, etc, menaçant la sécurité publique, les biens et les patrimoines selon les règles de sécurité et les impératifs d'urgence et de priorité.",
@@ -2587,7 +3751,19 @@
      "Travail en astreinte",
      "Travail les week-ends et jours fériés"
     ]
-   }
+   },
+   "mobilites": [
+    "K1726",
+    "K1704",
+    "K1701",
+    "K1706",
+    "K1702",
+    "K2503",
+    "K2502",
+    "K2111",
+    "J1305",
+    "K1707"
+   ]
   },
   "K1706": {
    "definition": "Le gendarme est un militaire de carrière qui assure la sécurité publique, maintient l'ordre et fait respecter la loi, et peut exercer un très large éventail de missions (lutte contre les homicide, enlèvement, proxénétisme, cybercriminalité, extorsion de fonds, vols à main armée par exemple) Assure la sécurité des personnes et des biens Intervient lors des accidents de la route pour porter secours et réguler la circulation Effectue des enquêtes judiciaires pour prévenir et réprimer la criminalité Participe à des missions de surveillance du territoire et de protection des institutions Assiste et protège les populations lors des événements publics ou catastrophes naturelles Réalise des contrôles de sécurité et des opérations de prévention dans les zones à risque.",
@@ -2611,7 +3787,20 @@
      "Travail en astreinte",
      "Travail les week-ends et jours fériés"
     ]
-   }
+   },
+   "mobilites": [
+    "K1728",
+    "K1704",
+    "K1705",
+    "K1702",
+    "K1701",
+    "K2502",
+    "K1515",
+    "M1856",
+    "K1707",
+    "K2514",
+    "K1506"
+   ]
   },
   "K1707": {
    "definition": "Le policier municipal est un agent de proximité chargé de faire respecter la sécurité, la tranquillité et les règles de la vie quotidienne dans sa commune ; il intervient 24H/24 et 7j/7 au plus près des habitants en patrouillant en voiture, à pied ou à vélo, pour assurer la sécurité, apaiser les quartiers et veiller au respect du partage de l'espace public.",
@@ -2643,7 +3832,19 @@
     "Types de structures": [
      "Collectivités territoriales"
     ]
-   }
+   },
+   "mobilites": [
+    "K1706",
+    "K1705",
+    "K1704",
+    "K2503",
+    "K2502",
+    "K1204",
+    "I1202",
+    "N4302",
+    "A1204",
+    "M1602"
+   ]
   },
   "K1801": {
    "definition": "Le Conseiller en insertion professionnelle accompagne des personnes en recherche d'emploi ou en difficulté dans leur carrière professionnelle.",
@@ -2671,7 +3872,19 @@
      "Organisme public",
      "Structures de l'Economie Sociale et Solidaire"
     ]
-   }
+   },
+   "mobilites": [
+    "K1805",
+    "K1815",
+    "K1812",
+    "K1224",
+    "K2139",
+    "K2101",
+    "K2112",
+    "M1506",
+    "K1814",
+    "K1107"
+   ]
   },
   "K1901": {
    "definition": "Le notaire est un officier public et ministériel chargé de garantir la sécurité juridique des actes et des transactions ; à ce titre, il : Authentifie les actes juridiques et leur confère une force probante et exécutoire Rédige des actes relatifs notamment aux transactions immobilières, successions, donations, contrats de mariage et actes patrimoniaux Sécurise juridiquement les opérations civiles, immobilières, familiales et patrimoniales Conseille les clients (particuliers et entreprises) sur les aspects juridiques, fiscaux et patrimoniaux Assure la conservation des actes authentiques et documents officiels Veille à la bonne exécution des volontés des parties dans le respect des lois en vigueur Selon son statut, peut diriger une étude notariale, encadrer des collaborateurs et assurer la gestion économique et organisationnelle de l'office.",
@@ -2695,7 +3908,19 @@
     "Types de structures": [
      "Cabinet libéral"
     ]
-   }
+   },
+   "mobilites": [
+    "K1913",
+    "K1916",
+    "K1914",
+    "K1911",
+    "K1905",
+    "K1904",
+    "C1205",
+    "C1120",
+    "K1903",
+    "K1908"
+   ]
   },
   "K1902": {
    "definition": "Le clerc de notaire est un collaborateur juridique chargé d'assister le notaire dans la préparation, la rédaction, l'instruction et la finalisation des actes.",
@@ -2721,7 +3946,25 @@
     "Types de structures": [
      "Cabinet libéral"
     ]
-   }
+   },
+   "mobilites": [
+    "K1913",
+    "K1909",
+    "K1912",
+    "K1914",
+    "K1901",
+    "K1101",
+    "K1229",
+    "C1128",
+    "I1405",
+    "C1501",
+    "C1206",
+    "C1205",
+    "M1209",
+    "K1908",
+    "K1903",
+    "M1612"
+   ]
   },
   "K1903": {
    "definition": "Le juriste est garant des intérêts légaux et réglementaires.",
@@ -2746,7 +3989,18 @@
      "Entreprises et milieux professionnels",
      "Organisme public"
     ]
-   }
+   },
+   "mobilites": [
+    "K1908",
+    "M1612",
+    "K1914",
+    "K1915",
+    "K1901",
+    "K1229",
+    "M1602",
+    "H1301",
+    "H1507"
+   ]
   },
   "K1904": {
    "definition": "Le juge assure l'application de la loi et le maintien de l'ordre public.",
@@ -2772,7 +4026,21 @@
     "Types de structures": [
      "Organisme public"
     ]
-   }
+   },
+   "mobilites": [
+    "K1915",
+    "K1916",
+    "K1913",
+    "K1914",
+    "K1806",
+    "K1401",
+    "E1106",
+    "E1102",
+    "K1730",
+    "K1903",
+    "K2108",
+    "M1429"
+   ]
   },
   "K2111": {
    "definition": "Le Formateur conçoit et réalise la transmission de connaissances théoriques, pratiques et professionnelles spécialisées, généralement auprès de publics salariés ou demandeurs d'emploi.",
@@ -2797,7 +4065,18 @@
      "Entreprises et milieux professionnels",
      "Organisme de formation"
     ]
-   }
+   },
+   "mobilites": [
+    "K2142",
+    "K2102",
+    "K2148",
+    "K2119",
+    "K2132",
+    "K2101",
+    "K2145",
+    "M1505",
+    "M1504"
+   ]
   },
   "K2503": {
    "definition": "L'agent de prévention et de sécurité assure la protection des biens et des personnes.",
@@ -2828,7 +4107,19 @@
     "Types de structures": [
      "Entreprises et milieux professionnels"
     ]
-   }
+   },
+   "mobilites": [
+    "K2502",
+    "K1705",
+    "K1706",
+    "K1204",
+    "G1703",
+    "I1205",
+    "A1204",
+    "N4302",
+    "M1601",
+    "G1204"
+   ]
   },
   "M1101": {
    "definition": "L' Acheteur joue un rôle clé par l'organisation et la rigueur dans l'optimisation des coûts et la qualité des produits pour les entreprises.",
@@ -2856,7 +4147,19 @@
      "Entreprises et milieux professionnels",
      "Industrie pharmaceutique"
     ]
-   }
+   },
+   "mobilites": [
+    "M1102",
+    "M1701",
+    "M1703",
+    "M1203",
+    "M1803",
+    "D1407",
+    "H1405",
+    "N1301",
+    "D1510",
+    "K2111"
+   ]
   },
   "M1102": {
    "definition": "Le directeur des achats définit la stratégie achat en collaboration avec la direction générale de l'entreprise, dans le cadre d'un budget défini.",
@@ -2885,7 +4188,19 @@
      "Entreprises et milieux professionnels",
      "Industrie pharmaceutique"
     ]
-   }
+   },
+   "mobilites": [
+    "M1703",
+    "M1701",
+    "M1707",
+    "M1302",
+    "M1402",
+    "E1109",
+    "N1304",
+    "D1504",
+    "D1512",
+    "H1107"
+   ]
   },
   "M1201": {
    "definition": "L'Analyste financier évalue les performances financières des entreprises pour guider les décisions d'investissement.",
@@ -2905,7 +4220,17 @@
     "Types de structures": [
      "Entreprises et milieux professionnels"
     ]
-   }
+   },
+   "mobilites": [
+    "M1224",
+    "M1429",
+    "M1223",
+    "M1419",
+    "M1872",
+    "M1424",
+    "C1303",
+    "C1302"
+   ]
   },
   "M1202": {
    "definition": "L'Auditeur comptable et financier évalue la conformité et la fiabilité des informations financières d'une entreprise.",
@@ -2928,7 +4253,17 @@
     "Types de structures": [
      "Entreprises et milieux professionnels"
     ]
-   }
+   },
+   "mobilites": [
+    "M1228",
+    "M1223",
+    "M1872",
+    "M1424",
+    "C1302",
+    "C1303",
+    "M1215",
+    "M1224"
+   ]
   },
   "M1203": {
    "definition": "Le Comptable assure la tenue des comptes de l'entreprise jusqu'à l'établissement des comptes sociaux, en garantissant la conformité des pratiques comptables et fiscales aux normes en vigueur et réalise une analyse financière.",
@@ -2954,7 +4289,19 @@
      "Entreprises et milieux professionnels",
      "Organisme public"
     ]
-   }
+   },
+   "mobilites": [
+    "M1202",
+    "M1206",
+    "M1501",
+    "D1401",
+    "C1303",
+    "D1415",
+    "M1215",
+    "M1224",
+    "M1201",
+    "M1207"
+   ]
   },
   "M1204": {
    "definition": "Acteur clé dans la stratégie financière de l'entreprise, Le Contrôleur de gestion optimise la performance économique de l'organisation.",
@@ -2973,7 +4320,18 @@
     "Horaires et durée du travail": [
      "Travail selon un rythme irrégulier et des pics d'activité"
     ]
-   }
+   },
+   "mobilites": [
+    "M1208",
+    "M1206",
+    "M1205",
+    "M1202",
+    "M1302",
+    "M1402",
+    "C1202",
+    "M1207",
+    "K1504"
+   ]
   },
   "M1205": {
    "definition": "Le Directeur des services administratifs et financiers est un professionnel de haut niveau, généralement responsable de la stratégie financière globale de l'entreprise ; Il fait partie de l'équipe dirigeante et reporte souvent directement au CEO ou au Conseil d'Administration.",
@@ -2996,7 +4354,17 @@
     "Types de structures": [
      "Entreprises et milieux professionnels"
     ]
-   }
+   },
+   "mobilites": [
+    "M1872",
+    "M1422",
+    "M1424",
+    "K2120",
+    "K1401",
+    "G1414",
+    "M1303",
+    "K1422"
+   ]
   },
   "M1206": {
    "definition": "Le Responsable de comptabilité assure la gestion financière de l'entreprise avec rigueur et précision.",
@@ -3022,7 +4390,17 @@
      "Entreprises et milieux professionnels",
      "Organisme public"
     ]
-   }
+   },
+   "mobilites": [
+    "M1202",
+    "M1208",
+    "M1205",
+    "C1303",
+    "M1224",
+    "M1201",
+    "M1207",
+    "M1220"
+   ]
   },
   "M1207": {
    "definition": "Le trésorier est chargé de superviser et d'optimiser la gestion des liquidités, des investissements et des risques financiers d'une organisation.",
@@ -3047,7 +4425,17 @@
      "Entreprises et milieux professionnels",
      "Organisme public"
     ]
-   }
+   },
+   "mobilites": [
+    "M1201",
+    "M1228",
+    "M1205",
+    "M1209",
+    "M1851",
+    "C1202",
+    "C1203",
+    "C1207"
+   ]
   },
   "M1209": {
    "definition": "Organisé et rigoureux, vous avez un rôle clé dans l'optimisation des performances financières des entreprises.",
@@ -3074,7 +4462,18 @@
     "Types de structures": [
      "Cabinet libéral"
     ]
-   }
+   },
+   "mobilites": [
+    "M1208",
+    "M1204",
+    "M1302",
+    "M1402",
+    "K1802",
+    "K1404",
+    "C1202",
+    "M1207",
+    "K1504"
+   ]
   },
   "M1210": {
    "definition": "Le Commissaire aux comptes, garant de la transparence financière, joue un rôle crucial dans la vérification des comptes des entreprises.",
@@ -3103,7 +4502,19 @@
     "Horaires et durée du travail": [
      "Travail selon un rythme irrégulier et des pics d'activité"
     ]
-   }
+   },
+   "mobilites": [
+    "M1206",
+    "M1205",
+    "M1204",
+    "M1202",
+    "M1402",
+    "K2111",
+    "C1202",
+    "C1303",
+    "M1201",
+    "M1207"
+   ]
   },
   "M1211": {
    "definition": "L'Expert-comptable est responsable de la gestion financière et garantit la fiabilité des comptes d'une entreprise.",
@@ -3129,7 +4540,18 @@
      "Entreprises et milieux professionnels",
      "Organisme public"
     ]
-   }
+   },
+   "mobilites": [
+    "M1206",
+    "M1202",
+    "M1302",
+    "C1303",
+    "M1215",
+    "M1201",
+    "M1224",
+    "M1207",
+    "M1429"
+   ]
   },
   "M1213": {
    "definition": "L'assistant comptable soutient les opérations financières d'une entreprise en saisissant les écritures comptables, en gérant les factures et en suivant les paiements.",
@@ -3157,7 +4579,19 @@
      "Entreprises et milieux professionnels",
      "Organisme public"
     ]
-   }
+   },
+   "mobilites": [
+    "M1206",
+    "M1204",
+    "M1222",
+    "M1203",
+    "M1507",
+    "M1604",
+    "M1602",
+    "M1621",
+    "M1215",
+    "C1401"
+   ]
   },
   "M1215": {
    "definition": "Le Contrôleur comptable et financier assure une surveillance et une analyse précise des opérations financières de l'entreprise.",
@@ -3184,7 +4618,18 @@
      "Entreprises et milieux professionnels",
      "Organisme public"
     ]
-   }
+   },
+   "mobilites": [
+    "M1207",
+    "M1220",
+    "M1202",
+    "M1211",
+    "M1210",
+    "M1205",
+    "M1206",
+    "M1226",
+    "M1208"
+   ]
   },
   "M1220": {
    "definition": "Le credit manager gère les risques financiers d'une entreprise en lien avec les crédits clients, assurant ainsi la solvabilité et la rentabilité en optimisant la gestion des comptes clients.",
@@ -3207,7 +4652,19 @@
     "Types de structures": [
      "Entreprises et milieux professionnels"
     ]
-   }
+   },
+   "mobilites": [
+    "M1219",
+    "M1224",
+    "M1201",
+    "M1215",
+    "M1205",
+    "M1223",
+    "M1228",
+    "M1203",
+    "M1202",
+    "C1303"
+   ]
   },
   "M1222": {
    "definition": "L'Assistant de contrôle budgétaire participe à la gestion financière d'une entreprise.",
@@ -3231,7 +4688,18 @@
     "Types de structures": [
      "Entreprises et milieux professionnels"
     ]
-   }
+   },
+   "mobilites": [
+    "M1211",
+    "M1223",
+    "M1228",
+    "M1202",
+    "C1302",
+    "C1303",
+    "M1215",
+    "M1224",
+    "M1201"
+   ]
   },
   "M1223": {
    "definition": "Le chef des services administratifs et financiers est en charge de la gestion des ressources pour optimiser les performances de l'entreprise, ce qui comprend généralement la gestion de la comptabilité, des finances, des ressources humaines, et parfois la logistique et les achats.",
@@ -3255,7 +4723,17 @@
      "Entreprises et milieux professionnels",
      "Organisme public"
     ]
-   }
+   },
+   "mobilites": [
+    "M1202",
+    "M1205",
+    "M1422",
+    "K1507",
+    "M1215",
+    "M1201",
+    "M1224",
+    "M1429"
+   ]
   },
   "M1225": {
    "definition": "L'Aide-comptable participe à la gestion financière quotidienne des entreprises.",
@@ -3279,7 +4757,20 @@
     "Types de structures": [
      "Entreprises et milieux professionnels"
     ]
-   }
+   },
+   "mobilites": [
+    "M1203",
+    "M1213",
+    "M1206",
+    "M1223",
+    "M1501",
+    "M1608",
+    "D1401",
+    "C1303",
+    "D1431",
+    "M1215",
+    "K1225"
+   ]
   },
   "M1406": {
    "definition": "Le responsable RSE élabore, met en ½uvre et supervise la stratégie de responsabilité sociétale de l'entreprise conformément aux règlementations et standards internationaux.",
@@ -3296,7 +4787,20 @@
      "Possibilité de télétravail",
      "Travail en mode projet"
     ]
-   }
+   },
+   "mobilites": [
+    "M1402",
+    "M1410",
+    "M1503",
+    "H1302",
+    "K2401",
+    "K2111",
+    "K1802",
+    "K1404",
+    "E1109",
+    "A1312",
+    "M1429"
+   ]
   },
   "M1413": {
    "definition": "Le/la chargé(e) de mission RSE met en ½uvre et suit les politiques de responsabilité sociétale de l'entreprise.",
@@ -3312,7 +4816,18 @@
      "Possibilité de télétravail",
      "Travail en mode projet"
     ]
-   }
+   },
+   "mobilites": [
+    "M1502",
+    "M1410",
+    "M1402",
+    "M1406",
+    "M1501",
+    "K1802",
+    "K1404",
+    "H1303",
+    "G1240"
+   ]
   },
   "M1419": {
    "definition": "Le Data Analyst ou analyste de données transforme les données en informations statistiques et techniques.",
@@ -3338,7 +4853,18 @@
      "Organisme de formation",
      "Organisme public"
     ]
-   }
+   },
+   "mobilites": [
+    "M1423",
+    "M1414",
+    "M1868",
+    "M1828",
+    "M1870",
+    "M1836",
+    "M1861",
+    "K1906",
+    "K2408"
+   ]
   },
   "M1429": {
    "definition": "Le consultant en management analyse les pratiques d'une entreprise pour proposer des stratégies visant à améliorer son efficacité et sa performance.",
@@ -3365,7 +4891,19 @@
      "Entreprises et milieux professionnels",
      "Organisme public"
     ]
-   }
+   },
+   "mobilites": [
+    "M1428",
+    "M1427",
+    "M1410",
+    "M1402",
+    "M1424",
+    "M1503",
+    "M1302",
+    "D1402",
+    "K1802",
+    "K1404"
+   ]
   },
   "M1430": {
    "definition": "Le Chargé d'études commerciales collecte, analyse et interprète des données pour orienter les stratégies commerciales et marketing de l'entreprise.",
@@ -3390,7 +4928,19 @@
     "Types de structures": [
      "Entreprises et milieux professionnels"
     ]
-   }
+   },
+   "mobilites": [
+    "M1414",
+    "M1403",
+    "M1422",
+    "M1424",
+    "M1416",
+    "M1705",
+    "M1703",
+    "M1828",
+    "M1707",
+    "M1102"
+   ]
   },
   "M1432": {
    "definition": "L'Office Manager est un professionnel polyvalent et facilitateur, chargé d'assurer la gestion administrative, logistique et organisationnelle d'une entreprise.",
@@ -3412,7 +4962,19 @@
     "Types de structures": [
      "Entreprises et milieux professionnels"
     ]
-   }
+   },
+   "mobilites": [
+    "M1431",
+    "M1427",
+    "M1416",
+    "M1406",
+    "M1402",
+    "M1203",
+    "M1101",
+    "M1507",
+    "M1604",
+    "M1501"
+   ]
   },
   "M1501": {
    "definition": "L'Assistant Ressources Humaines (RH) assiste les responsables et optimise les processus de gestion administrative et opérationnelle des ressources humaines au sein d'une entreprise ou d'une organisation.",
@@ -3438,7 +5000,18 @@
      "Entreprises et milieux professionnels",
      "Organisme public"
     ]
-   }
+   },
+   "mobilites": [
+    "M1503",
+    "M1504",
+    "K2132",
+    "K2111",
+    "K1812",
+    "K1801",
+    "M1502",
+    "M1413",
+    "M1510"
+   ]
   },
   "M1502": {
    "definition": "Le Chargé de recrutement met en ½uvre la politique de recrutement selon les orientations stratégiques de la structure et les objectifs de développement.",
@@ -3464,7 +5037,18 @@
      "Entreprises et milieux professionnels",
      "Organisme public"
     ]
-   }
+   },
+   "mobilites": [
+    "M1510",
+    "M1429",
+    "K1814",
+    "M1511",
+    "M1503",
+    "M1504",
+    "K1801",
+    "K1812",
+    "K2132"
+   ]
   },
   "M1503": {
    "definition": "Le Directeur des Ressources Humaines développe et applique les stratégies pour attirer, développer et retenir les talents, alignant les objectifs RH avec ceux de l'entreprise.",
@@ -3489,7 +5073,19 @@
      "Entreprises et milieux professionnels",
      "Organisme public"
     ]
-   }
+   },
+   "mobilites": [
+    "M1509",
+    "M1512",
+    "M1302",
+    "M1304",
+    "M1205",
+    "M1427",
+    "M1406",
+    "M1415",
+    "M1303",
+    "M1429"
+   ]
   },
   "M1504": {
    "definition": "Le Responsable formation professionnelle en entreprise orchestre le développement des compétences au sein de l'organisation pour contribuer à sa performance et à l'employabilité des salariés.",
@@ -3515,7 +5111,18 @@
      "Entreprises et milieux professionnels",
      "Organisme de formation"
     ]
-   }
+   },
+   "mobilites": [
+    "M1503",
+    "M1828",
+    "M1302",
+    "M1402",
+    "K2102",
+    "E1108",
+    "K1801",
+    "K2111",
+    "K2107"
+   ]
   },
   "M1505": {
    "definition": "Le Chargé de formation en entreprise, un rôle clé pour le développement des compétences internes.",
@@ -3540,7 +5147,19 @@
     "Types de structures": [
      "Organisme de formation"
     ]
-   }
+   },
+   "mobilites": [
+    "M1504",
+    "M1828",
+    "M1401",
+    "M1402",
+    "K2102",
+    "K1801",
+    "K2111",
+    "K2114",
+    "E1101",
+    "K2107"
+   ]
   },
   "M1507": {
    "definition": "Le Gestionnaire paie, assure avec précision et rigueur la conformité des traitements salariaux au sein des entreprises.",
@@ -3566,7 +5185,19 @@
     "Types de structures": [
      "Entreprises et milieux professionnels"
     ]
-   }
+   },
+   "mobilites": [
+    "M1503",
+    "M1501",
+    "M1504",
+    "M1701",
+    "M1203",
+    "D1401",
+    "K2111",
+    "M1612",
+    "M1502",
+    "C1109"
+   ]
   },
   "M1508": {
    "definition": "Le Conseiller en gestion de carrière permet l'optimisation des talents au sein de l'entreprise.",
@@ -3592,7 +5223,19 @@
      "Organisme de formation",
      "Organisme public"
     ]
-   }
+   },
+   "mobilites": [
+    "M1503",
+    "M1504",
+    "M1511",
+    "K1815",
+    "K1801",
+    "K1812",
+    "K2132",
+    "M1502",
+    "M1510",
+    "M1429"
+   ]
   },
   "M1509": {
    "definition": "Le responsable de l'administration du personnel est un professionnel des ressources humaines dont l'objectif principal est centré sur la gestion administrative des relations avec les employés au sein d'une entreprise ou une organisation.",
@@ -3618,7 +5261,18 @@
      "Entreprises et milieux professionnels",
      "Organisme public"
     ]
-   }
+   },
+   "mobilites": [
+    "M1512",
+    "M1504",
+    "M1511",
+    "M1503",
+    "M1406",
+    "M1415",
+    "K1103",
+    "K2101",
+    "M1510"
+   ]
   },
   "M1510": {
    "definition": "Le Chargé de mission RH diversité handicap participe à la prévention de la discrimination et valorise et promeut l'inclusion au sein de l'entreprise.",
@@ -3643,7 +5297,19 @@
      "Entreprises et milieux professionnels",
      "Organisme public"
     ]
-   }
+   },
+   "mobilites": [
+    "M1429",
+    "M1502",
+    "M1413",
+    "M1503",
+    "M1511",
+    "M1504",
+    "M1427",
+    "K2111",
+    "K1815",
+    "K1801"
+   ]
   },
   "M1511": {
    "definition": "Le Responsable Qualité de Vie au Travail veille à l'amélioration continue des conditions de travail et au bien-être des salariés en adéquation avec la performance globale de l'entreprise.",
@@ -3667,7 +5333,19 @@
      "Entreprises et milieux professionnels",
      "Organisme public"
     ]
-   }
+   },
+   "mobilites": [
+    "M1503",
+    "M1504",
+    "M1427",
+    "K1801",
+    "K2132",
+    "M1502",
+    "M1413",
+    "M1510",
+    "M1218",
+    "M1429"
+   ]
   },
   "M1601": {
    "definition": "Chaleureux et professionnel, vous êtes le premier point de contact dans de nombreuses organisations.",
@@ -3686,7 +5364,16 @@
      "Port de tenue professionnelle ou d'uniforme",
      "Station assise prolongée"
     ]
-   }
+   },
+   "mobilites": [
+    "K1205",
+    "C1401",
+    "M1401",
+    "C1201",
+    "D1408",
+    "G1101",
+    "G1703"
+   ]
   },
   "M1602": {
    "definition": "Le secrétaire administratif de collectivité territoriale assure la gestion administrative, organisationnelle et réglementaire d'une structure publique locale (mairie, département, région, établissement public territorial).",
@@ -3708,7 +5395,19 @@
     "Types de structures": [
      "Collectivités territoriales"
     ]
-   }
+   },
+   "mobilites": [
+    "M1609",
+    "M1607",
+    "G1303",
+    "G1703",
+    "D1408",
+    "K1802",
+    "D1409",
+    "C1502",
+    "M1601",
+    "C1401"
+   ]
   },
   "M1604": {
    "definition": "L'Assistant de direction joue un rôle essentiel dans la gestion et l'organisation administrative d'un service ou d'une entreprise.",
@@ -3733,7 +5432,19 @@
      "Entreprise industrielle",
      "Entreprises et milieux professionnels"
     ]
-   }
+   },
+   "mobilites": [
+    "M1605",
+    "M1701",
+    "M1501",
+    "K1404",
+    "E1103",
+    "G1102",
+    "K2111",
+    "K1802",
+    "C1109",
+    "M1704"
+   ]
   },
   "M1607": {
    "definition": "L'assistant administratif est chargé d'assurer le bon fonctionnement administratif d'un service, d'une entreprise ou d'une organisation.",
@@ -3759,7 +5470,19 @@
      "Association",
      "Entreprises et milieux professionnels"
     ]
-   }
+   },
+   "mobilites": [
+    "M1609",
+    "M1608",
+    "M1605",
+    "M1604",
+    "M1501",
+    "D1401",
+    "C1502",
+    "K1902",
+    "D1409",
+    "C1401"
+   ]
   },
   "M1608": {
    "definition": "Le secrétaire comptable, organisé et rigoureux, joue le rôle clé dans la gestion administrative et comptable des entreprises.",
@@ -3783,7 +5506,19 @@
     "Types de structures": [
      "Cabinet libéral"
     ]
-   }
+   },
+   "mobilites": [
+    "M1609",
+    "M1605",
+    "M1604",
+    "M1203",
+    "D1409",
+    "G1401",
+    "K1503",
+    "C1109",
+    "K1501",
+    "C1401"
+   ]
   },
   "M1611": {
    "definition": "Le Secrétaire facturier joue un rôle clé dans la gestion administrative et la facturation au sein des entreprises.",
@@ -3800,7 +5535,19 @@
     "Conditions de travail et risques professionnels": [
      "Station assise prolongée"
     ]
-   }
+   },
+   "mobilites": [
+    "M1614",
+    "M1608",
+    "M1607",
+    "M1604",
+    "M1602",
+    "M1203",
+    "C1201",
+    "C1109",
+    "C1401",
+    "M1704"
+   ]
   },
   "M1612": {
    "definition": "L'assistant de service juridique est chargé de soutenir les avocats, les conseils ou les autres membres d'un département juridique, en exécutant des tâches administratives et des travaux de préparation de documents juridiques.",
@@ -3818,7 +5565,18 @@
     "Horaires et durée du travail": [
      "Travail en journée"
     ]
-   }
+   },
+   "mobilites": [
+    "K1501",
+    "K1908",
+    "M1604",
+    "M1501",
+    "K1905",
+    "C1206",
+    "K1902",
+    "K1601",
+    "D1409"
+   ]
   },
   "M1620": {
    "definition": "L'assistant marketing accompagne le responsable ou l'équipe marketing dans la mise en ½uvre de la stratégie commerciale et de communication d'une entreprise.",
@@ -3843,7 +5601,19 @@
     "Types de structures": [
      "Entreprises et milieux professionnels"
     ]
-   }
+   },
+   "mobilites": [
+    "M1604",
+    "M1702",
+    "M1705",
+    "M1703",
+    "M1718",
+    "M1402",
+    "D1401",
+    "E1112",
+    "E1406",
+    "E1402"
+   ]
   },
   "M1621": {
    "definition": "L'assistant administratif multilingue assure le bon fonctionnement administratif d'un service ou d'une organisation tout en facilitant les échanges en plusieurs langues.",
@@ -3867,7 +5637,19 @@
     "Types de structures": [
      "Entreprises et milieux professionnels"
     ]
-   }
+   },
+   "mobilites": [
+    "M1608",
+    "M1604",
+    "M1501",
+    "M1701",
+    "D1409",
+    "K1229",
+    "D1432",
+    "D1429",
+    "D1401",
+    "C1401"
+   ]
   },
   "M1701": {
    "definition": "Le responsable de l'administration des ventes organise ou réalise la gestion des contrats de vente depuis la réception des commandes jusqu'à la livraison des produits chez le client.",
@@ -3891,7 +5673,17 @@
     "Types de structures": [
      "Entreprises et milieux professionnels"
     ]
-   }
+   },
+   "mobilites": [
+    "M1707",
+    "D1510",
+    "D1402",
+    "D1406",
+    "G1304",
+    "D1302",
+    "D1301",
+    "M1704"
+   ]
   },
   "M1703": {
    "definition": "Le chef de produit réalise le suivi d'un produit ou d'une gamme de produits, de sa conception à sa commercialisation, selon la stratégie commerciale et marketing de l'entreprise.",
@@ -3916,7 +5708,19 @@
     "Types de structures": [
      "Entreprises et milieux professionnels"
     ]
-   }
+   },
+   "mobilites": [
+    "M1711",
+    "M1716",
+    "M1839",
+    "M1826",
+    "M1410",
+    "M1426",
+    "E1407",
+    "D1417",
+    "M1717",
+    "M1704"
+   ]
   },
   "M1704": {
    "definition": "Le Responsable service clients joue un rôle essentiel dans la fidélisation et la satisfaction des clients, en assurant une gestion optimale des relations.",
@@ -3942,7 +5746,18 @@
      "Centres d'appels",
      "Entreprises et milieux professionnels"
     ]
-   }
+   },
+   "mobilites": [
+    "M1429",
+    "D1509",
+    "M1707",
+    "M1705",
+    "M1706",
+    "M1302",
+    "M1402",
+    "D1406",
+    "K2111"
+   ]
   },
   "M1705": {
    "definition": "Le responsable marketing est le professionnel chargé de concevoir, piloter et mettre en ½uvre la stratégie marketing d'une entreprise, d'une marque ou d'un produit, afin de développer sa notoriété, d'attirer et fidéliser les clients, et de contribuer à la croissance du chiffre d'affaires.",
@@ -3967,7 +5782,19 @@
     "Types de structures": [
      "Entreprises et milieux professionnels"
     ]
-   }
+   },
+   "mobilites": [
+    "M1702",
+    "M1706",
+    "M1707",
+    "M1703",
+    "M1302",
+    "M1402",
+    "E1103",
+    "E1402",
+    "E1401",
+    "M1704"
+   ]
   },
   "M1706": {
    "definition": "Le chef de promotion des ventes conçoit, planifie et met en ½uvre les actions promotionnelles destinées à stimuler les ventes d'un produit ou d'une gamme.",
@@ -3992,7 +5819,19 @@
      "Entreprise industrielle",
      "Entreprises et milieux professionnels"
     ]
-   }
+   },
+   "mobilites": [
+    "M1703",
+    "M1707",
+    "M1705",
+    "M1302",
+    "D1510",
+    "E1401",
+    "D1406",
+    "K2111",
+    "M1704",
+    "M1301"
+   ]
   },
   "M1707": {
    "definition": "Le responsable de développement commercial est chargé de faire croître le chiffre d'affaires de l'entreprise en développant de nouveaux marchés, en fidélisant les clients existants et en structurant une stratégie commerciale efficace.",
@@ -4020,7 +5859,19 @@
     "Types de structures": [
      "Entreprises et milieux professionnels"
     ]
-   }
+   },
+   "mobilites": [
+    "M1711",
+    "M1706",
+    "D1501",
+    "D1504",
+    "H1102",
+    "K2111",
+    "E1401",
+    "D1406",
+    "M1704",
+    "D1509"
+   ]
   },
   "M1715": {
    "definition": "Le Directeur commercial orchestre la stratégie commerciale de l'entreprise, visant à maximiser les revenus.",
@@ -4043,7 +5894,20 @@
     "Types de structures": [
      "Entreprises et milieux professionnels"
     ]
-   }
+   },
+   "mobilites": [
+    "M1711",
+    "M1706",
+    "M1702",
+    "M1707",
+    "E1107",
+    "C1101",
+    "K2111",
+    "D1406",
+    "G1213",
+    "M1704",
+    "D1509"
+   ]
   },
   "M1718": {
    "definition": "Le Chargé de marketing digital met en ½uvre des stratégies marketing en ligne, pour accroître la visibilité et l'engagement autour d'un produit, d'une marque ou d'une entreprise sur divers canaux numériques Conçoit et met en ½uvre des opérations de marketing digital pour optimiser la visibilité et l'engagement en ligne Analyse les performances des campagnes digitales et propose des améliorations basées sur les données récoltées Collabore avec les équipes de contenu, de design et de développement pour créer des campagnes cohérentes et efficaces Gère les budgets de marketing digital et optimise les dépenses pour maximiser le retour sur investissement Reste à jour avec les dernières tendances du marketing digital et les technologies émergentes.",
@@ -4065,7 +5929,19 @@
      "Entreprises de médias",
      "Entreprises et milieux professionnels"
     ]
-   }
+   },
+   "mobilites": [
+    "M1702",
+    "M1706",
+    "M1707",
+    "M1703",
+    "E1109",
+    "E1403",
+    "E1401",
+    "E1402",
+    "E1113",
+    "M1704"
+   ]
   },
   "M1719": {
    "definition": "Le Chargé des Relations avec les influenceurs est responsable de la mise en place de collaborations entre une marque et des créateurs de contenus sur les réseaux sociaux.",
@@ -4091,7 +5967,19 @@
      "Entreprises de médias",
      "Entreprises et milieux professionnels"
     ]
-   }
+   },
+   "mobilites": [
+    "M1702",
+    "M1707",
+    "M1705",
+    "M1718",
+    "E1402",
+    "E1112",
+    "E1113",
+    "E1124",
+    "E1127",
+    "E1408"
+   ]
   },
   "M1720": {
    "definition": "Le Category Manager Responsable (CATMAN) est le responsable d'une catégorie de produits qui pilote l'offre, les prix et la mise en avant en intégrant des enjeux de performance économique, de satisfaction client et de responsabilité sociale et environnementale.",
@@ -4116,7 +6004,19 @@
      "Travail en journée",
      "Travail selon un rythme irrégulier et des pics d'activité"
     ]
-   }
+   },
+   "mobilites": [
+    "M1707",
+    "M1705",
+    "M1703",
+    "M1702",
+    "M1402",
+    "M1406",
+    "A1313",
+    "H1405",
+    "D1516",
+    "K2108"
+   ]
   },
   "M1801": {
    "definition": "L' Administrateur de systèmes d'information (SI) joue un rôle crucial dans la gestion et la sécurité des infrastructures informatiques d'une entreprise.",
@@ -4140,7 +6040,19 @@
     "Types de structures": [
      "Entreprises et milieux professionnels"
     ]
-   }
+   },
+   "mobilites": [
+    "M1820",
+    "M1817",
+    "M1824",
+    "M1812",
+    "M1813",
+    "N1304",
+    "E1109",
+    "C1213",
+    "M1428",
+    "H1107"
+   ]
   },
   "M1802": {
    "definition": "L'expert systèmes et réseaux informatiques a un rôle déterminant dans la gestion et l'optimisation des infrastructures IT.",
@@ -4164,7 +6076,19 @@
     "Types de structures": [
      "Entreprises et milieux professionnels"
     ]
-   }
+   },
+   "mobilites": [
+    "M1822",
+    "M1806",
+    "M1804",
+    "M1803",
+    "M1817",
+    "M1414",
+    "H1402",
+    "H1520",
+    "H1234",
+    "I1104"
+   ]
   },
   "M1805": {
    "definition": "Le Développeur informatique conçoit et améliore des systèmes informatiques.",
@@ -4186,7 +6110,19 @@
     "Horaires et durée du travail": [
      "Travail en journée"
     ]
-   }
+   },
+   "mobilites": [
+    "M1802",
+    "M1803",
+    "M1810",
+    "M1812",
+    "M1818",
+    "M1824",
+    "M1831",
+    "M1832",
+    "M1842",
+    "E1206"
+   ]
   },
   "M1806": {
    "definition": "Le Consultant fonctionnel des systèmes d'information optimise et adapte les systèmes informatiques aux besoins des entreprises.",
@@ -4213,7 +6149,17 @@
      "Entreprises et milieux professionnels",
      "Organisme public"
     ]
-   }
+   },
+   "mobilites": [
+    "M1856",
+    "M1506",
+    "M1410",
+    "M1402",
+    "D1415",
+    "K2101",
+    "K2119",
+    "M1429"
+   ]
   },
   "M1810": {
    "definition": "Le Technicien d'exploitation informatique assure le bon fonctionnement des systèmes informatiques.",
@@ -4238,7 +6184,18 @@
      "Entreprises et milieux professionnels",
      "Organisme public"
     ]
-   }
+   },
+   "mobilites": [
+    "M1874",
+    "M1878",
+    "M1817",
+    "M1869",
+    "M1862",
+    "M1854",
+    "I1404",
+    "I1106",
+    "I1105"
+   ]
   },
   "N1201": {
    "definition": "L'affréteur organise et gère des transports de marchandises pour le compte de ses clients, il achète et vend des solutions et prestations de transports sur lesquelles il dégage une marge attendue ; il peut exercer cette activité sur tous les modes de transport terrestre (routier, ferroviaire, fluvial), aérien ou maritime.",
@@ -4263,7 +6220,19 @@
     "Horaires et durée du travail": [
      "Travail selon un rythme irrégulier et des pics d'activité"
     ]
-   }
+   },
+   "mobilites": [
+    "N1204",
+    "N1206",
+    "N1202",
+    "N3202",
+    "N4201",
+    "N4202",
+    "N4203",
+    "M1101",
+    "K2111",
+    "N1207"
+   ]
   },
   "N1202": {
    "definition": "L'agent de transit assure la gestion des opérations de transport international de marchandises (à l'import comme à l'export).",
@@ -4290,7 +6259,20 @@
     "Horaires et durée du travail": [
      "Travail selon un rythme irrégulier et des pics d'activité"
     ]
-   }
+   },
+   "mobilites": [
+    "N1205",
+    "N1204",
+    "N1203",
+    "N1201",
+    "N1116",
+    "N4203",
+    "N4401",
+    "K2111",
+    "D1402",
+    "N3203",
+    "N1207"
+   ]
   },
   "N1203": {
    "definition": "Le technicien en gestion douanière exerce son activité au sein d'un RDE (représentant en douane enregistré) ou auprès d'un commissionnaire de transport ou au sein d'une entreprise industrielle ou commerciale qui a des activités à l'import et / ou à l'export ; professionnel clé pour la régulation des échanges internationaux, il réalise des opérations de douane pour le compte de sociétés industrielles ou commerciales et participe à la facilitation des échanges.",
@@ -4317,7 +6299,19 @@
     "Horaires et durée du travail": [
      "Travail selon un rythme irrégulier et des pics d'activité"
     ]
-   }
+   },
+   "mobilites": [
+    "N1204",
+    "N1205",
+    "N1201",
+    "N4106",
+    "N4203",
+    "K2111",
+    "M1504",
+    "K1505",
+    "N1207",
+    "K1501"
+   ]
   },
   "N1204": {
    "definition": "Le Coordinateur transit import/export orchestre efficacement les opérations de transport international de marchandises.",
@@ -4334,7 +6328,20 @@
     "Horaires et durée du travail": [
      "Travail selon un rythme irrégulier et des pics d'activité"
     ]
-   }
+   },
+   "mobilites": [
+    "N1205",
+    "N1304",
+    "N1115",
+    "N1303",
+    "N1302",
+    "N1301",
+    "M1828",
+    "K2111",
+    "D1402",
+    "D1510",
+    "N1207"
+   ]
   },
   "N1209": {
    "definition": "Le Technicien logistique réceptionne et contrôle la gestion des flux de marchandises selon des procédures établies.",
@@ -4366,7 +6373,18 @@
      "Etablissement de distribution en gros",
      "Prestataire de services"
     ]
-   }
+   },
+   "mobilites": [
+    "N1107",
+    "N4201",
+    "N3204",
+    "N1112",
+    "H1502",
+    "I1206",
+    "F1206",
+    "I1333",
+    "H2504"
+   ]
   },
   "N1210": {
    "definition": "Le Logisticien orchestre la gestion des flux de marchandises et d'informations au sein de l'entreprise.",
@@ -4394,7 +6412,22 @@
      "Travail en horaires décalés",
      "Travail en journée"
     ]
-   }
+   },
+   "mobilites": [
+    "N1205",
+    "N1204",
+    "N4201",
+    "N4207",
+    "N1304",
+    "N4202",
+    "N1305",
+    "N1302",
+    "N1307",
+    "N1303",
+    "M1302",
+    "H1403",
+    "M1894"
+   ]
   },
   "N1301": {
    "definition": "Le Responsable logistique coordonne et optimise la gestion des flux de produits sur un site opérationnel, pour tous les mouvements d'entrée, sortie et manipulations des marchandises (incluant leurs conditionnements) et s'assure d'être en communication constante avec les autres services de l'entreprise ou acteurs de la chaîne d'approvisionnement, en lien avec la qualité de service et les enjeux de traçabilité.",
@@ -4425,7 +6458,21 @@
     "Types de structures": [
      "Entreprises et milieux professionnels"
     ]
-   }
+   },
+   "mobilites": [
+    "N1304",
+    "N1302",
+    "N3202",
+    "N4201",
+    "H2507",
+    "H1401",
+    "H1405",
+    "D1504",
+    "G1414",
+    "M1406",
+    "N1207",
+    "M1218"
+   ]
   },
   "N1302": {
    "definition": "Le Responsable entrepôt logistique orchestre la gestion et l'optimisation des flux de marchandises au sein de l'entrepôt.",
@@ -4456,7 +6503,19 @@
      "Entreprise industrielle",
      "Etablissement de distribution en gros"
     ]
-   }
+   },
+   "mobilites": [
+    "N1306",
+    "N1308",
+    "N1307",
+    "N1304",
+    "N1204",
+    "M1208",
+    "E1109",
+    "M1711",
+    "M1803",
+    "H1107"
+   ]
   },
   "N1303": {
    "definition": "L'approvisionneur logistique, un rôle clé pour optimiser la chaîne d'approvisionnement et garantir la disponibilité des produits.",
@@ -4489,7 +6548,19 @@
      "Entreprise industrielle",
      "Etablissement de distribution en gros"
     ]
-   }
+   },
+   "mobilites": [
+    "N1302",
+    "N1308",
+    "N1306",
+    "N1301",
+    "N1201",
+    "N4201",
+    "N1203",
+    "N1204",
+    "N1210",
+    "M1101"
+   ]
   },
   "N1308": {
    "definition": "Le responsable expédition - distribution orchestre la logistique des produits depuis l'entrepôt jusqu'aux clients.",
@@ -4515,7 +6586,19 @@
     "Horaires et durée du travail": [
      "Travail selon un rythme irrégulier et des pics d'activité"
     ]
-   }
+   },
+   "mobilites": [
+    "N1307",
+    "N1306",
+    "N1303",
+    "N1302",
+    "N1301",
+    "N1201",
+    "N1203",
+    "N4401",
+    "M1402",
+    "N1207"
+   ]
   },
   "N4201": {
    "definition": "Le Responsable d'agence transport routier de marchandises orchestre la logistique et l'acheminement des biens, garantissant une livraison efficace et sécurisée.",
@@ -4544,7 +6627,18 @@
     "Types de structures": [
      "Entreprises privées de transport sanitaire"
     ]
-   }
+   },
+   "mobilites": [
+    "N4207",
+    "N4202",
+    "N1305",
+    "N1301",
+    "N2215",
+    "N1204",
+    "K1222",
+    "D1230",
+    "J1509"
+   ]
   },
   "N4203": {
    "definition": "L'agent d'exploitation des transports routiers de marchandises coordonne les flux de marchandises en optimisant les moyens humains et matériels, afin d'assurer un service efficace et rentable.",
@@ -4564,7 +6658,17 @@
      "Travail en astreinte",
      "Travail selon un rythme irrégulier et des pics d'activité"
     ]
-   }
+   },
+   "mobilites": [
+    "N4204",
+    "N4202",
+    "N1201",
+    "N1202",
+    "N1301",
+    "N3202",
+    "N1207",
+    "D1404"
+   ]
   },
   "N4205": {
    "definition": "Le responsable d'exploitation encadre l'activité d'une équipe d'exploitants et de conducteurs.",
@@ -4590,7 +6694,19 @@
      "Travail en astreinte",
      "Travail les week-ends et jours fériés"
     ]
-   }
+   },
+   "mobilites": [
+    "N4202",
+    "N4201",
+    "N3202",
+    "N1301",
+    "N1302",
+    "N3201",
+    "I1109",
+    "I1116",
+    "K2111",
+    "I1105"
+   ]
   }
  }
 }

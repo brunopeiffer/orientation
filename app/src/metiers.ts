@@ -59,7 +59,6 @@ export function acces(code: string): Acces {
   if (FAMILLES.apresBts.experience.includes(code)) return { type: 'experience', detail: null, onisep }
   return { type: 'direct', detail: null, onisep }
 }
-const RANG_ACCES = { direct: 0, experience: 1, etudes: 2 }
 export type Metier = (typeof ROME.metiers)[number]
 export type Famille = (typeof FAMILLES.familles)[number]
 
@@ -132,10 +131,10 @@ export function pistes(p: Profil, n = NB_PISTES): Piste[] {
   const parFamille = new Map<string, number>()
   const bts = parcoursDe(p.publicId) === 'bts'
   return ROME.metiers
-    .filter((m) => p.publicId !== null && m.publics.includes(p.publicId))
+    // En BTS, seulement les métiers accessibles avec le diplôme ; les autres apparaissent comme évolutions (« Plus tard »).
+    .filter((m) => p.publicId !== null && m.publics.includes(p.publicId) && (!bts || acces(m.code).type === 'direct'))
     .map((m) => evaluer(m, p))
-    // En BTS, on montre d'abord les métiers accessibles avec le diplôme, puis ceux qui demandent de l'expérience ou des études.
-    .sort((a, b) => (bts ? RANG_ACCES[a.acces.type] - RANG_ACCES[b.acces.type] : 0) || b.score - a.score || a.metier.code.localeCompare(b.metier.code))
+    .sort((a, b) => b.score - a.score || a.metier.code.localeCompare(b.metier.code))
     .filter((x) => {
       const k = parFamille.get(x.famille.id) ?? 0
       parFamille.set(x.famille.id, k + 1)
@@ -149,6 +148,7 @@ const FichesSchema = z.object({
   source: z.string(), version: z.string(), licence: z.string(), genere: z.string(),
   fiches: z.record(z.string(), z.object({
     definition: z.string(), missions: z.array(z.string()), acces: z.string(), contextes: z.record(z.string(), z.array(z.string())),
+    mobilites: z.array(z.string().regex(/^[A-N]\d{4}$/)),
   })),
 })
 export type Fiches = z.infer<typeof FichesSchema>
@@ -160,3 +160,16 @@ export function chargerFiches(): Promise<Fiches> {
 }
 
 export const lienFicheMetier = (code: string) => `https://candidat.francetravail.fr/metierscope/fiche-metier/${code}`
+
+/**
+ * Le chemin d'un métier, d'après ses mobilités officielles (ROME), limité aux métiers que l'app connaît pour ce public :
+ * « proches » = accessibles aussi avec le BTS ; « plusTard » = après de l'expérience ou des études.
+ */
+export function parcoursMetier(mobilites: string[], publicId: string, code: string) {
+  const connus = mobilites.filter((c) => c !== code).map((c) => ROME.metiers.find((m) => m.code === c && m.publics.includes(publicId)))
+    .filter((m): m is Metier => !!m)
+  return {
+    proches: connus.filter((m) => acces(m.code).type === 'direct').slice(0, 3),
+    plusTard: connus.filter((m) => acces(m.code).type !== 'direct').slice(0, 4).map((m) => ({ metier: m, acces: acces(m.code) })),
+  }
+}

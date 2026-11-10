@@ -2,7 +2,7 @@ import { useEffect, useId, useState } from 'react'
 import { GOUTS } from '../gouts'
 import { ETAPES } from '../etapes'
 import { etudesPour } from '../formations'
-import { chargerFiches, FAMILLES, lienFicheMetier, NIVEAUX, pistes, ROME, type Acces, type Fiches, type Composante, type IdComposante, type Piste } from '../metiers'
+import { chargerFiches, FAMILLES, lienFicheMetier, NIVEAUX, parcoursMetier, pistes, ROME, type Acces, type Fiches, type Composante, type IdComposante, type Piste } from '../metiers'
 import { parcoursDe } from '../schema'
 import { useEtat, useRetour } from '../store'
 import Favori from './Favori'
@@ -44,6 +44,7 @@ export default function Metiers() {
         <h1 tabIndex={-1} className="text-[length:var(--da-t-titre)] font-bold text-violet-900">Pistes métiers et test de réalité</h1>
         <p className="mt-1 text-slate-700">
           Voici {liste.length} pistes à explorer, pas un verdict. Le score montre à quel point chaque métier colle à tes réponses : ouvre le détail pour comprendre pourquoi.
+          {parcoursDe(publicId) === 'bts' && ' Ce sont des métiers accessibles avec ton BTS ; sous chacun, tu vois vers quoi il peut mener plus tard.'}
         </p>
       </div>
 
@@ -83,6 +84,7 @@ function Carte({ piste, rang, fiches }: { piste: Piste; rang: number; fiches: Fi
       </div>
       <div className="mt-2"><Favori metier={metier.code} nom={metier.libelle} /></div>
       {bts && <AccesBts acces={piste.acces} />}
+      {bts && fiches?.fiches[metier.code] && <Parcours mobilites={fiches.fiches[metier.code].mobilites} code={metier.code} />}
 
       {refus.length > 0 && (
         <div className="mt-3 rounded-2xl bg-orange-50 p-3 text-orange-950">
@@ -224,5 +226,30 @@ export function RetourMetier() {
     <Bouton variante="secondaire" className="print:hidden" onClick={() => maj({ etape: metier.etape })}>
       <span aria-hidden="true">←</span> Revenir au métier « {metier.libelle} »
     </Bouton>
+  )
+}
+
+/** BTS : vers quels métiers celui-ci peut mener (mobilités officielles France Travail), sans laisser croire qu'on y accède tout de suite. */
+function Parcours({ mobilites, code }: { mobilites: string[]; code: string }) {
+  const publicId = useEtat((s) => s.publicId)!
+  const { proches, plusTard } = parcoursMetier(mobilites, publicId, code)
+  if (!proches.length && !plusTard.length) return null
+  return (
+    <div className="mt-3 rounded-2xl bg-violet-50 p-3 text-sm">
+      {proches.length > 0 && (
+        <p><strong>Métiers proches, accessibles aussi avec ton BTS :</strong> {proches.map((m) => m.libelle).join(' ; ')}.</p>
+      )}
+      {plusTard.length > 0 && (
+        <>
+          <p className={proches.length ? 'mt-2' : ''}><strong><span aria-hidden="true">📈 </span>Plus tard, avec de l’expérience ou des études :</strong></p>
+          <ul className="mt-1 list-disc pl-5">
+            {plusTard.map(({ metier, acces }) => (
+              <li key={metier.code}>{metier.libelle} <span className="text-slate-600">({acces.type === 'experience' ? 'après quelques années d’expérience' : acces.detail})</span></li>
+            ))}
+          </ul>
+        </>
+      )}
+      <p className="mt-1 text-xs text-slate-600">D’après les évolutions possibles indiquées par France Travail (ROME).</p>
+    </div>
   )
 }
