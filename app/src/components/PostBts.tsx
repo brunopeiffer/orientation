@@ -4,7 +4,7 @@ import {
   chargerOffres, offresLocales, POURSUITES, reconnaissance, voiesDe, type Donnees, type Offre, type OffreLocale, type TypeOffre,
 } from '../postbts'
 import { useEtat } from '../store'
-import { ChoixCommune, ChoixRayon } from './Formations'
+import { ChoixCommune, ChoixRayon, PortesOuvertes } from './Formations'
 import Favori from './Favori'
 import Pratique from './Pratique'
 import { Bouton } from './ui'
@@ -117,6 +117,7 @@ function ListeOffres({ type, offres, source, sites }: { type: TypeOffre; offres:
                 ≈ {km} km<span className="block text-xs font-medium">estimation</span>
               </p>
             </div>
+            <PortesOuvertes uai={o.u} />
             <div className="flex flex-wrap items-center gap-x-4">
               <Favori nom={`${o.m}, ${o.e}`} formation={{ id: `${o.k}-${o.e}-${o.v}-${o.m}-${o.p}`.slice(0, 400), intitule: o.p && type === 'LP' ? `${o.m} (${o.p})` : o.m,
                 etablissement: o.e, ville: o.v ?? '', lien: o.f ?? o.a ?? site ?? o.o ?? null }} />

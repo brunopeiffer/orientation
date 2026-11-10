@@ -28,10 +28,10 @@ DIPLOMES, CARTO = "fr-esr-principaux-diplomes-et-formations-prepares-etablisseme
     "fr-esr-cartographie_formations_parcoursup"
 CHAMPS_LP = ["annee_universitaire", "typ_diplome_lib", "libelle_intitule_1", "libelle_intitule_2", "etablissement_lib",
              "etablissement_id_paysage", "implantation_code_commune", "implantation_commune",
-             "implantation_departement", "effectif"]
+             "implantation_departement", "effectif", "etablissement_id_uai"]
 # Site web officiel de chaque établissement (le lien Paysage demande désormais une connexion).
 ETABS, CHAMPS_ETABS = "fr-esr-principaux-etablissements-enseignement-superieur", ["etablissement_id_paysage", "url"]
-CHAMPS_CARTO = ["annee", "gta", "nm", "fl", "tf", "etab_nom", "commune", "departement", "etab_gps", "fiche"]
+CHAMPS_CARTO = ["annee", "gta", "nm", "fl", "tf", "etab_nom", "commune", "departement", "etab_gps", "fiche", "etab_uai"]
 COMMUNES = "https://geo.api.gouv.fr/communes?fields=code,centre&format=json&geometry=centre"
 # Paris, Lyon et Marseille : les inscriptions sont rattachées à l'arrondissement, absent de la liste des communes.
 ARRONDISSEMENTS = COMMUNES + "&type=arrondissement-municipal"
@@ -41,10 +41,11 @@ CACHE_ONISEP = RACINE / "data/sources/onisep/adf-sup.csv"
 C_FOR, C_FOR_URL, C_DOM, C_TYPE, C_CERT, C_NIV = ("Formation (FOR) libellé", "FOR URL et ID Onisep",
                                                   "FOR indexation domaine web Onisep", "FOR type",
                                                   "FOR nature du certificat", "FOR niveau de sortie")
+C_UAI = "ENS code UAI"
 C_ENS, C_STATUT, C_COMMUNE, C_DEP, C_LAT, C_LON = ("Lieu d'enseignement (ENS) libellé", "ENS statut", "ENS commune",
                                                    "ENS département", "ENS latitude", "ENS longitude")
 C_DUREE, C_COUT, C_PAGE = "AF durée cycle standard", "AF coût scolarité", "AF page web"
-CHAMPS_ONISEP = [C_FOR, C_FOR_URL, C_DOM, C_TYPE, C_CERT, C_NIV, C_ENS, C_STATUT, C_COMMUNE, C_DEP, C_LAT, C_LON,
+CHAMPS_ONISEP = [C_UAI, C_FOR, C_FOR_URL, C_DOM, C_TYPE, C_CERT, C_NIV, C_ENS, C_STATUT, C_COMMUNE, C_DEP, C_LAT, C_LON,
                  C_DUREE, C_COUT, C_PAGE]
 # Écoles privées : diplômes de niveau bac+3 à bac+5 que l'on prépare souvent après un BTS.
 TYPES_ECOLE = {"formation d'école spécialisée", "diplôme d'école de commerce visé (bac + 3)",
@@ -112,7 +113,7 @@ def ecoles(lignes):
         sortie.append({"k": "ECOLE", "m": x[C_FOR][:1].upper() + x[C_FOR][1:], "p": " | ".join(domaines), "e": x[C_ENS],
                        "v": x[C_COMMUNE] or None, "d": x[C_DEP] or None, "la": round(float(x[C_LAT]), 4),
                        "lo": round(float(x[C_LON]), 4), "n": x[C_NIV], "r": x[C_CERT] or None,
-                       "du": x[C_DUREE] or None, "c": x[C_COUT] or None, "a": https(x[C_PAGE]), "o": https(x[C_FOR_URL])})
+                       "du": x[C_DUREE] or None, "c": x[C_COUT] or None, "a": https(x[C_PAGE]), "o": https(x[C_FOR_URL]), "u": x[C_UAI] or None})
     return sortie
 
 
@@ -156,6 +157,7 @@ def licences_pro(lignes, centres, liens=({}, {})):
         sortie.append({"k": "LP", "m": mention, "p": parcours if parcours != mention else "", "e": x["etablissement_lib"],
                        "w": x["etablissement_id_paysage"], "v": x["implantation_commune"],
                        "d": x["implantation_departement"], "la": round(c[1], 4), "lo": round(c[0], 4),
+                       "u": (x.get("etablissement_id_uai") or [None])[0],  # UAI de l'établissement : pour ses portes ouvertes
                        "o": liens[0].get(normal(mention)), "a": liens[1].get((normal(x["implantation_commune"] or ""), normal(mention)))})
     return sortie, sans_gps
 
@@ -178,7 +180,7 @@ def parcoursup(lignes):
         vus.add(c["gta"])
         sortie.append({"k": k, "m": (c["nm"] or c["fl"] or ["?"])[0], "p": " ; ".join(c["fl"] or []), "e": c["etab_nom"],
                        "v": c["commune"], "d": c["departement"], "la": round(gps["lat"], 4), "lo": round(gps["lon"], 4),
-                       "f": fiche(c["fiche"])})
+                       "f": fiche(c["fiche"]), "u": c.get("etab_uai") or None})
     return sortie
 
 

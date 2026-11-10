@@ -22,6 +22,7 @@ App d'aide à l'orientation pour Terminale STMG, BTS CG, BTS NDRC et BTS SAM. Le
 python3 -I etl/rome_candidats.py     # data/metiers.json (lu par l'app) + docs/METIERS-A-VALIDER.md depuis le ROME
 python3 -I etl/niveaux_onisep.py     # data/niveaux-onisep.json : niveau minimum d'accès (Onisep, ODbL) via contenu/metiers-onisep.json
 python3 -I etl/fiches_rome.py       # data/fiches-metiers.json : définition, missions, accès, conditions de chaque métier (ROME complet)
+python3 -I etl/portes_ouvertes.py   # data/portes-ouvertes.json : journées portes ouvertes par code UAI (Onisep, ODbL) ; relancer souvent
 python3 -I etl/poursuites_bt.py      # docs/POURSUITES-A-VALIDER.md depuis Parcoursup
 python3 -I etl/formations.py         # data/formations/<région>.json + index, depuis Parcoursup (offre + statistiques)
 python3 -I etl/offres_post_bts.py    # data/post-bts.json : licences pro (MESR), DCG et BUT (Parcoursup) localisés

@@ -33,7 +33,7 @@ const OffresSchema = z.object({
     k: TypeOffre, m: z.string(), p: z.string(), e: z.string(), w: z.string().nullable().optional(),
     v: z.string().nullable(), d: z.string().nullable(), la: z.number(), lo: z.number(), f: z.string().url().nullable().optional(),
     // Onisep : fiche du diplôme (o), page de la formation chez l'établissement (a) ; écoles : niveau, reconnaissance, durée, coût.
-    o: z.string().url().nullable().optional(), a: z.string().url().nullable().optional(),
+    o: z.string().url().nullable().optional(), a: z.string().url().nullable().optional(), u: z.string().nullable().optional(),
     n: z.string().optional(), r: z.string().nullable().optional(), du: z.string().nullable().optional(), c: z.string().nullable().optional(),
   })),
   sites: z.record(z.string(), z.string().regex(/^https:\/\//)),

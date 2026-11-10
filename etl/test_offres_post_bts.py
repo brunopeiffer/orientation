@@ -8,7 +8,7 @@ from offres_post_bts import ecoles, licences_pro, liens_licences_pro, parcoursup
 
 
 def lp(commune="67482", mention="Commerce et distribution", parcours="", etab="Université de Strasbourg"):
-    return {"libelle_intitule_1": mention, "libelle_intitule_2": parcours, "etablissement_lib": etab,
+    return {"etablissement_id_uai": ["0673021V"], "libelle_intitule_1": mention, "libelle_intitule_2": parcours, "etablissement_lib": etab,
             "etablissement_id_paysage": "abc12", "implantation_code_commune": commune,
             "implantation_commune": "Strasbourg", "implantation_departement": "Bas-Rhin"}
 
@@ -22,7 +22,7 @@ class TestLicencesPro(unittest.TestCase):
         self.assertEqual(len(offres), 2)  # le doublon exact est ignoré
         self.assertEqual(offres[0], {"k": "LP", "m": "Commerce et distribution", "p": "", "e": "Université de Strasbourg",
                                      "w": "abc12", "v": "Strasbourg", "d": "Bas-Rhin", "la": 48.5734, "lo": 7.7521,
-                                     "o": None, "a": None})
+                                     "u": "0673021V", "o": None, "a": None})
         self.assertEqual(offres[1]["p"], "")  # parcours identique à la mention : non répété
         self.assertEqual(sans_gps, 0)
 
@@ -55,7 +55,7 @@ def onisep(**p):
             "FOR nature du certificat": "Diplôme national ou diplôme d'État", "FOR niveau de sortie": "bac + 3",
             "Lieu d'enseignement (ENS) libellé": "IUT", "ENS statut": "public", "ENS commune": "Strasbourg",
             "ENS département": "Bas-Rhin", "ENS latitude": "48.58", "ENS longitude": "7.75", "AF durée cycle standard": "1 an",
-            "AF coût scolarité": "", "AF page web": "https://iut.fr/lp-commerce"}
+            "AF coût scolarité": "", "AF page web": "https://iut.fr/lp-commerce", "ENS code UAI": "0670001A"}
     return {**base, **p}
 
 

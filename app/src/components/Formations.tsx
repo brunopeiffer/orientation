@@ -1,6 +1,6 @@
 import { useEffect, useId, useMemo, useState, type FormEvent } from 'react'
 import {
-  acces, CATEGORIES, chargerRegion, COEF_DETOUR, filtrerPrepares, INDEX, preparer, regionsUtiles, type Categorie, type Formation, type Resultat,
+  acces, CATEGORIES, chargerPortes, chargerRegion, COEF_DETOUR, filtrerPrepares, INDEX, preparer, regionsUtiles, portesAVenir, type Categorie, type Formation, type Portes, type Resultat,
 } from '../formations'
 import { chercherCommunes, RechercheSchema, type Commune } from '../geocodage'
 import { FAMILLES, pistes } from '../metiers'
@@ -237,6 +237,7 @@ function CarteFormation({ r, mesFamilles }: { r: Resultat; mesFamilles: string[]
       {liees.length > 0 && (
         <p className="mt-1 text-sm"><span aria-hidden="true">🎯 </span>En lien avec tes pistes : {liees.map((x) => NOM_FAMILLE[x]).join(', ')}</p>
       )}
+      <PortesOuvertes uai={f.u} />
       <div className="mt-2 flex flex-wrap items-center gap-x-4 gap-y-1">
         <Favori formation={{ id: f.i, intitule: f.n, etablissement: f.e, ville: f.v ?? '', lien: f.f?.startsWith('https://') ? f.f : null }} nom={`${f.n}, ${f.e}`} />
         {f.f && (
@@ -246,5 +247,28 @@ function CarteFormation({ r, mesFamilles }: { r: Resultat; mesFamilles: string[]
         )}
       </div>
     </li>
+  )
+}
+
+/** Journées portes ouvertes de l'établissement (Onisep), ou l'indication qu'elles ne sont pas communiquées. */
+export function PortesOuvertes({ uai }: { uai: string | null | undefined }) {
+  const [p, setP] = useState<Portes | null>(null)
+  useEffect(() => { chargerPortes().then(setP).catch(() => setP(null)) }, [])
+  if (!p) return null
+  const dates = portesAVenir(p, uai)
+  return dates.length ? (
+    <div className="mt-1 text-sm">
+      <p className="font-semibold text-emerald-900"><span aria-hidden="true">📅 </span>Portes ouvertes (Onisep) :</p>
+      <ul className="list-disc pl-5">
+        {dates.map((j) => (
+          <li key={j.texte}>
+            {j.texte}
+            {j.lien && <> · <a href={j.lien} target="_blank" rel="noopener noreferrer" className="font-semibold text-violet-800 underline">infos<span className="sr-only"> sur ces portes ouvertes (nouvel onglet)</span></a></>}
+          </li>
+        ))}
+      </ul>
+    </div>
+  ) : (
+    <p className="mt-1 text-sm text-slate-600"><span aria-hidden="true">📅 </span>Portes ouvertes : dates non communiquées à l’Onisep, regarde le site de l’établissement.</p>
   )
 }

@@ -13,6 +13,7 @@ const IndexSchema = z.object({
 const FormationSchema = z.object({
   i: z.string(), n: z.string(), p: z.array(z.string()), t: z.string(), e: z.string(), v: z.string().nullable(), d: z.string().nullable(),
   la: z.number(), lo: z.number(), pu: z.boolean(), a: z.boolean(), h: z.boolean(), f: z.string().url().nullable(),
+  u: z.string().nullable().optional(), // code UAI de l'établissement (portes ouvertes)
   s: z.object({ tx: z.number().nullable(), bt: z.number().nullable(), pc: z.number().nullable(), pbt: z.number().nullable(), cap: z.number().nullable() }).optional(),
 })
 
@@ -126,3 +127,20 @@ export function filtrerPrepares(prepares: Resultat[], filtres: Filtres): Resulta
       (!q || `${f.n} ${f.p.join(' ')} ${f.e} ${f.v}`.toLowerCase().includes(q)))
     .sort((a, b) => a.km - b.km || a.f.n.localeCompare(b.f.n))
 }
+
+// --- Journées portes ouvertes (Onisep, par code UAI ; chargées à la demande) ---
+
+const PortesSchema = z.object({
+  source: z.string(), licence: z.string(), genere: z.string(),
+  jpo: z.record(z.string(), z.array(z.object({ debut: z.string(), fin: z.string(), texte: z.string(), lien: z.string().url().nullable() }))),
+})
+export type Portes = z.infer<typeof PortesSchema>
+let portes: Promise<Portes> | null = null
+export function chargerPortes(): Promise<Portes> {
+  portes ??= import('../../data/portes-ouvertes.json').then((m) => PortesSchema.parse(m.default))
+  return portes
+}
+
+/** Portes ouvertes à venir (date de fin >= aujourd'hui), au plus 2. */
+export const portesAVenir = (p: Portes, uai: string | null | undefined, aujourdhui = new Date().toISOString().slice(0, 10)) =>
+  (uai ? p.jpo[uai] ?? [] : []).filter((j) => j.fin >= aujourdhui).slice(0, 2)

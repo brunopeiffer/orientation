@@ -20,7 +20,7 @@ BASE = "https://data.enseignementsup-recherche.gouv.fr/api/explore/v2.1/catalog/
 STATS, CARTO = "fr-esr-parcoursup", "fr-esr-cartographie_formations_parcoursup"
 CHAMPS_STATS = ["session", "cod_aff_form", "acc_bt", "nb_voe_pp_bt", "nb_voe_pc_bt", "prop_tot_bt", "taux_acces_ens", "capa_fin"]
 CHAMPS_CARTO = ["annee", "gta", "etab_nom", "tc", "tf", "nm", "fl", "app", "int", "region", "departement", "commune",
-                "fiche", "etab_gps", "code_formation"]
+                "fiche", "etab_gps", "code_formation", "etab_uai"]
 SORTIE = RACINE / "data/formations"
 INDEX = RACINE / "data/formations-index.json"
 
@@ -76,7 +76,7 @@ def construire(stats, carto):
             "i": c["gta"], "n": nom, "p": [x for x in c["fl"] or [] if x != nom], "t": (c["tf"] or [""])[0],
             "e": c["etab_nom"], "v": c["commune"], "d": c["departement"],
             "la": round(gps["lat"], 4), "lo": round(gps["lon"], 4),
-            "pu": (c["tc"] or "").startswith("Public"), "a": bool(c["app"]), "h": bool(c["int"]), "f": fiche(c["fiche"]),
+            "pu": (c["tc"] or "").startswith("Public"), "a": bool(c["app"]), "h": bool(c["int"]), "f": fiche(c["fiche"]), "u": c.get("etab_uai") or None,
         }
         s = par_code.get(c["gta"])
         if s:

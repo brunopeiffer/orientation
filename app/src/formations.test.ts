@@ -1,6 +1,6 @@
 import { afterEach, describe, expect, it, vi } from 'vitest'
 import {
-  acces, categorie, etudesPour, chargerRegion, COEF_DETOUR, distanceRoute, familles, filtrer, INDEX, LIENS, regionsUtiles, volOiseau, type Formation,
+  acces, categorie, chargerPortes, etudesPour, chargerRegion, portesAVenir, COEF_DETOUR, distanceRoute, familles, filtrer, INDEX, LIENS, regionsUtiles, volOiseau, type Formation,
 } from './formations'
 import { chercherCommunes } from './geocodage'
 import { FAMILLES } from './metiers'
@@ -139,5 +139,20 @@ describe('réseau', () => {
     vi.stubGlobal('fetch', fetch)
     for (const q of ['a', '<script>', 'x'.repeat(61)]) await expect(chercherCommunes(q)).rejects.toThrow()
     expect(fetch).not.toHaveBeenCalled()
+  })
+})
+
+describe('portes ouvertes (Onisep)', () => {
+  it('seulement les dates à venir de l’établissement, au plus deux', async () => {
+    const p = { source: 's', licence: 'ODbL', genere: '2026-11-10', jpo: { '0670001A': [
+      { debut: '2026-10-01', fin: '2026-10-01', texte: 'passée', lien: null },
+      { debut: '2026-11-28', fin: '2026-11-28', texte: 'le 28/11/2026', lien: null },
+      { debut: '2027-01-12', fin: '2027-01-15', texte: 'du 12/01/2027 au 15/01/2027', lien: null },
+      { debut: '2027-02-06', fin: '2027-02-06', texte: 'le 06/02/2027', lien: null },
+    ] } }
+    expect(portesAVenir(p, '0670001A', '2026-11-10').map((j) => j.texte)).toEqual(['le 28/11/2026', 'du 12/01/2027 au 15/01/2027'])
+    expect(portesAVenir(p, '9999999Z', '2026-11-10')).toEqual([])
+    expect(portesAVenir(p, null, '2026-11-10')).toEqual([])
+    expect(Object.keys((await chargerPortes()).jpo).length).toBeGreaterThan(500) // données réelles validées par le schéma
   })
 })
