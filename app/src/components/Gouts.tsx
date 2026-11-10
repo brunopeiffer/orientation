@@ -1,7 +1,9 @@
 import { useEffect, useId, useRef, useState, type ReactNode } from 'react'
 import { dominants, GOUTS, type Gouts as TGouts } from '../gouts'
+import { ETAPES } from '../etapes'
+import { parcoursDe } from '../schema'
 import { useEtat } from '../store'
-import { Bouton, PUCE } from './ui'
+import { BarreNav, Bouton, PUCE } from './ui'
 
 type Liste = 'environnements' | 'valeurs' | 'refus'
 
@@ -29,6 +31,11 @@ export default function Gouts() {
   }
 
   const sansReponse = GOUTS.activites.filter((a) => gouts.activites[a.id] === undefined).length
+  const etape = useEtat((s) => s.etape)
+  const suivante = ETAPES[parcoursDe(useEtat((s) => s.publicId)) ?? 'lycee'][etape + 1]
+  const derniere = partie === PARTIES.length - 1
+  // Réponses manquantes dans la partie affichée (activités) : on le dit, sans bloquer.
+  const manquantes = partie <= 1 ? GOUTS.activites.slice(partie * MOITIE, (partie + 1) * MOITIE).filter((a) => gouts.activites[a.id] === undefined).length : 0
   const top = dominants(gouts.activites)
   const pleines = gouts.valeurs.length >= GOUTS.maxValeurs
 
@@ -106,10 +113,15 @@ export default function Gouts() {
         {cases('refus', GOUTS.refus)}
       </Carte>}
 
-      <div className="flex flex-wrap justify-between gap-2">
-        {partie > 0 ? <Bouton variante="secondaire" onClick={() => setPartie(partie - 1)}><span aria-hidden="true">←</span> Partie précédente</Bouton> : <span />}
-        {partie < PARTIES.length - 1 && <Bouton onClick={() => setPartie(partie + 1)}>Partie suivante <span aria-hidden="true">→</span></Bouton>}
-      </div>
+      <BarreNav aide={manquantes > 0 ? `Encore ${manquantes} réponse${manquantes > 1 ? 's' : ''} dans cette partie (tu peux revenir plus tard).`
+        : derniere && suivante ? <>Dernière partie. Ensuite : <strong>{suivante.titre}</strong></> : `Ensuite : partie ${partie + 2} sur ${PARTIES.length}, ${PARTIES[partie + 1]}`}>
+        {partie > 0
+          ? <Bouton variante="secondaire" onClick={() => setPartie(partie - 1)}><span aria-hidden="true">←</span> Partie précédente</Bouton>
+          : <Bouton variante="secondaire" onClick={() => maj({ etape: etape - 1 })}><span aria-hidden="true">←</span> Étape précédente</Bouton>}
+        {derniere
+          ? <Bouton onClick={() => maj({ etape: etape + 1 })}>Étape suivante <span aria-hidden="true">→</span></Bouton>
+          : <Bouton onClick={() => setPartie(partie + 1)}>Partie suivante ({partie + 2} sur {PARTIES.length}) <span aria-hidden="true">→</span></Bouton>}
+      </BarreNav>
     </div>
   )
 }

@@ -25,7 +25,7 @@ export default function ResultatsScolaires() {
       <div>
         <h1 tabIndex={-1} className="text-[length:var(--da-t-titre)] font-bold text-violet-900">Tes résultats (estimations)</h1>
         <p className="mt-1 text-slate-700">
-          Pas besoin de ta note exacte : choisis une tranche, ou laisse « Je ne sais pas ». Coche aussi les matières que tu aimes, même si tes notes sont moyennes.
+          Pour chaque matière, touche la case qui correspond à ta moyenne de l’année (à peu près). Pas besoin de la note exacte, et « Je ne sais pas » convient aussi. Coche « J’aime » pour les matières qui te plaisent, même si tes notes sont moyennes.
         </p>
       </div>
 
@@ -34,7 +34,7 @@ export default function ResultatsScolaires() {
       ) : (
         <>
           {config.option && (
-            <Carte titre={config.option.question} emoji="🧩">
+            <Carte titre={config.option.question} emoji="🧩" aide="Ce choix compte peu dans tes pistes : quelle que soit ta spécialité, toutes les études restent ouvertes.">
               <fieldset className="mt-3">
                 <legend className="sr-only">{config.option.question}</legend>
                 <div className="grid gap-2 sm:grid-cols-2">
@@ -50,23 +50,32 @@ export default function ResultatsScolaires() {
             </Carte>
           )}
 
-          <Carte titre="Tes matières" emoji="📚" aide="Moyenne de l’année en cours, approximative.">
+          <Carte titre="Tes matières" emoji="📚" aide="Ta moyenne de l’année en cours, à peu près.">
+            <p aria-live="polite" className="mt-1 text-sm font-semibold text-violet-800">
+              {config.matieres.filter((m) => scolarite.notes[m.id]).length} matière(s) renseignée(s) sur {config.matieres.length}
+            </p>
             <ul className="mt-3 space-y-3">
               {config.matieres.map((m) => (
-                <li key={m.id} className="rounded-2xl bg-white p-3 ring-1 ring-violet-100 sm:flex sm:items-center sm:gap-3">
-                  <label htmlFor={`${id}-${m.id}`} className="block font-semibold sm:flex-1">{m.libelle}</label>
-                  <div className="mt-2 flex flex-wrap items-center gap-2 sm:mt-0">
-                    <select id={`${id}-${m.id}`} value={scolarite.notes[m.id] ?? ''} onChange={(e) => noter(m.id, e.target.value)}
-                      className="min-h-11 rounded-2xl border-2 border-slate-300 bg-white px-3 focus:border-violet-600">
-                      <option value="">Je ne sais pas</option>
-                      {MATIERES.tranches.map((t) => <option key={t.id} value={t.id}>{t.libelle}</option>)}
-                    </select>
-                    <label className={PUCE}>
-                      <input type="checkbox" checked={scolarite.aimees.includes(m.id)} onChange={() => aimer(m.id)}
-                        className="size-5 shrink-0 accent-white" />
-                      J’aime<span className="sr-only"> : {m.libelle}</span>
-                    </label>
-                  </div>
+                <li key={m.id} className="rounded-2xl bg-white p-3 ring-1 ring-violet-100">
+                  {/* Des cases à toucher plutôt qu'une liste déroulante : on voit tout de suite où répondre. */}
+                  <fieldset>
+                    <legend className="font-semibold">{m.libelle}</legend>
+                    <p className="text-sm text-slate-600">Ma moyenne :</p>
+                    <div className="mt-2 grid grid-cols-3 gap-2 sm:grid-cols-7">
+                      {[{ id: '', libelle: 'Je ne sais pas' }, ...MATIERES.tranches].map((t) => (
+                        <label key={t.id} className={`${PUCE} justify-center text-center`}>
+                          <input type="radio" name={`${id}-${m.id}`} checked={(scolarite.notes[m.id] ?? '') === t.id}
+                            onChange={() => noter(m.id, t.id)} className="sr-only" />
+                          {t.libelle}<span className="sr-only"> en {m.libelle}</span>
+                        </label>
+                      ))}
+                    </div>
+                  </fieldset>
+                  <label className={`${PUCE} mt-2 w-fit`}>
+                    <input type="checkbox" checked={scolarite.aimees.includes(m.id)} onChange={() => aimer(m.id)}
+                      className="size-5 shrink-0 accent-white" />
+                    J’aime cette matière<span className="sr-only"> : {m.libelle}</span>
+                  </label>
                 </li>
               ))}
             </ul>

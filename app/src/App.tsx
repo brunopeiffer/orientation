@@ -11,7 +11,7 @@ import Sauvegarde from './components/Sauvegarde'
 import Synthese from './components/Synthese'
 import TestPersonnalite from './components/TestPersonnalite'
 import { complet } from './personnalite'
-import { Bouton } from './components/ui'
+import { BarreNav, Bouton } from './components/ui'
 import { ETAPES } from './etapes'
 import { parcoursDe } from './schema'
 import { useEtat } from './store'
@@ -115,9 +115,9 @@ export default function App() {
         ) : (
           <Synthese />
         )}
-        {/* Pendant le questionnaire, ses propres boutons Retour / Continuer suffisent. */}
-        {courante > 0 && (e.id !== 'personnalite' || complet(personnalite)) && (
-          <div className="mt-10 flex flex-wrap justify-between gap-2 border-t border-violet-100 pt-6 print:hidden">
+        {/* Le questionnaire et « Tes goûts » ont leurs propres parties : ils affichent eux-mêmes leur barre. */}
+        {courante > 0 && e.id !== 'gouts' && (e.id !== 'personnalite' || complet(personnalite)) && (
+          <BarreNav aide={courante < total ? <>Ensuite : <strong>{etapes[courante + 1].titre}</strong></> : undefined}>
             <Bouton variante="secondaire" onClick={() => maj({ etape: courante - 1 })}>
               <span aria-hidden="true">←</span> Étape précédente
             </Bouton>
@@ -126,7 +126,7 @@ export default function App() {
                 Étape suivante <span aria-hidden="true">→</span>
               </Bouton>
             )}
-          </div>
+          </BarreNav>
         )}
       </main>
 

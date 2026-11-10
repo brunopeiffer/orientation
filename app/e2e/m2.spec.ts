@@ -56,13 +56,17 @@ test('goûts : intérêts dominants, 3 valeurs au maximum, reprise après rechar
 
 test('résultats scolaires : tranches, matières aimées et points d’appui', async ({ page }) => {
   await demarrer(page, 'STMG')
+  for (let k = 0; k < 3; k++) await page.getByRole('button', { name: /Partie suivante/ }).click()
   await page.getByRole('button', { name: /Étape suivante/ }).click()
   await expect(page.getByRole('heading', { level: 1 })).toHaveText('Tes résultats (estimations)')
 
   await page.getByLabel('Mercatique (marketing)').check()
-  await page.getByLabel('Droit et économie', { exact: true }).selectOption({ label: '14 à 16' })
-  await page.getByLabel('Mathématiques', { exact: true }).selectOption({ label: '8 à 10' })
-  await page.getByLabel('J’aime : Histoire-géographie').check()
+  // On touche la case comme un élève (le bouton radio lui-même est masqué sous son libellé).
+  await page.getByRole('group', { name: 'Droit et économie' }).getByText('14 à 16').click()
+  await page.getByRole('group', { name: 'Mathématiques' }).getByText('8 à 10').click()
+  await expect(page.getByLabel('14 à 16 en Droit et économie', { exact: true })).toBeChecked()
+  await expect(page.getByText('2 matière(s) renseignée(s)')).toBeVisible()
+  await page.getByLabel('J’aime cette matière : Histoire-géographie').check()
   const appui = page.getByRole('region', { name: /Tes points d’appui/ })
   await expect(appui.getByRole('listitem')).toHaveText(['Droit et économie', 'Histoire-géographie'])
   await sansViolation(page)
@@ -70,7 +74,8 @@ test('résultats scolaires : tranches, matières aimées et points d’appui', a
 
 test('les matières suivent le public : pas de comptabilité en NDRC', async ({ page }) => {
   await demarrer(page, 'BTS_NDRC')
+  for (let k = 0; k < 3; k++) await page.getByRole('button', { name: /Partie suivante/ }).click()
   await page.getByRole('button', { name: /Étape suivante/ }).click()
-  await expect(page.getByLabel('Relation client et négociation-vente', { exact: true })).toBeVisible()
+  await expect(page.getByRole('group', { name: 'Relation client et négociation-vente' })).toBeVisible()
   await expect(page.getByText(/Comptabilité|Fiscalité/)).toHaveCount(0)
 })

@@ -4,7 +4,7 @@ import { ETAPES } from '../etapes'
 import { etudesPour } from '../formations'
 import { chargerFiches, FAMILLES, lienFicheMetier, NIVEAUX, pistes, ROME, type Acces, type Fiches, type Composante, type IdComposante, type Piste } from '../metiers'
 import { parcoursDe } from '../schema'
-import { useEtat } from '../store'
+import { useEtat, useRetour } from '../store'
 import Favori from './Favori'
 import { Bouton } from './ui'
 
@@ -20,6 +20,22 @@ export default function Metiers() {
   const liste = pistes({ publicId, personnalite, gouts, scolarite })
   const [fiches, setFiches] = useState<Fiches | null>(null)
   useEffect(() => { chargerFiches().then(setFiches).catch(() => setFiches(null)) }, [])
+  // Retour depuis les formations : on revient sur la carte du métier, son « test de réalité » ouvert.
+  useEffect(() => {
+    const m = useRetour.getState().metier
+    if (!m) return
+    // Après le défilement en haut que fait App au changement d'étape. On n'oublie le métier qu'une fois revenu dessus
+    // (en développement, React monte l'écran deux fois : l'oublier tout de suite ferait rater le retour).
+    const t = setTimeout(() => {
+      useRetour.setState({ metier: null })
+      const carte = document.getElementById(`piste-${m.code}`)
+      const realite = carte?.querySelector<HTMLDetailsElement>('details[data-realite]')
+      if (realite) realite.open = true
+      carte?.scrollIntoView({ block: 'start' })
+      carte?.querySelector<HTMLElement>('h2')?.focus()
+    }, 50)
+    return () => clearTimeout(t)
+  }, [])
   const manque = (Object.keys(LIBELLES) as IdComposante[]).filter((id) => liste.every((p) => p.composantes.find((c) => c.id === id)!.score === null))
 
   return (
@@ -54,11 +70,11 @@ function Carte({ piste, rang, fiches }: { piste: Piste; rang: number; fiches: Fi
   const bts = parcoursDe(useEtat((s) => s.publicId)) === 'bts'
   const refus = GOUTS.refus.filter((r) => freins.includes(r.id))
   return (
-    <li aria-labelledby={id} className="rounded-3xl bg-white p-4 shadow-sm ring-1 ring-violet-100 sm:p-5">
+    <li id={`piste-${metier.code}`} aria-labelledby={id} className="scroll-mt-20 rounded-3xl bg-white p-4 shadow-sm ring-1 ring-violet-100 sm:p-5">
       <div className="flex flex-wrap items-start justify-between gap-3">
         <div className="min-w-0 flex-1 basis-56 [overflow-wrap:break-word]">
           <p className="text-sm font-semibold text-fuchsia-700">Piste {rang} · {famille.nom}</p>
-          <h2 id={id} className="text-xl font-bold text-violet-900">{metier.libelle}</h2>
+          <h2 id={id} tabIndex={-1} className="text-xl font-bold text-violet-900">{metier.libelle}</h2>
         </div>
         {/* Un libellé plutôt qu'une « note » : le score reste visible, sans effet de bulletin. */}
         <p className="shrink-0 rounded-2xl bg-violet-900 px-3 py-2 text-center text-sm font-semibold text-white">
@@ -85,7 +101,7 @@ function Carte({ piste, rang, fiches }: { piste: Piste; rang: number; fiches: Fi
         <p className="mt-2 text-sm text-slate-600">Quand une partie manque d’infos, son poids est réparti sur les autres.</p>
       </details>
 
-      <details className="mt-2 rounded-2xl bg-sky-50 p-3">
+      <details data-realite className="mt-2 rounded-2xl bg-sky-50 p-3">
         <summary className="min-h-6 cursor-pointer font-semibold text-sky-900">Test de réalité : le métier au quotidien</summary>
         {fiches?.fiches[metier.code] && <FicheRome f={fiches.fiches[metier.code]} source={`${fiches.source}, ${fiches.version}`} />}
         <p className="mt-4 font-semibold text-sky-950">Points communs aux métiers « {famille.nom} »</p>
@@ -99,7 +115,7 @@ function Carte({ piste, rang, fiches }: { piste: Piste; rang: number; fiches: Fi
             <ul className="list-disc pl-5">{famille.realite.contraintes.map((t) => <li key={t}>{t}</li>)}</ul>
           </div>
         </div>
-        <EtudesPour famille={famille.id} code={metier.code} />
+        <EtudesPour famille={famille.id} code={metier.code} libelle={metier.libelle} />
         {metier.appellations.length > 0 && (
           <p className="mt-3 text-sm"><strong>Autres intitulés de poste :</strong> {metier.appellations.slice(0, 6).join(' ; ')}{metier.appellations.length > 6 ? '…' : ''}</p>
         )}
@@ -129,16 +145,18 @@ function Barre({ c }: { c: Composante }) {
   )
 }
 
-function EtudesPour({ famille, code }: { famille: string; code: string }) {
+function EtudesPour({ famille, code, libelle }: { famille: string; code: string; libelle: string }) {
   const maj = useEtat((s) => s.maj)
   const parcours = parcoursDe(useEtat((s) => s.publicId))
-  const etudes = etudesPour(famille)
+  // En BTS, les exemples post-bac (BTS, BUT, L1, DCG…) ne s'appliquent pas : les poursuites adaptées au BTS sont à l'étape suivante.
+  const etudes = parcours === 'bts' ? [] : etudesPour(famille)
   const onisep = NIVEAUX.niveaux[code]
   const etapeFormations = parcours ? ETAPES[parcours].findIndex((e) => e.id === 'formations') : -1
   return (
     <div className="mt-3 rounded-2xl bg-white p-3 text-sm">
       <p className="font-bold text-violet-900"><span aria-hidden="true">🎓 </span>Les études pour y arriver</p>
       {etudes.length > 0 && <p className="mt-1">Par exemple : {etudes.join(' ; ')}.</p>}
+      {parcours === 'bts' && <p className="mt-1">Les poursuites possibles après ton BTS (licences pro, bachelors, écoles…) sont à l’étape « Poursuites d’études ».</p>}
       {FAMILLES.etudesLongues.includes(code) && <p className="mt-1 font-semibold text-orange-900">Ce métier demande souvent un bac+5 ou plus.</p>}
       {onisep && (
         <p className="mt-1">
@@ -147,7 +165,10 @@ function EtudesPour({ famille, code }: { famille: string; code: string }) {
         </p>
       )}
       {etapeFormations > 0 && (
-        <Bouton variante="secondaire" className="mt-2" onClick={() => maj({ etape: etapeFormations })}>Voir les formations près de chez toi</Bouton>
+        <Bouton variante="secondaire" className="mt-2" onClick={() => {
+          useRetour.setState({ metier: { code, libelle, etape: useEtat.getState().etape } })
+          maj({ etape: etapeFormations })
+        }}>Voir les formations près de chez toi</Bouton>
       )}
     </div>
   )
@@ -191,5 +212,17 @@ function FicheRome({ f, source }: { f: Fiches['fiches'][string]; source: string 
       </div>
       <p className="text-sm text-slate-600">Source : {source}.</p>
     </div>
+  )
+}
+
+/** Sur l'étape des formations : revenir au métier d'où l'on vient (s'il y en a un). */
+export function RetourMetier() {
+  const metier = useRetour((s) => s.metier)
+  const maj = useEtat((s) => s.maj)
+  if (!metier) return null
+  return (
+    <Bouton variante="secondaire" className="print:hidden" onClick={() => maj({ etape: metier.etape })}>
+      <span aria-hidden="true">←</span> Revenir au métier « {metier.libelle} »
+    </Bouton>
   )
 }

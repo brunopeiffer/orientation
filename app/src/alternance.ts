@@ -102,6 +102,15 @@ const FormationsSchema = z.object({
 })
 export type ReponseFormations = z.infer<typeof FormationsSchema>
 
+/**
+ * Après un BTS, on ne propose que des formations ouvertes à ce BTS : le DCG (et le DSCG, le DGC de l'Intec) sont réservés
+ * au parcours comptable (BTS CG). Avant le bac (STMG), tout reste ouvert.
+ */
+export const formationsPourPublic = (formations: ReponseFormations['formations'], publicId: string | null) =>
+  publicId?.startsWith('BTS_') && publicId !== 'BTS_CG'
+    ? formations.filter((f) => !/\b(DCG|DSCG|DGC)\b|comptabilit[ée] et (de )?gestion \(dipl[ôo]me de\)|dipl[ôo]me (sup[ée]rieur )?de comptabilit[ée] et de gestion/i.test(f.titre))
+    : formations
+
 /** Formations en apprentissage (catalogue des Carif-Oref via La bonne alternance) : niveau 5 = bac+2, 6 = bac+3. */
 export async function chercherFormationsApprentissage(depuis: Point, rayon: number, romes: string[], niveau: '5' | '6', signal?: AbortSignal): Promise<ReponseFormations> {
   if (!proxyConfigure()) throw new Error('proxy non configuré')

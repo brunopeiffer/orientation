@@ -10,6 +10,7 @@ import Favori from './Favori'
 import Pratique from './Pratique'
 import { Carte } from './Gouts'
 import { Bouton, PUCE } from './ui'
+import { RetourMetier } from './Metiers'
 
 const PAR_PAGE = 20
 const NOM_FAMILLE = Object.fromEntries(FAMILLES.familles.map((f) => [f.id, f.nom]))
@@ -49,6 +50,7 @@ export default function Formations() {
   return (
     <div className="space-y-5">
       <div>
+        <RetourMetier />
         <h1 tabIndex={-1} className="text-[length:var(--da-t-titre)] font-bold text-violet-900">Formations près de chez toi</h1>
         <p className="mt-1 text-slate-700">
           Toutes les formations de Parcoursup ouvertes aux bacheliers technologiques, autour de chez toi. Les chances d’accès sont des tendances, pas des promesses.

@@ -81,6 +81,11 @@ h1:not(.da-hero) + p { margin-top: var(--da-e-3); font-size: 1.1875rem; }
 @keyframes da-apparition { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
 .da-apparition { animation: da-apparition 0.5s var(--da-courbe) both; }
 
+/* Mobile : la barre « suivant » est collée en bas ; on garde de la marge pour qu'elle ne cache jamais l'élément actif (WCAG 2.4.11). */
+@media (max-width: 639px) { html { scroll-padding-bottom: 11rem; } }
+/* Idem en haut : l'en-tête collant ne doit pas cacher l'élément qui reçoit le focus. */
+html { scroll-padding-top: 4rem; }
+
 /* Focus toujours visible (WCAG 2.4.7 / 2.4.11) */
 :focus-visible {
   outline: 3px solid var(--da-action);

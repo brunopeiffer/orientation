@@ -8,6 +8,7 @@ import { ChoixCommune, ChoixRayon } from './Formations'
 import Favori from './Favori'
 import Pratique from './Pratique'
 import { Bouton } from './ui'
+import { RetourMetier } from './Metiers'
 
 const TITRES: Record<TypeOffre, string> = {
   LP: 'Licences professionnelles en lien avec ton BTS',
@@ -38,6 +39,7 @@ export default function PostBts() {
   return (
     <div className="space-y-5">
       <div>
+        <RetourMetier />
         <h1 tabIndex={-1} className="text-[length:var(--da-t-titre)] font-bold text-violet-900">Poursuites d’études après ton BTS</h1>
         <p className="mt-1 text-slate-700">
           Après un BTS, la plupart des poursuites se demandent <strong>hors Parcoursup</strong>, directement auprès des établissements, souvent dès le printemps. Note bien le canal de chaque voie.

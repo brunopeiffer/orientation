@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState, type RefObject } from 'react'
 import { acquiescement, complet, scorer, TEST, type ScoreDimension } from '../personnalite'
 import { useEtat } from '../store'
-import { Bouton, PUCE } from './ui'
+import { BarreNav, Bouton, PUCE } from './ui'
 
 const PAR_PAGE = 6
 const NB_PAGES = Math.ceil(TEST.items.length / PAR_PAGE)
@@ -92,17 +92,17 @@ export default function TestPersonnalite() {
         </p>
       )}
 
-      <div className="flex flex-wrap justify-between gap-2">
+      <BarreNav>
         <Bouton variante="secondaire" onClick={() => (page === 0 ? maj({ etape: useEtat.getState().etape - 1 }) : setPage(page - 1))}>
-          <span aria-hidden="true">←</span> Retour
+          <span aria-hidden="true">←</span> {page === 0 ? 'Étape précédente' : 'Page précédente'}
         </Bouton>
         <Bouton onClick={continuer}>
-          {page === NB_PAGES - 1 ? 'Voir mon profil' : 'Continuer'} <span aria-hidden="true">→</span>
+          {page === NB_PAGES - 1 ? 'Voir mon profil' : `Page suivante (${page + 2} sur ${NB_PAGES})`} <span aria-hidden="true">→</span>
         </Bouton>
-      </div>
+      </BarreNav>
       <p className="text-center">
         <Bouton variante="secondaire" onClick={() => maj({ etape: useEtat.getState().etape + 1 })}>
-          Passer ce test <span aria-hidden="true">→</span>
+          Je ne fais pas ce test, je continue <span aria-hidden="true">→</span>
         </Bouton>
       </p>
     </div>

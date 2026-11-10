@@ -11,6 +11,7 @@ async function demarrer(page: Page) {
   await page.getByLabel('Terminale STMG').check()
   await page.getByRole('button', { name: /C’est parti/ }).click()
   // Le test de personnalité (facultatif) vient après les goûts et les résultats.
+  for (let k = 0; k < 3; k++) await page.getByRole('button', { name: /Partie suivante/ }).click()
   for (let k = 0; k < 2; k++) await page.getByRole('button', { name: /Étape suivante/ }).click()
 }
 
@@ -25,11 +26,11 @@ test('questionnaire : réponse manquante signalée, reprise, résultats accessib
   await expect(page.getByText('Page 1 sur 6')).toBeVisible()
   await sansViolation(page)
 
-  await page.getByRole('button', { name: 'Continuer' }).click()
+  await page.getByRole('button', { name: /Page suivante/ }).click()
   await expect(page.getByRole('alert')).toContainText('il en manque 6')
 
   await repondrePage(page, 'Plutôt d’accord')
-  await page.getByRole('button', { name: 'Continuer' }).click()
+  await page.getByRole('button', { name: /Page suivante/ }).click()
   await expect(page.getByText('Page 2 sur 6')).toBeVisible()
 
   // Reprise après rechargement : on revient sur la page 2, la première sans réponse.
@@ -38,7 +39,7 @@ test('questionnaire : réponse manquante signalée, reprise, résultats accessib
 
   for (let p = 2; p <= 6; p++) {
     await repondrePage(page, 'Entre les deux')
-    await page.getByRole('button', { name: p < 6 ? 'Continuer' : 'Voir mon profil' }).click()
+    await page.getByRole('button', { name: p < 6 ? /Page suivante/ : 'Voir mon profil' }).click()
   }
 
   await expect(page.getByRole('heading', { level: 1 })).toHaveText('Ton profil de personnalité en 4 dimensions')
@@ -54,6 +55,6 @@ test('questionnaire : réponse manquante signalée, reprise, résultats accessib
 test('le test de personnalité est facultatif : on peut le passer', async ({ page }) => {
   await demarrer(page)
   await expect(page.getByText(/Ce test est/)).toBeVisible()
-  await page.getByRole('button', { name: /Passer ce test/ }).click()
+  await page.getByRole('button', { name: /Je ne fais pas ce test/ }).click()
   await expect(page.getByRole('heading', { level: 1 })).toHaveText('Pistes métiers et test de réalité')
 })

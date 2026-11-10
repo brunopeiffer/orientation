@@ -1,6 +1,6 @@
 import { afterEach, describe, expect, it, vi } from 'vitest'
 import {
-  chercherEntreprises, chercherOffres, codesNaf, fusionnerEntreprises, lienAnnuaire, lienLBA, NAF, proxyConfigure, type Entreprise,
+  chercherEntreprises, chercherOffres, codesNaf, fusionnerEntreprises, lienAnnuaire, lienLBA, NAF, proxyConfigure, type Entreprise, formationsPourPublic,
 } from './alternance'
 import { FAMILLES } from './metiers'
 
@@ -75,5 +75,16 @@ describe('fusion entreprises + recruteurs', () => {
   it('une entreprise sans coordonnées est gardée, en fin de liste, sans distance', () => {
     const r = fusionnerEntreprises([e('X', null), e('B')], [], ILLKIRCH)
     expect(r.map((x) => [x.e.siret, x.km])).toEqual([['B', expect.any(Number)], ['X', null]])
+  })
+})
+
+describe('formations en apprentissage cohérentes avec le BTS', () => {
+  const f = (titre: string) => ({ id: titre, titre, organisme: 'X', ville: null, lat: null, lon: null, distanciel: false, qualiopi: null, onisep: null, debut: null })
+  const liste = [f('COMPTABILITE ET GESTION (DIPLÔME DE)'), f('DCG en alternance'), f('Diplôme supérieur de comptabilité et de gestion'), f('Licence pro commerce')]
+
+  it('pas de DCG ni de DSCG après un BTS NDRC ou SAM ; tout reste proposé en BTS CG et en STMG', () => {
+    for (const id of ['BTS_NDRC', 'BTS_SAM']) expect(formationsPourPublic(liste, id).map((x) => x.titre)).toEqual(['Licence pro commerce'])
+    expect(formationsPourPublic(liste, 'BTS_CG')).toHaveLength(4)
+    expect(formationsPourPublic(liste, 'STMG')).toHaveLength(4)
   })
 })

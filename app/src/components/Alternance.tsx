@@ -1,6 +1,6 @@
 import { useId, useState } from 'react'
 import {
-  chercherEntreprises, chercherFormationsApprentissage, chercherOffres, fusionnerEntreprises, lienAnnuaire, lienLBA, proxyConfigure, RAYON_MAX_ENTREPRISES, RAYON_MAX_OFFRES,
+  chercherEntreprises, chercherFormationsApprentissage, formationsPourPublic, chercherOffres, fusionnerEntreprises, lienAnnuaire, lienLBA, proxyConfigure, RAYON_MAX_ENTREPRISES, RAYON_MAX_OFFRES,
   type Entreprise, type ReponseFormations, type ReponseOffres,
 } from '../alternance'
 import { distanceRoute } from '../formations'
@@ -39,7 +39,7 @@ export default function Alternance() {
       chercherEntreprises(commune, rayon, familles),
       proxyConfigure() ? chercherFormationsApprentissage(commune, rayon, romes, niveau) : Promise.reject(new Error('non configuré')),
     ])
-    setFormations(f.status === 'fulfilled' ? f.value : null)
+    setFormations(f.status === 'fulfilled' ? { ...f.value, formations: formationsPourPublic(f.value.formations, publicId) } : null)
     setOffres(o.status === 'fulfilled' ? o.value : null)
     setErreurOffres(o.status === 'rejected')
     setEntreprises(e.status === 'fulfilled' ? e.value : null)

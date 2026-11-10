@@ -45,3 +45,6 @@ const etatBrut = ({ prenom, publicId, etape, avertissementLu, personnalite, gout
   ({ prenom, publicId, etape, avertissementLu, personnalite, gouts, scolarite, mobilite, handicap, favoris })
 
 export const etatSeul = (s: Etat & Actions): Etat => EtatSchema.parse(etatBrut(s))
+
+/** Métier d'où l'élève est parti voir les formations (non sauvegardé) : pour y revenir en un clic. */
+export const useRetour = create<{ metier: { code: string; libelle: string; etape: number } | null }>(() => ({ metier: null }))

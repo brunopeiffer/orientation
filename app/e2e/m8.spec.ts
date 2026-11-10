@@ -77,3 +77,18 @@ test('pistes : chaque piste indique les études pour y arriver', async ({ page }
   }
   expect(textes[0]).not.toBe(textes[1])
 })
+
+test('formations depuis un métier : un bouton ramène à la carte du métier, son test de réalité ouvert', async ({ page }) => {
+  await poser(page, 4)
+  const carte = page.getByRole('listitem').filter({ has: page.getByRole('heading', { level: 2 }) }).nth(2)
+  const metier = await carte.getByRole('heading', { level: 2 }).innerText()
+  await carte.getByText('Test de réalité : le métier au quotidien').click()
+  await carte.getByRole('button', { name: 'Voir les formations près de chez toi' }).click()
+  await expect(page.getByRole('heading', { level: 1 })).toHaveText('Formations près de chez toi')
+  await page.getByRole('button', { name: `Revenir au métier « ${metier} »` }).click()
+  await expect(page.getByRole('heading', { level: 1 })).toHaveText('Pistes métiers et test de réalité')
+  const retour = page.getByRole('heading', { level: 2, name: metier })
+  await expect(retour).toBeFocused()
+  await expect(retour).toBeInViewport()
+  await expect(page.getByRole('listitem').filter({ has: retour }).getByText('Ce que fait ce métier')).toBeVisible()
+})
